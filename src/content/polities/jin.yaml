@@ -1,0 +1,17 @@
+id: jin
+name: 金
+aliases:
+  - 女真
+  - 大金
+  - 金朝
+span:
+  from:
+    year: 1115
+  to:
+    year: 1234
+order: 75
+period: imperial-mid
+note: 女真人灭辽、攻陷汴京，与南宋以淮河—大散关为界对峙百年。
+coexistedWith:
+  - song
+  - yuan

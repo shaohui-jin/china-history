@@ -1,0 +1,14 @@
+id: wudai
+name: 五代十国
+aliases:
+  - 五代
+span:
+  from:
+    year: 907
+  to:
+    year: 960
+order: 62
+period: imperial-mid
+note: 唐亡至宋立五十三年间，中原历梁、唐、晋、汉、周五朝，南方与河东并存十国。武人专政，政权更迭如走马。
+coexistedWith:
+  - liao

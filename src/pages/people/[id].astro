@@ -6,7 +6,7 @@
  */
 import Base from '../../layouts/Base.astro';
 import RelationGraph from '../../components/graph/RelationGraph.vue';
-import { loadIndex, getEgoNetwork } from '../../lib/content';
+import { loadIndex, getEgoNetwork, getPersonRelations } from '../../lib/content';
 import { personPage, graphByBreakpoint } from '../../design/pages';
 import { formatDate, shortYear } from '../../lib/time';
 import { relationMeta } from '../../lib/relations';
@@ -86,14 +86,10 @@ const bioItems: BioItem[] = [
     }),
 ].sort((a, b) => a.year - b.year);
 
-// 相关人物：关系对端
-const related = person.relations
-  .map((r) => ({
-    person: index.people.get(r.target.id),
-    type: r.type,
-    label: r.note,
-  }))
-  .filter((x) => !!x.person);
+// 相关人物：**双向**关系表。自己声明的是出边，别人声明指向自己的是入边。
+// 入边用 relationLabel(type, true) 换措辞（如「为其所杀」）。
+const personRelations = await getPersonRelations(person.id);
+const related = personRelations;
 ---
 
 <Base title={`${person.name} · 史鉴`} description={person.summary}>
@@ -169,7 +165,7 @@ const related = person.relations
         {bioItems.length > 0 && (
           <section>
             <h2 class="subhead u-ui">生平</h2>
-            <ol class="tl">
+            <ol class="tl u-long-list u-long-list--tall">
               {bioItems.map((it) => (
                 <li class:list={['tl__item', { 'tl__item--major': it.major }]}>
                   <div class="tl__year">
@@ -224,12 +220,13 @@ const related = person.relations
         {related.length > 0 && (
           <section class="related">
             <h3 class="subhead u-ui">相关人物</h3>
-            <ul class="related__list">
+            <ul class="related__list u-long-list">
               {related.map((r) => (
                 <li>
-                  <a class="related__item" href={url(`people/${r.person!.data.id}`)}>
-                    <span class="related__name">{r.person!.data.name}</span>
-                    <span class="badge">{relationMeta[r.type].label}</span>
+                  <a class="related__item" href={url(`people/${r.otherId}`)}>
+                    <span class="related__name">{r.other.data.name}</span>
+                    <span class="badge">{r.label}</span>
+                    {!r.outgoing && <span class="related__inbound u-ui">被提及</span>}
                   </a>
                 </li>
               ))}
@@ -240,7 +237,7 @@ const related = person.relations
         {events.length > 0 && (
           <section class="related">
             <h3 class="subhead u-ui">相关事件</h3>
-            <ul class="related__list">
+            <ul class="related__list u-long-list">
               {events.map((e) => (
                 <li>
                   <a class="related__item" href={url(`events/${e.data.id}`)}>
@@ -456,5 +453,16 @@ const related = person.relations
   font-size: var(--fs-xs);
   color: var(--color-accent);
   min-width: 2.5rem;
+}
+
+/* 入边标记：这条关系是别人页里写的，本页只是被提及方 */
+.related__inbound {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  padding: 0 0.2rem;
+  margin-left: auto;
+  flex: none;
 }
 </style>

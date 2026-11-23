@@ -1,30 +1,36 @@
 ---
 import '../styles/tokens.generated.css';
-import '../styles/fonts.generated.css';
 import '../styles/global.css';
 
 interface Props {
   title: string;
   description?: string;
+  /** 页面级 OG 类型。文章类页面传 'article'，其余默认 'website' */
+  ogType?: 'website' | 'article';
 }
 
-const { title, description = '中国历史可视化百科' } = Astro.props;
+const { title, description = '中国历史可视化百科', ogType = 'website' } = Astro.props;
 
 /**
- * 预载 400 字重正文子集。
+ * 不加载 webfont（见 design/tokens.ts 的 fontFamily 注释）。
  *
- * 实测（模拟 4G + 4x CPU，Lighthouse 13.5）：
- *   预载 regular.woff2 → FCP 1.8s / LCP 4.4s
- *   去掉预载          → FCP 4.0s / LCP 4.4s
- * 去掉预载反而更慢——lantern 会把「首屏文本所用的字体」挂进绘制关键链路，
- * 靠 CSS 里的 @font-face 被动发现要晚一个 RTT 才发起请求。
- * 样式已内联，所以预载不会和样式表抢带宽，是纯赚。
- *
- * 500（标题）不预载：它不参与 LCP，避免两张大字体同时争抢带宽。
+ * 曾经这里 preload 429 KB 的 regular.woff2，占首屏传输 87%。
+ * 现在整站走系统字体，首屏字体请求数为 0，也不再需要 fonts.generated.css。
  */
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const favicon = `${base}/favicon.svg`;
-const fontPreload = `${base}/fonts/regular.woff2`;
+
+/**
+ * canonical 与 OG 的绝对地址。
+ *
+ * `import.meta.env.SITE` 只在构建时设了 SITE_URL 才存在：
+ * - 线上（GitHub Actions）：SITE_URL 由 configure-pages 注入，正常输出
+ * - 本地 dev / 未配 SITE_URL 的构建：为 undefined，此时**跳过** canonical
+ *   （打一个 undefined 开头的 URL 比不输出更糟）
+ */
+const site = import.meta.env.SITE;
+const canonicalUrl =
+  site ? new URL(Astro.url.pathname, site).href : undefined;
 ---
 
 <!doctype html>
@@ -36,8 +42,20 @@ const fontPreload = `${base}/fonts/regular.woff2`;
     <title>{title}</title>
     <meta name="description" content={description} />
 
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+    <!-- Open Graph：分享到微信/微博时能出标题与摘要，而不是一行灰字 -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="史鉴" />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="icon" type="image/svg+xml" href={favicon} />
-    <link rel="preload" href={fontPreload} as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <slot />

@@ -53,11 +53,17 @@ export const fontSize = {
   '5xl': '3.75rem', // 60px 封面数字
 } as const;
 
-/** 字重：中文只有 regular 与 semibold 两档可用，中间值会显得脏 */
+/** 字重：中文只有 regular 与 medium 两档可用，中间值会显得脏。
+ *
+ * semibold 必须是 500，不能是 600：字体文件只有 400/500 两档，
+ * 声明 600 会让浏览器做**合成加粗**（synthetic bold）—— 视觉上是
+ * 「描边变粗的楷体」，与真正的 Medium 不同，且各浏览器算法不一致。
+ * 同时 build-fonts.ts 把 medium 声明成 `font-weight: 500 700` 区间，
+ * 这样即使第三方样式写了 600/700 也命中真字体而非合成。 */
 export const fontWeight = {
   regular: 400,
   medium: 500,
-  semibold: 600,
+  semibold: 500,
   bold: 700,
 } as const;
 
@@ -175,25 +181,34 @@ export const layout = {
  * 3. 字体族
  * ------------------------------------------------------------------ */
 
+/**
+ * 字体栈：**不使用自托管 webfont**，全部走系统字体。
+ *
+ * 为什么放弃霞鹜文楷 webfont：正文字体曾是首屏唯一的实质成本
+ * （528 KiB 占首屏传输 87%），且体积随内容线性增长（1948 字 → 429 KB，
+ * 补到宋元明清会破 700 KB）。代价是不同平台字形不一致，但换来的是
+ * 首屏零字体请求 —— 对纯文字站来说这笔交易划算。
+ *
+ * 字重局限：系统楷体在多数平台只有 Regular 一档，所以标题不靠字重区分，
+ * 而靠字号、字距与颜色层次（见 global.css 的 h1–h6 规则）。
+ */
 export const fontFamily = {
   /** 标题：衬线，带一点书卷气但不古板 */
   display:
-    "'LXGW WenKai', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', ui-serif, Georgia, serif",
+    "'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', ui-serif, Georgia, serif",
   /** 正文：宋体衬线，长文阅读最舒适 */
-  body: "'LXGW WenKai', 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', ui-serif, serif",
+  body: "'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', ui-serif, serif",
   /**
    * 楷体：古典文人风的正文与标题。
-   * 首位是自托管的霞鹜文楷（已按项目字表切子集，见 scripts/build-fonts.ts）。
-   * 后面的系统楷体是加载失败时的兜底——不同平台字形差异大，
-   * 所以 webfont 成功加载才能保证视觉一致。
+   * 首选系统楷体；缺失时依次退到宋体衬线，保证任何平台都能出字。
    */
-  kai: "'LXGW WenKai', 'Kaiti SC', 'KaiTi', 'STKaiti', 'Kaiti TC', 'Noto Serif SC', 'Songti SC', serif",
+  kai: "'Kaiti SC', 'KaiTi', 'STKaiti', 'Kaiti TC', 'Noto Serif SC', 'Songti SC', serif",
   /** 仿宋：古典风的辅助信息（题跋、注文一类） */
-  fangsong: "'LXGW WenKai', 'FangSong', 'STFangsong', 'Noto Serif SC', serif",
+  fangsong: "'FangSong', 'STFangsong', 'Noto Serif SC', serif",
   /** UI：无衬线，界面元素用衬线会显得笨重 */
   ui: "'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', ui-sans-serif, system-ui, sans-serif",
   /** 数字与年份：等宽的拉丁衬线，时间线对齐需要 */
-  numeric: "'LXGW WenKai', 'Noto Serif SC', ui-serif, Georgia, serif",
+  numeric: "'Noto Serif SC', ui-serif, Georgia, serif",
   mono: "ui-monospace, 'SF Mono', Consolas, monospace",
 } as const;
 

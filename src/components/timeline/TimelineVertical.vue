@@ -10,6 +10,7 @@
  */
 import { computed, ref } from 'vue';
 import { shortYear } from '../../lib/time';
+import { eventHref } from '../../lib/nav';
 import type { TimelineData, TimelineItem } from '../../lib/content';
 
 interface Props {
@@ -111,7 +112,7 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
               — {{ it.endYear < 0 ? `公元前 ${-it.endYear} 年` : `公元 ${it.endYear} 年` }}
             </template>
           </p>
-          <a class="tlv__more-link u-ui" :href="`/events/${it.id}`">查看事件详情 →</a>
+          <a class="tlv__more-link u-ui" :href="eventHref(it.id)">查看事件详情 →</a>
         </div>
       </li>
     </ol>
@@ -138,8 +139,8 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 
 .tlv__eras {
   display: flex;
-  gap: 0.25rem;
-  padding: 0.1875rem;
+  gap: var(--sp-1);
+  padding: 3px;
   background: var(--color-paper-alt);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
@@ -155,7 +156,7 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   flex: none;
   font-family: var(--font-ui);
   font-size: var(--fs-xs);
-  padding: 0.4375rem 0.875rem;
+  padding: 7px 14px;
   min-height: 2rem;
   border-radius: var(--radius-full);
   color: var(--color-ink-muted);
@@ -219,7 +220,7 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 .tlv__main {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: 2px;
   min-width: 0;
 }
 
@@ -241,7 +242,7 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 }
 
 .tlv__detail {
-  padding: 0 0 var(--sp-4) calc(2.75rem + var(--sp-3) * 2 + 0.5rem);
+  padding: 0 0 var(--sp-4) calc(var(--sp-10) + var(--sp-1) + var(--sp-3) * 2 + var(--sp-2));
   font-size: var(--fs-sm);
   color: var(--color-ink-muted);
   line-height: var(--lh-normal);

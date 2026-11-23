@@ -1,0 +1,15 @@
+id: liu-song
+name: 宋（南朝）
+aliases:
+  - 刘宋
+  - 南朝宋
+span:
+  from:
+    year: 420
+  to:
+    year: 479
+order: 47
+period: imperial-early
+note: 刘裕代晋建宋，为南朝之始。疆域为南朝最广，然宗室相残惨烈，六十年前后八帝。
+coexistedWith:
+  - northern-wei

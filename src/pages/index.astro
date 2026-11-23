@@ -1,4 +1,4 @@
-﻿---
+---
 /**
  * 首页：导览，不是样张。
  * 样张（排版阶梯、色板、组件清单）搬去 /styleguide。
@@ -17,6 +17,41 @@ import { url } from '../lib/url';
 
 const index = await loadIndex();
 const timeline = await getTimelineData();
+
+/**
+ * 首屏只注入重大事件（sig >= 4）。
+ *
+ * 理由与 timeline.astro 相同：首页画布初始是全域视图，LOD 只画 sig >= 4，
+ * 次要事件在这个缩放下根本不显示，全量注入纯属浪费首屏带宽。
+ * 放大到 300 年内时 TimelineCanvas 会按世纪从 /data/timeline/<c>.json 拉取。
+ *
+ * 手机端 TimelineVertical 也传精简集：它内部本来就把 sig < 4 折叠起来，
+ * 但折叠只是不渲染，数据仍然会进 HTML —— 真正的成本在序列化体积。
+ */
+const timelineLite = {
+  ...timeline,
+  items: timeline.items.filter((it) => it.significance >= 4),
+};
+
+/**
+ * 真实覆盖跨度，供首屏副标题使用。
+ *
+ * 为什么不在模板里写死年份：内容还在补，写死就会出现
+ * 「标题说两千年、实际只有一千年」的矛盾。
+ *
+ * 关键：**只按事件算，不含政权占位**。
+ * 政权 yaml 只是时间线的骨架（宋元明清已建占位但还没有事件），
+ * 如果把它算进来，副标题会写「到公元 1912 年，共 2133 年」，
+ * 而那时候页面上一个宋代事件都没有 —— 比写死年份更糟。
+ * 事件才是「收录了什么」的真实边界。
+ */
+const spanYears = (() => {
+  const years = timeline.items
+    .flatMap((i) => [i.year, i.endYear])
+    .filter((y) => Number.isFinite(y));
+  if (years.length === 0) return null;
+  return { from: Math.min(...years), to: Math.max(...years) };
+})();
 
 const people = [...index.people.values()].sort((a, b) => a.data.name.localeCompare(b.data.name, 'zh'));
 
@@ -56,7 +91,15 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
       <p class="eyebrow">时间线 · 人物关系 · 史料</p>
       <h1 class="hero__title">{homePage.heroTitle}</h1>
       <p class="hero__lede">
-        从公元前 221 年秦并六国，到公元 763 年安史之乱平定，近千年间的事件、人物与关系被拆成可检索的结构化条目。
+        {spanYears ? (
+          <>
+            从{spanYears.from < 0 ? `公元前 ${-spanYears.from}` : `公元 ${spanYears.from}`} 年
+            到{spanYears.to < 0 ? `公元前 ${-spanYears.to}` : `公元 ${spanYears.to}`} 年，共{' '}
+            {spanYears.to - spanYears.from} 年间的
+          </>
+        ) : (
+          '收录范围内的'
+        )}事件、人物与关系被拆成可检索的结构化条目。
         时间线看脉络，关系图看人际，传记看细节——三者互相跳转。
       </p>
       <div class="hero__actions">
@@ -101,12 +144,13 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
         <TimelineCanvas
           client:only="vue"
           config={timelineByBreakpoint.lg}
-          data={timeline}
+          data={timelineLite}
+          lazyLoad={true}
         />
       </div>
 
       <div class="home-timeline-mobile">
-        <TimelineVertical client:only="vue" data={timeline} />
+        <TimelineVertical client:only="vue" data={timelineLite} />
       </div>
 
       <p class="section__foot">

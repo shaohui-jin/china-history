@@ -12,6 +12,7 @@ import { computed, markRaw, onBeforeUnmount, onMounted, ref, shallowRef, watch }
 import { resolveTheme, DEFAULT_THEME, type SemanticKey } from '../../design/tokens';
 import type { GraphConfig } from '../../design/pages';
 import type { EgoNetwork, GraphNode } from '../../lib/content';
+import { personHref } from '../../lib/nav';
 import { relationMeta, type RelationType } from '../../lib/relations';
 
 interface Props {
@@ -345,14 +346,14 @@ onBeforeUnmount(() => {
               · {{ selectedNode.roles.join('、') }}
             </template>
           </p>
-          <a class="graph__link" :href="`/people/${selectedNode.id}`">查看传记 →</a>
+          <a class="graph__link" :href="personHref(selectedNode.id)">查看传记 →</a>
 
           <h5 class="graph__side-sub u-ui">关系 · {{ selectedEdges.length }}</h5>
           <ul class="graph__rel-list">
             <li v-for="e in selectedEdges" :key="e.id">
               <a
                 class="graph__rel"
-                :href="`/people/${e.source === selectedId ? e.target : e.source}`"
+                :href="personHref(e.source === selectedId ? e.target : e.source)"
               >
                 <span class="graph__rel-name">
                   {{
@@ -578,7 +579,7 @@ onBeforeUnmount(() => {
 .graph__legend-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 4.8px;
 }
 
 .graph__legend-dot {

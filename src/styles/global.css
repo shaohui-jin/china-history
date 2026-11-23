@@ -167,7 +167,7 @@
   .title-mark {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--sp-2);
   }
 
   .title-mark::before {
@@ -211,7 +211,7 @@
     width: 100%;
     max-width: var(--container-wide);
     margin-inline: auto;
-    padding-inline: 1rem;
+    padding-inline: var(--sp-4);
   }
 
   .container--wide {
@@ -224,13 +224,13 @@
 
   @media (min-width: 768px) {
     .container {
-      padding-inline: 1.5rem;
+      padding-inline: var(--sp-6);
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-inline: 2rem;
+      padding-inline: var(--sp-8);
     }
   }
 
@@ -369,12 +369,12 @@
   .badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 6px;
     font-family: var(--font-ui);
     font-size: var(--fs-2xs);
     font-weight: var(--fw-medium);
     letter-spacing: var(--ls-wide);
-    padding: 0.125rem 0.5rem;
+    padding: 2px var(--sp-2);
     border-radius: var(--radius-sm);
     background: var(--color-paper-alt);
     color: var(--color-ink-muted);
@@ -443,8 +443,8 @@
   /* ---------- 分段控件（主题切换 / 宽度切换共用） ---------- */
   .segmented {
     display: inline-flex;
-    padding: 0.1875rem;
-    gap: 0.125rem;
+    padding: 3px;
+    gap: 2px;
     background: var(--color-paper-alt);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
@@ -460,10 +460,10 @@
   .segmented__btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.375rem;
+    gap: 6px;
     font-family: var(--font-ui);
     font-size: var(--fs-xs);
-    padding: 0.375rem 0.75rem;
+    padding: 6px var(--sp-3);
     min-height: 1.875rem;
     border-radius: var(--radius-full);
     color: var(--color-ink-muted);
@@ -515,7 +515,7 @@
     letter-spacing: 0.12em;
     line-height: 1.15;
     text-align: center;
-    padding: 0.25rem;
+    padding: var(--sp-1);
     white-space: pre-line;
     box-shadow:
       inset 0 0 0 2px var(--color-accent),
@@ -532,7 +532,7 @@
     font-family: var(--font-ui);
     font-size: var(--fs-sm);
     color: var(--color-ink-muted);
-    margin-top: 0.125rem;
+    margin-top: 2px;
   }
 
   .identity__dates {
@@ -540,7 +540,7 @@
     font-size: var(--fs-sm);
     color: var(--color-ink-muted);
     letter-spacing: 0.02em;
-    margin-top: 0.25rem;
+    margin-top: var(--sp-1);
   }
 
   /* ---------- 史料引文 ----------
@@ -573,7 +573,7 @@
 
   .quote__mark {
     font-family: var(--font-display);
-    font-size: 2.5rem;
+    font-size: 40px;
     line-height: 0.6;
     color: var(--color-quote-border);
     opacity: 0.35;
@@ -637,14 +637,14 @@
     font-size: var(--fs-base);
     font-weight: var(--fw-semibold);
     color: var(--color-ink-strong);
-    margin-top: 0.125rem;
+    margin-top: 2px;
     line-height: var(--lh-snug);
   }
 
   .tl__desc {
     font-size: var(--fs-sm);
     color: var(--color-ink-muted);
-    margin-top: 0.25rem;
+    margin-top: var(--sp-1);
     line-height: var(--lh-normal);
   }
 
@@ -694,13 +694,126 @@
     margin-top: var(--sp-2);
     letter-spacing: var(--ls-wide);
   }
+
+  /* ---------- 正文脚注 ----------
+     由 src/lib/remark-footnote.ts 生成：正文里的 [^source-id] 变成
+     <sup class="footnote-ref">，文末汇总成 <details class="footnotes">。
+     默认收起：正文已有上标，读者需要时才展开原文。 */
+
+  .footnote-ref {
+    font-size: 0.7em;
+    line-height: 0;
+    vertical-align: super;
+  }
+
+  .footnote-ref a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding-inline: 0.1em;
+    /* 触控友好：上标太小，扩一点命中区 */
+    margin-inline: -0.1em;
+  }
+
+  .footnote-ref a:hover {
+    text-decoration: underline;
+  }
+
+  .footnotes {
+    margin-top: var(--sp-8);
+    padding-top: var(--sp-4);
+    border-top: 1px dotted var(--color-border);
+    font-size: var(--fs-sm);
+  }
+
+  .footnotes__summary {
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    letter-spacing: var(--ls-wide);
+    color: var(--color-ink-muted);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    /* 与 .u-ui 一致的触控高度 */
+    min-height: var(--touch-target);
+  }
+
+  .footnotes__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .footnotes__summary::before {
+    content: '▸';
+    display: inline-block;
+    transition: transform 0.15s ease;
+    color: var(--color-accent);
+  }
+
+  .footnotes[open] .footnotes__summary::before {
+    transform: rotate(90deg);
+  }
+
+  .footnotes__list {
+    list-style: none;
+    margin: var(--sp-3) 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+
+  .footnotes__list > li {
+    /* 脚注列表通常很长，用 content-visibility 跳过视口外的布局 */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 4rem;
+    padding-left: var(--sp-4);
+    border-left: 2px solid var(--color-border);
+  }
+
+  .footnote__num {
+    font-family: var(--font-numeric);
+    color: var(--color-accent);
+    margin-right: var(--sp-1);
+  }
+
+  .footnote__cite {
+    color: var(--color-ink-strong);
+    font-weight: var(--fw-medium);
+  }
+
+  .footnote__meta {
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    color: var(--color-ink-faint);
+    margin-left: var(--sp-2);
+  }
+
+  .footnote__quote {
+    margin: var(--sp-2) 0 0;
+    padding-left: var(--sp-3);
+    border-left: 2px solid var(--color-border);
+    color: var(--color-ink-muted);
+    font-size: var(--fs-xs);
+    line-height: var(--lh-normal);
+  }
+
+  .footnote__quote p {
+    margin: 0;
+  }
+
+  .footnote__note {
+    margin: var(--sp-1) 0 0;
+    font-size: var(--fs-2xs);
+    color: var(--color-ink-faint);
+    line-height: var(--lh-normal);
+  }
 }
 
 @layer utility {
   .u-muted {
     color: var(--color-ink-muted);
   }
-
   .u-ui {
     font-family: var(--font-ui);
   }
@@ -726,6 +839,12 @@
     content-visibility: auto;
     /* 估算每项高度：约一行标题 + 一行辅助信息 */
     contain-intrinsic-size: auto 3.5rem;
+  }
+
+  /* 高条目变体：每项含描述段落（如人物页「生平」的 tl__item 带 tl__desc）。
+     3.5rem 不够用时滚动会出现空白跳变，这里给更接近真实的估值。 */
+  .u-long-list--tall > * {
+    contain-intrinsic-size: auto 5.5rem;
   }
 }
 

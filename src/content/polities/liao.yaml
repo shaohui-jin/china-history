@@ -1,0 +1,15 @@
+id: liao
+name: 辽
+aliases:
+  - 契丹
+  - 大辽
+span:
+  from:
+    year: 916
+  to:
+    year: 1125
+order: 65
+period: imperial-mid
+note: 契丹人建立的草原帝国，与北宋长期对峙，澶渊之盟后维持百余年和平。
+coexistedWith:
+  - song

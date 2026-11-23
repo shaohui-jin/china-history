@@ -177,8 +177,10 @@ function draw() {
   // ---- 泳道 ----
   const minSig = minSignificance();
 
-  props.data.lanes.forEach((lane, i) => {
-    const top = i * laneTotal;
+  props.data.lanes.forEach((lane) => {
+    // 行位置用 rowIndex（同一 period 内独立成行，跨 period 复用），
+    // 不能用数组下标 i —— 否则同一行的两个政权会叠在一起
+    const top = lane.rowIndex * laneTotal;
     const midY = top + laneHeight / 2;
     const laneColor = c[`color-lane-${lane.laneIndex}` as SemanticKey];
 
@@ -268,9 +270,12 @@ function resize() {
 
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const cssW = wrap.clientWidth;
-  // 高度由泳道数决定，保证每条泳道有固定高度
+  // 高度由**实际行数**决定（不是政权数）：
+  // 不同 period 复用行号，所以 12 个政权可能只有 6 行，画布不会无限增高。
+  const rowCount =
+    props.data.lanes.reduce((max, l) => Math.max(max, l.rowIndex + 1), 0) || 0;
   const cssH =
-    props.data.lanes.length * (props.config.laneHeight + props.config.laneGap) +
+    rowCount * (props.config.laneHeight + props.config.laneGap) +
     props.config.axisHeight;
 
   // 幂等：尺寸没变就不动，避免 ResizeObserver 自激
@@ -324,8 +329,8 @@ function hitTest(clientX: number, clientY: number): string | null {
   const minSig = minSignificance();
 
   let best: { id: string; d: number } | null = null;
-  props.data.lanes.forEach((lane, i) => {
-    const midY = i * laneTotal + props.config.laneHeight / 2;
+  props.data.lanes.forEach((lane) => {
+    const midY = lane.rowIndex * laneTotal + props.config.laneHeight / 2;
     if (Math.abs(y - midY) > props.config.laneHeight * 0.7) return;
     for (const it of items.value) {
       if (it.laneId !== lane.id || it.significance < minSig) continue;
@@ -738,7 +743,7 @@ watch(view, () => {
 .tl__list-main {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: 2px;
   min-width: 0;
 }
 

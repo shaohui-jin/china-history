@@ -1,0 +1,15 @@
+id: yuan
+name: 元
+aliases:
+  - 蒙元
+  - 大元
+span:
+  from:
+    year: 1271
+  to:
+    year: 1368
+order: 80
+period: imperial-late
+note: 中国历史上首个由非汉族群建立的大一统王朝，行省制自此确立。
+coexistedWith:
+  - jin

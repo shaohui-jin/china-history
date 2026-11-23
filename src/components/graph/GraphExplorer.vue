@@ -13,6 +13,7 @@ import RelationList from './RelationList.vue';
 import { useBreakpoint } from '../../composables/useBreakpoint';
 import { graphByBreakpoint } from '../../design/pages';
 import type { EgoNetwork } from '../../lib/content';
+import { personHref } from '../../lib/nav';
 
 interface Props {
   options: Array<{
@@ -164,7 +165,7 @@ watch(focusId, () => {
         </div>
       </div>
 
-      <a v-if="focusedOption" class="btn btn--ghost btn--sm" :href="`/people/${focusedOption.id}`">
+      <a v-if="focusedOption" class="btn btn--ghost btn--sm" :href="personHref(focusedOption.id)">
         查看 {{ focusedOption.name }} 传记 →
       </a>
     </div>
@@ -216,7 +217,7 @@ watch(focusId, () => {
 .explorer__field select {
   font-family: var(--font-ui);
   font-size: var(--fs-sm);
-  padding: 0.5rem 0.75rem;
+  padding: var(--sp-2) var(--sp-3);
   min-height: var(--touch-target);
   min-width: 14rem;
   max-width: 100%;

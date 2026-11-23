@@ -164,7 +164,7 @@ const timelineData = await getTimelineData();
         <p class="eyebrow">03 / 语义层</p>
         <h2 class="section__title">组件消费的接口</h2>
         <p class="section__note">
-          34 个语义键。新增语义必须先加进 <code>SemanticKey</code> 类型与主题的 semantic 映射，否则类型检查会报漏实现。
+          {Object.keys(theme.semantic).length} 个语义键。新增语义必须先加进 <code>SemanticKey</code> 类型与主题的 semantic 映射，否则类型检查会报漏实现。
         </p>
       </div>
 

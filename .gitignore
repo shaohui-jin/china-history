@@ -4,14 +4,11 @@ dist/
 .shots/
 .DS_Store
 
-# 字体源文件（23MB x2），不进 git。
-# scripts/build-fonts.ts 会在缺失时自动下载。
+# 字体源文件缓存（已不使用 webfont，此项保留以防有人重新引入自托管字体）
 .cache/
 
-# 构建产物，由 npm run tokens / npm run fonts 生成
-public/fonts/
+# 构建产物，由 npm run tokens 生成
 src/styles/tokens.generated.css
-src/styles/fonts.generated.css
 
 # 临时文件与本地调试产物
 *.log
@@ -38,3 +35,4 @@ lh-*.json
 /.idea/history.iml
 /.idea/modules.xml
 /.idea/vcs.xml
+/.idea/

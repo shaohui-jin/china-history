@@ -1,5 +1,8 @@
 import { defineConfig } from 'astro/config';
 import vue from '@astrojs/vue';
+import sitemap from '@astrojs/sitemap';
+import remarkWikilink from './src/lib/remark-wikilink.ts';
+import remarkFootnote from './src/lib/remark-footnote.ts';
 
 /**
  * GitHub Pages 部署配置。
@@ -19,7 +22,26 @@ const base = process.env.BASE_PATH ?? '/';
 export default defineConfig({
   ...(site ? { site } : {}),
   base,
-  integrations: [vue()],
+  /**
+   * sitemap 需要 site 已配置。未设 SITE_URL 的本地构建跳过它，
+   * 否则 @astrojs/sitemap 会因为拿不到绝对地址而报错。
+   */
+  integrations: site ? [vue(), sitemap()] : [vue()],
+  markdown: {
+    /**
+     * 正文内链：[[person:zhuge-liang]] / [[event:chibi|自定义文字]]。
+     *
+     * 插件在构建期读取 src/content/ 建索引，写错 id 会直接让构建失败，
+     * 避免拼错静默通过。source 类型暂无详情页，渲染成《书名》行内标记。
+     */
+    /**
+     * 插件顺序：footnote 先于 wikilink。
+     *
+     * wikilink 会把文本节点替换成新节点，而 footnote 依赖在文本节点上做标记，
+     * 所以 footnote 必须先跑。
+     */
+    remarkPlugins: [remarkFootnote, remarkWikilink],
+  },
   // 构建产物里保留相对路径，减少 base 处理出错的面
   build: {
     assets: '_astro',

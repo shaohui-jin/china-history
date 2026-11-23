@@ -17,8 +17,9 @@ const timeline = await getTimelineData();
  * 放大到 300 年以内时，TimelineCanvas 会按世纪从
  * /data/timeline/<century>.json 拉取缺失的部分。
  *
- * 手机端（TimelineVertical）需要按年代分段浏览，仍用全量数据——
- * 它的数据量小且分页展示，不存在首屏压力。
+ * 手机端（TimelineVertical）也传精简集：它内部本来就把 sig < 4 折叠起来，
+ * 但折叠只是不渲染，数据仍然进了 HTML。真正的成本在序列化体积，
+ * 用户点「展开其余 N 条」时需要的事件可以从 /data/timeline/<c>.json 补。
  */
 const initialItems = timeline.items.filter((it) => it.significance >= 4);
 const timelineLite = { ...timeline, items: initialItems };
@@ -62,12 +63,12 @@ const timelineLite = { ...timeline, items: initialItems };
 
     <!-- 手机 -->
     <div class="only-narrow">
-      <TimelineVertical client:only="vue" data={timeline} />
+      <TimelineVertical client:only="vue" data={timelineLite} />
     </div>
 
     <section class="polis">
       <h2 class="polis__title u-ui">收录政权</h2>
-      <ul class="polis__list">
+      <ul class="polis__list u-long-list">
         {timeline.lanes.map((l) => (
           <li class="polis__item">
             <span class="polis__bar" style={`background: var(--color-lane-${l.laneIndex})`}></span>

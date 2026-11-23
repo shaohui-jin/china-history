@@ -1,0 +1,373 @@
+# 内容数据规范
+
+> 这份文档定的是「怎么填」，不是「填什么」。字段语义、命名规则、关系模型、
+> 内链语法都在这里。新增任何内容前先读一遍，可以避免 90% 的返工。
+>
+> 配合阅读：[docs/PENDING-FEATURES.md](PENDING-FEATURES.md)（还剩什么没做）、
+> [CONTRIBUTING.md](../CONTRIBUTING.md)（提交前跑什么）。
+
+---
+
+## 0. 四个集合的分工
+
+| 集合 | 目录 | 格式 | 一条记录是什么 |
+|---|---|---|---|
+| `polities` | `src/content/polities/` | YAML | 一个政权 / 朝代 |
+| `people` | `src/content/people/` | Markdown | 一个人物，正文是传记 |
+| `events` | `src/content/events/` | Markdown | 一个事件，正文是经过 |
+| `sources` | `src/content/sources/` | YAML | 一条史料引文（书名 + 卷次 + 原文） |
+
+Schema 定义在 [src/content.config.ts](../src/content.config.ts)，时间类型在
+[src/lib/time.ts](../src/lib/time.ts)，关系枚举在 [src/lib/relations.ts](../src/lib/relations.ts)。
+
+---
+
+## 1. 关系模型：单向声明，两端可见
+
+### 核心约定
+
+**一条关系只需要在更相关的那一端声明一次。**
+
+```yaml
+# people/cao-cao.md 里写了这条
+relations:
+  - target: zhuge-liang
+    type: enemy
+    from: 208
+    note: 赤壁对峙
+```
+
+那么：
+
+- 曹操页 → 显示「诸葛亮 · 敌对」（正向措辞）
+- 诸葛亮页 → **也会**显示「曹操 · 敌对」，并带一个「被提及」标记
+
+这由 [src/lib/content.ts](../src/lib/content.ts) 的 `personNeighbors`（双向 Set）
+与 `getPersonRelations()` 共同实现。阅读层和图谱层共用这一张表，
+不会出现「页面能看到、图谱看不到」的漂移。
+
+### 不要做双向声明
+
+```yaml
+# 错误示范：两个页面都写，维护时必然漂移
+# cao-cao.md:  - target: zhuge-liang  type: enemy
+# zhuge-liang.md: - target: cao-cao   type: enemy
+```
+
+两端都声明时系统会去重（保留声明方那条），所以**不会重复渲染**，
+但会让你在改一处时忘记改另一处。**只在更相关的一端写。**
+
+### 反向措辞
+
+关系类型分对称（`sibling` `spouse` `kinship` `ally` `enemy` `colleague`）与
+非对称（`parent-child` `ruler-subject` `superior` `teacher-student` `recommend` `kill`）。
+
+非对称关系在目标页会用 `relationLabel(type, inverse=true)` 换措辞：
+
+| 声明方看到的 | 目标方看到的 |
+|---|---|
+| 父子 | 父/母 |
+| 君臣 | 君 |
+| 统属 | 上级 |
+| 师承 | 弟子 |
+| 举荐 | 被荐 |
+| 诛杀 | 为其所杀 |
+
+要新增类型或改措辞，只改 [src/lib/relations.ts](../src/lib/relations.ts) 一处。
+
+### 语义冲突不是错误
+
+A 对 B 声明 `ruler-subject`，B 对 A 声明 `enemy` —— 这是**两条不同的边**，
+都会保留（去重键是「无向对 + type」，类型不同就不冲突）。历史本来就常有
+「先为君臣、后成死敌」。
+
+---
+
+## 2. id 命名规则
+
+**全部小写拼音，用连字符分词，与文件名严格一致。**
+
+| 集合 | 规则 | 正例 | 反例 |
+|---|---|---|---|
+| `people` | `姓名拼音` | `zhuge-liang` `an-lushan` | `ZhugeLiang` `zhuge_liang` |
+| `events` | **`朝代-事件`** | `tang-an-lushan` `song-chenqiao` | `chibi`（无朝代前缀，扩到 300 条必然撞名） |
+| `polities` | `朝代名拼音` | `song` `ming` | `bei-song`（南北宋合并为一个政权） |
+| `sources` | `书名拼音-卷/篇` | `sanguozhi-chibi` | `sanguozhi`（同书多卷会撞） |
+
+### 历史遗留与占位约定
+
+- 现存的裸名事件（`chibi` `wencheng` 等）是早期数据，**不强制改名**，但新增事件必须带朝代前缀。
+- **`jin` 已占用给女真金朝**。将来若补西晋 / 东晋，必须用 `xi-jin` / `dong-jin`，
+  绝不能占用 `jin`。
+- 政权 `sanguo` 是聚合体（汉末三国），不是单一王朝，命名上按聚合体处理。
+
+---
+
+## 3. `significance` 分级（直接影响首屏体积）
+
+这个字段不只影响时间线图例大小，它**决定事件进不进首屏 HTML**。
+
+| 值 | 含义 | 每朝建议条数 | 会出现在 |
+|---|---|---|---|
+| 5 | 朝代更替、决定性战役、制度奠基 | 3–5 | 首屏 + 全量 |
+| 4 | 重要人物登场/退场、重大制度改革 | 15–20 | 首屏 + 全量 |
+| 3 | 一般事件 | 不限 | **仅** `/data/timeline/<世纪>.json` |
+| 2 / 1 | 备查细节 | 不限 | 仅接口 |
+
+首页与 `/timeline` 只注入 `significance >= 4` 的事件（见
+[index.astro](../src/pages/index.astro) 与 [timeline.astro](../src/pages/timeline.astro)）。
+放大到 300 年内时画布才会按世纪向接口追加 sig 较低的事件。
+
+**所以：不要把「其实挺重要但没到改朝换代」的事件随便标 5。**
+5 给太多会让首屏重新变重。
+
+---
+
+## 4. 政权：`period` 决定泳道分行
+
+```yaml
+id: song
+name: 宋
+aliases: [北宋, 南宋, 赵宋]
+span:
+  from: { year: 960 }
+  to: { year: 1279 }
+order: 70                 # 全局唯一，间隔 10，便于插入新政权
+period: imperial-mid      # 见下表
+note: 一句话说明
+coexistedWith: [liao, jin]
+```
+
+| `period` | 覆盖范围 |
+|---|---|
+| `pre-imperial` | 秦及以前 |
+| `imperial-early` | 汉、三国、两晋南北朝 |
+| `imperial-mid` | 隋唐、辽宋夏金 |
+| `imperial-late` | 元明清 |
+
+**为什么需要这个字段**：泳道行号按 `period` 内独立分配、跨 `period` 复用。
+12 个政权分成 4 个时期后只有 6–8 行，画布不会无限增高。
+详见 [content.ts](../src/lib/content.ts) 的 `getTimelineData()`。
+
+**颜色**：由政权 id 稳定哈希到 `--color-lane-1..8`（`laneColorIndex()`），
+与 `order` 无关。新增政权不需要配颜色，也不会让已有政权换色。
+
+**分行**：不按数组下标硬排，而是**按时间重叠**分配 —— 每个政权找第一条与其
+时间区间不重叠的行，找不到就新开一行。同一行内若与已有政权撞色，色号顺延。
+当前 12 个政权（-221~1912）只需 3 行。这样新增政权不会让画布无限增高。
+
+**所以 `period` 字段不决定分行**，它只用于图例分组与文案。分行纯看时间重叠。
+
+### 注意：政权占位不等于内容覆盖
+
+`polities/*.yaml` 是时间线的骨架。宋元明清的占位已经建好（`span` 到 1912），
+但**还没有事件与人物**。
+
+因此首页副标题的「覆盖跨度」**只按事件算，不含政权占位** —— 否则会写
+「到公元 1912 年，共 2133 年」，而页面上一个宋代条目都没有。
+事件才是「收录了什么」的真实边界。
+
+---
+
+## 5. 正文内链：`[[type:id]]`
+
+正文（Markdown 正文部分，不含 frontmatter）里可以直接写内链。
+
+```
+[[person:zhuge-liang]]            → 诸葛亮（自动取 name）
+[[person:zhuge-liang|孔明]]        → 孔明（自定义显示文字）
+[[event:chibi]]                   → 赤壁之战
+[[polity:tang]]                   → 唐（跳 /dynasties/tang）
+[[source:sanguozhi-chibi]]        → 《三国志》（暂无详情页，渲染为行内标记）
+```
+
+### 硬规则
+
+1. **写错 id 会让构建失败**，报错会指到具体文件。这是故意的 —— 静默渲染成
+   纯文本的错字，半年后没人查得出来。
+2. 链接自动带 `BASE_PATH`，子路径部署不会 404。**不要**手写 `/people/xxx`。
+3. `type` 只能是 `person` / `event` / `polity` / `source` 四种。
+
+实现见 [src/lib/remark-wikilink.ts](../src/lib/remark-wikilink.ts)，在
+[astro.config.mjs](../astro.config.mjs) 的 `markdown.remarkPlugins` 注册。
+
+> 注意：Astro 7 默认使用 Sätteri 处理器，启用 remark 插件需要
+> `@astrojs/markdown-remark` 依赖（已加入 `devDependencies`）。
+
+---
+
+## 6. 时间写法
+
+时间类型定义在 [src/lib/time.ts](../src/lib/time.ts)。
+
+```yaml
+# 单点
+time:
+  from: { year: 208 }
+  to: null
+
+# 区间
+time:
+  from: { year: 755 }
+  to: { year: 763 }
+
+# 带年号与原文（推荐用于史料精确的条目）
+time:
+  from:
+    year: 755
+    era: 天宝
+    eraYear: 14
+    raw: 天宝十四载十一月
+```
+
+规则：
+
+- **负数表示公元前**，且**不允许 `year: 0`**（schema 会拒绝，因为不存在公元 0 年）。
+- 不确定的年份加 `approx: true`，会在页面上显示「约」。
+- `raw` 优先于年号显示，用于「约公元前 1046 年」这类原文。
+
+---
+
+## 7. 史料（`sources`）
+
+```yaml
+id: sanguozhi-chibi
+title: 三国志
+volume: 卷五十四·吴书·周瑜传
+author: 陈寿
+composed: 约公元 289 年
+quote: 瑜部将黄盖曰：「今寇众我寡，难与持久……」
+note: 版本、异文等备注（可选）
+```
+
+- **暂无 `/sources/[id]` 详情页**。史料只以引文块形式嵌在事件页与人物页里。
+- 正文内链 `[[source:xxx]]` 会渲染成《书名》行内标记，**不跳转**。
+- 正文脚注 `[^source-id]` 会在文末生成可展开的「史料出处」区块，见下节。
+
+### 史料 id 的命名与用途
+
+id 应体现「书名 + 定位」，便于判断适用场合：
+
+```
+shiji-gaozu            史记·高祖本纪
+hanshu-wudi            汉书·武帝纪
+jinshu-huandi          晋书·孝怀帝纪
+zizhitongjian-feishui  资治通鉴·晋纪（淝水）
+songshi-yuefei         宋史·岳飞传
+```
+
+**一条史料只能覆盖它真正记载的事**。曾出现「永嘉之乱」引用《晋书·武帝纪》的错误 ——
+武帝纪讲的是西晋建国，不是永嘉之乱；正确出处是《晋书·孝怀帝纪》。
+写内容时若发现某事件找不到贴切史料，**宁可补一条新史料，也不要硬套现有的**。
+
+---
+
+## 8. 正文脚注：`[^source-id]`
+
+内链用于「跳转到另一个条目」，脚注用于「这里引的是哪本书、原文怎么说」。
+两者语法不同、用途不同，不要混用。
+
+### 写法
+
+```
+曹操南征荆州。（正文）[^sanguozhi-chibi]
+```
+
+渲染结果：
+
+- 正文里出现上标 `[1]`，悬停显示《三国志》卷五十四·吴书·周瑜传，点击滚到文末
+- 文末自动生成一个默认收起的区块：
+
+```
+史料出处 · 1 条
+  1 《三国志》卷五十四·吴书·周瑜传  陈寿 · 约公元 289 年
+    瑜部将黄盖曰：「今寇众我寡，难与持久……」
+```
+
+### 为什么是这个设计
+
+史料已经在 `sources/*.yaml` 里结构化存储（书名、卷次、作者、原文）。
+如果照搬 GFM 的脚注语法，作者需要把注释文本再在正文里写一遍：
+
+```markdown
+正文 [^1]
+[^1]: 《三国志》卷五十四……（重复一遍 yaml 里的内容）
+```
+
+这样两处必然漂移。本站的做法是**正文只写 id，内容从 yaml 取**，一条史料只维护一处。
+
+### 硬规则
+
+1. **写错 id 会让构建失败**，报错指出文件与缺失的 id。
+2. 编号按**首次出现顺序**自动分配，同一 id 多次引用共用同一编号。
+3. 支持 `[^source-id|自定义文字]` 让上标显示自定义文字（仍参与编号）。
+4. 脚注由 [src/lib/remark-footnote.ts](../src/lib/remark-footnote.ts) 实现。
+
+> **实现注意**：插件运行在 **mdast 阶段**，因此构造节点必须用 mdast 原生类型
+> （`emphasis` / `paragraph` / `list` / `listItem`）配 `data.hName` + `data.hProperties`，
+> **不能**用 hast 的 `type: 'element' / tagName` —— remarkRehype 不认后者，
+> 会落到默认 handler 上，表现为输出一堆没样式的 `<div>`。
+>
+> 另：Astro 默认 `gfm: true`，`[^id]` 在**有配对定义**时才被解析成
+> `footnoteReference`；本站不写定义，所以它保持为纯文本，由插件接管。
+> 插件同时处理了 `footnoteReference` 节点作为兜底。
+
+---
+
+## 9. 新增内容的完整流程
+
+```bash
+# 1. 写内容（政权 → 人物 → 事件，顺序无关但引用不能悬空）
+#    新增人物记得给 relations，否则图谱里是孤岛
+
+# 2. 校验引用完整性 + 硬编码路径
+npm run validate
+
+# 3. 类型检查
+npm run check
+
+# 4. 构建
+npm run build
+```
+
+### 每批内容的自检清单
+
+- [ ] 新增政权的 `period` 填了，`order` 不与现有冲突
+- [ ] 事件 id 带朝代前缀
+- [ ] `significance` 5 的条数没超过 5 条
+- [ ] 每个新人物至少有 1 条 `relations`（不是孤岛）
+- [ ] 每个朝代至少 2 条**跨朝代**关系边（否则时间线被切成互不相连的孤岛）
+- [ ] `sources` 里的史料**真的记载了这件事**（不要硬套不相关的本纪）
+- [ ] 关键论断处加了 `[^source-id]` 脚注
+- [ ] `npm run validate` 零 error
+
+### 三条命令各自管什么
+
+| 命令 | 管什么 | 漏了会怎样 |
+|---|---|---|
+| `npm run validate` | 外键悬空、枚举值、组件硬编码路径 | 构建失败或线上 404 |
+| `npm run check` | TypeScript 类型 | 构建失败 |
+| `npm run build` | Zod schema（最严格）、Markdown 编译 | 构建失败 |
+
+`validate` 是**前置快检**（正则扫描，秒级），`build` 是**最终裁决**（Zod 全量校验）。
+两者有重叠但不完全等价：validate 覆盖不到的 schema 细节由 build 兜住。
+
+---
+
+## 10. 为什么不能用相对路径
+
+`astro.config.mjs` 里 `build.inlineStylesheets: 'always'` —— 样式全部内联进 HTML。
+这意味着 CSS 不再有独立文件 URL，**任何相对路径都会相对页面 URL 解析**。
+历史上的教训：`@font-face` 用 `../fonts/` 导致 `/people/xxx/` 上解析成
+`/people/fonts/`，**72/77 页字体 404**（后来整个 webfont 方案已废弃）。
+
+同理，Vue 组件里手写 `` :href="`/people/${id}`" `` 会绕过 `BASE_PATH`，
+在 GitHub Pages 项目站（`base = '/<repo>'`）下跳到域名根。
+
+**规则**：
+
+- `.astro` 文件里用 `url()` （[src/lib/url.ts](../src/lib/url.ts)）
+- `.vue` 组件里用 `personHref()` / `eventHref()` 等（[src/lib/nav.ts](../src/lib/nav.ts)）
+- Markdown 正文里用 `[[type:id]]`
+
+`npm run validate` 会扫描 `src/components/**/*.vue`，发现硬编码站内绝对路径就报 error。

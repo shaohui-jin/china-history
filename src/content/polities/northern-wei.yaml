@@ -1,0 +1,16 @@
+id: northern-wei
+name: 北魏
+aliases:
+  - 元魏
+  - 拓跋魏
+span:
+  from:
+    year: 386
+  to:
+    year: 534
+order: 45
+period: imperial-early
+note: 鲜卑拓跋氏所建，统一北方近百年。孝文帝迁都洛阳、改汉姓、易汉服，为北朝汉化的关键。后分裂为东魏、西魏。
+coexistedWith:
+  - dong-jin
+  - liu-song

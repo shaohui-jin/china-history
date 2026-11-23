@@ -11,7 +11,7 @@
  */
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import { toOrdinal, overlapsYear, type HRange } from './time';
-import { relationMeta, type RelationStrength, type RelationType } from './relations';
+import { relationMeta, relationLabel, type RelationStrength, type RelationType } from './relations';
 
 export type Person = CollectionEntry<'people'>;
 export type Event = CollectionEntry<'events'>;
@@ -29,8 +29,17 @@ export interface ContentIndex {
   sources: Map<string, Source>;
   /** 人物 → 参与的事件 id 列表 */
   personEvents: Map<string, string[]>;
-  /** 人物 → 关系中涉及的其他人物 id */
-  personNeighbors: Map<string, string[]>;
+  /**
+   * 人物 → 关系中涉及的其他人物 id（**双向**）。
+   *
+   * 为什么是双向：关系只需要在**一端**声明。A 的页面里写了「A 辅佐 B」，
+   * B 的页面就必须能列出 A，否则用户顺着 B 找不到 A。
+   * 所以这里同时记出边与入边，Set 天然去重（两端都声明也只有一个元素）。
+   *
+   * 阅读层（人物页「相关人物」）与图谱层（getEgoNetwork 的 BFS）共用这一张表，
+   * 避免两处各自遍历 relations 而漂移。
+   */
+  personNeighbors: Map<string, Set<string>>;
 }
 
 let cached: ContentIndex | null = null;
@@ -65,12 +74,19 @@ export async function loadIndex(): Promise<ContentIndex> {
     }
   }
 
-  const personNeighbors = new Map<string, string[]>();
+  const personNeighbors = new Map<string, Set<string>>();
+  const addNeighbor = (a: string, b: string) => {
+    const cur = personNeighbors.get(a);
+    if (cur) cur.add(b);
+    else personNeighbors.set(a, new Set([b]));
+  };
   for (const p of people.values()) {
-    personNeighbors.set(
-      p.data.id,
-      p.data.relations.map((r) => r.target.id),
-    );
+    for (const r of p.data.relations) {
+      // 出边：这一端自己声明的
+      addNeighbor(p.data.id, r.target.id);
+      // 入边：目标那一端也要能看到，否则「A 辅佐 B」在 B 页上找不到 A
+      addNeighbor(r.target.id, p.data.id);
+    }
   }
 
   cached = { people, events, polities, sources, personEvents, personNeighbors };
@@ -101,6 +117,89 @@ export async function getPersonEvents(personId: string): Promise<Event[]> {
   const index = await loadIndex();
   const ids = new Set(index.personEvents.get(personId) ?? []);
   return index.events.filter((e) => ids.has(e.data.id));
+}
+
+/**
+ * 与某人物直接相关的全部关系（双向）。
+ *
+ * 每条边只在**一端**声明。声明方读到的是正向语义（「我辅佐他」），
+ * 被提及方读到的是反向语义（「他为我之君」），由 relationLabel(type, inverse)
+ * 换措辞。两端都显式声明的同类型关系只输出一次。
+ *
+ * 返回按「强关系优先 → 名称」排序，便于页面直接渲染。
+ */
+export interface PersonRelation {
+  /** 对方人物 id */
+  otherId: string;
+  other: Person;
+  type: RelationType;
+  strength: RelationStrength;
+  /** 当前页是否为声明方。false 表示这条边是别人页里写的入边 */
+  outgoing: boolean;
+  /** 关系描述（已按方向换算措辞） */
+  label: string;
+  from?: number;
+  to?: number;
+  note?: string;
+}
+
+export async function getPersonRelations(personId: string): Promise<PersonRelation[]> {
+  const index = await loadIndex();
+  const self = index.people.get(personId);
+  if (!self) return [];
+
+  const out: PersonRelation[] = [];
+  /** 去重键（无向对 + 类型）→ 是否已收。声明方优先，入边只在无人声明时补 */
+  const seen = new Set<string>();
+
+  const keyOf = (a: string, b: string, type: RelationType) =>
+    [a, b].sort().join('|') + '::' + type;
+
+  // 1) 自己声明的出边：正向语义
+  for (const rel of self.data.relations) {
+    const other = index.people.get(rel.target.id);
+    if (!other) continue;
+    seen.add(keyOf(personId, other.data.id, rel.type));
+    out.push({
+      otherId: other.data.id,
+      other,
+      type: rel.type,
+      strength: rel.strength,
+      outgoing: true,
+      label: relationMeta[rel.type].label,
+      from: rel.from,
+      to: rel.to,
+      note: rel.note,
+    });
+  }
+
+  // 2) 别人声明、指向自己的入边：反向语义（措辞由 relationLabel 换算）
+  for (const p of index.people.values()) {
+    if (p.data.id === personId) continue;
+    for (const rel of p.data.relations) {
+      if (rel.target.id !== personId) continue;
+      const key = keyOf(personId, p.data.id, rel.type);
+      if (seen.has(key)) continue; // 两端都声明了，只留声明方那条
+      seen.add(key);
+      out.push({
+        otherId: p.data.id,
+        other: p,
+        type: rel.type,
+        strength: rel.strength,
+        outgoing: false,
+        label: relationLabel(rel.type, true),
+        from: rel.from,
+        to: rel.to,
+        note: rel.note,
+      });
+    }
+  }
+
+  return out.sort((a, b) => {
+    const sa = a.strength === 'primary' ? 0 : 1;
+    const sb = b.strength === 'primary' ? 0 : 1;
+    return sa - sb || a.other.data.name.localeCompare(b.other.data.name, 'zh');
+  });
 }
 
 /** 某事件的参与者（带人物条目） */
@@ -179,26 +278,29 @@ export async function getEgoNetwork(
 
   const nodeIds = new Set<string>(focusIds.filter((id) => index.people.has(id)));
   let frontier = [...nodeIds];
+  let truncated = false;
 
-  // BFS 扩展
-  for (let d = 0; d < depth; d++) {
+  // BFS 扩展。沿 personNeighbors（双向表）走，这样只在别人页里声明过
+  // 的入边也能把节点带进来。
+  for (let d = 0; d < depth && !truncated; d++) {
     const next: string[] = [];
     for (const id of frontier) {
-      const person = index.people.get(id);
-      if (!person) continue;
-      for (const rel of person.data.relations) {
-        const target = rel.target.id;
+      const neighbors = index.personNeighbors.get(id);
+      if (!neighbors) continue;
+      for (const target of neighbors) {
         if (!index.people.has(target) || nodeIds.has(target)) continue;
-        if (nodeIds.size >= maxNodes) break;
+        if (nodeIds.size >= maxNodes) {
+          // 超出上限：记下「确实还有没进来的」，不要用 size === maxNodes 猜
+          truncated = true;
+          break;
+        }
         nodeIds.add(target);
         next.push(target);
       }
+      if (truncated) break;
     }
-    if (nodeIds.size >= maxNodes) break;
     frontier = next;
   }
-
-  const truncated = nodeIds.size >= maxNodes ? 1 : 0;
 
   const nodes: GraphNode[] = [...nodeIds]
     .map((id) => index.people.get(id))
@@ -254,7 +356,7 @@ export async function getEgoNetwork(
     }
   }
 
-  return { nodes, edges, truncated };
+  return { nodes, edges, truncated: truncated ? 1 : 0 };
 }
 
 /* ------------------------------------------------------------------ *
@@ -266,8 +368,21 @@ export interface TimelineLane {
   label: string;
   start: number;
   end: number;
-  /** 泳道序号，1-8，对应 --color-lane-N */
+  /**
+   * 色号 1-8，对应 --color-lane-N。
+   *
+   * 注意：这**不是**行号。颜色由政权 id 稳定哈希得出，保证同一政权
+   * 无论内容怎么增删都保持同色，且不同政权撞色概率均摊。
+   * （旧实现是 `(i % 8) + 1`，政权超过 8 个后第 9 个会和第 1 个撞色。）
+   */
   laneIndex: number;
+  /**
+   * 真实行号，从 0 开始。同一 period 内的政权各占一行，
+   * 不同 period 复用行号 —— 画布高度由它决定。
+   */
+  rowIndex: number;
+  /** 时期分组，用于分行与图例 */
+  period: string;
 }
 
 export interface TimelineItem {
@@ -289,6 +404,33 @@ export interface TimelineData {
   categoryLabels: Record<string, string>;
 }
 
+/** 泳道配色数量，与 design/tokens.ts 的 --color-lane-1..8 对应 */
+const LANE_COLOR_COUNT = 8;
+
+/**
+ * 政权 id → 稳定色号（1..8）。
+ *
+ * 为什么用哈希而不是数组下标：下标会随「新增一个 order 更小的政权」
+ * 而整体平移，导致所有政权换色。哈希只取决于 id 本身。
+ * FNV-1a 足够离散，且实现只有三行。
+ */
+function laneColorIndex(id: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < id.length; i++) {
+    h ^= id.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return (Math.abs(h) % LANE_COLOR_COUNT) + 1;
+}
+
+/** 两个政权的时间区间是否重叠（端点相接也算重叠，否则视觉上贴在一起） */
+function spansOverlap(
+  a: { start: number; end: number },
+  b: { start: number; end: number },
+): boolean {
+  return a.start <= b.end && b.start <= a.end;
+}
+
 /** 构建时间线索引：泳道按政权起止年，事件挂到其政权上 */
 export async function getTimelineData(): Promise<TimelineData> {
   const index = await loadIndex();
@@ -297,13 +439,64 @@ export async function getTimelineData(): Promise<TimelineData> {
     (a, b) => a.data.order - b.data.order,
   );
 
-  const lanes: TimelineLane[] = polities.map((p, i) => ({
-    id: p.data.id,
-    label: p.data.name,
-    start: p.data.span.from.year,
-    end: p.data.span.to?.year ?? p.data.span.from.year,
-    laneIndex: (i % 8) + 1,
-  }));
+  /**
+   * 行号分配：**按时间重叠**分道，而不是按数组下标硬排。
+   *
+   * 旧实现是 `laneIndex = (i % 8) + 1` 且画布用数组下标定位行，
+   * 于是有两种浪费：
+   * 1. 政权超过 8 个就撞色
+   * 2. 时间上完全不重叠的政权（如秦与宋）也各占一行，画布白白变高
+   *
+   * 现在的规则：
+   * - 依次处理政权（按 order），每个政权找**第一条与已占用区间都不重叠**的行
+   * - 找不到就新开一行
+   * - 颜色由 id 哈希决定，但与「同一行上已有政权」撞色时顺延到下一个色号，
+   *   保证同一行（视觉上最容易混淆的位置）不会有同色
+   *
+   * 这样 12 个政权（时间跨度 -221~1912）通常只需要 3-5 行。
+   */
+  const rows: Array<Array<{ start: number; end: number; color: number }>> = [];
+  const assignments = polities.map((p) => {
+    const start = p.data.span.from.year;
+    const end = p.data.span.to?.year ?? start;
+    const baseColor = laneColorIndex(p.data.id);
+
+    for (let r = 0; r < rows.length; r++) {
+      // 该行上已有的政权不能与当前时间重叠
+      if (rows[r].some((o) => spansOverlap({ start, end }, o))) continue;
+      // 同色顺延，避免同一行出现两支同色
+      const used = new Set(rows[r].map((o) => o.color));
+      let color = baseColor;
+      for (let k = 0; k < LANE_COLOR_COUNT && used.has(color); k++) {
+        color = (color % LANE_COLOR_COUNT) + 1;
+      }
+      rows[r].push({ start, end, color });
+      return { id: p.data.id, start, end, rowIndex: r, laneIndex: color, period: p.data.period };
+    }
+
+    rows.push([{ start, end, color: baseColor }]);
+    return {
+      id: p.data.id,
+      start,
+      end,
+      rowIndex: rows.length - 1,
+      laneIndex: baseColor,
+      period: p.data.period,
+    };
+  });
+
+  const lanes: TimelineLane[] = assignments.map((a) => {
+    const p = index.polities.get(a.id)!;
+    return {
+      id: a.id,
+      label: p.data.name,
+      start: a.start,
+      end: a.end,
+      laneIndex: a.laneIndex,
+      rowIndex: a.rowIndex,
+      period: a.period,
+    };
+  });
 
   const items: TimelineItem[] = index.events.map((e) => ({
     id: e.data.id,
@@ -316,11 +509,23 @@ export async function getTimelineData(): Promise<TimelineData> {
     summary: e.data.summary,
   }));
 
-  // 全域：所有泳道与事件的并集，留 5% 余量
-  const years = [
-    ...lanes.flatMap((l) => [l.start, l.end]),
-    ...items.flatMap((i) => [i.year, i.endYear]),
-  ];
+  /**
+   * 全域横轴：**只按事件算，不含政权占位**。
+   *
+   * 为什么不能把政权 span 算进来：政权的 yaml 是时间线的骨架，
+   * 宋元明清的占位已经建好（span 到 1912），但还没有任何事件。
+   * 若把政权算进来，横轴会拉到 1912，而 763 之后 54% 的区域全是空白 ——
+   * 用户看到的是一条右半边空的轴，比不显示更糟。
+   *
+   * 政权条仍按自身 span 绘制，超出 domain 的部分由画布裁剪（xOf 已 clamp）。
+   * 补完宋元明清的事件后，domain 会自动跟着事件往后延。
+   */
+  const years = items.flatMap((i) => [i.year, i.endYear]).filter(Number.isFinite);
+  if (years.length === 0) {
+    // 极端兜底：一条事件都没有时，用政权跨度撑住坐标系，否则 Math.min(...[]) 得 Infinity
+    const fallback = lanes.flatMap((l) => [l.start, l.end]);
+    years.push(...fallback);
+  }
   const min = Math.min(...years);
   const max = Math.max(...years);
   const pad = Math.max(10, Math.round((max - min) * 0.05));

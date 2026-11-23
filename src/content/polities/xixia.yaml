@@ -1,0 +1,18 @@
+id: xixia
+name: 西夏
+aliases:
+  - 大白高国
+  - 党项
+  - 西夏国
+span:
+  from:
+    year: 1038
+  to:
+    year: 1227
+order: 72
+period: imperial-mid
+note: 党项拓跋氏所建，据河西走廊，与宋、辽、金长期三方角力，创制西夏文。
+coexistedWith:
+  - song
+  - liao
+  - jin

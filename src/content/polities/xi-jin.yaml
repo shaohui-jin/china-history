@@ -1,0 +1,14 @@
+id: xi-jin
+name: 西晋
+aliases:
+  - 晋
+  - 司马晋
+span:
+  from:
+    year: 266
+  to:
+    year: 316
+order: 44
+period: imperial-early
+note: 司马炎代魏建晋，短暂统一（280 年灭吴），然八王之乱与永嘉之祸接踵而至，中原沦丧。
+coexistedWith: []

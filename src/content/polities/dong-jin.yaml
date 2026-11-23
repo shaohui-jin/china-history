@@ -1,0 +1,15 @@
+id: dong-jin
+name: 东晋
+aliases:
+  - 江左
+  - 司马晋
+span:
+  from:
+    year: 317
+  to:
+    year: 420
+order: 46
+period: imperial-early
+note: 永嘉之乱后衣冠南渡，司马睿于建康重建晋室。门阀政治与玄学清谈为其时代特征，北伐屡起而终无成。
+coexistedWith:
+  - northern-wei

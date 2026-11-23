@@ -175,6 +175,161 @@ for (const f of listDir('events')) {
   }
 }
 
+/* ---------------- 枚举值校验 ---------------- */
+
+/**
+ * Zod 会校验枚举，但只在 `astro build` 时。validate 用的是自己的正则解析，
+ * 所以枚举写错（如把 participants.role 写成 enemy）会漏过去，
+ * 直到构建才炸。这里补上前置检查，让 CI 的 validate 步骤就能拦下。
+ *
+ * 注意：这里的枚举必须与 src/content.config.ts 保持同步。
+ */
+const EVENT_CATEGORIES = new Set([
+  'political',
+  'military',
+  'institution',
+  'culture',
+  'science',
+  'disaster',
+]);
+const PARTICIPANT_ROLES = new Set(['leader', 'participant', 'victim']);
+const RELATION_TYPES = new Set([
+  'parent-child',
+  'sibling',
+  'spouse',
+  'kinship',
+  'ruler-subject',
+  'superior',
+  'teacher-student',
+  'recommend',
+  'ally',
+  'enemy',
+  'kill',
+  'colleague',
+]);
+const POLITY_PERIODS = new Set(['pre-imperial', 'imperial-early', 'imperial-mid', 'imperial-late']);
+
+for (const f of listDir('events')) {
+  const fm = readFrontmatter(join(ROOT, 'events', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+
+  // significance 必须 1..5
+  const sig = pick(raw, 'significance');
+  if (sig !== null) {
+    const n = Number(sig);
+    if (!Number.isInteger(n) || n < 1 || n > 5) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `significance 必须是 1-5 的整数，实际为 ${sig}`,
+      });
+    }
+  }
+
+  // categories 必须在枚举内
+  const catBlock = raw.match(/^categories:\s*\n((?:\s+-\s+.+\n?)+)/m);
+  if (catBlock) {
+    for (const line of catBlock[1].split('\n')) {
+      const m2 = line.match(/^\s+-\s+(\S+)\s*$/);
+      if (m2 && !EVENT_CATEGORIES.has(m2[1])) {
+        issues.push({
+          level: 'error',
+          where: `events/${id}`,
+          message: `categories 含非法值「${m2[1]}」，可用：${[...EVENT_CATEGORIES].join(' / ')}`,
+        });
+      }
+    }
+  }
+
+  // participants.role 必须在枚举内
+  for (const m2 of raw.matchAll(/^\s+role:\s*(\S+)\s*$/gm)) {
+    if (!PARTICIPANT_ROLES.has(m2[1])) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `participants.role 含非法值「${m2[1]}」，可用：${[...PARTICIPANT_ROLES].join(' / ')}`,
+      });
+    }
+  }
+}
+
+// 人物 relations[].type 必须在枚举内
+for (const f of listDir('people')) {
+  const fm = readFrontmatter(join(ROOT, 'people', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+  for (const m2 of raw.matchAll(/^\s+type:\s*(\S+)\s*$/gm)) {
+    if (!RELATION_TYPES.has(m2[1])) {
+      issues.push({
+        level: 'error',
+        where: `people/${id}`,
+        message: `relations.type 含非法值「${m2[1]}」，可用：${[...RELATION_TYPES].join(' / ')}`,
+      });
+    }
+  }
+}
+
+// 政权 period 必须在枚举内
+for (const f of listDir('polities')) {
+  const fm = readFrontmatter(join(ROOT, 'polities', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+  const period = pick(raw, 'period');
+  if (period !== null && !POLITY_PERIODS.has(period)) {
+    issues.push({
+      level: 'error',
+      where: `polities/${id}`,
+      message: `period 含非法值「${period}」，可用：${[...POLITY_PERIODS].join(' / ')}`,
+    });
+  }
+}
+
+/* ---------------- 组件内硬编码绝对路径 ---------------- */
+
+/**
+ * 扫描 src/components/**\/*.vue 里的硬编码站内绝对路径。
+ *
+ * 为什么要查：Vue 组件不经过 lib/url.ts 的 url()，如果写成
+ * `` :href="`/people/${id}`" ``，在 GitHub Pages 项目站（base = '/<repo>'）
+ * 下会跳到域名根直接 404。历史上 RelationList / RelationGraph /
+ * GraphExplorer / TimelineVertical 四处都犯过。
+ *
+ * 正确写法：import { personHref } from '../../lib/nav' 后用 personHref(id)。
+ */
+const COMPONENTS = join(ROOT, '..', '..', 'src', 'components');
+
+function walkVue(dir: string, out: string[] = []): string[] {
+  if (!existsSync(dir)) return out;
+  for (const n of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, n.name);
+    if (n.isDirectory()) walkVue(p, out);
+    else if (n.name.endsWith('.vue')) out.push(p);
+  }
+  return out;
+}
+
+/** 模板里出现 `/people/` 这类根路径（不含 ${...} 的纯字面量也算） */
+const HARDCODED_ROUTE = /["'`]\/(people|events|dynasties|graph|timeline|search|styleguide)\b/;
+
+for (const file of walkVue(COMPONENTS)) {
+  const lines = readFileSync(file, 'utf8').split('\n');
+  lines.forEach((line, i) => {
+    // 注释与文档示例放过
+    if (/^\s*(\*|\/\/|<!--)/.test(line)) return;
+    if (HARDCODED_ROUTE.test(line)) {
+      issues.push({
+        level: 'error',
+        where: file.slice(join(ROOT, '..', '..').length + 1).replace(/\\/g, '/'),
+        message: `第 ${i + 1} 行硬编码了站内绝对路径，子路径部署会 404。改用 lib/nav.ts 的 personHref / eventHref 等`,
+      });
+    }
+  });
+}
+
 /* ---------------- 输出 ---------------- */
 
 const errors = issues.filter((i) => i.level === 'error');

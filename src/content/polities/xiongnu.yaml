@@ -8,6 +8,7 @@ span:
   to:
     year: 91
 order: 20
+period: imperial-early
 note: 秦汉之际北方草原霸主，与汉朝形成长期的和战格局。
 coexistedWith:
   - han

@@ -10,6 +10,7 @@ span:
   to:
     year: 220
 order: 30
+period: imperial-early
 note: 四百年国祚，奠定"汉"作为族群与文化认同的名称。
 coexistedWith:
   - xiongnu

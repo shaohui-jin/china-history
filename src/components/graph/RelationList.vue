@@ -7,6 +7,7 @@
  */
 import { computed } from 'vue';
 import type { EgoNetwork } from '../../lib/content';
+import { personHref } from '../../lib/nav';
 import { relationMeta, type RelationType } from '../../lib/relations';
 
 interface Props {
@@ -125,7 +126,7 @@ const miniNodes = computed(() => {
         </h5>
         <ul class="rel__list">
           <li v-for="r in items" :key="r.id">
-            <a class="rel__item" :class="{ 'rel__item--weak': r.strength === 'weak' }" :href="`/people/${r.id}`">
+            <a class="rel__item" :class="{ 'rel__item--weak': r.strength === 'weak' }" :href="personHref(r.id)">
               <span class="rel__name">{{ r.name }}</span>
               <span v-if="r.note" class="rel__note u-ui">{{ r.note }}</span>
               <span v-if="r.strength === 'weak'" class="rel__weak-tag u-ui">次要</span>
@@ -229,7 +230,7 @@ const miniNodes = computed(() => {
   color: var(--color-ink-faint);
   border: 1px solid var(--color-border);
   border-radius: 2px;
-  padding: 0 0.2rem;
+  padding: 0 3.2px;
   margin-left: auto;
 }
 

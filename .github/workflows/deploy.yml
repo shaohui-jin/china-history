@@ -30,15 +30,6 @@ jobs:
           node-version: 22
           cache: npm
 
-      # 字体源文件 46MB，缓存后避免每次构建重复下载。
-      # key 里的版本号必须与 scripts/build-fonts.ts 的 FONT_VERSION 保持一致，
-      # 否则换了字体版本仍会命中旧缓存，切出错误的子集。
-      - name: Cache font sources
-        uses: actions/cache@v6
-        with:
-          path: .cache/fonts
-          key: fonts-lxgw-v1.520
-
       - name: Install dependencies
         run: npm ci
 
@@ -59,8 +50,17 @@ jobs:
         run: npm run check
 
       # 内容校验：引用断了就让 CI 失败，不让错数据上线
+      # 同时扫描组件里硬编码的站内绝对路径（子路径部署会 404）
       - name: Validate content
         run: npm run validate
+
+      # 样式令牌约束：颜色必须走 var(--color-*)，不写裸色值
+      - name: Lint styles
+        run: npm run lint:css
+
+      # 纯函数单测：时间格式、区间求交、关系去重键
+      - name: Unit tests
+        run: npm test
 
       - name: Build
         env:

@@ -1,0 +1,16 @@
+id: bei-qi
+name: 北齐
+aliases:
+  - 高齐
+span:
+  from:
+    year: 550
+  to:
+    year: 577
+order: 48
+period: imperial-early
+note: 高洋代东魏建齐，都邺城。据有河北、山东、山西、河南大部，国力本强于北周，然君主多荒暴，终为北周所灭。
+coexistedWith:
+  - nan-liang
+  - nan-chen
+  - bei-zhou

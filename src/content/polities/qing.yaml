@@ -1,0 +1,15 @@
+id: qing
+name: 清
+aliases:
+  - 大清
+  - 满清
+span:
+  from:
+    year: 1636
+  to:
+    year: 1912
+order: 100
+period: imperial-late
+note: 最后一个帝制王朝，疆域极盛于乾隆朝，鸦片战争后进入近代变局。
+coexistedWith:
+  - ming

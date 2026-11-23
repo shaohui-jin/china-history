@@ -1,0 +1,13 @@
+id: sui
+name: 隋
+aliases:
+  - 杨隋
+span:
+  from:
+    year: 581
+  to:
+    year: 618
+order: 55
+period: imperial-mid
+note: 杨坚代周建隋，589 年灭陈，结束近三百年分裂。创三省六部、科举、均田、大运河，然炀帝滥用民力，二世而亡。
+coexistedWith: []

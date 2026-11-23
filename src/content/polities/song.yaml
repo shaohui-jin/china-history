@@ -1,0 +1,17 @@
+id: song
+name: 宋
+aliases:
+  - 北宋
+  - 南宋
+  - 赵宋
+span:
+  from:
+    year: 960
+  to:
+    year: 1279
+order: 70
+period: imperial-mid
+note: 文治极盛而武功不振，经济与技术在同期世界居首，最终亡于蒙元。
+coexistedWith:
+  - liao
+  - jin

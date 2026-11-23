@@ -9,6 +9,7 @@ span:
   to:
     year: 907
 order: 60
+period: imperial-mid
 note: 开元盛世为中国中古鼎盛期；安史之乱后由盛转衰，藩镇割据成形。
 coexistedWith:
   - tujue

@@ -13,6 +13,13 @@ import { RELATION_TYPES } from './lib/relations';
  * 政权
  * ------------------------------------------------------------------ */
 
+export const POLITY_PERIODS = [
+  'pre-imperial',
+  'imperial-early',
+  'imperial-mid',
+  'imperial-late',
+] as const;
+
 const polities = defineCollection({
   loader: glob({ pattern: '**/*.yaml', base: './src/content/polities' }),
   schema: z.object({
@@ -25,6 +32,12 @@ const polities = defineCollection({
     span: HRange,
     /** 排序权重，越小越靠前（用于时间线泳道顺序） */
     order: z.number().int().default(100),
+    /**
+     * 时期分组。时间线泳道按 period 分行：同一时期并存的政权占独立行，
+     * 不同时期的政权复用行号。这样政权数超过 8 个也不会把画布撑得无限高。
+     * 缺省按下限兜底，避免旧数据构建失败。
+     */
+    period: z.enum(POLITY_PERIODS).default('imperial-early'),
     /** 一句话说明 */
     note: z.string().optional(),
     /** 与哪些政权并存过 */

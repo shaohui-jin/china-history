@@ -1,0 +1,14 @@
+id: ming
+name: 明
+aliases:
+  - 大明
+  - 朱明
+span:
+  from:
+    year: 1368
+  to:
+    year: 1644
+order: 90
+period: imperial-late
+note: 废丞相、设内阁，郑和下西洋与《永乐大典》为前期盛况，后期财政与边患并困。
+coexistedWith: []

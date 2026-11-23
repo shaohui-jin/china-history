@@ -1,0 +1,15 @@
+id: bei-zhou
+name: 北周
+aliases:
+  - 宇文周
+span:
+  from:
+    year: 557
+  to:
+    year: 581
+order: 49
+period: imperial-early
+note: 宇文觉代西魏建周，都长安。创府兵制、行六官，融胡汉为一体。周武帝灭北齐统一北方，然宣帝荒淫，终为杨坚所代，隋承其制。
+coexistedWith:
+  - bei-qi
+  - nan-chen

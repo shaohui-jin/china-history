@@ -10,7 +10,9 @@
  * - 尺寸上限 400px 并在容器内居中，宽容器里不会摊得过大。
  *
  * 注意：完整的关系探索用 RelationGraph.vue（Cytoscape）。
- * 这里是轻量嵌入版，用于人物页侧栏与设计样张。
+ * 这里是轻量嵌入版，**仅用于设计样张（styleguide）与 ViewportLab**，
+ * 生产页面（人物页）已改用 RelationGraph。保留它是因为它验证了
+ * 「1:1 像素 SVG 布局」这个方案，对后续做静态分享图（OG image）有参考价值。
  */
 import { computed, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue';
 import type { EgoNetwork } from '../../lib/content';
@@ -275,7 +277,7 @@ onBeforeUnmount(() => ro?.disconnect());
 .eg__legend-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: 6px;
 }
 
 .eg__line {

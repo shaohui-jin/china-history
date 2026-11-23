@@ -22,17 +22,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
 
-      # 字体源文件 46MB，缓存后避免每次构建重复下载
+      # 字体源文件 46MB，缓存后避免每次构建重复下载。
+      # key 里的版本号必须与 scripts/build-fonts.ts 的 FONT_VERSION 保持一致，
+      # 否则换了字体版本仍会命中旧缓存，切出错误的子集。
       - name: Cache font sources
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: .cache/fonts
           key: fonts-lxgw-v1.520
@@ -40,23 +42,35 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # base 必须与仓库名一致，否则站内链接全部 404。
-      # 用户站（<user>.github.io 仓库）时 base 应为 '/'，把下面改成 BASE_PATH: /
-      - name: Build
-        env:
-          SITE_URL: ${{ format('https://{0}.github.io', github.repository_owner) }}
-          BASE_PATH: ${{ format('/{0}', github.event.repository.name) }}
-        run: npm run build
+      # 必须放在 Build 之前：后面要用它输出的 origin / base_path 拼 SITE_URL / BASE_PATH。
+      # 这样自定义域名、用户站（base 为空）、项目站（base 为 /repo）三种情况都自动正确，
+      # 不需要在 workflow 里手写 format 拼字符串。
+      #
+      # 注意：这一步要求仓库已启用 Pages 且 build_type=workflow。
+      # 若报 "Get Pages site failed ... Not Found"，说明 Pages 未启用，需先执行一次：
+      #   gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow
+      # （enablement: true 参数需要 PAT，GITHUB_TOKEN 无权限自动启用）
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v6
 
-      # 构建期跑内容校验：引用断了就让 CI 失败，不让错数据上线
+      # 类型检查：任何 TS 错误都让 CI 失败，不让它混进构建产物
+      - name: Type check
+        run: npm run check
+
+      # 内容校验：引用断了就让 CI 失败，不让错数据上线
       - name: Validate content
         run: npm run validate
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Build
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          # base_path 在用户站下是空字符串，兜底成 '/'
+          BASE_PATH: ${{ steps.pages.outputs.base_path || '/' }}
+        run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./dist
 
@@ -69,4 +83,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

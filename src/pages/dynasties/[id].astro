@@ -1,0 +1,310 @@
+---
+/**
+ * 朝代页：一个政权的概览——存续时间、人物、事件。
+ */
+import Base from '../../layouts/Base.astro';
+import { loadIndex } from '../../lib/content';
+import { formatRange, shortYear } from '../../lib/time';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const index = await loadIndex();
+  return [...index.polities.values()].map((p) => ({
+    params: { id: p.data.id },
+    props: { entry: p },
+  }));
+}
+
+const { entry } = Astro.props;
+const polity = entry.data;
+const index = await loadIndex();
+
+const start = polity.span.from.year;
+const end = polity.span.to?.year ?? start;
+
+const people = [...index.people.values()]
+  .filter((p) => p.data.polityIds.some((id) => id.id === polity.id))
+  .sort((a, b) => (a.data.birth?.year ?? 9999) - (b.data.birth?.year ?? 9999));
+
+const events = index.events
+  .filter((e) => e.data.polityIds.some((id) => id.id === polity.id))
+  .sort((a, b) => a.data.time.from.year - b.data.time.from.year);
+
+// 同期的其他政权
+const concurrent = [...index.polities.values()].filter((p) => {
+  if (p.data.id === polity.id) return false;
+  const ps = p.data.span.from.year;
+  const pe = p.data.span.to?.year ?? ps;
+  return ps <= end && pe >= start;
+});
+---
+
+<Base title={`${polity.name} · 史鉴`} description={polity.note ?? `${polity.name}朝代概览`}>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="crumb u-ui" aria-label="面包屑">
+      <a href={url('')}>首页</a>
+      <span>/</span>
+      <a href={url('timeline')}>时间线</a>
+      <span>/</span>
+      <span aria-current="page">{polity.name}</span>
+    </nav>
+
+    <header class="head" data-pagefind-body>
+      <p class="eyebrow">政权</p>
+      <h1 class="head__title" data-pagefind-meta={`title:${polity.name}`}>{polity.name}</h1>
+      <p class="head__span num">{formatRange(polity.span)}</p>
+      {polity.aliases.length > 0 && (
+        <p class="head__alias u-ui">又称 {polity.aliases.join(' · ')}</p>
+      )}
+      {polity.note && <p class="head__note">{polity.note}</p>}
+      {concurrent.length > 0 && (
+        <p class="head__concurrent u-ui">
+          同期并存：
+          {concurrent.map((p, i) => (
+            <>
+              {i > 0 && '、'}
+              <a href={url(`dynasties/${p.data.id}`)}>{p.data.name}</a>
+            </>
+          ))}
+        </p>
+      )}
+    </header>
+
+    <div class="cols">
+      <section>
+        <h2 class="subhead u-ui">人物 · {people.length}</h2>
+        <ul class="people u-long-list">
+          {people.map((p) => (
+            <li>
+              <a class="people__item" href={url(`people/${p.data.id}`)}>
+                <span class="people__name">{p.data.name}</span>
+                <span class="people__meta u-ui">
+                  {p.data.roles.join('、')}
+                  {p.data.birth && <span class="num"> · {shortYear(p.data.birth.year)}</span>}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        {people.length === 0 && <p class="empty u-ui">暂无收录人物。</p>}
+      </section>
+
+      <section>
+        <h2 class="subhead u-ui">事件 · {events.length}</h2>
+        <ol class="events u-long-list">
+          {events.map((e) => (
+            <li>
+              <a class="events__item" href={url(`events/${e.data.id}`)}>
+                <span class="events__year num">{shortYear(e.data.time.from.year)}</span>
+                <span class="events__title">{e.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        {events.length === 0 && <p class="empty u-ui">暂无收录事件。</p>}
+      </section>
+    </div>
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding-block: var(--sp-5) var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.crumb a {
+  color: var(--color-ink-muted);
+}
+
+.head {
+  padding-bottom: var(--sp-8);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.head__title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  margin-top: var(--sp-2);
+}
+
+.head__span {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+}
+
+.head__alias {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.head__note {
+  margin-top: var(--sp-4);
+  max-width: 42rem;
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.head__concurrent {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-muted);
+}
+
+.head__concurrent a {
+  color: var(--color-link);
+}
+
+.cols {
+  display: grid;
+  gap: var(--sp-10);
+  grid-template-columns: 1fr;
+  padding-block: var(--sp-8) var(--sp-16);
+}
+
+@media (min-width: 768px) {
+  .cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.subhead {
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--color-border-strong);
+  margin-bottom: var(--sp-2);
+}
+
+.people__item,
+.events__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  min-height: var(--touch-target);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--sp-2);
+}
+
+.people__name {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--color-ink-strong);
+  flex: none;
+}
+
+.people__meta {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+}
+
+.events__year {
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  min-width: 3rem;
+  flex: none;
+}
+
+.events__title {
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+}
+
+.people__item:hover .people__name,
+.events__item:hover .events__title {
+  color: var(--color-accent);
+}
+
+.empty {
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+  padding-block: var(--sp-4);
+}
+</style>

@@ -1,0 +1,72 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  # 允许手动触发，便于调试
+  workflow_dispatch:
+
+# Pages 部署需要的权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只跑一个部署；不取消进行中的，避免发布到一半被打断
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # 字体源文件 46MB，缓存后避免每次构建重复下载
+      - name: Cache font sources
+        uses: actions/cache@v4
+        with:
+          path: .cache/fonts
+          key: fonts-lxgw-v1.520
+
+      - name: Install dependencies
+        run: npm ci
+
+      # base 必须与仓库名一致，否则站内链接全部 404。
+      # 用户站（<user>.github.io 仓库）时 base 应为 '/'，把下面改成 BASE_PATH: /
+      - name: Build
+        env:
+          SITE_URL: ${{ format('https://{0}.github.io', github.repository_owner) }}
+          BASE_PATH: ${{ format('/{0}', github.event.repository.name) }}
+        run: npm run build
+
+      # 构建期跑内容校验：引用断了就让 CI 失败，不让错数据上线
+      - name: Validate content
+        run: npm run validate
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

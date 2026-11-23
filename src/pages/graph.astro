@@ -1,0 +1,146 @@
+---
+/**
+ * 关系图谱页。入口形如 /graph?focus=zhuge-liang&depth=2。
+ *
+ * 关键：focus 与 depth 都进 URL，可分享、可后退。
+ * 但 SSR 阶段拿不到 query，所以先渲染一个不含数据的骨架，
+ * 由客户端读 URL 后请求对应的 ego 网络。
+ */
+import Base from '../layouts/Base.astro';
+import GraphExplorer from '../components/graph/GraphExplorer.vue';
+import { loadIndex } from '../lib/content';
+import { url } from '../lib/url';
+
+const index = await loadIndex();
+
+// 服务端把所有人物精简成选项，供选择器用（只传必要字段，控制体积）
+const options = [...index.people.values()]
+  .map((p) => ({
+    id: p.data.id,
+    name: p.data.name,
+    roles: p.data.roles,
+    polity: p.data.polityIds[0]
+      ? index.polities.get(p.data.polityIds[0].id)?.data.name ?? ''
+      : '',
+    relationCount: p.data.relations.length,
+  }))
+  .sort((a, b) => b.relationCount - a.relationCount);
+
+// 网络数据按需提供：把每个人物的一跳网络预算好会让页面过大，
+// 改为客户端按 focus 请求 /graph/ego/<id>.json
+---
+
+<Base title="关系图谱 · 史鉴" description="以人物为中心的关系网络，可沿关系跳转到其他人的传记">
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')} aria-current="page">关系图谱</a>
+        <a href={url('search')}>检索</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container--wide">
+    <div class="page-head">
+      <p class="eyebrow">探索</p>
+      <h1 class="page-title">人物关系图谱</h1>
+      <p class="page-lede">
+        以某人为中心展开一跳或多跳关系。点节点可切换中心，点「查看传记」进入该人物页。
+        关系有时间范围——拖动时间滑块，只看某一时刻仍然成立的关系。
+      </p>
+    </div>
+
+    <GraphExplorer client:only="vue" options={options} />
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.page-head {
+  padding-block: var(--sp-10) var(--sp-6);
+}
+
+.page-title {
+  font-size: var(--fs-3xl);
+  margin-top: var(--sp-2);
+}
+
+.page-lede {
+  max-width: 44rem;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-body);
+}
+</style>

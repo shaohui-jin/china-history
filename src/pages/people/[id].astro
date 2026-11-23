@@ -1,0 +1,460 @@
+---
+/**
+ * 人物传记页。
+ * 信息架构固定（见 design/pages.ts 的 personPage.sections）：
+ * 身份卡 → 概述 → 生平时间线 → 关系网 → 史料 → 争议 → 相关人物。
+ */
+import Base from '../../layouts/Base.astro';
+import RelationGraph from '../../components/graph/RelationGraph.vue';
+import { loadIndex, getEgoNetwork } from '../../lib/content';
+import { personPage, graphByBreakpoint } from '../../design/pages';
+import { formatDate, shortYear } from '../../lib/time';
+import { relationMeta } from '../../lib/relations';
+import { render } from 'astro:content';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const index = await loadIndex();
+  return [...index.people.values()].map((p) => ({
+    params: { id: p.data.id },
+    props: { entry: p },
+  }));
+}
+
+const { entry } = Astro.props;
+const person = entry.data;
+// Markdown 正文渲染
+const { Content } = await render(entry);
+const index = await loadIndex();
+
+// 参与的事件，按时间排序
+const events = index.events
+  .filter((e) => e.data.participants.some((p) => p.personId.id === person.id))
+  .sort((a, b) => a.data.time.from.year - b.data.time.from.year);
+
+// 一跳关系网
+const network = await getEgoNetwork([person.id], personPage.graphPreviewDepth, 60);
+
+// 引用的史料
+const citedSources = [
+  ...new Set(
+    events.flatMap((e) => e.data.sources.map((s) => s.id)).concat(
+      person.relations.flatMap((r) => (r.sourceId ? [r.sourceId.id] : [])),
+    ),
+  ),
+]
+  .map((id) => index.sources.get(id))
+  .filter((s): s is NonNullable<typeof s> => !!s);
+
+// 政权
+const polities = person.polityIds
+  .map((p) => index.polities.get(p.id))
+  .filter((p): p is NonNullable<typeof p> => !!p);
+
+// 生平：把事件与关系变化混排在一轴上（关系变化取有 from 年份的）
+type BioItem = {
+  year: number;
+  label: string;
+  title: string;
+  desc: string;
+  kind: 'event' | 'relation';
+  major: boolean;
+};
+
+const bioItems: BioItem[] = [
+  ...events.map((e) => ({
+    year: e.data.time.from.year,
+    label: shortYear(e.data.time.from.year),
+    title: e.data.title,
+    desc: e.data.summary,
+    kind: 'event' as const,
+    major: e.data.significance >= 4,
+  })),
+  ...person.relations
+    .filter((r) => r.from !== undefined)
+    .map((r) => {
+      const other = index.people.get(r.target.id);
+      const meta = relationMeta[r.type];
+      return {
+        year: r.from!,
+        label: shortYear(r.from!),
+        title: `与${other?.data.name ?? r.target.id}结${meta.label}`,
+        desc: r.note ?? '',
+        kind: 'relation' as const,
+        major: false,
+      };
+    }),
+].sort((a, b) => a.year - b.year);
+
+// 相关人物：关系对端
+const related = person.relations
+  .map((r) => ({
+    person: index.people.get(r.target.id),
+    type: r.type,
+    label: r.note,
+  }))
+  .filter((x) => !!x.person);
+---
+
+<Base title={`${person.name} · 史鉴`} description={person.summary}>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" data-pagefind-body>
+    <nav class="crumb u-ui" aria-label="面包屑">
+      <a href={url('')}>首页</a>
+      <span>/</span>
+      {polities.map((p) => (
+        <>
+          <a href={url(`dynasties/${p.data.id}`)}>{p.data.name}</a>
+          <span>/</span>
+        </>
+      ))}
+      <span aria-current="page">{person.name}</span>
+    </nav>
+
+    <!-- 检索元数据：把字、号、身份、朝代都塞进可检索文本，别名也能命中 -->
+    <div class="sr-meta" data-pagefind-meta={`title:${person.name}`} hidden>
+      {person.aliases.length > 0 && <span>{person.aliases.join(' ')}</span>}
+      <span>{person.roles.join(' ')}</span>
+      {polities.map((p) => <span>{p.data.name}</span>)}
+    </div>
+
+    <div class="split">
+      <!-- 主栏 -->
+      <div class="stack" style="gap: var(--sp-8)">
+        <!-- 身份卡 -->
+        <div class="identity">
+          {person.seal && <div class="identity__seal">{person.seal}</div>}
+          <div>
+            <h1 class="identity__name">{person.name}</h1>
+            {person.aliases.length > 0 && (
+              <p class="identity__aliases">{person.aliases.join(' · ')}</p>
+            )}
+            <p class="identity__dates">
+              {person.birth ? formatDate(person.birth) : '生年不详'}
+              {person.birth && person.death ? ' — ' : ''}
+              {person.death ? formatDate(person.death) : person.birth ? ' 卒年不详' : ''}
+            </p>
+            {person.roles.length > 0 && (
+              <div class="cluster" style="margin-top: var(--sp-2); gap: var(--sp-2)">
+                {person.roles.map((r) => <span class="badge">{r}</span>)}
+                {polities.map((p) => <span class="badge badge--accent">{p.data.name}</span>)}
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- 概述 -->
+        <p class="summary">{person.summary}</p>
+
+        {person.disputed && (
+          <div class="dispute u-ui">
+            <strong>史料有异说。</strong>本条目涉及的部分细节存在不同记载，正文与出处并列列出，读者可自行判断。
+          </div>
+        )}
+
+        <!-- 生平 -->
+        {bioItems.length > 0 && (
+          <section>
+            <h2 class="subhead u-ui">生平</h2>
+            <ol class="tl">
+              {bioItems.map((it) => (
+                <li class:list={['tl__item', { 'tl__item--major': it.major }]}>
+                  <div class="tl__year">
+                    {it.label}
+                    {it.kind === 'relation' && <span class="tl__kind u-ui">关系</span>}
+                  </div>
+                  <div class="tl__title">{it.title}</div>
+                  {it.desc && <div class="tl__desc">{it.desc}</div>}
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        <!-- 正文 -->
+        <article class="prose">
+          <Content />
+        </article>
+
+        <!-- 史料 -->
+        {citedSources.length > 0 && (
+          <section>
+            <h2 class="subhead u-ui">史料</h2>
+            <div class="stack" style="gap: var(--sp-4)">
+              {citedSources.map((s) => (
+                <figure class="quote">
+                  {s.data.quote && <blockquote class="quote__text">{s.data.quote}</blockquote>}
+                  <figcaption class="quote__source">
+                    ——《{s.data.title}》{s.data.volume ?? ''}
+                    {s.data.author && ` · ${s.data.author}`}
+                  </figcaption>
+                  {s.data.note && <p class="quote__note u-ui">{s.data.note}</p>}
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+
+      <!-- 侧栏 -->
+      <aside class="stack" style="gap: var(--sp-4)">
+        <h2 class="subhead u-ui">关系网 · {personPage.graphPreviewDepth} 跳</h2>
+        <div class="graph-wrap">
+          <RelationGraph
+            client:only="vue"
+            config={graphByBreakpoint.lg}
+            network={network}
+            focusIds={[person.id]}
+          />
+        </div>
+
+        {related.length > 0 && (
+          <section class="related">
+            <h3 class="subhead u-ui">相关人物</h3>
+            <ul class="related__list">
+              {related.map((r) => (
+                <li>
+                  <a class="related__item" href={url(`people/${r.person!.data.id}`)}>
+                    <span class="related__name">{r.person!.data.name}</span>
+                    <span class="badge">{relationMeta[r.type].label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {events.length > 0 && (
+          <section class="related">
+            <h3 class="subhead u-ui">相关事件</h3>
+            <ul class="related__list">
+              {events.map((e) => (
+                <li>
+                  <a class="related__item" href={url(`events/${e.data.id}`)}>
+                    <span class="num related__year">{shortYear(e.data.time.from.year)}</span>
+                    <span class="related__name">{e.data.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </aside>
+    </div>
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-block: var(--sp-5) var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.crumb a {
+  color: var(--color-ink-muted);
+}
+
+.crumb a:hover {
+  color: var(--color-accent);
+}
+
+.split {
+  display: grid;
+  gap: var(--sp-8);
+  grid-template-columns: 1fr;
+  padding-bottom: var(--sp-16);
+}
+
+@media (min-width: 1024px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: var(--sp-12);
+    align-items: start;
+  }
+}
+
+.subhead {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.summary {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.dispute {
+  border: 1px solid var(--color-border-strong);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+}
+
+.tl__kind {
+  margin-left: 0.4rem;
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  padding: 0 0.2rem;
+}
+
+.prose {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  max-width: var(--container-prose);
+}
+
+.prose :global(p) {
+  margin-bottom: var(--sp-4);
+  text-align: justify;
+}
+
+.prose :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.quote__note {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-2xs);
+  /* 与 quote__source 同理：引文底色偏深，ink-faint 不足 4.5:1 */
+  color: var(--color-ink-muted);
+}
+
+.graph-wrap {
+  border: 1px solid var(--color-border);
+  border-radius: var(--decor-card-radius, var(--radius-md));
+  padding: var(--sp-2);
+  background: var(--color-surface-raised);
+}
+
+/* 侧栏里的图谱隐藏侧栏，避免双层嵌套 */
+.graph-wrap :global(.graph__body) {
+  grid-template-columns: 1fr;
+}
+
+.graph-wrap :global(.graph__side) {
+  display: none;
+}
+
+.related__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.related__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: var(--touch-target);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-sm);
+}
+
+.related__item:hover .related__name {
+  color: var(--color-accent);
+}
+
+.related__name {
+  color: var(--color-ink-strong);
+  font-weight: var(--fw-medium);
+}
+
+.related__year {
+  font-size: var(--fs-xs);
+  color: var(--color-accent);
+  min-width: 2.5rem;
+}
+</style>

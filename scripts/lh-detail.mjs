@@ -1,0 +1,12 @@
+import { readFileSync } from 'node:fs';
+const file = process.argv[2] ?? 'docs/baseline/lighthouse-mobile.json';
+const r = JSON.parse(readFileSync(file, 'utf8'));
+const a = r.audits;
+console.log('=== lantern LCP breakdown ===');
+console.log(JSON.stringify(a['lcp-breakdown-insight']?.details?.items?.[0], null, 1));
+console.log('=== observed vs simulated ===');
+const m = a.metrics.details.items[0];
+for (const k of Object.keys(m)) if (/Largest|FirstContent|Speed|observedLoad|observedDom/.test(k)) console.log(k, m[k]);
+console.log('=== dependency tree ===');
+const tree = a['network-dependency-tree-insight']?.details?.items?.[0]?.value;
+console.log(JSON.stringify(tree, null, 1).slice(0, 2500));

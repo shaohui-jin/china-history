@@ -1,0 +1,13 @@
+id: xiongnu
+name: 匈奴
+aliases:
+  - 荤粥
+span:
+  from:
+    year: -209
+  to:
+    year: 91
+order: 20
+note: 秦汉之际北方草原霸主，与汉朝形成长期的和战格局。
+coexistedWith:
+  - han

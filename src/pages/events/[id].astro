@@ -1,0 +1,331 @@
+---
+import Base from '../../layouts/Base.astro';
+import { loadIndex } from '../../lib/content';
+import { formatRange } from '../../lib/time';
+import { render } from 'astro:content';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const index = await loadIndex();
+  return index.events.map((e) => ({
+    params: { id: e.data.id },
+    props: { entry: e },
+  }));
+}
+
+const { entry } = Astro.props;
+const event = entry.data;
+const { Content } = await render(entry);
+const index = await loadIndex();
+
+const categoryLabels: Record<string, string> = {
+  political: '政治',
+  military: '军事',
+  institution: '制度',
+  culture: '文化',
+  science: '科技',
+  disaster: '灾异',
+};
+
+/**
+ * 参与者。用显式循环构造，避免 map+filter 的联合类型收窄问题
+ * （Astro 的 CollectionEntry 类型带很多附赠字段，类型谓词很难写对）。
+ */
+type ParticipantRow = { id: string; name: string; role: string };
+const participants: ParticipantRow[] = [];
+for (const p of event.participants) {
+  const person = index.people.get(p.personId.id);
+  if (person) {
+    participants.push({ id: person.data.id, name: person.data.name, role: p.role });
+  }
+}
+
+const roleLabels: Record<string, string> = {
+  leader: '主导',
+  participant: '参与',
+  victim: '受害',
+};
+
+const polities = event.polityIds
+  .map((p) => index.polities.get(p.id))
+  .filter((p) => !!p);
+
+const sources = event.sources
+  .map((s) => index.sources.get(s.id))
+  .filter((s) => !!s);
+---
+
+<Base title={`${event.title} · 史鉴`} description={event.summary}>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="crumb u-ui" aria-label="面包屑">
+      <a href={url('')}>首页</a>
+      <span>/</span>
+      <a href={url('timeline')}>时间线</a>
+      <span>/</span>
+      <span aria-current="page">{event.title}</span>
+    </nav>
+
+    <article class="event" data-pagefind-body>
+      <header class="event__head">
+        <div class="cluster" style="gap: var(--sp-2)">
+          {event.categories.map((c) => (
+            <span class="badge">{categoryLabels[c] ?? c}</span>
+          ))}
+          {polities.map((p) => (
+            <a class="badge" href={url(`dynasties/${p.data.id}`)}>{p.data.name}</a>
+          ))}
+          {event.certainty === 'disputed' && <span class="badge badge--accent">史料有异说</span>}
+        </div>
+        <h1 class="event__title" data-pagefind-meta={`title:${event.title}`}>{event.title}</h1>
+        <p class="event__time num">{formatRange(event.time)}</p>
+        <p class="event__summary">{event.summary}</p>
+      </header>
+
+      <div class="event__body">
+        <div class="prose">
+          <Content />
+        </div>
+
+        {participants.length > 0 && (
+          <section class="panel">
+            <h2 class="panel__title u-ui">参与者</h2>
+            <ul class="panel__list">
+              {participants.map((p) => (
+                <li>
+                  <a class="panel__item" href={url(`people/${p.id}`)}>
+                    <span class="panel__name">{p.name}</span>
+                    <span class="badge">{roleLabels[p.role] ?? p.role}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a class="panel__more u-ui" href={url(`graph?focus=${participants[0].id}`)}>
+              在关系图中查看 →
+            </a>
+          </section>
+        )}
+
+        {sources.length > 0 && (
+          <section class="panel">
+            <h2 class="panel__title u-ui">史料出处</h2>
+            <div class="stack" style="gap: var(--sp-4)">
+              {sources.map((s) => (
+                <figure class="quote">
+                  {s.data.quote && <blockquote class="quote__text">{s.data.quote}</blockquote>}
+                  <figcaption class="quote__source">
+                    ——《{s.data.title}》{s.data.volume ?? ''}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </article>
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  padding-block: var(--sp-5) var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.crumb a {
+  color: var(--color-ink-muted);
+}
+
+.event {
+  padding-bottom: var(--sp-16);
+  max-width: 60rem;
+}
+
+.event__head {
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.event__title {
+  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+  margin-top: var(--sp-3);
+}
+
+.event__time {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.event__summary {
+  margin-top: var(--sp-4);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.event__body {
+  display: grid;
+  gap: var(--sp-10);
+  grid-template-columns: 1fr;
+  margin-top: var(--sp-8);
+}
+
+@media (min-width: 1024px) {
+  .event__body {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+  }
+}
+
+.prose {
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+}
+
+.prose :global(p) {
+  margin-bottom: var(--sp-4);
+  text-align: justify;
+}
+
+.prose :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--decor-card-radius, var(--radius-md));
+  background: var(--color-surface-raised);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+
+.panel__title {
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px dotted var(--color-border);
+  margin-bottom: var(--sp-2);
+}
+
+.panel__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  min-height: var(--touch-target);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.panel__item:last-child {
+  border-bottom: 0;
+}
+
+.panel__name {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-ink-strong);
+}
+
+.panel__item:hover .panel__name {
+  color: var(--color-accent);
+}
+
+.panel__more {
+  display: inline-block;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-link);
+}
+</style>

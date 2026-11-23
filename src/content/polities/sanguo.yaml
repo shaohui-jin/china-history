@@ -1,0 +1,11 @@
+id: sanguo
+name: 汉末·三国
+aliases:
+  - 魏蜀吴
+span:
+  from:
+    year: 184
+  to:
+    year: 280
+order: 40
+note: 汉室衰微后魏、蜀、吴三分天下，人物关系最密集的历史切片。

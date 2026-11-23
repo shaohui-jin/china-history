@@ -1,0 +1,40 @@
+node_modules/
+dist/
+.astro/
+.shots/
+.DS_Store
+
+# 字体源文件（23MB x2），不进 git。
+# scripts/build-fonts.ts 会在缺失时自动下载。
+.cache/
+
+# 构建产物，由 npm run tokens / npm run fonts 生成
+public/fonts/
+src/styles/tokens.generated.css
+src/styles/fonts.generated.css
+
+# 临时文件与本地调试产物
+*.log
+check.log
+preview.log
+dev.log
+build.log
+*.err.log
+probe*.mjs
+probe*.cjs
+dbg*.mjs
+scan-chars.mjs
+fix-links.mjs
+display-charset.txt
+lh-mobile.json
+lh-mobile2.json
+lh-mobile-*.json
+lh-*.json
+
+# Lighthouse 基线快照需要留档，放在 docs/baseline/ 下，不受上面规则影响
+!/docs/baseline/*.json
+
+/.idea/.gitignore
+/.idea/history.iml
+/.idea/modules.xml
+/.idea/vcs.xml

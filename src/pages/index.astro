@@ -1,0 +1,474 @@
+﻿---
+/**
+ * 首页：导览，不是样张。
+ * 样张（排版阶梯、色板、组件清单）搬去 /styleguide。
+ */
+import Base from '../layouts/Base.astro';
+import TimelineCanvas from '../components/timeline/TimelineCanvas.vue';
+import TimelineVertical from '../components/timeline/TimelineVertical.vue';
+import {
+  getTimelineData,
+  loadIndex,
+  getEgoNetwork,
+} from '../lib/content';
+import { homePage, timelineByBreakpoint, graphByBreakpoint } from '../design/pages';
+import { shortYear, shortRange } from '../lib/time';
+import { url } from '../lib/url';
+
+const index = await loadIndex();
+const timeline = await getTimelineData();
+
+const people = [...index.people.values()].sort((a, b) => a.data.name.localeCompare(b.data.name, 'zh'));
+
+// 首页精选：按 significance 取最重要的几个事件
+const featured = [...timeline.items]
+  .sort((a, b) => b.significance - a.significance)
+  .slice(0, homePage.featureEventCount);
+
+// 首页嵌入的关系网：以诸葛亮为中心，一跳
+const graph = await getEgoNetwork(['zhuge-liang'], 1, 40);
+
+const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="史鉴 · 中国历史图谱" description="中国历史重大事件、人物关系与朝代的综合可视化百科">
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <div>
+          <div class="topbar__name">史鉴</div>
+          <div class="topbar__sub u-ui">中国历史图谱</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+        <a href={url('styleguide')}>设计</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+    <div class="container">
+      <p class="eyebrow">时间线 · 人物关系 · 史料</p>
+      <h1 class="hero__title">{homePage.heroTitle}</h1>
+      <p class="hero__lede">
+        从公元前 221 年秦并六国，到公元 763 年安史之乱平定，近千年间的事件、人物与关系被拆成可检索的结构化条目。
+        时间线看脉络，关系图看人际，传记看细节——三者互相跳转。
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href={url('timeline')}>进入时间线</a>
+        <a class="btn btn--ghost" href={url('graph?focus=zhuge-liang')}>看诸葛亮的圈子</a>
+      </div>
+
+      <dl class="stats">
+        <div>
+          <dt class="stat__value">{index.events.length}</dt>
+          <dd class="stat__label">事件</dd>
+        </div>
+        <div>
+          <dt class="stat__value">{index.people.size}</dt>
+          <dd class="stat__label">人物</dd>
+        </div>
+        <div>
+          <dt class="stat__value">{index.polities.size}</dt>
+          <dd class="stat__label">政权</dd>
+        </div>
+        <div>
+          <dt class="stat__value">{index.sources.size}</dt>
+          <dd class="stat__label">史料出处</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 时间线预览 -->
+  <section class="section">
+    <div class="container container--wide">
+      <div class="section__head">
+        <p class="eyebrow">主线</p>
+        <h2 class="section__title">一条可漫游的时间轴</h2>
+        <p class="section__note">
+          纵向按政权分道，横向按年铺开。同一时刻并存多个政权（如匈奴与汉、突厥与唐）时各占一道，
+          不会挤在一根线上。滚轮缩放，拖动框选。
+        </p>
+      </div>
+
+      <div class="home-timeline">
+        <TimelineCanvas
+          client:only="vue"
+          config={timelineByBreakpoint.lg}
+          data={timeline}
+        />
+      </div>
+
+      <div class="home-timeline-mobile">
+        <TimelineVertical client:only="vue" data={timeline} />
+      </div>
+
+      <p class="section__foot">
+        <a class="link-arrow" href={url('timeline')}>打开完整时间线 →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 精选事件 -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">切片</p>
+        <h2 class="section__title">四个改变格局的时刻</h2>
+        <p class="section__note">
+          同一份时间线上跨度最大的几个节点。年代角标用等宽数字，「前」标记公元前。
+        </p>
+      </div>
+
+      <div class="cards">
+        {featured.map((e) => {
+          const ev = index.events.find((x) => x.data.id === e.id);
+          const src = ev?.data.sources?.[0];
+          const sourceEntry = src ? index.sources.get(src.id) : undefined;
+          return (
+            <a class="card card--link" href={url(`events/${e.id}`)}>
+              <div class="cluster" style="justify-content: space-between">
+                <span class="badge">{e.categories.map((c) => timeline.categoryLabels[c]).join(' · ')}</span>
+                <span class="num card__meta">{shortYear(e.year)}</span>
+              </div>
+              <h3 class="card__title">{e.title}</h3>
+              <p class="card__body">{e.summary}</p>
+              {sourceEntry && (
+                <p class="card__source u-ui">据《{sourceEntry.data.title}》{sourceEntry.data.volume ?? ''}</p>
+              )}
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- 人物导览 -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">人物</p>
+        <h2 class="section__title">按朝代浏览</h2>
+        <p class="section__note">
+          点人名进入传记；传记里有生平时间线、一跳关系网与史料原文。
+        </p>
+      </div>
+
+      <div class="people-groups">
+        {polities.map((p) => {
+          const members = people.filter((x) =>
+            x.data.polityIds.some((id) => id.id === p.data.id),
+          );
+          if (members.length === 0) return null;
+          return (
+            <div class="people-group">
+              <h3 class="people-group__title">
+                {p.data.name}
+                <span class="num u-ui people-group__span">
+                  {shortRange(p.data.span)}
+                </span>
+              </h3>
+              <ul class="people-group__list">
+                {members.map((m) => (
+                  <li>
+                    <a href={url(`people/${m.data.id}`)}>{m.data.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="u-ui">
+        史鉴 · 内容为开放史料整理，<a href={url('styleguide')}>设计规范</a> · 
+        <a href={url('search')}>全文检索</a>
+      </p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.topbar__mark {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  border-radius: 1px;
+  font-size: var(--fs-base);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-lg);
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.topbar__sub {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  letter-spacing: var(--ls-wider);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover {
+  background: var(--color-paper-alt);
+  color: var(--color-ink-strong);
+}
+
+.hero {
+  padding-block: var(--sp-16) var(--sp-12);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.hero__title {
+  font-size: clamp(1.75rem, 4.4vw, 3.125rem);
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  margin-top: var(--sp-4);
+}
+
+.hero__lede {
+  max-width: 40rem;
+  margin-top: var(--sp-5);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-8);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-6);
+  margin-top: var(--sp-12);
+  padding-top: var(--sp-6);
+  border-top: 1px dotted var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.section {
+  padding-block: var(--sp-section, var(--sp-16));
+  border-top: 1px dotted var(--color-border);
+}
+
+.section__head {
+  margin-bottom: var(--sp-6);
+  max-width: 46rem;
+}
+
+.section__title {
+  font-size: var(--fs-xl);
+  margin-top: var(--sp-2);
+}
+
+.section__note {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  margin-top: var(--sp-3);
+  line-height: var(--lh-normal);
+}
+
+.section__foot {
+  margin-top: var(--sp-5);
+}
+
+.link-arrow {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.home-timeline {
+  display: none;
+}
+
+.home-timeline-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .home-timeline {
+    display: block;
+  }
+  .home-timeline-mobile {
+    display: none;
+  }
+}
+
+.cards {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card--link {
+  display: block;
+  transition: border-color var(--dur-fast) var(--ease-standard);
+}
+
+.card--link:hover {
+  border-color: var(--color-accent);
+}
+
+.card__source {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  text-align: right;
+}
+
+.people-groups {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .people-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .people-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.people-group__title {
+  font-size: var(--fs-base);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--color-border-strong);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+
+.people-group__span {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  font-weight: var(--fw-regular);
+}
+
+.people-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+.people-group__list a {
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.people-group__list a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.footer {
+  padding-block: var(--sp-8);
+  border-top: 1px dotted var(--color-border);
+}
+
+.footer__inner {
+  font-size: var(--fs-xs);
+  color: var(--color-ink-muted);
+}
+
+.footer a {
+  color: var(--color-link);
+}
+</style>

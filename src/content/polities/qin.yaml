@@ -1,0 +1,12 @@
+id: qin
+name: 秦
+aliases:
+  - 嬴秦
+  - 暴秦
+span:
+  from:
+    year: -221
+  to:
+    year: -206
+order: 10
+note: 中国第一个大一统帝国，废分封、行郡县，确立此后两千年的中央集权框架。

@@ -1,0 +1,232 @@
+---
+import Base from '../layouts/Base.astro';
+import TimelineCanvas from '../components/timeline/TimelineCanvas.vue';
+import TimelineVertical from '../components/timeline/TimelineVertical.vue';
+import { getTimelineData } from '../lib/content';
+import { timelineByBreakpoint } from '../design/pages';
+import { shortYear } from '../lib/time';
+import { url } from '../lib/url';
+
+const timeline = await getTimelineData();
+
+/**
+ * 首屏只注入「重大事件 + 最近 300 年内的事件」。
+ *
+ * 理由：桌面时间线初始是全域视图，此时 LOD 只显示 significance >= 4 的事件，
+ * 次要事件在这一缩放下根本画不出来。全量注入等于浪费首屏带宽。
+ * 放大到 300 年以内时，TimelineCanvas 会按世纪从
+ * /data/timeline/<century>.json 拉取缺失的部分。
+ *
+ * 手机端（TimelineVertical）需要按年代分段浏览，仍用全量数据——
+ * 它的数据量小且分页展示，不存在首屏压力。
+ */
+const initialItems = timeline.items.filter((it) => it.significance >= 4);
+const timelineLite = { ...timeline, items: initialItems };
+---
+
+<Base title="时间线 · 史鉴" description="按政权分道的中国历史时间线，支持缩放与框选时间段">
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')} aria-current="page">时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+        <a href={url('styleguide')}>设计</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container--wide">
+    <div class="page-head">
+      <p class="eyebrow">主线</p>
+      <h1 class="page-title">中国历史时间线</h1>
+      <p class="page-lede">
+        纵向按政权分道，横向按年铺开。同一时刻并存的政权（匈奴与汉、突厥与唐）各占一道。
+        低缩放只显示重大事件，放大后逐级放出次要事件。
+      </p>
+    </div>
+
+    <!-- 桌面 / 平板 -->
+    <div class="only-wide">
+      <TimelineCanvas
+        client:only="vue"
+        config={timelineByBreakpoint.xl}
+        data={timelineLite}
+        lazyLoad={true}
+      />
+    </div>
+
+    <!-- 手机 -->
+    <div class="only-narrow">
+      <TimelineVertical client:only="vue" data={timeline} />
+    </div>
+
+    <section class="polis">
+      <h2 class="polis__title u-ui">收录政权</h2>
+      <ul class="polis__list">
+        {timeline.lanes.map((l) => (
+          <li class="polis__item">
+            <span class="polis__bar" style={`background: var(--color-lane-${l.laneIndex})`}></span>
+            <span class="polis__name">{l.label}</span>
+            <span class="num polis__span">{shortYear(l.start)}–{shortYear(l.end)}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.nav a[aria-current='page'] {
+  font-weight: var(--fw-medium);
+}
+
+.page-head {
+  padding-block: var(--sp-10) var(--sp-6);
+}
+
+.page-title {
+  font-size: (--fs-3xl);
+  font-size: var(--fs-3xl);
+  margin-top: var(--sp-2);
+}
+
+.page-lede {
+  max-width: 44rem;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-body);
+}
+
+.only-narrow {
+  display: block;
+}
+
+.only-wide {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .only-narrow {
+    display: none;
+  }
+  .only-wide {
+    display: block;
+  }
+}
+
+.polis {
+  margin-block: var(--sp-10) var(--sp-16);
+  padding-top: var(--sp-6);
+  border-top: 1px dotted var(--color-border);
+}
+
+.polis__title {
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  margin-bottom: var(--sp-3);
+}
+
+.polis__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-5);
+}
+
+.polis__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+}
+
+.polis__bar {
+  width: 0.75rem;
+  height: 0.25rem;
+  border-radius: var(--radius-full);
+  opacity: 0.8;
+}
+
+.polis__name {
+  color: var(--color-ink);
+}
+
+.polis__span {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+}
+</style>

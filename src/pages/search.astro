@@ -1,0 +1,386 @@
+---
+/**
+ * 全文检索页。
+ *
+ * Pagefind 的索引是构建后产物（dist/pagefind/），所以：
+ * - 页面本身是静态的
+ * - 搜索逻辑在客户端动态 import /pagefind/pagefind.js
+ * - 若索引不存在（开发模式），给出明确提示而非报错白屏
+ */
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="检索 · 史鉴" description="按人名、事件、朝代、史料原文全文检索中国历史条目">
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')} aria-current="page">检索</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <p class="eyebrow">全文检索</p>
+      <h1 class="page-title">检索条目</h1>
+      <p class="page-lede">
+        可搜人名（含字、号、谥号）、事件标题、朝代名与史料原文。
+        例如「孔明」「赤壁」「开元」「资治通鉴」。
+      </p>
+    </div>
+
+    <div id="search-app" data-search-root>
+      <form class="search-form" role="search" onsubmit="return false">
+        <input
+          id="search-input"
+          class="search-input"
+          type="search"
+          placeholder="输入人名、事件或朝代…"
+          autocomplete="off"
+          aria-label="检索关键词"
+        />
+        <span class="search-status u-ui" id="search-status"></span>
+      </form>
+
+      <div id="search-results" class="search-results"></div>
+
+      <p class="search-hint u-ui">
+        提示：构建产物才会生成检索索引。开发模式下若提示索引缺失，请先执行
+        <code>npm run build</code> 再用 <code>npm run preview</code> 查看。
+      </p>
+    </div>
+  </main>
+</Base>
+
+<script>
+/**
+ * 搜索逻辑：纯浏览器端，不依赖框架。
+ *
+ * 为什么不用 Vue：这里没有状态共享，一个表单 + 一个列表，
+ * 用原生 DOM 反而更小更快，也避免为一页搜索引入水合成本。
+ */
+type PagefindResult = {
+  data: () => Promise<{
+    url: string;
+    excerpt: string;
+    meta: { title?: string; [k: string]: string | undefined };
+  }>;
+};
+
+type Pagefind = {
+  search: (q: string) => Promise<{ results: PagefindResult[] }>;
+  options: (opts: Record<string, unknown>) => Promise<void>;
+};
+
+const input = document.getElementById('search-input') as HTMLInputElement | null;
+const results = document.getElementById('search-results');
+const status = document.getElementById('search-status');
+
+let pagefind: Pagefind | null = null;
+let loadFailed = false;
+
+/** 动态加载 Pagefind。索引不存在时给出可读提示。 */
+async function ensurePagefind(): Promise<Pagefind | null> {
+  if (pagefind) return pagefind;
+  if (loadFailed) return null;
+  try {
+    // 用 BASE_URL 拼接，兼容子路径部署：
+    // Pagefind 索引由 `pagefind --site dist` 生成在 dist/pagefind/，
+    // 部署到 /repo/ 时实际路径是 /repo/pagefind/pagefind.js。
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const pfPath = `${base}/pagefind/pagefind.js`;
+    const mod = await import(/* @vite-ignore */ pfPath);
+    pagefind = mod as unknown as Pagefind;
+    await pagefind.options({ excerptLength: 30 });
+    return pagefind;
+  } catch {
+    loadFailed = true;
+    if (status) status.textContent = '索引不可用（需先 build）';
+    return null;
+  }
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/** 从 URL 判断条目类型，用于结果分类 */
+function kindOf(url: string): { label: string; cls: string } {
+  if (url.includes('/people/')) return { label: '人物', cls: 'people' };
+  if (url.includes('/events/')) return { label: '事件', cls: 'events' };
+  if (url.includes('/dynasties/')) return { label: '朝代', cls: 'dynasties' };
+  return { label: '页面', cls: 'page' };
+}
+
+async function runSearch(q: string) {
+  if (!results || !status) return;
+  const query = q.trim();
+
+  if (query.length === 0) {
+    results.innerHTML = '';
+    status.textContent = '';
+    return;
+  }
+
+  const pf = await ensurePagefind();
+  if (!pf) return;
+
+  status.textContent = '检索中…';
+  const search = await pf.search(query);
+  const top = search.results.slice(0, 30);
+
+  if (top.length === 0) {
+    results.innerHTML = `<p class="search-empty u-ui">没有找到「${escapeHtml(query)}」相关的条目。</p>`;
+    status.textContent = '0 条';
+    return;
+  }
+
+  const items = await Promise.all(top.map((r) => r.data()));
+
+  results.innerHTML = items
+    .map((d) => {
+      const kind = kindOf(d.url);
+      const title = d.meta.title ?? d.url;
+      return `
+        <a class="search-result" href="${escapeHtml(d.url)}">
+          <span class="search-result__kind search-result__kind--${kind.cls}">${kind.label}</span>
+          <span class="search-result__body">
+            <span class="search-result__title">${escapeHtml(title)}</span>
+            <span class="search-result__excerpt">${d.excerpt}</span>
+          </span>
+        </a>
+      `;
+    })
+    .join('');
+
+  status.textContent = `${search.results.length} 条`;
+}
+
+/** 输入防抖：250ms，避免每个字符都触发一次索引查询 */
+let timer: number | undefined;
+input?.addEventListener('input', () => {
+  window.clearTimeout(timer);
+  timer = window.setTimeout(() => runSearch(input.value), 250);
+});
+
+// 支持 ?q= 直达（便于从别处链入）
+const params = new URLSearchParams(window.location.search);
+const initial = params.get('q');
+if (initial && input) {
+  input.value = initial;
+  runSearch(initial);
+}
+</script>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.page-head {
+  padding-block: var(--sp-10) var(--sp-6);
+}
+
+.page-title {
+  font-size: var(--fs-3xl);
+  margin-top: var(--sp-2);
+}
+
+.page-lede {
+  max-width: 42rem;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-body);
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-input {
+  flex: 1 1 18rem;
+  min-height: var(--touch-target);
+  padding: 0.625rem var(--sp-4);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  color: var(--color-ink);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+
+.search-input:focus {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
+.search-status {
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+  min-width: 3rem;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--sp-2);
+}
+
+.search-result {
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: baseline;
+}
+
+.search-result:hover .search-result__title {
+  color: var(--color-accent);
+}
+
+.search-result__kind {
+  flex: none;
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wide);
+  padding: 0.125rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+}
+
+.search-result__kind--people {
+  border-color: var(--color-cat-culture);
+  color: var(--color-cat-culture);
+}
+
+.search-result__kind--events {
+  border-color: var(--color-cat-military);
+  color: var(--color-cat-military);
+}
+
+.search-result__kind--dynasties {
+  border-color: var(--color-cat-political);
+  color: var(--color-cat-political);
+}
+
+.search-result__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  min-width: 0;
+}
+
+.search-result__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--color-ink-strong);
+}
+
+.search-result__excerpt {
+  font-size: var(--fs-xs);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-normal);
+}
+
+.search-result__excerpt mark {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  padding: 0 0.1em;
+}
+
+.search-empty {
+  padding-block: var(--sp-8);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-faint);
+}
+
+.search-hint {
+  margin-top: var(--sp-8);
+  padding-top: var(--sp-4);
+  border-top: 1px dotted var(--color-border);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  line-height: var(--lh-normal);
+}
+</style>

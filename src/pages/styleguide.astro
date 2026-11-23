@@ -1,0 +1,575 @@
+---
+/**
+ * 设计样张：令牌、排版阶梯、色板、组件清单、三端形态。
+ * 从首页拆出来，首页只做导览。
+ */
+import Base from '../layouts/Base.astro';
+import ViewportLab from '../components/ds/ViewportLab.vue';
+import EgoGraphDesktop from '../components/graph/EgoGraphDesktop.vue';
+import { color, themes, DEFAULT_THEME } from '../design/tokens';
+import { getEgoNetwork, getTimelineData } from '../lib/content';
+import { url } from '../lib/url';
+
+const theme = themes[DEFAULT_THEME];
+const mosongScale = Object.entries(color.mosong);
+const xuanScale = Object.entries(color.xuan);
+const laneColors = [1, 2, 3, 4, 5, 6, 7, 8].map((i) => `var(--color-lane-${i})`);
+
+const catKeys = ['political', 'military', 'institution', 'culture', 'science', 'disaster'];
+const catLabels: Record<string, string> = {
+  political: '政治',
+  military: '军事',
+  institution: '制度',
+  culture: '文化',
+  science: '科技',
+  disaster: '灾异',
+};
+
+// 语义令牌可视化：直接读 semantic 映射
+const semanticGroups: Array<{ title: string; keys: string[] }> = [
+  { title: '底与面', keys: ['color-paper', 'color-paper-alt', 'color-surface', 'color-surface-raised'] },
+  { title: '文字', keys: ['color-ink', 'color-ink-strong', 'color-ink-muted', 'color-ink-faint'] },
+  { title: '线与强调', keys: ['color-border', 'color-border-strong', 'color-accent', 'color-accent-soft'] },
+  { title: '图谱', keys: ['color-graph-node', 'color-graph-node-focus', 'color-graph-edge-strong', 'color-graph-edge-weak'] },
+];
+
+const ego = await getEgoNetwork(['zhuge-liang'], 1, 40);
+const timelineData = await getTimelineData();
+---
+
+<Base title="设计规范 · 史鉴" description="设计令牌、排版阶梯与组件清单">
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href={url('')}>
+        <span class="topbar__mark">史</span>
+        <span class="topbar__name">史鉴</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href={url('timeline')}>时间线</a>
+        <a href={url('graph')}>关系图谱</a>
+        <a href={url('search')}>检索</a>
+        <a href={url('styleguide')} aria-current="page">设计</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container container--wide">
+    <div class="page-head">
+      <p class="eyebrow">设计系统</p>
+      <h1 class="page-title">{theme.label}</h1>
+      <p class="page-lede">{theme.note}</p>
+      <p class="page-meta u-ui">
+        令牌唯一真源 <code>src/design/tokens.ts</code> · 生成产物 <code>tokens.generated.css</code>
+      </p>
+    </div>
+
+    <!-- 1 排版 -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">01 / 排版</p>
+        <h2 class="section__title">字号阶梯与字体分工</h2>
+        <p class="section__note">
+          正文用楷体、放宽字距与行距；界面元素用仿宋，避免楷体在按钮与标签上过软。
+          正文 15px、行高 1.7 以上是中文长文的舒适下限。
+        </p>
+      </div>
+
+      <div class="type-spec">
+        <div class="type-row">
+          <span class="type-row__meta u-ui">fs-3xl / 38px</span>
+          <span class="type-row__sample type-row__sample--display">安史之乱与唐室的转折</span>
+        </div>
+        <div class="type-row">
+          <span class="type-row__meta u-ui">fs-xl / 24px</span>
+          <span class="type-row__sample" style="font-size: var(--fs-xl); font-weight: var(--fw-semibold)">
+            藩镇割据的形成
+          </span>
+        </div>
+        <div class="type-row">
+          <span class="type-row__meta u-ui">fs-md / 17px 正文</span>
+          <span class="type-row__sample" style="font-size: var(--fs-md); line-height: var(--lh-body)">
+            天宝十四载十一月，安禄山反于范阳，以讨杨国忠为名。承平既久，河北州县望风瓦解，守令或开门出迎，或弃城窜匿。
+          </span>
+        </div>
+        <div class="type-row">
+          <span class="type-row__meta u-ui">fs-sm / 13px 辅助</span>
+          <span class="type-row__sample" style="font-size: var(--fs-sm); color: var(--color-ink-muted)">
+            据《资治通鉴》卷二一七，天宝十四载十一月甲子条。
+          </span>
+        </div>
+        <div class="type-row">
+          <span class="type-row__meta u-ui">年份 · 等宽数字</span>
+          <span class="type-row__sample num" style="font-size: var(--fs-2xl); font-weight: var(--fw-semibold)">
+            755 — 763
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 色板 -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">02 / 色彩</p>
+        <h2 class="section__title">原始色阶与语义映射</h2>
+        <p class="section__note">
+          组件只使用语义名（如 <code>--color-ink</code>），不直接引用原始色阶。
+          宣纸底与松烟墨是这套风格的两根支柱：底要偏黄才有纸感，墨要带褐才不刺眼。
+        </p>
+      </div>
+
+      <h3 class="palette__title u-ui">松烟墨 mosong</h3>
+      <div class="swatches">
+        {mosongScale.map(([k, v]) => (
+          <div>
+            <div class="swatch__chip" style={`background:${v}`}></div>
+            <div class="swatch__name">{k}</div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="palette__title u-ui">宣纸 xuan</h3>
+      <div class="swatches">
+        {xuanScale.map(([k, v]) => (
+          <div>
+            <div class="swatch__chip" style={`background:${v}`}></div>
+            <div class="swatch__name">xuan-{k}</div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="palette__title u-ui">8 条泳道色</h3>
+      <div class="swatches">
+        {laneColors.map((v, i) => (
+          <div>
+            <div class="swatch__chip" style={`background:${v}`}></div>
+            <div class="swatch__name">lane-{i + 1}</div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="palette__title u-ui">事件分类色</h3>
+      <div class="cluster" style="gap: var(--sp-5)">
+        {catKeys.map((k) => (
+          <div class="cluster" style="gap: var(--sp-2)">
+            <span class="dot" style={`background: var(--color-cat-${k}); color: var(--color-cat-${k})`}></span>
+            <span class="u-ui" style="font-size: var(--fs-sm)">{catLabels[k]}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 3 语义令牌 -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">03 / 语义层</p>
+        <h2 class="section__title">组件消费的接口</h2>
+        <p class="section__note">
+          34 个语义键。新增语义必须先加进 <code>SemanticKey</code> 类型与主题的 semantic 映射，否则类型检查会报漏实现。
+        </p>
+      </div>
+
+      <div class="semantic-groups">
+        {semanticGroups.map((g) => (
+          <div class="semantic-group">
+            <h4 class="semantic-group__title u-ui">{g.title}</h4>
+            <ul class="semantic-group__list">
+              {g.keys.map((k) => {
+                const val = theme.semantic[k as keyof typeof theme.semantic];
+                return (
+                  <li class="semantic-item">
+                    <span class="semantic-item__chip" style={`background:${val}`}></span>
+                    <span class="semantic-item__name u-ui">--{k}</span>
+                    <span class="semantic-item__val num">{val}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 4 组件 -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">04 / 组件</p>
+        <h2 class="section__title">基础组件</h2>
+        <p class="section__note">
+          全部以语义类形式定义在 <code>global.css</code> 的 <code>@layer component</code> 里，
+          不包装成 SFC——Astro 页面能直接用，零 JS 开销。按钮最小高度 44px 满足触控要求。
+        </p>
+      </div>
+
+      <div class="stack" style="gap: var(--sp-8)">
+        <div>
+          <div class="comp-label u-ui">按钮</div>
+          <div class="cluster">
+            <button class="btn btn--solid" type="button">主要操作</button>
+            <button class="btn btn--ghost" type="button">次要操作</button>
+            <button class="btn btn--ghost btn--sm" type="button">小号</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label u-ui">徽标</div>
+          <div class="cluster">
+            <span class="badge">唐</span>
+            <span class="badge">军事</span>
+            <span class="badge badge--accent">争议</span>
+            <span class="badge"><span class="dot" style="background: var(--color-cat-military); color: var(--color-cat-military)"></span>军事</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label u-ui">卡片（双线框）</div>
+          <div class="events-grid">
+            <div class="card">
+              <div class="card__meta num">208</div>
+              <h4 class="card__title" style="font-size: var(--fs-base)">赤壁之战</h4>
+              <p class="card__body">孙刘联军以火攻大破曹军。</p>
+            </div>
+            <div class="card card--raised">
+              <div class="card__meta num">755</div>
+              <h4 class="card__title" style="font-size: var(--fs-base)">安史之乱起</h4>
+              <p class="card__body">安禄山以清君侧为名起兵范阳。</p>
+            </div>
+            <div class="card">
+              <div class="card__meta num">前221</div>
+              <h4 class="card__title" style="font-size: var(--fs-base)">秦统一</h4>
+              <p class="card__body">废分封、行郡县，书同文车同轨。</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label u-ui">人物印章与引文</div>
+          <div class="split">
+            <div class="identity">
+              <div class="identity__seal">诸葛
+孔明</div>
+              <div>
+                <h3 class="identity__name">诸葛亮</h3>
+                <div class="identity__aliases">字孔明 · 卧龙 · 武乡侯</div>
+                <div class="identity__dates">181 — 234 · 蜀汉 · 丞相</div>
+              </div>
+            </div>
+            <div class="quote">
+              <div class="quote__mark">「</div>
+              <p class="quote__text">臣本布衣，躬耕于南阳，苟全性命于乱世，不求闻达于诸侯。</p>
+              <div class="quote__source">——《三国志·蜀书·诸葛亮传》</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="comp-label u-ui">关系网（桌面形态）</div>
+          <div class="graph-frame" style="padding: var(--sp-4); max-width: 24rem">
+            <EgoGraphDesktop client:only="vue" network={ego} focusId="zhuge-liang" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 三端 -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">05 / 三端</p>
+        <h2 class="section__title">切换容器宽度，看形态如何改变</h2>
+        <p class="section__note">
+          这不是缩略图，而是真实组件在真实容器宽度下渲染。点「手机」时，时间线换成纵向事件流、
+          关系网换成列表 + 迷你图——它们是不同组件，不是同一组件的样式变体。
+          响应依据是容器查询（inline-size），所以同一页面能容纳三种形态。
+        </p>
+      </div>
+
+      <ViewportLab client:only="vue" timeline={timelineData} network={ego} focusId="zhuge-liang" />
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="u-ui">
+          语义键 {Object.keys(theme.semantic).length} 个 ·
+          泳道色 8 组 · 事件分类 6 种
+        </p>
+      </div>
+    </footer>
+  </main>
+</Base>
+
+<style>
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  min-height: 3.75rem;
+  padding-block: var(--sp-2);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.topbar__mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-family: var(--font-display);
+  border-radius: 1px;
+  font-size: var(--fs-sm);
+}
+
+.topbar__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
+.nav a:hover,
+.nav a[aria-current='page'] {
+  color: var(--color-ink-strong);
+  background: var(--color-paper-alt);
+}
+
+.page-head {
+  padding-block: var(--sp-10) var(--sp-6);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.page-title {
+  font-size: var(--fs-3xl);
+  margin-top: var(--sp-2);
+}
+
+.page-lede {
+  max-width: 42rem;
+  margin-top: var(--sp-3);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
+
+.page-meta {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.section {
+  padding-block: var(--sp-section, var(--sp-16));
+  border-top: 1px dotted var(--color-border);
+}
+
+.section__head {
+  margin-bottom: var(--sp-6);
+  max-width: 46rem;
+}
+
+.section__title {
+  font-size: var(--fs-xl);
+  margin-top: var(--sp-2);
+}
+
+.section__note {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-muted);
+  margin-top: var(--sp-3);
+  line-height: var(--lh-normal);
+}
+
+.type-spec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.type-row {
+  display: grid;
+  gap: var(--sp-2);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .type-row {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    align-items: baseline;
+    gap: var(--sp-6);
+  }
+}
+
+.type-row__meta {
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.type-row__sample {
+  color: var(--color-ink-strong);
+}
+
+.type-row__sample--display {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--decor-title-tracking);
+  line-height: 1.22;
+}
+
+.palette__title {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-block: var(--sp-6) var(--sp-3);
+  font-weight: var(--fw-medium);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+  gap: var(--sp-3);
+}
+
+.swatch__chip {
+  height: 3rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.swatch__name {
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-muted);
+  margin-top: var(--sp-1);
+  word-break: break-all;
+}
+
+.semantic-groups {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .semantic-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.semantic-group__title {
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+  padding-bottom: var(--sp-2);
+  border-bottom: 1px dotted var(--color-border);
+  margin-bottom: var(--sp-2);
+}
+
+.semantic-group__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.semantic-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding-block: 0.375rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--fs-2xs);
+}
+
+.semantic-item__chip {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: none;
+  border-radius: 2px;
+  border: 1px solid var(--color-border);
+}
+
+.semantic-item__name {
+  color: var(--color-ink-muted);
+  flex: 1;
+  word-break: break-all;
+}
+
+.semantic-item__val {
+  color: var(--color-ink-faint);
+}
+
+.comp-label {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--sp-3);
+}
+
+.events-grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.split {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+}
+
+.footer {
+  padding-block: var(--sp-8);
+  border-top: 1px dotted var(--color-border);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+</style>

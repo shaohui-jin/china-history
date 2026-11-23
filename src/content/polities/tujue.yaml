@@ -1,0 +1,14 @@
+id: tujue
+name: 突厥
+aliases:
+  - 东突厥
+  - 后突厥
+span:
+  from:
+    year: 552
+  to:
+    year: 745
+order: 50
+note: 六至八世纪蒙古高原的游牧汗国，与隋唐长期互动。
+coexistedWith:
+  - tang

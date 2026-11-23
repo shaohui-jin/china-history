@@ -1,0 +1,14 @@
+id: tang
+name: 唐
+aliases:
+  - 李唐
+  - 大唐
+span:
+  from:
+    year: 618
+  to:
+    year: 907
+order: 60
+note: 开元盛世为中国中古鼎盛期；安史之乱后由盛转衰，藩镇割据成形。
+coexistedWith:
+  - tujue

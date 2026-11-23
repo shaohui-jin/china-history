@@ -1,0 +1,15 @@
+id: han
+name: 汉
+aliases:
+  - 西汉
+  - 东汉
+  - 炎汉
+span:
+  from:
+    year: -202
+  to:
+    year: 220
+order: 30
+note: 四百年国祚，奠定"汉"作为族群与文化认同的名称。
+coexistedWith:
+  - xiongnu

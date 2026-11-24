@@ -20,7 +20,8 @@ npm run dev      # http://localhost:4321
 构建不依赖网络。字形在不同平台会有差异，这是有意接受的代价 ——
 换来的是首屏零字体请求（此前 webfont 占首屏传输 87%）。
 
-详见 [docs/PENDING-FEATURES.md](docs/PENDING-FEATURES.md) 第 0 节的决策记录。
+这是 2026-11 的决策：webfont 曾占首屏传输 87%（529KB），换系统字体后首屏零字体请求，
+Lighthouse 移动端 Perf 从 71 升到 100。字形跨平台存在差异，是有意接受的代价。
 
 ---
 

@@ -170,6 +170,9 @@ export interface EraOptions {
  * 3 世纪）就可能有 10 条以上 sig≥4 的事件，按世纪合并必然超限。
  * 这里直接按事件年份序列贪心切分，能精确控制每段条数。
  * 注意这只影响「展示分段」，不影响懒加载分片（那个仍按世纪走）。
+ *
+ * 传入的 items 不要求已排序——函数内部会按 year 重新排序后再切段。
+ * 这一条由 time.test.ts 的「不要求调用方排序」用例保证。
  */
 export function buildEras(
   items: Array<{ year: number; significance: number; title: string }>,

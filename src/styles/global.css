@@ -700,6 +700,84 @@
      <sup class="footnote-ref">，文末汇总成 <details class="footnotes">。
      默认收起：正文已有上标，读者需要时才展开原文。 */
 
+  /* ---------- 行内白话注释 ----------
+     由 src/lib/remark-gloss.ts 生成：正文里的 {原文|译文} 变成
+     <span class="gloss" data-gloss="译文">原文</span>。
+
+     设计取舍：
+     - 原文常显，保持正文的史料语气
+     - 译文做成浮层，hover / focus / 点击时出现
+     - 下点线是「这里有注释」的唯一视觉提示，不用颜色避免与链接混淆
+
+     为什么译文不直接放在正文里：整段双写会让正文体积翻倍，
+     而且读者多数时候只想读其中一种。 */
+
+  .gloss {
+    /* 下点线 = 有注释可查，与链接的下划线区分开 */
+    border-bottom: 1px dotted color-mix(in srgb, var(--color-accent) 55%, transparent);
+    cursor: help;
+    position: relative;
+    /* 浮层需要定位上下文；inline 元素加 position 在某些浏览器下会改变换行行为，
+       但这里的注释片段都很短，可接受 */
+    outline: none;
+  }
+
+  .gloss::after {
+    content: attr(data-gloss);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.4em);
+    z-index: 30;
+    /* 浮层宽度上限，避免长译文撑出视口 */
+    max-width: min(24rem, 78vw);
+    width: max-content;
+    padding: var(--sp-2) var(--sp-3);
+    font-family: var(--font-ui);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-normal);
+    letter-spacing: 0;
+    color: var(--color-ink-strong);
+    background: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    border-left: 2px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 10px color-mix(in srgb, var(--color-ink) 12%, transparent);
+    text-align: left;
+    white-space: normal;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2px);
+    transition:
+      opacity var(--dur-fast) var(--ease-standard),
+      transform var(--dur-fast) var(--ease-standard),
+      visibility var(--dur-fast);
+  }
+
+  /* 桌面：悬停与键盘聚焦都显示 */
+  .gloss:hover::after,
+  .gloss:focus-visible::after,
+  .gloss[data-open='true']::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .gloss:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* 减少动效偏好下不做位移 */
+  @media (prefers-reduced-motion: reduce) {
+    .gloss::after {
+      transition: none;
+      transform: none;
+    }
+  }
+
   .footnote-ref {
     font-size: 0.7em;
     line-height: 0;

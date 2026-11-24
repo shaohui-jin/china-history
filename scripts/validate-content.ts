@@ -175,6 +175,176 @@ for (const f of listDir('events')) {
   }
 }
 
+/* ---------------- 可信度：跨书互证与争议块 ---------------- */
+
+/**
+ * 书目判据：史料 id 的第一段。
+ *
+ * `sanguozhi-chibi` 与 `sanguozhi-zhuge` 同属「三国志」，
+ * `suishu-yangdi` 与 `chenshu-houzhu` 分属两本。
+ * 这是启发式判断，不追求万全——只用来拦「同一本书引两次冒充互证」。
+ */
+function bookOf(sourceId: string): string {
+  return sourceId.split('-')[0];
+}
+
+/** 解析 corroboration 块（yaml 缩进结构，手工扫一遍） */
+function parseCorroboration(raw: string): {
+  primary: string | null;
+  secondary: string[];
+  agreement: string | null;
+} | null {
+  // 归一换行：Windows 下 raw 是 CRLF，行尾的 \r 会让 `(\S+)$` 匹配失败
+  const normalized = raw.replace(/\r\n/g, '\n');
+  const block = normalized.match(/^corroboration:\s*\n((?:[ \t]+.*\n?)+)/m);
+  if (!block) return null;
+  const body = block[1];
+
+  const primary = body.match(/^\s+primary:\s*(\S+)/m)?.[1] ?? null;
+  const agreement = body.match(/^\s+agreement:\s*(\S+)/m)?.[1] ?? null;
+
+  const secondary: string[] = [];
+  const secBlock = body.match(/^\s+secondary:\s*\n((?:\s+-\s+\S+\n?)+)/m);
+  if (secBlock) {
+    for (const line of secBlock[1].split('\n')) {
+      const m = line.match(/^\s+-\s+(\S+)$/);
+      if (m) secondary.push(m[1].trim());
+    }
+  }
+  return { primary, secondary, agreement };
+}
+
+/** 解析 disputes 里出现的所有 sourceId */
+function parseDisputeSources(raw: string): string[] {
+  const block = raw.match(/^disputes:\s*\n((?:[ \t]+.*\n?)+)/m);
+  if (!block) return [];
+  const out: string[] = [];
+  const re = /^\s+sourceId:\s*(\S+)/gm;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(block[1]))) out.push(m[1].trim());
+  return out;
+}
+
+for (const f of listDir('events')) {
+  const fm = readFrontmatter(join(ROOT, 'events', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+
+  // 收集本事件声明的 sources
+  const declared: string[] = [];
+  const srcBlock = raw.match(/^sources:\s*\n((?:\s+-\s+.+\n?)+)/m);
+  if (srcBlock) {
+    for (const line of srcBlock[1].split('\n')) {
+      const m = line.match(/^\s+-\s+(.+)$/);
+      if (m) declared.push(m[1].trim());
+    }
+  }
+
+  const corr = parseCorroboration(raw);
+
+  // 检查 1：corroboration 的 primary / secondary 必须真的在 sources 或彼此之间
+  if (corr && corr.primary) {
+    const all = new Set([...declared, corr.primary, ...corr.secondary]);
+    const books = new Set([...all].map(bookOf));
+
+    if (corr.secondary.length === 0) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: 'corroboration.secondary 为空，至少需要 1 条不同书目的旁证',
+      });
+    } else if (books.size < 2) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `corroboration 的 primary 与 secondary 同属一本书（${[...books].join(', ')}），无法构成互证`,
+      });
+    }
+
+    // 检查 2：agreement 枚举
+    if (corr.agreement && !['consistent', 'partial', 'conflicting'].includes(corr.agreement)) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `corroboration.agreement 非法值「${corr.agreement}」，可用 consistent / partial / conflicting`,
+      });
+    }
+
+    // 检查 3：conflicting 必须有 disputes
+    if (corr.agreement === 'conflicting') {
+      const claimed = raw.match(/^disputes:\s*\n(?:\s+-\s+claim:)/m);
+      if (!claimed) {
+        issues.push({
+          level: 'error',
+          where: `events/${id}`,
+          message: 'agreement 为 conflicting 但 disputes 为空，争议点必须写明',
+        });
+      }
+    }
+  }
+
+  // 检查 4：disputes 里的 sourceId 必须存在
+  for (const s of parseDisputeSources(raw)) {
+    if (!ids.sources.has(s)) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `disputes 引用了不存在的史料：${s}`,
+      });
+    }
+  }
+
+  // 检查 5：正文脚注 id 必须在 sources / corroboration 里
+  const body = (readFrontmatter(join(ROOT, 'events', f)) as any)?.__raw;
+  const fullText = readFileSync(join(ROOT, 'events', f), 'utf8');
+  const bodyPart = fullText.replace(/^---[\s\S]*?\n---/, '');
+  const footRe = /\[\^([a-z0-9-]+)(?:\|[^\]]+)?\]/g;
+  const known = new Set([...declared, corr?.primary ?? '', ...(corr?.secondary ?? [])].filter(Boolean));
+  let fm2: RegExpExecArray | null;
+  while ((fm2 = footRe.exec(bodyPart))) {
+    const sid = fm2[1];
+    if (!ids.sources.has(sid)) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message: `正文脚注引用了不存在的史料：${sid}`,
+      });
+    } else if (!known.has(sid)) {
+      issues.push({
+        level: 'warn',
+        where: `events/${id}`,
+        message: `正文脚注 ${sid} 未出现在 sources / corroboration 里，建议补上以便溯源`,
+      });
+    }
+  }
+}
+
+/* ---------------- 可信度：人物评价必须带出处 ---------------- */
+
+for (const f of listDir('people')) {
+  const fm = readFrontmatter(join(ROOT, 'people', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+
+  const evalBlock = raw.match(/^evaluations:\s*\n((?:[ \t]+.*\n?)+)/m);
+  if (evalBlock) {
+    const re = /^\s+sourceId:\s*(\S+)/gm;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(evalBlock[1]))) {
+      const s = m[1].trim();
+      if (!ids.sources.has(s)) {
+        issues.push({
+          level: 'error',
+          where: `people/${id}`,
+          message: `evaluations 引用了不存在的史料：${s}`,
+        });
+      }
+    }
+  }
+}
+
 /* ---------------- 枚举值校验 ---------------- */
 
 /**

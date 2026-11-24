@@ -1,10 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import TimelineCanvas from '../components/timeline/TimelineCanvas.vue';
 import TimelineVertical from '../components/timeline/TimelineVertical.vue';
+import TimelineExplorer from '../components/timeline/TimelineExplorer.vue';
 import { getTimelineData } from '../lib/content';
 import { timelineByBreakpoint } from '../design/pages';
-import { shortYear } from '../lib/time';
 import { url } from '../lib/url';
 
 const timeline = await getTimelineData();
@@ -52,8 +51,8 @@ const timelineLite = { ...timeline, items: initialItems };
     </div>
 
     <!--
-      桌面（≥1024）：画布泳道
-      平板与手机（<1024）：纵向列表
+      桌面（≥1024）：TimelineExplorer = 画布泳道 + 政权筛选条
+      平板与手机（<1024）：纵向列表（自带年代分段与政权 chips）
 
       为什么平板不用画布：768–1023px 下横向泳道本来就拥挤，
       而且画布必须吃掉触摸事件（touch-action 冲突），
@@ -65,10 +64,11 @@ const timelineLite = { ...timeline, items: initialItems };
       注意这里的媒体查询必须与下方 .only-wide / .only-narrow 的断点一致。
     -->
     <div class="only-wide">
-      <TimelineCanvas
+      <TimelineExplorer
         client:media="(min-width: 1024px)"
         config={timelineByBreakpoint.lg}
         data={timelineLite}
+        lanes={timeline.lanes}
         lazyLoad={true}
       />
     </div>
@@ -78,18 +78,10 @@ const timelineLite = { ...timeline, items: initialItems };
       <TimelineVertical client:media="(max-width: 1023px)" data={timeline} />
     </div>
 
-    <section class="polis">
-      <h2 class="polis__title u-ui">收录政权</h2>
-      <ul class="polis__list u-long-list">
-        {timeline.lanes.map((l) => (
-          <li class="polis__item">
-            <span class="polis__bar" style={`background: var(--color-lane-${l.laneIndex})`}></span>
-            <span class="polis__name">{l.label}</span>
-            <span class="num polis__span">{shortYear(l.start)}–{shortYear(l.end)}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <!--
+      政权列表已并入 TimelineExplorer（桌面）与 TimelineVertical（移动端），
+      这里不再单独渲染。桌面端可点击筛选，移动端在年代按钮下方有政权 chips。
+    -->
   </main>
 </Base>
 

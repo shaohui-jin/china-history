@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import DisputeDiff from '../../components/events/DisputeDiff.astro';
 import { loadIndex } from '../../lib/content';
 import { formatRange } from '../../lib/time';
 import { render } from 'astro:content';
@@ -53,6 +54,33 @@ const polities = event.polityIds
 const sources = event.sources
   .map((s) => index.sources.get(s.id))
   .filter((s) => !!s);
+
+/**
+ * 争议差异对照需要的数据。
+ *
+ * disputes 里的 sourceId 是 reference，Astro 解析后是 { collection, id }，
+ * 而组件里要按 id 查书名，所以先转成 Map。
+ */
+const sourceMap = new Map(
+  event.sources.map((s) => {
+    const entry = index.sources.get(s.id);
+    return [s.id, { title: entry?.data.title ?? s.id, volume: entry?.data.volume }] as const;
+  }),
+);
+
+const primarySourceId = event.corroboration?.primary?.id;
+
+/**
+ * disputes 里的 sourceId 是 reference，Astro 解析后为 { collection, id }。
+ * 组件只认字符串 id，所以要在这里摊平一次。
+ */
+const disputeData = (event.disputes ?? []).map((d) => ({
+  claim: d.claim,
+  views: d.views.map((v) => ({
+    sourceId: v.sourceId.id,
+    statement: v.statement,
+  })),
+}));
 ---
 
 <Base title={`${event.title} · 史鉴`} description={event.summary}>
@@ -100,6 +128,17 @@ const sources = event.sources
           <Content />
         </div>
 
+        <!--
+          史料异说：只在 disputes 非空时渲染。
+          位置在正文之后、参与者/史料出处之前——读者读完经过，
+          紧接着看到「各家说法不同」，顺序上最自然。
+        -->
+        <DisputeDiff
+          disputes={disputeData}
+          sources={sourceMap}
+          primaryId={primarySourceId}
+        />
+
         {participants.length > 0 && (
           <section class="panel">
             <h2 class="panel__title u-ui">参与者</h2>
@@ -137,6 +176,36 @@ const sources = event.sources
       </div>
     </article>
   </main>
+
+  <!--
+    行内白话注释的触屏交互。
+    桌面靠 :hover 与 :focus-visible 在 CSS 里解决，触屏没有 hover，
+    所以这里用事件委托统一处理点的动作：
+    - 点 .gloss → 切换 data-open
+    - 点别处 → 关掉所有已展开的
+    事件委托而不是逐元素绑定：一页可能有几十处注释，
+    逐个 addEventListener 没必要，且 remark 生成的节点无法在模板里挂钩。
+  -->
+  <script>
+    document.addEventListener('click', (ev) => {
+      const target = ev.target as HTMLElement | null;
+      const gloss = target?.closest('.gloss') as HTMLElement | null;
+
+      if (gloss) {
+        const open = gloss.getAttribute('data-open') === 'true';
+        // 先全部收起，保证同时只开一个
+        document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
+          el.setAttribute('data-open', 'false');
+        });
+        gloss.setAttribute('data-open', open ? 'false' : 'true');
+        return;
+      }
+
+      document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
+        el.setAttribute('data-open', 'false');
+      });
+    });
+  </script>
 </Base>
 
 <style>

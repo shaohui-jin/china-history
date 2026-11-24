@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "tokens": "node scripts/gen-tokens.ts",
     "validate": "node scripts/validate-content.ts",
+    "depth": "node scripts/check-depth.ts",
     "check": "astro check",
     "test": "node --test src/lib/*.test.ts",
     "lint:css": "stylelint \"src/styles/**/*.css\" \"src/**/*.vue\""

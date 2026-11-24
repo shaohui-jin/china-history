@@ -1,0 +1,185 @@
+---
+/**
+ * 争议差异对照。
+ *
+ * 设计来源：用户要求「能直观知道不同文章有哪些差异」。
+ * 最终形态是「主史料为基准 + 其他记载并列 + 差异处高亮」：
+ *   - 以 corroboration.primary 的书作为骨架，读者先看到最通行的说法
+ *   - 其他书的说法并列在下方，只标不同之处，不重复相同部分
+ *   - 差异片段在 yaml 里用 {} 包裹，渲染时高亮
+ *
+ * 为什么不做字面 diff：
+ * 文言文的不同记载往往不是字面对应（「数十万」vs「二十余万」措辞完全不同），
+ * 自动 diff 只会标出一大片红。人工在 statement 里标 {} 更准确。
+ */
+interface DisputeView {
+  sourceId: string;
+  statement: string;
+}
+
+interface Dispute {
+  claim: string;
+  views: DisputeView[];
+}
+
+interface Props {
+  disputes: Dispute[];
+  /** 史料 id → 书名 / 卷次，用于显示出处 */
+  sources: Map<string, { title: string; volume?: string }>;
+  /** 主史料 id，用于标「主」 */
+  primaryId?: string;
+}
+
+const { disputes, sources, primaryId } = Astro.props;
+
+/** 把 statement 里的 `{...}` 拆成高亮/普通片段 */
+function segments(statement: string): Array<{ text: string; marked: boolean }> {
+  const out: Array<{ text: string; marked: boolean }> = [];
+  const re = /\{([^}]*)\}/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(statement))) {
+    if (m.index > last) out.push({ text: statement.slice(last, m.index), marked: false });
+    out.push({ text: m[1], marked: true });
+    last = m.index + m[0].length;
+  }
+  if (last < statement.length) out.push({ text: statement.slice(last), marked: false });
+  return out.length ? out : [{ text: statement, marked: false }];
+}
+
+function labelOf(id: string): string {
+  const s = sources.get(id);
+  if (!s) return id;
+  return `《${s.title}》${s.volume ?? ''}`;
+}
+---
+
+{
+  disputes.length > 0 && (
+    <section class="dsp" aria-labelledby="dsp-title">
+      <h2 id="dsp-title" class="dsp__title u-ui">史料异说</h2>
+      <p class="dsp__lead u-ui">
+        以下条目在不同史书中记载不一致。高亮部分为各书的差异之处。
+      </p>
+
+      {disputes.map((d) => (
+        <div class="dsp__group">
+          <h3 class="dsp__claim u-ui">{d.claim}</h3>
+          <ul class="dsp__views">
+            {d.views.map((v) => (
+              <li class="dsp__view">
+                <div class="dsp__source">
+                  <span class="dsp__cite">{labelOf(v.sourceId)}</span>
+                  {v.sourceId === primaryId && <span class="dsp__tag u-ui">主</span>}
+                </div>
+                <p class="dsp__text">
+                  {segments(v.statement).map((seg) =>
+                    seg.marked ? <mark class="dsp__mark">{seg.text}</mark> : <span>{seg.text}</span>,
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  )
+}
+
+<style>
+  .dsp {
+    margin-top: var(--sp-8);
+    padding: var(--sp-5);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--decor-card-radius, var(--radius-md));
+    background: var(--color-surface-raised);
+  }
+
+  .dsp__title {
+    font-size: var(--fs-2xs);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .dsp__lead {
+    margin-top: var(--sp-2);
+    font-size: var(--fs-xs);
+    color: var(--color-ink-muted);
+    line-height: var(--lh-normal);
+  }
+
+  .dsp__group {
+    margin-top: var(--sp-5);
+    padding-top: var(--sp-4);
+    border-top: 1px dotted var(--color-border);
+  }
+
+  .dsp__group:first-of-type {
+    margin-top: var(--sp-4);
+  }
+
+  .dsp__claim {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-ink-strong);
+    margin-bottom: var(--sp-3);
+  }
+
+  .dsp__views {
+    display: grid;
+    gap: var(--sp-3);
+    /* 桌面并排，窄屏堆叠 */
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .dsp__views {
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+  }
+
+  .dsp__view {
+    padding: var(--sp-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-paper);
+  }
+
+  .dsp__source {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-2);
+  }
+
+  .dsp__cite {
+    font-family: var(--font-ui);
+    font-size: var(--fs-2xs);
+    color: var(--color-ink-muted);
+  }
+
+  .dsp__tag {
+    font-size: var(--fs-2xs);
+    padding: 0 0.375rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: var(--color-ink-inverse);
+  }
+
+  .dsp__text {
+    font-size: var(--fs-sm);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+  }
+
+  /* 差异高亮：底色而非加粗，避免与正文的强调混淆 */
+  .dsp__mark {
+    background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+    color: var(--color-ink-strong);
+    padding: 0.05em 0.2em;
+    border-radius: 2px;
+    font-weight: var(--fw-regular);
+  }
+</style>

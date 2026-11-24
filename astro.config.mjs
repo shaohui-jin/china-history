@@ -3,6 +3,7 @@ import vue from '@astrojs/vue';
 import sitemap from '@astrojs/sitemap';
 import remarkWikilink from './src/lib/remark-wikilink.ts';
 import remarkFootnote from './src/lib/remark-footnote.ts';
+import remarkGloss from './src/lib/remark-gloss.ts';
 
 /**
  * GitHub Pages 部署配置。
@@ -35,12 +36,15 @@ export default defineConfig({
      * 避免拼错静默通过。source 类型暂无详情页，渲染成《书名》行内标记。
      */
     /**
-     * 插件顺序：footnote 先于 wikilink。
+     * 插件顺序有硬约束，三步都要按此排列：
      *
-     * wikilink 会把文本节点替换成新节点，而 footnote 依赖在文本节点上做标记，
-     * 所以 footnote 必须先跑。
+     * 1. footnote 先跑：它要在完整文本节点上匹配 `[^source-id]`。
+     * 2. gloss 次之：它要在 footnote 切分后的文本片段上匹配 `{原文|译文}`。
+     *    放在 footnote 之前也能工作，但脚注标记可能落在 gloss 内部，导致译文里混进 `[^id]`。
+     * 3. wikilink 最后：它会把文本节点整个替换成链接节点，
+     *    跑早了后面两个插件就扫不到原文了。
      */
-    remarkPlugins: [remarkFootnote, remarkWikilink],
+    remarkPlugins: [remarkFootnote, remarkGloss, remarkWikilink],
   },
   // 构建产物里保留相对路径，减少 base 处理出错的面
   build: {

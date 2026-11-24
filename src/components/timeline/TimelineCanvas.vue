@@ -17,6 +17,7 @@ import {
 } from '../../design/tokens';
 import type { TimelineConfig } from '../../design/pages';
 import { centuryOf, shortYear } from '../../lib/time';
+import { eventHref } from '../../lib/nav';
 import type { TimelineData } from '../../lib/content';
 
 interface Props {
@@ -30,11 +31,17 @@ interface Props {
    * 缩放/平移时会按世纪从 /data/timeline/<century>.json 拉取缺失的。
    */
   lazyLoad?: boolean;
+  /**
+   * 政权筛选。传入政权 id 时，右侧列表只显示该政权的事件，画布上其他泳道变淡。
+   * 为空表示不筛选，显示全部。
+   */
+  activeLaneId?: string | null;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   initialWindow: null,
   lazyLoad: false,
+  activeLaneId: null,
 });
 
 const canvasEl = shallowRef<HTMLCanvasElement | null>(null);
@@ -498,12 +505,21 @@ onBeforeUnmount(() => {
 const listItems = computed(() => {
   const minSig = minSignificance();
   const range = brushed.value ?? view.value;
+  const lane = props.activeLaneId;
   return items.value
     .filter((it) => {
       if (it.significance < minSig) return false;
+      // 政权筛选：指定 laneId 时只留该政权的事件
+      if (lane && it.laneId !== lane) return false;
       return it.endYear >= range.from && it.year <= range.to;
     })
     .sort((a, b) => a.year - b.year);
+});
+
+/** 筛选中的政权名，用于列表标题 */
+const activeLaneLabel = computed(() => {
+  if (!props.activeLaneId) return null;
+  return props.data.lanes.find((l) => l.id === props.activeLaneId)?.label ?? props.activeLaneId;
 });
 
 const spanLabel = computed(() => {
@@ -659,15 +675,24 @@ watch(view, () => {
 
       <aside v-if="config.showSideList" class="tl__side">
         <div class="tl__side-head">
-          <span class="u-ui">{{ brushed ? '框选范围内' : '当前视窗内' }}</span>
+          <span class="u-ui">
+            <template v-if="activeLaneLabel">{{ activeLaneLabel }}</template>
+            <template v-else>{{ brushed ? '框选范围内' : '当前视窗内' }}</template>
+          </span>
           <span class="num u-ui">{{ listItems.length }} 条</span>
         </div>
         <ul class="tl__list">
           <li v-for="it in listItems" :key="it.id">
-            <button
-              type="button"
+            <!--
+              用 <a> 而不是 <button>：点击要能跳到事件详情页。
+              之前是 button + 只设 selected，导致桌面端点列表毫无反应，
+              而移动端的 TimelineVertical 是 <a>，两端行为不一致。
+              保留 @click 设 selected 是为了画布上同步高亮，不阻止默认跳转。
+            -->
+            <a
               class="tl__list-item"
               :class="{ 'tl__list-item--active': selected === it.id }"
+              :href="eventHref(it.id)"
               @click="selected = it.id"
             >
               <span class="tl__list-year num">{{ shortYear(it.year) }}</span>
@@ -675,11 +700,12 @@ watch(view, () => {
                 <span class="tl__list-title">{{ it.title }}</span>
                 <span class="tl__list-summary">{{ it.summary }}</span>
               </span>
-            </button>
+            </a>
           </li>
         </ul>
         <p v-if="listItems.length === 0" class="tl__empty u-ui">
-          该范围内没有达到当前详细度阈值的事件，放大或清除框选试试。
+          <template v-if="activeLaneLabel">该政权在此范围内没有达到阈值的事件。</template>
+          <template v-else>该范围内没有达到当前详细度阈值的事件，放大或清除框选试试。</template>
         </p>
       </aside>
     </div>
@@ -795,6 +821,9 @@ watch(view, () => {
   padding: var(--sp-2);
   border-radius: var(--radius-sm);
   border-bottom: 1px solid var(--color-border);
+  /* 列表项是 <a>：去掉全局链接下划线与蓝色，靠 hover 背景表示可点 */
+  color: inherit;
+  text-decoration: none;
 }
 
 .tl__list-item:hover {

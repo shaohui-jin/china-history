@@ -82,9 +82,8 @@ padding-left: calc(var(--sp-10) + var(--sp-1) + var(--sp-3) * 2);
 font-weight: var(--fw-semibold);  /* 不要写 600 */
 ```
 
-注意：**项目不使用 webfont**（见 [PENDING-FEATURES.md](PENDING-FEATURES.md) 第 3 节），
-字重完全由系统字体决定。楷体在多数平台只有 Regular，所以标题不靠字重区分，
-靠字号、字距与颜色层次。
+注意：**项目不使用 webfont**。字重完全由系统字体决定。楷体在多数平台只有 Regular，
+所以标题不靠字重区分，靠字号、字距与颜色层次。
 
 ### 1.4 生成文件不要手改
 
@@ -183,3 +182,21 @@ reset < base < layout < component < utility
 - 工具类（`.u-ui`、`.u-muted`、`.u-long-list`）→ `utility`
 
 组件内的 `<style scoped>` 不受此限，但**不要**在组件里覆盖全局组件类。
+
+---
+
+## 6. 断点的两处写法必须同步
+
+`client:media` 的 JS 挂载边界与 CSS 媒体查询是分开写的，**改一处必须改另一处**：
+
+| 页面 | JS 边界 | CSS 媒体查询 |
+|---|---|---|
+| `pages/index.astro` | `client:media="(min-width: 1024px)"` | `@media (min-width: 1024px)` |
+| `pages/timeline.astro` | 同上 | 同上 |
+
+`src/design/tokens.ts` 里有 `breakpoint.lg = 1024`，但 `client:media`
+只接受字符串字面量，无法引用变量——这是 Astro 的平台限制。
+
+**症状**：只改 CSS 不改 JS 时，屏幕宽度落在旧值和新值之间会出现
+「容器可见但组件没挂载」的空白区，看起来像页面渲染失败。
+

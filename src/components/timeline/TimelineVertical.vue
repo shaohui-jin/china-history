@@ -35,18 +35,44 @@ const range = computed(
   () => ERAS.value.find((e) => e.id === era.value) ?? ERAS.value[0],
 );
 
+/** 默认只显示重大事件，其余折叠——移动端首屏不为次要事件付成本 */
+const expanded = ref(false);
+
+/**
+ * 政权筛选。只列「当前年代段内有事件」的政权，避免出现点了没反应的按钮。
+ */
+const activeLane = ref<string | null>(null);
+
 const visible = computed<TimelineItem[]>(() => {
   if (!range.value) return [];
+  const lane = activeLane.value;
   return props.data.items
-    .filter((it) => it.year >= range.value.from && it.year <= range.value.to)
+    .filter((it) => {
+      if (it.year < range.value.from || it.year > range.value.to) return false;
+      // 政权筛选：与桌面端 TimelineCanvas 的 activeLaneId 语义一致
+      if (lane && it.laneId !== lane) return false;
+      return true;
+    })
     .sort((a, b) => a.year - b.year);
 });
 
+const eraLanes = computed(() => {
+  if (!range.value) return [];
+  const ids = new Set(
+    props.data.items
+      .filter((it) => it.year >= range.value.from && it.year <= range.value.to)
+      .map((it) => it.laneId),
+  );
+  return props.data.lanes.filter((l) => ids.has(l.id));
+});
+
+function selectLane(id: string | null) {
+  activeLane.value = activeLane.value === id ? null : id;
+  expanded.value = false;
+}
+
 const laneLabel = (id: string) =>
   props.data.lanes.find((l) => l.id === id)?.label ?? id;
-
-/** 默认只显示重大事件，其余折叠——移动端首屏不为次要事件付成本 */
-const expanded = ref(false);
 const shown = computed(() =>
   expanded.value ? visible.value : visible.value.filter((it) => it.significance >= 4),
 );
@@ -71,6 +97,25 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
         @click="era = opt.id; expanded = false"
       >
         {{ opt.label }}
+      </button>
+    </div>
+
+    <!--
+      政权筛选：只列当前年代段内有事件的政权。
+      与桌面端 TimelineExplorer 的筛选条语义一致（点第二次取消）。
+    -->
+    <div v-if="eraLanes.length > 1" class="tlv__lanes" role="group" aria-label="按政权筛选">
+      <button
+        v-for="l in eraLanes"
+        :key="l.id"
+        type="button"
+        class="tlv__lane"
+        :class="{ 'tlv__lane--active': activeLane === l.id }"
+        :aria-pressed="activeLane === l.id"
+        @click="selectLane(l.id)"
+      >
+        <span class="tlv__lane-bar" :style="{ background: `var(--color-lane-${l.laneIndex})` }" />
+        {{ l.label }}
       </button>
     </div>
 
@@ -139,6 +184,49 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 
 .tlv__eras::-webkit-scrollbar {
   display: none;
+}
+
+/* 政权 chips：与年代选择器视觉区分——用方角，不用药丸 */
+.tlv__lanes {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+}
+
+.tlv__lanes::-webkit-scrollbar {
+  display: none;
+}
+
+.tlv__lane {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-3);
+  /* 2rem = 32px，触控最小高度；令牌里没有 32px 档，按规范用 px */
+  min-height: 32px;
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-raised);
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+
+.tlv__lane--active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-ink-inverse);
+}
+
+.tlv__lane-bar {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 1px;
+  flex: none;
 }
 
 .tlv__era {

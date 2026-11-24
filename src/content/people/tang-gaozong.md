@@ -16,6 +16,17 @@ seal: |-
   李
   治
 summary: 唐朝第三位皇帝。太宗第九子。在位期间灭西突厥、灭百济、灭高句丽，唐代疆域达到极盛。然晚年多病，政归武后，遂启武周代唐之端。
+evaluations:
+  - claim: 《旧唐书》的评语是「见称长者」四字，指其在藩邸时的宽厚，而登位之后「顿异明哉」——史臣对他的评价并不高，认为其治绩有赖贞观旧臣与武后的辅佐。
+    sourceId: jiutangshu-lizhi
+    quote: 大帝往在藩储，见称长者；暨升旒扆，顿异明哉。虚襟以纳下，不欲以词色假人。
+    kind: evaluation
+  - claim: 他的时代是唐代疆域的顶点。永徽元年（650）擒车鼻可汗，显庆二年（657）苏定方灭西突厥，显庆五年（660）灭百济，总章元年（668）李勣灭高句丽。唐的版图东至朝鲜半岛北部、西抵咸海，为秦汉以来所未有。
+    sourceId: jiutangshu-lizhi
+    kind: influence
+  - claim: 「政归武后」不是被动的结果。高宗患风疾，「百司奏事，时时令后决之」，这是他主动的授权；诛长孙无忌、贬褚遂良，也是他借武后之手清除关陇集团的举措。所谓「懦弱之主」，实际上完成了太宗未竟的集权——只是代价是皇权最终落入武氏之手。
+    sourceId: jiutangshu-lizhi
+    kind: dispute
 relations:
   - target: tang-taizong
     type: parent-child

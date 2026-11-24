@@ -18,6 +18,16 @@ seal: |-
   朱
   棣
 summary: 明太祖第四子。以「靖难」之名起兵夺位，在位二十二年，迁都北京、设内阁、遣郑和下西洋、修《永乐大典》、五征漠北。其治为明代极盛，然得位不正始终是其心结。
+evaluations:
+  - claim: 朱棣的功业与合法性焦虑互为因果。迁都北京、五征漠北、下西洋、修大典——这些宏大工程的共同动机，是要用「超过太祖的功业」来证明自己得位的正当性。
+    sourceId: mingshi-chengzu
+    kind: evaluation
+  - claim: 设内阁是朱棣最重要的制度遗产。内阁本为皇帝的秘书机构，但宣德以后逐渐成为实际的决策中枢。明代中后期的「首辅」权力，实源于此。这一制度的演变，恰好填补了朱元璋废丞相留下的空缺。
+    sourceId: mingshi-chengzu
+    kind: influence
+  - claim: 靖难之役的合法性争议从未真正平息。方孝孺被诛十族（一说九族），齐泰、黄子澄皆族诛。这些血腥的清算，使「得位不正」成为朱棣一生无法摆脱的阴影，也为此后明代的言路与士风留下了创伤。
+    sourceId: mingshi-chengzu
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: parent-child

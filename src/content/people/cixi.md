@@ -18,6 +18,13 @@ seal: |-
   慈
   禧
 summary: 晚清实际统治者。由咸丰懿贵妃而起，辛酉政变后垂帘听政，前后三次听政，掌权四十七年。支持洋务，又镇压戊戌变法，晚年办新政。其统治与清朝的覆亡相始终。
+evaluations:
+  - claim: 慈禧的历史角色常被简化为「顽固派」，但这一判断不准确。她支持洋务运动三十年，晚年又推行新政（废科举、练新军、预备立宪），其改革力度超过戊戌变法。真正的问题不是她反对改革，而是她的改革始终以「不损害满族统治」为限。
+    sourceId: qingshigao-linxuci
+    kind: evaluation
+  - claim: 她一生最大的误判是庚子年支持义和团。此前她刚镇压了戊戌变法，正需要转移矛盾；而列强对光绪的同情又使她感到威胁。这一决策导致八国联军入京、《辛丑条约》赔款四亿五千万两——相当于清政府十二年的财政收入。
+    sourceId: qingshigao-linxuci
+    kind: dispute
 relations:
   - target: xianfeng
     type: spouse

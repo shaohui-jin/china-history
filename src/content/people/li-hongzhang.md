@@ -20,6 +20,13 @@ seal: |-
   李
   鸿章
 summary: 晚清重臣，洋务运动核心人物。创淮军、建北洋水师、办江南制造局与轮船招商局。甲午战败后签订《马关条约》，庚子后签《辛丑条约》，背负「卖国」之名。
+evaluations:
+  - claim: 李鸿章的困境在于：他是当时最懂洋务的人，却要替一个拒绝真正改革的朝廷承担战败与签约的责任。梁启超的评价最切中要害：「吾敬李鸿章之才，吾惜李鸿章之识，吾悲李鸿章之遇。」
+    sourceId: qingshigao-linxuci
+    kind: evaluation
+  - claim: 洋务运动的根本局限是「中体西用」：只学技术，不改制度。李鸿章自己也承认这一点：「我办了一辈子的事，练兵也，海军也，都是纸糊的老虎，何尝能实在放手办理？」甲午一战，纸糊的老虎被戳破。
+    sourceId: qingshigao-linxuci
+    kind: dispute
 relations:
   - target: zeng-guofan
     type: teacher-student

@@ -17,6 +17,13 @@ seal: |-
   杨
   坚
 summary: 隋朝开国皇帝。代周建隋，589 年灭陈统一全国，结束近三百年分裂。创三省六部、科举、均田、统一货币度量衡。开皇年间「天下储积，得供五六十年」，史称「开皇之治」。
+evaluations:
+  - claim: 杨坚的历史地位被其子炀帝的暴名所掩盖。实际上，三省六部、科举、均田、律令这四项影响千年的制度，都是他创立的。炀帝只是继承并滥用。隋的意义，更多在于文帝而非炀帝。
+    sourceId: suishu-gaozu
+    kind: evaluation
+  - claim: 文帝的节俭在帝王中极为罕见：「其自奉养，务为俭素，乘舆御物，故弊者随令补用；自非享宴，所食不过一肉。」但他的严刑峻法同样极端——「盗一钱以上皆弃市」。这种「节俭 + 严刑」的组合，使开皇之治的富庶与恐怖并存。
+    sourceId: suishu-gaozu
+    kind: dispute
 relations:
   - target: yang-guang
     type: parent-child

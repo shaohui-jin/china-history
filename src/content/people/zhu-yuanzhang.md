@@ -19,6 +19,16 @@ seal: |-
   朱
   元璋
 summary: 明朝开国皇帝。出身佃农，曾为游方僧，投红巾军起家，十余年削平群雄，1368 年称帝。废丞相、设锦衣卫、兴大狱，建立中国史上最集权的皇权体制。
+evaluations:
+  - claim: 朱元璋的统治有两张面孔：一面是恢复秩序、减轻赋役、严整吏治，另一面是胡惟庸案、蓝玉案株连数万人。这两面不是矛盾，而是同一套逻辑：以极端手段重建中央权威。
+    sourceId: mingshi-taizu
+    kind: evaluation
+  - claim: 废丞相是朱元璋最重要的制度决定。此后明清两代再无丞相，六部直隶皇帝。这一设计的代价是：皇帝必须亲自处理全部政务，而一旦皇帝怠政（如万历），整个系统就陷入瘫痪。
+    sourceId: mingshi-taizu
+    kind: influence
+  - claim: 「洪武之治」与「洪武暴政」是同一段历史的两种叙述。前者强调民生恢复，后者强调株连惨烈。近年研究更倾向于把它们看作一体两面，而非互相排斥。
+    sourceId: mingshi-taizu
+    kind: dispute
 relations:
   - target: kublai
     type: enemy

@@ -18,6 +18,13 @@ seal: |-
   李
   隆基
 summary: 唐朝第七帝，在位四十四年。前期励精图治，开「开元盛世」，为唐之极盛；后期宠杨贵妃、用李林甫杨国忠，酿安史之乱。唐由盛转衰，实系于其一身。
+evaluations:
+  - claim: 玄宗一人的前后两半，正好对应唐朝的盛衰。前期他用姚崇、宋璟，开「开元盛世」；后期用李林甫、杨国忠，酿「安史之乱」。同一个皇帝，同一个朝代，前后的差别全在用人。
+    sourceId: zizhitongjian-anlushan
+    kind: evaluation
+  - claim: 「开元盛世」的人口与财政数据是唐代的顶峰，但这一顶峰本身包含着危机：均田制瓦解、府兵制崩溃、节度使坐大。玄宗晚年的怠政只是让这些结构性问题失去了控制。把安史之乱完全归咎于杨贵妃，是简化了的历史叙事。
+    sourceId: zizhitongjian-anlushan
+    kind: dispute
 relations:
   - target: wu-zetian
     type: kinship

@@ -197,7 +197,8 @@ const miniNodes = computed(() => {
   display: flex;
   align-items: baseline;
   gap: var(--sp-2);
-  min-height: var(--touch-target);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   border-bottom: 1px solid var(--color-border);
   padding-block: var(--sp-2);
   flex-wrap: wrap;

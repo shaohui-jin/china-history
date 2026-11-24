@@ -482,7 +482,7 @@ onBeforeUnmount(() => {
   border-radius: var(--decor-card-radius, var(--radius-md));
   background: var(--color-surface-raised);
   padding: var(--sp-4);
-  min-height: 10rem;
+  height: 10rem;
 }
 
 .graph__side-name {
@@ -521,7 +521,8 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  min-height: var(--touch-target);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   border-bottom: 1px solid var(--color-border);
 }
 

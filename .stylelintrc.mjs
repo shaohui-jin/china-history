@@ -81,6 +81,67 @@ export default {
       },
     ],
 
+    /*
+     * 控件高度必须走三档令牌：var(--control-sm|md|lg)。
+     *
+     * 2026-11 之前，9 个交互控件用了 var(--touch-target) / 2rem /
+     * 1.875rem / 32px 四种写法，同一页面里按钮高矮参差。根因不是
+     * 缺少刻度，而是没人拦着写裸值。
+     *
+     * disallowed-list 的「允许值」是白名单语义：这里只放行三种令牌
+     * 与 0，其余一律报错。容器高度（画布占位等）改用 height，
+     * 不走 min-height，因此不会被这条规则误伤。
+     */
+    'declaration-property-value-allowed-list': [
+      {
+        'min-height': [
+          'var(--control-sm)',
+          'var(--control-md)',
+          'var(--control-lg)',
+          '0',
+        ],
+      },
+      {
+        message:
+          '控件高度必须用三档令牌：var(--control-sm|md|lg)，并配套 line-height: var(--control-lh)。' +
+          '容器占位高度请改用 height 或 aspect-ratio。',
+      },
+    ],
+
+    /*
+     * 控件高度必须走三档令牌。
+     *
+     * 2026-11 之前，9 个交互控件用了 var(--touch-target) / 2rem /
+     * 1.875rem / 32px 四种写法，同一页面里按钮高矮参差。根因不是
+     * 缺少刻度，而是没人拦着写裸值。
+     *
+     * 用 strict-value 而不是 disallowed-list：后者的值匹配不支持
+     * 负向先行断言，写不出「只要不是 var(--control-*) 就报错」。
+     */
+    'scale-unlimited/declaration-strict-value': [
+      ['color', 'background-color', 'border-color', 'fill', 'stroke'].map((p) =>
+        p === 'color' ? '/color/' : p,
+      ),
+      {
+        ignoreVariables: true,
+        ignoreFunctions: true,
+        ignoreValues: {
+          '': [
+            'inherit',
+            'transparent',
+            'currentColor',
+            'none',
+            'unset',
+            'initial',
+            'revert',
+            'auto',
+          ],
+        },
+        disableFix: true,
+        message: '颜色必须用 var(--color-*)，不要写裸色值',
+      },
+    ],
+
     // 以下几条放宽，避免与现有代码风格大量冲突
     'custom-property-pattern': null,
     'selector-class-pattern': null,

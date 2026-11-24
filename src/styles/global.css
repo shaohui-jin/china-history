@@ -402,11 +402,12 @@
     align-items: center;
     justify-content: center;
     gap: var(--sp-2);
-    min-height: var(--touch-target);
+    min-height: var(--control-md);
     padding: 0 var(--sp-4);
     font-family: var(--font-ui);
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
+    line-height: var(--control-lh);
     border-radius: var(--radius-sm);
     border: 1px solid transparent;
     transition:
@@ -435,7 +436,7 @@
   }
 
   .btn--sm {
-    min-height: 2rem;
+    min-height: var(--control-sm);
     font-size: var(--fs-xs);
     padding: 0 var(--sp-3);
   }
@@ -463,8 +464,9 @@
     gap: 6px;
     font-family: var(--font-ui);
     font-size: var(--fs-xs);
-    padding: 6px var(--sp-3);
-    min-height: 1.875rem;
+    padding: 0 var(--sp-3);
+    min-height: var(--control-sm);
+    line-height: var(--control-lh);
     border-radius: var(--radius-full);
     color: var(--color-ink-muted);
     white-space: nowrap;
@@ -814,7 +816,8 @@
     align-items: center;
     gap: var(--sp-2);
     /* 与 .u-ui 一致的触控高度 */
-    min-height: var(--touch-target);
+    min-height: var(--control-md);
+    line-height: var(--control-lh);
   }
 
   .footnotes__summary::-webkit-details-marker {

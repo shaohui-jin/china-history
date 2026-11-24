@@ -22,6 +22,7 @@ import {
   easing,
   breakpoint,
   layout,
+  control,
   themes,
   DEFAULT_THEME,
 } from '../src/design/tokens.ts';
@@ -68,6 +69,12 @@ function primitiveVars(): string {
   lines.push(`  --timeline-lane-h: ${layout.timeline.laneHeight};`);
   lines.push(`  --timeline-lane-gap: ${layout.timeline.laneGap};`);
   lines.push(`  --timeline-label-w: ${layout.timeline.laneLabelWidth};`);
+
+  // 控件尺寸（三档高度 + 固定行高）
+  lines.push(`  --control-sm: ${control.sm};`);
+  lines.push(`  --control-md: ${control.md};`);
+  lines.push(`  --control-lg: ${control.lg};`);
+  lines.push(`  --control-lh: ${control.lineHeight};`);
 
   return lines.join('\n');
 }

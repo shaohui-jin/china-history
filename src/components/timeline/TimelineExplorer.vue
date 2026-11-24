@@ -145,12 +145,13 @@ onBeforeUnmount(() => {
 .tle__reset {
   font-size: var(--fs-xs);
   color: var(--color-accent);
-  padding: var(--sp-1) var(--sp-2);
+  padding: 0 var(--sp-3);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   background: none;
   cursor: pointer;
-  min-height: 2rem;
+  min-height: var(--control-sm);
+  line-height: var(--control-lh);
 }
 
 .tle__reset:hover {
@@ -167,8 +168,9 @@ onBeforeUnmount(() => {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-3);
-  min-height: var(--touch-target);
+  padding: 0 var(--sp-3);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   background: var(--color-surface-raised);

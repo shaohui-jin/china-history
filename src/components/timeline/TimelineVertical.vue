@@ -257,9 +257,10 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   display: inline-flex;
   align-items: center;
   gap: var(--sp-1);
-  padding: var(--sp-1) var(--sp-3);
+  padding: 0 var(--sp-3);
   /* 2rem = 32px，触控最小高度；令牌里没有 32px 档，按规范用 px */
-  min-height: 32px;
+  min-height: var(--control-sm);
+  line-height: var(--control-lh);
   font-family: var(--font-ui);
   font-size: var(--fs-2xs);
   border: 1px solid var(--color-border);
@@ -286,8 +287,9 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   flex: none;
   font-family: var(--font-ui);
   font-size: var(--fs-xs);
-  padding: 7px 14px;
-  min-height: 2rem;
+  padding: 0 var(--sp-4);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   border-radius: var(--radius-full);
   color: var(--color-ink-muted);
   white-space: nowrap;
@@ -301,6 +303,34 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 .tlv__list {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/*
+ * 贯穿的纵向时间轴：在圆点所在的那一列画一条竖线。
+ *
+ * 为什么需要：列表本身只是一行行卡片，读者看不出这是「同一条时间轴上的
+ * 连续事件」。加一条竖线，圆点就从散点变成轴上的刻度，先后关系立现。
+ *
+ * ::before 定位在第 2 列（圆点列）的中心：2.75rem（年份列）+ sp-3 间距
+ * + 圆点半径的一半。
+ */
+.tlv__list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /*
+   * 定位在圆点列的中心。
+   *
+   * 注意 button 有 6px 的浏览器默认 padding（行是 button 元素），
+   * 圆点实际中心 = 6px padding + 2.75rem 年份列 + sp-3 间距 + 0.25rem 半列宽。
+   * 漏掉那 6px 会让线与圆点错开（实测偏差正好 6px）。
+   */
+  left: calc(6px + 2.75rem + var(--sp-3) + 0.25rem);
+  width: 1px;
+  background: var(--color-timeline-axis);
+  pointer-events: none;
 }
 
 .tlv__item {
@@ -317,7 +347,8 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   align-items: center;
   gap: var(--sp-3);
   width: 100%;
-  min-height: var(--touch-target);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   padding-block: var(--sp-3);
   text-align: left;
 }
@@ -339,6 +370,13 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   border-radius: var(--radius-full);
   background: var(--color-timeline-point);
   justify-self: center;
+  /*
+   * 用背景色描一圈，让圆点盖住贯穿的轴线。
+   * 不加这一圈，1px 的线会从左到右穿过圆点，看起来像「串烧」。
+   */
+  box-shadow: 0 0 0 3px var(--color-paper);
+  position: relative;
+  z-index: 1;
 }
 
 .tlv__dot--major {

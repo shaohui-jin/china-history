@@ -218,7 +218,8 @@ watch(focusId, () => {
   font-family: var(--font-ui);
   font-size: var(--fs-sm);
   padding: var(--sp-2) var(--sp-3);
-  min-height: var(--touch-target);
+  min-height: var(--control-md);
+  line-height: var(--control-lh);
   min-width: 14rem;
   max-width: 100%;
   color: var(--color-ink);

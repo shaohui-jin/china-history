@@ -141,17 +141,13 @@ function draw() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, width, height);
 
-  // ---- 纵向网格 + 年份刻度 ----
+  // ---- 纵向网格线（不含底部刻度文字，刻度在新轴线块里画） ----
   const span = view.value.to - view.value.from;
   const step = tickStep(span);
   const firstTick = Math.ceil(view.value.from / step) * step;
 
   ctx.strokeStyle = c['color-timeline-grid'];
   ctx.lineWidth = 1;
-  ctx.font = `400 10px ${fam.numeric}`;
-  ctx.fillStyle = c['color-ink-muted'];
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'top';
 
   for (let y = firstTick; y <= view.value.to; y += step) {
     if (y === 0) continue; // 不存在公元 0 年
@@ -160,7 +156,6 @@ function draw() {
     ctx.moveTo(x, 0);
     ctx.lineTo(x, height - pb);
     ctx.stroke();
-    ctx.fillText(shortYear(y), x, height - pb + 6);
   }
 
   // ---- 框选遮罩 ----
@@ -183,6 +178,25 @@ function draw() {
 
   // ---- 泳道 ----
   const minSig = minSignificance();
+
+  /*
+   * 泳道内子分层：同一政权的事件若在 x 轴上太近，向上错开一层。
+   *
+   * 为什么需要：事件原本全部落在该政权泳道的同一条水平线上，只在
+   * 水平方向按年份分散。当一个政权在某段时间里事件密集（如唐代的
+   * 安史之乱前后），圆点会重叠成一坨，看不出先后顺序。
+   *
+   * 做法：按年份排序后逐个放置，若与已放置的点 x 距离小于 MIN_GAP，
+   * 就抬到下一层。层数决定该泳道需要的高度。
+   */
+  const MIN_GAP = 40;
+  const layerStep = 10;
+  /*
+   * 层数上限：泳道高度是固定的（--timeline-lane-h），层数过多会让事件
+   * 溢出到相邻泳道。以 laneHeight/2 为界，超出部分不再上抬，而是接受
+   * 轻微重叠 —— 重叠比越界到别人的行里更不容易误读。
+   */
+  const maxLayer = Math.max(1, Math.floor(laneHeight / 2 / layerStep) - 1);
 
   props.data.lanes.forEach((lane) => {
     // 行位置用 rowIndex（由 getTimelineData 按**时间重叠**分配），
@@ -211,19 +225,59 @@ function draw() {
       ctx.globalAlpha = 1;
     }
 
-    // 该泳道事件
-    const laneItems = items.value.filter(
-      (it) => it.laneId === lane.id && it.significance >= minSig,
-    );
+    // 该泳道事件（按年份排序，供分层与连线使用）
+    const laneItems = items.value
+      .filter((it) => it.laneId === lane.id && it.significance >= minSig)
+      .sort((a, b) => a.year - b.year);
+
+    // 分层放置：layers[i] 记录该层已占用的 x 坐标
+    const layers: number[][] = [];
+    const placed: Array<{ it: (typeof laneItems)[number]; x: number; layer: number }> = [];
 
     for (const it of laneItems) {
       const x = pl + xOf(it.year, plotW);
+      if (x < pl - 2 || x > width + 2) continue;
+      let layer = 0;
+      while (
+        layer < maxLayer &&
+        layers[layer]?.some((px) => Math.abs(px - x) < MIN_GAP)
+      ) {
+        layer++;
+      }
+      (layers[layer] ||= []).push(x);
+      placed.push({ it, x, layer });
+    }
+
+    /*
+     * 连接线：同一泳道按时间顺序把相邻事件串起来。
+     *
+     * 这是「看不出先后」的直接解法 —— 散点变成路径，读者沿着线就能
+     * 读出时间方向。只连相邻两点，不连成一片网状。
+     */
+    if (placed.length > 1) {
+      ctx.strokeStyle = laneColor;
+      ctx.globalAlpha = 0.28;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let i = 0; i < placed.length; i++) {
+        const p = placed[i];
+        const py = midY - p.layer * layerStep;
+        if (i === 0) ctx.moveTo(p.x, py);
+        else ctx.lineTo(p.x, py);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+
+    for (const { it, x, layer } of placed) {
+      const py = midY - layer * layerStep;
+
       if (it.endYear !== it.year) {
         const x2 = pl + xOf(it.endYear, plotW);
         ctx.fillStyle = laneColor;
         ctx.globalAlpha = 0.35;
         ctx.beginPath();
-        ctx.roundRect(x, midY + 7, Math.max(x2 - x, 2), 3, 1.5);
+        ctx.roundRect(x, py + 7, Math.max(x2 - x, 2), 3, 1.5);
         ctx.fill();
         ctx.globalAlpha = 1;
       }
@@ -232,32 +286,76 @@ function draw() {
       const r = it.significance === 5 ? (isActive ? 6.5 : 5) : it.significance === 4 ? 4 : 3;
 
       ctx.beginPath();
-      ctx.arc(x, midY - (it.significance === 5 ? 3 : 0), r, 0, Math.PI * 2);
+      ctx.arc(x, py - (it.significance === 5 ? 3 : 0), r, 0, Math.PI * 2);
       ctx.fillStyle = isActive ? c['color-timeline-point-active'] : laneColor;
       ctx.fill();
 
-      // 标签：重大事件常显，其余放大后才显
-      const showLabel =
+      /*
+       * 标签：不是「够重要就显示」，而是「该层还有空位才显示」。
+       *
+       * 只看 significance 会导致密集区标签堆成一片黑。现在额外要求
+       * 相邻同层事件至少留出 labelGap 的空隙，否则只画点不画字 ——
+       * 悬停或点击仍能看到完整标题。
+       */
+      const wanted =
         it.significance === 5 || (it.significance >= 3 && span < 200) || isActive;
-      if (showLabel) {
-        ctx.font = `600 10px ${fam.ui}`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        ctx.fillStyle = isActive ? c['color-timeline-point-active'] : c['color-ink'];
-        const max = props.config.labelMaxChars;
-        const label = it.title.length > max ? it.title.slice(0, max - 1) + '…' : it.title;
-        ctx.fillText(label, x, midY - (it.significance === 5 ? 11 : 7));
-      }
+      if (!wanted) continue;
+
+      const sameLayer = placed.filter((p) => p.layer === layer);
+      const tooCrowded = sameLayer.some(
+        (p) => p.it !== it && Math.abs(p.x - x) < MIN_GAP + 8,
+      );
+      if (tooCrowded && !isActive) continue;
+
+      ctx.font = `600 10px ${fam.ui}`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      ctx.fillStyle = isActive ? c['color-timeline-point-active'] : c['color-ink'];
+      const max = props.config.labelMaxChars;
+      const label = it.title.length > max ? it.title.slice(0, max - 1) + '…' : it.title;
+      ctx.fillText(label, x, py - (it.significance === 5 ? 11 : 7));
     }
   });
 
-  // ---- 底部轴线 ----
+  /*
+   * ---- 底部主时间轴 ----
+   *
+   * 原来只有一条 1px 细线，读不出「时间向右流动」。改为：
+   * 加粗轴线 + 两端箭头 + 刻度线向下延伸，让轴线成为明确的视觉主线。
+   */
+  const axisY = height - pb + 0.5;
   ctx.strokeStyle = c['color-timeline-axis'];
-  ctx.lineWidth = 1;
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(pl, height - pb + 0.5);
-  ctx.lineTo(width, height - pb + 0.5);
+  ctx.moveTo(pl, axisY);
+  ctx.lineTo(width - 2, axisY);
   ctx.stroke();
+
+  // 箭头：表明时间轴的方向
+  ctx.beginPath();
+  ctx.moveTo(width - 2, axisY);
+  ctx.lineTo(width - 9, axisY - 4);
+  ctx.lineTo(width - 9, axisY + 4);
+  ctx.closePath();
+  ctx.fillStyle = c['color-timeline-axis'];
+  ctx.fill();
+
+  // 刻度线向下延伸，与轴相连
+  ctx.strokeStyle = c['color-timeline-grid'];
+  ctx.lineWidth = 1;
+  ctx.font = `500 10px ${fam.numeric}`;
+  ctx.fillStyle = c['color-ink-muted'];
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top';
+  for (let y = firstTick; y <= view.value.to; y += step) {
+    if (y === 0) continue;
+    const x = Math.round(pl + xOf(y, plotW)) + 0.5;
+    ctx.beginPath();
+    ctx.moveTo(x, axisY);
+    ctx.lineTo(x, axisY + 4);
+    ctx.stroke();
+    ctx.fillText(shortYear(y), x, axisY + 7);
+  }
 }
 
 function scheduleDraw() {

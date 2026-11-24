@@ -115,6 +115,27 @@ export const radius = {
   full: '9999px',
 } as const;
 
+/**
+ * 控件尺寸：所有可点元素（按钮、标签、筛选条、分段控件）统一到三档。
+ *
+ * 为什么单列一组而不复用 space：控件高度是**组件的固有属性**，
+ * 不该随间距刻度调整而变。此前 9 处控件用了 var(--touch-target) /
+ * 2rem / 1.875rem / 32px 四种写法，同一页面上按钮高矮不一。
+ *
+ * lineHeight 固定为 1：高度完全由 padding + min-height 决定。
+ * 否则会继承 body 的 --lh-relaxed（1.75），在多行中文里撑出参差的高度。
+ */
+export const control = {
+  /** 内联小按钮、标签页签 */
+  sm: '1.75rem',
+  /** 默认按钮、筛选项 */
+  md: '2.25rem',
+  /** 触屏下限（WCAG 2.5.5 建议 44px） */
+  lg: '2.75rem',
+  /** 控件内文字行高，固定 1 避免继承正文的 1.75 */
+  lineHeight: '1',
+} as const;
+
 export const shadow = {
   none: 'none',
   sm: '0 1px 2px rgba(23, 21, 15, 0.06)',

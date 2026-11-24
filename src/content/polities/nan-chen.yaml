@@ -1,0 +1,16 @@
+id: nan-chen
+name: 南陈
+aliases:
+  - 陈
+  - 南朝陈
+span:
+  from:
+    year: 557
+  to:
+    year: 589
+order: 50
+period: imperial-early
+note: 陈霸先代梁建陈，为南朝最后一个王朝。疆域最狭，仅长江以南。陈后主陈叔宝溺于诗酒，《玉树后庭花》成为亡国之音的代名词。589 年为隋所灭，南北重归一统。
+coexistedWith:
+  - bei-zhou
+  - sui

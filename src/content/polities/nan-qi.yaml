@@ -1,0 +1,15 @@
+id: nan-qi
+name: 南齐
+aliases:
+  - 萧齐
+  - 齐
+span:
+  from:
+    year: 479
+  to:
+    year: 502
+order: 48
+period: imperial-early
+note: 萧道成代宋建齐，为南朝第二个王朝。仅二十三年，七帝。宗室内讧之烈为南朝之最，齐明帝萧鸾一人即尽杀高帝、武帝子孙。
+coexistedWith:
+  - northern-wei

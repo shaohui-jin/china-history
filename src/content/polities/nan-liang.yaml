@@ -1,0 +1,15 @@
+id: nan-liang
+name: 南梁
+aliases:
+  - 萧梁
+  - 梁
+span:
+  from:
+    year: 502
+  to:
+    year: 557
+order: 49
+period: imperial-early
+note: 萧衍代齐建梁，在位四十八年。前期「天监之治」为南朝最盛，后期佞佛怠政，纳侯景之降，终致侯景之乱，饿死台城。梁亡后，江陵陷落，南朝文化几尽。
+coexistedWith:
+  - northern-wei

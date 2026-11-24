@@ -1,0 +1,15 @@
+id: shiliuguo
+name: 十六国
+aliases:
+  - 五胡十六国
+  - 东晋十六国
+span:
+  from:
+    year: 304
+  to:
+    year: 439
+order: 44
+period: imperial-early
+note: 自匈奴刘渊建汉（304）至北魏灭北凉（439），一百三十余年间北方先后出现二十余个政权，史称「十六国」。匈奴、鲜卑、羯、氐、羌五族并起，政权更迭极速，然亦促成民族融合，为北魏统一北方铺路。
+coexistedWith:
+  - dong-jin

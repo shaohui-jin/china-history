@@ -17,6 +17,13 @@ seal: |-
   郑
   成功
 summary: 明末抗清名将。父郑芝龙降清，成功独不屈，据金门、厦门抗清。1661 年率军渡海，逐荷兰人，收复台湾。次年病卒于台湾，年三十九。
+evaluations:
+  - claim: 郑成功是明末海洋力量与明室正统的结合体。他继承了父亲的舰队与贸易网络，却拒绝了父亲的现实主义选择，转而以「恢复明室」为旗帜。这一选择使他既无法在陆上立足，又无法放弃海上优势。
+    sourceId: mingshi-qiujin
+    kind: evaluation
+  - claim: 收复台湾的战略意义超出其本意。郑成功的直接目的是取得抗清基地，但这一行动使台湾第一次被纳入中国的行政体系（此后施琅设府置县）。从「抗清基地」到「中国领土」，这一转变是历史的意外。
+    sourceId: mingshi-qiujin
+    kind: influence
 relations:
   - target: kangxi
     type: enemy

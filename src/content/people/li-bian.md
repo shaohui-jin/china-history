@@ -17,6 +17,13 @@ seal: |-
   李
   昪
 summary: 南唐开国之君。本为孤儿，为吴国权臣徐温收为养子，改名徐知诰。篡吴建齐，后自称唐室后裔，改国号唐、姓名李昪。在位七年，保境安民，休养生息，为南唐的繁华奠定基础。
+evaluations:
+  - claim: 李昪的「保境安民」政策在五代十国中极为罕见。当时各国多穷兵黩武，他却拒绝群臣北伐之议，说「吾少长军旅，见兵之为民害深矣」。南唐的繁华（李璟、李煜两代的文学成就）正建立在这七年的休养之上。
+    sourceId: jiuwudaishi-liang
+    kind: evaluation
+  - claim: 他临终告诫李璟「善交邻国，以保社稷」。李璟未遵父训，先后灭闽、灭楚，耗尽国力，终为后周所败。这一对照说明：南唐的衰落不是从李煜开始的，而是从李璟违背父训开始的。
+    sourceId: jiuwudaishi-liang
+    kind: influence
 relations:
   - target: yang-xingmi
     type: ruler-subject

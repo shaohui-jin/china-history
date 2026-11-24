@@ -16,6 +16,13 @@ seal: |-
   刘
   聪
 summary: 汉赵第二位皇帝。遣刘曜、石勒破洛阳、长安，俘晋怀帝、愍帝，灭西晋。然在位后期荒淫无度，国政日坏，死后汉赵陷入内乱。
+evaluations:
+  - claim: 刘聪完成了匈奴政权最辉煌的一步：灭西晋，俘两帝。但他也是「马上得之，不能马上治之」的典型——建国后沉溺享乐，「三后并立」，后宫万人，国政迅速崩坏。
+    sourceId: jinshu-huandi
+    kind: evaluation
+  - claim: 汉赵的速亡揭示了一个规律：内迁民族建立的政权，若不能完成从「部族军事集团」到「官僚国家」的转型，即使军事上获胜，也无法维持统治。这一转型要到北魏孝文帝才初步完成。
+    sourceId: jinshu-huandi
+    kind: influence
 relations:
   - target: liu-yuan
     type: parent-child

@@ -16,6 +16,13 @@ seal: |-
   长孙
   无忌
 summary: 唐初宰相，太宗长孙皇后之兄。凌烟阁二十四功臣之首，主持修订《唐律疏议》。高宗朝因反对立武则天为后，被贬自杀。
+evaluations:
+  - claim: 长孙无忌的功业集中在制度层面：《唐律疏议》是中国现存最早、最完整的法典，其体系（律、令、格、式）成为此后东亚各国法律的蓝本。这一贡献的意义超过任何一次军事胜利。
+    sourceId: jiutangshu-gaozu
+    kind: influence
+  - claim: 他的死因是一个政治悖论：作为太宗托孤的重臣，他有责任维护李唐宗室；但他反对立武则天，恰恰触动了高宗最敏感的自主权。他越忠于太宗，就越与高宗对立。这一困境说明，「顾命大臣」的角色在皇权交接后往往难以为继。
+    sourceId: jiutangshu-gaozu
+    kind: dispute
 relations:
   - target: tang-taizong
     type: ruler-subject

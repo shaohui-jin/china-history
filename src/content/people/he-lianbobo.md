@@ -20,6 +20,13 @@ seal: |-
   勃
   勃
 summary: 胡夏国建立者。匈奴铁弗部人，本名刘勃勃，后改姓赫连，意为「徽赫实与天连」。以残暴著称，筑统万城，蒸土筑城，锥入一寸即杀筑者。曾大破后秦军，然其残暴亦使政权难以长久。
+evaluations:
+  - claim: 赫连勃勃的残暴在十六国诸君主中也是极端的：「忤视者凿其目，笑者决其唇，谏者先截其舌而后斩之」。这种统治能在短期内聚敛武力，但无法建立任何制度。
+    sourceId: jinshu-liuyao
+    kind: evaluation
+  - claim: 统万城的营建方式最能说明他的统治逻辑：蒸土筑城，锥入一寸即杀筑者。城墙至今坚硬可磨刀，但这样建起来的政权只存在了二十余年。这是一个极端案例：技术上的成就与政治上的失败可以并存。
+    sourceId: jinshu-liuyao
+    kind: dispute
 relations:
   - target: liu-yu
     type: enemy

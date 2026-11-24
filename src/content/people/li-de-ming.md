@@ -16,6 +16,13 @@ seal: |-
   德明
   夏太宗
 summary: 西夏奠基者之一。李继迁之子，继位后与宋、辽同时修好，接受宋封「西平王」、辽封「夏国王」，专注经营河西，为元昊称帝奠定实力基础。
+evaluations:
+  - claim: 李德明的策略是「两面称臣，一心经营」：同时接受宋、辽的册封，避免两面受敌，把精力用于整合河西走廊。这一低调的策略为西夏的建国积累了实力。
+    sourceId: songshi-xixia
+    kind: evaluation
+  - claim: 西夏的建国路径与辽、金不同：它不是靠一次军事胜利立国，而是靠三代人（李继迁、李德明、李元昊）的持续经营。这种「渐进式建国」使西夏在宋、辽两大强权之间生存了近两百年。
+    sourceId: songshi-xixia
+    kind: influence
 relations:
   - target: li-jiqian
     type: parent-child

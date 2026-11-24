@@ -16,6 +16,13 @@ seal: |-
   老上
   单于
 summary: 匈奴第二代单于，冒顿之子。在位期间国力最盛，破月氏、杀月氏王以其头为饮器，迫使大月氏西迁。又屡犯汉边，汉文帝时曾深入萧关，京师震动。
+evaluations:
+  - claim: 老上单于时期的匈奴，是汉匈力量对比的顶点。他迫使大月氏西迁（这一迁徙最终引发了中亚的一系列连锁反应），又屡犯汉边，汉文帝只能以和亲应对。
+    sourceId: shiji-xiongnu
+    kind: evaluation
+  - claim: 「以月氏王头为饮器」这一细节，是匈奴对西域诸国威慑力的象征。但这一威慑并未持久：数十年后汉武帝遣张骞通西域，正是要联合大月氏夹击匈奴。仇恨的记忆成了汉朝的战略资源。
+    sourceId: shiji-xiongnu
+    kind: influence
 relations:
   - target: modu
     type: parent-child

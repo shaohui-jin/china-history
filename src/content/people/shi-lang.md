@@ -18,6 +18,13 @@ seal: |-
   施
   琅
 summary: 原郑芝龙部将，后降清。康熙二十二年率水师平台湾，澎湖一战定局。上《陈台湾弃留利害疏》力主保留台湾，设府置县，为此后三百年之根基。
+evaluations:
+  - claim: 施琅的历史评价分裂为两半：作为明郑旧将而降清，他被视为「贰臣」；但作为平台湾的统帅与主张保留台湾的人，他的贡献难以否认。
+    sourceId: qingshigao-shizu
+    kind: evaluation
+  - claim: 《陈台湾弃留利害疏》是施琅最重要的历史贡献，其意义超过军事胜利。当时清廷多数主张放弃台湾（「海外丸泥，不足为中国加广」），施琅力陈「弃之必酿成大祸，留之诚永固边圉」。若无此疏，台湾可能不在中国版图内。
+    sourceId: qingshigao-shizu
+    kind: influence
 relations:
   - target: kangxi
     type: ruler-subject

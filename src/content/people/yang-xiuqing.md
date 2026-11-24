@@ -16,6 +16,13 @@ seal: |-
   杨
   秀清
 summary: 太平天国东王，掌军政实权。以「天父下凡」附体取得宗教权威，实际主持太平天国前期军国大事。1856 年逼封万岁，酿天京事变，为韦昌辉所杀。
+evaluations:
+  - claim: 杨秀清是太平天国前期真正的军事与行政主持人，其能力远超洪秀全。他创立的「圣库制度」「男女分营」等极端措施虽残酷，但确实支撑了太平军前期的战斗力。
+    sourceId: qingshigao-linxuci
+    kind: evaluation
+  - claim: 「天父下凡」是杨秀清权力的来源，也是他的死因。他借附体之名掌握神权，甚至当众杖责洪秀全；逼封「万岁」则直接触动了洪秀全的底线。天京事变中他被杀，太平天国也随之由盛转衰。
+    sourceId: qingshigao-linxuci
+    kind: dispute
 relations:
   - target: hong-xiuquan
     type: ruler-subject

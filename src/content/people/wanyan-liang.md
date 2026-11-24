@@ -16,6 +16,17 @@ seal: |-
   完颜
   亮
 summary: 金朝第四帝。弑君夺位，迁都燕京，全面推行汉制，然穷兵黩武、荒淫暴虐。1161 年南侵采石，为虞允文所败，部将哗变被杀，死后被废为庶人。
+evaluations:
+  - claim: 海陵王迁都燕京，是金朝政治格局的根本调整：政治中心从东北的会宁府南移至中原北缘，为此后数百年北京作为都城之始。这一决定的深远影响远超他本人的其他作为。
+    sourceId: jinshi-hailing
+    quote: 海陵恃其强盛，欲统一天下，遂迁都燕京，营建宫室，制度宏侈，拟于中国。
+    kind: influence
+  - claim: 《金史》对海陵王的评价近乎彻底否定：弑君、屠戮宗室（太宗子孙死者七十余人）、荒淫、苛政。但他推行的正隆官制与汉化措施，被后来的世宗继承下来——否定其人而保留其制，是金朝史官的处理方式。
+    sourceId: jinshi-hailing
+    kind: evaluation
+  - claim: 海陵王南侵的失败有直接的军事原因：采石败于虞允文，随后部将兵变。但更深的原因是他「征发各族丁壮，民怨沸腾」，在国内尚未稳定的情况下发动全面战争。完颜雍能在辽阳从容称帝，正因后方空虚。
+    sourceId: jinshi-hailing
+    kind: dispute
 relations:
   - target: wanyan-wuqimai
     type: kinship

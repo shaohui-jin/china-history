@@ -14,6 +14,8 @@ categories:
 participants:
   - personId: tang-peidu
     role: leader
+  - personId: tang-li-deyu
+    role: participant
 significance: 4
 summary: 宪宗即位后励精图治，先后平定西川、淮西、淄青诸镇，藩镇跋扈之势一时收敛，史称元和中兴。宪宗崩后，河朔三镇复叛，中兴不过十余年。
 sources:

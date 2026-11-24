@@ -18,6 +18,8 @@ participants:
     role: victim
   - personId: tang-li-yuanji
     role: victim
+  - personId: tang-zhangsun-wuji
+    role: participant
 significance: 4
 summary: 李世民伏兵玄武门，杀太子李建成、齐王李元吉，逼李渊立己为太子。两个月后受禅即位。此变为贞观之治的开端，也成为唐代皇位继承反复流血的先例。
 sources:

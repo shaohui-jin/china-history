@@ -16,6 +16,8 @@ participants:
     role: leader
   - personId: ming-wanli
     role: participant
+  - personId: ming-hai-rui
+    role: participant
 significance: 5
 summary: 万历初年，张居正以首辅之尊独揽朝政十年，推行考成法整顿吏治、清丈田亩扩大税基、行一条鞭法简化税制，国库充盈，边防整饬，史称「万历中兴」。
 sources:

@@ -14,6 +14,10 @@ participants:
     role: leader
   - personId: sanguo-cao-shuang
     role: victim
+  - personId: sanguo-xun-yu
+    role: participant
+  - personId: sanguo-guo-jia
+    role: participant
 significance: 5
 summary: 司马懿趁曹爽陪魏帝曹芳出城谒高平陵之机，发动政变，控制洛阳。曹爽交出兵权后被族诛。曹魏政权自此落入司马氏之手，为晋代魏奠定基础。
 sources:

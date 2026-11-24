@@ -13,6 +13,12 @@ categories:
 participants:
   - personId: liu-song-liu-yu
     role: leader
+  - personId: liu-song-wang-zhene
+    role: participant
+  - personId: liu-song-liu-yizhen
+    role: participant
+  - personId: liu-song-tan-daoji
+    role: participant
 significance: 4
 summary: 刘裕两度北伐，灭南燕、后秦，收复洛阳、长安。此为东晋南朝北伐最成功的一次，然刘裕急于回朝篡位，长安得而复失。辛弃疾叹「元嘉草草，封狼居胥，赢得仓皇北顾」。
 sources:

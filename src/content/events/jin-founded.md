@@ -14,6 +14,8 @@ categories:
 participants:
   - personId: jin-wanyan-aguda
     role: leader
+  - personId: jin-wanyan-wuqimai
+    role: participant
 significance: 4
 summary: 完颜阿骨打率女真诸部起兵反辽，宁江州、出河店两战以少胜多，次年称帝建国号金。十年间灭辽，又二年灭北宋。
 sources:

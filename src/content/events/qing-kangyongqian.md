@@ -15,6 +15,8 @@ participants:
     role: participant
   - personId: qing-qianlong
     role: participant
+  - personId: qing-he-shen
+    role: participant
 significance: 4
 summary: 雍正十三年间，摊丁入亩、耗羡归公、设军机处、改土归流，以高压手段整饬吏治，为乾隆朝的极盛奠定财政与行政基础。其勤政与严酷同样著称。
 sources:

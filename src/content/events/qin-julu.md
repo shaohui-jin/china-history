@@ -16,6 +16,10 @@ participants:
     role: victim
   - personId: han-xiang-yu
     role: participant
+  - personId: han-fan-zeng
+    role: participant
+  - personId: han-song-yi
+    role: participant
 significance: 4
 summary: 项羽破釜沉舟，以楚军大破秦军主力于巨鹿，秦之军事力量自此崩溃。同一年，赵高诬杀李斯，秦廷自毁栋梁。
 sources:

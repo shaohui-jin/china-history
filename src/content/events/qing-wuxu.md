@@ -19,6 +19,8 @@ participants:
     role: participant
   - personId: qing-cixi
     role: victim
+  - personId: qing-wei-yuan
+    role: participant
 significance: 4
 summary: 光绪帝下「明定国是」诏，一百零三天内颁新政诏令百余道：废八股、办学堂、裁冗官、奖工商。慈禧发动政变，囚光绪，杀六君子，新政尽废。
 sources:

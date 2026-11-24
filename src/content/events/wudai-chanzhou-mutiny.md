@@ -14,6 +14,8 @@ categories:
 participants:
   - personId: wudai-guo-wei
     role: leader
+  - personId: wudai-guo-chongtao
+    role: participant
 significance: 4
 summary: 后汉隐帝猜忌功臣，杀杨邠、史弘肇、王章三家。邺都留守郭威被迫起兵，攻入汴梁。次年于澶州被将士黄袍加身，建立后周。这是「黄袍加身」的第一次上演，比赵匡胤的陈桥兵变早九年。
 sources:

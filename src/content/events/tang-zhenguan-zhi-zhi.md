@@ -19,6 +19,8 @@ participants:
     role: participant
   - personId: tang-du-ruhui
     role: participant
+  - personId: tang-di-renjie
+    role: participant
 significance: 5
 summary: 唐太宗在位二十三年，纳谏如流、任人唯贤、轻徭薄赋、完善律令。史称「贞观之治」，为后世治世的最高标准。「水能载舟，亦能覆舟」「以人为镜」皆出此期。
 sources:

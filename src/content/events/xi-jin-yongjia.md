@@ -16,6 +16,18 @@ participants:
     role: victim
   - personId: xi-jin-liu-yuan
     role: leader
+  - personId: xi-jin-liu-cong
+    role: participant
+  - personId: xi-jin-liu-kun
+    role: participant
+  - personId: dong-jin-zu-ti
+    role: participant
+  - personId: shiliuguo-liu-yao
+    role: participant
+  - personId: dong-jin-sima-rui
+    role: participant
+  - personId: dong-jin-wang-dun
+    role: participant
 significance: 5
 summary: 匈奴刘渊建汉赵，其子刘聪遣刘曜、石勒攻破洛阳、长安，俘晋怀帝、愍帝，西晋亡。中原士族大批南渡，史称「衣冠南渡」，中国进入南北对峙时代。
 sources:

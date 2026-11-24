@@ -16,6 +16,8 @@ participants:
     role: leader
   - personId: jin-wanyan-liang
     role: victim
+  - personId: song-li-gang
+    role: participant
 significance: 4
 summary: 金主完颜亮率大军渡淮南下，宋军溃散。中书舍人虞允文赴采石犒师，收散卒一万八千人，以海鳅船大破金军。完颜亮旋为部将所弑，南宋得以延续百余年。
 sources:

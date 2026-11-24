@@ -17,6 +17,14 @@ participants:
     role: leader
   - personId: bei-qi-gao-wei
     role: victim
+  - personId: bei-qi-gao-changgong
+    role: participant
+  - personId: bei-qi-hulv-guang
+    role: participant
+  - personId: bei-qi-gao-yang
+    role: participant
+  - personId: nan-chen-wu-mingche
+    role: participant
 significance: 4
 summary: 周武帝宇文邕两度伐齐，建德六年破邺城，俘后主高纬，北齐亡。北方自永嘉之乱以来二百七十年的分裂至此统一，为隋统一全国奠定基础。
 sources:

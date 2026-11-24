@@ -14,6 +14,10 @@ participants:
     role: leader
   - personId: northern-wei-yuwen-tai
     role: leader
+  - personId: northern-wei-tuoba-tao
+    role: participant
+  - personId: northern-wei-cui-hao
+    role: participant
 significance: 4
 summary: 孝武帝元修与高欢决裂，西奔长安投宇文泰。高欢另立元善见为帝，迁都邺城。北魏自此分裂为东魏、西魏，高欢与宇文泰各据一方，开启北朝后期对峙。
 sources:

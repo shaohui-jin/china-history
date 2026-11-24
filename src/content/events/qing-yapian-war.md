@@ -16,6 +16,8 @@ participants:
     role: victim
   - personId: qing-daoguang
     role: leader
+  - personId: qing-wei-yuan
+    role: participant
 significance: 5
 summary: 英国以虎门销烟为借口发动战争，清军屡战屡败。1842 年订《南京条约》：割香港岛、赔款二千一百万银元、开五口通商、协定关税。中国近代史由此开端。
 sources:

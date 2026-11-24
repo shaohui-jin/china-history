@@ -13,6 +13,8 @@ categories:
 participants:
   - personId: qing-nurhaci
     role: leader
+  - personId: ming-yuan-chonghuan
+    role: participant
 significance: 4
 summary: 明廷调集十万余军四路进攻后金，努尔哈赤以「凭尔几路来，我只一路去」之策集中兵力各个击破。明军三路覆没，丧师四万五千余人，明清易代之势自此定。
 sources:

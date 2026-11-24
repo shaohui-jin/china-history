@@ -14,6 +14,8 @@ categories:
 participants:
   - personId: liao-yelv-dashi
     role: leader
+  - personId: liao-xiao-chuo
+    role: participant
 significance: 4
 summary: 辽亡之际，耶律大石率残部西走，经可敦城、叶密立，建西辽（哈剌契丹）。卡特万之战大败塞尔柱苏丹，威震中亚，辽祚又延续近百年。
 sources:

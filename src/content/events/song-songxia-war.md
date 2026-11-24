@@ -16,6 +16,8 @@ participants:
     role: leader
   - personId: song-fan-zhongyan
     role: participant
+  - personId: xixia-li-de-ming
+    role: participant
 significance: 4
 summary: 西夏称帝后宋夏交兵，三川口、好水川、定川寨三战宋军皆大败。范仲淹转取守势，筑城招抚。庆历四年议和，西夏去帝号称臣，宋岁赐银绢茶。
 sources:

@@ -14,6 +14,10 @@ categories:
 participants:
   - personId: northern-wei-yuan-hong
     role: leader
+  - personId: northern-wei-feng-taihou
+    role: participant
+  - personId: northern-wei-cui-hao
+    role: participant
 significance: 5
 summary: 北魏孝文帝迁都洛阳，推行全面汉化：改汉姓、易汉服、说汉话、通婚汉族士族、行均田制与三长制。此举使鲜卑深度融入华夏，也埋下六镇之乱的隐患。
 sources:

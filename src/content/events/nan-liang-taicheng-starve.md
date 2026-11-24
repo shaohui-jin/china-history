@@ -13,6 +13,10 @@ participants:
     role: participant
   - personId: nan-liang-hou-jing
     role: leader
+  - personId: nan-liang-xiao-gang
+    role: participant
+  - personId: nan-liang-xiao-yi
+    role: participant
 significance: 4
 summary: 侯景攻陷台城后，梁武帝萧衍被囚于文德殿，饮食渐绝，索蜜不得，以八十六岁高龄崩于台城。这位在位四十八年、四度舍身同泰寺的「菩萨皇帝」，最终死于自己纳降的军阀之手。
 sources:

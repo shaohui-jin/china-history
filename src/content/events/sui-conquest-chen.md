@@ -25,6 +25,12 @@ participants:
     role: participant
   - personId: nan-chen-zhang-lihua
     role: participant
+  - personId: sui-gao-jiong
+    role: participant
+  - personId: sui-duguhuanghou
+    role: participant
+  - personId: nan-chen-xiao-mohe
+    role: participant
 significance: 5
 summary: 隋文帝下诏伐陈，晋王杨广为主帅，高颎为元帅长史，率五十一万八千人分八路南下。韩擒虎、贺若弼渡江，攻入建康，俘陈后主。自永嘉之乱（311）以来二百七十八年的南北分裂，至此终结。
 sources:

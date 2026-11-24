@@ -15,6 +15,8 @@ participants:
     role: leader
   - personId: han-zhou-yafu
     role: leader
+  - personId: han-chao-cuo
+    role: participant
 significance: 4
 summary: 汉景帝用晁错之议削藩，吴王刘濞联合楚、赵等七国以「请诛晁错」为名起兵。景帝斩晁错而不退兵，终以周亚夫三月平乱。此后中央集权巩固，诸侯王仅存虚名。
 sources:

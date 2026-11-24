@@ -12,6 +12,8 @@ categories:
 participants:
   - personId: tujue-bilge-khan
     role: participant
+  - personId: tujue-tunyugu
+    role: participant
 significance: 3
 summary: 后突厥白眉可汗为回纥骨力裴罗所杀，突厥汗国彻底灭亡。回纥（回鹘）取而代之，成为蒙古高原的新主人。突厥余部西迁，此后在中亚与西亚建立多个政权。
 sources:

@@ -18,6 +18,8 @@ participants:
     role: participant
   - personId: sanguo-liu-bei
     role: participant
+  - personId: sanguo-zhang-fei
+    role: participant
 significance: 4
 summary: 张角以太平道聚众数十万，以「苍天已死，黄天当立」为号，于甲子年二月同时起兵。汉廷调皇甫嵩、曹操、刘备等平定，然州郡割据之势自此形成，汉末三国之局由此开。
 sources:

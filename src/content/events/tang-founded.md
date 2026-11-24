@@ -14,6 +14,8 @@ participants:
     role: leader
   - personId: tang-taizong
     role: participant
+  - personId: tang-li-linfu
+    role: participant
 significance: 5
 summary: 李渊于晋阳起兵，入长安，618 年受隋恭帝禅位建唐。此后十年平定群雄，统一全国。唐朝历二百八十九年，为中国古代最富强的王朝之一。
 sources:

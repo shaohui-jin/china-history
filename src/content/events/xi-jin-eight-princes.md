@@ -16,6 +16,8 @@ participants:
     role: victim
   - personId: xi-jin-sima-zhong
     role: leader
+  - personId: xi-jin-jia-nanfeng
+    role: participant
 significance: 5
 summary: 晋惠帝愚钝，贾后干政，宗室诸王为争夺中央权力互相攻杀，前后十六年，八王参与。中原残破，兵力耗尽，直接导致永嘉之乱与西晋灭亡。
 sources:

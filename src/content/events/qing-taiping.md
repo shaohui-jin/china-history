@@ -18,6 +18,12 @@ participants:
     role: participant
   - personId: qing-li-hongzhang
     role: participant
+  - personId: qing-wei-changhui
+    role: participant
+  - personId: qing-yang-xiuqing
+    role: participant
+  - personId: qing-xianfeng
+    role: participant
 significance: 5
 summary: 洪秀全以拜上帝会起事于金田，建号太平天国，两年定都南京。此后十余年，席卷十八省，为中国历史上规模最大的农民战争。1864 年天京陷落，运动失败。
 sources:

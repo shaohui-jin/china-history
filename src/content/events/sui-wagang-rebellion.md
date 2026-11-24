@@ -18,6 +18,8 @@ participants:
     role: leader
   - personId: sui-wang-bo
     role: participant
+  - personId: sui-yuwen-huaji
+    role: participant
 significance: 4
 summary: 隋末规模最大的农民起义军之一。起于瓦岗寨，李密入伙后大破隋军、开仓放粮，众至数十万，成为推翻隋朝的主力。然李密杀翟让失人心，邙山之败后瓦解。
 sources:

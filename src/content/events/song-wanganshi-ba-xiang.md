@@ -14,6 +14,10 @@ participants:
     role: victim
   - personId: song-sima-guang
     role: leader
+  - personId: song-su-shi
+    role: participant
+  - personId: song-su-zhe
+    role: participant
 significance: 3
 summary: 熙宁九年，王安石因爱子王雱之死与变法派内讧，再罢相位，退居江宁。此后新法虽在，然党争之势已不可收。
 sources:

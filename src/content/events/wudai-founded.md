@@ -12,6 +12,10 @@ categories:
 participants:
   - personId: wudai-zhu-wen
     role: leader
+  - personId: wudai-li-keyong
+    role: participant
+  - personId: wudai-li-cunxu
+    role: participant
 significance: 5
 summary: 朱温逼唐哀帝禅位，建后梁，唐亡。此后五十三年间，中原历梁、唐、晋、汉、周五朝，八姓十四君，皆为军阀所建。中国进入政权更迭最频繁的时代。
 sources:

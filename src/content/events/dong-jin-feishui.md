@@ -17,6 +17,12 @@ participants:
     role: leader
   - personId: northern-wei-fu-jian
     role: victim
+  - personId: dong-jin-wang-dao
+    role: participant
+  - personId: dong-jin-huan-wen
+    role: participant
+  - personId: shiliuguo-yao-chang
+    role: participant
 significance: 5
 summary: 前秦苻坚率百万大军南下，东晋以谢玄八万北府兵迎战。晋军请秦军稍退，秦军一退不可复止，晋军乘势掩杀，大获全胜。此役保住江南，奠定南北对峙格局。
 sources:

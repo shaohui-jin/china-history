@@ -18,6 +18,10 @@ participants:
     role: leader
   - personId: qin-shihuang
     role: participant
+  - personId: qin-fusu
+    role: participant
+  - personId: qin-meng-tian
+    role: participant
 significance: 5
 summary: 子婴刺杀赵高，出降于刘邦。秦自统一至灭亡凡十五年，为中国历史上最短命的大一统王朝之一。
 sources:

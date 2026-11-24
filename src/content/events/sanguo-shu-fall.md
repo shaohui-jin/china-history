@@ -19,6 +19,12 @@ participants:
     role: leader
   - personId: sanguo-zhong-hui
     role: leader
+  - personId: sanguo-huang-hao
+    role: participant
+  - personId: sanguo-liu-qi
+    role: participant
+  - personId: sanguo-lu-kang
+    role: participant
 significance: 4
 summary: 魏军三路伐蜀，邓艾偷渡阴平，直取成都。后主刘禅出降，蜀汉亡。姜维诈降钟会，事败被杀。「乐不思蜀」一典出于此。三国鼎立开始瓦解。
 sources:

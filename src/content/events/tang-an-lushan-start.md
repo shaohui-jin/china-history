@@ -17,6 +17,14 @@ participants:
     role: victim
   - personId: tang-shi-siming
     role: participant
+  - personId: tang-yan-gaoqing
+    role: participant
+  - personId: tang-yan-zhenqing
+    role: participant
+  - personId: tang-dufu
+    role: participant
+  - personId: tang-libai
+    role: participant
 significance: 5
 summary: 安禄山以讨杨国忠为名，发所部兵及同罗、奚、契丹、室韦凡十五万众，反于范阳。承平既久，河北州县望风瓦解。
 sources:

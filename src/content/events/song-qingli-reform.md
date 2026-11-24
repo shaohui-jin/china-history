@@ -14,6 +14,8 @@ categories:
 participants:
   - personId: song-fan-zhongyan
     role: leader
+  - personId: song-ouyang-xiu
+    role: participant
 significance: 4
 summary: 宋仁宗庆历年间，范仲淹、富弼、欧阳修等推行「明黜陟、抑侥幸、精贡举、择官长」等十事，整顿吏治。因触动既得利益，一年多即告失败，然为熙宁变法之先声。
 sources:

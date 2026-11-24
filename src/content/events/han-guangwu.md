@@ -12,6 +12,8 @@ categories:
 participants:
   - personId: han-liu-xiu
     role: leader
+  - personId: han-yan-guang
+    role: participant
 significance: 4
 summary: 刘秀即位于鄗南，定都洛阳，重建汉朝。此后十二年削平群雄，退功臣而进文吏，释放奴婢，柔道治国，为东汉二百年奠定基业。
 sources:

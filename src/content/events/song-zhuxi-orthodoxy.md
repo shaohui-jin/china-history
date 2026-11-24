@@ -12,6 +12,12 @@ categories:
 participants:
   - personId: song-zhuxi
     role: leader
+  - personId: song-cheng-hao
+    role: participant
+  - personId: song-cheng-yi
+    role: participant
+  - personId: song-lu-jiuyuan
+    role: participant
 significance: 4
 summary: 淳祐元年，宋理宗诏以周敦颐、张载、程颢、程颐、朱熹从祀孔庙，朱学正式成为官方正统。此后元明清三朝科举皆以朱注为准，影响七百年。
 sources:

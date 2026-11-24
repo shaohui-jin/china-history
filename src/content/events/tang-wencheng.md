@@ -17,6 +17,8 @@ participants:
     role: leader
   - personId: tang-wencheng-gongzhu
     role: participant
+  - personId: tang-gaozong
+    role: participant
 significance: 4
 summary: 唐太宗以宗室女文成公主嫁吐蕃赞普松赞干布。公主携佛像、经卷、工艺、农种入藏，促成汉藏文化交流。此后两百年，唐蕃「舅甥之国」，和战相间。
 sources:

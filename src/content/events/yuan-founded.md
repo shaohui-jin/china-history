@@ -14,6 +14,12 @@ participants:
     role: leader
   - personId: yuan-liu-bingzhong
     role: leader
+  - personId: yuan-genghis-khan
+    role: participant
+  - personId: yuan-batu
+    role: participant
+  - personId: yuan-marco-polo
+    role: participant
 significance: 5
 summary: 忽必烈取《易经》「大哉乾元」之义，建国号大元，定都大都。中国历史上首次由北方民族建立统一王朝，行省制、纸币、四等人制确立。
 sources:

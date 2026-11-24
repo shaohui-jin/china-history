@@ -13,6 +13,10 @@ categories:
 participants:
   - personId: ming-wang-yangming
     role: leader
+  - personId: ming-zhu-chenhao
+    role: participant
+  - personId: ming-zhengde
+    role: participant
 significance: 4
 summary: 宁王朱宸濠举兵反，连下九江、南康，围安庆。南赣巡抚王守仁以三十五日破南昌、擒宸濠，事平。此役是明代文臣用兵的极致，也是王守仁心学「知行合一」的实践样本。
 sources:

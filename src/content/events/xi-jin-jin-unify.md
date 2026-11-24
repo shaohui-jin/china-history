@@ -13,6 +13,16 @@ categories:
 participants:
   - personId: xi-jin-sima-yan
     role: leader
+  - personId: xi-jin-du-yu
+    role: participant
+  - personId: xi-jin-wang-jun
+    role: participant
+  - personId: xi-jin-yang-hu
+    role: participant
+  - personId: sanguo-sun-hao
+    role: participant
+  - personId: sanguo-lu-kang
+    role: participant
 significance: 5
 summary: 晋武帝司马炎六路伐吴，王濬楼船顺流直下建业，吴主孙皓出降。三国分裂九十六年而复合，然统一仅维持三十七年即爆发八王之乱。
 sources:

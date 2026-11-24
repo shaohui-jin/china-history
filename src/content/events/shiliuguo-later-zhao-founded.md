@@ -14,6 +14,10 @@ categories:
 participants:
   - personId: northern-wei-shi-le
     role: leader
+  - personId: shiliuguo-zhang-bin
+    role: participant
+  - personId: shiliuguo-ran-min
+    role: participant
 significance: 4
 summary: 羯人石勒原为汉赵部将，据襄国自立，称赵王，史称后赵。329 年擒杀前赵刘曜，330 年称帝，据有北方大部。石勒出身奴隶，不识文字而喜听史，是十六国中最具传奇色彩的君主。
 sources:

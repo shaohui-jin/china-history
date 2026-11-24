@@ -15,6 +15,10 @@ participants:
     role: leader
   - personId: song-zhao-pu
     role: leader
+  - personId: wudai-gao-xingzhou
+    role: participant
+  - personId: wudai-li-cunxu
+    role: participant
 significance: 5
 summary: 后周殿前都点检赵匡胤率军北上御辽，军次陈桥驿，诸将黄袍加身，拥立为帝。回师汴京受禅，改国号宋，五代十国的终结与三百年文治由此开始。
 sources:

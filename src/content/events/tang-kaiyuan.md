@@ -17,6 +17,12 @@ participants:
     role: participant
   - personId: tang-song-jing
     role: participant
+  - personId: tang-zhang-jiuling
+    role: participant
+  - personId: tang-zhang-yue
+    role: participant
+  - personId: tang-li-linfu
+    role: participant
 significance: 4
 summary: 玄宗即位后任用姚崇、宋璟为相，裁汰冗官、整顿吏治、改革兵制、发展文教。户口殷盛，仓廪充实，为唐代极盛之世。杜甫「忆昔开元全盛日」即咏此期。
 sources:

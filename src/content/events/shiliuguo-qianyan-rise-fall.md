@@ -18,6 +18,12 @@ participants:
     role: participant
   - personId: northern-wei-fu-jian
     role: participant
+  - personId: shiliuguo-murong-ke
+    role: participant
+  - personId: shiliuguo-murong-jun
+    role: participant
+  - personId: shiliuguo-ran-min
+    role: participant
 significance: 4
 summary: 鲜卑慕容部所建政权，自慕容皝称燕王（337）至前秦灭燕（370），三十三年。慕容皝、慕容儁两代雄主，据有辽西、河北、河南，与东晋、前秦鼎足。然慕容评专权、太后干政，终为前秦所灭。
 sources:

@@ -19,6 +19,12 @@ participants:
     role: victim
   - personId: jin-wanyan-zongwang
     role: leader
+  - personId: song-cai-jing
+    role: participant
+  - personId: song-li-gang
+    role: participant
+  - personId: song-zong-ze
+    role: participant
 significance: 5
 summary: 金军两度南下，攻破汴京，俘徽宗、钦宗及宗室后妃数千人北去，北宋亡。赵构南渡即位，宋室偏安江左，宋金对峙自此始。
 sources:

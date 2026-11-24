@@ -16,6 +16,8 @@ participants:
     role: leader
   - personId: sui-yuwen-kai
     role: participant
+  - personId: sui-yuwen-huaji
+    role: participant
 significance: 5
 summary: 隋炀帝征发民夫数百万，以六年时间开凿通济渠、邗沟、永济渠、江南河，形成以洛阳为中心、北抵涿郡南达余杭的运河体系。此后一千三百年，它是南北经济命脉，也是隋亡的直接原因之一。
 sources:

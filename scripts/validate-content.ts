@@ -345,6 +345,55 @@ for (const f of listDir('people')) {
   }
 }
 
+/* ---------------- YAML 结构校验 ---------------- */
+
+/**
+ * frontmatter 必须是合法 YAML。
+ *
+ * 踩过的坑：把 `evaluations:` 误粘到 `summary:` 行尾（少一个换行），
+ * 变成 `summary: ……未称帝。evaluations:`，YAML 会报
+ * 「Nested mappings are not allowed in compact mappings」。
+ * 这个错误只在 `astro build` 的 content sync 阶段爆发，位置信息指向
+ * 解析器内部而非出错的字段，排查成本高。这里用 yaml 库提前挡在 validate。
+ *
+ * 为什么不用自己的正则：YAML 的合法写法太多（折叠块、多行标量、锚点），
+ * 正则判不全，只会制造假阳性。直接用与 Astro 相同的 yaml 库最准。
+ */
+import { parse as parseYaml } from 'yaml';
+
+for (const sub of ['people', 'events']) {
+  for (const f of listDir(sub)) {
+    if (!f.endsWith('.md')) continue;
+    const fm = readFrontmatter(join(ROOT, sub, f));
+    if (!fm) continue;
+    const raw = fm.__raw as string;
+    try {
+      parseYaml(raw);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message.split('\n')[0] : String(e);
+      issues.push({
+        level: 'error',
+        where: `${sub}/${f.replace(/\.md$/, '')}`,
+        message: `frontmatter 不是合法 YAML：${msg}`,
+      });
+      continue;
+    }
+    // 顶层键被粘在长文本行尾的典型症状：`summary: …字evaluations:`
+    for (const line of raw.split('\n')) {
+      const glued = line.match(
+        /^(summary|title|note):\s*.*[。」，）】」]\s*([a-z][a-zA-Z]*):\s*$/,
+      );
+      if (glued) {
+        issues.push({
+          level: 'error',
+          where: `${sub}/${f.replace(/\.md$/, '')}`,
+          message: `${glued[1]} 行尾粘连了顶层键 ${glued[2]}:（缺少换行）`,
+        });
+      }
+    }
+  }
+}
+
 /* ---------------- 枚举值校验 ---------------- */
 
 /**

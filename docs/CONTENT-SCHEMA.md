@@ -449,13 +449,15 @@ npm run build
 ### 每批内容的自检清单
 
 - [ ] 新增政权的 `period` 填了，`order` 不与现有冲突
-- [ ] 事件 id 带朝代前缀
-- [ ] `significance` 5 的条数没超过 5 条
+- [ ] 事件 id 全局唯一（带朝代前缀更好，裸名亦可）
+- [ ] `significance` 按事件性质评级，不是按「想让它首屏可见」评级
 - [ ] 每个新人物至少有 1 条 `relations`（不是孤岛）
 - [ ] 每个朝代至少 2 条**跨朝代**关系边（否则时间线被切成互不相连的孤岛）
 - [ ] `sources` 里的史料**真的记载了这件事**（不要硬套不相关的本纪）
 - [ ] 关键论断处加了 `[^source-id]` 脚注
+- [ ] 非 trivial 事件填了 `corroboration`，且 `secondary` 与 `primary` **不是同一本书**
 - [ ] `npm run validate` 零 error
+- [ ] `npm run depth` 无字数为 0 / 缺节项
 
 ### 三条命令各自管什么
 

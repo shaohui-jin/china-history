@@ -51,6 +51,21 @@ const polities = person.polityIds
   .map((p) => index.polities.get(p.id))
   .filter((p): p is NonNullable<typeof p> => !!p);
 
+/**
+ * 带出处的评价。kind 决定分组标签，出处用来挂书名。
+ * 找不到史料条目时置 null，模板里跳过「《》」空书名。
+ */
+const EVAL_LABEL: Record<string, string> = {
+  evaluation: '评价',
+  influence: '影响',
+  dispute: '争议',
+};
+
+const evaluations = person.evaluations.map((ev) => ({
+  ...ev,
+  source: index.sources.get(ev.sourceId.id) ?? null,
+}));
+
 // 生平：把事件与关系变化混排在一轴上（关系变化取有 from 年份的）
 type BioItem = {
   year: number;
@@ -184,6 +199,32 @@ const related = personRelations;
         <article class="prose">
           <Content />
         </article>
+
+        <!-- 评价与影响：每条都挂出处，不接受无源论断 -->
+        {evaluations.length > 0 && (
+          <section>
+            <h2 class="subhead u-ui">评价与影响</h2>
+            <div class="stack" style="gap: var(--sp-4)">
+              {evaluations.map((ev) => (
+                <figure class:list={['eval', `eval--${ev.kind}`]}>
+                  <div class="eval__head u-ui">
+                    <span class="eval__kind">{EVAL_LABEL[ev.kind]}</span>
+                    {ev.source && (
+                      <span class="eval__source">
+                        《{ev.source.data.title}》{ev.source.data.volume ?? ''}
+                      </span>
+                    )}
+                  </div>
+                  <p class="eval__claim">{ev.claim}</p>
+                  {ev.quote && <blockquote class="eval__quote">{ev.quote}</blockquote>}
+                </figure>
+              ))}
+            </div>
+            <p class="eval__foot u-ui">
+              以上均为史料原论，非本站评断。同一人物在不同史书中的评价可能相反，并列处即显示分歧。
+            </p>
+          </section>
+        )}
 
         <!-- 史料 -->
         {citedSources.length > 0 && (
@@ -409,6 +450,58 @@ const related = personRelations;
   font-size: var(--fs-2xs);
   /* 与 quote__source 同理：引文底色偏深，ink-faint 不足 4.5:1 */
   color: var(--color-ink-muted);
+}
+
+/* 评价块：左侧色条区分「评价 / 影响 / 争议」，争议用强调色 */
+.eval {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-border-strong);
+  background: var(--color-surface-raised);
+}
+
+.eval--dispute {
+  border-left-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.eval__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-size: var(--fs-2xs);
+  color: var(--color-ink-faint);
+}
+
+.eval__kind {
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.eval__claim {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-ink);
+}
+
+.eval__quote {
+  font-family: var(--font-serif, inherit);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-body);
+  color: var(--color-ink-muted);
+  padding-left: var(--sp-3);
+  border-left: 1px dotted var(--color-border-strong);
+}
+
+.eval__foot {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-2xs);
+  line-height: var(--lh-normal);
+  color: var(--color-ink-faint);
 }
 
 .graph-wrap {

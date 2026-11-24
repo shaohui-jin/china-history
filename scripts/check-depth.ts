@@ -28,6 +28,8 @@ interface Row {
   needChars: number;
   missingSections: string[];
   needSections: string[];
+  /** 人物：带出处的评价条数 */
+  evalCount?: number;
 }
 
 /** 取正文（去 frontmatter），并把 CRLF 归一 */
@@ -99,6 +101,8 @@ for (const f of readdirSync(join(ROOT, 'people'))) {
   // 人物不按 sig 分级，统一以 600 字为「有实质内容」的软门槛
   const body = bodyOf(join(ROOT, 'people', f));
   const chars = countChars(body);
+  // 评价条数：只数 `- claim:` 列表项，避免正文里的同名词干扰
+  const evalCount = (raw.match(/^\s*-\s*claim:\s*\S/gm) ?? []).length;
   rows.push({
     kind: 'person',
     id: f.replace(/\.md$/, ''),
@@ -107,6 +111,7 @@ for (const f of readdirSync(join(ROOT, 'people'))) {
     needChars: 600,
     needSections: [],
     missingSections: [],
+    evalCount,
   });
 }
 
@@ -143,6 +148,10 @@ console.log('');
 console.log(`人物: ${rows.filter((r) => r.kind === 'person').length} 条，<600 字 ${thinPeople.length} 条`);
 thinPeople.slice(0, 10).forEach((r) => console.log(`   ${String(r.chars).padStart(4)}  ${r.id}`));
 if (thinPeople.length > 10) console.log(`   … 另有 ${thinPeople.length - 10} 条`);
+
+const noEval = rows.filter((r) => r.kind === 'person' && (r.evalCount ?? 0) === 0);
+console.log('');
+console.log(`人物评价: 带出处评价为 0 条的人物 ${noEval.length} 条`);
 
 console.log('');
 console.log('---');

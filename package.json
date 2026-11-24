@@ -12,8 +12,10 @@
     "validate": "node scripts/validate-content.ts",
     "depth": "node scripts/check-depth.ts",
     "check": "astro check",
-    "test": "node --test src/lib/*.test.ts",
-    "lint:css": "stylelint \"src/styles/**/*.css\" \"src/**/*.vue\""
+    "test": "node --test src/lib/*.test.ts scripts/hooks/*.test.mjs",
+    "lint:css": "stylelint \"src/styles/**/*.css\" \"src/**/*.vue\"",
+    "prepare": "node scripts/hooks/install.mjs",
+    "hooks:install": "node scripts/hooks/install.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.10",

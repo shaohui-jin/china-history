@@ -62,6 +62,28 @@ CI（`.github/workflows/deploy.yml`）会在 Build 之前依次跑 `check` 和 `
 - 推送后 `gh run list --limit 1` 确认 CI 绿；红了先修，再进下一步
 - 临时脚本、调试产物不进提交
 
+### AI 尾注由 hook 兜底
+
+「不加 AI 作者」不是靠自觉：Cursor 会在提交时把命令改写成带
+`--trailer "Co-authored-by: Cursor <cursoragent@cursor.com>"` 的形式，
+光记着不写没有用 —— 尾注是工具加的，不是你写的。
+
+`npm install` 的 `prepare` 会调 `scripts/hooks/install.mjs`，把
+`commit-msg` 钩子装进 `.git/hooks/`。钩子在提交落盘前剥掉这类尾注：
+
+```
+[commit-msg] 已移除 1 条 AI 协作尾注（约定：不加 AI 作者）
+[commit-msg]   - Co-authored-by: Cursor <cursoragent@cursor.com>
+```
+
+**只删 AI 署名**。真人的 `Co-authored-by`（结对编程）会保留；
+正文里提到这个概念的文字也不会被误删。判据见
+[scripts/hooks/strip-ai-trailers.mjs](scripts/hooks/strip-ai-trailers.mjs)，
+边界用例在 `scripts/hooks/strip-ai-trailers.test.mjs`（`npm test` 会跑）。
+
+钩子没装上的话，`npm run hooks:install` 手动补一次。注意 `.git/hooks`
+不进版本控制，clone 后必须跑过 `npm install`（或上面这条）才生效。
+
 ---
 
 ## 改代码时的约定

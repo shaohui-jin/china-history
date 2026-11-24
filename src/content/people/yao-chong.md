@@ -17,6 +17,17 @@ seal: |-
   姚
   崇
 summary: 唐代名相。开元初以「十事要说」为条件出任宰相，与宋璟并称「姚宋」。善应变，长于权术与实务，为开元盛世的开创者。
+evaluations:
+  - claim: 《旧唐书》把姚崇与宋璟的比较定为一句：「崇善应变以成天下之务，璟善守文以持天下之正。二人道不同，同归于治。」这是唐代对宰相之才最经典的分类——一个长于应变，一个长于守法。
+    sourceId: jiutangshu-yaosong
+    quote: 崇善应变以成天下之务，璟善守文以持天下之正。二人道不同，同归于治，此所以为贤也。
+    kind: evaluation
+  - claim: 「十事要说」是政治史上少见的就职条件：姚崇拜相前明确要求玄宗答应十件事（不求边功、不任宦官、不任外戚、法不阿私、租赋之外不加征等），否则不受命。这等于把宰相的权力边界写成了契约，开元前期的政治清明以此为前提。
+    sourceId: jiutangshu-yaosong
+    kind: influence
+  - claim: 开元四年山东大蝗，朝臣「皆以蝗为天灾，不当捕」，姚崇力主捕蝗，以「昔魏时山东有蝗伤稼，缘小忍不除，遂致人相食」为据，遣御史分道捕蝗。这是唐代少见的以行政力量对抗灾异观念的行动，他本人也因此承受了「违天」的巨大舆论压力。
+    sourceId: jiutangshu-yaosong
+    kind: dispute
 relations:
   - target: tang-xuanzong
     type: ruler-subject

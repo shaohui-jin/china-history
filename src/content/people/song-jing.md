@@ -16,6 +16,17 @@ seal: |-
   宋
   璟
 summary: 唐代名相。与姚崇并称「姚宋」。以刚正守法著称，「善守法持正」，敢于犯颜直谏。开元盛世的制度建设，多出其手。皮日休称其「刚态毅状，疑其铁肠石心」。
+evaluations:
+  - claim: 《旧唐书》以「善守文以持天下之正」概括宋璟，与姚崇的「应变」相对。这一对比不是褒贬，而是分工：姚崇负责开创局面，宋璟负责把它固定为规则。
+    sourceId: jiutangshu-yaosong
+    quote: 崇善应变以成天下之务，璟善守文以持天下之正。二人道不同，同归于治。
+    kind: evaluation
+  - claim: 他的具体作为集中在「守法」二字：罢「斜封官」数千人，使不经正常程序任命的官员失去合法性；拒绝玄宗以皇后之父王仁皎为太尉的请求；抑制宦官参与政事。这些事都不显赫，但使开元前期的官僚体系恢复了规则。
+    sourceId: jiutangshu-yaosong
+    kind: influence
+  - claim: 宋璟的「刚正」有其限度。他曾依附武三思，又在韦后当政时保持沉默；其罢斜封官虽得舆论称许，但触怒权贵，很快被排挤出朝。皮日休「铁肠石心」的形容，掩盖了一个事实：他的守法之所以能推行，仍依赖玄宗初年的支持，而非制度本身的保障。
+    sourceId: jiutangshu-yaosong
+    kind: dispute
 relations:
   - target: tang-xuanzong
     type: ruler-subject

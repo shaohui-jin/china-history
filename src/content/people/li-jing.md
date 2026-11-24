@@ -18,6 +18,17 @@ seal: |-
   李
   靖
 summary: 唐初第一名将。南平萧铣、辅公祏，北灭东突厥，西破吐谷浑。所著《李卫公问对》为《武经七书》之一。其「奇正相生」的战术思想，深刻影响了中国兵学。
+evaluations:
+  - claim: 《旧唐书》把他与李勣并称「烟阁之最」：「近代称为名将者，英、卫二公，诚烟阁之最。」这是唐人对本朝名将的最高排序，李靖居其一。
+    sourceId: jiutangshu-lijing
+    quote: 近代称为名将者，英、卫二公，诚烟阁之最。
+    kind: evaluation
+  - claim: 贞观三年灭东突厥，是唐初最漂亮的一战。李靖以三千骑夜袭定襄，「颉利不意王师猝至，大惊」，随后于阴山再破其牙帐，颉利西逃被擒。此前突厥压境渭水，太宗被迫结盟；此役之后，唐朝由守转攻，四夷君长共尊太宗为「天可汗」。
+    sourceId: jiutangshu-lijing
+    kind: influence
+  - claim: 他的《李卫公问对》以「奇正相生」为核心，主张「无不正，无不奇，使敌莫测」。但此书真伪历来有争议——宋人已疑其为后人依托，今日学界多认为成于中唐以后。李靖本人的战法见于《旧唐书》本传，而所谓「兵法理论」，可能更多属于后世的兵学建构。
+    sourceId: jiutangshu-lijing
+    kind: dispute
 relations:
   - target: tang-taizong
     type: ruler-subject

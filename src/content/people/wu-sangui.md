@@ -28,6 +28,9 @@ evaluations:
   - claim: 吴三桂在衡州称帝（康熙十七年）距其起兵已五年，此时大势已去。称帝的动机历来有争议：一说为鼓舞士气，一说为满足个人欲望。从他称帝后五个月即病死、其孙吴世璠两年后自杀的结局看，这一举动对局势没有任何实质帮助。
     sourceId: qingshigao-kangxi
     kind: dispute
+  - claim: 《国榷》记吴三桂引清兵入关：「三桂以清兵入，破自成于山海关。」谈迁在记述中流露的矛盾很典型：他既痛恨吴三桂引外族入主，又承认李自成是「流贼」。明末士人的困境在于，他们必须在两个都不能接受的选择中选一个。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: li-zicheng
     type: enemy

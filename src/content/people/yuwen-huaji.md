@@ -29,6 +29,12 @@ evaluations:
   - claim: 宇文化及弑隋炀帝，是隋末群雄并起中最具象征意义的事件。炀帝之死使隋朝的合法性彻底消失，各路势力由此进入无名义的混战。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 《隋书·高祖本纪》记宇文化及弑隋炀帝：「化及等缢帝于温室。」杨广临死前说：「天子死自有法，何得加以锋刃！取鸩酒来。」无人应。最后被缢杀。一个曾以「大业」自命的皇帝，死时连毒酒都得不到。
+    sourceId: suishu-taizu
+    kind: influence
+  - claim: 赵翼记隋炀帝之死：「化及等缢帝于温室。」炀帝临死前想服毒而不得，最后被缢杀。一个曾以「大业」自命的皇帝，死时连选择死法的权利都没有。
+    sourceId: nianerzha-4
+    kind: influence
 relations:
   - target: yang-guang
     type: kill

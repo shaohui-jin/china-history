@@ -27,6 +27,12 @@ evaluations:
   - claim: 李纲在建炎元年拜相仅七十五日即罢，其原因不只是黄潜善、汪伯彦的排挤，也在于他的施政过于急进：他想在数月内重整军制、布置防务，触动了太多既得利益。主战派内部的策略分歧，也是南渡初年政局反复的原因之一。
     sourceId: songshi-gaozong
     kind: dispute
+  - claim: 《长编》记靖康元年李纲守汴京：「金人攻宣泽门，纲登城督战，募壮士缒城而下，烧其云梯数十座。」他守住了城，却被主和派排挤出朝。半年后金军再至，汴京陷落——李纲的离去，是靖康之祸的直接原因之一。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
+  - claim: 赵翼论靖康之变：「李纲守汴，金人不能克；纲去而城破。」一个人的去留决定一座城的存亡，这不是个人的伟大，而是制度的失败——一个把国家安全系于个别人物的体制，本身就是脆弱的。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: qinzong
     type: ruler-subject

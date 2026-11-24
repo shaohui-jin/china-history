@@ -28,6 +28,9 @@ evaluations:
   - claim: 「设此座以待陛下」的对答被后世反复援引，视为亡国之君的倔强。但它的语境更复杂：贾充曾弑魏帝曹髦，孙皓此语正刺其痛处，故「充默然甚愧」。一个亡国之君在敌国朝堂上仍能一击中的，说明孙皓并非无能——他的才智全部用在了无用的地方。
     sourceId: sanguozhi-sunhao
     kind: dispute
+  - claim: 《通鉴》记孙皓降晋：「皓面缚舆榇，诣军门降。」王濬「解其缚，焚其榇，延请相见」。晋武帝封他为归命侯。四年后死于洛阳。一个曾以暴虐闻名的君主，最后以「归命」二字载入史册。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: wang-jun
     type: enemy

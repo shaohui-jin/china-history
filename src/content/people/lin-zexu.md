@@ -32,6 +32,9 @@ evaluations:
   - claim: 林则徐禁烟与战败被贬，是清朝「内乱外患」格局的开端。他的判断（「数十年后中原几无可以御敌之兵」）在此后半个世纪被完全证实。
     sourceId: qingshigao-yao
     kind: evaluation
+  - claim: 林则徐在虎门销烟的处置极为彻底：「就海滩高处，开涵洞，引海水，投以石灰，顷刻汤沸，不爨自燃。」二十余日销尽鸦片二百三十七万余斤。但他对英国实力的判断是错的——他相信英军「腿足缠束紧密，屈伸皆所不便」，一旦登陆便无能为力。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: daoguang
     type: ruler-subject

@@ -37,6 +37,9 @@ evaluations:
   - claim: 诸葛亮北伐的困境在于国力的绝对差距：蜀汉一州对曹魏九州。陈寿在传末评语中已指出这一点，「盖应变将略，非其所长欤」的疑问，须放在这一力量对比中理解。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《通鉴》记诸葛亮之死：「亮病笃，后主遣尚书李福省侍，因谘以国家大计。亮曰：『吾不幸中道丧亡，虚废国家大事。』」此段较《三国志》详尽，可见陈寿作为蜀人，对诸葛亮的记载仍有回护。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: liu-bei
     type: ruler-subject

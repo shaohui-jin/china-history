@@ -30,6 +30,9 @@ evaluations:
   - claim: 陆逊在夷陵之战中「火烧连营」，靠的是对地形的精确利用与刘备连营七百里的战术失误。这一战与曹操在赤壁的失败结构相似：北方军队进入水网地带后，兵力优势反而成为负担。
     sourceId: sanguozhi-caocao
     kind: influence
+  - claim: 《通鉴》记夷陵之战：陆逊「以火攻拔其四十余营」，「刘备夜遁，驿人自担烧铙铠断后」。此役确立了陆逊的地位，也确立了东吴「守江必守荆」的战略。一位三十九岁的书生，一战击败了六十二岁的刘备。
+    sourceId: zizhitongjian-chibi-yiling
+    kind: influence
 relations:
   - target: sun-quan
     type: ruler-subject

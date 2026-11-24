@@ -29,6 +29,9 @@ evaluations:
   - claim: 韩德让在辽圣宗朝主持汉化，其权力基础是承天太后的信任。辽朝的「因俗而治」（南北面官）制度，正需要这样一位通晓汉制的重臣来运作。
     sourceId: liaoshi-tianzuo-2
     kind: influence
+  - claim: 赵翼论辽、金、元三朝的汉臣：「辽之韩德让、金之刘彦宗、元之耶律楚材，皆以汉人而参预机要。」这些人的存在说明，北方民族政权要统治汉地，必须依赖汉人的制度知识。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: xiao-chuo
     type: colleague

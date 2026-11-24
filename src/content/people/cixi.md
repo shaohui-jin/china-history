@@ -28,6 +28,9 @@ evaluations:
   - claim: 慈禧太后执政近半个世纪，其权力基础是同治、光绪两朝幼主临朝的制度空隙。《清史稿》对晚清的叙述，始终围绕「内乱外患」与「权臣当国」两条线索。
     sourceId: qingshigao-yao
     kind: dispute
+  - claim: 慈禧掌权四十七年，其权力的技术基础是「垂帘听政」这一临时安排。辛酉政变后她与慈安共同听政，慈安死后独揽；光绪亲政后她退居颐和园，却仍通过军机处与太监控制朝政。这种「退而不休」的统治，使光绪朝的改革始终无法摆脱她的阴影。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: xianfeng
     type: spouse

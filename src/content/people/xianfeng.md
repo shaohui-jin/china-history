@@ -26,6 +26,9 @@ evaluations:
   - claim: 咸丰朝同时面对太平天国与英法联军，《清史稿》所谓「内乱外患，纷至沓来」正指此十年。这一双重压力使清廷的财政与军事体系全面重构。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 咸丰朝的两件大事——太平天国与第二次鸦片战争——几乎同时爆发。他既无法镇压内乱，又无法抵御外侮，最终在热河病逝，留下「顾命八大臣」与两宫太后的权力结构。这个结构在他死后立刻崩塌，辛酉政变由此而起。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: zeng-guofan
     type: ruler-subject

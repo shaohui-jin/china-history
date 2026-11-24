@@ -18,6 +18,12 @@ evaluations:
   - claim: 蜀汉之亡是否应主要归咎黄皓，史料有不同侧重。陈寿在《后主传》评中只斥后主「庸主」，未把亡国归因于宦官；而《姜维传》则详载黄皓乱政与姜维避祸。两说并存，轻重不同。
     sourceId: sanguozhi-jiangwei
     kind: dispute
+  - claim: 《三国志·后主传》评曰：「后主任贤相则为循理之君，惑阉竖则为昏暗之后。」这一评语把蜀汉的兴衰完全系于后主一人的选择：用诸葛亮则治，信黄皓则亡。个人品质决定国运，正是君主制的结构性缺陷。
+    sourceId: sanguozhi-liushan-ping
+    kind: influence
+  - claim: 《通鉴》记黄皓乱政：「皓与侍中陈祗相表里，祗死，皓自专。」姜维请杀黄皓，后主曰：「皓趋走小臣耳，往董允切齿，吾常恨之，君何足介意。」一句话暴露了蜀汉后期的问题——皇帝不认为宦官干政是问题。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: liu-shan
     type: ruler-subject

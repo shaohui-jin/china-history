@@ -32,6 +32,12 @@ evaluations:
   - claim: 耶律大石西迁建西辽，是辽亡后契丹人的最后一次复兴。他在中亚统治近百年，其影响远及伊斯兰世界——一个被逐出中原的政权，在异域延续了更长的时间。
     sourceId: liaoshi-tianzuo-2
     kind: dispute
+  - claim: 《辽史·太宗本纪》记耶律大石在西征中的角色，与耶律德光的南下形成两条不同的路线：一个向西开拓，一个向南争夺中原。辽朝的扩张始终面临这个选择，最终南向的一路输给了新兴的金。
+    sourceId: liaoshi-taizong
+    kind: influence
+  - claim: 魏源记耶律大石西征建西辽：「大石以残余之众，西走万里，建立帝国，历九十余年。」西辽的存在说明，辽的覆亡不等于契丹势力的终结——它在西域延续了近一个世纪。
+    sourceId: shengwu-ji
+    kind: influence
 relations:
   - target: yelv-longxu
     type: kinship

@@ -33,6 +33,12 @@ evaluations:
   - claim: 蒙哥之死使蒙古帝国的扩张由统一转向分裂。他的继位本身即是「忽里台」制度失效的结果，此后各汗国走向独立，帝国再未真正统一。
     sourceId: yuanshi-shizu-2
     kind: dispute
+  - claim: 《元史·宪宗本纪》记蒙哥之死只一句：「崩于钓鱼山。」不载死因、不载细节。元人修史的这份沉默，与宋人《宋史·王坚传》的详细记载形成对照——同一事件，两部正史的详略完全相反。
+    sourceId: yuanshi-xianzong
+    kind: influence
+  - claim: 蒙哥之死引发的不只是元朝内部的继位之争，还牵动了整个蒙古帝国的格局。赵翼记「蒙古之分，实始于蒙哥之殁」——旭烈兀停止西征、忽必烈北返争位，蒙古的扩张从此转向内斗。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: kublai
     type: sibling

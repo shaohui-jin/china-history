@@ -30,6 +30,12 @@ evaluations:
   - claim: 徽宗朝的「丰亨豫大」与蔡京的理财，是北宋灭亡的直接背景。《宋史》对秦桧「倡和误国」的批评，逻辑上与对徽宗朝君臣的批评一致：把国事的失败归于执政者的品德。
     sourceId: songshi-qinhui-2
     kind: dispute
+  - claim: 《长编》记徽宗朝的「花石纲」：在苏州设应奉局，凡江南民间一石一木可玩者，即「直入其家，用黄封表识」，运往汴京。运粮的船队被征作运石，谓之「花石纲」。这项工程耗空了东南的民力，也耗空了北宋的国运。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
+  - claim: 赵翼论徽宗的才艺：「徽宗书画冠绝一时，而无救于亡国。」一个能把瘦金体写到极致的皇帝，在政治上却毫无判断力——这提醒我们，艺术修养与政治能力是两种完全不同的东西。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: qinzong
     type: parent-child

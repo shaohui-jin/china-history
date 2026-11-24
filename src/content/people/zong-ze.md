@@ -29,6 +29,9 @@ evaluations:
   - claim: 宗泽留守东京，屡请高宗还都，二十余疏而不得报。他的困境与岳飞的困境同源：南宋初年的军事抵抗受制于朝廷的和战之争，而非兵力不足。
     sourceId: songshi-yuefei-2
     kind: dispute
+  - claim: 《通鉴》记宗泽守汴京：「泽威声日著，北方闻其名，常尊惮之，对南人言，必曰宗爷爷。」他前后二十余次上疏请高宗还都，均不报。临终「无一语及家事，但连呼『过河』者三而卒」。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: yue-fei
     type: superior

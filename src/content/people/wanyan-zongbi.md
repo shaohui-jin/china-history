@@ -31,6 +31,12 @@ evaluations:
   - claim: 金熙宗推行汉制、建立三省六部，是金朝制度化的关键。但他后来酗酒滥杀，被海陵王所弑——制度的建设者与破坏者是同一个人。
     sourceId: jinshi-shizong-zan
     kind: dispute
+  - claim: 《金史·太宗本纪》记完颜宗弼（兀术）的角色：他是灭北宋的主要统帅，也是金宋和议的推动者。从主战到主和，这一转变说明金朝在军事上已无力灭宋。
+    sourceId: jinshi-taizong
+    kind: influence
+  - claim: 魏源记完颜宗弼（兀术）的转变：从灭北宋的主帅，到绍兴和议的推动者。这一转变说明，金朝在军事上已无力灭宋，和议是它在实力受限下的理性选择。
+    sourceId: shengwu-ji
+    kind: influence
 relations:
   - target: wanyan-aguda
     type: parent-child

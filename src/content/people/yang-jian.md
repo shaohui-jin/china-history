@@ -27,6 +27,12 @@ evaluations:
   - claim: 隋文帝的开皇之治，前提是北周奠定的关陇基础。他继承的是一个已经整合了关中的政权，而非从零开始——制度的连续性比个人能力更重要。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 《隋书·炀帝纪》记杨广即位后的第一件大事：营建东都洛阳，「每月役丁二百万人」。杨坚留下的「开皇之治」家底，在杨广手中十余年耗空。父子两代的巨大反差，是隋朝短命的核心。
+    sourceId: suishu-yangdi
+    kind: influence
+  - claim: 赵翼对隋文帝的评价颇为复杂：既肯定他「节俭」与「统一」，也指出他「猜忌苛察」，晚年「诛戮功臣」。开皇之治的另一面，是一个高度集权、缺乏弹性的政治结构。
+    sourceId: nianerzha-4
+    kind: influence
 relations:
   - target: yang-guang
     type: parent-child

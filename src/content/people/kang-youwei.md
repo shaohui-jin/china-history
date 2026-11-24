@@ -31,6 +31,9 @@ evaluations:
   - claim: 康有为的变法主张依托于光绪帝的支持，而光绪本人并无实权。《清史稿》所记「守旧者群起攻之」，说明变法的失败是权力结构的问题，而非方案的问题。
     sourceId: qingshigao-dezong
     kind: dispute
+  - claim: 康有为的《新学伪经考》《孔子改制考》在学术上争议极大——他判定古文经全为刘歆伪造，又把孔子塑造成「改制」的改革者。这两部书的真正作用不在学术，而在政治：为「变法」提供经典依据。用今文经学为改革张目，是晚清思想界的一种通行策略。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: guangxu
     type: ruler-subject

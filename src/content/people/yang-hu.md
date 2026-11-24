@@ -31,6 +31,9 @@ evaluations:
   - claim: 羊祜镇襄阳十年，正值西晋国力恢复期。他的「以德服人」之所以有效，前提是晋强吴弱的实力对比——德望需要实力作为后盾。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记羊祜与陆抗的对峙：「祜与陆抗相对，使命交通。」两军主帅互赠酒药而无猜疑——这种战争形态在整部中国史中极为罕见，它建立在双方都对「以德服人」有共识的基础之上。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: sima-yan
     type: ruler-subject

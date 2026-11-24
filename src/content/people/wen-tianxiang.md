@@ -34,6 +34,12 @@ evaluations:
     sourceId: songshi-wenzhong-2
     quote: 天祥以法天不息为对，其言万余，不为稿，一挥而成。
     kind: influence
+  - claim: 《宋史·陆秀夫传》记文天祥与陆秀夫的分工：文天祥在外组织义军，陆秀夫在朝辅佐幼主。崖山败后，文天祥被囚大都三年，屡拒劝降，最终就义柴市。陆秀夫则负帝蹈海。两条路，同一种结局。
+    sourceId: songshi-lu-xiufu
+    kind: influence
+  - claim: 赵翼论宋末忠臣：「宋之亡也，忠臣义士之多，为历朝所罕。」文天祥、陆秀夫、张世杰，再加上崖山赴海的十余万人——这是一个王朝在终结时的精神总动员。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: lu-xiufu
     type: colleague

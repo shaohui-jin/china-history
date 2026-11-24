@@ -28,6 +28,12 @@ evaluations:
   - claim: 刘秉忠定国号「大元」、营建大都，是元朝「以夏变夷」的具体执行者。一个汉人僧侣，成为蒙古政权转向中原王朝的技术枢纽。
     sourceId: yuanshi-shizu-2
     kind: influence
+  - claim: 《元史·郭守敬传》记刘秉忠与郭守敬的师承：刘秉忠「精于术数」，郭守敬从其学，后主持天文测量。元初的科学成就，多出于邢州学派一脉——一个地方性的学术群体，支撑起了一个帝国的历法改革。
+    sourceId: yuanshi-guoshoujing
+    kind: influence
+  - claim: 郑樵在《通志·总序》中提倡「会通」：「百川异趋，必会于海」。刘秉忠、郭守敬一系的学术，正是元代「会通」精神的体现——他们把天文、历法、地理、工程打通，做出单人难以完成的成就。
+    sourceId: tongzhi
+    kind: influence
 relations:
   - target: kublai
     type: ruler-subject

@@ -30,6 +30,9 @@ evaluations:
   - claim: 《明史》对崇祯的评价是「非亡国之君，而当亡国之运」，但同时把亡国的根源上溯至神宗、熹宗两朝。这一双重判断，使崇祯既是责任者也是承受者。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 《国榷》记崇祯十七年三月十九日：「上登煤山，自缢于寿皇亭。」谈迁在记述后附论，指出崇祯「非亡国之君，而当亡国之运」——他接手的是一个已经烂透的官僚系统，十七年换了五十位阁臣，说明问题不在用人，而在这个位置本身已无人能坐稳。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: yuan-chonghuan
     type: ruler-subject

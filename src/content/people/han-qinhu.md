@@ -30,6 +30,9 @@ evaluations:
   - claim: 韩擒虎灭陈，是隋朝统一之战的最后一击。他率五百人夜渡采石，直入建康，俘陈后主——这一战的成功建立在陈朝「不知稼穑之艰难」的内部腐朽之上。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 顾祖禹论建康的形势：「金陵之险，守在江而不在城。」韩擒虎以五百轻骑夜渡采石，正是突破了这第一道防线。长江天险，在有备时是屏障，在无备时是通途。
+    sourceId: duyizhi
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

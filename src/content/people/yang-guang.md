@@ -31,6 +31,12 @@ evaluations:
   - claim: 隋炀帝三征高丽，「转输不息，民力凋尽」，是隋亡的直接原因。大运河的功业与征辽的消耗，在他一人身上并存。
     sourceId: suishu-houzhuchen
     kind: dispute
+  - claim: 《隋书·高祖本纪》记杨坚对杨广的评价：「此儿不堪承嗣久矣。」这句话是杨坚临终前的悔恨，但已经太迟。废长立幼的决定，使隋朝走上了一条不归路。
+    sourceId: suishu-taizu
+    kind: influence
+  - claim: 顾祖禹论隋炀帝的失败：「炀帝之亡，在于不知守成之难。」他三征高丽、开凿运河、营建东都，每一项都是长期工程，同时推进便超出了国力的极限。
+    sourceId: duyizhi
+    kind: influence
 relations:
   - target: yang-jian
     type: parent-child

@@ -31,6 +31,9 @@ evaluations:
   - claim: 太平天国「糜烂十有六省，用兵十有五年」，《清史稿》的这一概括说明了它对清朝的消耗程度。此后清廷的财政、军事、地方治理全部被迫重构。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 太平天国的制度建设始终未能超出军事组织：《天朝田亩制度》描绘了一个平均主义的乌托邦，却从未真正施行；实际运作靠的是「圣库」与军师负责制。一个以宗教动员起家的政权，在军事胜利后无法完成向行政国家的转型，这是它失败的深层原因。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: zeng-guofan
     type: enemy

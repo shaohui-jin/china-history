@@ -30,6 +30,9 @@ evaluations:
   - claim: 北府兵是以流民为骨干的招募军，其战力来自「无家可归者」的搏命，而非制度性的训练。这一兵源结构决定了它既能战，也难以长期控制。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记谢玄的北府兵：「玄募骁勇之士，得彭城刘牢之等数人，以牢之为参军，常领精锐为前锋。」北府兵是东晋最精锐的部队，也是此后刘裕代晋的军事基础。
+    sourceId: zizhitongjian-feishui
+    kind: influence
 relations:
   - target: xie-an
     type: kinship

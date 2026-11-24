@@ -31,6 +31,9 @@ evaluations:
   - claim: 王羲之出身琅琊王氏，其书法成就与门阀子弟的文化教养直接相关。东晋初年「王与马，共天下」的格局，为士族提供了充裕的文化资源。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记王羲之的政治见解：他曾劝殷浩「不宜北伐」，认为「区区江左，固已寒心」。王羲之不只是书法家，他对东晋的国力有清醒判断——这种清醒使他在政治上始终不得志。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: wang-dao
     type: kinship

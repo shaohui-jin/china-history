@@ -30,6 +30,12 @@ evaluations:
   - claim: 冯道历仕四朝十君，自号「长乐老」。欧阳修在《新五代史》中斥其「无廉耻」，但五代的实际政治需要这样一批维持行政连续性的文官——道德的批判与制度的需要，在这里分离。
     sourceId: jiuwudaishi-wudai-2
     kind: dispute
+  - claim: 冯道历四朝十君，与其说是无耻，不如说是五代政治生态的产物。《新唐书·兵志》论藩镇「兵骄则逐帅，帅强则叛上」——在这样一个政权更替由兵变决定的时代，「忠」的对象本身就是不稳定的。
+    sourceId: xintangshu-fanzhen
+    kind: influence
+  - claim: 赵翼为冯道说话：「冯道历事四朝，人多非之，然其保全善类，不为无益。」这一评价与欧阳修的「无廉耻」形成对峙。同一个人，两种史观，各有其理。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: chai-rong
     type: ruler-subject

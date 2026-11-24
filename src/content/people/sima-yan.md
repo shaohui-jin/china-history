@@ -27,6 +27,9 @@ evaluations:
     sourceId: jinshu-huidi
     quote: 帝之为太子也，朝廷咸知不堪政事。……及天下荒乱，百姓饿死，帝曰：「何不食肉糜？」其蒙蔽皆此类也。
     kind: dispute
+  - claim: 《通鉴》记司马炎伐吴的决策过程：朝议多以为不可，只有羊祜、杜预、张华力主。司马炎「与张华围棋，镇南大将军杜预表适至」，遂决意出师。这一细节说明：灭吴不是必然，而是一次赌博式的决策。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: sima-yi
     type: kinship

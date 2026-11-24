@@ -34,6 +34,9 @@ evaluations:
     sourceId: qingshigao-taizu-2
     quote: 萨尔浒一役，翦明清兵之精锐，遂肇兴王业。
     kind: evaluation
+  - claim: 努尔哈赤创立的八旗制度，本质是一个军政合一的组织：以三百人为一牛录，五牛录为一甲喇，五甲喇为一固山（旗）。旗主由宗室担任，旗下人丁「出则为兵，入则为民」。这一制度使后金能在人口劣势下动员出远超明朝比例的兵力。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: wanli
     type: enemy

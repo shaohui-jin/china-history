@@ -29,6 +29,9 @@ evaluations:
   - claim: 荀彧在曹操集团中的角色是「定策」：迎天子都许、官渡坚守、北伐河北，皆有他的判断。他最终因反对曹操进爵魏公而失和，饮药而死——政治立场与个人情谊的冲突，在他身上最尖锐。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《通鉴》记荀彧之死：曹操进爵魏公，荀彧以为「本兴义兵以匡朝宁国，秉忠贞之诚，守退让之实」，不宜如此。曹操「心不能平」，遂以空食盒赐之，荀彧服毒而死。这个空盒的含义至今无定解。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: cao-cao
     type: ruler-subject

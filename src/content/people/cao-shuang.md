@@ -28,6 +28,9 @@ evaluations:
   - claim: 曹爽的失败不在无谋，而在无断。桓范劝其挟天子赴许昌，他犹豫一夜而曰「我亦不失作富家翁」——这一句是三国政治中最著名的误判：他以为交出兵权可以换命。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《晋书·宣帝纪》从司马懿的视角记高平陵之变：曹爽兄弟陪魏帝出城谒陵，司马懿乘机控制洛阳，然后指洛水为誓、保证曹爽的安全。曹爽信而降，随即被夷三族。这一事件确立了此后两百年「权臣以诈取国」的模式。
+    sourceId: jinshu-caocao-ping
+    kind: influence
 relations:
   - target: sima-yi
     type: enemy

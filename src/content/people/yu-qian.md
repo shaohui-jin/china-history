@@ -32,6 +32,9 @@ evaluations:
   - claim: 土木之变后的北京保卫战，是在「纲纪日以委颓」的背景下完成的。《明史》把于谦的功业放在这一长时段的衰颓趋势中，更显出他的孤绝：不是制度在支撑他，而是他一个人在支撑制度。
     sourceId: mingshi-xizong-zan
     kind: evaluation
+  - claim: 《国榷》记夺门之变：「石亨、徐有贞等迎上皇复辟。」于谦时任兵部尚书，手握重兵却「坐视不救」——因为他若起兵，就是又一次内战。他选择了死。谈迁论曰：「谦之死，非其罪也，天下皆知之。」
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: wang-zhen
     type: enemy

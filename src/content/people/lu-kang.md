@@ -31,6 +31,12 @@ evaluations:
   - claim: 陆抗守荆州时，西晋尚未练成水师，双方形成长期对峙。这一格局的前提是曹操时代以来北方的骑兵优势无法转化为水上战力——陆抗的坚守，建立在这个技术性的空隙上。
     sourceId: sanguozhi-caocao
     kind: influence
+  - claim: 《三国志·陆逊传》记陆逊「权以诸将子弟分领其众，逊悉令还乡里」，可见陆氏一门的政治基础。陆抗继承的不只是父亲的军事才能，还有陆氏在江东的地方根基——这也是他在孙皓暴政下仍得重用的原因。
+    sourceId: sanguozhi-lukang
+    kind: influence
+  - claim: 《通鉴》记陆抗与羊祜的对峙：「抗与祜相对，使命交通。」陆抗告诫部下「彼专为德，我专为暴，是不战而自服也」。他清醒地认识到，东吴的败亡不在军事，而在政治——孙皓的暴政正在替晋朝做工作。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: yang-hu
     type: enemy

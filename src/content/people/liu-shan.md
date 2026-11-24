@@ -29,6 +29,9 @@ evaluations:
   - claim: 刘禅在位四十一年，是三国在位最久的君主。前十二年政由诸葛亮，中间蒋琬、费祎秉政，实际乱政只有董允卒后至蜀亡的十余年。把蜀汉之亡全归于「后主昏庸」，忽略了这一时间结构。
     sourceId: sanguozhi-jiangwei
     kind: dispute
+  - claim: 《三国志·诸葛亮传》载《出师表》：「先帝知臣谨慎，故临崩寄臣以大事也。」刘禅的全部政治遗产，就是这份托孤的约定。他在位的四十一年，前十二年依靠诸葛亮与蒋琬、费祎，后二十九年则依靠自己的猜忌与宦官。
+    sourceId: sanguozhi-zhuge-biao
+    kind: influence
 relations:
   - target: liu-bei
     type: parent-child

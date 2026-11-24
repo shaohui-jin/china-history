@@ -28,6 +28,9 @@ evaluations:
   - claim: 皇太极改国号为清、建立八旗蒙古与汉军，是清朝从后金汗国转变为中原王朝的关键。这一转变与元朝「以夏变夷」的路径相似，都是制度性的采纳。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 皇太极的制度建设常被其军事功业掩盖：设六部、立都察院、开科举、编八旗蒙古与汉军，把后金从一个军事联盟改造成官僚国家。松锦之战俘洪承畴后，他「解所御貂裘衣之」，这一细节与清初招降汉臣的一贯策略一致——以恩礼换取人才。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: nurhaci
     type: parent-child

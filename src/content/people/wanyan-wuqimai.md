@@ -26,6 +26,12 @@ evaluations:
   - claim: 金太宗灭辽灭北宋，是金朝武功的顶点。但「小尧舜」的称号却给了世宗——金朝的自我评价，最终落在文治而非武功上。
     sourceId: jinshi-shizong-zan
     kind: evaluation
+  - claim: 《金史·太祖本纪》记完颜吴乞买（金太宗）与完颜阿骨打的关系：兄终弟及，而非父死子继。女真早期的继承制度保留了部落时代的传统，这一传统在金熙宗推行汉制后被彻底改变。
+    sourceId: jinshi-taizu
+    kind: influence
+  - claim: 赵翼指出金朝的继承制度：「金初兄弟相及，后改父子相传。」完颜吴乞买（太宗）以弟继兄，是部落传统的延续；到熙宗改行汉制，女真的政治结构才真正转型。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: wanyan-aguda
     type: sibling

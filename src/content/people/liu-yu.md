@@ -33,6 +33,12 @@ evaluations:
     sourceId: songshu-liuyu-2
     quote: 家贫，有大志，奉继母以孝闻。
     kind: evaluation
+  - claim: 《宋书·武帝本纪》记刘裕北伐后秦的功业：「九月，公至长安」，姚泓出降。刘裕是南朝唯一真正收复过关中的将领，但他南归争位，长安旋即得而复失。
+    sourceId: songshu-liuyu-north
+    kind: influence
+  - claim: 赵翼评刘裕：「宋武起于寒微，以军功取天下，其才略过于曹操。」刘裕是南朝唯一真正收复过关中的将领，但他急于南归争位，长安得而复失。这是南朝北伐的通病。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: xie-xuan
     type: ruler-subject

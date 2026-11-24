@@ -30,6 +30,9 @@ evaluations:
   - claim: 赫连勃勃建大夏，是十六国后期匈奴铁弗部的最后一次崛起。他筑统万城「蒸土筑城」，以极端手段立威——这类政权的强盛与暴虐往往是同一件事。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记统万城的修筑：「蒸土筑城，锥入一寸，即杀作者而并筑之。」这种检验方式本身就是恐怖统治的象征。赫连勃勃把工程质量与筑城者的生命绑在一起，筑出的城「坚可砺斧」。
+    sourceId: zizhitongjian-jin-shi
+    kind: influence
 relations:
   - target: liu-yu
     type: enemy

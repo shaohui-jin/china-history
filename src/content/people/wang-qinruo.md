@@ -31,6 +31,15 @@ evaluations:
   - claim: 王钦若之能进用于真宗朝，前提是宋代台谏与宰执的权力结构。他可以「以城下之盟」离间君臣，正因言路本身具有左右政局的力量——制度既能约束君主，也能被佞臣利用。
     sourceId: songshi-zhaopu
     kind: dispute
+  - claim: 《长编》记王钦若谮寇准：「城下之盟，《春秋》耻之。澶渊之举，是城下之盟也。」又曰：「陛下闻博乎？博者输钱欲尽，乃罄所有出之，谓之孤注。陛下，寇准之孤注也。」这番话让真宗对寇准由感激转为疏远。
+    sourceId: xuzizhitongjian-chanyuan
+    kind: influence
+  - claim: 《宋史·寇准传》记王钦若谮寇准的两句话，是全传最关键的转折：「城下之盟，《春秋》耻之」，「陛下，寇准之孤注也」。前一句否定功业，后一句动摇信任。谗言的高明之处不在于捏造，而在于把事实重新排列。
+    sourceId: songshi-kouzhun
+    kind: influence
+  - claim: 赵翼论王钦若：「其谮寇准之语，最中真宗之忌。」「陛下，寇准之孤注」一句，把真宗对自己帝位的不安全感完全激活。谗言的有效性，取决于听者内心已有的恐惧。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: kou-zhun
     type: enemy

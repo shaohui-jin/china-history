@@ -30,6 +30,9 @@ evaluations:
   - claim: 《熹宗本纪》赞语把明亡的责任上溯至「神宗末，废坏极矣」。这一判断与《神宗本纪》赞语的「明之亡，实亡于神宗」完全一致——两篇赞语互相印证。
     sourceId: mingshi-xizong-zan
     kind: evaluation
+  - claim: 《国榷》记万历十年的政变：张居正卒，「言者交章论其罪，遂夺官，籍其家」。谈迁指出，万历对张居正的清算不只是报复，更是夺回被首辅代行的皇权。此后三十年的怠政，某种程度上是这次夺权的代价——他不再信任任何大臣能替他办事。
+    sourceId: guoque-zhangjuzheng
+    kind: influence
 relations:
   - target: zhang-juzheng
     type: ruler-subject

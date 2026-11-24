@@ -27,6 +27,9 @@ evaluations:
   - claim: 完颜宗望灭北宋，是金朝军事扩张的顶点。此后金朝迅速转入守势，与南宋形成长期对峙——征服的速度超过了统治能力的成长。
     sourceId: jinshi-shizong-zan
     kind: dispute
+  - claim: 赵翼记载靖康之变的细节：「金人索金帛，府库既竭，括民财。」完颜宗望攻汴京的目标很明确：不是占领，而是榨取。金朝对中原的第一次经营，本质上是一次大规模掠夺。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: huizong
     type: enemy

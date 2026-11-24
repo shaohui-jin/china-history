@@ -30,6 +30,9 @@ evaluations:
   - claim: 耶律德光灭后晋而入汴，然「打草谷」的掠夺方式使中原民心尽失，不得不北撤，死于途中。辽国此后再未大规模南侵——征服与统治是两回事。
     sourceId: liaoshi-tianzuo-2
     kind: dispute
+  - claim: 赵翼评辽太宗：「德光入汴，纵兵大掠，中原之人，无不痛愤。」辽对中原的控制之所以短暂，不在于武力不足，而在于它把中原当作掠夺的对象而非统治的对象。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: yelv-abaoji
     type: parent-child

@@ -26,6 +26,9 @@ evaluations:
   - claim: 刘聪攻破洛阳、长安，俘晋怀帝、愍帝，是匈奴汉国的顶点。此时西晋已因八王之乱而「兵凶岁饥，死疫过半」，外族入侵的顺利，建立在内部崩溃之上。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记刘聪攻破洛阳、长安的全过程：永嘉五年破洛阳，俘晋怀帝；建兴四年破长安，俘晋愍帝。两次俘获中原皇帝，是匈奴政权对晋朝最彻底的打击，史称「永嘉之乱」。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: liu-yuan
     type: parent-child

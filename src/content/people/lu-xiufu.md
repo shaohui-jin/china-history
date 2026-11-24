@@ -26,6 +26,12 @@ evaluations:
     sourceId: songshi-lu-xiufu
     quote: 秀夫度不可脱，乃杖剑驱妻子入海，即负王赴海死，年四十四。
     kind: evaluation
+  - claim: 《宋史·文天祥传》记陆秀夫负帝蹈海：「秀夫度不可脱，乃杖剑驱妻子入海，即负王赴海死。」崖山之后，南宋的宗室、大臣、军士「十余万人皆赴海死」。这不是一个王朝的正常终结，而是一个文明的自我殉葬。
+    sourceId: songshi-wentianxiang
+    kind: influence
+  - claim: 赵翼记崖山之败：「宋之亡，亡于崖山，然其气节之盛，为历朝所无。」陆秀夫负帝蹈海，不是一个王朝的结束，而是一种政治伦理的完成。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: wen-tianxiang
     type: colleague

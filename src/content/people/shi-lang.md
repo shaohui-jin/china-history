@@ -28,6 +28,9 @@ evaluations:
   - claim: 施琅平台湾，是清朝「收台湾」的关键一战。他主张「台湾弃留」应慎重，最终促成清廷设台湾府——这一决策奠定了此后两百年的行政格局。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 《国朝先正事略》记施琅平台：「琅统舟师，自铜山出洋，克澎湖。」施琅的功业，在于他既是军事家，也是战略家——他坚持「先取澎湖」的判断，切断了郑氏的海上命脉。
+    sourceId: guochao-xianzheng
+    kind: influence
 relations:
   - target: kangxi
     type: ruler-subject

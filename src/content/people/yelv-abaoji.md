@@ -32,6 +32,9 @@ evaluations:
   - claim: 耶律阿保机建国，靠的是对汉人的吸纳：「吾欲自为一部以治汉城」。辽朝的南北面官制，其源头正在这一决定。
     sourceId: liaoshi-tianzuo-2
     kind: influence
+  - claim: 魏源论契丹的兴起：「辽之强，始于阿保机之并八部。」阿保机以武力统一契丹八部，又把迭剌部一分为二，削弱宗族势力——建国与削藩，在他这里是同一件事。
+    sourceId: shengwu-ji
+    kind: influence
 relations:
   - target: yelv-deguang
     type: parent-child

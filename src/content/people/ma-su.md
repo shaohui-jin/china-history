@@ -28,6 +28,9 @@ evaluations:
   - claim: 马谡失街亭，是蜀汉北伐最关键的一次战术失败。刘备生前已告诫诸葛亮「马谡言过其实，不可大用」——这一判断出自《三国志》，是识人能力的一次对照。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《通鉴》记街亭之败：「谡违亮节度，举措烦扰，舍水上山，不下据城。」张郃「绝其汲道，击，大破之」。诸葛亮的第一次北伐，因一个参谋的纸上谈兵而全线崩溃。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: zhuge-liang
     type: superior

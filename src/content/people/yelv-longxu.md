@@ -30,6 +30,9 @@ evaluations:
   - claim: 辽圣宗与承天太后执政的四十余年，是辽朝的鼎盛期：澶渊之盟后宋辽百余年无大战，辽朝得以专心经营东北与草原。
     sourceId: liaoshi-tianzuo-2
     kind: influence
+  - claim: 魏源记辽末的崩溃：「女真崛起，辽军屡败，五京相继陷落。」天祚帝在夹山被俘，辽亡。一个曾经压制宋朝的帝国，在女真面前十余年就瓦解了——它的军事优势建立在对手的软弱之上。
+    sourceId: shengwu-ji
+    kind: influence
 relations:
   - target: xiao-chuo
     type: parent-child

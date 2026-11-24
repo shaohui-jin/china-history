@@ -25,6 +25,12 @@ evaluations:
     sourceId: sanguozhi-xianzhu
     quote: 琦病死，群下推先主为荆州牧，治公安。
     kind: dispute
+  - claim: 《三国志·诸葛亮传》记刘琦问计于诸葛亮，亮教他「申生在内而危，重耳在外而安」，刘琦遂出镇江夏。这一谋略出自诸葛亮，而受益者是刘琦——两人的关系是典型的「谋主与主君」，而非君臣。
+    sourceId: sanguozhi-zhuge
+    kind: influence
+  - claim: 《通鉴》记刘琦与诸葛亮的关系：刘琦问计，亮教他「出镇江夏」，从此刘琦成为刘备退守的落脚点。赤壁之战后，刘备表刘琦为荆州刺史，借他的名义收取荆南四郡。刘琦早卒，刘备才真正接手荆州。
+    sourceId: zizhitongjian-chibi
+    kind: influence
 relations:
   - target: zhuge-liang
     type: colleague

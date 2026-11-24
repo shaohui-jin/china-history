@@ -32,6 +32,12 @@ evaluations:
   - claim: 「杯酒释兵权」在《宋史》本纪中的记载极为简略，而《赵普传》记赵普「数劝上收兵权」的具体过程。两处合看，削兵权是赵普的建议而非太祖的独断——君臣合谋，方有宋初的军政改革。
     sourceId: songshi-zhaopu
     kind: influence
+  - claim: 《长编》记陈桥兵变：「诸校露刃列于庭，曰：『诸军无主，愿策太尉为天子。』未及对，有以黄衣加太祖身，众皆罗拜呼万岁。」这一场景与《宋史》所记略有出入，《长编》保留更多细节，也更接近实录。
+    sourceId: xuzizhitongjian-changbian
+    kind: influence
+  - claim: 杯酒释兵权与刘备的「髀肉复生」是两种不同的政治逻辑：刘备感叹功业未建，是创业者的焦虑；赵匡胤解除功臣兵权，是守成者的算计。前者需要人替他打天下，后者需要人不来抢天下。
+    sourceId: sanguozhi-xianzhu-zan
+    kind: influence
 relations:
   - target: zhao-pu
     type: ruler-subject

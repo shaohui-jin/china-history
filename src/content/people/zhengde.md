@@ -31,6 +31,9 @@ evaluations:
   - claim: 正德朝的荒嬉与宦祸并存：刘瑾专权五年，朝政紊乱。《明史》把正德、嘉靖两朝的转折与「大礼议」相连，视为明代君臣关系破裂的开端。
     sourceId: mingshi-liushan
     kind: dispute
+  - claim: 《国榷》记正德朝的荒嬉：「上自号威武大将军总兵官，驻跸宣府。」群臣谏止不听。正德的自封与巡游，表面是荒唐，实质是他对文官系统的一种消极抵抗——既然不能摆脱这套系统，索性在系统之外再造一个自己。
+    sourceId: guoque-zhangjuzheng
+    kind: influence
 relations:
   - target: zhu-chenhao
     type: enemy

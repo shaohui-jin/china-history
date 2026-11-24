@@ -30,6 +30,12 @@ evaluations:
   - claim: 邓艾偷渡阴平的奇袭，前提是钟会大军被阻于剑阁。这一战役的分工在《三国志》中记载清楚：钟会正面攻坚，邓艾迂回突袭——两人的功过评价，也由此分岔。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《三国志·钟会传》评语说钟会「心大志迂，不虑祸变」，正好反证邓艾的处境：邓艾灭蜀的功劳越大，钟会诬陷他的动机就越强。邓艾之死不是因为他真的谋反，而是因为他成了别人谋反路上的障碍。
+    sourceId: sanguozhi-zhonghui-ping
+    kind: influence
+  - claim: 《通鉴》记邓艾入成都后的处置：他以「承制」名义拜刘禅为骠骑将军，又命蜀汉旧臣各复其位。这种「便宜行事」在战时是必要的，在战后却是僭越——司马昭要的是灭蜀的功，不是替他安蜀的人。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: jiang-wei
     type: enemy

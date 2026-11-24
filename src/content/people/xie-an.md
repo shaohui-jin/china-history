@@ -32,6 +32,9 @@ evaluations:
   - claim: 淝水之战时东晋的内部条件极为脆弱：桓氏据上游、谢氏掌下游、司马氏居中，三方牵制。谢安的作用是让这个脆弱的联盟在危机中不散——这比战术指挥更难。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记淝水之战时谢安的镇定：前线捷报至，「安方与客围棋，取书置床上，了无喜色，围棋如故。客问之，徐答曰：『小儿辈遂已破贼。』」棋局终了回到内室，过门槛时「不觉屐齿之折」。镇定是表演，也是政治需要。
+    sourceId: zizhitongjian-feishui
+    kind: influence
 relations:
   - target: fu-jian
     type: enemy

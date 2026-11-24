@@ -29,6 +29,9 @@ evaluations:
   - claim: 王导辅佐司马睿建立东晋，正值「兵凶岁饥，死疫过半」的残破局面。他的「愦愦之政」不是无能，而是在这种条件下唯一可行的妥协：先稳住南北士族，再谈恢复。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记「王与马，共天下」的由来：司马睿即帝位时，「命导升御床共坐」，王导固辞。这一细节把东晋政权的性质说得很清楚——皇权与门阀共治，皇帝只是其中势力较大的一方。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: sima-rui
     type: ruler-subject

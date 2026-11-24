@@ -30,6 +30,9 @@ evaluations:
   - claim: 贾南风专权近十年而「朝野安静」，靠的是张华、裴頠主持政务。她的失败在于杀太子——此举打破了宗室与后族之间的脆弱平衡，八王之乱由此爆发。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记贾后专权的十年：杀杨骏、诛司马亮、害太子遹，「八王之乱」由此而起。一个女性的宫廷阴谋成为三百年大分裂的起点，这不是偶然——西晋的分封制与宗室兵权，使任何中央权力的真空都会立刻引爆内战。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: sima-zhong
     type: spouse

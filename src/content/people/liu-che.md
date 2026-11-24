@@ -31,6 +31,9 @@ evaluations:
   - claim: 班固的赞语把汉武帝的功业落在文治上：罢黜百家、兴太学、改正朔、定历数、建封禅。与《史记》重在记其征伐不同，这一评价强调的是制度与文化的奠基，而非疆域的扩张。
     sourceId: hanshu-wudi-jiao-si
     kind: evaluation
+  - claim: 赵翼指出汉武帝的财政政策「多为后世所师法」：「盐铁、均输、平准，皆起于武帝。」这些国营经济措施，在中国历史上被反复沿用，成为皇权控制经济的工具箱。
+    sourceId: nianerzha-2
+    kind: influence
 relations:
   - target: wei-qing
     type: ruler-subject

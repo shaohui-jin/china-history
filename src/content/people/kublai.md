@@ -32,6 +32,9 @@ evaluations:
     sourceId: yuanshi-shizu-2
     quote: 世祖度量弘广，知人善任使，信用儒术，用能以夏变夷，立经陈纪。
     kind: evaluation
+  - claim: 赵翼指出元朝速亡的根源是分封：「诸王各领其地，故不数传而分裂」。忽必烈的元朝与拔都的金帐汗国、旭烈兀的伊儿汗国，名义上是同一帝国，实际上各自为政。一个靠军事征服建立的帝国，无法用制度把它维系在一起。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: wen-tianxiang
     type: enemy

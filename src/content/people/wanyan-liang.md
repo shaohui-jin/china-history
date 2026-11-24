@@ -30,6 +30,9 @@ evaluations:
   - claim: 海陵王完颜亮迁都燕京、推行汉化，其功业与暴虐并存。《金史》把他列入本纪而评价极低——迁都的深远意义，被其个人的荒淫掩盖了。
     sourceId: jinshi-shizong-zan
     kind: dispute
+  - claim: 赵翼论完颜亮：「海陵之暴，古今罕比，然其志在混一，非徒淫虐。」完颜亮的南征不是一时冲动，而是金朝在完成北方统一后的必然选择——他要的是「正统」，失败的是手段。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: wanyan-wuqimai
     type: kinship

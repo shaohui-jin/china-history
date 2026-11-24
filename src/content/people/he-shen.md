@@ -31,6 +31,9 @@ evaluations:
   - claim: 和珅专权二十余年，是乾隆晚年「政事丛脞」的直接表现。一个能干的宰相把能力全部用于维持个人权位，制度的监察便完全失效。
     sourceId: qingshigao-yao
     kind: dispute
+  - claim: 和珅的聚敛规模，从抄家清单可见一斑：房屋三千余间、田地八千余顷、银号十处、当铺十处，估银约八亿两，相当于清政府十余年的财政收入。这一数字来自民间流传的《查抄和珅家产清单》，官方档案所载略少，但「和珅跌倒，嘉庆吃饱」的谚语说明了它的量级。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: qianlong
     type: ruler-subject

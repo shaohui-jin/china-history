@@ -31,6 +31,9 @@ evaluations:
   - claim: 张飞之死在于「暴而无恩」：他鞭挞士卒而令其侍侧，终被部将所杀。陈寿在《三国志》中把关羽的「刚而自矜」与张飞的「暴而无恩」并提，作为二人败亡的共同原因。
     sourceId: sanguozhi-caocao
     kind: evaluation
+  - claim: 《通鉴》记张飞之死：刘备伐吴前，「飞当率兵万人，自阆中会江州。临发，其帐下将张达、范强杀飞，持其首，顺流而奔孙权」。刘备闻讯只说了一句「噫！飞死矣」——他早已预言过，却无力改变。
+    sourceId: zizhitongjian-chibi-yiling
+    kind: influence
 relations:
   - target: liu-bei
     type: sibling

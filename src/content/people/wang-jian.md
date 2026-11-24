@@ -30,6 +30,10 @@ evaluations:
   - claim: 王坚守钓鱼城的事迹在《宋史·忠义传》中篇幅极短，其意义却在域外：蒙哥之死改变了蒙古帝国的走向。宋人当时并不知晓这一战的全部后果。
     sourceId: songshi-lu-xiufu
     kind: dispute
+  - claim: 《元史·宪宗本纪》对蒙哥之死只记「崩于钓鱼山」，不载死因。这一沉默与《宋史》所记王坚守城形成对照：元人讳言大汗殒命于一座小城，宋人则以此为大功。同一事件在两部正史中的轻重完全不同，正史从来不是中立的记录。
+    sourceId: yuanshi-xianzong
+    kind: evaluation
+
 relations:
   - target: mangu
     type: enemy

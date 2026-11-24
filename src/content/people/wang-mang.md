@@ -30,6 +30,12 @@ evaluations:
   - claim: 王莽改制的失败，部分原因在于他试图以《周礼》的理想全面取代汉制。《刑法志》所记的汉制演变，说明制度的有效性来自长期的调整而非一次性的重构。
     sourceId: hanshu-ji
     kind: dispute
+  - claim: 《汉书·武帝纪》记武帝朝的财政：盐铁官营、均输平准、算缗告缗，都是为了支撑长期战争。王莽的「王田制」「五均六筦」，很大程度上模仿了武帝的国营经济手段。新朝的失敗，部分是西汉财政模式的延续与放大。
+    sourceId: hanshu-wudi
+    kind: influence
+  - claim: 赵翼论王莽：「莽虽篡弑，然其立法多有可取者。」王田制、五均六筦，是对西汉末年土地兼并的一种回应。他失败的教训是：激进的改革在没有政治基础时，必然引发反噬。
+    sourceId: nianerzha-2
+    kind: influence
 relations:
   - target: liu-xiu
     type: enemy

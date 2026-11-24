@@ -31,6 +31,9 @@ evaluations:
   - claim: 乾隆的「十全武功」依托于康熙、雍正两朝积累的国力。《清史稿》论其「拓地二万里」，但其晚年「信任奸回，政事丛脞」，清朝由盛转衰的转折正在此。
     sourceId: qingshigao-shengzu-2
     kind: dispute
+  - claim: 乾隆朝的「十全武功」中，真正具有战略意义的是平定准噶尔与回部：乾隆二十四年，「西域尽入版图」，设伊犁将军统辖。此役之后，清朝的疆域达到极盛。但同一时期，文字狱的规模也达到清代顶峰——武功与思想禁锢并行，是乾隆朝的两面。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: kangxi
     type: kinship

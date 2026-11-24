@@ -27,6 +27,15 @@ evaluations:
   - claim: 韩侂胄主战而不知兵，这是公认的。但也有研究指出，开禧北伐的时机并非全无道理：金朝此时正受蒙古侵扰、内部财政困窘。失败的原因更多在用人（吴曦叛变）与准备不足，而非「不该北伐」。
     sourceId: songshi-zhuxi
     kind: dispute
+  - claim: 开禧北伐的失败与韩侂胄之死，是南宋政治的一个转折：此后主战派再无力主导朝政。「函首乞和」——把宰相的头颅装在匣子里送给敌国，在中国政治史上罕有先例，其屈辱程度超过任何一次和议。
+    sourceId: songshi-wentianxiang
+    kind: influence
+  - claim: 韩侂胄的庆元党禁与王安石变法形成鲜明对照：王安石以「新学」排斥旧党，韩侂胄以「道学」为伪学，两次都是把学术争论变成政治清洗。宋代党争的循环，从熙宁到庆元，一百三十年间换了三批人，手段不变。
+    sourceId: songshi-wanganshi-2
+    kind: influence
+  - claim: 赵翼评韩侂胄：「其人虽无足取，然开禧北伐，实为南宋最后之振作。」他因贸然开战而失败，但当时的南宋，除了冒进已无其他选择。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: zhuxi
     type: enemy

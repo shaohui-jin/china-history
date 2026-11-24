@@ -32,6 +32,15 @@ evaluations:
     sourceId: songshi-yuefei-2
     quote: 文臣不爱钱，武臣不惜死，天下太平矣。
     kind: evaluation
+  - claim: 《宋史·秦桧传》记岳飞之死的直接推动者：「桧以飞不死，必梗和议，乃与张俊谋，诬飞谋反。」秦桧需要和议成功来巩固权位，岳飞必须死。至于「莫须有」三字，是秦桧对韩世忠的敷衍，也是他对整个朝廷的轻蔑。
+    sourceId: songshi-qinhui-2
+    kind: influence
+  - claim: 《宋史·张世杰传》记宋末的最后一战：崖山海战，张世杰以千余艘战船结成一字阵，被元军切断补给，全军覆没。岳飞当年「连结河朔」的战略若被采纳，或许不会有这一天。宋室的南渡，从岳飞之死就已注定终局。
+    sourceId: songshi-zhangshijie
+    kind: influence
+  - claim: 赵翼评岳飞之死：「高宗之杀岳飞，非徒畏金人，实忌其功高而难制。」这一判断把责任落在高宗身上，与《宋史·岳飞传》论曰「高宗忍自弃其中原，故忍杀飞」完全一致。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: gaozong
     type: ruler-subject

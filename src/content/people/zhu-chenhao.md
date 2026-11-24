@@ -30,6 +30,9 @@ evaluations:
   - claim: 宁王之乱四十三日而平，说明明代藩王体制早已失效：藩王既无兵权也无地方行政权，一旦起事便孤立无援。这一结局反证了永乐削藩的成功。
     sourceId: mingshi-yangjisheng
     kind: influence
+  - claim: 宁王宸濠之乱的根源，在于明初分封制的遗留。朱棣以藩王夺位后，对宗藩「徒封不治民、不给兵」，却保留了宗室的庞大开支与尊号。宸濠蓄养亡命、恢复护卫，正是这种「有尊号无实权」结构下的必然产物。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: wang-yangming
     type: enemy

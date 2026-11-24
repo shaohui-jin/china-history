@@ -30,6 +30,9 @@ evaluations:
   - claim: 道光朝的鸦片战争，是清朝由盛转衰后的第一次外部冲击。《清史稿》论咸同之际「内乱外患，纷至沓来」，其起点正是道光二十年。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 道光的节俭在清代诸帝中罕见：「衣非三澣不易」，宫中的袍服多有补丁。但他的节俭未能转化为国力——鸦片战争时清军的火器仍停留在明末水平。个人品德与国家能力之间的落差，是道光朝最耐人寻味之处。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: lin-zexu
     type: ruler-subject

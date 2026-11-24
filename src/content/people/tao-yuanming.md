@@ -32,6 +32,9 @@ evaluations:
   - claim: 陶渊明的归隐发生在东晋末年门阀政治崩坏之际。他的「不为五斗米折腰」，与其说是个人选择，不如说是一个士人在制度失效后的退场方式。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记陶渊明辞官：「不为五斗米折腰」，遂解印去。此语不见于《晋书》本传，而出于萧统《陶渊明传》，《通鉴》采之。它成为后世士人拒绝屈从权力的标准句式。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: wang-dao
     type: colleague

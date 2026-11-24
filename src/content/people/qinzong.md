@@ -29,6 +29,15 @@ evaluations:
   - claim: 靖康之变的责任在《宋史》中被分散于徽宗、钦宗与蔡京、童贯诸人。钦宗在位仅一年余，实际决策空间极小——这也是《宋史》对他评价相对宽容的原因。
     sourceId: songshi-qinhui-2
     kind: dispute
+  - claim: 《长编》记靖康之变：金军破城后，「索金帛，府库既竭，括民财，民不聊生」。徽钦二帝被押北上，「宗室、后妃、公主、驸马及百工技艺之家，尽掳以北」。北宋的灭亡不是一次军事失败，而是一次社会的整体掠夺。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
+  - claim: 《宋史·徽宗本纪》记徽宗禅位的情境：金兵南下，「帝（徽宗）闻金人渡河，遂决意东幸」，仓促传位钦宗。把一个烂摊子交给儿子，自己逃往江南——这一举动使北宋最后的抵抗失去了核心。
+    sourceId: nianerzha-yuandai
+    kind: influence
+  - claim: 赵翼论徽钦二帝：「二帝之北狩，实自太宗以来积弱之所致。」把责任追溯到太宗，是一种更宏观的历史判断——靖康之耻不是一代的失误，而是整个北宋重文抑武、以财求和的国策的累积结果。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: huizong
     type: parent-child

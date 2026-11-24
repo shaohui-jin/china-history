@@ -30,6 +30,15 @@ evaluations:
   - claim: 寇准的刚直与宋代台谏制度互相成就：真宗朝之所以能容纳「寇准上殿，百僚股栗」，是因为台谏本身具有制度性的发言权。个人的性格，依托于制度的空间。
     sourceId: songshi-zhaopu
     kind: influence
+  - claim: 《长编》记澶渊之盟的订立过程：寇准力主真宗亲征，「车驾渡河，远近望见御盖，踊跃欢呼，声闻数十里，契丹相视惊愕，不能成列」。盟约规定宋每年给辽银十万两、绢二十万匹，以「岁币」名义换取和平——这在此后一百二十年确实维持了和平。
+    sourceId: xuzizhitongjian-chanyuan
+    kind: influence
+  - claim: 《宋史·真宗本纪》赞曰：「真宗英悟之主，其初践位，相臣李沆虑其聪明必多作为，数奏灾异以杜其侈心。」真宗朝的前期确有可为，澶渊之盟后却转向封禅与祥瑞。一个君主从务实转向虚妄，往往发生在一次成功之后。
+    sourceId: songshi-zhenzong-zan
+    kind: influence
+  - claim: 赵翼论澶渊之盟：「宋之弱，实始于澶渊。」岁币虽换来了和平，但也确立了宋朝「以财求和」的外交模式。此后的和议，一次比一次屈辱。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: song-zhenzong
     type: ruler-subject

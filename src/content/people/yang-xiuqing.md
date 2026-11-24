@@ -26,6 +26,9 @@ evaluations:
   - claim: 杨秀清主政时期是太平天国的鼎盛期，其军政组织能力远胜洪秀全。天京事变中他被杀，太平天国从此失去组织核心。
     sourceId: qingshigao-yao
     kind: dispute
+  - claim: 杨秀清以「天父下凡」的名义凌驾于洪秀全之上：「每称天父附体，传旨诰谕，秀全必跪受。」这种神权与政权的错位，是太平天国体制的根本缺陷——一个自称能与天父对话的人，不需要皇帝。洪秀全杀他的动机，不只是权力，更是神权的争夺。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: hong-xiuquan
     type: ruler-subject

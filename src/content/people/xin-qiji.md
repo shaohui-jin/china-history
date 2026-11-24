@@ -32,6 +32,12 @@ evaluations:
   - claim: 辛弃疾南归后长期不得重用，其《美芹十论》《九议》的系统方略始终未被采纳。他的词中「把吴钩看了，栏杆拍遍」的郁愤，正源于这种战略眼光与政治现实的落差。
     sourceId: songshi-yuefei-2
     kind: dispute
+  - claim: 《宋史·岳飞传》论曰：「西汉而下，若韩、彭、绛、灌之为将，代不乏人，求其文武全器、仁智并施如宋岳飞者，一代岂多见哉。」辛弃疾与岳飞同为「文武全器」，然岳飞得死，辛弃疾得闲——南宋对主战派的处置，方式不同，效果相同。
+    sourceId: songshi-yuefei-lun
+    kind: influence
+  - claim: 《宋元学案》未把辛弃疾列入学案，但他的词学与事功，恰与理学「重行」的精神相通。全祖望曾说：「稼轩之词，其志亦可见矣」——词是他的载体，恢复才是他的主题。
+    sourceId: songyuanxuean
+    kind: influence
 relations:
   - target: yun-wenwen
     type: colleague

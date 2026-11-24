@@ -30,6 +30,12 @@ evaluations:
   - claim: 刘义真十二岁镇守长安，是刘裕急于南归的直接结果。诸将内讧、关中得而复失——这一失败的责任在决策者，而非一个孩子。
     sourceId: songshu-liuyu-2
     kind: dispute
+  - claim: 《宋书·武帝本纪》记刘义符的被废：「少帝失德，徐羡之等谋废立。」一个十八岁的少年皇帝，因「游戏无度」而被顾命大臣废杀。刘宋的宗室内乱，自开国第二代已经开始。
+    sourceId: songshu-wudi-zan
+    kind: influence
+  - claim: 赵翼论南朝宗室内乱：「宋、齐、梁、陈四朝，骨肉相残之祸，无代无之。」刘义真之死是这一系列的开端——刘裕诸子互相残杀，刘宋的皇位成了一个不断流血的空位。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: liu-yu
     type: parent-child

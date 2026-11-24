@@ -32,6 +32,12 @@ evaluations:
   - claim: 关羽之败的关键是后方空虚：他北攻樊城时，吕蒙「白衣渡江」袭取荆州。这一战略失误与曹操当年「挟天子」的政治优势无关，纯粹是兵力部署的问题。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《三国志·先主传》评曰：「先主之弘毅宽厚，知人待士，盖有高祖之风，英雄之器焉。」刘备待关羽「恩若兄弟」的关系，只有放在这一评语的背景下才能理解——蜀汉集团的凝聚力来自私人恩义，而非制度。
+    sourceId: sanguozhi-xianzhu-zan
+    kind: influence
+  - claim: 《通鉴》记关羽失荆州的直接原因：「羽之出军，芳、仁供给军资，不悉相救，羽言还当治之，芳、仁咸怀惧不安。」后勤将领因恐惧而降吴，这才是荆州失守的起点。关羽的失败不在于战，而在于人。
+    sourceId: zizhitongjian-chibi
+    kind: influence
 relations:
   - target: liu-bei
     type: sibling

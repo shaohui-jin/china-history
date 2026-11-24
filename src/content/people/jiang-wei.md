@@ -28,6 +28,12 @@ evaluations:
   - claim: 「九伐中原」的失败不能全归于个人。蜀汉人口约九十四万，魏国四百四十余万，以一州之力攻中原，本无胜算。姜维的困境与诸葛亮相同：不伐则坐待魏国积蓄实力，伐则虚耗国力。他选择了前者，而选择的代价由蜀中百姓承担。
     sourceId: sanguozhi-jiangwei-ping
     kind: dispute
+  - claim: 《三国志·诸葛亮传》评曰：「然连年动众，未能成功，盖应变将略，非其所长欤。」这一评语同样适用于姜维——九伐中原而无功，与其说是能力不足，不如说是以弱蜀攻强魏的必然结果。
+    sourceId: sanguozhi-zhuge-ping
+    kind: influence
+  - claim: 《通鉴》记姜维的最后一搏：蜀亡后他诈降钟会，密书后主「愿陛下忍数日之辱，臣欲使社稷危而复安」。事泄被杀。这一计划大胆到近乎妄想，但也说明姜维至死未放弃——他不是一个只会打仗的将领。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: zhuge-liang
     type: teacher-student

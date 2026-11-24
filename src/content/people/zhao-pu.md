@@ -29,6 +29,12 @@ evaluations:
   - claim: 「半部《论语》治天下」是后世的增饰。本传原文只说他晚年「手不释卷」，读的是《论语》二十篇，「处决如流」。这一细节被宋人笔记逐步放大，最终成为赵普的形象标签。
     sourceId: songshi-zhaopu
     kind: dispute
+  - claim: 《长编》记「半部论语治天下」的来历：赵普「晚年手不释卷，每归私第，阖户启箧取书，读之竟日。及次日临政，处决如流。既薨，家人发箧视之，则《论语》二十篇也」。此说流传甚广，但《宋史》本传未载。
+    sourceId: xuzizhitongjian-changbian
+    kind: influence
+  - claim: 赵普三度为相，每次罢相都与专权有关：太祖时因收受贿赂被罢，太宗时因庇护政敌被罢。《长编》记他「性深沉，寡言笑」，这种性格在宋初的政局中既是资本也是麻烦。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: ruler-subject

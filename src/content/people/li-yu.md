@@ -31,6 +31,9 @@ evaluations:
   - claim: 南唐之亡在宋人叙述中常被归为李煜的「文弱」。但宋初的统一是系统性的军事行动：太祖、太宗两朝先后平定荆南、后蜀、南汉、南唐、北汉，《赵普传》所记的削藩与集权，正是支撑这一系列战争的组织基础。
     sourceId: songshi-zhaopu
     kind: dispute
+  - claim: 《通鉴》记南唐的覆亡：开宝八年，宋军围金陵，「城破，煜与宰相汤悦等四十五人降」。李煜的词在亡国之后达到顶峰——「最是仓皇辞庙日，教坊犹奏别离歌」，这是用血写出来的句子。
+    sourceId: zizhitongjian-wudai
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: enemy

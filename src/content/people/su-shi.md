@@ -32,6 +32,15 @@ evaluations:
   - claim: 《宋史》记王安石「自信所见，执意不回」，这与苏轼的处境互为因果：正因为王安石不肯纳谏，反对者才只能外放贬谪。乌台诗案的政治背景，在于此。
     sourceId: songshi-wanganshi-2
     kind: dispute
+  - claim: 《宋史·王安石传》记苏轼与王安石的政争：苏轼反对新法，屡遭贬谪；但王安石罢相后，两人在金陵相见，「尽论古昔文字，欣然相得」。政治上的对手，学问上的知己——宋代士大夫的复杂性，在这一幕中尽显。
+    sourceId: songshi-wanganshi
+    kind: influence
+  - claim: 《宋史·王安石传》论曰：「朱熹论安石，以文章节行高一世，而尤以道德经济为己任，一旦得政，尽罢旧臣。」苏轼与王安石的争论，在宋人自己看来并非势不两立——朱熹既肯定王安石的抱负，也批评他的刚愎。
+    sourceId: songshi-wanganshi-lun
+    kind: influence
+  - claim: 《宋元学案》把苏轼列入蜀学一派，与程朱理学并立。全祖望按语：「蜀学之盛，与洛学相埒。」苏轼与程颐的对立，不只是政见，更是学术与人生的态度——一个重情致，一个重义理。
+    sourceId: songyuanxuean
+    kind: influence
 relations:
   - target: ouyang-xiu
     type: teacher-student

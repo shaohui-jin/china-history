@@ -31,6 +31,9 @@ evaluations:
   - claim: 曹丕代汉的「三上书辞让」是禅让制的固定程式，其原型可追至《武帝纪》所记曹操「不受」封号的做法。曹氏父子两代经营，最终完成的是一次形式完备的政权转移。
     sourceId: sanguozhi-caocao
     kind: influence
+  - claim: 《通鉴》记曹丕受禅的全过程：汉献帝「使张音奉玺绶禅位于魏王」，曹丕「三上书辞让」，然后在繁阳设坛即位。三次辞让是这场禅让的政治程式——它把篡位包装成「不得已而受」，为此后两晋南北朝的历次禅代提供了模板。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: cao-cao
     type: parent-child

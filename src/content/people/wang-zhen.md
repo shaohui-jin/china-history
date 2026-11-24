@@ -28,6 +28,9 @@ evaluations:
   - claim: 王振专权是明代宦官干政的开端。此后汪直、刘瑾、魏忠贤相继而起，《明史》把这条线索与「纲纪日以委颓」连在一起——宦祸不是偶发的，而是制度失效的表现。
     sourceId: mingshi-xizong-zan
     kind: influence
+  - claim: 《国榷》记土木之变：「王振矫诏，挟上亲征。」谈迁评论指出，明英宗对王振的信任源于东宫时期的师生关系——一个宦官的权力，本质上来自他与皇帝私人关系的独占。这种结构在明代反复出现（王振、刘瑾、魏忠贤），根源在于皇权需要一个不参与外朝的代理人。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: yu-qian
     type: enemy

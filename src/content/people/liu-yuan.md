@@ -35,6 +35,9 @@ evaluations:
     sourceId: jinshu-xiongnu
     quote: 匈奴之类，总谓之北狄。……建安中，魏武帝始分其众为五部，部立其中贵者为帅，选汉人为司马以监督之。……其左部都尉所统可万余落，居于太原故兹氏县。
     kind: influence
+  - claim: 《通鉴》记刘渊起兵：「吾又汉氏之甥，约为兄弟，兄亡弟绍，不亦可乎？」他以汉朝外甥自居，国号为汉，追尊刘禅。一个匈奴人打着复兴汉室的旗号反晋，这一吊诡的选择说明：在中原政治中，合法性符号比族群身份更有号召力。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: sima-zhong
     type: enemy

@@ -29,6 +29,15 @@ evaluations:
   - claim: 史弥远在宁宗、理宗两朝专权二十余年，其手段与秦桧类似：以「拥立之功」固位，以台谏为工具排除异己。《宋史》把二人同列奸臣，正是基于这一结构性的相似。
     sourceId: songshi-qinhui-2
     kind: influence
+  - claim: 《长编》记史弥远诛韩侂胄：「弥远密与杨皇后谋，伏兵于玉津园，俟侂胄入朝，拥至玉津园杀之。」此后史弥远专权二十六年，直到他死，宋理宗才亲政。南宋后期的权相政治，自史弥远始。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
+  - claim: 史弥远专权二十六年，跨越宁宗、理宗两朝。他诛韩侂胄、立理宗，又为朱熹等道学派平反——政治上的翻覆，都围绕「谁掌握废立之权」展开。南宋后期的权相政治，本质是皇位继承的不确定性造成的。
+    sourceId: nianerzha-yuandai
+    kind: influence
+  - claim: 赵翼论南宋权相：「韩侂胄、史弥远、贾似道，相继专国，皆以定策为功。」南宋后期的权相政治，根源在于皇位继承的不确定——每个权相都是通过拥立新君而上位的。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: han-tuozhou
     type: kill

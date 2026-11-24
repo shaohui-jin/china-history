@@ -30,6 +30,9 @@ evaluations:
   - claim: 袁崇焕之死发生在「纲纪日以委颓」的末期：朝廷已无力辨别忠奸，只能以杀止疑。《明史》把他的死与「边事益无人」直接相连，作为明亡链条上的一环。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 《国榷》记袁崇焕之死：「磔崇焕于市，兄弟妻子流三千里。」谈迁在记述后附论，指出「通敌」之罪本无实据，崇祯杀他是因为需要一个人替辽东的溃败负责。凌迟之刑加于一位督师，既是刑罚，也是政治表演——它向所有边将宣告：败了就要有人顶罪。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: nurhaci
     type: enemy

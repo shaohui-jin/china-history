@@ -29,6 +29,9 @@ evaluations:
   - claim: 胡惟庸案的本质在《明史》的叙述中很清楚：以一人之罪废千年之制。中书省与丞相被永久废除，六部直隶皇帝——这一制度变更的实际执行者是朱元璋，胡惟庸只是契机。
     sourceId: mingshi-zhangjuzheng-2
     kind: dispute
+  - claim: 胡惟庸案与张居正被清算，是明代相权问题的首尾两端。胡惟庸被杀后朱元璋废丞相，此后内阁首辅虽权重而无名分；张居正以首辅行相权十年，死后即遭抄家。明代的「相权」始终是皇权的临时授权，随时可收回，也随时可追罪。
+    sourceId: guoque-zhangjuzheng
+    kind: influence
 relations:
   - target: zhu-yuanzhang
     type: ruler-subject

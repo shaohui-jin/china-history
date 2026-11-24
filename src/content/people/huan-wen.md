@@ -32,6 +32,9 @@ evaluations:
   - claim: 桓温三次北伐皆受制于东晋内部的牵制：粮道不继、朝中掣肘、门阀猜忌。东晋初年「兵凶岁饥」的困局延续至中期，北伐的失败不能全归于个人。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记桓温三次北伐的结局：前两次收复洛阳、进抵枋头，第三次却「枋头之败」丧师数万。桓温的北伐始终伴随着个人野心的计算——他需要军功来支撑篡位的合法性，因此不能久战，也不能不战。
+    sourceId: zizhitongjian-jin-shi
+    kind: influence
 relations:
   - target: xie-an
     type: enemy

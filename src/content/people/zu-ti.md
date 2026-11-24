@@ -31,6 +31,9 @@ evaluations:
   - claim: 祖逖北伐时，东晋朝廷「素无北伐之志」，他只能以部曲百余家起家。这一困境与刘琨在北方的情形相同：不是能力不足，而是没有后方的支持。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记祖逖北伐的结局：他收复黄河以南，「由是黄河以南，尽为晋土」，但朝廷「以戴若思为征西将军，都督司兖豫并雍冀六州诸军事，镇合肥」，以文臣节制祖逖。祖逖忧愤成疾而死。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: liu-kun
     type: colleague

@@ -31,6 +31,9 @@ evaluations:
   - claim: 周瑜在赤壁之战中的主导作用，《三国志·周瑜传》记载明确：他力排众议主张抗曹，并亲自指挥火攻。后世《三国演义》把功劳部分转给诸葛亮，与正史记载有出入。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《通鉴》记周瑜在赤壁战前对孙权的分析：「今北土未平，马超、韩遂尚在关西，为操后患；而操舍鞍马、仗舟楫，与吴越争衡，本非中国所长。」这段分析比《三国志》更完整，是理解赤壁之胜的关键。
+    sourceId: zizhitongjian-chibi
+    kind: influence
 relations:
   - target: sun-quan
     type: ruler-subject

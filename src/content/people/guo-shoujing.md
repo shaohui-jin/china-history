@@ -27,6 +27,12 @@ evaluations:
   - claim: 郭守敬的《授时历》以 365.2425 日为一年，与格里高利历相同而早三百年。元朝的「立经陈纪」，在天文历法上也有具体成就。
     sourceId: yuanshi-shizu-2
     kind: influence
+  - claim: 《元史·历志》记《授时历》的测算方法：「四海测验」，在全国设二十七处观测所，北至北海、南至南海。这种规模的实测在中国历法史上是空前的，也是它能达到 365.2425 日精度的原因。
+    sourceId: yuanshi-lixiang
+    kind: influence
+  - claim: 《授时历》的精度在中国历法史上空前绝后，但它建立在元朝大一统的政治条件上——「四海测验」需要在全国设观测点，这在分裂时期不可能实现。科学的进步，有时依赖于政治的统一。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: liu-bingzhong
     type: teacher-student

@@ -30,6 +30,15 @@ evaluations:
     sourceId: songshi-qinhui-2
     quote: 桧两据相位，凡十九年，劫制君父，包藏祸心，倡和误国。
     kind: evaluation
+  - claim: 《宋史·岳飞传》论曰：「高宗忍自弃其中原，故忍杀飞。」这一句把责任从秦桧推到了高宗——秦桧只是执行者，真正不想迎回钦宗的是赵构。因为钦宗若归，他的皇位就没了合法性。
+    sourceId: songshi-yuefei-lun
+    kind: influence
+  - claim: 《宋史·岳飞传》记秦桧构陷岳飞的罪名全靠编造：「飞子云与张宪书虽不明，其事体莫须有。」「莫须有」三字成为后世形容冤狱的成语。值得注意的是，秦桧并非孤身作恶——他需要张俊、万俟卨等人配合，需要高宗默许。
+    sourceId: songshi-yuefei-2
+    kind: influence
+  - claim: 赵翼对秦桧的评价不留余地：「桧之奸，古今第一。」但他也指出，没有宋高宗的默许，秦桧不可能专权二十余年。罪在主谋，不只在执行者。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: gaozong
     type: ruler-subject

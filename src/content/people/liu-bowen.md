@@ -33,6 +33,9 @@ evaluations:
   - claim: 刘基的死后哀荣与明初功臣的整体命运一致：洪武朝封爵者多不得善终，唯有「不掌兵、不结党」者能保全。刘基虽已致仕，仍被胡惟庸一案牵连。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 赵翼论明代开国功臣的结局：「明祖起事，所用皆濠、泗间人，及其成功，诛戮殆尽。」刘基虽非淮西集团核心，仍不免于猜忌。他晚年「忧惧而死」的说法见于《明史》，但野史多称其为胡惟庸毒杀——两种说法都指向同一个事实：明初的功臣没有善终的可能。
+    sourceId: nianerzha-1
+    kind: influence
 relations:
   - target: zhu-yuanzhang
     type: ruler-subject

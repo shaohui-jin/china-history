@@ -30,6 +30,9 @@ evaluations:
   - claim: 顺治朝入关定鼎，依靠的是满蒙汉八旗的军事组织与范文程、洪承畴等汉臣的制度建议。清朝能在中原立足，靠的不是武力，而是对明制的继承。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 《国榷》记顺治元年清军入关：「睿亲王多尔衮率师入关，吴三桂迎降。五月，入京师。」多尔衮以「为明复仇」为名入关，随即颁布剃发令。从「复仇」到「臣服」的转变只用了几个月，这一转向暴露了入关的真实目的。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: hong-taiji
     type: parent-child

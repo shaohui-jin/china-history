@@ -35,6 +35,9 @@ evaluations:
     sourceId: mingshi-zhangjuzheng-2
     quote: 居正之为政，以尊主权、课吏职、信赏罚、一号令为主。
     kind: evaluation
+  - claim: 《国榷》记张居正身后：「夺官，籍其家，长子敬修自缢。」谈迁的记述较《明史》详，保留了抄家时「封门」，家人「饿死者十余口」的细节。改革者以非常手段推行改革，一旦失去权力保护，其家族就要承受加倍的清算。
+    sourceId: guoque-zhangjuzheng
+    kind: influence
 relations:
   - target: wanli
     type: ruler-subject

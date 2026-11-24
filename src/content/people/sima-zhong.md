@@ -30,6 +30,9 @@ evaluations:
   - claim: 晋惠帝的愚钝是西晋速亡的直接条件。《晋书·宣帝纪》赞语对司马氏「自隐过当年」的批评，与惠帝朝的混乱构成一个家族的完整因果：以阴谋得国者，终以混乱失国。
     sourceId: jinshu-sima
     kind: dispute
+  - claim: 《通鉴》记司马师死后司马昭的继位：「师卒，帝自邺赴许昌，自将大军。」司马氏的权力从司马懿到司马师、司马昭，再到司马炎，三代四人、二十余年才完成代魏。相比之下，曹丕代汉只用了一代。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: sima-yan
     type: parent-child

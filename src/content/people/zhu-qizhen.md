@@ -28,6 +28,9 @@ evaluations:
   - claim: 英宗也有可称之处：遗诏罢宫妃殉葬。明初以来，皇帝死后宫妃殉葬是惯例，英宗是第一个明令废除的君主。这一决定被《明史》称为「盛德之事，可法后世」。
     sourceId: mingshi-taizu
     kind: dispute
+  - claim: 《国榷》记土木之变与复辟：英宗被俘时「北狩」，也先「奉上皇至大同」，以之为要挟。景泰帝即位后，英宗被遥尊为太上皇，幽居南宫七年。夺门之变后复位，杀于谦、废景泰帝号。两度为帝的二十二年间，明朝经历了由盛转衰的转折。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: wang-zhen
     type: ruler-subject

@@ -32,6 +32,9 @@ evaluations:
   - claim: 刘曜改国号为赵，试图把匈奴政权改造为中原王朝：立太学、选生徒、定制度。但他的「胡汉分治」始终无法整合两套体系，前赵的速亡正在于此。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记刘曜的前赵：他灭西晋、建前赵，一度据有关中。但刘曜「善战而不善政」，与石勒争衡终至失败。洛阳之战中被石勒擒杀，前赵亡。
+    sourceId: zizhitongjian-jin-shi
+    kind: influence
 relations:
   - target: liu-cong
     type: kinship

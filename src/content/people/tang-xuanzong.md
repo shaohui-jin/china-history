@@ -29,6 +29,12 @@ evaluations:
     sourceId: zizhitongjian-kaiyuan
     quote: 开元之末，上倦于万几，委政于李林甫。
     kind: evaluation
+  - claim: 赵翼论唐代宦官之祸的根源：「宦官之权，起于玄宗，盛于肃代，极于昭宗。」唐玄宗的「开元盛世」中，已经埋下了宦官掌权的种子——高力士的受宠，是这一系列的开始。
+    sourceId: nianerzha-4
+    kind: influence
+  - claim: 《新唐书·玄宗本纪》记开元之治：「开元之际，几致太平，何其盛也。」但同书赞语也指出：「及侈心一动，穷天下之欲不足为其乐，而溺其所甚爱，忘其所可戒，至于窜身失国而不悔。」盛与衰，在同一位皇帝身上完成。
+    sourceId: xintangshu-xuanzong
+    kind: influence
 relations:
   - target: wu-zetian
     type: kinship

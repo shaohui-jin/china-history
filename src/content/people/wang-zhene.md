@@ -30,6 +30,12 @@ evaluations:
   - claim: 王镇恶是前秦丞相王猛之孙，这一身份使他在南方将领中始终被猜忌。他的被杀，根源是南北籍贯的隔阂，而非个人过失。
     sourceId: songshu-liuyu-2
     kind: dispute
+  - claim: 《宋书·武帝本纪》记王镇恶之死：刘裕南归后，留守长安的诸将内讧，沈田子杀王镇恶。一个以勇武著称的将领，没有死于敌人之手，而死于同僚的猜忌。
+    sourceId: songshu-wudi
+    kind: influence
+  - claim: 赵翼指出：「南朝之失关中，非力不足，乃内乱自溃。」王镇恶之死是这句话的注脚——他死于沈田子的猜忌，而非敌人的刀剑。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: liu-yu
     type: ruler-subject

@@ -32,6 +32,9 @@ evaluations:
   - claim: 戚继光的军事改革能够得到支持，前提是张居正主政时期的行政效率。张居正死后他被目为「张党」而罢归——个人的功业，依托于一个特定的政治环境。
     sourceId: mingshi-zhangjuzheng-2
     kind: dispute
+  - claim: 戚继光与张居正的关系，是他晚年失势的直接原因。张居正主政时，戚继光镇蓟州十六年，被倚为北边屏障；张居正死后被清算，戚继光随即南调、罢职，两年后卒。明代军事人才的命运，往往系于朝中靠山的存亡。
+    sourceId: guoque-zhangjuzheng
+    kind: influence
 relations:
   - target: zhang-juzheng
     type: colleague

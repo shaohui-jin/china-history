@@ -30,6 +30,15 @@ evaluations:
   - claim: 蔡京借「绍述」之名恢复新法，实为专权。《宋史》把熙宁新法与崇宁以后的祸乱连成一条线索，这一叙述的立场是南宋以后确立的——新法的失败被归因于执行者的品行，而非制度本身的问题。
     sourceId: songshi-wanganshi-2
     kind: dispute
+  - claim: 《长编》记蔡京四度为相的经过：徽宗朝二十余年间，他三次罢相又三次复起，每次复起都伴随着对政敌更彻底的清算。这种反复本身就是徽宗朝政治的特征——皇帝需要一个人替他背负骂名，又需要随时可以抛弃这个人。
+    sourceId: xuzizhitongjian-xining
+    kind: influence
+  - claim: 蔡京与王安石的关联常被夸大：蔡京确曾列名「元祐党人碑」的对立面，但他的施政与王安石的新法精神相去甚远。王安石变法是财政与军事的结构改革，蔡京的「花石纲」只是为满足徽宗的享乐。把两者混为一谈，是后世把亡国责任推给「变法」的一种叙事。
+    sourceId: songshi-wanganshi-zan
+    kind: influence
+  - claim: 赵翼指出北宋亡国之因：「非独蔡京一人之罪，实由徽宗之昏聩。」把亡国归于一人，是最省事的解释，也是最不真实的解释。徽宗的趣味与选择，才是蔡京得以久居相位的前提。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: huizong
     type: ruler-subject

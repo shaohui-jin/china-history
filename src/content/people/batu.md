@@ -31,6 +31,12 @@ evaluations:
   - claim: 拔都西征建立的钦察汗国统治罗斯两百余年，对俄罗斯的政治结构影响极深。而《元史》只把他作为「宗室」一笔带过——对欧洲影响最大的蒙古人，在中国史书里最不起眼。
     sourceId: yuanshi-shizu-2
     kind: dispute
+  - claim: 拔都的西征在《元史·太祖本纪》中没有专门记载——因为他是术赤之子，而《元史》对术赤一系着墨极少。蒙古帝国的西征，主要靠波斯史家拉施特《史集》与《元朝秘史》保存。正史的沉默，本身就是帝国分裂的一个注脚。
+    sourceId: yuanshi-taizu
+    kind: influence
+  - claim: 赵翼论元代疆域：「幅员之广，为自古所未有。太祖起于漠北，四出征伐，西至欧洲，东至高丽，南至南海，北至西伯利亚，皆入版图。然其法以部落分封，诸王各领其地，故不数传而分裂。」拔都建立的金帐汗国，正是这种分封的产物——它在名义上臣属大汗，实际上早已独立。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: genghis-khan
     type: kinship

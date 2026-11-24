@@ -32,6 +32,12 @@ evaluations:
   - claim: 李元昊称帝建夏，是三代经营的结果。宋朝对他的反应（断绝互市、兴师讨伐）屡遭失败，最终以「庆历和议」承认其实际地位——西夏的独立，是在战争中确立的。
     sourceId: songshi-lijipeng
     kind: dispute
+  - claim: 《宋史·西夏传》记元昊称帝后的三川口、好水川之战：宋军两次大败，「关中震动」。西夏以区区一隅之地三胜宋军，靠的是骑兵机动与地形熟悉，而非国力。此后宋夏议和，元昊「去帝号、称男」，但实际割据如故。
+    sourceId: songshi-xixia
+    kind: influence
+  - claim: 《辽史·西夏传》记元昊称帝后与辽的关系恶化：辽兴宗亲征西夏，反在河曲败于元昊。辽夏之战说明，西夏不只在宋面前强悍，对辽同样如此。三足鼎立的格局，比宋辽对峙更为复杂。
+    sourceId: liaoshi-xixia
+    kind: influence
 relations:
   - target: fan-zhongyan
     type: enemy

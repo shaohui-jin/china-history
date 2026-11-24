@@ -31,6 +31,12 @@ evaluations:
   - claim: 宋初的削藩与集权由太祖、太宗两朝接力完成。太宗朝继续推进「收精兵、制钱谷、夺其权」的方针，《赵普传》所记赵普的建言贯穿两朝，是这一过程的思想来源。
     sourceId: songshi-zhaopu
     kind: influence
+  - claim: 《通鉴》记赵光义即位后的「烛影斧声」：开宝九年十月，太祖崩，「帝（光义）遂即皇帝位」。关于太祖之死，《续资治通鉴长编》引「烛影斧声」之说，成为千年疑案。
+    sourceId: zizhitongjian-wudai
+    kind: influence
+  - claim: 《长编》记太宗即位的疑案：太祖崩于万岁殿，「烛影斧声」之说即出于此。李焘在《长编》中采录了多种说法，未下定论。这一沉默本身说明，即使到南宋，这件事仍是不能明说的禁区。
+    sourceId: xuzizhitongjian-changbian
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: sibling

@@ -31,6 +31,12 @@ evaluations:
   - claim: 周世宗在高平之战后「斩爱能等以肃军政」，这一决断确立了后周军队的纪律。此后北伐辽国、南征南唐，皆以此为基础。
     sourceId: jiuwudaishi-wudai-2
     kind: influence
+  - claim: 《新五代史·周本纪·世宗》记柴荣的作为：「其北征也，取三关三州」，惜「遇疾而还」。欧阳修论曰：「世宗区区五六年间，取秦陇，平淮右，复三关，威武之声震慑夷狄。」五代第一明君，命却最短。
+    sourceId: xinwudaishi-shizong
+    kind: influence
+  - claim: 赵翼论后周世宗的功业：「世宗以区区五六年间，取秦陇，平淮右，复三关，威武之声震慑夷狄。」若非早逝，宋太祖可能无缘称帝。五代第一明君的遗憾，也是中国历史的转折。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: superior

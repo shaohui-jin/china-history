@@ -30,6 +30,9 @@ evaluations:
   - claim: 贺若弼在灭陈之役中率军自广陵渡江，与韩擒虎分道并进。隋朝的统一，是两路水陆并进的结果，而非单点突破。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 赵翼论隋朝的短命：「隋文帝以节俭开国，炀帝以奢靡亡国，两世而终。」贺若弼与韩擒虎争功，看似小事，实则是隋初功臣集团已经开始分裂的信号。
+    sourceId: nianerzha-4
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

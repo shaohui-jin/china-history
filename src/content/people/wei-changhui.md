@@ -29,6 +29,9 @@ evaluations:
   - claim: 魏昌辉在天京事变中杀杨秀清，又滥杀无辜，最终被洪秀全处死。太平天国的内讧，与其军事上的失利同样致命。
     sourceId: qingshigao-yao
     kind: dispute
+  - claim: 韦昌辉在天京事变中杀杨秀清，「尽杀东王府上下数千人」。此后洪秀全又杀韦昌辉，石达开被迫出走。天京事变是太平天国的转折点——从此它失去了统一指挥的能力，也失去了民心。一个以「兄弟」相称的政权，最终死于兄弟相残。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: yang-xiuqing
     type: kill

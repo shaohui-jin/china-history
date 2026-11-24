@@ -26,6 +26,9 @@ evaluations:
   - claim: 司马睿南渡建康，靠的是王导、王敦兄弟的支持。「王与马，共天下」的格局，是西晋宗室在南方重建政权的唯一可行方式。
     sourceId: jinshu-sima
     kind: influence
+  - claim: 《通鉴》记司马睿在建康的处境：初到江东，「吴人不附」，居月余无人来见。王导设计，让司马睿乘肩舆出行，王导、王敦及北方名士骑马随从，「吴人纪瞻、顾荣等见之惊惧，皆拜于道左」。东晋的建立，靠的是王氏的门第声望。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: wang-dao
     type: ruler-subject

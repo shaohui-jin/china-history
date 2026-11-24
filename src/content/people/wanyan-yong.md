@@ -28,6 +28,9 @@ evaluations:
   - claim: 世宗一方面推行汉制、崇尚儒学，另一方面刻意保存女真旧俗：设女真进士科、命译汉籍为女真文，并告诫宗室勿忘本族语言。这种「双向用力」的政策，说明他已意识到汉化的代价——金朝中期以后的民族认同危机，正是从这一代开始积累的。
     sourceId: jinshi-shizong
     kind: dispute
+  - claim: 赵翼对金世宗的评价极高：「金世宗之贤，为金源诸帝之最。」他在位二十九年，与宋议和、整顿吏治、提倡儒学。金朝在他手中达到顶点，此后再无起色。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: wanyan-liang
     type: enemy

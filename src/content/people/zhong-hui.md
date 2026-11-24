@@ -26,6 +26,12 @@ evaluations:
   - claim: 钟会灭蜀后谋反，是三国末期功臣自处的典型困境：功高而无以自安，遂以谋反求存。这一逻辑与邓艾的被诬、姜维的诈降共同构成蜀汉灭亡后的混乱局面。
     sourceId: sanguozhi-caocao
     kind: dispute
+  - claim: 《三国志·姜维传》记钟会与姜维的关系：「会厚待维等，皆权还其印号节盖。」钟会收编姜维，是因为需要蜀汉旧部作为自己割据的资本；姜维投靠钟会，是因为要借钟会之手复国。两个各有图谋的人，最终一同丧命。
+    sourceId: sanguozhi-jiangwei
+    kind: influence
+  - claim: 《通鉴》记钟会之败：「会厚待姜维，出则同舆，坐则同席。」他以为能借姜维的蜀汉旧部割据，却不知魏军将士思归。兵变起时，「军中扰乱，会及维皆被杀」。钟会之死，是野心与实力不匹配的典型。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: jiang-wei
     type: enemy

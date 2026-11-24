@@ -31,6 +31,9 @@ evaluations:
   - claim: 孙策平定江东，靠的是袁术的兵力与江东士族的支持。他临终传位孙权而不传子，这一决定使江东政权避免了幼主当国的危机，是三国创业君主中最清醒的一次继承安排。
     sourceId: sanguozhi-caocao
     kind: influence
+  - claim: 《通鉴》记孙策之死：他「好猎」，单骑逐鹿，为许贡门客所伤。临终召张昭等，谓孙权曰：「举江东之众，决机于两陈之间，与天下争衡，卿不如我；举贤任能，各尽其心，以保江东，我不如卿。」自知之明，是孙策留给东吴的最后遗产。
+    sourceId: zizhitongjian-hanwei
+    kind: influence
 relations:
   - target: sun-quan
     type: sibling

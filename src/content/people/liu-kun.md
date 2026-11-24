@@ -31,6 +31,9 @@ evaluations:
   - claim: 刘琨守晋阳十年，正值「兵凶岁饥，死疫过半」的时期。他的孤军抵抗没有后方支援，其失败是结构性的——不是能力不足，而是无人可援。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记刘琨在晋阳的处境：「琨长于招怀，而短于抚御，一日之中，虽归者数千，去者亦相继。」他能在胡骑环伺中固守晋阳十年，靠的是个人声望与拓跋猗卢的援助，而非稳固的根据地。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: zu-ti
     type: colleague

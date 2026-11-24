@@ -33,6 +33,9 @@ evaluations:
   - claim: 湘军的创建是清廷在「内乱」压力下被迫放权的结果：以汉族士绅办团练，等于把军事权力下移到地方。这一变化在此后数十年间重塑了清朝的政治结构。
     sourceId: qingshigao-yao
     kind: influence
+  - claim: 曾国藩的湘军以「书生领山农」为组织原则：将领多用读书人，兵勇募自偏僻山乡，「取其人质朴而有土气」。这套办法在镇压太平天国时极为有效，但也埋下了隐患——湘军是私人武装，只听命于曾国藩。此后的军阀割据，其源头可追溯至此。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: hong-xiuquan
     type: enemy

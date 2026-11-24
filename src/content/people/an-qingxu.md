@@ -22,6 +22,9 @@ evaluations:
   - claim: 史思明杀安庆绪的理由是「尔为人子，杀父求位，吾安容尔」。这个理由本身值得推敲：史思明自己后来也称帝，且最终被儿子所杀。「为安禄山复仇」更像是一个兼并其部众的正当性包装。
     sourceId: jiutangshu-shichaoi
     kind: dispute
+  - claim: 《新五代史》论五代政权的更替模式：「五代之君，皆以兵强而立，以兵弱而亡。」安庆绪的处境与此相通——他弑父得到的位置，没有任何制度保障，只能依赖严庄的支持。一旦严庄转向，他就失去了存在的基础。
+    sourceId: xinwudaishi-liangzu
+    kind: influence
 relations: []
 ---
 

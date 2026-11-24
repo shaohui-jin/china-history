@@ -27,6 +27,9 @@ evaluations:
   - claim: 郑成功反清复明的基础，是南明残余势力与海上贸易集团的结合。《明史》记明末事时，把郑氏视为「海寇」而非政权，这一立场与台湾地位的历史叙述直接相关。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 郑成功收复台湾后，「以台湾为东都，置承天府」，设府县、兴学校、颁屯田之令。他在台湾的时间不足一年，却为这片土地留下了汉人政权的行政框架。其早卒（三十九岁）使这一框架未能巩固，但方向已定。
+    sourceId: xiaotian-jinian
+    kind: influence
 relations:
   - target: kangxi
     type: enemy

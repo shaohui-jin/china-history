@@ -32,6 +32,9 @@ evaluations:
   - claim: 王阳明平宁王之乱，正是正德朝政治混乱中的异数。《明史》把这类「以文臣而能定乱」的事迹单独标出，作为对「纲纪委颓」的一种反证。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 王守仁的平宸濠之功，在正德朝不仅未获封赏，反遭宦官张忠、许泰诬为「先通谋」。谈迁在《国榷》中对这一冤诬有详细记述。心学「致良知」的内向转向，与他晚年对政治功业的失望直接相关。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: zhuxi
     type: enemy

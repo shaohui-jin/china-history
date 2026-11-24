@@ -32,6 +32,9 @@ evaluations:
     sourceId: jinshu-sima
     quote: 虽自隐过当年，而终见嗤后代。
     kind: evaluation
+  - claim: 《通鉴》记司马懿装病赚曹爽：「懿诈疾笃，使两婢侍，持衣衣落，指口言渴，婢进粥，粥皆流出沾胸。」这一场戏演得足够彻底，曹爽遂不设防。半年后，司马懿发动高平陵之变。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: cao-cao
     type: ruler-subject

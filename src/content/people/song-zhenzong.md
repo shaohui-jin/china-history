@@ -31,6 +31,15 @@ evaluations:
   - claim: 真宗朝的政治风格由太祖、太宗两朝奠定：赵普「半部《论语》」所代表的文治取向，到真宗朝已完全制度化。天书封禅的荒诞，恰恰发生在文治最成熟的时期。
     sourceId: songshi-zhaopu
     kind: dispute
+  - claim: 《长编》记真宗封禅：澶渊之盟后，真宗「深以澶渊之盟为耻」，王钦若遂劝其封禅泰山，以「镇服四海、夸示外国」。大中祥符元年封禅，耗资巨万。用一场表演来掩盖一次屈辱，这是宋代政治文化的典型手法。
+    sourceId: xuzizhitongjian-chanyuan
+    kind: influence
+  - claim: 《宋史·寇准传》记澶渊之盟后真宗对寇准的态度变化：起初「待准甚厚」，王钦若进谗后「帝顾准寝疏」。寇准的悲剧在于，他以为功劳可以换来信任，而皇帝需要的是可以随时抛弃的人。
+    sourceId: songshi-kouzhun
+    kind: influence
+  - claim: 赵翼论天书封禅：「真宗以澶渊之盟为耻，乃以天书自欺。」用一场荒诞的祥瑞运动来掩盖一次屈辱的外交，这在中国政治史上并非孤例。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: zhao-guangyi
     type: parent-child

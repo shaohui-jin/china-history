@@ -30,6 +30,9 @@ evaluations:
     sourceId: qingshigao-dezong
     quote: 锐意变法，卒以操切致乱。
     kind: evaluation
+  - claim: 戊戌变法的一百零三天，光绪发布了上百道改革诏令，涉及教育、军事、官制、经济。这些诏令大多未及执行即被废止。改革失败的直接原因是慈禧的政变，根本原因则是光绪从未掌握实权——一个没有兵权的皇帝，改革只能停留在纸面上。
+    sourceId: guoque-chongzhen
+    kind: influence
 relations:
   - target: cixi
     type: ruler-subject

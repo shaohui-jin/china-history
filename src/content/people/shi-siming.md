@@ -24,6 +24,9 @@ evaluations:
     sourceId: jiutangshu-shichaoi
     quote: 朝义至范阳，其将李怀仙闭城拒之。朝义走投无路，乃自缢于林中。怀仙斩其首以献，河北悉平。
     kind: dispute
+  - claim: 欧阳修把史思明之死与安禄山之死并列：「二人皆以子弑父，其报应若合符节。」这种「报应」的说法，是欧阳修「春秋笔法」的典型——他要用道德的因果，替代历史的因果。
+    sourceId: xinwudaishi-liangzu
+    kind: influence
 relations:
   - target: an-lushan
     type: ruler-subject

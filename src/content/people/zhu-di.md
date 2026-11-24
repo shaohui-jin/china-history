@@ -31,6 +31,9 @@ evaluations:
   - claim: 永乐朝的另一面是士人的恐惧。方孝孺被诛十族、景清被「瓜蔓抄」，这些记载与「永乐盛世」并存——同一时期，既有下西洋的壮举，也有对建文旧臣的彻底清算。
     sourceId: mingshi-yangjisheng
     kind: dispute
+  - claim: 《国榷》记永乐朝的政绩：迁都北京、设内阁、遣郑和下西洋、修《永乐大典》、五征漠北。谈迁对朱棣的评价是复杂的两面——功业极盛，而得位不正的阴影始终存在：方孝孺十族被诛、建文帝下落不明、大报恩寺的隐秘供奉。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: zhu-yuanzhang
     type: parent-child

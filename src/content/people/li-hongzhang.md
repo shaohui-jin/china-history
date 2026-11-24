@@ -31,6 +31,9 @@ evaluations:
     sourceId: qingbingshi-1
     quote: 知有洋务而不知有国务。
     kind: evaluation
+  - claim: 李鸿章的洋务事业建立在「官督商办」的制度上：轮船招商局、开平矿务局、上海机器织布局，皆由官方主导、商人出资。这一制度使企业既受官僚控制，又缺乏市场竞争力。甲午一战，北洋水师全军覆没，正是这种制度的上限所在。
+    sourceId: donghualu-yongzheng
+    kind: influence
 relations:
   - target: zeng-guofan
     type: teacher-student

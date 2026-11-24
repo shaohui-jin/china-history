@@ -31,6 +31,9 @@ evaluations:
   - claim: 王濬灭吴，依托的是羊祜、杜预两代人在荆州的经营。晋初「兵凶岁饥」的困局已过，国力恢复之后才有顺流东下之举。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记王濬破吴：「濬自发蜀，兵不血刃，攻无坚城，夏口、武昌，无相支抗。」此役的关键是王濬造船七年、训练水军之久的准备，而非临阵之勇。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: sima-yan
     type: ruler-subject

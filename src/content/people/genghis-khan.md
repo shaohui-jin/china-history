@@ -32,6 +32,12 @@ evaluations:
   - claim: 《元史》赞语称世祖「以夏变夷，立经陈纪」，这一判断的起点是成吉思汗所建立的千户制与札撒——蒙古帝国能转变为中原王朝，前提是它先成为一个有制度的政权。
     sourceId: yuanshi-shizu-2
     kind: influence
+  - claim: 《元史·太宗本纪》记窝阔台继位后的政策：定赋税、置仓廪、设驿传，把成吉思汗的军事联盟改造成有财政基础的国家。成吉思汗打下疆域，窝阔台建立了统治的技术——这一步常被忽略。
+    sourceId: yuanshi-taizong
+    kind: influence
+  - claim: 魏源论蒙古之强：「其强也，以骑射之精；其弱也，以部族之分。」成吉思汗以千户制重组部落，暂时压制了分裂倾向，但他死后帝国立即分封四子——制度的统一性，抵不过继承制的惯性。
+    sourceId: shengwu-ji
+    kind: influence
 relations:
   - target: kublai
     type: kinship

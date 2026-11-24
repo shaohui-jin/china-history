@@ -30,6 +30,12 @@ evaluations:
   - claim: 李继迁的出走与李继捧的献地是同一事件的两面。《宋史·夏国传》把二人并列记载，正是要说明：党项的分裂不是外力造成的，而是同一家族内部两种选择的产物。
     sourceId: songshi-lijipeng
     kind: influence
+  - claim: 《宋史·西夏传》记李继迁的游击战术：「继迁窜伏沙碛，出没无常，官军进则退，官军退则进。」宋军以正规战法对付游牧式的袭扰，二十年不能制。这种不对称战争，是此后中原王朝对西北游牧势力的一贯困境。
+    sourceId: songshi-xixia
+    kind: influence
+  - claim: 《辽史·西夏传》记辽对李继迁的支持：辽「以宗室女义成公主嫁继迁」，册为夏国王。北宋的西北边患，很大程度上是辽用党项牵制宋的结果。一个势力的崛起，往往有大国的算计在背后。
+    sourceId: liaoshi-xixia
+    kind: influence
 relations:
   - target: li-yuanhao
     type: kinship

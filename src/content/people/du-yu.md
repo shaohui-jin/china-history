@@ -32,6 +32,9 @@ evaluations:
   - claim: 杜预灭吴的部署，依托的是羊祜十年经营的荆州基地。晋武帝朝「兵凶岁饥，死疫过半」的困境已过，国力恢复之后才有灭吴的可能——个人才能须以国力为条件。
     sourceId: jinshu-wenyi
     kind: influence
+  - claim: 《通鉴》记杜预灭吴之役的部署：杜预出江陵，王濬下巴蜀，王浑向牛渚，三路并进。杜预的作用不只是军事——他在襄阳「勤于讲武，仍修立泮宫，江汉怀德，化被万里」，把军事据点变成文化据点。
+    sourceId: zizhitongjian-jin
+    kind: influence
 relations:
   - target: yang-hu
     type: colleague

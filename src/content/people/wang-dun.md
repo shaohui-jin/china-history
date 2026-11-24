@@ -26,6 +26,9 @@ evaluations:
   - claim: 王敦两次举兵，都以「清君侧」为名。他的失败说明：东晋的门阀政治允许权臣掌兵，但不允许其取代皇权——王导在其中扮演的调停角色，正是这一平衡的维持者。
     sourceId: jinshu-wenyi
     kind: dispute
+  - claim: 《通鉴》记王敦起兵：「清君侧」，杀周顗、戴渊，入据石头城。司马睿遣使谓敦曰：「公若不忘本朝，于此息兵，则天下尚可共安也。如其不然，朕当归琅琊以避贤路。」皇帝的求和之辞，正是共治格局的极端体现。
+    sourceId: zizhitongjian-yongjia
+    kind: influence
 relations:
   - target: sima-rui
     type: enemy

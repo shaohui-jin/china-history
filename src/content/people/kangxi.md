@@ -32,6 +32,9 @@ evaluations:
     sourceId: qingshigao-shengzu-2
     quote: 虽曰守成，实同开创焉。
     kind: evaluation
+  - claim: 《国榷》记康熙十二年至二十年的三藩之乱：吴三桂起兵，广西、四川、陕西相继响应，「天下震动」。康熙的应对是「不事姑息」，坚决削藩，历时八年而定。此役之后，清朝才真正完成对南方的控制。
+    sourceId: guoque-kangxi
+    kind: influence
 relations:
   - target: wu-sangui
     type: enemy

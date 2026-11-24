@@ -26,6 +26,9 @@ evaluations:
   - claim: 建文帝的下落成为明史一大疑案，《明史》本纪只记「宫中火起，帝不知所终」。这一空白使永乐朝的合法性始终存在裂缝，也是此后数十年间不断有人冒称建文帝的原因。
     sourceId: mingshi-xizong-zan
     kind: dispute
+  - claim: 《国榷》记靖难之役的结局：「宫中火起，帝不知所终。」谈迁在此处并列「自焚」与「出亡」两说，并记此后数十年间不断有人自称建文帝。一个皇帝的下落成为悬案，本身就是永乐朝合法性焦虑的产物。
+    sourceId: guoque-yongle
+    kind: influence
 relations:
   - target: zhu-yuanzhang
     type: kinship

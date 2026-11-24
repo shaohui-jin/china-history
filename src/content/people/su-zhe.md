@@ -30,6 +30,12 @@ evaluations:
   - claim: 苏辙的政论以稳健著称，与其兄苏轼的锋芒不同。他在元祐年间力主「调停」，反对尽废新法——这一立场在当时的党争中两面不讨好。
     sourceId: songshi-wanganshi-2
     kind: dispute
+  - claim: 《宋史·王安石传》记元祐更化：司马光尽废新法，苏辙「力言免役法不可废」。他反对王安石，却也不赞成司马光的全盘推翻。元祐党人内部的这种分歧，说明「新旧之争」远比「两派对立」复杂。
+    sourceId: songshi-wanganshi
+    kind: influence
+  - claim: 《宋元学案》记苏辙晚年：「筑室于许，自号颍滨遗老，杜门不出，著《诗传》《春秋传》。」他在政治上屡挫，学术上却有成——这也是宋代士人的一条出路：退而著书。
+    sourceId: songyuanxuean
+    kind: influence
 relations:
   - target: su-shi
     type: sibling

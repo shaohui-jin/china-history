@@ -30,6 +30,12 @@ evaluations:
   - claim: 高颎主持的输籍定样，核实户口、确定户等，使国家直接掌握人口。开皇年间的富庶，建立在这一技术性的行政改革上。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 《隋书·高祖本纪》记高颎的结局：因反对废太子、反对征高丽，被隋炀帝「下诏诛之」。一个开国元勋的死，标志着隋朝从「文帝之治」转向「炀帝之暴」。
+    sourceId: suishu-taizu
+    kind: influence
+  - claim: 赵翼论隋唐之际的功臣：「隋之亡，不亡于群盗，而亡于炀帝之自亡其国。」高颎之死是一个标志：开皇之治的核心人物被诛，意味着隋朝放弃了它赖以立国的制度基础。
+    sourceId: nianerzha-4
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

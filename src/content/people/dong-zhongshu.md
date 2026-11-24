@@ -31,6 +31,12 @@ evaluations:
   - claim: 刘向称其「有王佐之材，虽伊吕亡以加」，其子刘歆则降一等，只承认「为群儒首」。父子两代的评价分歧，恰好说明董仲舒的历史定位在当时即有争议：是治国的王佐，还是儒学的宗师？
     sourceId: hanshu-dongzhongshu-2
     kind: dispute
+  - claim: 《汉书·武帝纪》赞曰：「汉承百王之弊，高祖拨乱反正，文景务在养民，至于稽古礼文之事，犹多阙焉。孝武初立，卓然罢黜百家，表章六经。」班固把「罢黜百家」视为武帝最大的功业——这一评价确立了此后两千年的官方立场。
+    sourceId: hanshu-wudi-zan
+    kind: influence
+  - claim: 赵翼论汉初的政治：「汉初布衣将相之局，盖秦汉间一大变也。」董仲舒的「大一统」学说，正是为这个新型的、由平民所建立的帝国，提供意识形态的基础。
+    sourceId: nianerzha-2
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

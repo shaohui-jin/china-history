@@ -30,6 +30,12 @@ evaluations:
   - claim: 韩世忠与岳飞同为「中兴四将」，二人的命运却相反：一个交出兵权后闭门谢客得以善终，一个被下狱处死。《宋史·岳飞传》所记的「武臣不惜死」，在他们身上有不同的结局。
     sourceId: songshi-yuefei-2
     kind: dispute
+  - claim: 《宋史·岳飞传》记韩世忠与岳飞的关系：岳飞下狱时，「韩世忠不平，诣桧诘其实」，秦桧答「其事体莫须有」。韩世忠曰：「莫须有三字，何以服天下？」在满朝沉默中，只有他一人当面质问。
+    sourceId: songshi-yuefei
+    kind: influence
+  - claim: 赵翼论南宋中兴四将的结局：「岳飞死，韩世忠闲，张俊附桧，刘光世早卒。」四人之中，只有张俊善终且附逆——这一分布说明，南宋朝廷所重用的，是驯服的人而非能战的人。
+    sourceId: nianerzha-yuandai
+    kind: influence
 relations:
   - target: yue-fei
     type: colleague

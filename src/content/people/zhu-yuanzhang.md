@@ -32,6 +32,9 @@ evaluations:
   - claim: 洪武朝的政治遗产在《明史》中被反复追溯。世宗以后「纲纪日以委颓」的评价，反过来说明洪武所立的制度（废相、锦衣卫、祖训）在最初确实维持了强势的中央集权。
     sourceId: mingshi-xizong-zan
     kind: influence
+  - claim: 赵翼论明太祖：「盖明祖一人，圣贤、豪杰、盗贼之性，实兼而有之。」他认为朱元璋的统治兼具三种性质：制度创设的理性（圣贤）、军事政治的能力（豪杰）、猜忌嗜杀的残酷（盗贼）。这一三分法是理解明初制度与屠戮并存的关键。
+    sourceId: nianerzha-2
+    kind: influence
 relations:
   - target: kublai
     type: enemy

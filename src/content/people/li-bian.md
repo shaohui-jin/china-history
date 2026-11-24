@@ -27,6 +27,9 @@ evaluations:
   - claim: 李昪代吴建南唐，是十国中少数以「禅让」形式完成的政权更替。南唐的文化繁荣（李璟、李煜两代词人）与其军事的衰弱并存。
     sourceId: jiuwudaishi-wudai-2
     kind: dispute
+  - claim: 欧阳修记十国的立国模式：多为唐末藩镇演变而来，「或奉表于中原，或自王其地」。李昪的南唐与钱镠的吴越，代表了两种选择——一个图谋中原，一个保境安民。
+    sourceId: xinwudaishi-qianliu
+    kind: influence
 relations:
   - target: yang-xingmi
     type: ruler-subject

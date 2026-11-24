@@ -26,6 +26,12 @@ evaluations:
   - claim: 李德明在宋辽之间维持平衡，为李元昊的称帝积蓄了力量。《宋史》记西夏事时，常把这一家族三代（继迁、德明、元昊）的经营作为一个连续过程。
     sourceId: songshi-lijipeng
     kind: influence
+  - claim: 《宋史·西夏传》记李德明受封的双重性：他同时接受宋的「西平王」与辽的「夏国王」封号，向两国称臣。这种「两面称臣」是小国在大国夹缝中的生存术——名义上的臣属换取实际的自治空间。
+    sourceId: songshi-xixia
+    kind: influence
+  - claim: 《辽史·西夏传》记李德明与辽的关系：辽封其为「夏国王」，并把宗室女嫁给他。西夏同时向宋辽称臣，是五代以来小国自保的通行办法——名义上的从属，换取实际的行动自由。
+    sourceId: liaoshi-xixia
+    kind: influence
 relations:
   - target: li-jiqian
     type: parent-child

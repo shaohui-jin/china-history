@@ -19,6 +19,17 @@ seal: |-
   梁
   启超
 summary: 戊戌变法领袖之一，近代中国最富影响力的启蒙思想家。办《时务报》《新民丛报》，以「新民」之说影响一代人。晚年潜心学术，著述宏富。
+evaluations:
+  - claim: 梁启超自述戊戌变法的思想起点：「吾国四千余年大梦之唤醒，实自甲午战败割台湾偿二百兆以后始也。」这一判断把甲午战争视为中国近代觉醒的开端，后来成为史学界的共识。
+    sourceId: liangqichao-yinbingshi
+    quote: 吾国四千余年大梦之唤醒，实自甲午战败割台湾偿二百兆以后始也。
+    kind: evaluation
+  - claim: 他的实际影响在舆论而非政治。戊戌变法仅一百零三天即失败，但《时务报》（1896）、《新民丛报》（1902）的发行量达万余份，其「新民说」把西方的国民观念引入汉语世界。胡适、毛泽东、郭沫若等人都曾回忆少年时受梁启超文字的影响——一个流亡者的笔，比一场失败的变法更有力。
+    sourceId: liangqichao-yinbingshi
+    kind: influence
+  - claim: 他的立场变动极大：由康有为的保皇派，到主张革命共和，再到民国后支持袁世凯又反袁，晚年退出政治专治学术。这一系列转变常被批评为「多变」，但他自述「不惜以今日之我，难昔日之我」。在一个思想剧烈变动的时代，这种自我修正或许比坚守更接近真实。
+    sourceId: liangqichao-yinbingshi
+    kind: dispute
 relations:
   - target: kang-youwei
     type: teacher-student

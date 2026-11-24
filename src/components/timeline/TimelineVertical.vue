@@ -9,7 +9,7 @@
  * 分页：不一次渲染全部事件，按年代分段，符合移动端首屏预算。
  */
 import { computed, ref } from 'vue';
-import { shortYear } from '../../lib/time';
+import { buildEras, shortYear } from '../../lib/time';
 import { eventHref } from '../../lib/nav';
 import type { TimelineData, TimelineItem } from '../../lib/content';
 
@@ -19,26 +19,15 @@ interface Props {
 
 const props = defineProps<Props>();
 
-/** 把全域按固定跨度切成若干年代段，手机上单屏只显示一段 */
-const ERAS = computed(() => {
-  const [d0, d1] = props.data.domain;
-  const span = d1 - d0;
-  const segments = 4;
-  const step = Math.ceil(span / segments);
-  const out: Array<{ id: string; label: string; from: number; to: number }> = [];
-  for (let i = 0; i < segments; i++) {
-    const from = d0 + i * step;
-    const to = Math.min(d1, from + step);
-    if (from >= d1) break;
-    // 用一个代表性的重大事件给分段命名，没有则用年份范围
-    const inRange = props.data.items
-      .filter((it) => it.year >= from && it.year <= to)
-      .sort((a, b) => b.significance - a.significance);
-    const label = inRange[0]?.title.slice(0, 4) ?? `${shortYear(from)}—${shortYear(to)}`;
-    out.push({ id: `era-${i}`, label, from, to });
-  }
-  return out;
-});
+/**
+ * 年代分段：交给 lib/time 的 buildEras。
+ *
+ * 旧实现是固定 4 等分，内容涨到 88 条事件后每段 14–28 条，
+ * 一屏滚不完。buildEras 按「世纪 + 事件密度」切，
+ * 保证每段 5–10 条 sig≥4 的事件，且总段数受 maxSegments 约束，
+ * 年代按钮始终能横向排下。
+ */
+const ERAS = computed(() => buildEras(props.data.items, props.data.domain));
 
 const era = ref<string>(ERAS.value[0]?.id ?? 'era-0');
 

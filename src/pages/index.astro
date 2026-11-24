@@ -25,8 +25,8 @@ const timeline = await getTimelineData();
  * 次要事件在这个缩放下根本不显示，全量注入纯属浪费首屏带宽。
  * 放大到 300 年内时 TimelineCanvas 会按世纪从 /data/timeline/<c>.json 拉取。
  *
- * 手机端 TimelineVertical 也传精简集：它内部本来就把 sig < 4 折叠起来，
- * 但折叠只是不渲染，数据仍然会进 HTML —— 真正的成本在序列化体积。
+ * 手机端 TimelineVertical 必须传全量：它内部有「展开其余 N 条」的折叠逻辑，
+ * 若这里先滤掉 sig<4，组件里的 hiddenCount 会恒为 0，按钮永远不出现。
  */
 const timelineLite = {
   ...timeline,
@@ -140,9 +140,13 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
         </p>
       </div>
 
+      <!--
+        桌面（≥1024）：画布泳道；平板与手机走纵向列表（理由见 timeline.astro）
+        client:media 让它只在匹配时下发 JS，手机端不下载画布 chunk
+      -->
       <div class="home-timeline">
         <TimelineCanvas
-          client:only="vue"
+          client:media="(min-width: 1024px)"
           config={timelineByBreakpoint.lg}
           data={timelineLite}
           lazyLoad={true}
@@ -150,7 +154,7 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
       </div>
 
       <div class="home-timeline-mobile">
-        <TimelineVertical client:only="vue" data={timelineLite} />
+        <TimelineVertical client:media="(max-width: 1023px)" data={timeline} />
       </div>
 
       <p class="section__foot">
@@ -406,7 +410,8 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
   display: block;
 }
 
-@media (min-width: 768px) {
+/* 断点与组件上的 client:media 保持一致（1024px） */
+@media (min-width: 1024px) {
   .home-timeline {
     display: block;
   }

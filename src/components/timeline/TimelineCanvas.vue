@@ -16,7 +16,7 @@ import {
   type SemanticKey,
 } from '../../design/tokens';
 import type { TimelineConfig } from '../../design/pages';
-import { shortYear } from '../../lib/time';
+import { centuryOf, shortYear } from '../../lib/time';
 import type { TimelineData } from '../../lib/content';
 
 interface Props {
@@ -353,6 +353,18 @@ function pointerYear(ev: PointerEvent): number {
 }
 
 function onPointerDown(ev: PointerEvent) {
+  // 触屏：单指只做「点选事件」，不启动框选。
+  // 框选需要按住拖动，与浏览器的纵向滚动手势直接冲突——
+  // 如果单指也启动框选，手指一动页面就滚不动了。
+  if (ev.pointerType === 'touch') {
+    const id = hitTest(ev.clientX, ev.clientY);
+    if (id) {
+      selected.value = id;
+      scheduleDraw();
+    }
+    return;
+  }
+
   if (!props.config.enableBrush) return;
   const id = hitTest(ev.clientX, ev.clientY);
   if (id) {
@@ -368,6 +380,10 @@ function onPointerDown(ev: PointerEvent) {
 }
 
 function onPointerMove(ev: PointerEvent) {
+  // 触屏不做 hover 反馈：手指抬起后没有「悬停」语义，
+  // 持续改 hovered 只会让选中态闪烁。
+  if (ev.pointerType === 'touch') return;
+
   if (dragging.value && dragStart !== null) {
     const y = pointerYear(ev);
     brushed.value = {
@@ -399,7 +415,57 @@ function onPointerUp(ev: PointerEvent) {
   scheduleDraw();
 }
 
+/**
+ * 指针被系统取消（来电、手势被浏览器接管、切换到别的 App）。
+ * 不清理的话 dragging 会卡在 true，下次进页面一碰画布就画出
+ * 一条从上次位置到现在的诡异框选。
+ */
+function onPointerCancel(ev: PointerEvent) {
+  if (!dragging.value) return;
+  dragging.value = false;
+  dragStart = null;
+  brushed.value = null;
+  canvasEl.value?.releasePointerCapture(ev.pointerId);
+  scheduleDraw();
+}
+
+/** 双指缩放：两根手指同时按下时进入缩放模式 */
+let pinchStartDist = 0;
+let pinchStartView: { from: number; to: number } | null = null;
+
+function onTouchStart(ev: TouchEvent) {
+  if (ev.touches.length !== 2) return;
+  const [a, b] = [ev.touches[0], ev.touches[1]];
+  pinchStartDist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+  pinchStartView = { ...view.value };
+}
+
+function onTouchMove(ev: TouchEvent) {
+  if (ev.touches.length !== 2 || !pinchStartView || pinchStartDist === 0) return;
+  // 双指缩放必须拦掉，否则 iOS 会把整页放大
+  ev.preventDefault();
+
+  const [a, b] = [ev.touches[0], ev.touches[1]];
+  const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+
+  const scale = pinchStartDist / dist;
+  const span = (pinchStartView.to - pinchStartView.from) * scale;
+  const center = (pinchStartView.from + pinchStartView.to) / 2;
+  const half = span / 2;
+  const [min, max] = props.data.domain;
+  const from = Math.max(min, center - half);
+  const to = Math.min(max, center + half);
+  view.value = from < to ? { from, to } : { from: min, to: max };
+}
+
+function onTouchEnd() {
+  pinchStartDist = 0;
+  pinchStartView = null;
+}
+
 function onWheel(ev: WheelEvent) {
+  // 滚轮缩放是桌面主交互。画布区域内不需要纵向滚动
+  // （页面在画布外滚动），所以这里阻止默认行为是安全的。
   ev.preventDefault();
   const anchor = pointerYear(ev as unknown as PointerEvent);
   zoomAt(ev.deltaY > 0 ? 1.18 : 0.85, anchor);
@@ -466,12 +532,6 @@ const jumpTargets = computed(() => {
 });
 
 /* ---------------- 按需加载（lazyLoad） ---------------- */
-
-/** 年份所在世纪：与 /data/timeline/[century].json 的划分保持一致 */
-function centuryOf(year: number): number {
-  if (year < 0) return -Math.floor((Math.abs(year) - 1) / 100 + 1);
-  return Math.floor((year - 1) / 100) + 1;
-}
 
 /**
  * 视窗覆盖的世纪列表。
@@ -585,10 +645,15 @@ watch(view, () => {
           @pointerdown="onPointerDown"
           @pointermove="onPointerMove"
           @pointerup="onPointerUp"
+          @pointercancel="onPointerCancel"
           @pointerleave="hovered = null"
+          @touchstart.passive="onTouchStart"
+          @touchmove="onTouchMove"
+          @touchend="onTouchEnd"
+          @touchcancel="onTouchEnd"
         />
         <p class="tl__hint u-ui">
-          滚轮缩放 · 拖动空白处框选时间段 · 点击事件查看详情
+          滚轮或双指缩放 · 拖动空白处框选时间段 · 点击事件查看详情
         </p>
       </div>
 
@@ -678,7 +743,13 @@ watch(view, () => {
 
 .tl__canvas-wrap canvas {
   display: block;
-  touch-action: none;
+  /*
+    pan-y 而不是 none：
+    画布内也要允许页面纵向滚动。none 会让手指落在画布上时
+    整页卡死（平板/触屏笔记本上尤其明显）。
+    双指缩放由 JS 的 touchmove 里 preventDefault 拦下。
+  */
+  touch-action: pan-y;
 }
 
 .tl__hint {

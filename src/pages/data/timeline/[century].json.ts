@@ -10,29 +10,7 @@
  */
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { loadIndex } from '../../../lib/content';
-
-/**
- * 世纪的划分方式：
- * 公元前的年份按「前 N 世纪」分段，避免负数取整的歧义。
- */
-function centuryOf(year: number): number {
-  // 例：-221 → -3（前3世纪）；208 → 3；755 → 8
-  if (year < 0) {
-    // 公元前 1 世纪 = -100..-1
-    return -Math.floor((Math.abs(year) - 1) / 100 + 1);
-  }
-  // 公元 1 世纪 = 1..100
-  return Math.floor((year - 1) / 100) + 1;
-}
-
-/** 该世纪覆盖的年份范围（闭区间） */
-function centuryRange(c: number): [number, number] {
-  if (c < 0) {
-    const n = Math.abs(c);
-    return [-(n * 100), -((n - 1) * 100 + 1)];
-  }
-  return [(c - 1) * 100 + 1, c * 100];
-}
+import { centuryOf, centuryRange } from '../../../lib/time';
 
 /** 所有有事件的世纪 */
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -31,16 +31,10 @@ evaluations:
     sourceId: songshi-wanganshi-2
     kind: influence
 relations:
-  - target: zhuxi
-    type: teacher-student
-    strength: primary
-    from: 1032
-    to: 1085
-    note: 朱熹承二程之学，四传而至朱，世称程朱理学。
   - target: cheng-yi
     type: sibling
     strength: primary
-    from: 1032
+    from: 1033
     to: 1085
     note: 与弟程颐并称「二程」，洛阳讲学，门下甚盛。
 ---

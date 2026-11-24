@@ -36,7 +36,7 @@ relations:
   - target: kublai
     type: kinship
     strength: primary
-    from: 1162
+    from: 1215
     to: 1227
     note: 忽必烈为其孙，拖雷之子。
 ---

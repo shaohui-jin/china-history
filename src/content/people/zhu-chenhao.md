@@ -41,7 +41,7 @@ relations:
     type: enemy
     strength: primary
     from: 1519
-    to: 1519
+    to: 1521
     note: 欲夺明武宗之位。
 ---
 

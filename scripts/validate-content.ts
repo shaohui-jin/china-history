@@ -577,6 +577,62 @@ for (const f of listDir('people')) {
   }
 }
 
+/*
+ * 双向声明的一致性：同一条关系若两端都写了，from / to / strength 必须相同。
+ *
+ * 为什么必须查：CONTENT-SCHEMA 第 1 节要求「只在一端声明」，但存量里有
+ * 189 条两边都写的。两端都写本身不会重复渲染（getPersonRelations 会去重），
+ * 可怕的是**两端值不一致**：读者看到哪个年份，取决于他先打开谁的人物页。
+ * 2026-11 核查时 37 对不一致，例如成吉思汗侧写「与忽必烈 1162 起」，
+ * 忽必烈侧写「1215 起」——1162 其实是成吉思汗自己的生年。
+ *
+ * 报 warn 不报 error：这是存量数据的质量问题，逐步收敛，不该让 CI 立刻红。
+ */
+{
+  /** key: `a|b::type`（a、b 排序保证无向）→ 各端声明的值 */
+  const declared = new Map<string, Array<{ who: string; from: string; to: string; strength: string }>>();
+
+  for (const f of listDir('people')) {
+    const fm = readFrontmatter(join(ROOT, 'people', f));
+    if (!fm) continue;
+    const raw = fm.__raw as string;
+    const id = pick(raw, 'id') ?? f;
+
+    const block = raw.match(/^relations:\s*\n((?:[ \t]+.*\n?)+)/m);
+    if (!block) continue;
+
+    for (const item of block[1].split(/\n(?=\s+- )/)) {
+      if (!/^\s+- /.test(item)) continue;
+      const target = item.match(/target:\s*(\S+)/)?.[1];
+      const type = item.match(/type:\s*(\S+)/)?.[1];
+      if (!target || !type) continue;
+      const key = [id, target].sort().join('|') + '::' + type;
+      if (!declared.has(key)) declared.set(key, []);
+      declared.get(key)!.push({
+        who: id,
+        from: item.match(/^\s+from:\s*(-?\d+)/m)?.[1] ?? '',
+        to: item.match(/^\s+to:\s*(-?\d+)/m)?.[1] ?? '',
+        strength: item.match(/strength:\s*(\S+)/)?.[1] ?? '',
+      });
+    }
+  }
+
+  for (const [key, ends] of declared) {
+    if (ends.length < 2) continue;
+    const froms = new Set(ends.map((e) => e.from));
+    const tos = new Set(ends.map((e) => e.to));
+    const strengths = new Set(ends.map((e) => e.strength));
+    if (froms.size === 1 && tos.size === 1 && strengths.size === 1) continue;
+    issues.push({
+      level: 'warn',
+      where: `people/${key.split('::')[0]}`,
+      message:
+        `双向声明的关系两端不一致（${ends.map((e) => `${e.who}: from=${e.from || '—'} to=${e.to || '—'} ${e.strength}`).join(' vs ')}），` +
+        `同一条关系在不同人物页会显示不同年份。应只保留一端，或使两端取值一致`,
+    });
+  }
+}
+
 // 政权 period 必须在枚举内
 for (const f of listDir('polities')) {
   const fm = readFrontmatter(join(ROOT, 'polities', f));

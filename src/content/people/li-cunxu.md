@@ -46,7 +46,7 @@ relations:
     type: enemy
     strength: primary
     from: 908
-    to: 923
+    to: 912
     note: 与后梁血战十五年，终灭之。朱温曾叹：「生子当如李亚子，克用为不亡矣！」
   - target: guo-wei
     type: superior

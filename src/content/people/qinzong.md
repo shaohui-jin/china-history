@@ -34,7 +34,7 @@ relations:
     type: parent-child
     strength: primary
     from: 1100
-    to: 1127
+    to: 1135
     note: 宣和七年受禅即位，在位一年余即遭靖康之变。
     sourceId: songshi-qinzong
   - target: li-gang

@@ -47,7 +47,7 @@ relations:
   - target: su-zhe
     type: sibling
     strength: primary
-    from: 1037
+    from: 1039
     to: 1101
     note: 兄弟情笃，诗文倡和一生。「但愿人长久，千里共婵娟」即怀子由之作。
 disputed: true

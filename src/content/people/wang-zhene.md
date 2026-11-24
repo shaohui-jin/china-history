@@ -45,7 +45,7 @@ relations:
     note: 前秦名相王猛之孙。
   - target: liu-yizhen
     type: superior
-    strength: weak
+    strength: primary
     from: 416
     to: 418
     note: 留守长安时为其辅将，为沈田子所杀。

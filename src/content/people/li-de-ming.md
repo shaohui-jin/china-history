@@ -43,7 +43,7 @@ relations:
     type: ally
     strength: primary
     from: 1005
-    to: 1032
+    to: 1022
     note: 景德二年与宋议和，受封西平王，宋每年给银绢茶。
 ---
 

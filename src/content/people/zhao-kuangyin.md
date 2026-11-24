@@ -37,7 +37,7 @@ relations:
     type: ruler-subject
     strength: primary
     from: 960
-    to: 992
+    to: 976
     note: 陈桥兵变的主要谋臣，「杯酒释兵权」之策多出其手。
     sourceId: songshi-taizu
   - target: chai-rong
@@ -48,7 +48,7 @@ relations:
     note: 后周世宗，匡胤为其部将，高平之战立功。
   - target: li-yu
     type: enemy
-    strength: weak
+    strength: primary
     from: 974
     to: 975
     note: 南唐后主，开宝八年金陵破，降宋。

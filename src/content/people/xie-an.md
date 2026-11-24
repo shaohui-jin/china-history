@@ -42,7 +42,7 @@ relations:
   - target: xie-xuan
     type: kinship
     strength: primary
-    from: 320
+    from: 343
     to: 385
     note: 谢玄为其侄，淝水之战的前线统帅。
   - target: wang-dao

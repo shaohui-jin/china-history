@@ -48,12 +48,12 @@ relations:
     type: ruler-subject
     strength: primary
     from: -138
-    to: -126
+    to: -114
     note: 两次遣张骞出使西域，开丝绸之路。
   - target: sima-qian
     type: ruler-subject
     strength: primary
-    from: -104
+    from: -108
     to: -87
     note: 因李陵事下司马迁于狱，处以腐刑。
   - target: dong-zhongshu

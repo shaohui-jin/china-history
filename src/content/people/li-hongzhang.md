@@ -47,7 +47,7 @@ relations:
   - target: guangxu
     type: ruler-subject
     strength: primary
-    from: 1870
+    from: 1875
     to: 1901
     note: 任直隶总督兼北洋大臣二十五年，为清廷外交与军事的实际主持者。
 ---

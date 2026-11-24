@@ -37,13 +37,13 @@ relations:
     type: enemy
     strength: primary
     from: 1673
-    to: 1681
+    to: 1678
     note: 康熙十二年决意撤藩，三藩之乱历八年而平。
   - target: zheng-chenggong
     type: enemy
     strength: primary
-    from: 1662
-    to: 1683
+    from: 1661
+    to: 1662
     note: 康熙二十二年施琅平台湾，郑克塽降。
   - target: shunzhi
     type: parent-child

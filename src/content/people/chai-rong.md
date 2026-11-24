@@ -42,7 +42,7 @@ relations:
     type: ruler-subject
     strength: weak
     from: 954
-    to: 959
+    to: 954
     note: 世宗即位之初，冯道力谏不可亲征北汉，世宗不听。
 ---
 

@@ -34,8 +34,8 @@ relations:
   - target: qinzong
     type: parent-child
     strength: primary
-    from: 1082
-    to: 1127
+    from: 1100
+    to: 1135
     note: 宣和七年金军南下，仓促禅位于太子赵桓，自称道君太上皇。
   - target: wanyan-zongwang
     type: enemy

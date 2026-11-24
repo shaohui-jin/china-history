@@ -33,7 +33,7 @@ relations:
   - target: zhu-yuanzhang
     type: ruler-subject
     strength: primary
-    from: 1373
+    from: 1368
     to: 1380
     note: 洪武十三年以谋反罪被杀，株连三万余人。
   - target: liu-bowen

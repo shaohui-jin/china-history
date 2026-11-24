@@ -54,7 +54,7 @@ relations:
   - target: ma-su
     type: superior
     strength: primary
-    from: 228
+    from: 225
     to: 228
     note: 街亭之败后挥泪斩之。
   - target: jiang-wei
@@ -82,7 +82,8 @@ relations:
   - target: liu-qi
     type: colleague
     strength: weak
-    from: 208
+    from: 207
+    to: 209
     note: 为刘琦谋自安之策，使其出镇江夏。
 disputed: true
 ---

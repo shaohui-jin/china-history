@@ -36,7 +36,7 @@ relations:
   - target: yan-zhenqing
     type: kinship
     strength: primary
-    from: 692
+    from: 709
     to: 756
     note: 颜真卿为其堂弟。二人同时起兵讨安禄山，互为犄角。
   - target: an-lushan

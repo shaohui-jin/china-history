@@ -41,7 +41,7 @@ relations:
     note: 慧远为其最著名的弟子。
   - target: fu-jian
     type: colleague
-    strength: weak
+    strength: primary
     from: 379
     to: 385
     note: 前秦苻坚敬重之，谓「朕以十万之师取襄阳，唯得一人半」，一人即道安。

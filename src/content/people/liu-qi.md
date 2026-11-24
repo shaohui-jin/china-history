@@ -30,6 +30,7 @@ relations:
     type: colleague
     strength: weak
     from: 207
+    to: 209
     note: 问自安之策，亮教以上楼去梯。
     sourceId: sanguozhi-zhuge
 ---

@@ -45,6 +45,7 @@ relations:
     type: enemy
     strength: primary
     from: 208
+    to: 220
     note: 赤壁对峙，后屡攻濡须不克。
   - target: zhuge-liang
     type: enemy

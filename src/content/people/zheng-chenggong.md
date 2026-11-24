@@ -30,7 +30,7 @@ evaluations:
 relations:
   - target: kangxi
     type: enemy
-    strength: weak
+    strength: primary
     from: 1661
     to: 1662
     note: 康熙元年病卒，子郑经继；康熙二十二年郑克塽降清。

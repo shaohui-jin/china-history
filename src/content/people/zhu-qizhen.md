@@ -38,7 +38,7 @@ relations:
   - target: yu-qian
     type: ruler-subject
     strength: primary
-    from: 1457
+    from: 1449
     to: 1457
     note: 夺门复辟后杀于谦，天下冤之。
 ---

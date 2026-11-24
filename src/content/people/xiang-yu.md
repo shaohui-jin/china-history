@@ -47,7 +47,7 @@ relations:
     note: 亚父范增，为其主要谋士，后中陈平反间计而离去。
   - target: song-yi
     type: superior
-    strength: weak
+    strength: primary
     from: -208
     to: -207
     note: 卿子冠军宋义，项羽杀之而夺军权。

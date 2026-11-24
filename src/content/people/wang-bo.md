@@ -39,8 +39,8 @@ relations:
     note: 因反对三征高丽而起兵，所部专破隋军征辽粮道。
   - target: li-mi
     type: colleague
-    strength: weak
-    from: 617
+    strength: primary
+    from: 616
     note: 同为隋末山东义军，后归瓦岗。
 ---
 

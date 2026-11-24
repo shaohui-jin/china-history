@@ -44,7 +44,7 @@ relations:
     type: ruler-subject
     strength: primary
     from: 581
-    to: 607
+    to: 604
     note: 高颎为开国元勋，主持制度设计与灭陈之役。
 ---
 

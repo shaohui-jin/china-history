@@ -36,7 +36,7 @@ relations:
   - target: wang-dao
     type: sibling
     strength: primary
-    from: 266
+    from: 276
     to: 324
     note: 从弟王导居中执政，敦掌军事，二人共撑王氏。
 ---

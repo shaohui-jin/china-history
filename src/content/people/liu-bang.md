@@ -46,13 +46,13 @@ relations:
     type: ruler-subject
     strength: primary
     from: -209
-    to: -186
+    to: -195
     note: 运筹帷幄之中，决胜千里之外，吾不如子房。
   - target: xiao-he
     type: ruler-subject
     strength: primary
     from: -209
-    to: -193
+    to: -195
     note: 镇国家、抚百姓、给馈饷、不绝粮道，吾不如萧何。
   - target: han-xin
     type: ruler-subject

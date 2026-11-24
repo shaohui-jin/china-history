@@ -41,8 +41,7 @@ relations:
     type: teacher-student
     strength: primary
     from: 1130
-    to: 1200
-    note: 承二程之学，世称「程朱理学」。
+    note: 私淑二程，四传而至朱，世称「程朱理学」。程颢卒于 1085 年，早于朱熹出生四十五年，并无及门授受。
   - target: lu-jiuyuan
     type: enemy
     strength: primary

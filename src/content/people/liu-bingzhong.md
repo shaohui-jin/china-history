@@ -39,7 +39,7 @@ relations:
     type: teacher-student
     strength: primary
     from: 1262
-    to: 1266
+    to: 1274
     note: 营建大都时，郭守敬主水利与测量，秉忠总其成。
 ---
 

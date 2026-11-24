@@ -35,7 +35,7 @@ relations:
     type: ally
     strength: primary
     from: -209
-    to: -209
+    to: -208
     note: 与陈胜共同发动大泽乡起义。
 ---
 

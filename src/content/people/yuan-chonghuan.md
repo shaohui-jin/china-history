@@ -40,7 +40,7 @@ relations:
   - target: hong-taiji
     type: enemy
     strength: primary
-    from: 1627
+    from: 1626
     to: 1630
     note: 宁锦之战再挫皇太极；后皇太极用反间计，使其被崇祯所杀。
   - target: chongzhen

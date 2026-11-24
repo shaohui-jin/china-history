@@ -40,7 +40,7 @@ relations:
     type: ruler-subject
     strength: primary
     from: -108
-    to: -86
+    to: -87
     note: 天汉二年因李陵事下狱，受腐刑。出狱后任中书令，完成《史记》。
   - target: li-guang
     type: colleague

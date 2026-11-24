@@ -41,14 +41,14 @@ relations:
   - target: ban-chao
     type: ruler-subject
     strength: weak
-    from: 57
+    from: 32
     to: 57
     note: 班超于其子明帝时经营西域。
   - target: yan-guang
     type: colleague
     strength: primary
-    from: 25
-    to: 57
+    from: -20
+    to: 41
     note: 少时同游学，「光武中兴，严光不仕」，为其挚友。
 ---
 

@@ -36,7 +36,7 @@ relations:
     type: ruler-subject
     strength: primary
     from: -138
-    to: -115
+    to: -114
     note: 奉武帝命两次出使西域，封博望侯。
 ---
 

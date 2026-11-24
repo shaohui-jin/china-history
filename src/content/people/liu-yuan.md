@@ -45,7 +45,7 @@ relations:
   - target: liu-cong
     type: parent-child
     strength: primary
-    from: 251
+    from: 289
     to: 310
     note: 其子刘聪继位，遣军破洛阳、长安，灭西晋。
 disputed: true

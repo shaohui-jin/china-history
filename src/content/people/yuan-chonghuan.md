@@ -16,6 +16,17 @@ seal: |-
   袁
   崇焕
 summary: 明末蓟辽督师。宁远之战以红夷大炮重创后金，为努尔哈赤起兵以来首次大败。后皇太极绕道蒙古入塞，崇焕千里回援，却被崇祯以「通敌」罪凌迟处死。
+evaluations:
+  - claim: 《明史》的结论极重：「自崇焕死，边事益无人，明亡征决矣。」由清人所修的明史写出这句话，等于承认崇祯自毁长城是明朝灭亡的关键一环。
+    sourceId: mingshi-yuanchonghuan
+    quote: 自崇焕死，边事益无人，明亡征决矣。
+    kind: evaluation
+  - claim: 他的两大功绩是宁远与宁锦。天启六年（1626）宁远之战以红夷大炮击退努尔哈赤，是后金起兵以来的首次大败，努尔哈赤数月后去世；天启七年宁锦之战再挫皇太极。「关宁锦防线」自此成为明朝在辽东的支柱，直到 1644 年也未从正面被攻破。
+    sourceId: mingshi-yuanchonghuan
+    kind: influence
+  - claim: 他的死是崇祯性格与朝廷党争的共同产物。皇太极施反间计，使崇祯相信袁崇焕与后金有约；而袁崇焕此前擅杀毛文龙、又私自与后金议和，本就给人口实。崇祯在平台召对后将其下狱，次年凌迟处死，「兄弟妻子流三千里」。这是一场由君主猜忌、党争倾轧与敌方计谋共同完成的冤案。
+    sourceId: mingshi-yuanchonghuan
+    kind: dispute
 relations:
   - target: nurhaci
     type: enemy

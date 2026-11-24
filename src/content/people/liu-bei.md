@@ -31,6 +31,10 @@ evaluations:
   - claim: 夷陵之败的原因，常被简化为「为关羽报仇」。但从军事上看，刘备是在三峡狭道中连营七百里，被陆逊火攻而溃。这一部署本身就违反了兵法「连营不可过长」的原则。报仇是动机，失败是战术。
     sourceId: zizhitongjian-chibi
     kind: dispute
+  - claim: 范晔在《后汉书》里给刘备下的断语是「信义著于四海」，并把它当作「士民归之」的原因。这与陈寿「弘毅宽厚」的判断出自不同史家而结论一致——刘备一生辗转依附，始终没有稳固基业，唯一可恃的资本就是这种声望。
+    sourceId: houhanshu-zhuge
+    quote: 刘备虽颠沛，而信义著于四海，故士民归之。
+    kind: evaluation
 relations:
   - target: zhuge-liang
     type: ruler-subject

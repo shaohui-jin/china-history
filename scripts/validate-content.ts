@@ -379,14 +379,38 @@ for (const f of listDir('people')) {
   const evalBlock = raw.match(/^evaluations:\s*\n((?:[ \t]+.*\n?)+)/m);
   if (evalBlock) {
     const re = /^\s+sourceId:\s*(\S+)/gm;
+    const evalSources: string[] = [];
     let m: RegExpExecArray | null;
     while ((m = re.exec(evalBlock[1]))) {
       const s = m[1].trim();
+      evalSources.push(s);
       if (!ids.sources.has(s)) {
         issues.push({
           level: 'error',
           where: `people/${id}`,
           message: `evaluations 引用了不存在的史料：${s}`,
+        });
+      }
+    }
+
+    /*
+     * 书目多样性：评价不能全出自同一本书。
+     *
+     * 为什么必须按 title 而非 sourceId 判：同一本书的不同卷次 id 各不相同
+     * （sanguozhi-xianzhu / sanguozhi-guanyu / sanguozhi-caocao），
+     * 用 id 去重会把「四段全引自《三国志》」误判成四个书目。
+     *
+     * 这一项此前从未被检查，导致文档声称「274/274 每人 ≥2 个不同书目」，
+     * 实际有 135 人只有一本书。用 warn 而非 error：存量需渐进修复，
+     * 不能让 CI 立刻红掉；修完后可升为 error。
+     */
+    if (evalSources.length >= 2) {
+      const books = new Set(evalSources.map(bookOf));
+      if (books.size < 2) {
+        issues.push({
+          level: 'warn',
+          where: `people/${id}`,
+          message: `evaluations 的 ${evalSources.length} 条评价只出自一本书（${[...books].join(', ')}），缺独立第二出处`,
         });
       }
     }

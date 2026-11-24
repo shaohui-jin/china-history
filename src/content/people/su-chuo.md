@@ -31,6 +31,10 @@ evaluations:
   - claim: 苏绰的六条诏书要求地方官「非通六条及计帐者不得居官」——把治术变成了任职资格。这一制度化的思路，是西魏能在关中一隅与东魏抗衡的关键。
     sourceId: suishu-houzhuchen
     kind: influence
+  - claim: 苏绰自托为苏武之后，这一世系载于《汉书·苏武传》。苏武留匈奴十九年，「始以强壮出，及还，须发尽白」——苏氏一门在关中的声望，正是苏绰得以骤居高位的门第基础。
+    sourceId: hanshu-suchuo
+    quote: 武留匈奴凡十九岁，始以强壮出，及还，须发尽白。
+    kind: influence
 relations:
   - target: yuwen-tai
     type: ruler-subject

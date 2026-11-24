@@ -25,6 +25,10 @@ evaluations:
   - claim: 「开元盛世」的人口与财政数据是唐代的顶峰，但这一顶峰本身包含着危机：均田制瓦解、府兵制崩溃、节度使坐大。玄宗晚年的怠政只是让这些结构性问题失去了控制。把安史之乱完全归咎于杨贵妃，是简化了的历史叙事。
     sourceId: zizhitongjian-anlushan
     kind: dispute
+  - claim: 《通鉴》以「各其所长」概括开元诸相：姚崇尚通、宋璟尚法、张说尚文、张九龄尚直。「开元之末，上倦于万几，委政于李林甫」——转折不在宰相，而在皇帝本人的倦怠。
+    sourceId: zizhitongjian-kaiyuan
+    quote: 开元之末，上倦于万几，委政于李林甫。
+    kind: evaluation
 relations:
   - target: wu-zetian
     type: kinship

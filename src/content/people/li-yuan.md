@@ -27,6 +27,9 @@ evaluations:
   - claim: 「优柔失断」的评价多来自太宗朝的史臣。玄武门之变后，国史由贞观朝改写，李渊被塑造成被动的、受儿子裹挟的开国之君，以凸显李世民的主导作用。《大唐创业起居注》（温大雅撰，成于武德年间）中的李渊则果断多谋，两种记载的差异正说明史料本身被政治塑造过。
     sourceId: jiutangshu-liyuan
     kind: dispute
+  - claim: 《新唐书》把李渊的起兵视为预谋而非被动：晋阳起兵前他已「阴结豪杰」，起兵后迅速定都长安、立杨侑为帝，步骤清晰。所谓「优柔失断」，更多是贞观朝史臣的追述立场。
+    sourceId: xintangshu-zongzan
+    kind: dispute
 relations:
   - target: tang-taizong
     type: parent-child

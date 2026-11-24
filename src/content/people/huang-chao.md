@@ -28,6 +28,9 @@ evaluations:
   - claim: 「屡试不第」与「冲天香阵透长安」的落第诗，使黄巢在后世被塑造成失意文人的复仇。但他是私盐贩出身，起兵前已是武装盐帮的首领；其队伍的核心是社会底层的流民与盐贩，而非落第士人。落第诗的真实性本身也存疑——它最早见于宋人笔记，未必出自黄巢之手。
     sourceId: jiutangshu-huangchao-ji
     kind: dispute
+  - claim: 黄巢之乱后唐朝的财政与军事体系全面瓦解。《通鉴》所记「天下户口十亡八九」，既是黄巢军破坏的结果，也是此后藩镇混战的开端——五代十国的格局，由此奠基。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations:
   - target: zhu-wen
     type: superior

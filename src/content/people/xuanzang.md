@@ -30,6 +30,9 @@ evaluations:
   - claim: 玄奘的形象在身后被彻底文学化。《大唐西域记》的史实，经《大唐大慈恩寺三藏法师传》的渲染，最终演变为《西游记》的神魔故事。一个因怀疑译本而西行的学者，变成了取经的「唐僧」——这个过程本身说明，历史人物的传播往往取决于叙事的力量，而非其真实成就。
     sourceId: jiutangshu-xuanzang
     kind: dispute
+  - claim: 玄奘归国后的译经事业得到唐廷的直接支持，太宗两次劝其还俗参政，均被婉拒。这一细节说明：他的西行虽属个人行为，其成果却必须依托国家力量才能完成——宗教与政权的关系，在他身上体现得最清楚。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations:
   - target: tang-taizong
     type: ruler-subject

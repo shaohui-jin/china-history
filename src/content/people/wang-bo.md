@@ -28,6 +28,9 @@ evaluations:
   - claim: 王薄的结局颇有意味：他先附宇文化及，再降窦建德，最后归唐，被唐将盛彦师所杀。这种「反复归附」在隋末群雄中很常见，说明当时的「忠」并非普遍价值，生存与实力才是实际考量。
     sourceId: suishu-yangdi
     kind: dispute
+  - claim: 王勃等「初唐四杰」的文学活动与唐初政治的转型同步。他们在高宗、武后朝进入文坛，正是《通鉴》所记「各其所长」的人才格局形成之时——文学的自觉，与政治的开放是同一件事的两面。
+    sourceId: zizhitongjian-wuzhou
+    kind: influence
 relations:
   - target: yang-guang
     type: enemy

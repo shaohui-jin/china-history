@@ -29,6 +29,9 @@ evaluations:
   - claim: 「常山舌」在后世被赋予的意义，已远超其历史分量。文天祥《正气歌》「为颜常山舌」把它提炼为气节的符号，而他的战略判断（伪降、夺关、联络河北）反而隐没不彰。符号化的忠臣，往往掩盖了真实的军事能力——颜杲卿首先是一个懂得用诈的守将，其次才是一个骂贼而死的人。
     sourceId: jiutangshu-yangaoqing
     kind: dispute
+  - claim: 颜杲卿的常山举义发生在「天下户口十亡八九」之前，是安史之乱初期唐廷在河北唯一的支点。此后河北诸镇逐渐半独立，正是因为他这样的抵抗未能持续。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations:
   - target: yan-zhenqing
     type: kinship

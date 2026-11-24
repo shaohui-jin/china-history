@@ -28,6 +28,9 @@ evaluations:
   - claim: 「娶文成公主」在后世被赋予的意义，远超当时的实际。唐蕃之间在松赞干布死后即爆发长期战争（670 年大非川之战唐军大败），和亲并未带来持久的和平。文成公主入藏的文化影响确实深远，但把它描述为「汉藏一家」的开端，是后世的追认，而非七世纪的实情。
     sourceId: jiutangshu-songtsen
     kind: dispute
+  - claim: 唐蕃关系的实质在《通鉴》中看得更清楚：太宗朝的和亲之后，高宗、玄宗两朝与吐蕃屡有大仗（大非川、青海、石堡城）。文成公主入藏是文化交流的起点，但远非和平的保证。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: tang-taizong
     type: ally

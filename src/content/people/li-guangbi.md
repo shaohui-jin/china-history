@@ -23,6 +23,9 @@ evaluations:
   - claim: 传统史书多以「拥兵不朝」为李光弼之污点，但若考虑到当时宦官程元振、鱼朝恩相继用事，来瑱、仆固怀恩皆因入朝而获罪甚至被杀，李光弼的顾虑并非无据。这一点在评价上存在分歧。
     sourceId: jiutangshu-guozhiyi
     kind: dispute
+  - claim: 《通鉴》对藩镇格局的判断——「大者连州十余，小者犹兼三四」——正是李光弼、郭子仪等人作战的环境。他们面对的已不是叛军，而是一个个半独立的军镇。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations: []
 ---
 

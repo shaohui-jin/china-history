@@ -30,6 +30,9 @@ evaluations:
   - claim: 「知人」之名有其偶然。张九龄请诛安禄山，依据是「面有逆相」的相术判断，而非对边镇制度的分析——他并没有预见到募兵制与外重内轻的结构性危险。真正的问题（节度使兼领三镇、中央军弱于边军）是制度造成的，与安禄山个人是否「狼子野心」关系不大。以「知人」称之，反而回避了制度性的追问。
     sourceId: jiutangshu-zhangjiuling
     kind: dispute
+  - claim: 张九龄在《通鉴》的排序里是「尚直」，也是开元诸相中的最后一位。他罢相之后，「自是朝廷之士，皆容身保位，无复直言」——开元之治的终结，以直言风气的消失为标志。
+    sourceId: zizhitongjian-kaiyuan
+    kind: influence
 relations:
   - target: tang-xuanzong
     type: ruler-subject

@@ -28,6 +28,9 @@ evaluations:
   - claim: 「红颜祸水」的叙事须与史实分开。杨贵妃未曾干预朝政，其传中无一条涉及政事的记载；杨国忠的专权是玄宗晚年怠政与李林甫之后权力真空的结果。把安史之乱归因于一个妃子，是《长恨歌》以来的文学建构。真实的因果链是：募兵制—节度使坐大—中央军弱—边将叛乱，与后宫无关。
     sourceId: jiutangshu-yangyuhuan
     kind: dispute
+  - claim: 马嵬驿之变的实质是军队对杨国忠专权的清算，杨贵妃是这场清算的附加代价。《通鉴》记此事时把重点放在禁军的诉求上，而非帝妃之情——这一叙述角度，与后世《长恨歌》的写法截然不同。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: tang-xuanzong
     type: spouse

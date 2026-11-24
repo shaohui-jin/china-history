@@ -29,6 +29,10 @@ evaluations:
   - claim: 他的《李卫公问对》以「奇正相生」为核心，主张「无不正，无不奇，使敌莫测」。但此书真伪历来有争议——宋人已疑其为后人依托，今日学界多认为成于中唐以后。李靖本人的战法见于《旧唐书》本传，而所谓「兵法理论」，可能更多属于后世的兵学建构。
     sourceId: jiutangshu-lijing
     kind: dispute
+  - claim: 太宗对李靖的评价极为直接：「李靖是萧铣、辅公祏膏肓，古之名将韩、白、卫、霍，岂能及也！」把他排在韩信、白起、卫青、霍去病之上——这是帝王口吻的至高褒奖，与史臣的「烟阁之最」互为印证。
+    sourceId: zhenguanzhengyao-2
+    quote: 李靖是萧铣、辅公祏膏肓，古之名将韩、白、卫、霍，岂能及也！
+    kind: evaluation
 relations:
   - target: tang-taizong
     type: ruler-subject

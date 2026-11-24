@@ -28,6 +28,9 @@ evaluations:
   - claim: 他死后的反复最能说明问题。魏征卒后不久，太宗因他生前荐举的杜正伦、侯君集获罪，又闻他曾将谏辞示于起居郎褚遂良，遂怒而「仆所为碑」。直至征高丽无功，才叹「魏征若在，不使我有是行也」，复立碑。君臣之谊的牢固程度取决于君主当下的心情——这正是「直谏」作为制度的脆弱之处。
     sourceId: jiutangshu-weizheng
     kind: dispute
+  - claim: 赵翼指出贞观谏诤非魏征一人之功：马周、刘洎、岑文本、褚遂良、张玄素等「皆能犯颜极谏」。魏征之所以最著名，是因为他与太宗的关系被后世塑造成了君臣典范——制度性的谏诤风气，被压缩为一个人的形象。
+    sourceId: nianerzha-3
+    kind: dispute
 relations:
   - target: tang-taizong
     type: ruler-subject

@@ -27,6 +27,10 @@ evaluations:
   - claim: 「酷吏政治」须与其目的分开看。来俊臣、周兴的恐怖统治主要针对李唐宗室与关陇勋贵，而非普通士人；一旦政权稳固，她即杀来俊臣以平众怒。这是一场有明确政治目标的清洗，而非单纯的暴虐。但代价也真实：宗室被杀者数百人，此后唐代宗室势力一蹶不振。
     sourceId: jiutangshu-zetian
     kind: dispute
+  - claim: 《通鉴》的评价极为精准：「滥以禄位收天下人心，然不称职者，寻亦黜之，或加刑诛。挟刑赏之柄以驾御天下，政由己出，明察善断。」宽进严出、赏罚自持，这八个字解释了她为何能用酷吏而不失人才。
+    sourceId: zizhitongjian-wuzhou
+    quote: 太后虽滥以禄位收天下人心，然不称职者，寻亦黜之，或加刑诛。
+    kind: evaluation
 relations:
   - target: tang-taizong
     type: ruler-subject

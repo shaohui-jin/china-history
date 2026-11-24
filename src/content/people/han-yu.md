@@ -30,6 +30,9 @@ evaluations:
   - claim: 他的「道统」论在后世被放大成排佛的旗帜，但其本人与僧徒交往密切（与大颠禅师的往还即为著名公案）。谏迎佛骨是政治行为——反对的是劳民伤财的宗教仪式与寺院经济的膨胀，而非佛教义理本身。把他看作纯粹的排佛者，是宋儒为建立道统而塑造的形象。
     sourceId: jiutangshu-hanyu
     kind: dispute
+  - claim: 韩愈倡「文以载道」，其政治立场与中晚唐的藩镇格局直接相关。他主张以儒学的秩序观对抗割据，文章是他的政治工具——「载道」不是文学口号，而是重建统一秩序的努力。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations:
   - target: liu-zongyuan
     type: colleague

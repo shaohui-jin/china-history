@@ -27,6 +27,9 @@ evaluations:
   - claim: 房玄龄的「谦退」也有另一面。他居相位二十余年而始终不敢有所主张，玄武门之变前他曾与杜如晦被贬出秦王府，事定后才召回；太宗晚年征高丽，他上表谏止而未被采纳。所谓「无媢忌之心」，在一个猜忌的君主手下，既是美德也是自保。
     sourceId: jiutangshu-fangdu
     kind: dispute
+  - claim: 《通鉴》记开元诸相各有专长，这一分类方式其实源自唐人对宰相类型的自觉区分。房玄龄在贞观朝的角色与此类似：他不以单项才能见长，而以组织与协调为业——「各其所长」的前提，是有人负责把这些人组合起来。
+    sourceId: zizhitongjian-kaiyuan
+    kind: influence
 relations:
   - target: tang-taizong
     type: ruler-subject

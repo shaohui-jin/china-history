@@ -21,6 +21,9 @@ evaluations:
   - claim: 「河北悉平」四字是官方叙事。《旧唐书》同卷记李怀仙以朝义首级献唐，即授幽州节度使——乱平之日，正是割据之始。这一点在传统史书里常被「悉平」二字掩盖。
     sourceId: jiutangshu-shichaoi
     kind: dispute
+  - claim: 史朝义之死标志安史之乱的终结，但《通鉴》指出：乱平之后「藩镇相望于内地」。叛乱的军事失败，换来了藩镇割据的制度化——这是安史之乱最深远的后果。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations: []
 ---
 

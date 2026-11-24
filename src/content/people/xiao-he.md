@@ -27,6 +27,10 @@ evaluations:
   - claim: 萧何的自保手段并不体面。韩信被诛，萧何参与其谋；刘邦屡疑其心，他不得不「多买田地、贱贳贷以自污」，靠毁损名望换取信任。太史公把「淮阴、黥布等皆以诛灭，而何之勋烂焉」并列一句，褒中带刺。
     sourceId: shiji-xiaohe
     kind: dispute
+  - claim: 萧何的遗产不是某项具体政策，而是一套「守而勿失」的成法。曹参代相后「举事无所变更，一遵何之约束」，百姓歌曰「萧何为法，较若画一」——汉初的休养生息，靠的正是这种制度上的连续性。
+    sourceId: hanshu-xiaohe-ping
+    quote: 萧何为法，较若画一；曹参代之，守而勿失。载其清净，民以宁一。
+    kind: influence
 relations:
   - target: liu-bang
     type: ruler-subject

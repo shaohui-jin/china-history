@@ -28,6 +28,9 @@ evaluations:
   - claim: 「谋反」罪名的成立过程值得追问。韩信先由齐王徙为楚王，再以「巡行县邑、陈兵出入」被贬淮阴侯，最后因舍人弟告发与陈豨通谋而被杀于长乐宫钟室。三次罪名逐步升级而证据始终单薄，司马迁写下「夷灭宗族，不亦宜乎」时用的是疑问语气。汉初异姓王的相继诛灭，本质是中央集权对分封制的清算。
     sourceId: shiji-hanxin-liezhuan
     kind: dispute
+  - claim: 班固的解释与司马迁不同：他认为韩信的败亡源于一种错位——「以市井之志利其身，而以士君子之心望于人」。韩信以权谋取利，却期待刘邦以道义回报，这在帝王政治中不成立。
+    sourceId: hanshu-hanxin
+    kind: dispute
 relations:
   - target: liu-bang
     type: ruler-subject

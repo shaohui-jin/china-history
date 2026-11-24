@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的死是一场政治交易的牺牲。七国以「请诛晁错，以清君侧」为名起兵，景帝听袁盎之计，朝服斩错于东市。但吴楚并未因此罢兵，「清君侧」的借口随即暴露。晁错之死没换来和平，反倒证明了削藩的必要——这一层，常被「忠而见杀」的悲剧叙事掩盖。
     sourceId: shiji-chaocuo
     kind: dispute
+  - claim: 晁错的削藩主张并非孤例。贾谊在文帝时已提出「改正朔、易服色、定官名、兴礼乐」，同样试图以制度变更解决王国问题，而文帝「谦让未皇」，未予采纳。两代人的方案都指向同一件事：中央必须收回诸王的权力。
+    sourceId: hanshu-jia-yi
+    kind: influence
 relations:
   - target: liu-bi
     type: enemy

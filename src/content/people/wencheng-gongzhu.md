@@ -27,6 +27,9 @@ evaluations:
   - claim: 她在藏地的神圣地位是后世建构的。吐蕃文献《柱间史》《西藏王统记》成书远晚于七世纪，其中「绿度母化身」之说属宗教叙事；汉文史料对她入藏后的生活几乎无记载。她的历史意义确定无疑，但具体形象已被宗教与民族叙事重塑了千余年。
     sourceId: jiutangshu-songtsen
     kind: dispute
+  - claim: 把文成公主入藏放在唐蕃两百年的战争史中看，她的意义更接近「开端」而非「和解」。此后唐蕃八次会盟、无数次交战，公主带去的技术与信仰却长期留存——文化的传播比政治关系更持久。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: songtsen-gampo
     type: spouse

@@ -28,6 +28,9 @@ evaluations:
   - claim: 武帝晚年的「巫蛊之祸」与轮台罪己，是古代帝王罕见的自我修正。他下诏曰「当今务在禁苛暴，止擅赋，力本农」，等于否定了自己前半生的施政方向。有研究认为，这份诏书是西汉能延续的关键。
     sourceId: hanshu-wudi-zan
     kind: dispute
+  - claim: 班固的赞语把汉武帝的功业落在文治上：罢黜百家、兴太学、改正朔、定历数、建封禅。与《史记》重在记其征伐不同，这一评价强调的是制度与文化的奠基，而非疆域的扩张。
+    sourceId: hanshu-wudi-jiao-si
+    kind: evaluation
 relations:
   - target: wei-qing
     type: ruler-subject

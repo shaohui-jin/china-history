@@ -30,6 +30,10 @@ evaluations:
   - claim: 「口蜜腹剑」的形象须与其实际能力分开。李林甫在世时，安禄山对他极为忌惮，「虽盛冬，汗出沾衣」，其权术确实镇住了边将；他也主持修成《唐六典》，是唐代行政法典的完成者。问题不在于他无能，而在于他的能力全部用于维持个人权位——一个能干的宰相，把整个制度导向了崩坏。
     sourceId: xintangshu-lilinfu
     kind: dispute
+  - claim: 《通鉴》对李林甫的定性是「媚事左右，迎合上意，以固其宠」，并把转折点明确系于玄宗「倦于万几」。这意味着：李林甫的专权是玄宗主动让渡权力的结果，而非单纯的个人野心。
+    sourceId: zizhitongjian-kaiyuan
+    quote: 林甫媚事左右，迎合上意，以固其宠。
+    kind: dispute
 relations:
   - target: tang-xuanzong
     type: ruler-subject

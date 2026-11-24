@@ -27,6 +27,9 @@ evaluations:
   - claim: 「政归武后」不是被动的结果。高宗患风疾，「百司奏事，时时令后决之」，这是他主动的授权；诛长孙无忌、贬褚遂良，也是他借武后之手清除关陇集团的举措。所谓「懦弱之主」，实际上完成了太宗未竟的集权——只是代价是皇权最终落入武氏之手。
     sourceId: jiutangshu-lizhi
     kind: dispute
+  - claim: 《通鉴》记高宗朝「所用之相，各其所长」，并特别指出张九龄「尚直」。这一评价把高宗前期的人才格局视为开元盛世的直接前奏——永徽至开元的治世，其实是一个连续的过程。
+    sourceId: zizhitongjian-kaiyuan
+    kind: influence
 relations:
   - target: tang-taizong
     type: parent-child

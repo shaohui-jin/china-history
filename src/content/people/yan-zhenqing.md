@@ -30,6 +30,9 @@ evaluations:
   - claim: 书法成就与忠义之名互相加固，也使两者的实情被模糊。颜真卿早年的书风并非今日所见之「颜体」，其成熟风格形成于中年以后，与安史之乱的经历未必有直接因果；而「奉使李希烈、不屈而死」一事，实为宰相卢杞的排挤之计——朝廷明知李希烈必反，仍遣一位七十六岁的老臣前往。忠义的结局，是权力斗争的产物。
     sourceId: jiutangshu-yanzhenqing
     kind: dispute
+  - claim: 颜真卿晚年奉使李希烈，是宰相卢杞的排挤之计。《通鉴》记此事时明确指出卢杞「恶其直言，欲去之」——忠义的结局，往往由朝廷内部的倾轧决定。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: yan-gaoqing
     type: kinship

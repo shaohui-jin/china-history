@@ -23,6 +23,9 @@ evaluations:
   - claim: 他的死因是一个政治悖论：作为太宗托孤的重臣，他有责任维护李唐宗室；但他反对立武则天，恰恰触动了高宗最敏感的自主权。他越忠于太宗，就越与高宗对立。这一困境说明，「顾命大臣」的角色在皇权交接后往往难以为继。
     sourceId: jiutangshu-gaozu
     kind: dispute
+  - claim: 长孙无忌的命运是武周政治的直接产物。他在高宗立武后一事上持反对立场，此后被许敬宗诬以谋反，流放黔州赐死。关陇集团最后一位有权力的代表，就此消失。
+    sourceId: zizhitongjian-wuzhou
+    kind: dispute
 relations:
   - target: tang-taizong
     type: ruler-subject

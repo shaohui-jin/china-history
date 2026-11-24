@@ -30,6 +30,9 @@ evaluations:
   - claim: 他的思想成就长期被文学名声掩盖。《封建论》提出「封建非圣人意也，势也」——把分封制的兴废归于历史趋势而非圣人之心，这是唐代最接近历史唯物论的判断；《天说》反驳韩愈的天有意志论，主张天人「各行其是」。但此二文在唐代几乎无人回应，直至宋代才被重新发现。
     sourceId: jiutangshu-liuzongyuan
     kind: dispute
+  - claim: 柳宗元的「封建非圣人意也，势也」写于贬谪期间，针对的正是中晚唐藩镇割据的现实：分封与割据都源于「势」，而非圣人之意。他的历史观是从当下的政治困境中生长出来的。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: han-yu
     type: colleague

@@ -27,6 +27,9 @@ evaluations:
   - claim: 宋璟的「刚正」有其限度。他曾依附武三思，又在韦后当政时保持沉默；其罢斜封官虽得舆论称许，但触怒权贵，很快被排挤出朝。皮日休「铁肠石心」的形容，掩盖了一个事实：他的守法之所以能推行，仍依赖玄宗初年的支持，而非制度本身的保障。
     sourceId: jiutangshu-yaosong
     kind: dispute
+  - claim: 宋璟在《通鉴》的排序里是「尚法」——与姚崇的「尚通」相对。开元前期之所以能持续近三十年，正因为这两种风格交替执政：先以通开局面，再以法固成果。
+    sourceId: zizhitongjian-kaiyuan
+    kind: evaluation
 relations:
   - target: tang-xuanzong
     type: ruler-subject

@@ -28,6 +28,9 @@ evaluations:
   - claim: 「功盖一代而主不疑」这一评价，也包含一种政治智慧：郭子仪屡遭谗毁（程元振、鱼朝恩都曾构陷），但每次都主动入朝自明，不拥兵自重。同期的李光弼、仆固怀恩都选择了相反的道路，结果一个愧恨而死，一个举兵反叛。
     sourceId: jiutangshu-guozhiyi
     kind: dispute
+  - claim: 安史之乱后「天下户口十亡八九」，郭子仪等人在此残破的基础上重建唐廷的军事力量。他的功业不只是平叛，更是在藩镇林立的格局中维持了中央的体面。
+    sourceId: zizhitongjian-tangmo
+    kind: influence
 relations:
   - target: li-guangbi
     type: colleague

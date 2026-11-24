@@ -28,6 +28,9 @@ evaluations:
   - claim: 募兵制是「利在当代、害在百年」的典型。它解决了府兵逃亡、兵源枯竭的燃眉之急，却使职业军人长期隶属边将，形成「兵为将有」的格局——安史之乱与此后两百年的藩镇割据，制度根源正在此。张说当时不可能预见，但这一决策的长期代价，须记在他的账上。
     sourceId: xintangshu-zhangyue
     kind: dispute
+  - claim: 《通鉴》把张说的执政风格定为「尚文」，这一定位与他在开元文坛的地位完全一致。文治与政事在他身上是一体的：他提携的文人进入朝廷，也改变了朝廷的话语方式。
+    sourceId: zizhitongjian-kaiyuan
+    kind: evaluation
 relations:
   - target: yao-chong
     type: enemy

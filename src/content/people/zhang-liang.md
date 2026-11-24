@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的善终常被解释为「功成身退」的道家智慧，但「愿弃人间事，欲从赤松子游」的说法本出自其自述，未必可尽信。更实际的原因是他始终未掌兵权、未结私党，且体弱多病，对皇权无威胁——与韩信的处境恰成对照。
     sourceId: shiji-liuhou
     kind: dispute
+  - claim: 张良终身「未尝特将」，始终以画策臣的身份随侍刘邦左右。这一细节是理解他善终的关键：无兵权、无封地之外的势力，也就不构成对皇权的威胁。
+    sourceId: hanshu-zhangliang
+    kind: influence
 relations:
   - target: liu-bang
     type: ruler-subject

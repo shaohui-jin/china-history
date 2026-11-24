@@ -27,6 +27,9 @@ evaluations:
   - claim: 玄武门之变的性质需要重新审视。建成是名正言顺的太子，李世民是拥兵自重的秦王；先动手的是李世民，被杀的包括建成的五个儿子。所谓「建成猜忌、元吉凶暴」的记载，主要来源是贞观朝修订的《高祖实录》——一份由政变受益者主持编纂的文献。史料的可靠性，在这里受到根本性的限制。
     sourceId: jiutangshu-liyuanji-2
     kind: dispute
+  - claim: 欧阳修在《太宗本纪》赞语中把太宗与禹、汤、周武并论，这种拔高的前提是建成必须被贬低。同一部《新唐书》的《隐太子传》仍沿用「二凶」之说，两传合看，可见官方叙事的内在需要。
+    sourceId: xintangshu-zongzan
+    kind: dispute
 relations:
   - target: li-yuan
     type: parent-child

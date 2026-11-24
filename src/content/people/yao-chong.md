@@ -28,6 +28,9 @@ evaluations:
   - claim: 开元四年山东大蝗，朝臣「皆以蝗为天灾，不当捕」，姚崇力主捕蝗，以「昔魏时山东有蝗伤稼，缘小忍不除，遂致人相食」为据，遣御史分道捕蝗。这是唐代少见的以行政力量对抗灾异观念的行动，他本人也因此承受了「违天」的巨大舆论压力。
     sourceId: jiutangshu-yaosong
     kind: dispute
+  - claim: 在《通鉴》的排序里，姚崇居开元诸相之首，其特点是「尚通」——善于因时制宜、不拘成法。这一评语与他力主捕蝗、沙汰僧尼等务实举措完全吻合。
+    sourceId: zizhitongjian-kaiyuan
+    kind: evaluation
 relations:
   - target: tang-xuanzong
     type: ruler-subject

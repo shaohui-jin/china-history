@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的早卒改变了贞观朝的权力结构。杜如晦卒于贞观四年，年仅四十六，此后房玄龄独相二十余年。太宗「哭之恸，废朝三日」，此后食瓜而思之、梦之而祭之，这些记载既是真情，也说明「房杜」组合不可替代——而房玄龄独任的漫长岁月，恰是贞观朝由创业转入守成的时期。
     sourceId: jiutangshu-fangdu
     kind: dispute
+  - claim: 「房谋杜断」的分工在唐人眼里是宰相制度成熟的标志。开元诸相「各其所长」而能相继执政，走的正是同一条路：把不同性格的人放在相位上，各用其长。
+    sourceId: zizhitongjian-kaiyuan
+    kind: influence
 relations:
   - target: tang-taizong
     type: ruler-subject

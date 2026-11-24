@@ -28,6 +28,9 @@ evaluations:
   - claim: 他在酷吏政治下的自保方式值得注意。被来俊臣诬告下狱时，他当场承认「反是实」以免受刑，再把申冤书藏于绵衣中托人带出。这种「先认罪、后申辩」的策略，与同时代许多宁死不屈者不同——他选择活下去，因为活着才能改变局面。这是政治智慧，也是对气节问题的一种回答。
     sourceId: jiutangshu-direnjie
     kind: dispute
+  - claim: 武周的人才政策是「宽进严出」：来者不拒，不称职者随即罢黜或诛杀。狄仁杰能在这样的体制中久任宰相并主导还政，靠的不是迎合，而是被反复验证过的实务能力。
+    sourceId: zizhitongjian-wuzhou
+    kind: influence
 relations:
   - target: wu-zetian
     type: ruler-subject

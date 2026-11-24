@@ -28,6 +28,9 @@ evaluations:
   - claim: 「罢黜百家」的实际执行远不如后世想象的那样彻底。汉武帝本人「颇好方术」，用法家酷吏，儒学只是众多工具之一；终西汉一朝，黄老、刑名之学仍在朝廷中有一席之地。儒学真正取得独尊地位，要等到元帝、成帝时期儒生大量进入中枢之后——这是一百年的渐进过程，而非一次决策。
     sourceId: hanshu-dongzhongshu
     kind: dispute
+  - claim: 刘向称其「有王佐之材，虽伊吕亡以加」，其子刘歆则降一等，只承认「为群儒首」。父子两代的评价分歧，恰好说明董仲舒的历史定位在当时即有争议：是治国的王佐，还是儒学的宗师？
+    sourceId: hanshu-dongzhongshu-2
+    kind: dispute
 relations:
   - target: liu-che
     type: ruler-subject

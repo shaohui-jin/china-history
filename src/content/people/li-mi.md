@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的失败揭示了一个政治规律：起义军可以靠「开仓」聚众，却不能靠它建立政权。李密据洛口仓而有数十万众，却始终未能建立稳定的赋税与行政体系；围攻洛阳一年，粮尽而溃。此后李渊从太原南下，先占关中、后定制度，走的恰是相反的路。
     sourceId: jiutangshu-limim
     kind: dispute
+  - claim: 李密据洛口仓而有数十万众，却始终未能建立赋税与行政体系。《通鉴》记隋末群雄时反复强调「开仓聚众」与「建制定民」的区别——前者可得一时之众，后者方能成一国之基。
+    sourceId: zizhitongjian-tangmo
+    kind: dispute
 relations:
   - target: zhai-rang
     type: kill

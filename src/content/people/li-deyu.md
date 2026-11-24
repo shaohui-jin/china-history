@@ -30,6 +30,10 @@ evaluations:
   - claim: 「牛李党争」的性质并非单纯的个人恩怨。李德裕代表的是门荫出身、主张中央集权的士族官僚，牛僧孺一派多为科举出身、倾向姑息藩镇的新进。两派的对立有政策分歧的实质，但四十年的缠斗使双方都失去了解决问题的能力——晚唐的衰亡，党争是重要的一环，而李德裕的「孤峭」加速了它。
     sourceId: jiutangshu-lideyu
     kind: dispute
+  - claim: 会昌之政的成效须放在藩镇格局中看。《通鉴》概括中晚唐「兵骄则逐帅，帅强则叛上」，李德裕能在此格局下击破回鹘、平定泽潞，是安史之乱后唐廷少见的主动出击。
+    sourceId: zizhitongjian-tangmo
+    quote: 兵骄则逐帅，帅强则叛上。
+    kind: influence
 relations:
   - target: tang-xuanzong
     type: ruler-subject

@@ -38,6 +38,7 @@ relations:
     from: 1776
     to: 1799
     note: 乾隆宠信二十余年，官至文华殿大学士、军机大臣。
+disputed: true
 ---
 
 钮祜禄氏，字致斋，满洲正红旗人。

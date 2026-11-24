@@ -49,6 +49,7 @@ relations:
     from: 621
     to: 626
     note: 魏征为其洗马，尝劝其早除世民。
+disputed: true
 ---
 
 唐高祖李渊长子。母窦氏。

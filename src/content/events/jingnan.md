@@ -27,6 +27,20 @@ corroboration:
     - gechu-yishi
   agreement: partial
   note: 《明史·成祖本纪》为永乐朝官方立场，记「建文自焚」；《革除逸史》为明宗室私家记载，记「出亡为僧」。两者对战争进程一致，对建文结局说法不同。
+disputes:
+  - claim: 建文帝的结局
+    views:
+      - sourceId: mingshi-jianwen
+        statement: 宫中火起，帝不知所终。燕王遣中使出帝后{尸于火中}，越八日壬申葬之。
+      - sourceId: gechu-yishi
+        statement: 宫中火起，{帝易服遁去，莫知所终}。或云自焚，或云出亡为僧，诸说纷纭。
+  - claim: 建文一朝的合法性
+    views:
+      - sourceId: mingshi-chengzu
+        statement: 成祖{启天弘道高明肇运圣武神功纯仁至孝}文皇帝
+      - sourceId: gechu-yishi
+        statement: 建文四年六月，燕兵入金川门。{帝}（按：《革除逸史》仍称「帝」，不承认永乐改元）
+certainty: disputed
 ---
 
 ## 背景

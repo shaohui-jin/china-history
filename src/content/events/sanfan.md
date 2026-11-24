@@ -22,12 +22,27 @@ sources:
   - qingshigao-kangxi
   - qingshigao-wusangui
   - guoque-kangxi
+  - qingshigao-gengjingzhong
 corroboration:
   primary: qingshigao-kangxi
   secondary:
     - guoque-kangxi
   agreement: partial
   note: 《清史稿·圣祖本纪》为清廷官修，《国榷》为明末清初私家编年史，谈迁穷三十年之力写成。二者对三藩之乱的记载立场与详略不同。
+disputes:
+  - claim: 吴三桂起兵的名义与动机
+    views:
+      - sourceId: qingshigao-wusangui
+        statement: 三桂反，自称{天下都招讨兵马大元帅}，以「{兴明讨虏}」为辞。
+      - sourceId: qingshigao-kangxi
+        statement: 三桂{反}。（按：本纪不载其「兴明」之辞，径称反）
+  - claim: 三藩之乱的规模
+    views:
+      - sourceId: qingshigao-kangxi
+        statement: "{尚可喜、耿精忠相继叛}，{乱及十省}。"
+      - sourceId: qingshigao-gengjingzhong
+        statement: 精忠闻三桂反，遂{据福建应之}，自称{总统兵马大将军}。
+certainty: disputed
 ---
 
 ## 背景

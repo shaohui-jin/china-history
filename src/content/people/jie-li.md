@@ -43,6 +43,7 @@ relations:
     from: 630
     to: 630
     note: 李靖夜袭阴山，颉利被俘，东突厥亡。
+disputed: true
 ---
 
 阿史那氏，名咄苾，启民可汗第三子，始毕可汗之弟。

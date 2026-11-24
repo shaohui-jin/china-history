@@ -50,6 +50,7 @@ relations:
     from: -210
     to: -210
     note: 赵高与李斯矫诏，赐扶苏死。
+disputed: true
 ---
 
 秦始皇长子。史书未载其生母。

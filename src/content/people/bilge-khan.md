@@ -43,6 +43,7 @@ relations:
     from: 716
     to: 726
     note: 暾欲谷为其谋主，助其复振突厥。
+disputed: true
 ---
 
 阿史那氏，后突厥颉跌利施可汗之子。

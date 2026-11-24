@@ -43,6 +43,7 @@ relations:
     from: 641
     to: 649
     note: 太宗以宗室女封文成公主，妻吐蕃赞普。
+disputed: true
 ---
 
 唐宗室女，本名不详。「文成」为封号。

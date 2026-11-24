@@ -45,6 +45,7 @@ relations:
     from: 1188
     to: 1200
     note: 闲居上饶、铅山时与朱熹往还唱和，朱熹卒时弃疾往哭之。
+disputed: true
 ---
 
 字幼安，号稼轩，济南历城人。

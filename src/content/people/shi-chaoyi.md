@@ -25,6 +25,7 @@ evaluations:
     sourceId: zizhitongjian-tangmo
     kind: dispute
 relations: []
+disputed: true
 ---
 
 史思明长子。宽厚，颇得士心，然不为父所喜。

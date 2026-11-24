@@ -128,7 +128,6 @@ const events = defineCollection({
     aliases: z.array(z.string()).default([]),
     time: HRange,
     polityIds: z.array(reference('polities')).default([]),
-    placeIds: z.array(z.string()).default([]),
     categories: z.array(z.enum(EVENT_CATEGORIES)).min(1),
     /** 参与者。role 区分主导者与被动卷入者，影响图谱叙述方向。
      *  允许为空：灾异、制度变革、科技发明等事件未必有可考的具体人物。 */

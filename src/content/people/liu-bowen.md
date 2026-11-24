@@ -40,6 +40,7 @@ relations:
     from: 1360
     to: 1375
     note: 陈时务十八策，定先灭陈友谅、后取张士诚之策。
+disputed: true
 ---
 
 字伯温，青田人。

@@ -44,6 +44,7 @@ relations:
     from: 510
     to: 572
     note: 后突厥毗伽可汗为其后裔。
+disputed: true
 ---
 
 阿史那氏，名俟斤，土门之弟。

@@ -55,6 +55,7 @@ relations:
     from: 240
     to: 251
     note: 为司马懿所拔，参与经营淮南。
+disputed: true
 ---
 
 字士载，义阳棘阳人。少孤，为农民养犊。

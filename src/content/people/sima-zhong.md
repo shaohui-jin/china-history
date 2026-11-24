@@ -43,6 +43,7 @@ relations:
     from: 272
     to: 300
     note: 贾南风为其皇后，专权干政，杀太子司马遹。
+disputed: true
 ---
 
 字正度，晋武帝司马炎次子，母杨艳。

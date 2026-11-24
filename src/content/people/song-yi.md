@@ -37,6 +37,7 @@ relations:
     from: -208
     to: -207
     note: 为上将军，项羽为次将。项羽斩之而夺军。
+disputed: true
 ---
 
 原为楚国令尹，后为楚怀王谋臣。

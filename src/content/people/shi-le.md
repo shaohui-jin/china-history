@@ -51,6 +51,7 @@ relations:
     from: 312
     to: 318
     note: 攻晋阳，刘琨兵败。
+disputed: true
 ---
 
 上党武乡人，羯族。

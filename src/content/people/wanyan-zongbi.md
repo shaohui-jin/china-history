@@ -50,6 +50,7 @@ relations:
     from: 1130
     to: 1130
     note: 黄天荡之役为韩世忠所困四十余日。
+disputed: true
 ---
 
 金太祖第四子，女真名兀术。

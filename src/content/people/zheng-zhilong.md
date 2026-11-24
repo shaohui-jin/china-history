@@ -34,6 +34,7 @@ relations:
     from: 1624
     to: 1661
     note: 成功为其长子，因芝龙降清而决裂。
+disputed: true
 ---
 
 字飞黄，小名一官，福建南安石井人。

@@ -43,6 +43,7 @@ relations:
     from: 1033
     to: 1107
     note: 朱熹承其学，遂成程朱理学。
+disputed: true
 ---
 
 字正叔，河南洛阳人。世称伊川先生。程颢之弟。

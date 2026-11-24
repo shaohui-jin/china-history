@@ -37,6 +37,7 @@ relations:
     from: -20
     to: 41
     note: 少时同游学，光武即位后屡召不仕。
+disputed: true
 ---
 
 字子陵，会稽余姚人。本姓庄，避明帝刘庄讳，改姓严。

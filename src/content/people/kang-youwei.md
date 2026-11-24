@@ -50,6 +50,7 @@ relations:
     from: 1898
     to: 1898
     note: 戊戌政变后流亡海外，被通缉。
+disputed: true
 ---
 
 原名祖诒，字广厦，号长素，广东南海人，世称康南海。

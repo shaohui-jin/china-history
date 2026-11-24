@@ -60,6 +60,7 @@ relations:
     from: 208
     note: 用其火攻之策。
     sourceId: sanguozhi-chibi
+disputed: true
 ---
 
 庐江舒人。从祖父景，景子忠，皆为汉太尉。父异，洛阳令。

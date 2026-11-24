@@ -315,6 +315,34 @@ for (const f of listDir('events')) {
     }
   }
 
+  /**
+   * 检查 4.1：disputes 与 certainty 必须联动。
+   *
+   * 事件页的「史料有异说」徽章只看 `certainty === 'disputed'`，
+   * 而 disputes 块是另一个字段。两者不联动时会出现两种错：
+   * - 有 disputes 却没标 disputed → 徽章不出现，读者看不到异说提示
+   * - 标了 disputed 却没有 disputes → 徽章出现但下方无内容
+   * 历史上 100 条事件的 certainty 全是默认值，徽章一次都没显示过。
+   */
+  const disputeBlock = raw.match(/^disputes:\s*\n((?:[ \t]+.*\n?)+)/m);
+  const hasDisputes = !!disputeBlock && /^\s+-\s+claim:/m.test(disputeBlock[1]);
+  const certainty = pick(raw, 'certainty');
+
+  if (hasDisputes && certainty !== 'disputed') {
+    issues.push({
+      level: 'error',
+      where: `events/${id}`,
+      message: `有 disputes 但 certainty 不是 disputed（当前 ${certainty ?? '未填'}），「史料有异说」徽章不会显示`,
+    });
+  }
+  if (!hasDisputes && certainty === 'disputed') {
+    issues.push({
+      level: 'error',
+      where: `events/${id}`,
+      message: `certainty 标了 disputed 但 disputes 为空，徽章会显示却没有内容`,
+    });
+  }
+
   // 检查 5：正文脚注 id 必须在 sources / corroboration 里
   const body = (readFrontmatter(join(ROOT, 'events', f)) as any)?.__raw;
   const fullText = readFileSync(join(ROOT, 'events', f), 'utf8');

@@ -40,6 +40,7 @@ disputes:
         statement: 曹操得其水军，船步兵{数十万}，顺流东下
       - sourceId: zizhitongjian-chibi
         statement: 曹操之众远来疲敝，闻追豫州，{轻骑一日一夜行三百余里}
+certainty: disputed
 ---
 
 ## 背景

@@ -18,7 +18,7 @@ participants:
 significance: 4
 summary: 蒙哥率军围攻钓鱼城，守将王坚坚守数月，蒙哥死于城下。蒙古各路的西征南征全面中止，忽必烈北归争位。欧洲人称此地为「上帝折鞭处」。
 sources:
-  - songshi-wenzhong
+  - songshi-wangjian
   - yuanshi-xianzong
 corroboration:
   primary: songshi-wangjian
@@ -26,6 +26,20 @@ corroboration:
     - yuanshi-xianzong
   agreement: partial
   note: 《宋史·王坚传》记守城五个月、蒙哥死于城下，《元史·宪宗本纪》赞语则称「顿兵坚城之下，以殒其身」。双方对结果的记载一致，但对死因与责任的表述不同。
+disputes:
+  - claim: 蒙哥的死因
+    views:
+      - sourceId: songshi-wangjian
+        statement: 开庆元年，北兵围钓鱼城，坚力战守御，凡五月不能克。……{会北兵退}，城获全。（按：宋史不记死因，只记「北兵退」）
+      - sourceId: yuanshi-xianzong
+        statement: 然自将伐宋，狙于常胜，未受教育，故其终也，{顿兵坚城之下，以殒其身}。（按：元史亦不明言死因）
+  - claim: 此役的归属
+    views:
+      - sourceId: songshi-wangjian
+        statement: "{坚力战守御}，凡五月不能克。（按：归于守将王坚）"
+      - sourceId: yuanshi-xianzong
+        statement: 帝自将伐宋，{狙于常胜，未受教育}。（按：归于蒙哥本人的轻敌）
+certainty: disputed
 ---
 
 ## 背景
@@ -60,4 +74,4 @@ corroboration:
 
 **钓鱼城的终局**——此后钓鱼城由张珏、王立相继坚守。1279 年南宋亡后，守将王立以「不杀城中一人」为条件降元。守城三十六年，为宋蒙战争中最持久的据点。
 
-钓鱼城之战的意义，远超一场守城战：一个南宋地方守将的坚守，意外地改变了欧亚大陆的历史走向。这也是「小事件改变大历史」的经典案例。[^songshi-wenzhong]
+钓鱼城之战的意义，远超一场守城战：一个南宋地方守将的坚守，意外地改变了欧亚大陆的历史走向。这也是「小事件改变大历史」的经典案例。[^songshi-wangjian]

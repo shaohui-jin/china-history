@@ -28,6 +28,14 @@ corroboration:
     - zizhitongjian-chibi-yiling
   agreement: partial
   note: 《诸葛亮传》只记战后「叹法孝直若在」之语，《通鉴》魏纪以编年体详记夷陵之战的过程与陆逊的判断。二者一记事后反思、一记战事本身。
+disputes:
+  - claim: 夷陵之败的原因
+    views:
+      - sourceId: sanguozhi-zhuge
+        statement: 先主之东伐也，{群臣多谏，一不从}。及败，诸葛亮曰：「孝直若在，则能制主上，{令不东行}。」
+      - sourceId: zizhitongjian-chibi-yiling
+        statement: 吴将陆逊上疏曰：「{夷陵要害，国之关限}，虽为易得，亦复难守。」（按：陆逊强调地利，与蜀汉朝中「谏而不从」的角度不同）
+certainty: disputed
 ---
 
 ## 背景

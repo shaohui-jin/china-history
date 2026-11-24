@@ -51,6 +51,7 @@ relations:
     from: 560
     to: 572
     note: 同为北齐名将，皆因功高被害。
+disputed: true
 ---
 
 名肃，一名孝瓘，字长恭。北齐宗室，高澄第四子。

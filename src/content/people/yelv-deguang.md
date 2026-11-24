@@ -49,6 +49,7 @@ relations:
     from: 936
     to: 942
     note: 助石敬瑭灭后唐，得燕云十六州，约为「父子之国」。
+disputed: true
 ---
 
 辽太祖次子，母述律平。

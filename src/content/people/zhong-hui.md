@@ -34,6 +34,7 @@ relations:
     to: 264
     note: 纳维诈降，反为所谋，同死于成都。
     sourceId: sanguozhi-zhonghui-ping
+disputed: true
 ---
 
 字士季，颍川长社人，太傅钟繇小子也。少敏惠夙成。中护军蒋济著论，谓「观其眸子，足以知人」。会年五岁，繇遣见济，济甚异之，曰：「非常人也。」

@@ -44,6 +44,7 @@ relations:
     from: 618
     to: 618
     note: 大业十四年为宇文化及等弑于江都。
+disputed: true
 ---
 
 一名英，小字阿摐，隋文帝杨坚次子。

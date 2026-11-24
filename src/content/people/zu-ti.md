@@ -50,6 +50,7 @@ relations:
     from: 317
     to: 321
     note: 与后赵石勒对峙河南，屡破之。
+disputed: true
 ---
 
 字士稚，范阳遒县人。出身范阳祖氏，为北朝大族。

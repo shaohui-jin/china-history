@@ -37,6 +37,7 @@ relations:
     from: 22
     to: 23
     note: 昆阳之战败于刘秀，新朝随之崩溃。
+disputed: true
 ---
 
 字巨君，魏郡元城人。汉元帝皇后王政君之侄。

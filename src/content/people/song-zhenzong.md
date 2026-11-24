@@ -50,6 +50,7 @@ relations:
     from: 1004
     to: 1006
     note: 寇准力请亲征澶州，遂有澶渊之盟。后为王钦若所谮而罢相。
+disputed: true
 ---
 
 太宗第三子，母李氏。

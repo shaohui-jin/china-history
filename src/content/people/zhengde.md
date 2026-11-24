@@ -44,6 +44,7 @@ relations:
     from: 1517
     to: 1521
     note: 用王阳明平南赣盗与宁王之乱，然不欲其功高。
+disputed: true
 ---
 
 明孝宗长子，母张皇后。

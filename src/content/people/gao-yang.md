@@ -44,6 +44,7 @@ relations:
     from: 550
     to: 556
     note: 与西魏对峙，屡有交锋。
+disputed: true
 ---
 
 字子进，高欢次子，母娄昭君。

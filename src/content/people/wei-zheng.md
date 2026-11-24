@@ -38,6 +38,7 @@ relations:
     from: 626
     to: 643
     note: 前后进谏二百余事，太宗称其为「人镜」。
+disputed: true
 ---
 
 字玄成，巨鹿下曲阳人。

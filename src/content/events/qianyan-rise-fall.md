@@ -30,6 +30,14 @@ corroboration:
     - zizhitongjian-jin-shi
   agreement: partial
   note: 《慕容儁载记》从前燕一方记其建国，《通鉴》晋纪取材于《晋书》诸载记而经考异整合，编年叙述更便对照。二者详略与立场不同。
+disputes:
+  - claim: 前燕强盛的关键
+    views:
+      - sourceId: jinshu-murongjun
+        statement: 时慕容恪为太宰，{总摄朝政}，儁委任之，专以征伐为事。
+      - sourceId: zizhitongjian-jin-shi
+        statement: 燕主儁寝疾，谓太原王恪曰：「{李绩、慕容垂，皆吾之患也}，汝善为之。」
+certainty: disputed
 ---
 
 ## 背景

@@ -43,6 +43,7 @@ relations:
     strength: weak
     from: 907
     note: 同受后梁册封。王建在蜀称帝，钱镠则始终称王不称帝。
+disputed: true
 ---
 
 杭州临安人。出生时相貌丑陋，父欲弃之，祖母不许，故名「婆留」。

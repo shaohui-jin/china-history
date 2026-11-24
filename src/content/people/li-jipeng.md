@@ -43,6 +43,7 @@ relations:
     from: 982
     to: 994
     note: 献五州归宋，赐姓赵，名保忠。
+disputed: true
 ---
 
 党项拓跋部人。定难军节度使李继筠之弟。

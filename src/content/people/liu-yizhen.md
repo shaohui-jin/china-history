@@ -43,6 +43,7 @@ relations:
     from: 416
     to: 418
     note: 王镇恶为其留守长安的辅将，为沈田子所杀。
+disputed: true
 ---
 
 宋武帝刘裕次子，母孙修华。

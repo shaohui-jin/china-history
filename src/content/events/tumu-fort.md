@@ -27,6 +27,20 @@ corroboration:
     - guoque-yongle
   agreement: consistent
   note: 《明史·于谦传》记北京保卫战的过程，《国榷》为明末清初私家编年史，据实录与邸报写成，保留了「言南迁者，可斩也」的原话。二者来源不同而事实一致。
+disputes:
+  - claim: 英宗被俘后的处置
+    views:
+      - sourceId: mingshi-qiujin
+        statement: 谦{曰「社稷为重，君为轻」，议遂定}。（按：于谦传的立场，拥立景帝为权宜之计）
+      - sourceId: mingshi-jingdi
+        statement: 十月，也先拥上皇至城下，索金帛万万，廷议汹汹。谦曰：「{社稷为重，君为轻}。」
+  - claim: 土木之败的责任
+    views:
+      - sourceId: mingshi-jingdi
+        statement: "{王振}挟帝亲征，{仓卒就道}，百官力谏不听。"
+      - sourceId: guoque-yongle
+        statement: 八月，车驾陷于土木。……{京师戒严}，廷臣议南迁。
+certainty: disputed
 ---
 
 ## 背景

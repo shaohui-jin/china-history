@@ -37,6 +37,7 @@ relations:
     from: 954
     to: 954
     note: 周世宗欲亲征北汉，道力谏，为世宗所薄。
+disputed: true
 ---
 
 瀛州景城人，字可道，自号长乐老。

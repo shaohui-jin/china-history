@@ -37,6 +37,7 @@ relations:
     from: 716
     to: 726
     note: 为毗伽可汗谋主，助其复振突厥。
+disputed: true
 ---
 
 阿史德氏，名元珍，突厥名暾欲谷。

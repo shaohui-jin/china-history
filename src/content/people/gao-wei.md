@@ -50,6 +50,7 @@ relations:
     from: 576
     to: 577
     note: 周武帝伐齐，高纬被俘，北齐亡。
+disputed: true
 ---
 
 字仁纲，高湛（武成帝）长子。

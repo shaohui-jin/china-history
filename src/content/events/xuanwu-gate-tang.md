@@ -31,6 +31,20 @@ corroboration:
     - zizhitongjian-sui-tang
   agreement: partial
   note: 《旧唐书·太宗本纪》记政变的日期与参与者，《通鉴》隋唐之际部分以唐实录为底本而经考异，叙述较平实。二者对同一事件的详略与立场不同。
+disputes:
+  - claim: 李建成、李元吉的评价
+    views:
+      - sourceId: jiutangshu-liyuanji-2
+        statement: 史臣曰：建成、元吉，实为{二凶}。中外交构，{人神不容}。
+      - sourceId: jiutangshu-taizong
+        statement: 太宗率长孙无忌、尉迟敬德、房玄龄、杜如晦等{于玄武门诛建成、元吉}。（按：不载二人罪状，仅记诛杀）
+  - claim: 政变的起因
+    views:
+      - sourceId: jiutangshu-taizong
+        statement: 武德九年六月四日，太宗{率}长孙无忌等……于玄武门诛建成、元吉。（按：主动语态，事起于太宗）
+      - sourceId: jiutangshu-liyuanji-2
+        statement: 建成、元吉{中外交构}，{人神不容}。（按：归于二人自取其祸）
+certainty: disputed
 ---
 
 ## 背景

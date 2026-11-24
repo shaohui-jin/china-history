@@ -36,6 +36,7 @@ relations:
     to: 249
     note: 受遗诏同辅幼主，后为宣王所诛，夷三族。
     sourceId: sanguozhi-caoshuang
+disputed: true
 ---
 
 字昭伯，曹真长子。明帝在东宫，甚亲爱之。明帝寝疾，乃引爽入卧内，拜大将军，假节钺，都督中外诸军事，录尚书事，与太尉司马宣王并受遗诏辅少主。

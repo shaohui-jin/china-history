@@ -44,6 +44,7 @@ relations:
     from: 923
     to: 926
     note: 早年从军，后唐庄宗时为军卒。
+disputed: true
 ---
 
 邢州尧山人。少孤，依潞州人常氏。

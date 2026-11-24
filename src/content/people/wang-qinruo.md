@@ -44,6 +44,7 @@ relations:
     from: 1004
     to: 1022
     note: 劝真宗伪造天书、封禅泰山。
+disputed: true
 ---
 
 字定国，临江军新喻人。淳化三年进士。

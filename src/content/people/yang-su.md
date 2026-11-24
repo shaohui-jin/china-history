@@ -50,6 +50,7 @@ relations:
     strength: weak
     from: 599
     note: 与高颎争权。开皇十九年构陷高颎，致其免官。
+disputed: true
 ---
 
 弘农华阴人，出身关陇军事贵族。祖父杨暄为北魏辅国将军，父杨敷为北周汾州刺史。

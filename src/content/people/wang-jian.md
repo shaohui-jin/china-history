@@ -43,6 +43,7 @@ relations:
     from: 1259
     to: 1264
     note: 蒙哥死后，忽必烈北归争位，南宋得以延续二十年。
+disputed: true
 ---
 
 南宋名将。

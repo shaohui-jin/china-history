@@ -50,6 +50,7 @@ relations:
     from: 618
     to: 626
     note: 玄武门之变中被尉迟敬德射杀。
+disputed: true
 ---
 
 唐高祖李渊第四子，母窦氏。小字三胡。

@@ -43,6 +43,7 @@ relations:
     from: 946
     to: 947
     note: 契丹灭后晋，刘知远坐观不救，旋称帝建后汉。
+disputed: true
 ---
 
 沙陀部人，世居太原。

@@ -29,6 +29,9 @@ evaluations:
   - claim: 「纵皆贪浊，亦未及武臣一人也」这句话，奠定了宋朝重文抑武的基调。它的判断依据是五代的经验：武人割据是乱的根源，文臣贪浊只是损失钱粮。这一取舍在北宋前期有效，但长期的代价是军事积弱，最终无法应对辽、金、蒙古的军事压力。
     sourceId: songshi-taizu
     kind: dispute
+  - claim: 「杯酒释兵权」在《宋史》本纪中的记载极为简略，而《赵普传》记赵普「数劝上收兵权」的具体过程。两处合看，削兵权是赵普的建议而非太祖的独断——君臣合谋，方有宋初的军政改革。
+    sourceId: songshi-zhaopu
+    kind: influence
 relations:
   - target: zhao-pu
     type: ruler-subject

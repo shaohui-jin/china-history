@@ -27,6 +27,9 @@ evaluations:
   - claim: 程颢「天理二字却是自家体贴出来」的自述，常被理解为理学的独立创见。但也有研究指出，其思想来源相当复杂：周敦颐的宇宙论、张载的气论、二程对佛教的回应，都不可忽略。「自家体贴」强调的是体验的切己，而非无源之创。
     sourceId: songyuanxuean
     kind: dispute
+  - claim: 程颢与王安石在熙宁初曾有共事之谊，终因新法分歧而分道。理学一脉对政治的疏离，部分源于这次失败的共事经验。
+    sourceId: songshi-wanganshi-2
+    kind: influence
 relations:
   - target: zhuxi
     type: teacher-student

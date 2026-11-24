@@ -29,6 +29,9 @@ evaluations:
   - claim: 开禧三年朝廷北伐失败，起用辛弃疾为枢密都承旨，他「未受命而卒」。这一次召用，实际上是韩侂胄北伐失败后想借重他的威望。若他早十年被重用，南宋的军事局面是否会不同，是常被提出的假设，但无从验证。
     sourceId: songshi-xinqiji
     kind: dispute
+  - claim: 辛弃疾南归后长期不得重用，其《美芹十论》《九议》的系统方略始终未被采纳。他的词中「把吴钩看了，栏杆拍遍」的郁愤，正源于这种战略眼光与政治现实的落差。
+    sourceId: songshi-yuefei-2
+    kind: dispute
 relations:
   - target: yun-wenwen
     type: colleague

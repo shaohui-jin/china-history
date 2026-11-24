@@ -33,6 +33,9 @@ evaluations:
   - claim: 朱陆之辨（鹅湖之会）的核心分歧是方法论：朱熹主「道问学」，主张先博后约、格物致知；陆九渊主「尊德性」，主张「心即理」、先立其大。这场辩论三日不决，此后七百年理学与心学的分野即由此开始。二者并非简单的对错，而是对「如何成圣」的两种回答。
     sourceId: songyuanxuean
     kind: dispute
+  - claim: 朱熹对王安石的评价，是《宋史·王安石传》论赞的直接来源。他说王安石「汲汲以财利兵革为先务」——这一批评出自同为儒者的立场，比政敌的攻击更有分量。
+    sourceId: songshi-wanganshi-zan
+    kind: evaluation
 relations:
   - target: cheng-hao
     type: teacher-student

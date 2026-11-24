@@ -29,6 +29,9 @@ evaluations:
   - claim: 《宋史》本传的定评是「器识之闳伟，议论之卓荦，文章之雄隽，政事之精明，四者皆能以特立之志为之主」。这一评价把文章与政事并列，是元人修史时对苏轼地位的官方确认。
     sourceId: songshi-sushi
     kind: evaluation
+  - claim: 《宋史》记王安石「自信所见，执意不回」，这与苏轼的处境互为因果：正因为王安石不肯纳谏，反对者才只能外放贬谪。乌台诗案的政治背景，在于此。
+    sourceId: songshi-wanganshi-2
+    kind: dispute
 relations:
   - target: ouyang-xiu
     type: teacher-student

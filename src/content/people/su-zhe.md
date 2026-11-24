@@ -27,6 +27,9 @@ evaluations:
   - claim: 元祐党争中，苏辙被列入「元祐党人碑」，其著作一度遭禁。但他在文学史上的地位并未因此动摇——这与政治评价和文学评价的分野有关。
     sourceId: songshi-wenzhong
     kind: dispute
+  - claim: 苏辙的政论以稳健著称，与其兄苏轼的锋芒不同。他在元祐年间力主「调停」，反对尽废新法——这一立场在当时的党争中两面不讨好。
+    sourceId: songshi-wanganshi-2
+    kind: dispute
 relations:
   - target: su-shi
     type: sibling

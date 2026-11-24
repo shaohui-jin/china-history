@@ -22,6 +22,10 @@ evaluations:
   - claim: 「宋末三杰」的三种选择构成了一组对照：文天祥就义（殉国）、陆秀夫投海（殉君）、张世杰突围后遇飓风溺死（殉事）。三人都未能挽救南宋，但三人的方式各不相同，恰好覆盖了亡国之际士人的三种可能。
     sourceId: songshi-wenzhong
     kind: dispute
+  - claim: 《陆秀夫传》记崖山最后时刻只用「负王赴海死」五字，随后是「后宫诸臣从死者甚众」。宋亡的规模与惨烈，就藏在这句轻描淡写里。
+    sourceId: songshi-lu-xiufu
+    quote: 秀夫度不可脱，乃杖剑驱妻子入海，即负王赴海死，年四十四。
+    kind: evaluation
 relations:
   - target: wen-tianxiang
     type: colleague

@@ -27,6 +27,9 @@ evaluations:
   - claim: 徽宗与钦宗的责任分配，历来有争议。一种看法认为徽宗是根本（他留下的国防与财政已崩坏），钦宗只是接手烂摊子；另一种看法认为钦宗在位一年余的摇摆（守既不坚、和又不固）才是直接原因。两说各有依据，但都无法否认徽宗的责任更大——他统治了二十五年。
     sourceId: songshi-qinzong
     kind: dispute
+  - claim: 徽宗朝的「丰亨豫大」与蔡京的理财，是北宋灭亡的直接背景。《宋史》对秦桧「倡和误国」的批评，逻辑上与对徽宗朝君臣的批评一致：把国事的失败归于执政者的品德。
+    sourceId: songshi-qinhui-2
+    kind: dispute
 relations:
   - target: qinzong
     type: parent-child

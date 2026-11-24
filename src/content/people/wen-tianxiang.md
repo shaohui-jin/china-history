@@ -30,6 +30,10 @@ evaluations:
   - claim: 忽必烈对他的劝降持续四年，其间许以宰相之位，文天祥答「愿与一死足矣」。这段记载出自《宋史》，而成书于元末，其叙述可能经过加工。但可以确认的是：他的死在当时即震动南北，其衣带中的赞语「孔曰成仁，孟曰取义」被广泛传抄——忠义的价值，恰在敌国的认可中得到最完整的证明。
     sourceId: songshi-wentianxiang
     kind: dispute
+  - claim: 文天祥的忠义不是临难的偶然：本传记其殿试「以法天不息为对」，二十岁即已确立这一立场。四十余年后在柴市就义，是同一信念的完成。
+    sourceId: songshi-wenzhong-2
+    quote: 天祥以法天不息为对，其言万余，不为稿，一挥而成。
+    kind: influence
 relations:
   - target: lu-xiufu
     type: colleague

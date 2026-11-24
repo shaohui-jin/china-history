@@ -28,6 +28,9 @@ evaluations:
   - claim: 天书封禅是宋代政治文化的一次集体失常。大中祥符元年起，「天书」屡降，真宗东封泰山、西祀汾阴，耗资巨万，宰辅王旦、王钦若皆参与其事。这不仅是皇帝个人的心理补偿，也说明当时的士大夫群体已无力阻止一场荒诞——此后宋代对「祥瑞」的警惕，正源于此。
     sourceId: songshi-zhenzong-zan
     kind: dispute
+  - claim: 真宗朝的政治风格由太祖、太宗两朝奠定：赵普「半部《论语》」所代表的文治取向，到真宗朝已完全制度化。天书封禅的荒诞，恰恰发生在文治最成熟的时期。
+    sourceId: songshi-zhaopu
+    kind: dispute
 relations:
   - target: zhao-guangyi
     type: parent-child

@@ -26,6 +26,10 @@ evaluations:
   - claim: 秦桧南归一事，当时即有疑问：「桧与何栗、孙傅等同被拘执，今独归，必金人纵之。」这一怀疑从未被证实，也从未被排除。它之所以长期存在，是因为南归的情节（自称杀死看守夺船）在当时的技术条件下近乎不可能。
     sourceId: songshi-qinxi-lun
     kind: dispute
+  - claim: 《宋史》把秦桧列入《奸臣传》，罪状的核心是「倡和误国」「诛锄忠良」。这一评价由元人写定，但其素材来自南宋后期的官方记载——秦桧的形象，在他死后数十年才被彻底定性。
+    sourceId: songshi-qinhui-2
+    quote: 桧两据相位，凡十九年，劫制君父，包藏祸心，倡和误国。
+    kind: evaluation
 relations:
   - target: gaozong
     type: ruler-subject

@@ -29,6 +29,9 @@ evaluations:
   - claim: 「庆历和议」中元昊取消帝号、向宋称臣，但在国内仍称帝如故。这种「对外称臣、对内称帝」的双重名分，是西夏在宋辽夹缝中的生存策略——名义上的屈服换来了实际的独立与岁赐。
     sourceId: songshi-xixia
     kind: dispute
+  - claim: 李元昊称帝建夏，是三代经营的结果。宋朝对他的反应（断绝互市、兴师讨伐）屡遭失败，最终以「庆历和议」承认其实际地位——西夏的独立，是在战争中确立的。
+    sourceId: songshi-lijipeng
+    kind: dispute
 relations:
   - target: fan-zhongyan
     type: enemy

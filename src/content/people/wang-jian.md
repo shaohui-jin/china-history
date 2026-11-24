@@ -27,6 +27,9 @@ evaluations:
   - claim: 王坚的实际作用需与地形分开看。钓鱼城筑于钓鱼山，三面环江、峭壁千仞，本就极难攻取；守城的军民包括数万兵民，并非一人之功。而蒙哥的死因，《元史》只记「崩于钓鱼山」，未言具体；有称中飞石、有称病卒、有称中箭，诸说并存。把整个历史转折归于一位守将，是后世叙事简化的结果。
     sourceId: songshi-wangjian
     kind: dispute
+  - claim: 王坚守钓鱼城的事迹在《宋史·忠义传》中篇幅极短，其意义却在域外：蒙哥之死改变了蒙古帝国的走向。宋人当时并不知晓这一战的全部后果。
+    sourceId: songshi-lu-xiufu
+    kind: dispute
 relations:
   - target: mangu
     type: enemy

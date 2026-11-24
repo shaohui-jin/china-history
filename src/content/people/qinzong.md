@@ -26,6 +26,9 @@ evaluations:
     sourceId: songshi-qinzong
     quote: 靖康二年二月丁卯，金人胁帝北行。三月丁酉，金人立张邦昌为帝，国号楚。帝在虏中凡二十九年，绍兴二十六年六月庚辰，崩于五国城。
     kind: dispute
+  - claim: 靖康之变的责任在《宋史》中被分散于徽宗、钦宗与蔡京、童贯诸人。钦宗在位仅一年余，实际决策空间极小——这也是《宋史》对他评价相对宽容的原因。
+    sourceId: songshi-qinhui-2
+    kind: dispute
 relations:
   - target: huizong
     type: parent-child

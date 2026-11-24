@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的败亡源于自己的性格与宋朝的政治结构。王钦若以「城下之盟，春秋耻之」「陛下，寇准之孤注也」两句话便离间了君臣——真宗需要的是体面，而寇准给的是胜利。此后他几度起落，天禧年间又因荐丁谓而反受其害，最终贬死雷州。刚直而不通权变，在宋代文官政治中是致命的。
     sourceId: songshi-kouzhun
     kind: dispute
+  - claim: 寇准的刚直与宋代台谏制度互相成就：真宗朝之所以能容纳「寇准上殿，百僚股栗」，是因为台谏本身具有制度性的发言权。个人的性格，依托于制度的空间。
+    sourceId: songshi-zhaopu
+    kind: influence
 relations:
   - target: song-zhenzong
     type: ruler-subject

@@ -28,6 +28,10 @@ evaluations:
   - claim: 司马光身上有一个矛盾：作为史学家，他极重考异，对史料真伪分辨极细；作为政治家，他在元祐更化中却近乎一夜之间推翻前朝全部政策。史学上的审慎与政治上的彻底，是两种不同的工作方式，不能互相担保。
     sourceId: songshi-wanganshi-lun
     kind: dispute
+  - claim: 司马光的评语「平生所为，未尝有不可对人言者」是其政治立场的根基。他反对新法，不是出于利益，而是出于对「变」的怀疑——一个以「无可对人言」自律的人，很难接受以权宜之计改变成法。
+    sourceId: songshi-sima-guang
+    quote: 吾无过人者，但平生所为，未尝有不可对人言者耳。
+    kind: evaluation
 relations:
   - target: wang-anshi
     type: enemy

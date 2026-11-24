@@ -28,6 +28,9 @@ evaluations:
   - claim: 太宗即位的合法性自始受疑。「烛影斧声」见于《续资治通鉴长编》所引野史，正史并无明载，但「兄终弟及」在金匮之盟的说法下才勉强合规。这一疑案至今无定论。
     sourceId: songshi-taizu
     kind: dispute
+  - claim: 宋初的削藩与集权由太祖、太宗两朝接力完成。太宗朝继续推进「收精兵、制钱谷、夺其权」的方针，《赵普传》所记赵普的建言贯穿两朝，是这一过程的思想来源。
+    sourceId: songshi-zhaopu
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: sibling

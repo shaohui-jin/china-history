@@ -31,6 +31,10 @@ evaluations:
   - claim: 王安石的评价在近代发生了大转向：梁启超《王荆公》把他推为「三代以下唯一完人」，此后教科书长期以「改革家」定位。这一反转说明，对王安石的评价高度依赖于评价者的时代议题——南宋关心「义利之辨」，近代关心「富强」。评价本身是历史的一部分。
     sourceId: songshi-wanganshi-lun
     kind: dispute
+  - claim: 《宋史》对他的性格记载是「性强忮」「执意不回」，与传末引朱熹的批评互为表里：不是否定其才，而是否定其「自信所见」而不肯纳谏的行事方式。
+    sourceId: songshi-wanganshi-2
+    quote: 安石性强忮，遇事无可否，自信所见，执意不回。
+    kind: evaluation
 relations:
   - target: sima-guang
     type: enemy

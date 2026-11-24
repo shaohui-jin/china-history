@@ -26,6 +26,9 @@ evaluations:
     sourceId: songshi-zhuxi
     quote: 熹登第五十年，仕于外者仅九考，立朝才四十日。家故贫，少依父友刘子羽，寓建之崇安，后徙建阳之考亭。
     kind: dispute
+  - claim: 史弥远在宁宗、理宗两朝专权二十余年，其手段与秦桧类似：以「拥立之功」固位，以台谏为工具排除异己。《宋史》把二人同列奸臣，正是基于这一结构性的相似。
+    sourceId: songshi-qinhui-2
+    kind: influence
 relations:
   - target: han-tuozhou
     type: kill

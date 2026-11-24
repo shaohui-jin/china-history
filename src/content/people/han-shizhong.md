@@ -27,6 +27,9 @@ evaluations:
   - claim: 韩世忠晚年「杜门谢客，绝口不言兵」，常骑驴携酒游西湖。这一形象被后世解读为「明哲保身」，但结合岳飞之死与兵权被夺的背景，更合理的解释是：在当时的政治环境下，谈论军事本身就是危险的。
     sourceId: songshi-yuefei
     kind: dispute
+  - claim: 韩世忠与岳飞同为「中兴四将」，二人的命运却相反：一个交出兵权后闭门谢客得以善终，一个被下狱处死。《宋史·岳飞传》所记的「武臣不惜死」，在他们身上有不同的结局。
+    sourceId: songshi-yuefei-2
+    kind: dispute
 relations:
   - target: yue-fei
     type: colleague

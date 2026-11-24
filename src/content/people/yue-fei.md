@@ -28,6 +28,10 @@ evaluations:
   - claim: 《满江红》的真伪之争，至今未有定论。质疑者指出：此词不见于宋元文献，首见于明中叶；词中「贺兰山」的地理指向与岳飞北伐的路线不合。持真者则认为明初文献缺失不能证伪，且词的风格与岳飞其他作品相近。这是文学史问题，与岳飞本人的历史评价无关。
     sourceId: songshi-yuefei-lun
     kind: dispute
+  - claim: 「文臣不爱钱，武臣不惜死，天下太平矣」一语，指向的正是南宋文武两端的积弊。岳飞的军纪（「冻死不拆屋，饿死不掳掠」）与这句判断互为表里——他要求别人做到的，自己先做到了。
+    sourceId: songshi-yuefei-2
+    quote: 文臣不爱钱，武臣不惜死，天下太平矣。
+    kind: evaluation
 relations:
   - target: gaozong
     type: ruler-subject

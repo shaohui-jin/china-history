@@ -23,6 +23,9 @@ evaluations:
   - claim: 西夏的建国路径与辽、金不同：它不是靠一次军事胜利立国，而是靠三代人（李继迁、李德明、李元昊）的持续经营。这种「渐进式建国」使西夏在宋、辽两大强权之间生存了近两百年。
     sourceId: songshi-xixia
     kind: influence
+  - claim: 李德明在宋辽之间维持平衡，为李元昊的称帝积蓄了力量。《宋史》记西夏事时，常把这一家族三代（继迁、德明、元昊）的经营作为一个连续过程。
+    sourceId: songshi-lijipeng
+    kind: influence
 relations:
   - target: li-jiqian
     type: parent-child

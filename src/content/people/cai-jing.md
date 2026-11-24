@@ -27,6 +27,9 @@ evaluations:
     sourceId: songshi-wanganshi-lun
     quote: 朱熹尝论安石「以文章节行高一世，而尤以道德经济为己任。……而安石乃汲汲以财利兵革为先务，引用凶邪，排摈忠直，躁迫强戾，使天下之人，嚣然丧其乐生之心。」
     kind: dispute
+  - claim: 蔡京借「绍述」之名恢复新法，实为专权。《宋史》把熙宁新法与崇宁以后的祸乱连成一条线索，这一叙述的立场是南宋以后确立的——新法的失败被归因于执行者的品行，而非制度本身的问题。
+    sourceId: songshi-wanganshi-2
+    kind: dispute
 relations:
   - target: huizong
     type: ruler-subject

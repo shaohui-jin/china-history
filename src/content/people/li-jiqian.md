@@ -27,6 +27,9 @@ evaluations:
   - claim: 继迁一生用游击战对抗宋的正规军，「走避不常，出没无常」，使宋军疲于奔命。但也有研究指出，这种战法能保生存而不能定大局；真正使西夏立国的，是后来夺取灵州（西平府），获得黄河与河西走廊的战略支点。
     sourceId: songshi-xixia
     kind: dispute
+  - claim: 李继迁的出走与李继捧的献地是同一事件的两面。《宋史·夏国传》把二人并列记载，正是要说明：党项的分裂不是外力造成的，而是同一家族内部两种选择的产物。
+    sourceId: songshi-lijipeng
+    kind: influence
 relations:
   - target: li-yuanhao
     type: kinship

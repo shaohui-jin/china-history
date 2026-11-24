@@ -28,6 +28,9 @@ evaluations:
   - claim: 宋太祖「卧榻之侧，岂容他人鼾睡」一语，是宋初统一策略的宣言。李煜反复上书乞缓兵、请去「不名」之礼，都未能改变宋廷的既定方针——南唐的存亡不取决于它的恭顺程度，而取决于宋朝是否需要它存在。
     sourceId: songshi-taizu
     kind: influence
+  - claim: 南唐之亡在宋人叙述中常被归为李煜的「文弱」。但宋初的统一是系统性的军事行动：太祖、太宗两朝先后平定荆南、后蜀、南汉、南唐、北汉，《赵普传》所记的削藩与集权，正是支撑这一系列战争的组织基础。
+    sourceId: songshi-zhaopu
+    kind: dispute
 relations:
   - target: zhao-kuangyin
     type: enemy

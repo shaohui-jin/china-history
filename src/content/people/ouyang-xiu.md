@@ -29,6 +29,9 @@ evaluations:
   - claim: 欧阳修在庆历新政中支持范仲淹，在熙宁变法中反对青苗法，两次都不是站在「党派」的立场，而是就具体政策发言。这种独立性使他两面都不讨好——庆历时被贬滁州，熙宁时被王安石认为「所见多异」而不得重用。
     sourceId: xuzizhitongjian-qingli
     kind: dispute
+  - claim: 欧阳修在庆历新政中是范仲淹最重要的支持者。新政失败后，他写《朋党论》为「君子有党」辩护——这一立场的基础，正是范仲淹等人以身作则的公共形象。
+    sourceId: songshi-fanzhongyan
+    kind: influence
 relations:
   - target: fan-zhongyan
     type: colleague

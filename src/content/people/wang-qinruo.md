@@ -28,6 +28,9 @@ evaluations:
   - claim: 天书封禅的责任不能全归于王钦若。真宗本人「以澶渊之盟为耻」的心理是前提，王旦等宰辅的沉默与配合是条件——史料记载王旦曾被真宗以「一尊酒」收买（实为一樽珍珠）。这是一次君臣共同参与的集体自欺，王钦若只是最先说出那个方案的人。
     sourceId: songshi-wangqinruo
     kind: dispute
+  - claim: 王钦若之能进用于真宗朝，前提是宋代台谏与宰执的权力结构。他可以「以城下之盟」离间君臣，正因言路本身具有左右政局的力量——制度既能约束君主，也能被佞臣利用。
+    sourceId: songshi-zhaopu
+    kind: dispute
 relations:
   - target: kou-zhun
     type: enemy

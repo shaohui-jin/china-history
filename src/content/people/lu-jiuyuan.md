@@ -28,6 +28,9 @@ evaluations:
   - claim: 陆九渊在宋代的影响远小于朱熹：他的学说没有形成庞大的门人网络，也没有进入科举体系。他的重要性是在明代被重新发现的——王阳明把「心即理」发展为「致良知」，心学一系由此成立。这说明一个思想家的历史地位，往往取决于后世是否有人接续。
     sourceId: songyuanxuean
     kind: dispute
+  - claim: 陆九渊与朱熹的「鹅湖之会」争的是为学之方：一个主张「先立乎其大」，一个主张「格物穷理」。这一分歧在《宋史》的道学传中被完整记录，是南宋思想史的核心事件。
+    sourceId: songshi-wanganshi-zan
+    kind: dispute
 relations:
   - target: zhuxi
     type: enemy

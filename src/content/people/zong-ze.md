@@ -26,6 +26,9 @@ evaluations:
   - claim: 宗泽前后二十余次上书请高宗还都，皆不报。传统叙事把这归为「高宗怯懦」或「主和派阻挠」，但从南宋立国的现实看，高宗朝廷的根基在江南，北还意味着放弃已有的财政与人事基础。这是结构性选择，不是个人性格问题。
     sourceId: songshi-gaozong
     kind: dispute
+  - claim: 宗泽留守东京，屡请高宗还都，二十余疏而不得报。他的困境与岳飞的困境同源：南宋初年的军事抵抗受制于朝廷的和战之争，而非兵力不足。
+    sourceId: songshi-yuefei-2
+    kind: dispute
 relations:
   - target: yue-fei
     type: superior

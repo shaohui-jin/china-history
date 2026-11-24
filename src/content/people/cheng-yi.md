@@ -27,6 +27,9 @@ evaluations:
   - claim: 程颐之学在崇宁年间被列为「伪学」，著作遭禁，门人多被牵连。但他死后不到百年，朱熹集其大成，程朱理学在元代成为官学。一个被禁的学派最终成为正统，这一反转说明：思想的生命力不取决于当时的政治地位。
     sourceId: songyuanxuean
     kind: dispute
+  - claim: 程颐在元祐年间任崇政殿说书，以严苛的礼法约束年幼的哲宗，招致不满。理学家与皇权的关系，从一开始就充满张力——这一点与王安石「得君行道」的路径形成对照。
+    sourceId: songshi-wanganshi-2
+    kind: dispute
 relations:
   - target: cheng-hao
     type: sibling

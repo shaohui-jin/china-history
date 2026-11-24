@@ -24,6 +24,9 @@ evaluations:
   - claim: 王猛临终遗言是前秦唯一的救命方案：「晋虽僻陋吴越，乃正朔相承……愿不以晋为图。鲜卑、西羌，我之仇敌，终为人患，宜渐除之。」苻坚两条都没听——既伐晋，又未除鲜卑。淝水之败后，慕容垂、姚苌果然相继反叛。
     sourceId: jinshu-liuyao
     kind: dispute
+  - claim: 富弼与范仲淹同为庆历新政的主持者。范仲淹「置义庄以赡族人」的做法，代表庆历一代士大夫的共同取向：先从宗族与地方的实务做起，再推及国家制度。
+    sourceId: songshi-fanzhongyan
+    kind: influence
 relations:
   - target: wang-meng
     type: ruler-subject

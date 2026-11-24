@@ -29,6 +29,10 @@ evaluations:
   - claim: 「先天下之忧而忧」的提出，往往被理解为道德宣言，但它的语境是庆历新政失败之后。范仲淹在政治挫败中确立这一立场，其含义不只是「关心天下」，更是「不为个人进退所动」——这是对贬谪处境的一种自我安顿。
     sourceId: xuzizhitongjian-qingli
     kind: dispute
+  - claim: 「先天下之忧而忧」并非空言：本传记其「非宾客不重肉」「妻子衣食仅能自充」，同时以俸禄置义庄赡养族人。名句的分量，来自这种具体的生活方式。
+    sourceId: songshi-fanzhongyan
+    quote: 仲淹内刚外和，性至孝……其后虽贵，非宾客不重肉。
+    kind: evaluation
 relations:
   - target: wang-anshi
     type: teacher-student

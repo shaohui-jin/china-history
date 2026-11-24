@@ -26,6 +26,9 @@ evaluations:
   - claim: 赵普的负面同样明显：他「寡学术」，且屡有贪贿之迹（如收受吴越王钱俶所赠瓜子金）。宋太祖曾当面斥其「汝不读书」。这说明宋初的制度设计者，本身并不是一个道德完人。
     sourceId: songshi-taizu
     kind: dispute
+  - claim: 「半部《论语》治天下」是后世的增饰。本传原文只说他晚年「手不释卷」，读的是《论语》二十篇，「处决如流」。这一细节被宋人笔记逐步放大，最终成为赵普的形象标签。
+    sourceId: songshi-zhaopu
+    kind: dispute
 relations:
   - target: zhao-kuangyin
     type: ruler-subject

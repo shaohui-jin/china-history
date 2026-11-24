@@ -26,6 +26,10 @@ evaluations:
   - claim: 后世对张世杰「结阵海上」的评价多为失着。但若考虑到宋军当时已无陆地可守、无港口可依，结阵至少能集中兵力、保护幼帝。真正的失误不在结阵，而在没有预留取水与退路——这是执行细节的问题，不是战略方向的问题。
     sourceId: yuanshi-zhanghongfan
     kind: dispute
+  - claim: 张世杰拒降之语「吾知降而生且富贵，但义不可移耳」，与陆秀夫的赴海构成南宋终局的两面：一个选择死，一个选择战后覆舟而死。二人合传，正为此故。
+    sourceId: songshi-zhangshijie
+    quote: 吾知降而生且富贵，但义不可移耳。
+    kind: evaluation
 relations:
   - target: lu-xiufu
     type: colleague

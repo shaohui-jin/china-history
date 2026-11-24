@@ -1,0 +1,12 @@
+id: zhanguo
+name: 战国
+aliases:
+  - 战国时代
+span:
+  from:
+    year: -475
+  to:
+    year: -222
+order: 3
+period: pre-imperial
+note: 三家分晋至秦灭六国前一年。列国兼并加剧，百家争鸣，变法图强成为存亡所系。

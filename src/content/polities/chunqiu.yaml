@@ -1,0 +1,13 @@
+id: chunqiu
+name: 春秋
+aliases:
+  - 东周
+  - 春秋时代
+span:
+  from:
+    year: -770
+  to:
+    year: -476
+order: 2
+period: pre-imperial
+note: 周室东迁至三家分晋前夜。孔子作《春秋》所纪之年，故名。霸主迭兴，礼乐征伐自诸侯出。

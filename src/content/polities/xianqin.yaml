@@ -1,0 +1,13 @@
+id: xianqin
+name: 先秦
+aliases:
+  - 三代
+  - 夏商周
+span:
+  from:
+    year: -2070
+  to:
+    year: -771
+order: 1
+period: pre-imperial
+note: 夏、商、西周三代。文献与考古互证有限，纪年多存异说；此处取夏始年与西周东迁之年为界。

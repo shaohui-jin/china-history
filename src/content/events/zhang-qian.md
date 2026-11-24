@@ -21,6 +21,13 @@ significance: 5
 summary: 张骞两次出使西域，历十三年，被匈奴扣留十余年而持汉节不失。其行被司马迁称为「凿空」，首次系统打通中原与中亚的通道，丝绸之路自此开通。
 sources:
   - shiji-xiongnu
+  - hanshu-zhangqian
+corroboration:
+  primary: shiji-xiongnu
+  secondary:
+    - hanshu-zhangqian
+  agreement: consistent
+  note: 《史记·大宛列传》与《汉书·张骞传》同记两次出使的路线与年数，互校一致；《汉书》补出「知水草处，军得以不乏」一节，说明张骞的西域知识曾用于军事实战。
 ---
 
 ## 背景

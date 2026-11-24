@@ -19,6 +19,15 @@ summary: 宦官王振挟明英宗亲征瓦剌，于土木堡大败，二十万�
 sources:
   - mingshi-qiujin
 ---
+  - mingshi-yuqian-lun
+  - mingshi-chengzu
+corroboration:
+  primary: mingshi-qiujin
+  secondary:
+    - mingshi-yuqian-lun
+    - mingshi-chengzu
+  agreement: consistent
+  note: 《于谦传》记土木之变后的北京保卫战，传末赞语评其功业；《成祖本纪》记此前北征的设置。三者合看可见明中叶边防的转折。
 
 ## 背景
 

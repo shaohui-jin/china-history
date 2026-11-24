@@ -18,6 +18,13 @@ summary: 刘裕两度北伐，灭南燕、后秦，收复洛阳、长安。此�
 sources:
   - songshu-wudi
 ---
+  - songshu-liuyu-north
+corroboration:
+  primary: songshu-wudi
+  secondary:
+    - songshu-liuyu-north
+  agreement: consistent
+  note: 《宋书》武帝本纪记北伐的军事过程，同卷后半记入长安后的处置与「三秦父老复睹汉官」的反应，二者同出本纪而详略互补。
 
 ## 背景
 

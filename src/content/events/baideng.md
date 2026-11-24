@@ -21,6 +21,13 @@ summary: 汉高祖亲征匈奴，被冒顿围于白登山七日。赖陈平秘�
 sources:
   - shiji-xiongnu
 ---
+  - hanshu-xiongnu
+corroboration:
+  primary: shiji-xiongnu
+  secondary:
+    - hanshu-xiongnu
+  agreement: consistent
+  note: 《史记·匈奴列传》与《汉书·匈奴传》同记白登之围，「堕指者十二三」「七日」等细节互校一致；《汉书》对冒顿诱敌的部署记述更详。
 
 ## 背景
 

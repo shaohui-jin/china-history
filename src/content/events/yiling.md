@@ -20,6 +20,13 @@ summary: 刘备以报关羽之仇为名东征孙权，陆逊以火烧连营破�
 sources:
   - sanguozhi-zhuge
 ---
+  - sanguozhi-xianzhu-zan
+corroboration:
+  primary: sanguozhi-zhuge
+  secondary:
+    - sanguozhi-xianzhu-zan
+  agreement: partial
+  note: 夷陵之败的直接记载散见《先主传》与《陆逊传》，《诸葛亮传》只记其战后「叹法孝直若在」之语。二传对败因的着墨不同：一记战事，一记事后反思。
 
 ## 背景
 

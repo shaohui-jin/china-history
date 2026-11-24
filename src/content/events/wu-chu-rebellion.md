@@ -20,6 +20,15 @@ summary: 汉景帝用晁错之议削藩，吴王刘濞联合楚、赵等七国�
 sources:
   - hanshu-wudi
 ---
+  - hanshu-liujin
+  - shiji-liubi
+corroboration:
+  primary: hanshu-wudi
+  secondary:
+    - hanshu-liujin
+    - shiji-liubi
+  agreement: consistent
+  note: 《诸侯王表》序分析王国坐大的制度根源，《吴王濞列传》记七国之乱的过程，《武帝纪》记此后的推恩令。三者构成削藩的完整链条。
 
 ## 背景
 

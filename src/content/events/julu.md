@@ -19,6 +19,15 @@ summary: 项羽破釜沉舟，以楚军大破秦军主力于巨鹿，秦之军�
 sources:
   - shiji-liusi
 ---
+  - shiji-xiangyu
+  - shiji-songyi
+corroboration:
+  primary: shiji-liusi
+  secondary:
+    - shiji-xiangyu
+    - shiji-songyi
+  agreement: consistent
+  note: 《项羽本纪》记巨鹿之战的经过与宋义被斩，《李斯列传》记同一年赵高诬杀李斯的朝政变动。二者同年发生，构成军事与内政的双重崩溃。
 
 ## 背景
 

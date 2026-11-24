@@ -21,8 +21,17 @@ participants:
 significance: 4
 summary: 李世民伏兵玄武门，杀太子李建成、齐王李元吉，逼李渊立己为太子。两个月后受禅即位。此变为贞观之治的开端，也成为唐代皇位继承反复流血的先例。
 sources:
-  - tangshi-taizong
+  - jiutangshu-taizong
 ---
+  - jiutangshu-gaozu-2
+  - jiutangshu-liyuanji-2
+corroboration:
+  primary: jiutangshu-taizong
+  secondary:
+    - jiutangshu-gaozu-2
+    - jiutangshu-liyuanji-2
+  agreement: partial
+  note: 《太宗本纪》记政变的日期与参与者，《隐太子传》从建成一方叙述，立场完全对立。二者同记一事而褒贬相反，是唐初国史改写的典型例证。
 
 ## 背景
 
@@ -57,4 +66,4 @@ sources:
 
 **历史的两种叙述**——传世的《高祖实录》《太宗实录》皆成于贞观年间，其中建成、元吉的形象被系统贬低。而 1970 年代出土的《常何墓碑》等材料，显示玄武门之变实为一次精心策划的政变，「世民被迫自卫」的说法难以成立。
 
-玄武门之变的意义，在于它为唐代的皇位继承开了一个恶劣的先例：此后的唐太宗、唐高宗、武则天、唐中宗、唐玄宗，几乎每一代都有政变或疑似政变。唐朝的宫廷政治，从此再无宁日。[^tangshi-taizong]
+玄武门之变的意义，在于它为唐代的皇位继承开了一个恶劣的先例：此后的唐太宗、唐高宗、武则天、唐中宗、唐玄宗，几乎每一代都有政变或疑似政变。唐朝的宫廷政治，从此再无宁日。[^jiutangshu-taizong]

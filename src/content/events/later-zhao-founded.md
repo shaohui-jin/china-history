@@ -19,6 +19,15 @@ summary: 羯人石勒原为汉赵部将，据襄国自立，称赵王，史称�
 sources:
   - jinshu-liuyao
 ---
+  - jinshu-liuyuan-zai
+  - jinshu-liuyuan
+corroboration:
+  primary: jinshu-liuyao
+  secondary:
+    - jinshu-liuyuan-zai
+    - jinshu-liuyuan
+  agreement: consistent
+  note: 《刘元海载记》记汉国建立，《刘聪载记》记其扩张，《刘曜载记》记其改国号为赵。三篇载记构成汉赵政权的完整链条。
 
 ## 背景
 

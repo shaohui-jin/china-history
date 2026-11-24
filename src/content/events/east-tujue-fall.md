@@ -21,8 +21,17 @@ participants:
 significance: 4
 summary: 唐太宗遣李靖、李勣分道北伐，李靖夜袭阴山，俘颉利可汗，东突厥亡。四夷君长共尊太宗为「天可汗」。此为唐初对北方游牧政权的决定性胜利。
 sources:
-  - tangshi-taizong
+  - jiutangshu-taizong
 ---
+  - jiutangshu-lijing-2
+  - jiutangshu-tujue
+corroboration:
+  primary: jiutangshu-taizong
+  secondary:
+    - jiutangshu-lijing-2
+    - jiutangshu-tujue
+  agreement: consistent
+  note: 《太宗本纪》记战役结果与「天可汗」之号，《李靖传》记夜袭定襄的战术，《突厥传》从突厥一方记「不虞官军之至」。三处记载互相印证。
 
 ## 背景
 
@@ -70,4 +79,4 @@ sources:
 
 **意义**——唐灭东突厥，是唐初最重要的军事胜利：它消除了北方的最大威胁，也使太宗的「天可汗」地位得以确立。
 
-而其制度处理（羁縻州府 + 保留部落组织 + 用其贵族为官）的方式，成为唐代处理民族关系的基本模式，直至安史之乱后才逐渐失效。[^tangshi-taizong]
+而其制度处理（羁縻州府 + 保留部落组织 + 用其贵族为官）的方式，成为唐代处理民族关系的基本模式，直至安史之乱后才逐渐失效。[^jiutangshu-taizong]

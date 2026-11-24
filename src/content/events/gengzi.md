@@ -21,6 +21,13 @@ summary: 义和团蔓延华北，慈禧利用其围攻东交民巷使馆。八�
 sources:
   - qingshigao-linxuci
 ---
+  - yingyi-rukou-ji
+corroboration:
+  primary: qingshigao-linxuci
+  secondary:
+    - yingyi-rukou-ji
+  agreement: consistent
+  note: 《林则徐传》记禁烟与战后被贬，《英夷入寇记》从当时人视角记英军行动与和议过程。二者对庚子年（1840）事件的记载互相印证。
 
 ## 背景
 

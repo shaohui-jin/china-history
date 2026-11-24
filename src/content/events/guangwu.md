@@ -17,6 +17,13 @@ summary: 刘秀即位于鄗南，定都洛阳，重建汉朝。此后十二年�
 sources:
   - houhanshu-guangwudi
 ---
+  - hanshu-wangmang
+corroboration:
+  primary: houhanshu-guangwudi
+  secondary:
+    - hanshu-wangmang
+  agreement: consistent
+  note: 《光武帝纪》记昆阳之战与新莽的崩溃，《王莽传》从新朝一方记其覆亡过程。二者对昆阳之战的结果记载一致。
 
 ## 背景
 

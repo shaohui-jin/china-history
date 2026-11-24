@@ -178,14 +178,34 @@ for (const f of listDir('events')) {
 /* ---------------- 可信度：跨书互证与争议块 ---------------- */
 
 /**
- * 书目判据：史料 id 的第一段。
+ * 书目判据：优先用史料条目的 `title`（书名本身），拿不到才退回 id 前缀。
  *
- * `sanguozhi-chibi` 与 `sanguozhi-zhuge` 同属「三国志」，
+ * 为什么不能只用 id 前缀：曾出现过 `tangshi-taizong.yaml` 里
+ * `title: 旧唐书` 的情况——id 前缀写成 `tangshi`，于是它和
+ * `jiutangshu-*` 被当成两本书，同书冒充互证就这样漏过了校验。
+ * 现在按 title 归一，`旧唐书` 无论 id 怎么写都算同一本。
+ *
+ * `sanguozhi-chibi` 与 `sanguozhi-zhuge` 同属《三国志》；
  * `suishu-yangdi` 与 `chenshu-houzhu` 分属两本。
  * 这是启发式判断，不追求万全——只用来拦「同一本书引两次冒充互证」。
  */
+const bookTitleCache = new Map<string, string>();
+
 function bookOf(sourceId: string): string {
-  return sourceId.split('-')[0];
+  const cached = bookTitleCache.get(sourceId);
+  if (cached) return cached;
+
+  // 目录在脚本顶部已扫过一遍，这里按需读一次即可
+  const path = join(ROOT, 'sources', `${sourceId}.yaml`);
+  let key = sourceId.split('-')[0];
+  if (existsSync(path)) {
+    const fm = readFrontmatter(path);
+    const title = fm ? pick(fm.__raw as string, 'title') : null;
+    // title 里的书名号与副题去掉，只留书名主干
+    if (title) key = title.replace(/[《》]/g, '').replace(/[·・].*$/, '').trim();
+  }
+  bookTitleCache.set(sourceId, key);
+  return key;
 }
 
 /** 解析 corroboration 块（yaml 缩进结构，手工扫一遍） */

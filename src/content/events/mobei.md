@@ -24,6 +24,15 @@ summary: 汉武帝倾国之力，卫青、霍去病各率五万骑深入漠北�
 sources:
   - hanshu-wudi
 ---
+  - hanshu-jiaoyi
+  - shiji-xiongnu
+corroboration:
+  primary: hanshu-wudi
+  secondary:
+    - hanshu-jiaoyi
+    - shiji-xiongnu
+  agreement: consistent
+  note: 《武帝纪》记漠北之战的诏令与战果，《食货志》记支撑此役的财政基础，《史记·匈奴列传》从匈奴一方记其远遁。三者合看可见战役的全貌。
 
 ## 背景
 

@@ -21,6 +21,13 @@ summary: 康熙十二年决意撤藩，吴三桂起兵反清，尚可喜、耿�
 sources:
   - qingshigao-kangxi
 ---
+  - qingshigao-wusangui
+corroboration:
+  primary: qingshigao-kangxi
+  secondary:
+    - qingshigao-wusangui
+  agreement: partial
+  note: 《圣祖本纪》从朝廷方记平叛的决策与调度，《吴三桂传》从叛军方记起兵名义与内情。二者对战争进程的记载一致，对性质的判断完全对立。
 
 ## 背景
 

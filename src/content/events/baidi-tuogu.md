@@ -21,6 +21,13 @@ summary: 刘备夷陵大败后退守白帝城，病重时召诸葛亮托孤，�
 sources:
   - sanguozhi-zhuge
 ---
+  - sanguozhi-xianzhu-zan
+corroboration:
+  primary: sanguozhi-zhuge
+  secondary:
+    - sanguozhi-xianzhu-zan
+  agreement: consistent
+  note: 《诸葛亮传》记托孤的具体言辞，《先主传》评语「举国托孤于诸葛亮，而心神无贰，诚君臣之至公」是对同一事件的后世定评。
 
 ## 背景
 

@@ -18,6 +18,13 @@ summary: 后周世宗柴荣即位之初，北汉与契丹联军南下，双方�
 sources:
   - zizhitongjian-wudai
 ---
+  - xinwudaishi-shizong
+corroboration:
+  primary: zizhitongjian-wudai
+  secondary:
+    - xinwudaishi-shizong
+  agreement: consistent
+  note: 《通鉴》与《新五代史·周世宗本纪》同记右军溃降、世宗亲冒矢石、战后斩樊爱能等三事，细节一致而文字互异。
 
 ## 背景
 

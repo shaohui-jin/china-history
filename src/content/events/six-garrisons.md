@@ -19,6 +19,13 @@ summary: 北魏末年，北方六镇军民因待遇不公而起兵，席卷北�
 sources:
   - beishi-xiaowen
 ---
+  - weishu-xiaowen
+corroboration:
+  primary: beishi-xiaowen
+  secondary:
+    - weishu-xiaowen
+  agreement: consistent
+  note: 六镇之乱是孝文帝迁都后北边失衡的结果。《北史》与《魏书》的孝文帝纪同记迁都与汉化措施，可互校其与六镇兵变的因果关系。
 
 ## 背景
 

@@ -22,6 +22,13 @@ summary: 隋炀帝三次征讨高句丽，动员兵力逾百万，民夫倍之�
 sources:
   - suishu-yangdi
 ---
+  - suishu-liuxing
+corroboration:
+  primary: suishu-yangdi
+  secondary:
+    - suishu-liuxing
+  agreement: consistent
+  note: 《炀帝纪》记三次征辽的诏令与出兵规模，《食货志》记「转输不息，民力凋尽」的后果。二者一记决策、一记代价。
 
 ## 背景
 

@@ -17,6 +17,13 @@ summary: 阿史那土门破柔然，自立为伊利可汗，建突厥汗国。�
 sources:
   - zizhitongjian-zhenguan
 ---
+  - zhoushu-tujue
+corroboration:
+  primary: zizhitongjian-zhenguan
+  secondary:
+    - zhoushu-tujue
+  agreement: consistent
+  note: 《通鉴》与《周书·突厥传》皆记土门求婚被拒、遂自立为伊利可汗的经过，「东自辽海」的疆域记述亦同。
 
 ## 背景
 

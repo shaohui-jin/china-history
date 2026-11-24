@@ -23,6 +23,13 @@ summary: 苻坚在前秦丞相王猛的辅佐下，十年间灭前燕、前凉�
 sources:
   - jinshu-liuyao
 ---
+  - jinshu-murongjun
+corroboration:
+  primary: jinshu-liuyao
+  secondary:
+    - jinshu-murongjun
+  agreement: partial
+  note: 前秦统一北方的过程散见《晋书》诸载记。刘曜、慕容儁两载记分记被灭两方的情况，与苻坚一方的进程互为背景。
 
 ## 背景
 

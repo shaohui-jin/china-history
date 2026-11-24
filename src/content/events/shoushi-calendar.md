@@ -17,6 +17,13 @@ summary: 郭守敬、王恂等主持改历，创制简仪、高表等仪器，�
 sources:
   - yuanshi-shizu
 ---
+  - yuanshi-taizong
+corroboration:
+  primary: yuanshi-shizu
+  secondary:
+    - yuanshi-taizong
+  agreement: partial
+  note: 《世祖本纪》记授时历的颁行与郭守敬的工作，《太宗本纪》记此前耶律楚材的庚午元历。二者一记元代历法的完成、一记其前身。
 
 ## 背景
 

@@ -17,6 +17,13 @@ summary: 冒顿以鸣镝训练部众，射杀其父头曼单于，自立为单�
 sources:
   - shiji-xiongnu
 ---
+  - hanshu-xiongnu
+corroboration:
+  primary: shiji-xiongnu
+  secondary:
+    - hanshu-xiongnu
+  agreement: consistent
+  note: 两书皆记冒顿以鸣镝弑父、东灭东胡、西击月氏，《汉书》文字多本《史记》而略有增删，控弦之士「三十余万」的数目相同。
 
 ## 背景
 

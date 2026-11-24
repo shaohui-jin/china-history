@@ -21,6 +21,13 @@ significance: 5
 summary: 前秦苻坚率百万大军南下，东晋以谢玄八万北府兵迎战。晋军请秦军稍退，秦军一退不可复止，晋军乘势掩杀，大获全胜。此役保住江南，奠定南北对峙格局。
 sources:
   - zizhitongjian-feishui
+  - jinshu-fujian
+corroboration:
+  primary: zizhitongjian-feishui
+  secondary:
+    - jinshu-fujian
+  agreement: consistent
+  note: 通鉴与《晋书·苻坚载记》皆记秦军后撤时阵脚自乱、晋军乘势掩杀，兵力与溃败过程一致；「草木皆兵」的细节只见于《晋书》，属秦方视角的补充。
 ---
 
 太元八年八月，前秦苻坚下诏大举南征，「民每十丁遣一兵」，号称百万。「良家子年二十已下，有材勇者，皆拜羽林郎。」

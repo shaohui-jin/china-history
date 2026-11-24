@@ -23,6 +23,13 @@ summary: 鲜卑慕容部所建政权，自慕容皝称燕王（337）至前秦�
 sources:
   - jinshu-liuyao
 ---
+  - jinshu-murongjun
+corroboration:
+  primary: jinshu-liuyao
+  secondary:
+    - jinshu-murongjun
+  agreement: partial
+  note: 《刘曜载记》从前赵一方记与前燕的交涉，《慕容儁载记》从前燕一方记其建国与慕容恪主政。双方对同一时期的记载各有侧重，立场对立。
 
 ## 背景
 

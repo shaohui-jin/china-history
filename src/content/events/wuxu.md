@@ -24,6 +24,13 @@ summary: 光绪帝下「明定国是」诏，一百零三天内颁新政诏令�
 sources:
   - qingshigao-linxuci
 ---
+  - liangqichao-yinbingshi
+corroboration:
+  primary: qingshigao-linxuci
+  secondary:
+    - liangqichao-yinbingshi
+  agreement: partial
+  note: 《清史稿》从清廷立场记戊戌变法的失败，《戊戌政变记》从变法派立场记其经过与政变内情。二者对同一百日的记载立场根本对立。
 
 ## 背景
 

@@ -19,6 +19,13 @@ summary: 汉武帝命落下闳、邓平、司马迁等改历，成《太初历�
 sources:
   - hanshu-wudi
 ---
+  - hanshu-wudi-jiao
+corroboration:
+  primary: hanshu-wudi
+  secondary:
+    - hanshu-wudi-jiao
+  agreement: consistent
+  note: 《武帝纪》记太初改历的诏令与「以正月为岁首」的规定，元封元年的北巡记载则说明武帝对天象与正朔的政治重视。
 
 ## 背景
 

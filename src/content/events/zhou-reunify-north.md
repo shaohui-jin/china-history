@@ -22,6 +22,13 @@ summary: 周武帝宇文邕两度伐齐，建德六年破邺城，俘后主高�
 sources:
   - beishi-xiaowen
 ---
+  - zhoushu-yuwentai
+corroboration:
+  primary: beishi-xiaowen
+  secondary:
+    - zhoushu-yuwentai
+  agreement: partial
+  note: 北周统一北方的基础由宇文泰奠定。《周书·文帝纪》记其府兵与六官制度，《北史》则从北朝全局记此后周灭齐的进程。二者一记制度建设、一记历史结果。
 
 ## 背景
 

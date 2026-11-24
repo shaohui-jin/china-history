@@ -19,6 +19,13 @@ summary: 孝武帝元修与高欢决裂，西奔长安投宇文泰。高欢另�
 sources:
   - beishi-xiaowen
 ---
+  - beishi-xiaowu
+corroboration:
+  primary: beishi-xiaowen
+  secondary:
+    - beishi-xiaowu
+  agreement: consistent
+  note: 《北史》孝文帝纪记分裂前的积弊，孝武帝纪记元修西奔与高欢另立东魏，二纪同书而分记分裂的两端，时间线可衔接。
 
 ## 背景
 

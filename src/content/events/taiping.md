@@ -22,6 +22,13 @@ significance: 5
 summary: 洪秀全以拜上帝会起事于金田，建号太平天国，两年定都南京。此后十余年，席卷十八省，为中国历史上规模最大的农民战争。1864 年天京陷落，运动失败。
 sources:
   - qingshigao-linxuci
+  - zengguofan-jiaoshu
+corroboration:
+  primary: qingshigao-linxuci
+  secondary:
+    - zengguofan-jiaoshu
+  agreement: partial
+  note: 清廷官方记载与曾国藩家书对太平军的规模、湘军的战法记述一致，但对战事胜负的评价立场不同：《清史稿》称「贼」，家书则更多记录湘军自身的困境与损耗。
 ---
 
 ## 背景

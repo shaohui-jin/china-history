@@ -21,6 +21,13 @@ summary: 陈胜、吴广率戍卒九百人于大泽乡揭竿而起，喊出「�
 sources:
   - shiji-chenshe
 ---
+  - hanshu-xiangyu
+corroboration:
+  primary: shiji-chenshe
+  secondary:
+    - hanshu-xiangyu
+  agreement: consistent
+  note: 《史记·陈涉世家》与《汉书·陈胜项籍传》同记大泽乡起事，「并杀两尉」「号为张楚」等关键细节一致，可互校。
 
 二世元年七月，发闾左适戍渔阳九百人，屯大泽乡。陈胜、吴广皆次当行，为屯长。
 

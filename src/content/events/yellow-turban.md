@@ -23,6 +23,13 @@ summary: 张角以太平道聚众数十万，以「苍天已死，黄天当立�
 sources:
   - sanguozhi-chibi
 ---
+  - houhanshu-huangjin
+corroboration:
+  primary: houhanshu-zhangjiao
+  secondary:
+    - houhanshu-huangjin
+  agreement: consistent
+  note: 《皇甫嵩传》记张角的组织与口号，《皇甫嵩朱儁列传》记官军平定过程，二传同出《后汉书》而分记起义双方，可对照阅读。
 
 ## 背景
 

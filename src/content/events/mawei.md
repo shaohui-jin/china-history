@@ -23,6 +23,13 @@ summary: 安史之乱中玄宗仓皇出逃，至马嵬驿禁军哗变，杀杨�
 sources:
   - zizhitongjian-anlushan
 ---
+  - jiutangshu-yangyuhuan
+corroboration:
+  primary: zizhitongjian-anlushan
+  secondary:
+    - jiutangshu-yangyuhuan
+  agreement: consistent
+  note: 《通鉴》记马嵬驿兵变的经过与时间，《杨贵妃传》记其生前地位与死后葬处，二者对同一事件的记载不矛盾，且互为背景。
 
 ## 背景
 

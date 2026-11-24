@@ -18,6 +18,13 @@ summary: 明廷调集十万余军四路进攻后金，努尔哈赤以「凭尔�
 sources:
   - mingshi-shenzong-saerhu
 ---
+  - mingshi-saerhu-2
+corroboration:
+  primary: mingshi-shenzong-saerhu
+  secondary:
+    - mingshi-saerhu-2
+  agreement: consistent
+  note: 《杨镐传》从主帅角度记四路进兵的部署与溃败，《李如柏传》从一路将领角度记「独全师而退」。两传互补，可还原明军的实际损失。
 
 ## 背景
 

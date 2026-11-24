@@ -20,6 +20,13 @@ summary: 诸葛亮第五次北伐，与司马懿对峙于渭南。积劳成疾�
 sources:
   - sanguozhi-zhuge
 ---
+  - sanguozhi-zhuge-ping
+corroboration:
+  primary: sanguozhi-zhuge
+  secondary:
+    - sanguozhi-zhuge-ping
+  agreement: consistent
+  note: 《诸葛亮传》记其卒于五丈原军中，传末陈寿的评语「盖应变将略，非其所长欤」是对其军事能力的判断，二者一记事实一作评价。
 
 ## 背景
 

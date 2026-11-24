@@ -20,6 +20,13 @@ summary: 康熙二十二年，施琅率水师二万、战船三百，澎湖一�
 sources:
   - qingshigao-kangxi
 ---
+  - qingshigao-shizu
+corroboration:
+  primary: qingshigao-kangxi
+  secondary:
+    - qingshigao-shizu
+  agreement: consistent
+  note: 《圣祖本纪》记澎湖之战与郑克塽降附，《世祖本纪》记此前清廷对郑氏的海禁与招抚政策。二纪合看可见平台湾的长期背景。
 
 ## 背景
 

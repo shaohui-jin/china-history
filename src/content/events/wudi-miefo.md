@@ -18,6 +18,13 @@ summary: 周武帝宇文邕下诏废佛道二教，经像悉毁，沙门道士�
 sources:
   - beishi-xiaowen
 ---
+  - weishu-shizu
+corroboration:
+  primary: beishi-xiaowen
+  secondary:
+    - weishu-shizu
+  agreement: consistent
+  note: 《魏书·世祖纪》记太武灭佛的诏书原文，《北史·魏本纪》则从北朝通史的角度记同一事件。二书所记诏令文字基本一致。
 
 ## 背景
 

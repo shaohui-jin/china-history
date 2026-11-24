@@ -21,6 +21,13 @@ summary: 后周世宗柴荣在位五年半，推行全面改革：整顿禁军�
 sources:
   - zizhitongjian-wudai
 ---
+  - xinwudaishi-shizong
+corroboration:
+  primary: zizhitongjian-wudai
+  secondary:
+    - xinwudaishi-shizong
+  agreement: consistent
+  note: 《通鉴》与《新五代史·周世宗本纪》同记高平之战后斩樊爱能、整顿军纪，以及此后的一系列改革，「斩爱能等以肃军政」的记载一致。
 
 ## 背景
 

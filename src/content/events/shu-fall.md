@@ -24,6 +24,13 @@ summary: 魏军三路伐蜀，邓艾偷渡阴平，直取成都。后主刘禅�
 sources:
   - sanguozhi-zhuge
 ---
+  - sanguozhi-liushan-ping
+corroboration:
+  primary: sanguozhi-zhuge
+  secondary:
+    - sanguozhi-liushan-ping
+  agreement: partial
+  note: 蜀汉之亡的直接记载见《后主传》，而《诸葛亮传》所记的北伐消耗是此前数十年的背景。二传对灭亡原因各有侧重：一记投降经过，一记长期国力损耗。
 
 ## 背景
 

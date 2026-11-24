@@ -17,6 +17,13 @@ summary: 东汉和帝时，宦官蔡伦总结前人经验，以树皮、麻头�
 sources:
   - houhanshu-cailun
 ---
+  - houhanshu-cai-lun-huanzhe
+corroboration:
+  primary: houhanshu-cailun
+  secondary:
+    - houhanshu-cai-lun-huanzhe
+  agreement: consistent
+  note: 《蔡伦传》记造纸的具体原料与奏上年份，《宦者列传序》交代东汉宦官参政的制度背景，二者一为个人事迹、一为制度脉络。
 
 ## 背景
 

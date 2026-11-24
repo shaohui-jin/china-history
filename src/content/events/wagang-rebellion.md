@@ -23,6 +23,13 @@ summary: 隋末规模最大的农民起义军之一。起于瓦岗寨，李密�
 sources:
   - suishu-yangdi
 ---
+  - jiutangshu-limim
+corroboration:
+  primary: suishu-yangdi
+  secondary:
+    - jiutangshu-limim
+  agreement: partial
+  note: 《炀帝纪》从隋廷立场记瓦岗军的兴起为「盗贼」，《李密传》从瓦岗一方记其组织与战略。二者对同一支力量的记载互为反面。
 
 ## 背景
 

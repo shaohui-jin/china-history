@@ -17,6 +17,13 @@ summary: 后突厥白眉可汗为回纥骨力裴罗所杀，突厥汗国彻底�
 sources:
   - zizhitongjian-zhenguan
 ---
+  - jiutangshu-bilge
+corroboration:
+  primary: zizhitongjian-zhenguan
+  secondary:
+    - jiutangshu-bilge
+  agreement: consistent
+  note: 《通鉴》唐纪与《旧唐书·突厥传》同记后突厥的复国与衰亡，暾欲谷为谋主一事两处一致。
 
 **后突厥的复兴**——东突厥第一汗国于 630 年为唐所灭后，突厥余部在唐的羁縻统治下存续五十年。
 

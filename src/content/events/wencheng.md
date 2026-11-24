@@ -18,8 +18,15 @@ participants:
 significance: 4
 summary: 唐太宗以宗室女文成公主嫁吐蕃赞普松赞干布。公主携佛像、经卷、工艺、农种入藏，促成汉藏文化交流。此后两百年，唐蕃「舅甥之国」，和战相间。
 sources:
-  - tangshi-taizong
+  - jiutangshu-taizong
 ---
+  - jiutangshu-songtsen
+corroboration:
+  primary: jiutangshu-taizong
+  secondary:
+    - jiutangshu-songtsen
+  agreement: consistent
+  note: 《太宗本纪》记文成公主出嫁的年份与礼仪，《吐蕃传》记松赞干布「执子婿之礼甚恭」的迎亲细节。二者一记唐廷、一记吐蕃。
 
 ## 背景
 
@@ -60,4 +67,4 @@ sources:
 
 **意义**——文成公主入藏，是汉藏关系史上最具象征意义的事件。其意义不在于「和亲」本身（唐与吐蕃的战争此后仍持续两百年），而在于它开启的文化交流。
 
-而文成公主在藏地的形象，此后不断被神化：她被尊为「绿度母」的化身，成为藏传佛教中的重要人物。这一形象的形成，本身就是文化交融的产物。[^tangshi-taizong]
+而文成公主在藏地的形象，此后不断被神化：她被尊为「绿度母」的化身，成为藏传佛教中的重要人物。这一形象的形成，本身就是文化交融的产物。[^jiutangshu-taizong]

@@ -18,6 +18,13 @@ summary: 侯景攻陷台城后，梁武帝萧衍被囚于文德殿，饮食渐�
 sources:
   - liangshu-houjing
 ---
+  - zizhitongjian-houjing
+corroboration:
+  primary: liangshu-houjing
+  secondary:
+    - zizhitongjian-houjing
+  agreement: consistent
+  note: 《梁书·侯景传》与《通鉴》梁纪同记台城陷落与侯景见梁武帝的对答，细节高度一致而文字互异。
 
 ## 背景
 

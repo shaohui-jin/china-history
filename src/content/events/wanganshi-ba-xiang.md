@@ -19,6 +19,13 @@ summary: 熙宁九年，王安石因爱子王雱之死与变法派内讧，再�
 sources:
   - songshi-wanganshi
 ---
+  - songshi-wanganshi-zan
+corroboration:
+  primary: songshi-wanganshi
+  secondary:
+    - songshi-wanganshi-zan
+  agreement: consistent
+  note: 《王安石传》记两次罢相的具体经过，传末论赞引朱熹的批评作总评。前者为事实，后者为评价，二者同出《宋史》而层次不同。
 
 熙宁七年，天下大旱，郑侠上《流民图》，神宗恻然，王安石首次罢相，知江宁府。次年复相。
 

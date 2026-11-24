@@ -19,6 +19,13 @@ summary: 曹丕代汉后，刘备以「汉室宗亲」身份于成都即皇帝�
 sources:
   - sanguozhi-zhuge
 ---
+  - sanguozhi-xianzhu-zan
+corroboration:
+  primary: sanguozhi-xianzhu
+  secondary:
+    - sanguozhi-xianzhu-zan
+  agreement: consistent
+  note: 《先主传》记称帝的群臣劝进与即位仪节，传末评语则从史家角度评价其一生，二者对同一人物的记载互为补充。
 
 ## 背景
 

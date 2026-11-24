@@ -17,26 +17,35 @@ sig=5: 37 条，需 ≥800 字 + 四小节   → 不达标 0 条
 sig=4: 60 条，需 ≥500 字 + 三小节   → 不达标 0 条
 人物:  274 条，需 ≥600 字            → 不达标 0 条
 人物:  带出处评价                     → 0 条缺失
+人物:  两个不同书目                   → 135 条缺失（P9，warn 不拦 CI）
 ```
 
-**全部达标。** 这是本阶段的目标状态，后续新增内容须维持同一标准。
+**字数与小节全部达标。** 这是本阶段的目标状态，后续新增内容须维持同一标准。
+书目多样性是唯一未达标的硬指标，见 `PENDING-FEATURES.md` P9。
 
 ## 四个覆盖指标
 
 | 指标 | 现状 | 怎么查 |
 |---|---|---|
 | 事件脚注 `[^source]` | 100 / 100 | `rg -c '\[\^' src/content/events/` |
-| 事件跨书互证 `corroboration` | 100 / 100 | `rg -c '^corroboration:' src/content/events/` |
-| 人物第二出处 | 274 / 274 | 见下方脚本 |
+| 事件跨书互证 `corroboration` | 100 / 100（`primary` 与 `secondary` 不同书） | `rg -c '^corroboration:' src/content/events/` |
+| 人物第二出处 | **139 / 274**（135 人只有一本书，见 P9） | 见下方脚本 |
 | 行内白话注释 `{文言\|白话}` | 事件 53 / 100，**人物 0 / 274** | `rg -c '\{[^\|{}]+\|[^\|{}]+\}' src/content/{events,people}/` |
 
 gloss 这一项**未完成**：语法、样式、触屏脚本都已就绪，缺的是内容。缺口量化见 `PENDING-FEATURES.md` P4。
 
-人物第二出处（`evaluations` 至少引两个不同书目）：
+人物第二出处（`evaluations` 至少引两个不同**书名**）：
 
 ```bash
-node -e "const{readdirSync,readFileSync}=require('fs');let one=0;for(const f of readdirSync('src/content/people')){const t=readFileSync('src/content/people/'+f,'utf8').replace(/\r/g,'');const m=t.match(/^evaluations:\n([\s\S]*?)(?=^\S|\Z)/m);if(!m)continue;const ids=new Set((m[1].match(/sourceId:\s*(\S+)/g)||[]).map(x=>x.split(':')[1].trim()));if(ids.size<2)one++}console.log('仅单一书目:',one)"
+node -e "const{readdirSync,readFileSync}=require('fs');const T={};for(const f of readdirSync('src/content/sources')){const t=readFileSync('src/content/sources/'+f,'utf8').replace(/\r/g,'');const id=(t.match(/^id:\s*(\S+)/m)||[])[1];const ti=(t.match(/^title:\s*(.+)$/m)||[])[1];if(id&&ti)T[id]=ti.trim()}let one=0;for(const f of readdirSync('src/content/people')){const t=readFileSync('src/content/people/'+f,'utf8').replace(/\r/g,'');const m=t.match(/^evaluations:\s*\n((?:[ \t]+.*\n?)+)/m);if(!m)continue;const ids=[...m[1].matchAll(/^\s+sourceId:\s*(\S+)/gm)].map(x=>x[1]);const books=new Set(ids.map(i=>T[i]).filter(Boolean));if(books.size<2)one++}console.log('单一书目:',one)"
 ```
+
+**必须按 `title` 归一**。按 `sourceId` 去重是错的：`sanguozhi-caocao` 与
+`sanguozhi-zhuge` 是同一本书的不同卷，会被算成两个书目 —— 旧版脚本正是这么
+数出「274/274」的，实际有 135 人只引了一本书（见 P9）。
+
+注意 `readFileSync` 后要 `.replace(/\r/g,'')`：Windows 工作区是 CRLF，
+`^evaluations:\s*\n((?:[ \t]+.*\n?)+)/m` 在 CRLF 下只捕获首行，同样是静默失效。
 
 ## 已完成的样板（照此格式写）
 

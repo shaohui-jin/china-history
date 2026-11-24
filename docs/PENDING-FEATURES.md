@@ -19,7 +19,7 @@
 | 行内白话注释（gloss） | 53 个含引用块的事件全部已加，共 342 处。语法写在 `CONTENT-SCHEMA.md` 第 8.1 节。**人物页也已接入触屏脚本**（`components/GlossScript.astro`，两页共用）。 |
 | 事件跨书互证 | 100/100，且**全部是真正不同的书目**。曾有 21 条是「同书异卷冒充互证」，已换独立史料。 |
 | 事件脚注 | 100/100 全部有 claim 级 `[^source]`。 |
-| 人物第二出处 | 274/274 位人物的 `evaluations` 都引了至少两个不同书目。 |
+| 人物第二出处 | **139 / 274** 位人物的 `evaluations` 引了两个以上不同书目（按书名归一）。曾有 135 人只有一本书，见 P9。此前「274/274」的说法是按 `sourceId` 去重得出的，同书异卷被算成了不同书目。 |
 | **YAML 泄露（严重）** | 曾因注入脚本吞掉 frontmatter 闭合行，**42 个事件页把 sources/corroboration 的 YAML 当正文显示**。已全部修复，构建产物零泄露。 |
 | **争议块 disputes** | 从 1 条补到 **8 条**（chibi、jingnan、xuanwu-gate-tang、tumu-fort、sanfan、diaoyu-fortress、qianyan-rise-fall、yiling）。`DisputeDiff` 不再空转。 |
 | **`certainty` 联动** | 8 条有 disputes 的事件标 `certainty: disputed`，「史料有异说」徽章开始生效；`validate` 增加了联动检查。 |
@@ -118,30 +118,56 @@ nan-liang 4 人
 
 **验收**：生平时间线为空的人物 = 0；缺 `from` 的关系 ≤ 5 条。
 
-### P8 18 条史料零引用
+### P8 12 条史料零引用
 
 有 `quote`、有 `composed`，但没有任何 `[^id]` / `sourceId` / `sources` 指向：
 
 ```
-hanshu-simaqian               《汉书》卷六十二·司马迁传
-hanshu-suchuo                 《汉书》卷五十四·苏武传
-houhanshu-zhuge               《后汉书》卷七十五·刘焉袁术吕布列传·论
-jinshu-xiongnu                《晋书》卷九十七·四夷传·北狄匈奴
-jiutangshu-tongdian-jiedushi  《旧唐书》卷一〇六·李林甫杨国忠传
-mingshi-hai-rui               《明史》卷二二六·海瑞传
-nianerzha-1/2/4               《廿二史札记》卷一 / 卷二 / 卷二十
-shiji-liusi-liezhuan          《史记》卷八十七·李斯列传·太史公曰
-shiji-shangjun-liezhuan       《史记》卷六十八·商君列传·太史公曰
-shishuoxinyu                  《世说新语》德行篇
-songshi-duzong                《宋史》卷四十六·度宗本纪·赞
-suishu-taizu                  《隋书》卷一·高祖本纪
-suishu-xiongnu                《隋书》卷八十四·北狄传·突厥
-xintangshu-tujue              《新唐书》卷二一五上·突厥传上
-yuanshi-guoshoujing           《元史》卷一六四·郭守敬传
-yuanshi-lixiang               《元史》卷五十二·历志一·授时历议
+hanshu-simaqian          《汉书》卷六十二·司马迁传
+mingshi-hai-rui          《明史》卷二二六·海瑞传
+nianerzha-4              《廿二史札记》卷二十·唐代宦官之祸
+shiji-liusi-liezhuan     《史记》卷八十七·李斯列传·太史公曰
+shiji-shangjun-liezhuan  《史记》卷六十八·商君列传·太史公曰
+shishuoxinyu             《世说新语》德行篇
+songshi-duzong           《宋史》卷四十六·度宗本纪·赞
+suishu-taizu             《隋书》卷一·高祖本纪
+suishu-xiongnu           《隋书》卷八十四·北狄传·突厥
+xintangshu-tujue         《新唐书》卷二一五上·突厥传上
+yuanshi-guoshoujing      《元史》卷一六四·郭守敬传
+yuanshi-lixiang          《元史》卷五十二·历志一·授时历议
 ```
 
 多数是「太史公曰 / 传赞」类评论，正好可补对应人物的 `evaluations`。**验收**：零引用史料 ≤ 5 条。
+
+### P9 135 人评价只有单一书目
+
+`evaluations` 条数够（每人 2–4 条），但**按书名归一后只出自一本书**。
+同一本书的不同卷次 id 各不相同（`sanguozhi-caocao` / `sanguozhi-zhuge` /
+`sanguozhi-guanyu`），此前按 `sourceId` 去重，于是「四段全引自《三国志》」
+被算成了四个书目 —— 文档长期声称的「274/274 每人 ≥ 2 个不同书目」就是这么来的。
+
+分布（按唯一那本书）：
+
+```
+宋史 26   晋书 21   清史稿 19   三国志 18   明史 17   元史 6
+隋书 6    辽史 5    金史 5      旧五代史 3  汉书 3    宋书 3
+旧唐书 2  资治通鉴 1
+```
+
+即 **135 人单一书目，139 人达标**。前五本书（宋史 / 晋书 / 清史稿 / 三国志 / 明史）
+就占了 101 人 —— 这些朝代的正史是本传的唯一出处，要补第二书目必须另找
+史评类材料（《廿二史札记》《读通鉴论》、别史、传赞）。
+
+**判据**：`validate` 的 `bookOf()` 读史料条目的 `title`，`《后汉书》` 无论 id
+写成 `houhanshu-zhangjiao` 还是 `houhanshu-huangjin` 都算同一本（同书异卷不算互证）。
+
+**为什么是 warn 不是 error**：存量 135 人，一次性让 CI 变红没有意义，只能挡住
+新增的坏数据。修完后应升为 error，届时「单人单书」进不来。
+
+**怎么修**：从 P8 的 12 条闲置史料起手（「太史公曰 / 传赞」正好是评语），
+再按缺席书目的分布补新史料。优先三国、明、宋、清四个重灾区。
+
+**验收**：单一书目人物 ≤ 5。
 
 ---
 
@@ -168,10 +194,11 @@ yuanshi-lixiang               《元史》卷五十二·历志一·授时历议
 | 内容规模 | 274 人物 / 100 事件 / 25 政权 / 354 史料 |
 | 构建产物 | 404 个 HTML，其中 399 页进 Pagefind 索引（首页 / 时间线 / 图谱 / 检索 / styleguide 不入索引） |
 | 事件脚注覆盖 | **100 / 100** |
-| 事件跨书互证 | **100 / 100**（全部为不同书目） |
+| 事件跨书互证 | **100 / 100**（按书名归一，`primary` 与 `secondary` 不同书） |
 | 事件争议块 | **8 / 100**（有真实史料分歧的已全部覆盖） |
 | 事件行内注释 | 53 个含引用块的事件，342 处；**人物侧 0 处**（见 P4） |
-| 人物带出处评价 | **274 / 274**（每人 ≥ 2 个不同书目） |
+| 人物带出处评价 | **274 / 274**（人人有出处） |
+| 人物第二书目 | **139 / 274**（135 人只有一本书，见 P9） |
 | 人物 `disputed` 标记 | 116 / 274（评价存在真实分歧） |
 | 人物字数 | 全部 ≥ 600 字 |
 | sig=5 事件 | 37 条，全部 ≥ 800 字 + 四小节 |

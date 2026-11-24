@@ -16,6 +16,17 @@ seal: |-
   刘
   知远
 summary: 后汉开国皇帝。沙陀部人，后晋河东节度使。契丹灭晋后，刘知远称帝于太原，国号汉，旋入汴京。在位仅一年，然其「不救后晋、坐观成败」的策略极为冷静。
+evaluations:
+  - claim: 欧阳修的评语兼含褒贬：「高祖之为人也，沉厚寡言，慎重有谋」，同时又讥其「方且称臣于契丹以求立」。一个能冷静坐观后晋覆亡的人，也毫不犹豫地向契丹称臣——这是他政治性格的两面。
+    sourceId: xinwudaishi-liuzhiyuan
+    quote: 高祖之为人也，沉厚寡言，慎重有谋。……晋之亡也，天下皆以契丹为不义，而高祖方且称臣于契丹以求立。
+    kind: evaluation
+  - claim: 他的策略是五代最冷静的一次政治计算。契丹灭晋时，他拥兵河东而不救；契丹北撤后，他才称帝入汴，并迅速驱逐契丹留守。不费一战而得中原，代价是对契丹的表面称臣与对后晋的坐视——在五代的政治逻辑中，这是最有效率的选择。
+    sourceId: xinwudaishi-liuzhiyuan
+    kind: influence
+  - claim: 后汉是五代最短命的王朝，仅四年。刘知远在位一年即卒，其子刘承祐猜忌功臣，诛杀郭威全家，逼反郭威，后汉遂亡。这一结局说明：靠军事机会主义建立的政权，若无制度基础，连一代都传不下去。
+    sourceId: xinwudaishi-liuzhiyuan
+    kind: dispute
 relations:
   - target: shi-jingtang
     type: ruler-subject

@@ -18,6 +18,17 @@ seal: |-
   李
   克用
 summary: 唐末河东节度使，晋王。沙陀部人，一目眇，号「独眼龙」。破黄巢复长安，功第一。与朱温争雄二十余年，为后唐的奠基者。
+evaluations:
+  - claim: 欧阳修的评语是两面并记：「性严急，左右有小过辄死，然御军严整，士卒乐为之用。」严酷与得军心并存，这是沙陀军事集团首领的典型性格。
+    sourceId: xinwudaishi-li-keyong
+    quote: 克用性严急，左右有小过辄死，然御军严整，士卒乐为之用。
+    kind: evaluation
+  - claim: 他在唐末的关键功绩是破黄巢、复长安。中和三年（883）沙陀骑兵入援，李克用率军连败黄巢，收复长安，「功第一」，被封为河东节度使、晋王。河东（太原）由此成为沙陀集团的基地，后唐、后晋、后汉三朝皆出于此系。
+    sourceId: xinwudaishi-li-keyong
+    kind: influence
+  - claim: 他与朱温的对峙持续二十余年而始终未能取胜。上源驿之变（884）朱温设宴谋害他，从此结为死仇；此后潞州、泽州数次交锋，双方互有胜负。李克用临终以三矢付李存勖（一矢讨刘仁恭、一矢击契丹、一矢灭朱温），可见其毕生未竟之志——他的历史意义，更多是由儿子完成的。
+    sourceId: xinwudaishi-li-keyong
+    kind: dispute
 relations:
   - target: zhu-wen
     type: enemy

@@ -19,7 +19,7 @@ participants:
     role: victim
   - personId: liu-che
     role: leader
-significance: 5
+significance: 4
 summary: 汉武帝倾国之力，卫青、霍去病各率五万骑深入漠北，大破匈奴主力。霍去病封狼居胥，匈奴远遁，「漠南无王庭」。此役为汉匈战争的最高潮。
 sources:
   - hanshu-wudi

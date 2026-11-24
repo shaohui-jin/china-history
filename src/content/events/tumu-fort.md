@@ -14,7 +14,7 @@ participants:
     role: leader
   - personId: wang-zhen
     role: victim
-significance: 5
+significance: 4
 summary: 宦官王振挟明英宗亲征瓦剌，于土木堡大败，二十万明军覆没，英宗被俘。于谦临危拥立景帝，率军民保卫北京，击退瓦剌。此为明朝由盛转衰之始。
 sources:
   - mingshi-qiujin

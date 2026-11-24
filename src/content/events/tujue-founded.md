@@ -12,7 +12,7 @@ categories:
 participants:
   - personId: ashina-tumen
     role: leader
-significance: 5
+significance: 4
 summary: 阿史那土门破柔然，自立为伊利可汗，建突厥汗国。此后其弟木杆可汗西破嚈哒、东服契丹，疆域东至辽海、西抵里海，为蒙古高原首个横跨欧亚的游牧帝国。
 sources:
   - zizhitongjian-zhenguan

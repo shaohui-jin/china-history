@@ -16,7 +16,7 @@ participants:
     role: leader
   - personId: sima-guang
     role: victim
-significance: 5
+significance: 4
 summary: 宋神宗支持王安石推行青苗、免役、市易、保甲、方田均税诸法，以理财整军求富国强兵。新旧党争由此展开，绵延至北宋之亡。
 sources:
   - songshi-wanganshi

@@ -18,7 +18,7 @@ participants:
     role: leader
   - personId: yue-fei
     role: victim
-significance: 5
+significance: 4
 summary: 宋金议和：宋向金称臣，岁贡银绢各二十五万，以东起淮水、西至大散关为界。岳飞于此前后被杀。南宋偏安之局由此确定，延续至端平元年。
 sources:
   - songshi-yuefei

@@ -16,7 +16,7 @@ participants:
     role: leader
   - personId: jianwen
     role: victim
-significance: 5
+significance: 4
 summary: 建文帝削藩，燕王朱棣以「清君侧」为名起兵，历四年而下南京，建文帝下落不明。朱棣即位，改元永乐，迁都北京，明朝政治格局为之一变。
 sources:
   - mingshi-chengzu

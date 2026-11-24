@@ -10,7 +10,7 @@ polityIds:
 categories:
   - military
   - political
-significance: 5
+significance: 4
 summary: 宋蒙联军灭金于蔡州，金亡。宋理宗不听劝谏，遣军收复三京（端平入洛），为蒙古所败。宋蒙战争自此开始，四十五年后南宋亡。
 sources:
   - songshi-wenzhong

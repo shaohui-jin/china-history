@@ -15,7 +15,7 @@ participants:
     role: leader
   - personId: lu-xun
     role: leader
-significance: 5
+significance: 4
 summary: 刘备以报关羽之仇为名东征孙权，陆逊以火烧连营破之，蜀军大败。刘备退守白帝城，次年病卒。三国鼎立之势自此定型，蜀汉再无力争夺荆州。
 sources:
   - sanguozhi-zhuge

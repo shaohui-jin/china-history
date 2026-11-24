@@ -14,7 +14,7 @@ categories:
 participants:
   - personId: yuan-hong
     role: participant
-significance: 5
+significance: 4
 summary: 北魏末年，北方六镇军民因待遇不公而起兵，席卷北方。北魏调用柔然兵镇压，然乱后六镇军人集团崛起，高欢、宇文泰皆出于此，最终导致北魏分裂为东西魏。
 sources:
   - beishi-xiaowen

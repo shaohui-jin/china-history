@@ -16,7 +16,7 @@ participants:
     role: leader
   - personId: wu-guang
     role: leader
-significance: 5
+significance: 4
 summary: 陈胜、吴广率戍卒九百人于大泽乡揭竿而起，喊出「王侯将相宁有种乎」，建张楚政权。中国历史上第一次大规模农民起义，秦之覆亡自此始。
 sources:
   - shiji-gaozu

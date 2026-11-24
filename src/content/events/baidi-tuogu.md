@@ -16,7 +16,7 @@ participants:
     role: leader
   - personId: liu-shan
     role: participant
-significance: 5
+significance: 4
 summary: 刘备夷陵大败后退守白帝城，病重时召诸葛亮托孤，言「若嗣子可辅则辅之，如其不才，君可自取」。诸葛亮涕泣受命。此为中国政治史上最著名的托孤。
 sources:
   - sanguozhi-zhuge

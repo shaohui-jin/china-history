@@ -15,7 +15,7 @@ participants:
     role: victim
   - personId: sima-yi
     role: leader
-significance: 5
+significance: 4
 summary: 诸葛亮第五次北伐，与司马懿对峙于渭南。积劳成疾，八月卒于五丈原军中。「出师未捷身先死」，蜀汉北伐自此终止，蜀汉政权进入守成阶段。
 sources:
   - sanguozhi-zhuge

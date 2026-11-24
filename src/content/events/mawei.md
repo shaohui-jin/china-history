@@ -18,7 +18,7 @@ participants:
     role: victim
   - personId: yang-yuhuan
     role: victim
-significance: 5
+significance: 4
 summary: 安史之乱中玄宗仓皇出逃，至马嵬驿禁军哗变，杀杨国忠，逼死杨贵妃。玄宗被迫继续西行，太子李亨北走灵武即位。唐由盛转衰的政治分水岭。
 sources:
   - zizhitongjian-anlushan

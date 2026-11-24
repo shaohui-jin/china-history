@@ -16,7 +16,7 @@ participants:
     role: leader
   - personId: li-hongzhang
     role: participant
-significance: 5
+significance: 4
 summary: 义和团蔓延华北，慈禧利用其围攻东交民巷使馆。八国联军入京，慈禧挟光绪西逃西安。1901 年订《辛丑条约》：赔款四亿五千万两，本息合计近十亿两。
 sources:
   - qingshigao-linxuci

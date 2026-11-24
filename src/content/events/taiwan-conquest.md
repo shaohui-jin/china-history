@@ -15,7 +15,7 @@ participants:
     role: leader
   - personId: zheng-chenggong
     role: victim
-significance: 5
+significance: 4
 summary: 康熙二十二年，施琅率水师二万、战船三百，澎湖一战破郑军，郑克塽降。设台湾府隶福建省，台湾正式纳入中央政权行政管辖。此为中国历史上的关键节点。
 sources:
   - qingshigao-kangxi

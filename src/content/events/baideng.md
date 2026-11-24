@@ -16,7 +16,7 @@ participants:
     role: victim
   - personId: modu
     role: leader
-significance: 5
+significance: 4
 summary: 汉高祖亲征匈奴，被冒顿围于白登山七日。赖陈平秘计得脱，此后汉匈和亲，汉岁奉匈奴絮缯酒米，开汉初七十年「和亲」之局。
 sources:
   - shiji-xiongnu

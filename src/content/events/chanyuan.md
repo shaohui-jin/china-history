@@ -12,7 +12,7 @@ polityIds:
 categories:
   - political
   - military
-significance: 5
+significance: 4
 summary: 辽圣宗与萧太后大举南下，兵临澶州。宋真宗亲征，宋军以床子弩射杀辽将萧挞凛，双方议和：宋岁输绢二十万匹、银十万两，约为兄弟之国。此后宋辽百余年无大战。
 sources:
   - xuzizhitongjian-chanyuan

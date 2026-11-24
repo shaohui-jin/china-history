@@ -17,7 +17,7 @@ participants:
     role: participant
   - personId: yuwen-kai
     role: participant
-significance: 5
+significance: 4
 summary: 隋炀帝三次征讨高句丽，动员兵力逾百万，民夫倍之。第一次因指挥失误与后勤崩溃而全军覆没，后两次亦无功。三次征辽耗尽了隋的国力，成为隋末大乱的直接导火索。
 sources:
   - suishu-yangdi

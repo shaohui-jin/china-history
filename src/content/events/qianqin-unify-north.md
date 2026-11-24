@@ -18,7 +18,7 @@ participants:
     role: participant
   - personId: murong-chui
     role: participant
-significance: 5
+significance: 4
 summary: 苻坚在前秦丞相王猛的辅佐下，十年间灭前燕、前凉、代国，统一北方。其「混一六合」的功业为十六国之最，然淝水一败，帝国随即瓦解。这也是十六国时期唯一一次接近统一的机会。
 sources:
   - jinshu-liuyao

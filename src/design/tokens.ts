@@ -53,13 +53,16 @@ export const fontSize = {
   '5xl': '3.75rem', // 60px 封面数字
 } as const;
 
-/** 字重：中文只有 regular 与 medium 两档可用，中间值会显得脏。
+/**
+ * 字重。
  *
- * semibold 必须是 500，不能是 600：字体文件只有 400/500 两档，
- * 声明 600 会让浏览器做**合成加粗**（synthetic bold）—— 视觉上是
- * 「描边变粗的楷体」，与真正的 Medium 不同，且各浏览器算法不一致。
- * 同时 build-fonts.ts 把 medium 声明成 `font-weight: 500 700` 区间，
- * 这样即使第三方样式写了 600/700 也命中真字体而非合成。 */
+ * 整站已改为系统字体（见下方 fontFamily 注释），系统楷体通常只有
+ * 单字重，所以这里不再区分 500/600：任何「比正文粗一点」的需求
+ * 都落到 500，避免浏览器做合成加粗（synthetic bold）——
+ * 那是「描边变粗的字」，与真正的 Medium 字形不同，且各浏览器算法不一致。
+ *
+ * bold 保留 700，仅用于确实需要强对比的极少数位置（如印章式标记）。
+ */
 export const fontWeight = {
   regular: 400,
   medium: 500,

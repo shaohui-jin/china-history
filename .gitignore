@@ -7,6 +7,11 @@ dist/
 # 字体源文件缓存（已不使用 webfont，此项保留以防有人重新引入自托管字体）
 .cache/
 
+# 自托管字体的产物：整站走系统字体后不再生成。
+# 加这条是防止旧脚本重新跑一遍后，500KB 的 woff2 被误提交进来。
+public/fonts/
+src/styles/fonts.generated.css
+
 # 构建产物，由 npm run tokens 生成
 src/styles/tokens.generated.css
 

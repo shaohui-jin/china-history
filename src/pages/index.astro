@@ -6,12 +6,8 @@
 import Base from '../layouts/Base.astro';
 import TimelineCanvas from '../components/timeline/TimelineCanvas.vue';
 import TimelineVertical from '../components/timeline/TimelineVertical.vue';
-import {
-  getTimelineData,
-  loadIndex,
-  getEgoNetwork,
-} from '../lib/content';
-import { homePage, timelineByBreakpoint, graphByBreakpoint } from '../design/pages';
+import { getTimelineData, loadIndex } from '../lib/content';
+import { homePage, timelineByBreakpoint } from '../design/pages';
 import { shortYear, shortRange } from '../lib/time';
 import { url } from '../lib/url';
 
@@ -59,9 +55,6 @@ const people = [...index.people.values()].sort((a, b) => a.data.name.localeCompa
 const featured = [...timeline.items]
   .sort((a, b) => b.significance - a.significance)
   .slice(0, homePage.featureEventCount);
-
-// 首页嵌入的关系网：以诸葛亮为中心，一跳
-const graph = await getEgoNetwork(['zhuge-liang'], 1, 40);
 
 const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.data.order);
 ---

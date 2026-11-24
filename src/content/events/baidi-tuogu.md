@@ -20,14 +20,15 @@ significance: 4
 summary: 刘备夷陵大败后退守白帝城，病重时召诸葛亮托孤，言「若嗣子可辅则辅之，如其不才，君可自取」。诸葛亮涕泣受命。此为中国政治史上最著名的托孤。
 sources:
   - sanguozhi-zhuge
----
   - sanguozhi-xianzhu-zan
+  - houhanshu-xianzhu
 corroboration:
   primary: sanguozhi-zhuge
   secondary:
-    - sanguozhi-xianzhu-zan
+    - houhanshu-xianzhu
   agreement: consistent
-  note: 《诸葛亮传》记托孤的具体言辞，《先主传》评语「举国托孤于诸葛亮，而心神无贰，诚君臣之至公」是对同一事件的后世定评。
+  note: 《三国志·诸葛亮传》记托孤的原话，《后汉书》成于南朝宋、据诸家后汉史修撰，独立记载刘备在荆州的信义之名。二者对刘备托孤的动机可互相印证。
+---
 
 ## 背景
 

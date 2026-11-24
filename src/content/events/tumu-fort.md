@@ -18,16 +18,16 @@ significance: 4
 summary: 宦官王振挟明英宗亲征瓦剌，于土木堡大败，二十万明军覆没，英宗被俘。于谦临危拥立景帝，率军民保卫北京，击退瓦剌。此为明朝由盛转衰之始。
 sources:
   - mingshi-qiujin
----
   - mingshi-yuqian-lun
-  - mingshi-chengzu
+  - mingshi-jingdi
+  - guoque-yongle
 corroboration:
   primary: mingshi-qiujin
   secondary:
-    - mingshi-yuqian-lun
-    - mingshi-chengzu
+    - guoque-yongle
   agreement: consistent
-  note: 《于谦传》记土木之变后的北京保卫战，传末赞语评其功业；《成祖本纪》记此前北征的设置。三者合看可见明中叶边防的转折。
+  note: 《明史·于谦传》记北京保卫战的过程，《国榷》为明末清初私家编年史，据实录与邸报写成，保留了「言南迁者，可斩也」的原话。二者来源不同而事实一致。
+---
 
 ## 背景
 

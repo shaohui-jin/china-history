@@ -23,7 +23,6 @@ significance: 4
 summary: 光绪帝下「明定国是」诏，一百零三天内颁新政诏令百余道：废八股、办学堂、裁冗官、奖工商。慈禧发动政变，囚光绪，杀六君子，新政尽废。
 sources:
   - qingshigao-linxuci
----
   - liangqichao-yinbingshi
 corroboration:
   primary: qingshigao-linxuci
@@ -31,6 +30,7 @@ corroboration:
     - liangqichao-yinbingshi
   agreement: partial
   note: 《清史稿》从清廷立场记戊戌变法的失败，《戊戌政变记》从变法派立场记其经过与政变内情。二者对同一百日的记载立场根本对立。
+---
 
 ## 背景
 

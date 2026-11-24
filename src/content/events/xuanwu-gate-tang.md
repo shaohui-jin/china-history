@@ -22,16 +22,16 @@ significance: 4
 summary: 李世民伏兵玄武门，杀太子李建成、齐王李元吉，逼李渊立己为太子。两个月后受禅即位。此变为贞观之治的开端，也成为唐代皇位继承反复流血的先例。
 sources:
   - jiutangshu-taizong
----
   - jiutangshu-gaozu-2
   - jiutangshu-liyuanji-2
+  - zizhitongjian-sui-tang
 corroboration:
   primary: jiutangshu-taizong
   secondary:
-    - jiutangshu-gaozu-2
-    - jiutangshu-liyuanji-2
+    - zizhitongjian-sui-tang
   agreement: partial
-  note: 《太宗本纪》记政变的日期与参与者，《隐太子传》从建成一方叙述，立场完全对立。二者同记一事而褒贬相反，是唐初国史改写的典型例证。
+  note: 《旧唐书·太宗本纪》记政变的日期与参与者，《通鉴》隋唐之际部分以唐实录为底本而经考异，叙述较平实。二者对同一事件的详略与立场不同。
+---
 
 ## 背景
 

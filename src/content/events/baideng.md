@@ -20,7 +20,6 @@ significance: 4
 summary: 汉高祖亲征匈奴，被冒顿围于白登山七日。赖陈平秘计得脱，此后汉匈和亲，汉岁奉匈奴絮缯酒米，开汉初七十年「和亲」之局。
 sources:
   - shiji-xiongnu
----
   - hanshu-xiongnu
 corroboration:
   primary: shiji-xiongnu
@@ -28,6 +27,7 @@ corroboration:
     - hanshu-xiongnu
   agreement: consistent
   note: 《史记·匈奴列传》与《汉书·匈奴传》同记白登之围，「堕指者十二三」「七日」等细节互校一致；《汉书》对冒顿诱敌的部署记述更详。
+---
 
 ## 背景
 

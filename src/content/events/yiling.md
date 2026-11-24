@@ -19,14 +19,16 @@ significance: 4
 summary: 刘备以报关羽之仇为名东征孙权，陆逊以火烧连营破之，蜀军大败。刘备退守白帝城，次年病卒。三国鼎立之势自此定型，蜀汉再无力争夺荆州。
 sources:
   - sanguozhi-zhuge
----
   - sanguozhi-xianzhu-zan
+  - sanguozhi-fasheng
+  - zizhitongjian-chibi-yiling
 corroboration:
   primary: sanguozhi-zhuge
   secondary:
-    - sanguozhi-xianzhu-zan
+    - zizhitongjian-chibi-yiling
   agreement: partial
-  note: 夷陵之败的直接记载散见《先主传》与《陆逊传》，《诸葛亮传》只记其战后「叹法孝直若在」之语。二传对败因的着墨不同：一记战事，一记事后反思。
+  note: 《诸葛亮传》只记战后「叹法孝直若在」之语，《通鉴》魏纪以编年体详记夷陵之战的过程与陆逊的判断。二者一记事后反思、一记战事本身。
+---
 
 ## 背景
 

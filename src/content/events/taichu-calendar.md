@@ -18,14 +18,15 @@ significance: 4
 summary: 汉武帝命落下闳、邓平、司马迁等改历，成《太初历》，以正月为岁首，确立二十四节气入历。此历行用近两百年，为中国历法史的重要奠基。
 sources:
   - hanshu-wudi
----
   - hanshu-wudi-jiao
+  - shiji-taiqian
 corroboration:
   primary: hanshu-wudi
   secondary:
-    - hanshu-wudi-jiao
+    - shiji-taiqian
   agreement: consistent
-  note: 《武帝纪》记太初改历的诏令与「以正月为岁首」的规定，元封元年的北巡记载则说明武帝对天象与正朔的政治重视。
+  note: 《汉书·武帝纪》记太初改历的诏令与「以正月为岁首」，《史记·太史公自序》记司马迁参与改历的经过。二者一为政令、一为当事人自述。
+---
 
 ## 背景
 

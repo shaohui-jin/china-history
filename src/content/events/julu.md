@@ -18,16 +18,16 @@ significance: 4
 summary: 项羽破釜沉舟，以楚军大破秦军主力于巨鹿，秦之军事力量自此崩溃。同一年，赵高诬杀李斯，秦廷自毁栋梁。
 sources:
   - shiji-liusi
----
   - shiji-xiangyu
   - shiji-songyi
+  - hanshu-yiwenzhi
 corroboration:
-  primary: shiji-liusi
+  primary: shiji-xiangyu
   secondary:
-    - shiji-xiangyu
-    - shiji-songyi
+    - hanshu-yiwenzhi
   agreement: consistent
-  note: 《项羽本纪》记巨鹿之战的经过与宋义被斩，《李斯列传》记同一年赵高诬杀李斯的朝政变动。二者同年发生，构成军事与内政的双重崩溃。
+  note: 《史记·项羽本纪》记巨鹿之战的经过，《汉书·艺文志》记秦火之后兵书散佚的情况，可据以理解秦军主力的组织基础。二者一记战事、一记文献。
+---
 
 ## 背景
 

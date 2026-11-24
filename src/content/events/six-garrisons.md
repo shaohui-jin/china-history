@@ -18,7 +18,6 @@ significance: 4
 summary: 北魏末年，北方六镇军民因待遇不公而起兵，席卷北方。北魏调用柔然兵镇压，然乱后六镇军人集团崛起，高欢、宇文泰皆出于此，最终导致北魏分裂为东西魏。
 sources:
   - beishi-xiaowen
----
   - weishu-xiaowen
 corroboration:
   primary: beishi-xiaowen
@@ -26,6 +25,7 @@ corroboration:
     - weishu-xiaowen
   agreement: consistent
   note: 六镇之乱是孝文帝迁都后北边失衡的结果。《北史》与《魏书》的孝文帝纪同记迁都与汉化措施，可互校其与六镇兵变的因果关系。
+---
 
 ## 背景
 

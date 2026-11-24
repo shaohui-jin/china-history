@@ -21,7 +21,6 @@ significance: 4
 summary: 玄宗即位后任用姚崇、宋璟为相，裁汰冗官、整顿吏治、改革兵制、发展文教。户口殷盛，仓廪充实，为唐代极盛之世。杜甫「忆昔开元全盛日」即咏此期。
 sources:
   - jiutangshu-xuanzong
----
   - xintangshu-xuanzong
 corroboration:
   primary: jiutangshu-xuanzong
@@ -29,6 +28,7 @@ corroboration:
     - xintangshu-xuanzong
   agreement: consistent
   note: 两《唐书》玄宗本纪同记开元间的任相与治绩，《新唐书》赞语把由盛转衰归于「侈心一动」，与《旧唐书》所记具体政事互为因果。
+---
 
 ## 背景
 

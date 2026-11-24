@@ -21,7 +21,6 @@ significance: 4
 summary: 周武帝宇文邕两度伐齐，建德六年破邺城，俘后主高纬，北齐亡。北方自永嘉之乱以来二百七十年的分裂至此统一，为隋统一全国奠定基础。
 sources:
   - beishi-xiaowen
----
   - zhoushu-yuwentai
 corroboration:
   primary: beishi-xiaowen
@@ -29,6 +28,7 @@ corroboration:
     - zhoushu-yuwentai
   agreement: partial
   note: 北周统一北方的基础由宇文泰奠定。《周书·文帝纪》记其府兵与六官制度，《北史》则从北朝全局记此后周灭齐的进程。二者一记制度建设、一记历史结果。
+---
 
 ## 背景
 

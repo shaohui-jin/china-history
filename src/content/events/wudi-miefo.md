@@ -17,7 +17,6 @@ significance: 4
 summary: 周武帝宇文邕下诏废佛道二教，经像悉毁，沙门道士并令还民。还俗僧尼近三百万，大增国家户口与税源。此为「三武一宗」法难之二，也是北周国力强盛的重要原因。
 sources:
   - beishi-xiaowen
----
   - weishu-shizu
 corroboration:
   primary: beishi-xiaowen
@@ -25,6 +24,7 @@ corroboration:
     - weishu-shizu
   agreement: consistent
   note: 《魏书·世祖纪》记太武灭佛的诏书原文，《北史·魏本纪》则从北朝通史的角度记同一事件。二书所记诏令文字基本一致。
+---
 
 ## 背景
 

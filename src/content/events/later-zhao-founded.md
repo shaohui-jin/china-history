@@ -18,16 +18,16 @@ significance: 4
 summary: 羯人石勒原为汉赵部将，据襄国自立，称赵王，史称后赵。329 年擒杀前赵刘曜，330 年称帝，据有北方大部。石勒出身奴隶，不识文字而喜听史，是十六国中最具传奇色彩的君主。
 sources:
   - jinshu-liuyao
----
   - jinshu-liuyuan-zai
   - jinshu-liuyuan
+  - weishu-daowu
 corroboration:
   primary: jinshu-liuyao
   secondary:
-    - jinshu-liuyuan-zai
-    - jinshu-liuyuan
+    - weishu-daowu
   agreement: consistent
-  note: 《刘元海载记》记汉国建立，《刘聪载记》记其扩张，《刘曜载记》记其改国号为赵。三篇载记构成汉赵政权的完整链条。
+  note: 《晋书·刘曜载记》记前赵开国，《魏书·序纪》记拓跋部早期的部落组织。二者同记四世纪北方政权的建立方式，可作制度性对照。
+---
 
 ## 背景
 

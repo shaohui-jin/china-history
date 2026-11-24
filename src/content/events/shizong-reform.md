@@ -20,7 +20,6 @@ significance: 4
 summary: 后周世宗柴荣在位五年半，推行全面改革：整顿禁军、均定田赋、毁佛铸钱、修订刑律、疏浚汴河。又南征南唐、北伐契丹，收复三关。其改革被北宋全盘继承，是五代走向治世的关键转折。
 sources:
   - zizhitongjian-wudai
----
   - xinwudaishi-shizong
 corroboration:
   primary: zizhitongjian-wudai
@@ -28,6 +27,7 @@ corroboration:
     - xinwudaishi-shizong
   agreement: consistent
   note: 《通鉴》与《新五代史·周世宗本纪》同记高平之战后斩樊爱能、整顿军纪，以及此后的一系列改革，「斩爱能等以肃军政」的记载一致。
+---
 
 ## 背景
 

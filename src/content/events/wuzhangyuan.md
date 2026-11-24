@@ -19,14 +19,15 @@ significance: 4
 summary: 诸葛亮第五次北伐，与司马懿对峙于渭南。积劳成疾，八月卒于五丈原军中。「出师未捷身先死」，蜀汉北伐自此终止，蜀汉政权进入守成阶段。
 sources:
   - sanguozhi-zhuge
----
   - sanguozhi-zhuge-ping
+  - sanguozhi-zhuge-biao
 corroboration:
   primary: sanguozhi-zhuge
   secondary:
-    - sanguozhi-zhuge-ping
+    - sanguozhi-zhuge-biao
   agreement: consistent
-  note: 《诸葛亮传》记其卒于五丈原军中，传末陈寿的评语「盖应变将略，非其所长欤」是对其军事能力的判断，二者一记事实一作评价。
+  note: 《诸葛亮传》记其卒于五丈原军中，《通鉴》魏纪记同一战役的魏方部署与时间，可互校。二者一为蜀汉视角、一为编年通史。
+---
 
 ## 背景
 

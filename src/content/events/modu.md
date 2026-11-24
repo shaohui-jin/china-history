@@ -16,7 +16,6 @@ significance: 4
 summary: 冒顿以鸣镝训练部众，射杀其父头曼单于，自立为单于。此后东灭东胡、西击月氏、南并楼烦，统一草原，控弦之士三十余万，为匈奴极盛之始。
 sources:
   - shiji-xiongnu
----
   - hanshu-xiongnu
 corroboration:
   primary: shiji-xiongnu
@@ -24,6 +23,7 @@ corroboration:
     - hanshu-xiongnu
   agreement: consistent
   note: 两书皆记冒顿以鸣镝弑父、东灭东胡、西击月氏，《汉书》文字多本《史记》而略有增删，控弦之士「三十余万」的数目相同。
+---
 
 ## 背景
 

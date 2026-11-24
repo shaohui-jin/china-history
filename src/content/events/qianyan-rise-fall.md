@@ -22,14 +22,15 @@ significance: 4
 summary: 鲜卑慕容部所建政权，自慕容皝称燕王（337）至前秦灭燕（370），三十三年。慕容皝、慕容儁两代雄主，据有辽西、河北、河南，与东晋、前秦鼎足。然慕容评专权、太后干政，终为前秦所灭。
 sources:
   - jinshu-liuyao
----
   - jinshu-murongjun
+  - zizhitongjian-jin-shi
 corroboration:
-  primary: jinshu-liuyao
+  primary: jinshu-murongjun
   secondary:
-    - jinshu-murongjun
+    - zizhitongjian-jin-shi
   agreement: partial
-  note: 《刘曜载记》从前赵一方记与前燕的交涉，《慕容儁载记》从前燕一方记其建国与慕容恪主政。双方对同一时期的记载各有侧重，立场对立。
+  note: 《慕容儁载记》从前燕一方记其建国，《通鉴》晋纪取材于《晋书》诸载记而经考异整合，编年叙述更便对照。二者详略与立场不同。
+---
 
 ## 背景
 

@@ -16,7 +16,6 @@ significance: 4
 summary: 阿史那土门破柔然，自立为伊利可汗，建突厥汗国。此后其弟木杆可汗西破嚈哒、东服契丹，疆域东至辽海、西抵里海，为蒙古高原首个横跨欧亚的游牧帝国。
 sources:
   - zizhitongjian-zhenguan
----
   - zhoushu-tujue
 corroboration:
   primary: zizhitongjian-zhenguan
@@ -24,6 +23,7 @@ corroboration:
     - zhoushu-tujue
   agreement: consistent
   note: 《通鉴》与《周书·突厥传》皆记土门求婚被拒、遂自立为伊利可汗的经过，「东自辽海」的疆域记述亦同。
+---
 
 ## 背景
 

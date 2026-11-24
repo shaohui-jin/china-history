@@ -22,14 +22,15 @@ significance: 4
 summary: 苻坚在前秦丞相王猛的辅佐下，十年间灭前燕、前凉、代国，统一北方。其「混一六合」的功业为十六国之最，然淝水一败，帝国随即瓦解。这也是十六国时期唯一一次接近统一的机会。
 sources:
   - jinshu-liuyao
----
   - jinshu-murongjun
+  - weishu-daowu
 corroboration:
   primary: jinshu-liuyao
   secondary:
-    - jinshu-murongjun
+    - weishu-daowu
   agreement: partial
-  note: 前秦统一北方的过程散见《晋书》诸载记。刘曜、慕容儁两载记分记被灭两方的情况，与苻坚一方的进程互为背景。
+  note: 《晋书》诸载记从前赵、前燕等被灭一方记前秦统一的过程，《魏书·序纪》记拓跋部同时期的处境。二者立场不同，可对照阅读。
+---
 
 ## 背景
 

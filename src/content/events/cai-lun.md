@@ -16,14 +16,15 @@ significance: 4
 summary: 东汉和帝时，宦官蔡伦总结前人经验，以树皮、麻头、破布、渔网造纸，奏上之，天下称「蔡侯纸」。造纸术为中国四大发明之一，深刻改变了世界文明进程。
 sources:
   - houhanshu-cailun
----
   - houhanshu-cai-lun-huanzhe
+  - sanguozhi-wendi
 corroboration:
   primary: houhanshu-cailun
   secondary:
-    - houhanshu-cai-lun-huanzhe
+    - sanguozhi-wendi
   agreement: consistent
-  note: 《蔡伦传》记造纸的具体原料与奏上年份，《宦者列传序》交代东汉宦官参政的制度背景，二者一为个人事迹、一为制度脉络。
+  note: 《后汉书·蔡伦传》记造纸原料与奏上年份，《三国志·文帝纪》记曹丕以素绢代简的诏令，可据以判断东汉末纸张的实际使用状况。二者时代相接。
+---
 
 ## 背景
 

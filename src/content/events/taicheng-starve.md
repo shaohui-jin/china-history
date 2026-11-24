@@ -17,7 +17,6 @@ significance: 4
 summary: 侯景攻陷台城后，梁武帝萧衍被囚于文德殿，饮食渐绝，索蜜不得，以八十六岁高龄崩于台城。这位在位四十八年、四度舍身同泰寺的「菩萨皇帝」，最终死于自己纳降的军阀之手。
 sources:
   - liangshu-houjing
----
   - zizhitongjian-houjing
 corroboration:
   primary: liangshu-houjing
@@ -25,6 +24,7 @@ corroboration:
     - zizhitongjian-houjing
   agreement: consistent
   note: 《梁书·侯景传》与《通鉴》梁纪同记台城陷落与侯景见梁武帝的对答，细节高度一致而文字互异。
+---
 
 ## 背景
 

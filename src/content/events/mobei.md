@@ -23,7 +23,6 @@ significance: 4
 summary: 汉武帝倾国之力，卫青、霍去病各率五万骑深入漠北，大破匈奴主力。霍去病封狼居胥，匈奴远遁，「漠南无王庭」。此役为汉匈战争的最高潮。
 sources:
   - hanshu-wudi
----
   - hanshu-jiaoyi
   - shiji-xiongnu
 corroboration:
@@ -33,6 +32,7 @@ corroboration:
     - shiji-xiongnu
   agreement: consistent
   note: 《武帝纪》记漠北之战的诏令与战果，《食货志》记支撑此役的财政基础，《史记·匈奴列传》从匈奴一方记其远遁。三者合看可见战役的全貌。
+---
 
 ## 背景
 

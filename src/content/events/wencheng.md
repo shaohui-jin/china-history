@@ -19,14 +19,15 @@ significance: 4
 summary: 唐太宗以宗室女文成公主嫁吐蕃赞普松赞干布。公主携佛像、经卷、工艺、农种入藏，促成汉藏文化交流。此后两百年，唐蕃「舅甥之国」，和战相间。
 sources:
   - jiutangshu-taizong
----
   - jiutangshu-songtsen
+  - xintangshu-tubo
 corroboration:
   primary: jiutangshu-taizong
   secondary:
-    - jiutangshu-songtsen
+    - xintangshu-tubo
   agreement: consistent
-  note: 《太宗本纪》记文成公主出嫁的年份与礼仪，《吐蕃传》记松赞干布「执子婿之礼甚恭」的迎亲细节。二者一记唐廷、一记吐蕃。
+  note: 《旧唐书·太宗本纪》记文成公主出嫁的年份，《新唐书·吐蕃传》记松赞干布遣使朝贡与请婚的经过。两《唐书》成书相隔百余年，可互校。
+---
 
 ## 背景
 

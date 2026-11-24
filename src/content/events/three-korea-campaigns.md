@@ -21,14 +21,15 @@ significance: 4
 summary: 隋炀帝三次征讨高句丽，动员兵力逾百万，民夫倍之。第一次因指挥失误与后勤崩溃而全军覆没，后两次亦无功。三次征辽耗尽了隋的国力，成为隋末大乱的直接导火索。
 sources:
   - suishu-yangdi
----
   - suishu-liuxing
+  - zizhitongjian-sui-tang
 corroboration:
   primary: suishu-yangdi
   secondary:
-    - suishu-liuxing
+    - zizhitongjian-sui-tang
   agreement: consistent
-  note: 《炀帝纪》记三次征辽的诏令与出兵规模，《食货志》记「转输不息，民力凋尽」的后果。二者一记决策、一记代价。
+  note: 《隋书·炀帝纪》记三征高丽的诏令与出兵规模，《资治通鉴》隋纪末以《隋书》及唐实录为底本，考异后叙述更详，可作独立旁证。
+---
 
 ## 背景
 

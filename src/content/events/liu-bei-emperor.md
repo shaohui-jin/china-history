@@ -18,14 +18,16 @@ significance: 4
 summary: 曹丕代汉后，刘备以「汉室宗亲」身份于成都即皇帝位，国号仍为汉，史称蜀汉。此举确立了三国鼎立的政治格局，也使「汉」的正统之争延续数十年。
 sources:
   - sanguozhi-zhuge
----
   - sanguozhi-xianzhu-zan
+  - sanguozhi-xianzhu
+  - houhanshu-xianzhu
 corroboration:
   primary: sanguozhi-xianzhu
   secondary:
-    - sanguozhi-xianzhu-zan
+    - houhanshu-xianzhu
   agreement: consistent
-  note: 《先主传》记称帝的群臣劝进与即位仪节，传末评语则从史家角度评价其一生，二者对同一人物的记载互为补充。
+  note: 《三国志·先主传》记称帝的群臣劝进与即位仪节，《后汉书》独立记载刘备在荆州的声望。二者可印证其称帝的舆论基础。
+---
 
 ## 背景
 

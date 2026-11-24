@@ -20,7 +20,6 @@ significance: 4
 summary: 义和团蔓延华北，慈禧利用其围攻东交民巷使馆。八国联军入京，慈禧挟光绪西逃西安。1901 年订《辛丑条约》：赔款四亿五千万两，本息合计近十亿两。
 sources:
   - qingshigao-linxuci
----
   - yingyi-rukou-ji
 corroboration:
   primary: qingshigao-linxuci
@@ -28,6 +27,7 @@ corroboration:
     - yingyi-rukou-ji
   agreement: consistent
   note: 《林则徐传》记禁烟与战后被贬，《英夷入寇记》从当时人视角记英军行动与和议过程。二者对庚子年（1840）事件的记载互相印证。
+---
 
 ## 背景
 

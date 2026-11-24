@@ -18,14 +18,15 @@ significance: 4
 summary: 孝武帝元修与高欢决裂，西奔长安投宇文泰。高欢另立元善见为帝，迁都邺城。北魏自此分裂为东魏、西魏，高欢与宇文泰各据一方，开启北朝后期对峙。
 sources:
   - beishi-xiaowen
----
   - beishi-xiaowu
+  - weishu-xiaowu
 corroboration:
   primary: beishi-xiaowen
   secondary:
-    - beishi-xiaowu
+    - weishu-xiaowu
   agreement: consistent
-  note: 《北史》孝文帝纪记分裂前的积弊，孝武帝纪记元修西奔与高欢另立东魏，二纪同书而分记分裂的两端，时间线可衔接。
+  note: 《北史·孝文帝纪》记分裂前的积弊，《魏书·前废帝纪》为北齐所修、记高欢入洛与孝静帝之立。二者成书时代与立场不同，对分裂过程的记载可互校。
+---
 
 ## 背景
 

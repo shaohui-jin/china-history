@@ -23,14 +23,15 @@ significance: 4
 summary: 魏军三路伐蜀，邓艾偷渡阴平，直取成都。后主刘禅出降，蜀汉亡。姜维诈降钟会，事败被杀。「乐不思蜀」一典出于此。三国鼎立开始瓦解。
 sources:
   - sanguozhi-zhuge
----
   - sanguozhi-liushan-ping
+  - sanguozhi-zhuge-biao
 corroboration:
-  primary: sanguozhi-zhuge
+  primary: sanguozhi-liushan-ping
   secondary:
-    - sanguozhi-liushan-ping
+    - sanguozhi-zhuge-biao
   agreement: partial
-  note: 蜀汉之亡的直接记载见《后主传》，而《诸葛亮传》所记的北伐消耗是此前数十年的背景。二传对灭亡原因各有侧重：一记投降经过，一记长期国力损耗。
+  note: 《后主传》评语记蜀汉之亡的直接经过，《通鉴》魏纪记此前北伐的消耗。二者一记终局、一记长期国力损耗，可构成因果链。
+---
 
 ## 背景
 

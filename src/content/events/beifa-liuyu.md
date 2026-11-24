@@ -17,14 +17,15 @@ significance: 4
 summary: 刘裕两度北伐，灭南燕、后秦，收复洛阳、长安。此为东晋南朝北伐最成功的一次，然刘裕急于回朝篡位，长安得而复失。辛弃疾叹「元嘉草草，封狼居胥，赢得仓皇北顾」。
 sources:
   - songshu-wudi
----
   - songshu-liuyu-north
+  - jinshu-yiling
 corroboration:
   primary: songshu-wudi
   secondary:
-    - songshu-liuyu-north
+    - jinshu-yiling
   agreement: consistent
-  note: 《宋书》武帝本纪记北伐的军事过程，同卷后半记入长安后的处置与「三秦父老复睹汉官」的反应，二者同出本纪而详略互补。
+  note: 《宋书·武帝本纪》记北伐战事，《晋书·地理志》记荆州诸郡的归属沿革，可据以判断刘裕收复的疆域范围。二者一记军事、一记地理。
+---
 
 ## 背景
 

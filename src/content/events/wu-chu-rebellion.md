@@ -19,7 +19,6 @@ significance: 4
 summary: 汉景帝用晁错之议削藩，吴王刘濞联合楚、赵等七国以「请诛晁错」为名起兵。景帝斩晁错而不退兵，终以周亚夫三月平乱。此后中央集权巩固，诸侯王仅存虚名。
 sources:
   - hanshu-wudi
----
   - hanshu-liujin
   - shiji-liubi
 corroboration:
@@ -29,6 +28,7 @@ corroboration:
     - shiji-liubi
   agreement: consistent
   note: 《诸侯王表》序分析王国坐大的制度根源，《吴王濞列传》记七国之乱的过程，《武帝纪》记此后的推恩令。三者构成削藩的完整链条。
+---
 
 ## 背景
 

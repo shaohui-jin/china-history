@@ -17,14 +17,15 @@ significance: 4
 summary: 明廷调集十万余军四路进攻后金，努尔哈赤以「凭尔几路来，我只一路去」之策集中兵力各个击破。明军三路覆没，丧师四万五千余人，明清易代之势自此定。
 sources:
   - mingshi-shenzong-saerhu
----
   - mingshi-saerhu-2
+  - qingshigao-taizu-2
 corroboration:
   primary: mingshi-shenzong-saerhu
   secondary:
-    - mingshi-saerhu-2
-  agreement: consistent
-  note: 《杨镐传》从主帅角度记四路进兵的部署与溃败，《李如柏传》从一路将领角度记「独全师而退」。两传互补，可还原明军的实际损失。
+    - qingshigao-taizu-2
+  agreement: partial
+  note: 《明史·杨镐传》从明军主帅角度记四路溃败，《清史稿·太祖本纪》论赞从后金一方称此役「翦明清兵之精锐，遂肇兴王业」。二者立场完全对立，事实可互校。
+---
 
 ## 背景
 

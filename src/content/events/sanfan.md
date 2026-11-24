@@ -20,14 +20,15 @@ significance: 4
 summary: 康熙十二年决意撤藩，吴三桂起兵反清，尚可喜、耿精忠响应，乱及十省，历八年。康熙二十年昆明城破，三藩平。此役确立清朝对南方的直接统治。
 sources:
   - qingshigao-kangxi
----
   - qingshigao-wusangui
+  - guoque-kangxi
 corroboration:
   primary: qingshigao-kangxi
   secondary:
-    - qingshigao-wusangui
+    - guoque-kangxi
   agreement: partial
-  note: 《圣祖本纪》从朝廷方记平叛的决策与调度，《吴三桂传》从叛军方记起兵名义与内情。二者对战争进程的记载一致，对性质的判断完全对立。
+  note: 《清史稿·圣祖本纪》为清廷官修，《国榷》为明末清初私家编年史，谈迁穷三十年之力写成。二者对三藩之乱的记载立场与详略不同。
+---
 
 ## 背景
 

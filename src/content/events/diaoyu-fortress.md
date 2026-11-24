@@ -19,7 +19,6 @@ significance: 4
 summary: 蒙哥率军围攻钓鱼城，守将王坚坚守数月，蒙哥死于城下。蒙古各路的西征南征全面中止，忽必烈北归争位。欧洲人称此地为「上帝折鞭处」。
 sources:
   - songshi-wenzhong
----
   - yuanshi-xianzong
 corroboration:
   primary: songshi-wangjian
@@ -27,6 +26,7 @@ corroboration:
     - yuanshi-xianzong
   agreement: partial
   note: 《宋史·王坚传》记守城五个月、蒙哥死于城下，《元史·宪宗本纪》赞语则称「顿兵坚城之下，以殒其身」。双方对结果的记载一致，但对死因与责任的表述不同。
+---
 
 ## 背景
 

@@ -16,14 +16,14 @@ significance: 4
 summary: 郭守敬、王恂等主持改历，创制简仪、高表等仪器，设二十七处观测点，成《授时历》。定回归年 365.2425 日，与今公历相同而早三百年，行用三百六十四年。
 sources:
   - yuanshi-shizu
----
-  - yuanshi-taizong
+  - gengshen-shoushi
 corroboration:
   primary: yuanshi-shizu
   secondary:
-    - yuanshi-taizong
-  agreement: partial
-  note: 《世祖本纪》记授时历的颁行与郭守敬的工作，《太宗本纪》记此前耶律楚材的庚午元历。二者一记元代历法的完成、一记其前身。
+    - gengshen-shoushi
+  agreement: consistent
+  note: 《元史·世祖本纪》记授时历颁行的政令，《庚申外史》为元末明初人权衡所撰，追述「测验于四海，凡五年而成」的编制经过。二者来源不同而事实一致。
+---
 
 ## 背景
 

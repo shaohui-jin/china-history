@@ -29,6 +29,9 @@ evaluations:
   - claim: 「白莲社」与「净土宗初祖」的地位是后世追认的。慧远本人主张的是「念佛三昧」（观想），与后世净土宗的「持名念佛」并不完全相同；白莲社的成员名单（十八高贤）也出于宋代天台宗的追述。一位东晋僧人的信仰实践，被后世追认为一个宗派的起点——宗教谱系的建构，往往晚于其实际历史。
     sourceId: gaosengzhuan-huiyuan
     kind: dispute
+  - claim: 慧远居庐山三十年不入城市，其《沙门不敬王者论》之所以能成立，前提是东晋门阀政治给予士族与僧团一定的独立空间。换一个强势的朝代，同样的主张难以存续。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: tao-yuanming
     type: colleague

@@ -23,6 +23,9 @@ evaluations:
   - claim: 他的失踪是中国历史上最著名的悬案。正史称「宫中火起，帝不知所终」，此后有出家为僧、流亡海外、隐居云南等多种传说。郑和下西洋的动机之一，就是寻找他的下落（虽无确证）。
     sourceId: mingshi-taizu
     kind: dispute
+  - claim: 建文帝的下落成为明史一大疑案，《明史》本纪只记「宫中火起，帝不知所终」。这一空白使永乐朝的合法性始终存在裂缝，也是此后数十年间不断有人冒称建文帝的原因。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: kinship

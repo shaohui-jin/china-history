@@ -28,6 +28,9 @@ evaluations:
   - claim: 「二圣」之称常被与武则天并论，但两者性质不同。独孤伽罗的权力来自夫妻共治的默契，从未建立自己的官僚系统，也未曾称制；她的干政始终在皇后身份的框架内。而正是这种「无制度化」的权力，使她的判断（如废杨勇）能直接改写历史，却又不留任何可追责的痕迹。
     sourceId: suishu-duguhou
     kind: dispute
+  - claim: 隋初的制度建设依托于北周以来的关陇基础。独孤皇后的影响力，部分来自她所代表的鲜卑贵族网络——她的「二圣」地位，不只是夫妻共治，也是政治联盟的产物。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: yang-jian
     type: spouse

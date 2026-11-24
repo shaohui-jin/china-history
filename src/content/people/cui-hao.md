@@ -27,6 +27,9 @@ evaluations:
   - claim: 国史之狱的株连之广，说明它不只是文字狱。清河崔氏无远近、范阳卢氏、太原郭氏、河东柳氏皆夷其族，四姓同为北方一流士族。此案之后，北方士族噤声数十年，直到孝文帝时期才以「自上而下的汉化」重新推进——这一次，皇帝掌握了节奏，士族不再有主导权。
     sourceId: weishu-cuihao
     kind: dispute
+  - claim: 崔浩的国史之狱，本质是汉人士族的史学标准与鲜卑贵族的忌讳冲突。他按「直书」原则刻石立碑，等于把拓跋氏早期的部落旧事公之于众——这不是文字狱，而是族群政治的爆发。
+    sourceId: songshu-liuyu-2
+    kind: dispute
 relations:
   - target: tuoba-tao
     type: ruler-subject

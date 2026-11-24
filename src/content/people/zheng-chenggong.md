@@ -24,6 +24,9 @@ evaluations:
   - claim: 收复台湾的战略意义超出其本意。郑成功的直接目的是取得抗清基地，但这一行动使台湾第一次被纳入中国的行政体系（此后施琅设府置县）。从「抗清基地」到「中国领土」，这一转变是历史的意外。
     sourceId: mingshi-qiujin
     kind: influence
+  - claim: 郑成功反清复明的基础，是南明残余势力与海上贸易集团的结合。《明史》记明末事时，把郑氏视为「海寇」而非政权，这一立场与台湾地位的历史叙述直接相关。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: kangxi
     type: enemy

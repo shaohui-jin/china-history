@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的死因是政治而非军事。灭蜀后他以天子名义拜刘禅为骠骑将军、任命蜀汉旧臣，又上书请「因平蜀之势以乘吴」——这些越权举动给了钟会诬其谋反的口实。司马昭令槛车征还，钟会伏诛后，监军卫瓘又遣人杀之于绵竹。功劳太大而不懂自处，是三国末期功臣的普遍下场。
     sourceId: sanguozhi-dengai
     kind: dispute
+  - claim: 邓艾偷渡阴平的奇袭，前提是钟会大军被阻于剑阁。这一战役的分工在《三国志》中记载清楚：钟会正面攻坚，邓艾迂回突袭——两人的功过评价，也由此分岔。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: jiang-wei
     type: enemy

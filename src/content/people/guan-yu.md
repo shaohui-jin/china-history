@@ -29,6 +29,9 @@ evaluations:
   - claim: 关羽的神化，与史书中的形象差距极大。他在《三国志》中是「刚而自矜」的败将，在明清以后成为「武圣」，与孔子并列。这一转变的关键是宋元以后的官方加封与《三国演义》的传播，而非史实本身。
     sourceId: sanguozhi-guanyu-ping
     kind: dispute
+  - claim: 关羽之败的关键是后方空虚：他北攻樊城时，吕蒙「白衣渡江」袭取荆州。这一战略失误与曹操当年「挟天子」的政治优势无关，纯粹是兵力部署的问题。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: liu-bei
     type: sibling

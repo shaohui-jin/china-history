@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的死是崇祯性格与朝廷党争的共同产物。皇太极施反间计，使崇祯相信袁崇焕与后金有约；而袁崇焕此前擅杀毛文龙、又私自与后金议和，本就给人口实。崇祯在平台召对后将其下狱，次年凌迟处死，「兄弟妻子流三千里」。这是一场由君主猜忌、党争倾轧与敌方计谋共同完成的冤案。
     sourceId: mingshi-yuanchonghuan
     kind: dispute
+  - claim: 袁崇焕之死发生在「纲纪日以委颓」的末期：朝廷已无力辨别忠奸，只能以杀止疑。《明史》把他的死与「边事益无人」直接相连，作为明亡链条上的一环。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: nurhaci
     type: enemy

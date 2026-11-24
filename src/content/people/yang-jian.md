@@ -24,6 +24,9 @@ evaluations:
   - claim: 文帝的节俭在帝王中极为罕见：「其自奉养，务为俭素，乘舆御物，故弊者随令补用；自非享宴，所食不过一肉。」但他的严刑峻法同样极端——「盗一钱以上皆弃市」。这种「节俭 + 严刑」的组合，使开皇之治的富庶与恐怖并存。
     sourceId: suishu-gaozu
     kind: dispute
+  - claim: 隋文帝的开皇之治，前提是北周奠定的关陇基础。他继承的是一个已经整合了关中的政权，而非从零开始——制度的连续性比个人能力更重要。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yang-guang
     type: parent-child

@@ -28,6 +28,9 @@ evaluations:
   - claim: 柴荣北伐契丹四十天连下三关三州，兵锋直指幽州，随即染疾班师、六月而崩。若他多活十年，燕云十六州能否收复、宋代的重文轻武格局是否会形成，都是史学上常被提出的假设——但这类假设无法验证，只能说明他的早逝改变了很多可能性。
     sourceId: jiuwudaishi-zhou
     kind: dispute
+  - claim: 周世宗在高平之战后「斩爱能等以肃军政」，这一决断确立了后周军队的纪律。此后北伐辽国、南征南唐，皆以此为基础。
+    sourceId: jiuwudaishi-wudai-2
+    kind: influence
 relations:
   - target: zhao-kuangyin
     type: superior

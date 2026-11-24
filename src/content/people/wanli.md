@@ -27,6 +27,9 @@ evaluations:
   - claim: 万历的怠政有其具体原因。万历十四年起，他为立储之事与群臣对抗——他想立宠妃郑氏之子朱常洵，群臣坚持立长子朱常洛，这场「国本之争」持续十五年。他的「不朝」是一种消极抵抗：既不能废长立幼，便以拒绝处理政务来对抗文官集团。明亡的责任不能全归于个人惰性，而是皇权与文官制度之间的死锁。
     sourceId: mingshi-wanli-zan
     kind: dispute
+  - claim: 《熹宗本纪》赞语把明亡的责任上溯至「神宗末，废坏极矣」。这一判断与《神宗本纪》赞语的「明之亡，实亡于神宗」完全一致——两篇赞语互相印证。
+    sourceId: mingshi-xizong-zan
+    kind: evaluation
 relations:
   - target: zhang-juzheng
     type: ruler-subject

@@ -29,6 +29,9 @@ evaluations:
   - claim: 「洪武之治」与「洪武暴政」是同一段历史的两种叙述。前者强调民生恢复，后者强调株连惨烈。近年研究更倾向于把它们看作一体两面，而非互相排斥。
     sourceId: mingshi-taizu
     kind: dispute
+  - claim: 洪武朝的政治遗产在《明史》中被反复追溯。世宗以后「纲纪日以委颓」的评价，反过来说明洪武所立的制度（废相、锦衣卫、祖训）在最初确实维持了强势的中央集权。
+    sourceId: mingshi-xizong-zan
+    kind: influence
 relations:
   - target: kublai
     type: enemy

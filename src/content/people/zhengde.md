@@ -28,6 +28,9 @@ evaluations:
   - claim: 「豹房」「游幸」的形象多出自文官视角的记载。正德朝的实录由嘉靖初年编纂，而嘉靖以藩王入继，必须强调前朝的失德以确立自身合法性。朱厚照的实际政务能力（如迅速平定刘瑾、安化王之乱、宁王之乱皆在其朝被平息）在传统叙事中被系统性地忽略了。
     sourceId: mingshi-wuzong
     kind: dispute
+  - claim: 正德朝的荒嬉与宦祸并存：刘瑾专权五年，朝政紊乱。《明史》把正德、嘉靖两朝的转折与「大礼议」相连，视为明代君臣关系破裂的开端。
+    sourceId: mingshi-liushan
+    kind: dispute
 relations:
   - target: zhu-chenhao
     type: enemy

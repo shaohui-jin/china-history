@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的失败不是军事的，而是政治的。晋元帝派戴渊为征西将军、都督司兖豫并雍冀六州诸军事，名为支援实为牵制；祖逖「意甚怏怏」，又闻王敦与刘隗构隙、内乱将起，遂「忧愤发病」而死。北伐之志毁于朝廷的猜防，而不是敌人的兵锋——这是东晋一代反复上演的剧本。
     sourceId: jinshu-zuti
     kind: dispute
+  - claim: 祖逖北伐时，东晋朝廷「素无北伐之志」，他只能以部曲百余家起家。这一困境与刘琨在北方的情形相同：不是能力不足，而是没有后方的支持。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: liu-kun
     type: colleague

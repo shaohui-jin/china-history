@@ -26,6 +26,9 @@ evaluations:
   - claim: 韩德让与萧绰的关系，自宋人记载起即有「有闺闱之私」的说法，但《辽史》并无此类记载。这一传闻的源头是宋朝方面的政治宣传，其可信度需要谨慎对待。
     sourceId: liaoshi-shengzong
     kind: dispute
+  - claim: 韩德让在辽圣宗朝主持汉化，其权力基础是承天太后的信任。辽朝的「因俗而治」（南北面官）制度，正需要这样一位通晓汉制的重臣来运作。
+    sourceId: liaoshi-tianzuo-2
+    kind: influence
 relations:
   - target: xiao-chuo
     type: colleague

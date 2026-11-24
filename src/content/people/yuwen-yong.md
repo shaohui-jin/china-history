@@ -24,6 +24,9 @@ evaluations:
   - claim: 建德灭佛是北周国力大增的关键。北朝寺院占有大量土地与人口，「僧尼三百万人」不事生产。宇文邕下令废寺、僧尼还俗，使国家直接掌握了大批劳动力与土地。这一举措的激进程度超过唐代的「会昌灭佛」，但效果立竿见影。
     sourceId: beishi-xiaowen
     kind: influence
+  - claim: 北周武帝灭北齐，靠的是北齐自身的崩溃：高纬杀斛律光、兰陵王，自毁长城。周武帝「此人若在，朕岂能至邺」的感叹，说的正是这一层。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: yuwen-tai
     type: parent-child

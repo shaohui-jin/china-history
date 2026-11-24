@@ -29,6 +29,9 @@ evaluations:
   - claim: 「不依国主，则法事难立」这句话常被引作佛教依附王权的证据，但其语境是乱世中的生存策略。道安一生颠沛，前秦苻坚攻襄阳时他被俘至长安，却因此获得了译经的国家支持。他的判断是实情而非谄媚——在一个政权更迭频繁的时代，佛教若不与权力保持某种关系，连经典都无法保存。
     sourceId: gaosengzhuan-daoan
     kind: dispute
+  - claim: 道安「不依国主则法事难立」的判断，产生于北方战乱的环境中。他在襄阳被苻坚俘至长安，反而获得译经的国家支持——宗教的存续，在乱世中依赖政权。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: hui-yuan
     type: teacher-student

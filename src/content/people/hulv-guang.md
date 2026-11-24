@@ -27,6 +27,9 @@ evaluations:
   - claim: 杀斛律光不是昏君的偶然之举，而是北齐政治结构的必然。北齐皇室出自六镇武人集团，勋贵将领世代掌兵，皇帝对任何功高的将领都本能地恐惧。斛律光「一门一皇后、二太子妃、三公主」，家族势力过盛，即便无反心也难容于猜忌的君主。自毁长城的背后，是一个无法解决文武关系的政权。
     sourceId: beiqishu-hulvguang
     kind: dispute
+  - claim: 斛律光「一门一皇后、二太子妃、三公主」，家族势力过盛，即便无反心也难容于猜忌的君主。北齐的自毁长城，是文武关系失衡的必然结果。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: gao-wei
     type: ruler-subject

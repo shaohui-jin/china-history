@@ -29,6 +29,9 @@ evaluations:
   - claim: 他与朱温的对峙持续二十余年而始终未能取胜。上源驿之变（884）朱温设宴谋害他，从此结为死仇；此后潞州、泽州数次交锋，双方互有胜负。李克用临终以三矢付李存勖（一矢讨刘仁恭、一矢击契丹、一矢灭朱温），可见其毕生未竟之志——他的历史意义，更多是由儿子完成的。
     sourceId: xinwudaishi-li-keyong
     kind: dispute
+  - claim: 李克用与朱温争雄二十余年而未能取胜。他临终以三矢付李存勖（讨刘仁恭、击契丹、灭朱温），毕生未竟之志由儿子完成——沙陀集团的崛起是两代人的事业。
+    sourceId: jiuwudaishi-wudai-2
+    kind: influence
 relations:
   - target: zhu-wen
     type: enemy

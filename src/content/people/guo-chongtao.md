@@ -23,6 +23,9 @@ evaluations:
   - claim: 他死后不到一年，李嗣源就在魏州兵变中被拥立，庄宗身死。这一因果链很清晰：杀功臣 → 军心离散 → 兵变 → 国灭。欧阳修《伶官传序》论后唐之亡，重点在「逸豫」，但杀郭崇韬是更直接的原因。
     sourceId: zizhitongjian-wudai
     kind: influence
+  - claim: 郭崇韬灭前蜀后被杀，是五代功臣自处的典型结局：功高而无以自安。后唐庄宗朝的猜忌，与他父亲的沙陀旧部集团结构直接相关。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: li-cunxu
     type: ruler-subject

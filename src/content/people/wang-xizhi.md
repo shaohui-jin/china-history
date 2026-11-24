@@ -28,6 +28,9 @@ evaluations:
   - claim: 《兰亭集序》的真迹已不存。传世的皆为摹本（神龙本、定武本等），而各本之间差异不小。1965 年郭沫若提出「兰亭论辩」，怀疑传世《兰亭》出自智永伪托，引发全国性讨论。今日学界多数仍承认王羲之的书史地位，但对《兰亭》具体文本的可靠性保持审慎——书圣的形象与《兰亭》的真伪，是两个可以分开的问题。
     sourceId: jinshu-wangxizhi
     kind: dispute
+  - claim: 王羲之出身琅琊王氏，其书法成就与门阀子弟的文化教养直接相关。东晋初年「王与马，共天下」的格局，为士族提供了充裕的文化资源。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: wang-dao
     type: kinship

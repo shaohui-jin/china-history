@@ -28,6 +28,9 @@ evaluations:
   - claim: 「善事中国」的遗训既有智慧也有代价。吴越始终向中原王朝称臣纳贡，避免了两面受敌，使两浙免于战火；但这一政策在北宋统一时最终变成「纳土归宋」，钱氏主动交出政权。对百姓而言这是最好的结局，对钱氏而言则是放弃了独立——在十国中，这是唯一一个以和平方式结束的政权。
     sourceId: xinwudaishi-qianliu
     kind: dispute
+  - claim: 钱镠「善事中国」的政策使吴越免于兵燹，两浙成为五代十国中最富庶的地区。但这一政策最终演变为「纳土归宋」——和平的代价是放弃独立。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: zhu-wen
     type: ruler-subject

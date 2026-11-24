@@ -26,6 +26,9 @@ evaluations:
   - claim: 「谋反」一节的可信度历来存疑。《明太祖实录》在永乐朝经过三修，胡惟庸的罪名由「擅权」逐步升级为「通倭」「通虏」「谋反」，时间跨度十余年，牵连至三万余人。史家多认为朱元璋需要一个足够重的罪名来废相，谋反是后来追加的。
     sourceId: mingshi-hu-wei-yong
     kind: dispute
+  - claim: 胡惟庸案的本质在《明史》的叙述中很清楚：以一人之罪废千年之制。中书省与丞相被永久废除，六部直隶皇帝——这一制度变更的实际执行者是朱元璋，胡惟庸只是契机。
+    sourceId: mingshi-zhangjuzheng-2
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: ruler-subject

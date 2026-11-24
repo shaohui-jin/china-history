@@ -27,6 +27,9 @@ evaluations:
   - claim: 「文以载道」的框架在后世被过度强调。《文心雕龙》的核心其实是「文之枢纽」——原道、征圣、宗经，看似儒家正统，但其创作论（如《神思》论想象、《体性》论风格）更具独立的文学价值。把刘勰读成道德主义者，是唐宋古文家对他的窄化。
     sourceId: liangshu-liuxie
     kind: dispute
+  - claim: 刘勰依沙门僧祐十余年，其《文心雕龙》的严密分类体系，方法上受佛经科判之学的影响。这一背景常被忽略，但它解释了这部书为何能如此系统。
+    sourceId: nanqishu-hundi
+    kind: influence
 relations:
   - target: xiao-tong
     type: ruler-subject

@@ -28,6 +28,9 @@ evaluations:
   - claim: 杨行密奠基的吴国，最终被徐温、李昪篡夺。这一结局说明五代十国的政权更替，往往不取决于开国者的功业，而取决于继承人的能力。杨渥的昏弱，使杨氏二十余年的经营付诸他人。
     sourceId: zizhitongjian-wudai
     kind: dispute
+  - claim: 杨行密据淮南，与朱温隔淮对峙。吴国的存在使五代的政治格局始终是南北分裂，而非北方政权的单向扩张。
+    sourceId: jiuwudaishi-wudai-2
+    kind: influence
 relations:
   - target: zhu-wen
     type: enemy

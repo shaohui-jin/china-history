@@ -30,6 +30,9 @@ evaluations:
     sourceId: yuanshi-mongke
     quote: 帝自将伐宋，入蜀，次于钓鱼山。……秋七月，帝崩于钓鱼山。
     kind: dispute
+  - claim: 蒙哥之死使蒙古帝国的扩张由统一转向分裂。他的继位本身即是「忽里台」制度失效的结果，此后各汗国走向独立，帝国再未真正统一。
+    sourceId: yuanshi-shizu-2
+    kind: dispute
 relations:
   - target: kublai
     type: sibling

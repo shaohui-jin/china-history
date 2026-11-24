@@ -28,6 +28,9 @@ evaluations:
   - claim: 靖难之役的合法性争议从未真正平息。方孝孺被诛十族（一说九族），齐泰、黄子澄皆族诛。这些血腥的清算，使「得位不正」成为朱棣一生无法摆脱的阴影，也为此后明代的言路与士风留下了创伤。
     sourceId: mingshi-chengzu
     kind: dispute
+  - claim: 永乐朝的另一面是士人的恐惧。方孝孺被诛十族、景清被「瓜蔓抄」，这些记载与「永乐盛世」并存——同一时期，既有下西洋的壮举，也有对建文旧臣的彻底清算。
+    sourceId: mingshi-yangjisheng
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: parent-child

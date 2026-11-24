@@ -25,6 +25,9 @@ evaluations:
   - claim: 「菩萨皇帝」这个称号既是褒也是贬。他四度舍身同泰寺，每次由群臣以巨资赎回，共耗钱四万万；又大建寺院，「都下佛寺五百余所，穷极宏丽；僧尼十余万，资产丰沃」。郭祖深上书称「天下户口几亡其半」——宗教政策直接侵蚀了国家的税基与兵源。
     sourceId: liangshu-houjing
     kind: dispute
+  - claim: 梁武帝在位四十八年，前期「天监之治」为南朝最安定的时期，晚年因侯景之乱而饿死台城。同一君主的两段治绩，说明长期执政的风险是判断力的衰退。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: xiao-daocheng
     type: kinship

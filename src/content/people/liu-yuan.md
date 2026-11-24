@@ -28,6 +28,9 @@ evaluations:
   - claim: 「五胡乱华」的起点被记在他名下，但其本人并未见到西晋灭亡。他于永嘉四年卒，破洛阳、长安的是其子刘聪与族子刘曜。更值得注意的是，刘渊起兵时打的旗号是「尊汉」而非「排汉」——他自称汉室继承者，反而吸引了大量汉人流民归附。族群对立是后来加剧的，而非一开始就存在。
     sourceId: jinshu-liuyuan
     kind: dispute
+  - claim: 刘渊起兵时西晋已因八王之乱而元气大伤。他建国号「汉」、追尊刘禅，正是要利用「汉室继承者」的名义吸纳流民——族群对立是后来加剧的，起兵之初并非如此。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: sima-zhong
     type: enemy

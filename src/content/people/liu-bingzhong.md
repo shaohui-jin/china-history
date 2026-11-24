@@ -25,6 +25,9 @@ evaluations:
   - claim: 大都的规划是他最具体的历史遗产。他以《周礼·考工记》为本，结合地形，规划出「方九里、中轴对称」的棋盘式都城。此布局为此后明清北京城之雏形，延续至今。
     sourceId: yuanshi-shizu
     kind: influence
+  - claim: 刘秉忠定国号「大元」、营建大都，是元朝「以夏变夷」的具体执行者。一个汉人僧侣，成为蒙古政权转向中原王朝的技术枢纽。
+    sourceId: yuanshi-shizu-2
+    kind: influence
 relations:
   - target: kublai
     type: ruler-subject

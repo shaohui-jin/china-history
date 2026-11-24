@@ -31,6 +31,10 @@ evaluations:
   - claim: 「亡国之音」的定评是唐代加的。《玉树后庭花》本身只是一首宫体诗，杜牧「商女不知亡国恨，隔江犹唱后庭花」把它固化为亡国的符号。真实的因果恰恰相反：不是这首歌导致了亡国，而是亡国之后，这首歌成了最好的注脚。以文艺论兴亡，是最省力也最不可靠的历史解释。
     sourceId: chenshu-houzhu-zan
     kind: dispute
+  - claim: 《隋书》史臣对陈后主的批评极为直接：「不知稼穑之艰难，不恤黎元之疾苦」，并引「商女不知亡国恨」作比。这一评价的立场来自唐初，代表胜利者对亡国的解释。
+    sourceId: suishu-houzhuchen
+    quote: 不知稼穑之艰难，不恤黎元之疾苦。
+    kind: evaluation
 relations:
   - target: zhang-lihua
     type: spouse

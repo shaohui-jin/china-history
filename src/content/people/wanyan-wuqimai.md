@@ -23,6 +23,9 @@ evaluations:
   - claim: 金太宗的「兄终弟及」即位方式，是女真旧俗与中原继承制的冲突点。太祖诸子（宗望、宗弼等）皆有实力，而帝位传给弟弟，为此后金廷内部的权力斗争留下伏笔。
     sourceId: jinshi-taizong
     kind: evaluation
+  - claim: 金太宗灭辽灭北宋，是金朝武功的顶点。但「小尧舜」的称号却给了世宗——金朝的自我评价，最终落在文治而非武功上。
+    sourceId: jinshi-shizong-zan
+    kind: evaluation
 relations:
   - target: wanyan-aguda
     type: sibling

@@ -28,6 +28,9 @@ evaluations:
   - claim: 乾隆四十一年（1776）将其列入《贰臣传》，是清朝官方对其最严厉的定性。这一举措的政治逻辑很清楚：清朝已稳固统治百余年，需要强调「忠君」的绝对性，以警诫潜在的叛逆者。一个为清朝立下大功的人，最终被他的效忠对象判为失节——这本身说明了易代之际「忠」的标准随政权需要而变。
     sourceId: qingshigao-erchen
     kind: dispute
+  - claim: 洪承畴降清，发生在明朝制度全面失效之后。松锦之战明军十三万覆没，其根源在于朝廷催战、粮饷不继——这是「纲纪委颓」在军事上的直接后果。
+    sourceId: mingshi-xizong-zan
+    kind: influence
 relations:
   - target: hong-taiji
     type: enemy

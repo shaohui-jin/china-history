@@ -24,6 +24,9 @@ evaluations:
   - claim: 郭守敬的贡献不止于天文。他主持开凿通惠河，解决了大都的漕运问题；创制简仪、高表、仰仪等仪器十余种，其中简仪的结构直到近代望远镜出现前都被认为是先进的。他是中国古代最全面的科学家之一。
     sourceId: yuanshi-shizu
     kind: influence
+  - claim: 郭守敬的《授时历》以 365.2425 日为一年，与格里高利历相同而早三百年。元朝的「立经陈纪」，在天文历法上也有具体成就。
+    sourceId: yuanshi-shizu-2
+    kind: influence
 relations:
   - target: liu-bingzhong
     type: teacher-student

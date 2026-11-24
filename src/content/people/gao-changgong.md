@@ -29,6 +29,9 @@ evaluations:
   - claim: 《兰陵王入阵曲》的流传史比本人的事迹更值得注意。此曲唐代尚存，被视为「非雅乐」而渐失，却由遣唐使传入日本，至今存于宫内厅雅乐部与民间「兰陵王」舞乐之中。中国一段六世纪的战事，其乐舞形式在异邦保存了一千四百年——文化传承的路径，往往与政治史不同步。
     sourceId: beiqishu-gaochanggong
     kind: dispute
+  - claim: 兰陵王的《入阵曲》唐代尚存，被视为「非雅乐」而渐失，却由遣唐使传入日本保存至今。文化传承的路径，往往与政治史不同步。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: gao-yang
     type: kinship

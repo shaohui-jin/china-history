@@ -22,6 +22,9 @@ evaluations:
   - claim: 刘知远的劝谏是当时最清醒的判断：「称臣可矣，以父事之太过；厚以金帛赂之，自足致其兵，不必许以土田，恐异日大为中国之患。」石敬瑭不听。此后从 936 到 1368，凡四百三十二年，中原王朝为收复燕云反复付出代价。
     sourceId: xinwudaishi-shijingtang
     kind: influence
+  - claim: 石敬瑭割燕云十六州、称「儿皇帝」，是五代最屈辱的一次交易。此后中原王朝失去北方屏障，直至北宋末年未能收复。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: yelv-deguang
     type: ally

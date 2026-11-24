@@ -29,6 +29,9 @@ evaluations:
   - claim: 「平淡自然」的评价是宋代才定下的。钟嵘《诗品》把他列为「中品」，认为「其源出于应璩，又协左思风力」，评价并不高；刘勰《文心雕龙》竟未论及。直到苏轼说「吾于诗人无所甚好，独好渊明之诗」，陶渊明才被推至典范。经典的地位是后人追加的，不是同时代人认可的。
     sourceId: jinshu-taoyuanming
     kind: dispute
+  - claim: 陶渊明的归隐发生在东晋末年门阀政治崩坏之际。他的「不为五斗米折腰」，与其说是个人选择，不如说是一个士人在制度失效后的退场方式。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: wang-dao
     type: colleague

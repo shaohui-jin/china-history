@@ -28,6 +28,9 @@ evaluations:
   - claim: 周瑜之死改变了东吴的战略方向。他生前主张「取蜀并张鲁、结马超、据襄阳以蹙操」，这是一个进取性的两分天下方案；他死后，鲁肃接任，转为联刘抗曹的守势。东吴此后始终未能突破长江流域。
     sourceId: sanguozhi-chibi
     kind: dispute
+  - claim: 周瑜在赤壁之战中的主导作用，《三国志·周瑜传》记载明确：他力排众议主张抗曹，并亲自指挥火攻。后世《三国演义》把功劳部分转给诸葛亮，与正史记载有出入。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: sun-quan
     type: ruler-subject

@@ -29,6 +29,9 @@ evaluations:
   - claim: 「操行不如」四字是《明史》留下的疑问。戚继光结纳张居正、馈遗权贵，甚至传有「进献千金姬」之事。这既是明代武将在文官体制下求自保的常态，也使他在张居正死后立刻被目为张党而罢归，晚年「医药不备」而死。功业与操守的这一裂缝，是明代制度对武将的真实挤压。
     sourceId: mingshi-qijiguang
     kind: dispute
+  - claim: 戚继光的军事改革能够得到支持，前提是张居正主政时期的行政效率。张居正死后他被目为「张党」而罢归——个人的功业，依托于一个特定的政治环境。
+    sourceId: mingshi-zhangjuzheng-2
+    kind: dispute
 relations:
   - target: zhang-juzheng
     type: colleague

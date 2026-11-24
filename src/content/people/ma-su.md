@@ -25,6 +25,9 @@ evaluations:
   - claim: 马谡之死，史书记为「戮谡以谢众」，诸葛亮「为之流涕」。此后「挥泪斩马谡」成为戏曲与小说的经典段落，但其情感细节多为后世渲染，《三国志》只记「戮」与「流涕」四字。
     sourceId: sanguozhi-zhuge
     kind: influence
+  - claim: 马谡失街亭，是蜀汉北伐最关键的一次战术失败。刘备生前已告诫诸葛亮「马谡言过其实，不可大用」——这一判断出自《三国志》，是识人能力的一次对照。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: zhuge-liang
     type: superior

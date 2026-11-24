@@ -29,6 +29,9 @@ evaluations:
   - claim: 他的《春秋左传集解》至今仍是《左传》最基本的注本之一，「杜注」与孔颖达《正义》合为《春秋左传正义》，收入《十三经注疏》。一个以军事名世的人物，其最长久的影响却在经学——这与「杜武库」之名恰好相反：真正的武库是他的注疏。
     sourceId: jinshu-duyu
     kind: dispute
+  - claim: 杜预灭吴的部署，依托的是羊祜十年经营的荆州基地。晋武帝朝「兵凶岁饥，死疫过半」的困境已过，国力恢复之后才有灭吴的可能——个人才能须以国力为条件。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: yang-hu
     type: colleague

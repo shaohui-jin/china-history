@@ -27,6 +27,9 @@ evaluations:
   - claim: 统万城的营建方式最能说明他的统治逻辑：蒸土筑城，锥入一寸即杀筑者。城墙至今坚硬可磨刀，但这样建起来的政权只存在了二十余年。这是一个极端案例：技术上的成就与政治上的失败可以并存。
     sourceId: jinshu-liuyao
     kind: dispute
+  - claim: 赫连勃勃建大夏，是十六国后期匈奴铁弗部的最后一次崛起。他筑统万城「蒸土筑城」，以极端手段立威——这类政权的强盛与暴虐往往是同一件事。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: liu-yu
     type: enemy

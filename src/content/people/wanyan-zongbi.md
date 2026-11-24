@@ -28,6 +28,9 @@ evaluations:
   - claim: 郾城、颍昌两战败于岳飞，是宗弼的战绩中常被南宋一方强调的部分。但金方史料对此记载简略，且战后宗弼仍能主导和议、保住淮河以北，说明金军的整体战略优势并未因此动摇。战场胜负与战略结果的分野，在此处体现得最明显。
     sourceId: jinshi-xizong
     kind: dispute
+  - claim: 金熙宗推行汉制、建立三省六部，是金朝制度化的关键。但他后来酗酒滥杀，被海陵王所弑——制度的建设者与破坏者是同一个人。
+    sourceId: jinshi-shizong-zan
+    kind: dispute
 relations:
   - target: wanyan-aguda
     type: parent-child

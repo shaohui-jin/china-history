@@ -23,6 +23,9 @@ evaluations:
   - claim: 王敦两次举兵入建康，是东晋「荆扬之争」的开端。荆州居长江上游，顺流而下可直逼建康；扬州是朝廷所在，控制下游。这一地理格局决定了东晋南朝百余年的政治主线——上游的方镇反复威胁下游的中央。
     sourceId: jinshu-xuandi
     kind: influence
+  - claim: 王敦两次举兵，都以「清君侧」为名。他的失败说明：东晋的门阀政治允许权臣掌兵，但不允许其取代皇权——王导在其中扮演的调停角色，正是这一平衡的维持者。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: sima-rui
     type: enemy

@@ -23,6 +23,9 @@ evaluations:
   - claim: 钟会是否自始即有反意，还是受姜维怂恿而临时起意，史料本身并未明言。《三国志》把「内有异志」与「因姜维之谋」二事并列，未分主次。后世论者各执一端，其实都超出了文本。
     sourceId: sanguozhi-zhonghui-ping
     kind: dispute
+  - claim: 钟会灭蜀后谋反，是三国末期功臣自处的典型困境：功高而无以自安，遂以谋反求存。这一逻辑与邓艾的被诬、姜维的诈降共同构成蜀汉灭亡后的混乱局面。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: jiang-wei
     type: enemy

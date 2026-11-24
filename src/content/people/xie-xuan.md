@@ -27,6 +27,9 @@ evaluations:
   - claim: 北府兵此后成为南朝政权的孵化器，但谢玄本人未能控制它。淝水战后他北伐收复兖、青、司、豫四州，却因「疾笃」退兵，不久病卒，年四十六。北府兵先归刘牢之，再归刘裕——南朝宋的建立者正出自这支军队。军事力量的创建者往往不是它的最终受益者。
     sourceId: jinshu-xiexuan
     kind: dispute
+  - claim: 北府兵是以流民为骨干的招募军，其战力来自「无家可归者」的搏命，而非制度性的训练。这一兵源结构决定了它既能战，也难以长期控制。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: xie-an
     type: kinship

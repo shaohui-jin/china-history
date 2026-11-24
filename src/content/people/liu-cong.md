@@ -23,6 +23,9 @@ evaluations:
   - claim: 汉赵的速亡揭示了一个规律：内迁民族建立的政权，若不能完成从「部族军事集团」到「官僚国家」的转型，即使军事上获胜，也无法维持统治。这一转型要到北魏孝文帝才初步完成。
     sourceId: jinshu-huandi
     kind: influence
+  - claim: 刘聪攻破洛阳、长安，俘晋怀帝、愍帝，是匈奴汉国的顶点。此时西晋已因八王之乱而「兵凶岁饥，死疫过半」，外族入侵的顺利，建立在内部崩溃之上。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: liu-yuan
     type: parent-child

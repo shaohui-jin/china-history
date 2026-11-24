@@ -31,6 +31,10 @@ evaluations:
     sourceId: mingshi-zhangjuzheng
     quote: 居正卒，上震悼，辍朝。未几，御史羊可立追论居正罪，诏夺官，籍其家。长子敬修自缢，家人十余口饿死。
     kind: dispute
+  - claim: 张居正执政的核心是行政效率：「以尊主权、课吏职、信赏罚、一号令为主，虽万里外，朝下而夕奉行。」这一描述比「改革家」的标签更准确——他改的不是制度框架，而是执行力度。
+    sourceId: mingshi-zhangjuzheng-2
+    quote: 居正之为政，以尊主权、课吏职、信赏罚、一号令为主。
+    kind: evaluation
 relations:
   - target: wanli
     type: ruler-subject

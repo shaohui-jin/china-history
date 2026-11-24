@@ -27,6 +27,9 @@ evaluations:
   - claim: 把八王之乱归咎于「女祸」是最省力也最不准确的解释。真正的结构性原因在西晋的宗室分封与都督制：诸王各拥强兵、各据重镇，只要有借口就会起兵。贾后杀太子只是提供了导火索。她的罪名被后世放大，恰恰因为「一个女人搞乱天下」比「制度设计失败」更容易被接受。
     sourceId: jinshu-jiananfeng
     kind: dispute
+  - claim: 贾南风专权近十年而「朝野安静」，靠的是张华、裴頠主持政务。她的失败在于杀太子——此举打破了宗室与后族之间的脆弱平衡，八王之乱由此爆发。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: sima-zhong
     type: spouse

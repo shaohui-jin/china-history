@@ -24,6 +24,9 @@ evaluations:
     sourceId: jinshi-taizong
     quote: 靖康元年闰十一月，宗望、宗翰俱至汴京城下。宋主遣使请和。二年二月，宋主降，宗望等以其族北还。
     kind: influence
+  - claim: 完颜宗望灭北宋，是金朝军事扩张的顶点。此后金朝迅速转入守势，与南宋形成长期对峙——征服的速度超过了统治能力的成长。
+    sourceId: jinshi-shizong-zan
+    kind: dispute
 relations:
   - target: huizong
     type: enemy

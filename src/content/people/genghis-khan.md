@@ -29,6 +29,9 @@ evaluations:
   - claim: 「灭国四十」的代价需要并置。花剌子模的讹答剌、撒马尔罕、玉龙杰赤，西夏的中兴府，金的中都——每一座城的陷落都伴随大规模屠杀。蒙古西征造成的死亡人数，学界估计从数百万到数千万不等，至今仍有争议。评价成吉思汗不能只看疆域，也不能只用现代的道德标准衡量十三世纪的战争——但两者都必须被记录。
     sourceId: yuanshi-taizu
     kind: dispute
+  - claim: 《元史》赞语称世祖「以夏变夷，立经陈纪」，这一判断的起点是成吉思汗所建立的千户制与札撒——蒙古帝国能转变为中原王朝，前提是它先成为一个有制度的政权。
+    sourceId: yuanshi-shizu-2
+    kind: influence
 relations:
   - target: kublai
     type: kinship

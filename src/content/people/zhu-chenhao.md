@@ -27,6 +27,9 @@ evaluations:
   - claim: 这场叛乱的真正意义是成就了王阳明。若无宁王之乱，王守仁只是一介被贬的驿丞与讲学先生；平叛之功使其「知行合一」之说获得了实践上的验证，也使心学在嘉靖朝得以广泛传播。一次失败的藩王叛乱，意外成为明代思想史的转折点。
     sourceId: mingshi-zhucheng-hao
     kind: dispute
+  - claim: 宁王之乱四十三日而平，说明明代藩王体制早已失效：藩王既无兵权也无地方行政权，一旦起事便孤立无援。这一结局反证了永乐削藩的成功。
+    sourceId: mingshi-yangjisheng
+    kind: influence
 relations:
   - target: wang-yangming
     type: enemy

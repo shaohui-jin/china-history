@@ -27,6 +27,9 @@ evaluations:
   - claim: 贺若弼与其父贺若敦的死因几乎相同：都因口出怨言。父亲临刑刺舌告诫「汝不可不思」，儿子仍未能守住。这说明问题不在个人修养，而在「功高而位不满」的结构性处境——在一个无法容纳功臣的政治体系里，怨言只是症状。
     sourceId: suishu-gaozu
     kind: dispute
+  - claim: 贺若弼在灭陈之役中率军自广陵渡江，与韩擒虎分道并进。隋朝的统一，是两路水陆并进的结果，而非单点突破。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

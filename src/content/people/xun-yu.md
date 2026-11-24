@@ -26,6 +26,9 @@ evaluations:
   - claim: 荀彧之死，《三国志》记为「以忧薨」，《魏氏春秋》则记曹操送空食盒，荀彧会意服毒。两说性质不同：前者是政治失意而死，后者是被逼自尽。裴松之注并存两说，未加判定。
     sourceId: sanguozhi-xunyu
     kind: dispute
+  - claim: 荀彧在曹操集团中的角色是「定策」：迎天子都许、官渡坚守、北伐河北，皆有他的判断。他最终因反对曹操进爵魏公而失和，饮药而死——政治立场与个人情谊的冲突，在他身上最尖锐。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: cao-cao
     type: ruler-subject

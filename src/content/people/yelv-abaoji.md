@@ -29,6 +29,9 @@ evaluations:
     sourceId: liaoshi-taizu
     quote: 太祖受可汗之禅，遂建国。东征西讨，奄有辽海，威服诸部，遂为北方雄国。
     kind: dispute
+  - claim: 耶律阿保机建国，靠的是对汉人的吸纳：「吾欲自为一部以治汉城」。辽朝的南北面官制，其源头正在这一决定。
+    sourceId: liaoshi-tianzuo-2
+    kind: influence
 relations:
   - target: yelv-deguang
     type: parent-child

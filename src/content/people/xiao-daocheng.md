@@ -26,6 +26,9 @@ evaluations:
   - claim: 南齐仅二十三年、历七帝，是南朝最短的王朝。齐明帝萧鸾即位后「尽杀高帝、武帝子孙」，萧道成的「深戒之」成了自己家族命运的预言。
     sourceId: nanqishu-gaodi
     kind: dispute
+  - claim: 萧道成代宋建齐，是南朝「兵强者代」逻辑的又一次验证。他从寒门军功起家，四十年仕宋而终取而代之——南朝的政权更替，几乎都由掌握禁军者完成。
+    sourceId: songshu-liuyu-2
+    kind: influence
 relations:
   - target: liu-yu
     type: ruler-subject

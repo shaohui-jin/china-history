@@ -28,6 +28,9 @@ evaluations:
   - claim: 孙策之死改变了江东的扩张方向。他死前正「阴欲袭许，迎汉帝」，若成行，曹操将陷入两面受敌。这个计划随他的死而终止，官渡之战的结局也因此少了一个变数。
     sourceId: sanguozhi-sunce-ping
     kind: dispute
+  - claim: 孙策平定江东，靠的是袁术的兵力与江东士族的支持。他临终传位孙权而不传子，这一决定使江东政权避免了幼主当国的危机，是三国创业君主中最清醒的一次继承安排。
+    sourceId: sanguozhi-caocao
+    kind: influence
 relations:
   - target: sun-quan
     type: sibling

@@ -29,6 +29,10 @@ evaluations:
   - claim: 长安得而复失，暴露了刘裕的根本限制。他留下十二岁的刘义真镇守关中，诸将内讧，赫连勃勃乘机南下，关中终失。原因很直接：他急于南归篡位，不敢久留。北伐的顶点与帝业的开端，在同一年成为互相排斥的选择。
     sourceId: songshu-wudi-zan
     kind: dispute
+  - claim: 刘裕「家贫，有大志，奉继母以孝闻」，从北府兵的下级军官起家。他的崛起路径是南朝最典型的寒门军功路线——与王谢子弟的入仕方式完全不同。
+    sourceId: songshu-liuyu-2
+    quote: 家贫，有大志，奉继母以孝闻。
+    kind: evaluation
 relations:
   - target: xie-xuan
     type: ruler-subject

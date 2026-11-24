@@ -29,6 +29,9 @@ evaluations:
   - claim: 前赵的败亡说明「胡汉分治」的局限。刘曜以「国人」待匈奴、以「赵人」待汉人，两套法律、两套官制并行，却始终无法整合。洛阳之战他被石勒擒杀，前赵亡。此后石勒的后赵、苻坚的前秦、拓跋氏的北魏，都在反复尝试解决同一问题，直到孝文帝改制才给出一个答案。
     sourceId: jinshu-liuyao
     kind: dispute
+  - claim: 刘曜改国号为赵，试图把匈奴政权改造为中原王朝：立太学、选生徒、定制度。但他的「胡汉分治」始终无法整合两套体系，前赵的速亡正在于此。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: liu-cong
     type: kinship

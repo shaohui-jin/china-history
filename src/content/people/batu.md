@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的历史地位被汉文史料严重低估。金帐汗国统治罗斯诸公国两百余年，对俄罗斯的政治结构（莫斯科公国的崛起、沙皇制度的中央集权）影响极深；而《元史》只把他作为「宗室」一笔带过。历史记忆的选择性，在这里表现得极为明显——对欧洲影响最大的蒙古人，在中国史书里是最不起眼的一个。
     sourceId: yuanshi-batu
     kind: dispute
+  - claim: 拔都西征建立的钦察汗国统治罗斯两百余年，对俄罗斯的政治结构影响极深。而《元史》只把他作为「宗室」一笔带过——对欧洲影响最大的蒙古人，在中国史书里最不起眼。
+    sourceId: yuanshi-shizu-2
+    kind: dispute
 relations:
   - target: genghis-khan
     type: kinship

@@ -29,6 +29,9 @@ evaluations:
   - claim: 他的死因是皇位继承的政治清算。英宗复辟必须否定景帝的合法性，而于谦是景帝朝的兵部尚书、北京保卫战的统帅——不杀他，夺门之变就无法成立。徐有贞「不杀于谦，此举为无名」一语道破实质。他的罪名（「谋逆」）与其实际行为完全不符，这是明代最明确的一桩政治冤案。
     sourceId: mingshi-yuqian-zan
     kind: dispute
+  - claim: 土木之变后的北京保卫战，是在「纲纪日以委颓」的背景下完成的。《明史》把于谦的功业放在这一长时段的衰颓趋势中，更显出他的孤绝：不是制度在支撑他，而是他一个人在支撑制度。
+    sourceId: mingshi-xizong-zan
+    kind: evaluation
 relations:
   - target: wang-zhen
     type: enemy

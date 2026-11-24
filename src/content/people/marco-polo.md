@@ -22,6 +22,9 @@ evaluations:
   - claim: 「马可·波罗是否真的到过中国」是持续数百年的争论。怀疑者指出书中没提长城、茶叶、缠足、汉字，且中国史籍中找不到他的名字；支持者则指出书中对纸币、盐税、驿站运作的细节只有亲历者才知道。
     sourceId: marco-polo
     kind: dispute
+  - claim: 马可·波罗所记的「汗八里」与纸币制度，是元代中国最令欧洲震惊的两件事。他的记述虽有夸大，但大汗之城的繁华与纸钞的流通，确为当时世界所仅见。
+    sourceId: yuanshi-shizu-2
+    kind: influence
 relations:
   - target: kublai
     type: ruler-subject

@@ -28,6 +28,9 @@ evaluations:
   - claim: 萧绰摄政二十七年，实际统治时间超过绝大多数辽朝皇帝，但《辽史》没有为她单独立本纪，其事迹附于《圣宗本纪》。这一处理方式反映了辽朝史官的正统观：摄政太后不被视为独立的君主。
     sourceId: liaoshi-shengzong
     kind: dispute
+  - claim: 萧绎在江陵称帝，旋为西魏所灭。南朝的文化中心在侯景之乱后由建康转向江陵，而江陵的陷落使南朝的文化积累再度损失——十四万卷图书被焚，是中华文明史上最惨重的一次文献损失。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: yelv-longxu
     type: parent-child

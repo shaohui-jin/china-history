@@ -29,6 +29,9 @@ evaluations:
   - claim: 西辽的「复国」目标从未实现。耶律大石终其一生未能东归，其继承者也未再尝试。因此西辽的性质，与其说是「辽的延续」，不如说是一个在异域新建的契丹政权——它在制度上保留辽制，在族群上仍是契丹，但与中原已无实质联系。
     sourceId: liaoshi-tianzuo
     kind: dispute
+  - claim: 耶律大石西迁建西辽，是辽亡后契丹人的最后一次复兴。他在中亚统治近百年，其影响远及伊斯兰世界——一个被逐出中原的政权，在异域延续了更长的时间。
+    sourceId: liaoshi-tianzuo-2
+    kind: dispute
 relations:
   - target: yelv-longxu
     type: kinship

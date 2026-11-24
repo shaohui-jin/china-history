@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的死是隋朝由盛转衰的信号。高颎因反对废太子杨勇、又谏阻炀帝征高丽，被以「谤讪朝政」的罪名赐死。一个为隋朝设计制度、打下江山的人，死于自己参与建立的体制——炀帝杀高颎，等于宣布开皇旧臣的集体失效，此后朝中再无人敢谏。
     sourceId: suishu-gaojiong
     kind: dispute
+  - claim: 高颎主持的输籍定样，核实户口、确定户等，使国家直接掌握人口。开皇年间的富庶，建立在这一技术性的行政改革上。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

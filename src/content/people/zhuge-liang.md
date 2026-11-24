@@ -34,6 +34,9 @@ evaluations:
   - claim: 陈寿曾是蜀汉臣，其父亦因马谡案受牵连。因此他对诸葛亮的评价，历来被认为是既有敬意又有保留的——「应变将略非其所长」一句，可能包含个人经历的因素。但这一判断本身与北伐的实际结果相符，不能简单视为私怨。
     sourceId: sanguozhi-zhuge-ping
     kind: dispute
+  - claim: 诸葛亮北伐的困境在于国力的绝对差距：蜀汉一州对曹魏九州。陈寿在传末评语中已指出这一点，「盖应变将略，非其所长欤」的疑问，须放在这一力量对比中理解。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: liu-bei
     type: ruler-subject

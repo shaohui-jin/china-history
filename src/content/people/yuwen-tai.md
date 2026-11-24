@@ -31,6 +31,9 @@ evaluations:
   - claim: 沙苑之战（537）以少胜多是其军事顶点，但胜利有偶然因素：宇文泰采李弼之策，于渭曲芦苇中设伏，高欢军「争击之，队乱」，恰逢大风扬尘，遂大溃。此后玉壁之战（546）他据城坚守，使高欢顿兵五十余日而退。西魏的生存靠的是地利与守御，而非实力——这一点常被「关陇集团」的宏大叙事掩盖。
     sourceId: zhoushu-yuwentai
     kind: dispute
+  - claim: 宇文泰以关中一隅对抗高欢，靠的是府兵制与六官制的组织创新。苏绰的六条诏书、计帐户籍，都是这一体系的技术支撑——制度优势弥补了实力差距。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: gao-huan
     type: enemy

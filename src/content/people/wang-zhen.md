@@ -25,6 +25,9 @@ evaluations:
   - claim: 英宗复辟后「思王振不已」，命复其官、刻木为像、招魂以葬、建祠曰「旌忠」。一个导致二十万大军覆没、皇帝本人被俘的宦官，在复辟后反而获得褒崇——这一反常举动说明英宗对王振的依赖是情感性的，而非政治性的。
     sourceId: mingshi-qiujin
     kind: dispute
+  - claim: 王振专权是明代宦官干政的开端。此后汪直、刘瑾、魏忠贤相继而起，《明史》把这条线索与「纲纪日以委颓」连在一起——宦祸不是偶发的，而是制度失效的表现。
+    sourceId: mingshi-xizong-zan
+    kind: influence
 relations:
   - target: yu-qian
     type: enemy

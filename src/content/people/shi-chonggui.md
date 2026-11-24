@@ -28,6 +28,9 @@ evaluations:
   - claim: 「称孙不称臣」的选择在道义上正确，在政治上失算。石重贵听从景延广之议，对契丹只称「孙」不称「臣」，等于否认了石敬瑭建立的藩属关系，却未做好战争准备。而中原政权在五代时期始终缺乏对抗契丹的骑兵与后勤能力——这一结构性劣势，直到后周世宗与北宋初年才有所改变。
     sourceId: xinwudaishi-chonggui
     kind: dispute
+  - claim: 石重贵「称孙不称臣」，试图摆脱契丹的藩属关系，却因国力不足而失败。后晋的灭亡说明：道义上的正确，无法替代实力上的准备。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: shi-jingtang
     type: kinship

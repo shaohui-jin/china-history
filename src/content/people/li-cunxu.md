@@ -31,6 +31,10 @@ evaluations:
   - claim: 他的败亡速度与崛起同样惊人。同光四年（926）魏州兵变，李嗣源被推为主，庄宗在洛阳死于兴教门之变，距灭后梁仅三年。表面是宠信伶人、猜忌功臣，深层原因是他从未建立文官行政体系——后唐的财政由孔谦以聚敛维持，军队由义儿养子维系，一旦军心离散，政权即刻崩塌。
     sourceId: xinwudaishi-cunxu
     kind: dispute
+  - claim: 庄宗灭梁之后「志气骄怠」，委政于伶官，「军士乏食而内库金银山积」。他的败亡不在军事，而在立国后立即失去了对财政与人事的控制。
+    sourceId: jiuwudaishi-wudai-2
+    quote: 帝自灭梁之后，志气骄怠，委政于伶官。
+    kind: dispute
 relations:
   - target: li-keyong
     type: parent-child

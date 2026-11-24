@@ -28,6 +28,9 @@ evaluations:
   - claim: 《文选》的选录标准也造成了长期的遮蔽。它偏重骈俪与辞藻，对乐府民歌、小说、口语文学几乎不录；陶渊明的诗只选八首，而颜延之、谢灵运的作品大量入选。此后千年的文学趣味被这部选本塑造，直到宋代古文运动才有所纠正——一个选本的力量，可以左右一个民族的审美长达数百年。
     sourceId: liangshu-xiaotong
     kind: dispute
+  - claim: 昭明太子编《文选》的东宫藏书三万卷，依托的是梁武帝朝的文化积累。这一积累在侯景之乱中几乎全部焚毁——文化的繁盛与政治的稳定，往往同生同灭。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: xiao-yan
     type: parent-child

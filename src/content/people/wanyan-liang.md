@@ -27,6 +27,9 @@ evaluations:
   - claim: 海陵王南侵的失败有直接的军事原因：采石败于虞允文，随后部将兵变。但更深的原因是他「征发各族丁壮，民怨沸腾」，在国内尚未稳定的情况下发动全面战争。完颜雍能在辽阳从容称帝，正因后方空虚。
     sourceId: jinshi-hailing
     kind: dispute
+  - claim: 海陵王完颜亮迁都燕京、推行汉化，其功业与暴虐并存。《金史》把他列入本纪而评价极低——迁都的深远意义，被其个人的荒淫掩盖了。
+    sourceId: jinshi-shizong-zan
+    kind: dispute
 relations:
   - target: wanyan-wuqimai
     type: kinship

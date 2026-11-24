@@ -29,6 +29,9 @@ evaluations:
   - claim: 陈朝的先天不足决定了它的命运。陈霸先立国时，巴蜀、江陵、淮南已尽失于北周与北齐，陈的疆域仅存长江以南、今江苏南部至广东一带，是南朝中最狭小的。他在位三年即卒，继任者文帝、宣帝虽力图恢复，终无法改变南北实力对比——589 年隋灭陈，是必然的结局。
     sourceId: chenshu-gaozu
     kind: dispute
+  - claim: 陈霸先袭杀王僧辩，是南朝末年「兵强者为主」的必然结果。王僧辩迎立北齐扶植的贞阳侯，已丧失政治正当性——陈霸先的举动虽有背信之名，却是南朝自救的最后机会。
+    sourceId: suishu-houzhuchen
+    kind: dispute
 relations:
   - target: hou-jing
     type: kill

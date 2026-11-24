@@ -27,6 +27,9 @@ evaluations:
   - claim: 史书对她的私德记载颇有微词（如宠信李冲、逼幸王叡），但这些叙述多出自北魏后期史臣，可靠性难断。更值得注意的是她的政治遗产：均田制经北齐、北周、隋、唐沿用近三百年，直到两税法（780）才被取代——一位临朝称制的太后所定的制度，比许多朝代本身更长久。
     sourceId: beishi-fengtaihou
     kind: dispute
+  - claim: 冯太后的班禄、均田、三长三项制度，把豪族控制的人口重新纳入国家户籍。这一系列改革的前提是北魏中央权力的强化——没有政治权威，制度无法推行。
+    sourceId: songshu-liuyu-2
+    kind: influence
 relations:
   - target: yuan-hong
     type: ruler-subject

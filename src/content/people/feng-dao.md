@@ -27,6 +27,9 @@ evaluations:
   - claim: 冯道的争议本质是价值标准的冲突：以「君臣大义」论，他是四朝十君的贰臣；以「保境安民」论，他在乱世中做了不少实事。宋代以后「忠君」成为绝对价值，冯道遂成反面典型——这一评价的变化，反映的是宋代政治文化对五代的重塑。
     sourceId: jiuwudaishi-taizu
     kind: dispute
+  - claim: 冯道历仕四朝十君，自号「长乐老」。欧阳修在《新五代史》中斥其「无廉耻」，但五代的实际政治需要这样一批维持行政连续性的文官——道德的批判与制度的需要，在这里分离。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: chai-rong
     type: ruler-subject

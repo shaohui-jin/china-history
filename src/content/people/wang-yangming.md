@@ -29,6 +29,9 @@ evaluations:
   - claim: 心学被后世分为两派：一派强调「事上磨练」，走经世致用之路；一派流于「现成良知」，末流则「满街都是圣人」，束书不观、空谈心性。明末对心学的批评（如顾炎武「以明心见性之空言，代修己治人之实学」）正针对后者。一个思想体系的成败，往往取决于它最弱的继承者。
     sourceId: mingshi-wangyangming
     kind: dispute
+  - claim: 王阳明平宁王之乱，正是正德朝政治混乱中的异数。《明史》把这类「以文臣而能定乱」的事迹单独标出，作为对「纲纪委颓」的一种反证。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: zhuxi
     type: enemy

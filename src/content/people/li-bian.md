@@ -24,6 +24,9 @@ evaluations:
   - claim: 他临终告诫李璟「善交邻国，以保社稷」。李璟未遵父训，先后灭闽、灭楚，耗尽国力，终为后周所败。这一对照说明：南唐的衰落不是从李煜开始的，而是从李璟违背父训开始的。
     sourceId: jiuwudaishi-liang
     kind: influence
+  - claim: 李昪代吴建南唐，是十国中少数以「禅让」形式完成的政权更替。南唐的文化繁荣（李璟、李煜两代词人）与其军事的衰弱并存。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: yang-xingmi
     type: ruler-subject

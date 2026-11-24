@@ -26,6 +26,9 @@ evaluations:
     sourceId: suishu-yangdi
     quote: 恃其富强，不虞后患，荒淫无度，法令滋章，教绝四维，刑参五虐，锄诛骨肉，屠剿忠良。
     kind: dispute
+  - claim: 宇文化及弑隋炀帝，是隋末群雄并起中最具象征意义的事件。炀帝之死使隋朝的合法性彻底消失，各路势力由此进入无名义的混战。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yang-guang
     type: kill

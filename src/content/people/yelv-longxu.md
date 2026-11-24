@@ -27,6 +27,9 @@ evaluations:
   - claim: 「圣宗之治」有多少应归于萧绰，历来有争议。《辽史》把澶渊之盟记在圣宗名下，但当时圣宗年三十三而母后仍在摄政（萧绰卒于统和二十七年）。前期的决策权实际在萧绰手中。
     sourceId: liaoshi-shengzong
     kind: dispute
+  - claim: 辽圣宗与承天太后执政的四十余年，是辽朝的鼎盛期：澶渊之盟后宋辽百余年无大战，辽朝得以专心经营东北与草原。
+    sourceId: liaoshi-tianzuo-2
+    kind: influence
 relations:
   - target: xiao-chuo
     type: parent-child

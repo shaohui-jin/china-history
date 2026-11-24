@@ -29,6 +29,9 @@ evaluations:
   - claim: 「镇静」之名的背面是门阀政治的实情。谢安执政时，桓冲据荆州、谢玄据广陵，淝水之功由谢氏一族独揽，随即引来司马道子与太原王氏的猜忌——战后不久谢安即被排挤出朝，出镇广陵，次年病卒。东晋的胜利没有转化为中央集权，反而加速了门阀间的倾轧。
     sourceId: jinshu-xiean
     kind: dispute
+  - claim: 淝水之战时东晋的内部条件极为脆弱：桓氏据上游、谢氏掌下游、司马氏居中，三方牵制。谢安的作用是让这个脆弱的联盟在危机中不散——这比战术指挥更难。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: fu-jian
     type: enemy

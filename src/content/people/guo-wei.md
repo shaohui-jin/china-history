@@ -28,6 +28,9 @@ evaluations:
   - claim: 郭威的崛起方式决定了后周的局限。他以邺都兵变代汉，开五代「兵变夺国」的又一例；其养子柴荣继位，又因「异姓承统」而须以战功立威。后周的制度革新虽然扎实，但政权的合法性始终建立在军力之上——这也是赵匡胤陈桥兵变能轻易复制的原因。
     sourceId: xinwudaishi-guowei
     kind: dispute
+  - claim: 郭威以邺都兵变代汉建周，开五代「兵变夺国」的又一例。后周的制度革新虽然扎实，但政权的合法性始终建立在军力之上——这也是赵匡胤陈桥兵变能轻易复制的原因。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: chai-rong
     type: parent-child

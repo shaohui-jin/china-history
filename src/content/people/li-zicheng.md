@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的失败只用了四十二天。1644 年三月十九日入北京，四月二十二日山海关兵败，四月二十九日称帝后西逃。进京后的追赃助饷（对明朝官员拷掠索银）、军纪松弛、对吴三桂的处理失当，使一个刚建立的政权迅速失去士绅的支持。农民军能破坏旧秩序，却未准备好建立新秩序——这是历代农民起义的共同困境。
     sourceId: qingshigao-lizicheng
     kind: dispute
+  - claim: 李自成的「均田免赋」之所以有效，是因为明末的加派（三饷）已使农民负担增至数倍。《明史》把崇祯朝的财政崩溃视为流寇四起的直接原因。
+    sourceId: mingshi-xizong-zan
+    kind: influence
 relations:
   - target: chongzhen
     type: enemy

@@ -27,6 +27,9 @@ evaluations:
   - claim: 后汉是五代最短命的王朝，仅四年。刘知远在位一年即卒，其子刘承祐猜忌功臣，诛杀郭威全家，逼反郭威，后汉遂亡。这一结局说明：靠军事机会主义建立的政权，若无制度基础，连一代都传不下去。
     sourceId: xinwudaishi-liuzhiyuan
     kind: dispute
+  - claim: 刘知远在契丹灭晋时拥兵不救，待契丹北撤后才称帝入汴。这一策略极为冷静——不费一战而得中原，代价是对后晋的坐视。
+    sourceId: jiuwudaishi-wudai-2
+    kind: dispute
 relations:
   - target: shi-jingtang
     type: ruler-subject

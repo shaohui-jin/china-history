@@ -26,6 +26,9 @@ evaluations:
   - claim: 「愦愦之政」的名声来自他晚年的不作为。王敦两次举兵，王导均「率宗族待罪于阙下」，既表明忠于朝廷，也保全王氏门户。时人讥其「忠而不纯」，这批评有其道理——门阀政治的逻辑是家族优先，王导无法超越它，因为他的权力本就建立在家族之上。
     sourceId: jinshu-wangdao
     kind: dispute
+  - claim: 王导辅佐司马睿建立东晋，正值「兵凶岁饥，死疫过半」的残破局面。他的「愦愦之政」不是无能，而是在这种条件下唯一可行的妥协：先稳住南北士族，再谈恢复。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: sima-rui
     type: ruler-subject

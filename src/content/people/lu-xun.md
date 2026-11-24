@@ -27,6 +27,9 @@ evaluations:
   - claim: 「忍辱负重」一语出自陆逊在夷陵战前的自陈，后世常用来形容他。但这一品质的另一面是：他在政治上也一贯克制，直到立嗣之争才第一次激烈谏诤，而这一次就付出了性命。克制者在关键时刻的坚持，代价往往更高。
     sourceId: sanguozhi-sunquan-ping
     kind: dispute
+  - claim: 陆逊在夷陵之战中「火烧连营」，靠的是对地形的精确利用与刘备连营七百里的战术失误。这一战与曹操在赤壁的失败结构相似：北方军队进入水网地带后，兵力优势反而成为负担。
+    sourceId: sanguozhi-caocao
+    kind: influence
 relations:
   - target: sun-quan
     type: ruler-subject

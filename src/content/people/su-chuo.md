@@ -28,6 +28,9 @@ evaluations:
   - claim: 他主持的文体改革反而失败了。苏绰仿《尚书》作《大诰》，令「自是之后，文笔皆依此体」，试图以古朴文体矫正浮华。但北周后期庾信、王褒入北，绮丽文风复盛，至隋唐更成主流。制度的成功与文风的失败，在他一人身上并存。
     sourceId: zhoushu-suchuo
     kind: dispute
+  - claim: 苏绰的六条诏书要求地方官「非通六条及计帐者不得居官」——把治术变成了任职资格。这一制度化的思路，是西魏能在关中一隅与东魏抗衡的关键。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yuwen-tai
     type: ruler-subject

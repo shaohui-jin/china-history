@@ -28,6 +28,9 @@ evaluations:
   - claim: 「炀帝」这个谥号本身是唐朝给的。「炀」的意思是「好内远礼、去礼远众」——这是胜利者的定性。近代以来，对他「雄才大略而急功近利」的评价逐渐取代了单一的暴君叙事。
     sourceId: suishu-yangdi
     kind: dispute
+  - claim: 隋炀帝三征高丽，「转输不息，民力凋尽」，是隋亡的直接原因。大运河的功业与征辽的消耗，在他一人身上并存。
+    sourceId: suishu-houzhuchen
+    kind: dispute
 relations:
   - target: yang-jian
     type: parent-child

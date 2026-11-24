@@ -28,6 +28,9 @@ evaluations:
   - claim: 从英明到狂暴的转变，史书归因于酗酒，但更可能是权力结构的产物。高洋以次子身份代魏建齐，宗室诸弟（高演、高湛）皆有实力，他的暴虐既是酗酒的结果，也是对潜在威胁的过度反应。北齐此后二十八年间换了六位皇帝，宗室相残不断——这套「以杀立威」的逻辑，由他开端。
     sourceId: beiqishu-gaoyang
     kind: dispute
+  - claim: 高洋前期「留心政术，以法驭下」，后期「纵酒肆欲，事极猖狂」。北齐二十八年间六帝相残，这种「以杀立威」的逻辑由他开端。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: gao-huan
     type: parent-child

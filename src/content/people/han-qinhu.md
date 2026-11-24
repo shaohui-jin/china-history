@@ -27,6 +27,9 @@ evaluations:
   - claim: 韩擒虎临终「生为上柱国，死作阎罗王」的传说，见于《隋书》。这类志怪记载虽不可信，但它反映了唐人对韩擒虎的某种想象：一个勇猛到足以镇住冥界的人。历史人物的民间形象，往往与其史书记载并行发展。
     sourceId: suishu-gaozu
     kind: dispute
+  - claim: 韩擒虎灭陈，是隋朝统一之战的最后一击。他率五百人夜渡采石，直入建康，俘陈后主——这一战的成功建立在陈朝「不知稼穑之艰难」的内部腐朽之上。
+    sourceId: suishu-houzhuchen
+    kind: influence
 relations:
   - target: yang-jian
     type: ruler-subject

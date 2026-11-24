@@ -28,6 +28,9 @@ evaluations:
   - claim: 张飞在后世的形象（粗豪、莽撞）与史书记载有差距：《三国志》说他「爱敬君子」，义释严颜一段尤见其识度。演义把他塑造成一介武夫，反而掩盖了他性格中「敬士」的一面。
     sourceId: sanguozhi-guanyu-ping
     kind: dispute
+  - claim: 张飞之死在于「暴而无恩」：他鞭挞士卒而令其侍侧，终被部将所杀。陈寿在《三国志》中把关羽的「刚而自矜」与张飞的「暴而无恩」并提，作为二人败亡的共同原因。
+    sourceId: sanguozhi-caocao
+    kind: evaluation
 relations:
   - target: liu-bei
     type: sibling

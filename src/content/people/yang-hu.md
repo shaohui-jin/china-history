@@ -28,6 +28,9 @@ evaluations:
   - claim: 「羊陆之交」的后世意义被放大了。他与陆抗互赠酒药，确有记载；但双方之所以能从容往来，是因为晋吴两国当时都无力发动决战。把这种对峙中的礼数解释为「以德服人」的王道典范，遮蔽了一个事实：羊祜的德望之所以有效，正因为它背后是晋国日益增长的实力。
     sourceId: jinshu-yanghu
     kind: dispute
+  - claim: 羊祜镇襄阳十年，正值西晋国力恢复期。他的「以德服人」之所以有效，前提是晋强吴弱的实力对比——德望需要实力作为后盾。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: sima-yan
     type: ruler-subject

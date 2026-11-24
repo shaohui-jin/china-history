@@ -27,6 +27,9 @@ evaluations:
   - claim: 德光之死的方式（剖腹实盐，汉人谓之「帝羓」）在后世常被当作契丹风俗的猎奇记述。但它同时也说明一件事：契丹军队在北归途中已无法把皇帝的遗体完好运回，环境与后勤的狼狈由此可见。
     sourceId: liaoshi-taizong
     kind: dispute
+  - claim: 耶律德光灭后晋而入汴，然「打草谷」的掠夺方式使中原民心尽失，不得不北撤，死于途中。辽国此后再未大规模南侵——征服与统治是两回事。
+    sourceId: liaoshi-tianzuo-2
+    kind: dispute
 relations:
   - target: yelv-abaoji
     type: parent-child

@@ -28,6 +28,9 @@ evaluations:
   - claim: 「无愁天子」的形象掩盖了北齐亡国的结构性原因。北齐户口倍于北周、经济远为富庶，败亡的真正原因是「政出多门」与宗室相残——二十八年六帝，每次易代都伴随屠杀。高纬只是这个循环的最后一环：他既无力约束勋贵，也无法信任将领。杀斛律光不是昏庸，而是恐惧。
     sourceId: beiqishu-gaowei
     kind: dispute
+  - claim: 高纬杀斛律光、赐死兰陵王，是北齐自毁长城的顶点。北齐「户口倍于周」而终为北周所灭，原因不在国力而在内部的猜忌与屠杀。
+    sourceId: nanqishu-hundi
+    kind: dispute
 relations:
   - target: gao-changgong
     type: ruler-subject

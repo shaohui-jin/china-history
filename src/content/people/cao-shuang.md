@@ -25,6 +25,9 @@ evaluations:
     sourceId: sanguozhi-caoshuang
     quote: 爽窘迫，乃曰：「司马公本无他志，但当以吾等兄弟付廷尉耳。」遂归罪请死。既而有司奏爽与何晏等谋逆，皆夷三族。
     kind: dispute
+  - claim: 曹爽的失败不在无谋，而在无断。桓范劝其挟天子赴许昌，他犹豫一夜而曰「我亦不失作富家翁」——这一句是三国政治中最著名的误判：他以为交出兵权可以换命。
+    sourceId: sanguozhi-caocao
+    kind: dispute
 relations:
   - target: sima-yi
     type: enemy

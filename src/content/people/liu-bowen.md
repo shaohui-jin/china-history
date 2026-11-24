@@ -30,6 +30,9 @@ evaluations:
   - claim: 刘基的形象在身后被两重力量撕扯。一是民间的神化——《烧饼歌》等谶纬托名于他，「前知五百年」的术士取代了谋臣；二是官方史书的模糊——《明史》记其服药后「腹中如拳石」，却只系于胡惟庸，不追问朱元璋的默许。真实的刘基介于两者之间：有谋略而无自保之术的元末士人。
     sourceId: mingshi-liuji
     kind: dispute
+  - claim: 刘基的死后哀荣与明初功臣的整体命运一致：洪武朝封爵者多不得善终，唯有「不掌兵、不结党」者能保全。刘基虽已致仕，仍被胡惟庸一案牵连。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: ruler-subject

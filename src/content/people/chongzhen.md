@@ -27,6 +27,9 @@ evaluations:
   - claim: 崇祯的性格是明亡的直接变量。他十七岁能以极快速度铲除魏忠贤，说明其政治手腕不弱；但此后对任何大臣都不信任，陈新甲、袁崇焕、孙传庭皆因猜忌而死。史家所谓「刚愎自用」，实质是一个在深宫长大、未经政治历练的年轻人在危局中的过度反应。将明亡全归于他或全归于时势，都过于简单。
     sourceId: mingshi-zhuanglie
     kind: dispute
+  - claim: 《明史》对崇祯的评价是「非亡国之君，而当亡国之运」，但同时把亡国的根源上溯至神宗、熹宗两朝。这一双重判断，使崇祯既是责任者也是承受者。
+    sourceId: mingshi-xizong-zan
+    kind: dispute
 relations:
   - target: yuan-chonghuan
     type: ruler-subject

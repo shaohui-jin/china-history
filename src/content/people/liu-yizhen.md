@@ -27,6 +27,9 @@ evaluations:
     sourceId: songshu-yizhen
     quote: 景平二年，徐羡之等以义真轻躁，废为庶人，寻杀之。
     kind: dispute
+  - claim: 刘义真十二岁镇守长安，是刘裕急于南归的直接结果。诸将内讧、关中得而复失——这一失败的责任在决策者，而非一个孩子。
+    sourceId: songshu-liuyu-2
+    kind: dispute
 relations:
   - target: liu-yu
     type: parent-child

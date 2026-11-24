@@ -29,6 +29,9 @@ evaluations:
   - claim: 「既不能流芳后世，不足复遗臭万载邪」这句话常被读作枭雄的豪语，但它的语境是无路可走。桓温一生受制于门阀：北伐时粮道不继、朝中王谢掣肘，枋头败后威望尽失，废立虽成而篡位终不得。他的「遗臭万载」之志，实际是一个被门阀政治困住的人的最后自我说服。
     sourceId: jinshu-huanwen
     kind: dispute
+  - claim: 桓温三次北伐皆受制于东晋内部的牵制：粮道不继、朝中掣肘、门阀猜忌。东晋初年「兵凶岁饥」的困局延续至中期，北伐的失败不能全归于个人。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: xie-an
     type: enemy

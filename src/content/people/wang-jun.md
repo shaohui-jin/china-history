@@ -28,6 +28,9 @@ evaluations:
   - claim: 灭吴之后，王濬与王浑争功。王浑以其不受节制上表弹劾，几致获罪，赖武帝宽容方免。此事说明西晋的统一并未带来政治的清明——伐吴的两路主帅互相倾轧，而此后的「八王之乱」正是同一结构性问题的爆发。
     sourceId: jinshu-wangjun
     kind: dispute
+  - claim: 王濬灭吴，依托的是羊祜、杜预两代人在荆州的经营。晋初「兵凶岁饥」的困局已过，国力恢复之后才有顺流东下之举。
+    sourceId: jinshu-wenyi
+    kind: influence
 relations:
   - target: sima-yan
     type: ruler-subject

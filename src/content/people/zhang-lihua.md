@@ -27,6 +27,9 @@ evaluations:
   - claim: 她的死是政治需要，而非个人罪孽。隋军入宫时，后主与她同藏于景阳宫井，被隋军搜出；晋王杨广欲纳之，高颎曰「周武王灭殷，戮妲己。今平陈国，不宜取丽华」，遂斩于青溪。一个妃子的生死，取决于胜利者对「亡国责任」的分配方式——把陈亡归于她，与把商亡归于妲己，是同一种历史解释。
     sourceId: chenshu-zhanglihua
     kind: dispute
+  - claim: 陈后主亡国时与张丽华同藏景阳宫井，被隋军以绳拉出。这一细节在南朝灭亡的叙述中被反复引用，成为「红颜祸水」叙事最典型的画面。
+    sourceId: suishu-houzhuchen
+    kind: dispute
 relations:
   - target: chen-shubao
     type: spouse

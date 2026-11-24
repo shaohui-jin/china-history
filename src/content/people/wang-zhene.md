@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的死暴露了北伐军的内部裂痕。王镇恶是前秦丞相王猛之孙，南方将领沈田子以其「北人」而忌之；刘裕南归后，沈田子以「谋反」为名杀之，关中人心由此瓦解。一个能攻下长安的将领，死于同僚的猜忌——刘裕留下的不是守将，而是一群互不信任的仇敌。
     sourceId: songshu-wangzhene
     kind: dispute
+  - claim: 王镇恶是前秦丞相王猛之孙，这一身份使他在南方将领中始终被猜忌。他的被杀，根源是南北籍贯的隔阂，而非个人过失。
+    sourceId: songshu-liuyu-2
+    kind: dispute
 relations:
   - target: liu-yu
     type: ruler-subject

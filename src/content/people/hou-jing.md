@@ -24,6 +24,9 @@ evaluations:
   - claim: 侯景之乱是南朝由盛转衰的分水岭。西魏趁机取巴蜀、荆州，南朝疆域大为缩小；江南士族「百不存一」，门阀制度遭到毁灭性打击。这两项后果共同确立了北强南弱的格局，最终演变为隋灭陈。
     sourceId: liangshu-houjing
     kind: influence
+  - claim: 侯景之乱摧毁了建康的士族社会。《梁书》记「中原冠带随晋渡江者百家……至是在都者，覆灭略尽」——这一句是南朝门阀政治终结的墓志。
+    sourceId: nanqishu-hundi
+    kind: influence
 relations:
   - target: xiao-yan
     type: kill

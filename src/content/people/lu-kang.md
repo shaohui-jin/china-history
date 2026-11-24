@@ -28,6 +28,9 @@ evaluations:
   - claim: 「羊陆之交」常被赞为以德相待的典范：羊祜赠药、陆抗赠酒，互不猜疑。但这一礼数背后是双方都无力速胜的现实——晋军尚未练成水师，吴军亦无力北上。所谓君子之风，是长期对峙下形成的默契，而非道德的胜利。
     sourceId: sanguozhi-lukang
     kind: dispute
+  - claim: 陆抗守荆州时，西晋尚未练成水师，双方形成长期对峙。这一格局的前提是曹操时代以来北方的骑兵优势无法转化为水上战力——陆抗的坚守，建立在这个技术性的空隙上。
+    sourceId: sanguozhi-caocao
+    kind: influence
 relations:
   - target: yang-hu
     type: enemy

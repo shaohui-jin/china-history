@@ -28,6 +28,9 @@ evaluations:
   - claim: 「禅让」的形式在曹丕手中被程序化：三让而后受。此后魏晋南北朝历代改朝换代几乎都照此办理，形成一套「合法篡位」的仪式模板。这一点在评价上常被忽略——曹丕的真正遗产不是帝位，而是这套程序。
     sourceId: sanguozhi-wendi
     kind: dispute
+  - claim: 曹丕代汉的「三上书辞让」是禅让制的固定程式，其原型可追至《武帝纪》所记曹操「不受」封号的做法。曹氏父子两代经营，最终完成的是一次形式完备的政权转移。
+    sourceId: sanguozhi-caocao
+    kind: influence
 relations:
   - target: cao-cao
     type: parent-child

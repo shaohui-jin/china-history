@@ -25,6 +25,9 @@ evaluations:
   - claim: 李密杀翟让的动机，史书未明言，但从结果看，是消除了「让位」带来的权力二元结构。问题在于：瓦岗军的凝聚力很大程度来自翟让的旧部，杀翟让等于自断根基。这是一次成功却致命的权力集中。
     sourceId: zizhitongjian-sui-tang
     kind: dispute
+  - claim: 翟让让位于李密，是瓦岗军由盛转衰的起点。李密杀翟让后「瓦岗旧部人人自疑」，此后邙山之战的溃败，与其说是兵败，不如说是人心已散。
+    sourceId: suishu-houzhuchen
+    kind: dispute
 relations:
   - target: li-mi
     type: colleague

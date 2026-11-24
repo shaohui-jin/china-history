@@ -28,6 +28,10 @@ evaluations:
   - claim: 元朝的四等人制（蒙古、色目、汉人、南人）使民族隔阂制度化，是元代社会矛盾的重要根源。但需注意：制度文本与实际执行有差距，元代的社会流动比制度规定复杂。
     sourceId: yuanshi-shizu
     kind: dispute
+  - claim: 忽必烈的核心贡献是「以夏变夷」：定国号大元、营建大都、立朝仪、定官制。元朝之所以能成为中原王朝，靠的是制度性的采纳而非军事征服。
+    sourceId: yuanshi-shizu-2
+    quote: 世祖度量弘广，知人善任使，信用儒术，用能以夏变夷，立经陈纪。
+    kind: evaluation
 relations:
   - target: wen-tianxiang
     type: enemy

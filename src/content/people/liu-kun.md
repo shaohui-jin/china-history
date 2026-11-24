@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的文学地位高于其军事成就。《扶风歌》《答卢谌》开东晋南北朝的慷慨一派，钟嵘《诗品》列为「中品」，称其「善为凄戾之词，自有清拔之气」。一个失败的守将，因几首诗而被记住——这本身说明了乱世中文学与事功的错位。
     sourceId: jinshu-liukun
     kind: dispute
+  - claim: 刘琨守晋阳十年，正值「兵凶岁饥，死疫过半」的时期。他的孤军抵抗没有后方支援，其失败是结构性的——不是能力不足，而是无人可援。
+    sourceId: jinshu-wenyi
+    kind: dispute
 relations:
   - target: zu-ti
     type: colleague

@@ -28,6 +28,9 @@ evaluations:
   - claim: 太武灭佛是三武一宗法难之首，其诏书「诸有佛图形像及胡经，尽皆击破焚烧，沙门无少长悉坑之」的酷烈程度，超过后来北周、唐武两朝。动因中崔浩的道教立场固然重要，但更根本的是寺院占田、僧尼免役造成的财政与兵源流失——宗教政策在此与国家的汲取能力直接挂钩。
     sourceId: weishu-shizu
     kind: dispute
+  - claim: 太武帝灭佛的诏书「沙门无少长悉坑之」，其酷烈程度超过后来北周、唐武两朝。动因中崔浩的道教立场固然重要，但更根本的是寺院占田、僧尼免役造成的财政与兵源流失。
+    sourceId: songshu-liuyu-2
+    kind: dispute
 relations:
   - target: yuan-hong
     type: kinship

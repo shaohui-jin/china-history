@@ -184,12 +184,6 @@ A 对 B 声明 `ruler-subject`，B 对 A 声明 `enemy` —— 这是**两条不
 
 用 `npm run depth` 检查差距。
 
-### 当前分布（2026-11-24）
-
-```
-sig=5: 37 条    sig=4: 60 条    sig=3: 3 条
-```
-
 ### 出现在哪里
 
 首页与 `/timeline` 只注入 `significance >= 4` 的事件（见
@@ -545,7 +539,8 @@ songshi-yuefei         宋史·岳飞传
    wikilink 会把文本节点替换成链接节点，之后 gloss 就扫不到了。
 5. 由 [src/lib/remark-gloss.ts](../src/lib/remark-gloss.ts) 实现。
 
-**当前覆盖**：53 个含引用块的事件全部已加，共 342 处。**人物侧 0 处**——语法、样式与触屏脚本都已就绪，但内容尚未补（进度见 `PENDING-FEATURES.md` P4）。
+**覆盖情况不要写在这里**——内容会变，写了就必然过期。当前数字跑 `node scripts/orphans.mjs`
+与 `npm run validate` 看。本条只规定语法。
 
 ---
 

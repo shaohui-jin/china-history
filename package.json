@@ -11,6 +11,7 @@
     "tokens": "node scripts/gen-tokens.ts",
     "validate": "node scripts/validate-content.ts",
     "depth": "node scripts/check-depth.ts",
+    "orphans": "node scripts/orphans.mjs",
     "check": "astro check",
     "test": "node --test src/lib/*.test.ts scripts/hooks/*.test.mjs",
     "lint:css": "stylelint \"src/styles/**/*.css\" \"src/**/*.vue\"",

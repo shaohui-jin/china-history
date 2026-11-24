@@ -24,13 +24,19 @@ interface Issue {
 const issues: Issue[] = [];
 
 /** 极简 frontmatter 解析：只取需要的字段，不引 yaml 库。
- *  .md 用 `---` 包裹；.yaml 整份就是数据。 */
+ *  .md 用 `---` 包裹；.yaml 整份就是数据。
+ *
+ *  **必须归一换行**：Windows 上 `core.autocrlf=true`，工作区文件是 CRLF。
+ *  下面的检查大量依赖 `/^sources:\n((?:\s+-\s+.+\n?)+)/m` 这类跨行正则，
+ *  行尾多一个 `\r` 会让 `(.+)$` 之前的那一行匹配不上，整块被静默跳过——
+ *  检查不报错，但根本没执行。曾因此在本机报出 7 条假警告（首条 sources
+ *  被吞，误判脚注未声明），而 CI（LF）全绿。 */
 function readFrontmatter(path: string): Record<string, unknown> | null {
-  const text = readFileSync(path, 'utf8');
+  const text = readFileSync(path, 'utf8').replace(/\r\n/g, '\n');
   if (path.endsWith('.yaml') || path.endsWith('.yml')) {
     return { __raw: text };
   }
-  const m = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  const m = text.match(/^---\n([\s\S]*?)\n---/);
   if (!m) return null;
   return { __raw: m[1] };
 }
@@ -263,10 +269,18 @@ for (const f of listDir('events')) {
 
   const corr = parseCorroboration(raw);
 
-  // 检查 1：corroboration 的 primary / secondary 必须真的在 sources 或彼此之间
+  // 检查 1：corroboration 的 primary / secondary 必须构成真正的跨书互证
   if (corr && corr.primary) {
-    const all = new Set([...declared, corr.primary, ...corr.secondary]);
-    const books = new Set([...all].map(bookOf));
+    /*
+     * 判据只取 primary + secondary，**不掺 `sources`**。
+     *
+     * 曾经把 `sources` 一起并进来算书数，于是「主证与旁证同属一本，
+     * 但 sources 里另有一条别的书」就能骗过检查——yellow-turban 的
+     * primary/secondary 都是《后汉书》，却因为 sources 里有
+     * `sanguozhi-chibi` 而被当成两本书。互证看的是这一对，别的不算。
+     */
+    const pair = [corr.primary, ...corr.secondary];
+    const books = new Set(pair.map(bookOf));
 
     if (corr.secondary.length === 0) {
       issues.push({

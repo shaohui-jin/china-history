@@ -21,14 +21,15 @@ participants:
 significance: 4
 summary: 张角以太平道聚众数十万，以「苍天已死，黄天当立」为号，于甲子年二月同时起兵。汉廷调皇甫嵩、曹操、刘备等平定，然州郡割据之势自此形成，汉末三国之局由此开。
 sources:
-  - sanguozhi-chibi
+  - houhanshu-zhangjiao
   - houhanshu-huangjin
+  - sanguozhi-caocao
 corroboration:
   primary: houhanshu-zhangjiao
   secondary:
-    - houhanshu-huangjin
+    - sanguozhi-caocao
   agreement: consistent
-  note: 《皇甫嵩传》记张角的组织与口号，《皇甫嵩朱儁列传》记官军平定过程，二传同出《后汉书》而分记起义双方，可对照阅读。
+  note: 《后汉书·皇甫嵩传》记张角的组织形态与「苍天已死」口号，《三国志·武帝纪》从镇压一方记「黄巾起，拜骑都尉，讨颍川贼」。两书分记起义与平定，可互看。
 ---
 
 ## 背景
@@ -66,4 +67,4 @@ corroboration:
 
 **意义**——黄巾之乱是东汉灭亡的直接起点。它不仅摧毁了汉廷的军事力量，更重要的是改变了权力的分布：地方军阀取代中央，成为实际的政治主体。
 
-而张角以宗教组织动员数十万人的方式，也为此后中国历史上的「民间宗教叛乱」提供了一个原型。[^sanguozhi-chibi]
+而张角以宗教组织动员数十万人的方式，也为此后中国历史上的「民间宗教叛乱」提供了一个原型。[^sanguozhi-caocao]

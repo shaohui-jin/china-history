@@ -27,6 +27,9 @@ evaluations:
   - claim: 道光帝的节俭与其失败并不矛盾：他「衣非三澣不易」，陵寝也为清帝陵中最简。但这些都属于个人品德层面。战争的失败不是奢靡所致，而是整个帝国对世界变化的无知。把责任归于「皇帝不够节俭」或「林则徐误国」，都是回避结构性问题。
     sourceId: qingshigao-xuanzong
     kind: dispute
+  - claim: 道光朝的鸦片战争，是清朝由盛转衰后的第一次外部冲击。《清史稿》论咸同之际「内乱外患，纷至沓来」，其起点正是道光二十年。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: lin-zexu
     type: ruler-subject

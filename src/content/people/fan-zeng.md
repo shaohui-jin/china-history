@@ -28,6 +28,9 @@ evaluations:
     sourceId: shiji-fanzeng
     quote: 亚父受玉斗，置之地，拔剑撞而破之，曰：「唉！竖子不足与谋。夺项王天下者，必沛公也，吾属今为之虏矣。」
     kind: dispute
+  - claim: 范增劝项羽「急击勿失」，其判断基于对刘邦政治能力的估计。刘邦入关后「约法三章」而秦民大悦，这一手比任何军事部署都更具长远效果。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: xiang-yu
     type: ruler-subject

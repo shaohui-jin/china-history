@@ -30,6 +30,9 @@ evaluations:
   - claim: 他的立场变动极大：由康有为的保皇派，到主张革命共和，再到民国后支持袁世凯又反袁，晚年退出政治专治学术。这一系列转变常被批评为「多变」，但他自述「不惜以今日之我，难昔日之我」。在一个思想剧烈变动的时代，这种自我修正或许比坚守更接近真实。
     sourceId: liangqichao-yinbingshi
     kind: dispute
+  - claim: 梁启超在《戊戌政变记》中把甲午战败视为「四千年大梦之唤醒」。这一判断把中国近代的觉醒起点定在 1895 年，与《清史稿》所记的「内乱外患」形成互补。
+    sourceId: qingshigao-dezong
+    kind: influence
 relations:
   - target: kang-youwei
     type: teacher-student

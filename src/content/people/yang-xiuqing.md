@@ -23,6 +23,9 @@ evaluations:
   - claim: 「天父下凡」是杨秀清权力的来源，也是他的死因。他借附体之名掌握神权，甚至当众杖责洪秀全；逼封「万岁」则直接触动了洪秀全的底线。天京事变中他被杀，太平天国也随之由盛转衰。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 杨秀清主政时期是太平天国的鼎盛期，其军政组织能力远胜洪秀全。天京事变中他被杀，太平天国从此失去组织核心。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: hong-xiuquan
     type: ruler-subject

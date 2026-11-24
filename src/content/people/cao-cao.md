@@ -31,6 +31,9 @@ evaluations:
   - claim: 曹操「终其身为汉臣而未称帝」，这一事实与《三国演义》的「汉贼」形象存在张力。但他封魏公、进魏王、加九锡，已开了篡位之路；曹丕的受禅只是完成最后一步。评价的分歧在于：应以「未称帝」这一事实为准，还是以「为称帝铺路」这一趋势为准。
     sourceId: sanguozhi-caocao-ping
     kind: dispute
+  - claim: 《晋书·宣帝纪》论赞批评司马懿「辅翼之志，中道而变」，这一判断出自唐人之手，立场与陈寿《三国志》不同。曹操「挟天子以令诸侯」与司马懿「受遗托孤而篡」，在唐人眼里是同一种权臣逻辑的两代实践。
+    sourceId: jinshu-caocao-ping
+    kind: dispute
 relations:
   - target: liu-bei
     type: enemy

@@ -28,6 +28,10 @@ evaluations:
     sourceId: jinshu-xuandi
     quote: 嘉平元年春正月甲午，天子谒高平陵，爽兄弟皆从。帝乃奏永宁太后，废爽兄弟。帝列兵屯司马门，戎服执兵，自出视师。
     kind: dispute
+  - claim: 《晋书》赞语对司马懿的评价是「自隐过当年，而终见嗤后代」。高平陵之变的背信（洛水之誓），使他成为后世政治伦理的反面教材——成功与名声在他身上彻底分离。
+    sourceId: jinshu-sima
+    quote: 虽自隐过当年，而终见嗤后代。
+    kind: evaluation
 relations:
   - target: cao-cao
     type: ruler-subject

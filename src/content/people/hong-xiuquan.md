@@ -28,6 +28,9 @@ evaluations:
   - claim: 太平天国的失败有其内在原因，不能全归于湘军。定都天京后的内讧（1856 年天京事变，杨秀清、韦昌辉相继被杀）、洪秀全深居宫中不理政事、诸王猜忌，使这个政权在军事上尚未失败时已失去凝聚力。一个以宗教起家的政权，其最大的敌人往往是教主本人的神圣化。
     sourceId: qingshigao-hongxiuquan
     kind: dispute
+  - claim: 太平天国「糜烂十有六省，用兵十有五年」，《清史稿》的这一概括说明了它对清朝的消耗程度。此后清廷的财政、军事、地方治理全部被迫重构。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: zeng-guofan
     type: enemy

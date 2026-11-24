@@ -25,6 +25,9 @@ evaluations:
   - claim: 她一生最大的误判是庚子年支持义和团。此前她刚镇压了戊戌变法，正需要转移矛盾；而列强对光绪的同情又使她感到威胁。这一决策导致八国联军入京、《辛丑条约》赔款四亿五千万两——相当于清政府十二年的财政收入。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 慈禧太后执政近半个世纪，其权力基础是同治、光绪两朝幼主临朝的制度空隙。《清史稿》对晚清的叙述，始终围绕「内乱外患」与「权臣当国」两条线索。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: xianfeng
     type: spouse

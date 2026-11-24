@@ -30,6 +30,9 @@ evaluations:
   - claim: 「中兴名臣」的形象在近代受到两面质疑。革命派指其为「汉奸」，因为湘军镇压的是汉人起义；而对其事功的肯定，也多集中于个人修养与家书格言，较少触及湘军在战争中的屠戮（如天京陷落后的屠杀）。历史人物的评价随时代立场摆动，曾国藩是其中摆动幅度最大的一位。
     sourceId: qingshigao-zengguofan
     kind: dispute
+  - claim: 湘军的创建是清廷在「内乱」压力下被迫放权的结果：以汉族士绅办团练，等于把军事权力下移到地方。这一变化在此后数十年间重塑了清朝的政治结构。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: hong-xiuquan
     type: enemy

@@ -24,6 +24,9 @@ evaluations:
   - claim: 白登之围是汉匈关系的起点。刘邦被围七日，「用陈平秘计」才得脱。此后汉廷对匈奴行和亲、输岁币，直到汉武帝才转为攻势。这一被动局面延续了六十七年。
     sourceId: shiji-xiongnu
     kind: influence
+  - claim: 冒顿单于的崛起（鸣镝弑父、东灭东胡），恰在汉朝建立前后。两个帝国同时兴起，此后的和亲与战争，构成了汉匈关系的基本格局。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: liu-bang
     type: enemy

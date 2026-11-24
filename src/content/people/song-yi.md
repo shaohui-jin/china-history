@@ -27,6 +27,9 @@ evaluations:
   - claim: 他被杀的过程是典型的军变：项羽「晨朝上将军宋义，即其帐中斩宋义头」，随后出令「宋义与齐谋反楚，楚王阴令羽诛之」。这一套说辞未必为真，但诸将「皆慑服」，无人质问——真正决定权力的不是名分，而是谁掌握军队的忠诚。宋义之死，为巨鹿之战的破釜沉舟扫清了道路。
     sourceId: shiji-songyi
     kind: dispute
+  - claim: 宋义「坐观成败」的谋略与项羽的速战主张，是楚汉之际两种军事思想的碰撞。班固在《汉书·项籍传》赞语中引《过秦论》，正是要说明：秦的崩溃是内部瓦解，而非某一战的胜负。
+    sourceId: hanshu-xiangyu-zan
+    kind: dispute
 relations:
   - target: xiang-yu
     type: superior

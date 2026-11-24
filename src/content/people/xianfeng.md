@@ -23,6 +23,9 @@ evaluations:
   - claim: 他临终的安排（托孤八大臣 + 两宫太后盖章）本身就是矛盾的：既想防止权臣专政，又想防止后宫干政，结果两方都获得了权力，最终酿成辛酉政变。这一制度设计上的失误，直接导致了慈禧四十余年的统治。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 咸丰朝同时面对太平天国与英法联军，《清史稿》所谓「内乱外患，纷至沓来」正指此十年。这一双重压力使清廷的财政与军事体系全面重构。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: zeng-guofan
     type: ruler-subject

@@ -29,6 +29,9 @@ evaluations:
   - claim: 林则徐被归罪流放，是清廷在战败后寻找替罪羊的结果。他的禁烟是奉旨而行，战败的原因却在军备与制度。这一点在当时即有公论——道光帝自己也知道，但需要一个可以交代的人。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 林则徐禁烟与战败被贬，是清朝「内乱外患」格局的开端。他的判断（「数十年后中原几无可以御敌之兵」）在此后半个世纪被完全证实。
+    sourceId: qingshigao-yao
+    kind: evaluation
 relations:
   - target: daoguang
     type: ruler-subject

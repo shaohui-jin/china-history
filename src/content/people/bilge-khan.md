@@ -27,6 +27,9 @@ evaluations:
   - claim: 突厥碑铭的史料价值高于汉文记载。《阙特勤碑》《暾欲谷碑》《毗伽可汗碑》以突厥文写成，是突厥人自己的历史叙述，其中对唐朝「以甜言蜜语、精美布帛」离间突厥的指责，与汉文史料形成直接的对照——这是研究唐突关系不可替代的第一手材料。
     sourceId: jiutangshu-bilge
     kind: dispute
+  - claim: 毗伽可汗复振突厥，靠的是暾欲谷的「守」策：不与中国争锋，专意经营草原。这一战略与拓跋氏主动汉化的路径相反——一个选择隔离，一个选择融合。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: tang-xuanzong
     type: enemy

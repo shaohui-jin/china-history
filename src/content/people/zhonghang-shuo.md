@@ -27,6 +27,9 @@ evaluations:
   - claim: 中行说的「汉奸」标签是后世追加的。在汉匈并立的格局中，他只是一个选择为敌方服务的边地之人；「汉奸」这一概念要等到近代民族国家形成之后才有明确所指。而更值得注意的是：他之所以被记入史册，正因他证明了一个中原人可以用中原的知识反过来对抗中原——这才是《史记》为其立传的深意。
     sourceId: shiji-zhonghangshuo
     kind: dispute
+  - claim: 中行说教匈奴「疏记以计人众畜物」，是匈奴第一次建立人口与牲畜的统计制度。这一技术输入的意义，不亚于一场军事胜利。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: laoshang
     type: ruler-subject

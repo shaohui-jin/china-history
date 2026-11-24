@@ -28,6 +28,9 @@ evaluations:
   - claim: 「扶苏若立，秦可不亡」是一种流行的假设，但难以证实。扶苏的仁厚只是个人品质，秦朝的制度性问题（徭役、军功爵制、六国旧贵族的敌意）并不会因一位宽仁的君主而消失。这一假设之所以流行，是因为它把复杂的制度崩溃简化成一个继承的偶然——而历史很少如此简单。
     sourceId: shiji-fusu
     kind: dispute
+  - claim: 扶苏之死与秦法的严苛直接相关：「父而赐子死，尚安复请」——他以最符合秦法的方式接受了伪造的诏书。制度的严密，反而使他无从质疑。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: qin-shihuang
     type: parent-child

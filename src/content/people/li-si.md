@@ -28,6 +28,9 @@ evaluations:
   - claim: 沙丘之变是李斯一生的转折点。他明知赵高之计不当，却因「五者皆不及蒙恬」的自知之明与「祸及子孙」的恐惧而屈从。这一屈从不仅是道德失败，也是政治误判——他低估了赵高，最终自己被腰斩夷族。
     sourceId: shiji-liusi
     kind: dispute
+  - claim: 李斯所定的秦律，到汉初已被视为「烦苛」而须蠲削。《刑法志》记「三章之法不足以御奸」，说明制度的宽松与严密各有其适用阶段——秦之亡不在法严，而在法与社会脱节。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: qin-shihuang
     type: ruler-subject

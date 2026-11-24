@@ -28,6 +28,9 @@ evaluations:
   - claim: 蔡伦并非纸的发明者，而是改良者。考古发现西汉已有麻纸（如灞桥纸、放马滩纸），早于蔡伦两百余年。他的贡献在于用树皮、破布、渔网等廉价原料降低成本、提高质量，使纸真正可以替代简帛——技术史上的「发明」，往往是使一项技术变得可用的那一步。
     sourceId: houhanshu-cailun
     kind: dispute
+  - claim: 蔡伦造纸的技术突破，依托于东汉官营手工业的组织能力（尚方令监作器械）。技术的进步，往往以国家作坊的组织为基础。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: liu-xiu
     type: ruler-subject

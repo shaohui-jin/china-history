@@ -28,6 +28,9 @@ evaluations:
   - claim: 突厥的强盛恰恰依赖中原的分裂。木杆可汗说「我在南两儿常孝顺，何患贫也」，把北周、北齐的岁输缯帛视为理所当然。隋统一后这一财源断绝，突厥随即分裂为东西两部——它的鼎盛与中原的分裂是同一件事的两面。
     sourceId: zhoushu-tujue
     kind: dispute
+  - claim: 木杆可汗时期的突厥疆域「东自辽海，西至西海」，是草原帝国扩张的顶点。但这一版图依赖对丝路的控制，而非农业生产——经济基础决定了它的脆弱。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: ashina-tumen
     type: sibling

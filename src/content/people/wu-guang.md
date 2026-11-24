@@ -27,6 +27,9 @@ evaluations:
   - claim: 吴广在《史记》中没有单独的评语，其事迹附于《陈涉世家》。这一处理方式反映司马迁的判断：他是陈胜的副手，不是独立的领袖。但他「素爱人」的特质，恰是陈胜所缺的——陈胜「苟富贵，无相忘」的许诺最终未能兑现，旧部因此离散。
     sourceId: shiji-chenshe
     kind: dispute
+  - claim: 吴广「素爱人，士卒多为用」，这是大泽乡起事能成功的组织基础。秦法的严苛提供了动员的理由，而人的关系网络提供了动员的能力。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: chen-sheng
     type: ally

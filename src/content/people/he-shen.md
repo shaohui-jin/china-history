@@ -28,6 +28,9 @@ evaluations:
   - claim: 「抄家八亿两」这一数字须存疑。清国史馆的原始抄家清单已佚，世传数目出自薛福成《庸庵笔记》等私家记述，从两千万两到十一亿两，相差数十倍。乾隆朝岁入约四千万两，八亿两相当于二十年国库收入，若果真如此，清代财政早应崩溃。嘉庆赐死和珅的真实动机，更可能是清除乾隆晚年的权力遗产，而非抄家充饷。
     sourceId: qingshigao-heshen
     kind: dispute
+  - claim: 和珅专权二十余年，是乾隆晚年「政事丛脞」的直接表现。一个能干的宰相把能力全部用于维持个人权位，制度的监察便完全失效。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: qianlong
     type: ruler-subject

@@ -26,6 +26,10 @@ evaluations:
   - claim: 光绪死因在 2003–2008 年的检测中有明确发现：其头发砷含量远超正常值，多数学者认为系砒霜中毒致死。但「谁下的毒」至今无定论，慈禧、李莲英、袁世凯皆有嫌疑。科学证据解决了「怎么死」，未解决「谁所为」。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 光绪朝的戊戌变法，是清廷在「外患」压力下的最后一次主动改革。《清史稿》评其「锐意变法，卒以操切致乱」——失败的判断集中在方式，而非方向。
+    sourceId: qingshigao-dezong
+    quote: 锐意变法，卒以操切致乱。
+    kind: evaluation
 relations:
   - target: cixi
     type: ruler-subject

@@ -30,6 +30,9 @@ evaluations:
   - claim: 「新三民主义」的转向须与联俄联共的现实背景并看。1924 年改组国民党、确立「联俄、联共、扶助农工」三大政策，是在多次依靠军阀失败之后的选择，而非纯粹的理念演进。其「节制资本」「耕者有其田」的主张，与同盟会时期的「平均地权」已有明显距离——思想的连续性，往往是为政治需要而重构的。
     sourceId: sunwen-sanminzhuyi
     kind: dispute
+  - claim: 孙中山的革命活动与戊戌变法几乎同时，但路径完全不同：一个试图改造清廷，一个要推翻它。《清史稿·德宗本纪》记变法失败，正说明改良路径的终结。
+    sourceId: qingshigao-dezong
+    kind: dispute
 relations:
   - target: liang-qichao
     type: enemy

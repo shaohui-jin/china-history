@@ -30,6 +30,9 @@ evaluations:
   - claim: 「焚书坑儒」的性质，历来被夸大。焚书的范围主要是「非博士官所职」的《诗》《书》与百家语，医药卜筮种树之书不在其列；坑儒所杀是「为妖言以乱黔首」的方士与儒生四百六十余人。这当然是文化压制，但与「毁灭一切典籍」有区别。
     sourceId: shiji-qinshihuang
     kind: dispute
+  - claim: 秦制的核心是「以法为教，以吏为师」，汉初则「约法三章」以求宽简。《汉书·刑法志》的记述说明：汉承秦制并非全盘照搬，而是先简化、后逐步增补——制度的连续性是以调整为前提的。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: li-si
     type: ruler-subject

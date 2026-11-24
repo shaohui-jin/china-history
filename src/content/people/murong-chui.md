@@ -26,6 +26,9 @@ evaluations:
   - claim: 参合陂之战是他一生最痛的一页。其子慕容宝率八万燕军攻北魏，被拓跋珪坑杀四五万人。慕容垂次年亲征报复，大破北魏，但归途经参合陂「见积骸如山」，惭愤呕血，病卒于途中。这一战的胜负，决定了此后北方的归属。
     sourceId: jinshu-liuyao
     kind: dispute
+  - claim: 慕容垂重建燕国，是十六国后期鲜卑慕容部的最后一次复兴。与拓跋氏的稳定建国相比，慕容部的政权反复兴灭，说明部落联盟的整合尚未完成。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: fu-jian
     type: ruler-subject

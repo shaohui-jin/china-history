@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的成功依赖两项非常规条件：一是武帝的全力供给，「敢力战深入之士皆属焉」，精锐优先归其统辖；二是他本人对士卒的苛刻——「其在塞外，卒乏粮，或不能自振，而骠骑尚穿域蹋鞠」，军中乏食而不恤。功业与治军之德在他身上并不一致，这也是《史记》把他与卫青合传却评价有别的原因。
     sourceId: shiji-weiqing
     kind: dispute
+  - claim: 霍去病「匈奴未灭，无以家为」的豪语，背后是文景以来积累的国力。没有这份积累，长途奔袭的骑兵战术无从实施。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

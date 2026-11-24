@@ -27,6 +27,9 @@ evaluations:
   - claim: 东突厥的灭亡不只是军事失败。颉利继位本身就不合法（以兄子继叔位），内部「部落多叛」的根源是统治的正当性不足；而唐朝的胜利也依赖于突厥内部的分裂——李靖出兵时，薛延陀、回纥已成为唐的盟友。所谓「灭国之功」，一半来自对手的自我瓦解。
     sourceId: jiutangshu-tujue
     kind: dispute
+  - claim: 颉利可汗的败亡，一半源于突厥内部「部落多叛」，一半源于「频年大雪，羊马多死」。草原政权的脆弱性在于：一次天灾就可能引发整个联盟的瓦解。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: tang-taizong
     type: enemy

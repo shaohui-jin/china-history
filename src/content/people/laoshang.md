@@ -23,6 +23,9 @@ evaluations:
   - claim: 「以月氏王头为饮器」这一细节，是匈奴对西域诸国威慑力的象征。但这一威慑并未持久：数十年后汉武帝遣张骞通西域，正是要联合大月氏夹击匈奴。仇恨的记忆成了汉朝的战略资源。
     sourceId: shiji-xiongnu
     kind: influence
+  - claim: 老上单于时期匈奴的强盛，与汉初「和亲」政策的妥协直接相关。汉朝以公主与缯帛换取边境安宁，这一策略的代价在文帝、景帝两朝持续支付。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: modu
     type: parent-child

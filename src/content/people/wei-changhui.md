@@ -26,6 +26,9 @@ evaluations:
   - claim: 韦昌辉之死（距杀杨秀清不足三月）说明这类政权内斗的模式：执行清洗者最终也会被清洗。石达开起兵讨韦，洪秀全迫于压力下令杀韦——三步走完，太平天国的核心领导层只剩下洪秀全一人，而他恰恰不具备治理能力。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 魏昌辉在天京事变中杀杨秀清，又滥杀无辜，最终被洪秀全处死。太平天国的内讧，与其军事上的失利同样致命。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: yang-xiuqing
     type: kill

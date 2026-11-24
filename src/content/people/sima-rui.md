@@ -23,6 +23,9 @@ evaluations:
   - claim: 他晚年试图抑制王氏，结果激起王敦之乱。这一失败确立了东晋的政治结构：皇权无法单独对抗门阀，只能在各家门阀之间维持平衡。东晋百年，始终没有出现强有力的皇权。
     sourceId: jinshu-xuandi
     kind: influence
+  - claim: 司马睿南渡建康，靠的是王导、王敦兄弟的支持。「王与马，共天下」的格局，是西晋宗室在南方重建政权的唯一可行方式。
+    sourceId: jinshu-sima
+    kind: influence
 relations:
   - target: wang-dao
     type: ruler-subject

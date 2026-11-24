@@ -27,6 +27,10 @@ evaluations:
   - claim: 洋务运动的根本局限是「中体西用」：只学技术，不改制度。李鸿章自己也承认这一点：「我办了一辈子的事，练兵也，海军也，都是纸糊的老虎，何尝能实在放手办理？」甲午一战，纸糊的老虎被戳破。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 《清史稿》对他的评价是「多权宜，不为清议所许」，并被批评「知有洋务而不知有国务」。这一判断概括了洋务运动的根本局限：技术层面的学习，无法替代制度的变革。
+    sourceId: qingbingshi-1
+    quote: 知有洋务而不知有国务。
+    kind: evaluation
 relations:
   - target: zeng-guofan
     type: teacher-student

@@ -27,6 +27,9 @@ evaluations:
   - claim: 「蒙恬造笔」的说法在考古上站不住。战国楚墓已出土毛笔实物，早于蒙恬的时代。他更可能是改良者——用枯木为管、鹿毛为柱、羊毛为被，使笔更便于书写。这一传说之所以流行，是因为秦代「书同文」确实推动了书写工具的规范化，而蒙恬被后世记成了那个符号。
     sourceId: shiji-qinshihuang
     kind: dispute
+  - claim: 秦的徭役（长城、直道、骊山陵）是汉初「约法三章」所要矫正的对象。《刑法志》对秦法的批评，间接说明了蒙恬所主持的工程在当时的民力代价。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: qin-shihuang
     type: ruler-subject

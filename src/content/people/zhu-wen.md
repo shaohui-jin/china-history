@@ -29,6 +29,9 @@ evaluations:
   - claim: 欧阳修在《新五代史》中对朱温的贬斥极为严厉，这一评价带有强烈的道德立场。若从制度角度看，朱温的「篡唐」在形式上完全合法：禅让、劝进、三让而后受，一切程序齐备。问题不在于程序，而在于这套程序本身已被军阀反复使用，失去了任何约束力。
     sourceId: xinwudaishi-liangzu
     kind: dispute
+  - claim: 朱温灭唐建梁，是五代的开端。他以宣武节度使的身份逐步吞并中原，其模式与后来的赵匡胤陈桥兵变如出一辙：军事实力转化为政权更替。
+    sourceId: jiuwudaishi-wudai-2
+    kind: influence
 relations:
   - target: li-keyong
     type: enemy

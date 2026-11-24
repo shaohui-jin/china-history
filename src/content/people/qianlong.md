@@ -28,6 +28,9 @@ evaluations:
     sourceId: qingshigao-gaozong
     quote: 迨其季年，信任奸回，政事丛脞，非复曩时之旧矣。
     kind: dispute
+  - claim: 乾隆的「十全武功」依托于康熙、雍正两朝积累的国力。《清史稿》论其「拓地二万里」，但其晚年「信任奸回，政事丛脞」，清朝由盛转衰的转折正在此。
+    sourceId: qingshigao-shengzu-2
+    kind: dispute
 relations:
   - target: kangxi
     type: kinship

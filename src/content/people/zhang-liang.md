@@ -30,6 +30,9 @@ evaluations:
   - claim: 张良终身「未尝特将」，始终以画策臣的身份随侍刘邦左右。这一细节是理解他善终的关键：无兵权、无封地之外的势力，也就不构成对皇权的威胁。
     sourceId: hanshu-zhangliang
     kind: influence
+  - claim: 张良在刘邦入关后劝其「约法三章」，是汉初制度重建的第一步。《汉书·刑法志》把这一举措视为汉兴的根本——不是军事胜利，而是法律的宽简赢取了民心。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-bang
     type: ruler-subject

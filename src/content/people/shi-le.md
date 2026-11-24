@@ -29,6 +29,9 @@ evaluations:
   - claim: 后赵的崩解与其建立同样迅速。石勒死后，石虎篡位，以极残暴的方式统治十五年，「降城陷垒，坑斩士女」，最终诸子相残，冉闵乘机屠羯，「无贵贱男女少长皆斩之，死者二十余万」。石勒那句「如日月皎然」的自许，被儿子与养子的屠杀彻底否定。
     sourceId: jinshu-shile
     kind: dispute
+  - claim: 石勒从奴隶到皇帝，其政权的组织方式仍带有部落军事集团的特征。与拓跋氏「序纪」所记的部落传统相比，后赵的汉化程度更高，但根基更浅。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: liu-yuan
     type: ruler-subject

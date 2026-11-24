@@ -27,6 +27,9 @@ evaluations:
   - claim: 顺治的死因（「上崩于养心殿」与「出家五台山」两说）是清初四大疑案之一。《清世祖实录》只记「崩」，未载病因；而「出家」之说多见于野史与民间传说。就现存史料而言，病故说证据更强，但无法完全排除其他可能。
     sourceId: qingshigao-shizu
     kind: dispute
+  - claim: 顺治朝入关定鼎，依靠的是满蒙汉八旗的军事组织与范文程、洪承畴等汉臣的制度建议。清朝能在中原立足，靠的不是武力，而是对明制的继承。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: hong-taiji
     type: parent-child

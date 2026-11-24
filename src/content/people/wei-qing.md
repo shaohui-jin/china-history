@@ -24,6 +24,9 @@ evaluations:
   - claim: 卫青的「谦退」是他能善终的关键。他「不养士」，避免结党；屡次让功于部将，避免功高震主。在汉武帝那样猜忌的君主手下，这种姿态救了他的命——同为名将的李广利就因兵败而降匈奴，全家被灭。
     sourceId: shiji-xiongnu
     kind: influence
+  - claim: 卫青、霍去病的远征，依托的是文景之治积累的国力与《刑法志》所记的制度稳定。汉武帝的对匈奴战争，是七十年休养生息的产物。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

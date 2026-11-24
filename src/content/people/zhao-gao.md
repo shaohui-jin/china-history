@@ -22,6 +22,9 @@ evaluations:
   - claim: 赵高之死（为子婴所刺杀、三族被灭）与李斯之死（腰斩咸阳）性质不同：李斯是被诬陷，赵高是被反击。但两人的结局都说明，沙丘之变所建立的权力结构极度脆弱——它的合法性来自伪造，所以任何人都可以用同样的方式推翻它。
     sourceId: shiji-liusi
     kind: dispute
+  - claim: 赵高矫诏立胡亥，是秦制崩溃的起点。《汉书·刑法志》论秦亡时强调的是「法」与「人」的脱节：制度再严密，也无法防止掌握它的人滥用。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: qin-shihuang
     type: ruler-subject

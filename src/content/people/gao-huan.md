@@ -30,6 +30,9 @@ evaluations:
   - claim: 高欢始终未能胜过宇文泰。沙苑之战（537）他以二十万众攻西魏，败于宇文泰的少兵；河桥之战（538）双方皆伤亡惨重；玉壁之战（546）围攻五十余日不克，死者七万，高欢因此发病，次年卒。东魏在经济与人口上远胜西魏，却始终无法吞并关中——这说明关中的地理优势与宇文泰的制度创新弥补了实力差距。
     sourceId: beishi-gaohuan
     kind: dispute
+  - claim: 高欢收编六镇余众，建立晋阳霸府。这一军事集团的组织方式，与司马氏依靠门阀的政治模式完全不同：一个是武力集团，一个是士族联盟。
+    sourceId: jinshu-sima
+    kind: dispute
 relations:
   - target: yuwen-tai
     type: enemy

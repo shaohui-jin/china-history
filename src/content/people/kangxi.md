@@ -28,6 +28,10 @@ evaluations:
   - claim: 康熙晚年的弊政（九子夺嫡、吏治废弛、《南山集》案文字狱）常被其前期功业掩盖。这一反差说明，长在位本身是一把双刃剑：六十一年的统治既积累了功业，也积累了问题，而继承者雍正接手的正是后一部分。
     sourceId: qingshigao-kangxi
     kind: dispute
+  - claim: 康熙平定三藩、收台湾、抗俄罗斯，其武功的基础是顺治朝奠定的全国统治。《圣祖本纪》论赞称「虽曰守成，实同开创」，正指这一层。
+    sourceId: qingshigao-shengzu-2
+    quote: 虽曰守成，实同开创焉。
+    kind: evaluation
 relations:
   - target: wu-sangui
     type: enemy

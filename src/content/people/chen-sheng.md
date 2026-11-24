@@ -26,6 +26,9 @@ evaluations:
   - claim: 「王侯将相宁有种乎」被后世读作平等宣言，但陈胜本人的行为并非如此。他称王后，故人来找他，因言语不逊被杀；又以朱房、胡武「主司群臣」，苛察过甚，「诸将以其故不亲附」。太史公记这些细节，正说明起事的口号与起事者的政治能力之间有巨大落差。
     sourceId: shiji-chenshe
     kind: dispute
+  - claim: 大泽乡起事的直接原因是「失期，法皆斩」。秦法的严苛使一次误期即成死罪，这是《汉书·刑法志》所论「烦苛」的具体例证。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: wu-guang
     type: ally

@@ -28,6 +28,9 @@ evaluations:
   - claim: 他的成功依赖一个已经消失的条件。班超上书请兵时说得明白：「臣不敢望到酒泉郡，但愿生入玉门关。」东汉朝廷对他的支持始终有限，其经营靠的是个人威望与当地兵力；他一离任（102），继任者任尚「严急」，西域诸国随即叛汉。个人的能力无法替代制度性的投入——这也是东汉最终放弃西域的原因。
     sourceId: houhanshu-banhao
     kind: dispute
+  - claim: 班超经营西域三十一年，其报告成为《后汉书·西域传》的基础。这一知识积累的过程，与班固撰《汉书》的文献工作相似：都是长期的、系统性的记录。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: liu-xiu
     type: ruler-subject

@@ -24,6 +24,9 @@ evaluations:
   - claim: 《海国图志》在中国的反响远小于日本。此书传入日本后被大量翻刻，成为幕末志士了解世界的必读书，据说对明治维新有直接影响。而在中国，它长期被冷落——这一「墙内开花墙外香」的对照，本身就是近代中国思想困境的缩影。
     sourceId: yingyi-rukou-ji
     kind: dispute
+  - claim: 魏源的《海国图志》提出「师夷长技以制夷」，是洋务运动的思想先声。但《清史稿》对李鸿章的批评（「知有洋务而不知有国务」）说明：技术层面的学习，最终受制于制度。
+    sourceId: qingbingshi-1
+    kind: influence
 relations:
   - target: lin-zexu
     type: teacher-student

@@ -28,6 +28,9 @@ evaluations:
   - claim: 「凶暴」形象的可信度须打折扣。史书中元吉的罪名（伏壮士刺杀、请杀世民）都由贞观朝国史写定，而玄武门之变前李世民的布置（伏兵玄武门、收买常何）同样属于阴谋。三重对比——建成平庸、元吉凶暴、世民英明——更像一种叙事结构，而非三个人的真实差异。
     sourceId: jiutangshu-yuanji
     kind: dispute
+  - claim: 李元吉在玄武门之变中被杀，其「凶暴」形象由贞观朝国史写定。与司马懿「终见嗤后代」的处境相似：史书的评价，取决于谁掌握了书写的权力。
+    sourceId: jinshu-sima
+    kind: dispute
 relations:
   - target: li-yuan
     type: parent-child

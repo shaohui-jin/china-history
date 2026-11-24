@@ -26,6 +26,9 @@ evaluations:
   - claim: 「诛晁错，清君侧」的口号在晁错被杀后立刻暴露了真相——吴楚继续进军。这证明削藩不是错，而是不得不做的事。但刘濞本人的动机也并非纯粹的自保：其子被太子（后来的景帝）所杀，积怨数十年；起兵时已六十二岁，自称「东帝」。所谓「清君侧」，不过是给叛乱一个体面的名义。
     sourceId: shiji-liubi
     kind: dispute
+  - claim: 七国之乱的根源是汉初分封与中央集权的矛盾。《刑法志》所记汉初法律的逐步严密，正是中央权力扩张的镜像——制度的收紧与王国的削弱的同步的。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: zhou-yafu
     type: enemy

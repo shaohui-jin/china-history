@@ -30,6 +30,10 @@ evaluations:
   - claim: 刘邦的「布衣将相之局」是历史一大变。赵翼《廿二史札记》指出，秦以前卿相多出贵族，汉初开国功臣多为布衣（萧何是县吏，韩信是布衣，樊哙是屠狗者）。这一变化使「布衣可以为卿相」成为可能，是此后科举制度的思想前提。
     sourceId: hanshu-gaodi
     kind: influence
+  - claim: 「约法三章」是刘邦最重要的政治举措。《汉书·刑法志》把它置于汉兴之首：「蠲削烦苛，兆民大说」——六个字概括了汉朝得天下的根本原因。
+    sourceId: hanshu-ji
+    quote: 蠲削烦苛，兆民大说。
+    kind: evaluation
 relations:
   - target: xiang-yu
     type: enemy

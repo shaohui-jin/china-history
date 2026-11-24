@@ -28,6 +28,9 @@ evaluations:
   - claim: 「持汉节不失」是史书给他的最高褒语，但须看清其代价：去时百余人，十三年后唯二人得还；他在匈奴娶妻生子，两次被扣而两度脱身。张骞的价值不在节操的象征，而在于他把「不可能回来的使团」变成了「带回了地图的使团」——这是纯粹的信息意志。
     sourceId: shiji-dayuan
     kind: dispute
+  - claim: 张骞的西域报告，与刘向整理《洪范五行传论》同属西汉中期的知识工程：一个向外拓展地理认知，一个向内整理经典与灾异。两种知识工作共同支撑了汉帝国的自我理解。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

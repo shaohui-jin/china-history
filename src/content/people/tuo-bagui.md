@@ -26,6 +26,9 @@ evaluations:
   - claim: 参合陂坑杀八万降卒，是拓跋珪一生最有争议的决定。这一战使北魏崛起，但也使后燕与北魏结下死仇。慕容垂次年亲征报复，若非中途病卒，北魏可能遭受重大挫折。
     sourceId: beishi-xiaowen
     kind: dispute
+  - claim: 拓跋珪重建代国、改称魏，是拓跋部从部落联盟走向中原王朝的起点。《魏书·序纪》所记的早期迁徙与强盛，为这一转变提供了长期的准备。
+    sourceId: weishu-daowu
+    kind: influence
 relations:
   - target: murong-chui
     type: enemy

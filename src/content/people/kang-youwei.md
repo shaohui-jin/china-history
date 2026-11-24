@@ -28,6 +28,9 @@ evaluations:
   - claim: 康有为晚年参与张勋复辟（1917），使其形象极为复杂。一个曾经主张变法的人，最终站在了复辟一边。这一转变的原因，一般认为是他坚持「保皇」的立场——在他看来，中国的转型必须在君主制的框架内完成。这与革命派的分歧，是方法之争，也是对「中国应该如何现代化」的根本分歧。
     sourceId: qingshigao-linxuci
     kind: dispute
+  - claim: 康有为的变法主张依托于光绪帝的支持，而光绪本人并无实权。《清史稿》所记「守旧者群起攻之」，说明变法的失败是权力结构的问题，而非方案的问题。
+    sourceId: qingshigao-dezong
+    kind: dispute
 relations:
   - target: guangxu
     type: ruler-subject

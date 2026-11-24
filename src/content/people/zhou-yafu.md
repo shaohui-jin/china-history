@@ -28,6 +28,9 @@ evaluations:
   - claim: 细柳营的故事常被当作治军严整的典范，但其政治含义更值得注意：文帝「按辔徐行」而入，赞曰「此真将军矣」，临终却告诫景帝「即有缓急，周亚夫真可任将兵」——能用而不能亲。景帝朝他反对封王信为侯、反对废栗太子，最终以「地下谋反」（买甲盾为葬器）的荒谬罪名下狱，绝食而死。
     sourceId: shiji-jianghou
     kind: dispute
+  - claim: 周亚夫平七国之乱，是在汉初法律与军事体系已经成熟的条件下完成的。景帝朝的中央集权程度，远非高祖时可比。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-bi
     type: enemy

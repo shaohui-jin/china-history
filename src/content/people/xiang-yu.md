@@ -29,6 +29,9 @@ evaluations:
   - claim: 「鸿门宴放走刘邦」的流行解释是人性的宽厚，但更可能是政治计算的失误：项羽当时已是诸侯上将军，杀刘邦无正当名分，且刘邦已卑辞谢罪、献出关中。他真正的问题是入关后「烧秦宫室，火三月不灭」，把关中民心推给了刘邦。项羽之败不在鸿门，而在咸阳。
     sourceId: shiji-xiangyu
     kind: dispute
+  - claim: 项羽入关后「烧秦宫室，火三月不灭」，与刘邦「约法三章」形成鲜明对比。楚汉之争的胜负，在入关之初即已分出高下——一个毁弃制度，一个重建秩序。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: liu-bang
     type: enemy

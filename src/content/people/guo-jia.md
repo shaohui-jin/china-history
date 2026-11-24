@@ -25,6 +25,9 @@ evaluations:
   - claim: 曹操在赤壁败后叹「郭奉孝在，不使孤至此」，这句话常被用来证明郭嘉之才。但它更像是失败后的追悔之辞，不能作为对郭嘉能力的客观评估——郭嘉生前从未参与过大规模水战，也无从判断他能否避免赤壁之败。
     sourceId: sanguozhi-caocao-ping
     kind: dispute
+  - claim: 郭嘉的「十胜十败」论，其方法是以对比项逐条论证胜负。这一论证方式在汉末极为流行（如《晋书》所记的同类论辩），是乱世中说服君主的标准工具。
+    sourceId: jinshu-caocao-ping
+    kind: influence
 relations:
   - target: cao-cao
     type: ruler-subject

@@ -28,6 +28,9 @@ evaluations:
   - claim: 下西洋的中止说明其经济基础不可持续。七次远航耗银巨大，「所取无名宝物不可胜计，而中国耗费亦不赀」；朝贡贸易「厚往薄来」，本质是财政补贴。宣德之后，文官集团以「劳民伤财」为由终止远航，宝船图纸被毁，中国的海洋事业自此中断——这一选择与半个世纪后欧洲的海外扩张形成历史性的分岔。
     sourceId: mingshi-zhenghe
     kind: dispute
+  - claim: 郑和下西洋的终止，与明朝「重农抑商」的国策一致。七下西洋的耗费使文官集团以「劳民伤财」为由终止远航——海洋事业的成败，取决于国家财政与政策取向。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: zhu-di
     type: ruler-subject

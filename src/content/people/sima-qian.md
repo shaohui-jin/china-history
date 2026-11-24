@@ -28,6 +28,9 @@ evaluations:
   - claim: 《史记》的可靠性历来有争议。司马迁用「太史公曰」标明议论，用「或曰」保存异说，又亲历实地采访（「西至空桐，北过涿鹿，东渐于海，南浮江淮」），方法上相当审慎；但战国及秦汉之际的细节多本于传闻，如苏秦、张仪的纵横辞令，明显有后人拟作之迹。班固批评他「是非颇谬于圣人」，所指正是其不以儒家为唯一标准。
     sourceId: shiji-taiqian
     kind: dispute
+  - claim: 司马迁著《史记》，其所处的正是汉初制度走向严密的时期。《汉书·刑法志》所记的法律增补，与《史记》所记的酷吏政治互为背景。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

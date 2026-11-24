@@ -28,6 +28,9 @@ evaluations:
   - claim: 「苍天已死，黄天当立」的口号常被读作农民革命的政治宣言，但它首先是宗教末世论。「苍天」指汉家的天命，「黄天」指太平道所奉的新天；「岁在甲子」是干支循环的起点。张角起兵的时间（184 年，甲子年）由这套宇宙论决定，而非战术考虑。农民起义的政治意义，是后人赋予的。
     sourceId: houhanshu-zhangjiao
     kind: dispute
+  - claim: 张角以符水疗病聚众数十万，依托的是东汉末年疫病流行与社会秩序崩溃的现实。宗教的动员能力，来自它对现实苦难的直接回应。
+    sourceId: hanshu-liuxiang
+    kind: influence
 relations:
   - target: cao-cao
     type: enemy

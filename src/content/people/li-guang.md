@@ -27,6 +27,9 @@ evaluations:
   - claim: 「数奇」之说掩盖了制度的因素。汉武帝不用李广当单于，表面是占卜吉凶，实质是外戚领军体制（卫青、霍去病）已经确立，李广不属于这个圈子。他的悲剧不是运气，而是军功集团的封闭——同时代的封侯者多为卫霍部属。
     sourceId: shiji-liguang
     kind: dispute
+  - claim: 李广终身不得封侯，与汉武帝朝军功集团的结构有关：卫青、霍去病的部属优先获得战功。这一格局的形成，依托于外戚领军的制度安排。
+    sourceId: hanshu-ji
+    kind: dispute
 relations:
   - target: wei-qing
     type: colleague

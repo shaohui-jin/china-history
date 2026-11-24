@@ -27,6 +27,9 @@ evaluations:
   - claim: 班固的史学立场与司马迁相反。他批评司马迁「是非颇谬于圣人，论大道则先黄老而后六经」，因此在《汉书》中以儒学正统裁量人物，把陈胜、项羽从「本纪」「世家」降入列传。这一改变看似体例问题，实则是历史解释权的转移：从「实录人物行迹」转为「以正统褒贬」。
     sourceId: houhanshu-bangu
     kind: dispute
+  - claim: 班固撰《汉书》，专设《刑法志》以记制度的演变。这一体例创新说明：东汉的史家已意识到，王朝的兴衰不能只记人物，还须记制度。
+    sourceId: hanshu-ji
+    kind: evaluation
 relations:
   - target: ban-chao
     type: sibling

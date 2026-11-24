@@ -25,6 +25,9 @@ evaluations:
   - claim: 松锦之战（1640–1642）是明清易代的关键战役。此役洪承畴被俘降清，明军在辽东的最后主力覆灭。两年后皇太极猝死，多尔衮正是带着这支降清的汉军入关的。
     sourceId: qingshigao-linxuci
     kind: influence
+  - claim: 皇太极改国号为清、建立八旗蒙古与汉军，是清朝从后金汗国转变为中原王朝的关键。这一转变与元朝「以夏变夷」的路径相似，都是制度性的采纳。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: nurhaci
     type: parent-child

@@ -25,6 +25,9 @@ evaluations:
   - claim: 《陈台湾弃留利害疏》是施琅最重要的历史贡献，其意义超过军事胜利。当时清廷多数主张放弃台湾（「海外丸泥，不足为中国加广」），施琅力陈「弃之必酿成大祸，留之诚永固边圉」。若无此疏，台湾可能不在中国版图内。
     sourceId: qingshigao-shizu
     kind: influence
+  - claim: 施琅平台湾，是清朝「收台湾」的关键一战。他主张「台湾弃留」应慎重，最终促成清廷设台湾府——这一决策奠定了此后两百年的行政格局。
+    sourceId: qingshigao-yao
+    kind: influence
 relations:
   - target: kangxi
     type: ruler-subject

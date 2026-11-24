@@ -30,6 +30,10 @@ evaluations:
     sourceId: qingshigao-taizu
     quote: 四年，大破明兵于萨尔浒，明之精锐尽丧。
     kind: dispute
+  - claim: 《太祖本纪》论赞把萨尔浒之战视为「肇兴王业」的起点：「翦明清兵之精锐，遂肇兴王业」。此役之后明朝在辽东由攻转守，直到 1644 年未能恢复。
+    sourceId: qingshigao-taizu-2
+    quote: 萨尔浒一役，翦明清兵之精锐，遂肇兴王业。
+    kind: evaluation
 relations:
   - target: wanli
     type: enemy

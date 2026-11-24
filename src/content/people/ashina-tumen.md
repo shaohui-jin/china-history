@@ -24,6 +24,9 @@ evaluations:
   - claim: 突厥与中原的关系，为此后两百年定下模式：强则入寇，弱则称臣，和亲与征伐交替。隋唐两代对突厥的政策（离强合弱、以夷制夷）都是在这个模式下展开的。
     sourceId: zizhitongjian-zhenguan
     kind: influence
+  - claim: 土门自立为伊利可汗，是突厥从柔然属部转为独立汗国的起点。这一转变与拓跋氏从部落到帝国的过程结构相似：都以外部的衰败为条件。
+    sourceId: weishu-daowu
+    kind: influence
 relations:
   - target: bilge-khan
     type: kinship

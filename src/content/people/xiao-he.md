@@ -31,6 +31,9 @@ evaluations:
     sourceId: hanshu-xiaohe-ping
     quote: 萧何为法，较若画一；曹参代之，守而勿失。载其清净，民以宁一。
     kind: influence
+  - claim: 萧何「捃摭秦法，作律九章」，是在「约法三章」的基础上逐步增补。《刑法志》所记的这条线索说明：汉制的形成是一个长期的技术过程，而非一次性的立法。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: liu-bang
     type: ruler-subject

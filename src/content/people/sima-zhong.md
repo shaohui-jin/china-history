@@ -27,6 +27,9 @@ evaluations:
   - claim: 惠帝在位十七年，年号改了九次（永熙、永平、元康、永康、永宁、太安、永安、建武、永兴、光熙），每一次改元背后都是一次政变。这组年号本身就是八王之乱的时间刻度——一个连年号都无法稳定的朝廷，谈不上治理。
     sourceId: jinshu-huidi
     kind: dispute
+  - claim: 晋惠帝的愚钝是西晋速亡的直接条件。《晋书·宣帝纪》赞语对司马氏「自隐过当年」的批评，与惠帝朝的混乱构成一个家族的完整因果：以阴谋得国者，终以混乱失国。
+    sourceId: jinshu-sima
+    kind: dispute
 relations:
   - target: sima-yan
     type: parent-child

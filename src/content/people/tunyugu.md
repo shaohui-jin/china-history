@@ -27,6 +27,9 @@ evaluations:
   - claim: 他的名字之所以被记住，几乎全靠突厥文《暾欲谷碑》。汉文史料中他只是一句「谋主」，而碑铭中他自述「我，暾欲谷，生于唐土……」，留下了完整的政治自白。一个在汉文记载里几乎消失的人，在另一套文字系统里是主角——史料的语言决定了谁被记住。
     sourceId: jiutangshu-bilge
     kind: dispute
+  - claim: 暾欲谷年七十余仍为谋主，其战略是「养兵待时」。草原政权的复兴往往依赖老臣的经验，而非新制度的创造——这是游牧政治与农耕政治的差异。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: bilge-khan
     type: ruler-subject

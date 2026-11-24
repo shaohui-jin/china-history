@@ -24,6 +24,9 @@ evaluations:
   - claim: 王猛的遗言是前秦唯一的救命方案：「晋虽僻陋吴越，乃正朔相承……愿不以晋为图。鲜卑、西羌，我之仇敌，终为人患，宜渐除之。」他死后仅八年，苻坚就在淝水大败，而反叛的正是他警告过的鲜卑慕容垂与羌族姚苌。
     sourceId: jinshu-liuyao
     kind: influence
+  - claim: 王猛辅佐苻坚，试图以前秦的汉化政权统一北方。这一努力与拓跋氏后来的汉化改革方向相同，但前秦缺乏北魏那样长期的部落整合过程，故淝水一败即瓦解。
+    sourceId: weishu-daowu
+    kind: dispute
 relations:
   - target: fu-jian
     type: ruler-subject

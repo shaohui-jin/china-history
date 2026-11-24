@@ -28,6 +28,9 @@ evaluations:
   - claim: 「柔道治国」与「退功臣而进文吏」是同一政策的两面。他封功臣为列侯而不予实职，用「吏事」代替军功集团治理天下，避免了西汉初年异姓王、同姓王的割据重演。代价是东汉从一开始就依赖外戚与豪族——云台二十八将的家族在此后百年间成为门阀的雏形。
     sourceId: houhanshu-guangwudi
     kind: dispute
+  - claim: 光武帝重建汉朝，其制度基础是西汉两百年的积累。《刑法志》所记的汉律体系，在王莽之乱后仍被东汉继承——制度的连续性比王朝的更替更持久。
+    sourceId: hanshu-ji
+    kind: influence
 relations:
   - target: wang-mang
     type: enemy

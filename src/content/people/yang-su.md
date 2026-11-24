@@ -29,6 +29,9 @@ evaluations:
   - claim: 仁寿宫变是隋史最大的疑案。文帝病重时，杨素与柳述、元岩入侍，随后文帝崩、杨广即位、杨勇被赐死。《隋书》与《旧唐书》均记杨素参与矫诏，但细节互有出入。可以确定的是：杨素是最大的受益者之一（其子杨玄感后因此叛隋），也是此案最关键、最难洗清的当事人。
     sourceId: jiutangshu-yangsu
     kind: dispute
+  - claim: 杨素的军功（平尉迟迥、灭陈、破突厥）建立在隋朝统一战争的整体部署之上。他的严酷与高效，是那个时代军事统帅的普遍特征。
+    sourceId: jinshu-sima
+    kind: dispute
 relations:
   - target: yang-jian
     type: ruler-subject

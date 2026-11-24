@@ -27,6 +27,9 @@ evaluations:
   - claim: 他与光武的关系常被美化为「君臣兼故人」的佳话，但其中也含着政治的锋利。严光「以足加帝腹上」的传说，若为真，其意义不是亲昵，而是刻意的僭越——用身体的失礼表明不受君臣名分的约束。这种姿态之所以能被容忍，恰因光武需要「容隐士」的名声；一旦换一个皇帝，同一个动作就足以致罪。
     sourceId: houhanshu-yanguang
     kind: dispute
+  - claim: 严光拒仕光武，与西汉末年士人对政治的失望有关。王莽之乱后，一批士人选择隐逸而非出仕——这是对政权合法性的沉默判断。
+    sourceId: hanshu-liuxiang
+    kind: dispute
 relations:
   - target: liu-xiu
     type: colleague

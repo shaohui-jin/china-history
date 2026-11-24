@@ -24,6 +24,9 @@ evaluations:
   - claim: 他的降清与其子郑成功的决裂，是明清之际最具象征性的一幕。郑芝龙选择保存家族实力，郑成功选择坚持明室正统。父子二人的分歧，正是那个时代「现实」与「气节」的分野。
     sourceId: mingshi-qiujin
     kind: dispute
+  - claim: 郑芝龙的海上集团是明末唯一能与清朝抗衡的海上力量，但他选择降清。此后郑成功据台湾抗清，父子两代的不同选择，决定了东南沿海的格局。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: zheng-chenggong
     type: parent-child

@@ -27,6 +27,9 @@ evaluations:
   - claim: 李继捧的选择在当时是理性的。党项内部宗族相争，他继位本不稳；献地归宋可换取节度使的虚衔与丰厚赏赐，且宋朝确实给了「白金千两、帛千匹、钱百万」。问题在于宋朝的处理方式：把党项族人迁离故地，等于剥夺了他们的生存基础。李继迁的出走，是被逼出来的。
     sourceId: songshi-lijipeng
     kind: dispute
+  - claim: 李继捧献地归宋，与李继迁的出走，是党项内部两种选择的产物。宋朝把党项族人迁离故地，剥夺了他们的生存基础——这一处置的失误，直接导致了西夏的建立。
+    sourceId: qingshigao-yao
+    kind: dispute
 relations:
   - target: li-jiqian
     type: kinship

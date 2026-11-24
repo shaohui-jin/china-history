@@ -167,6 +167,8 @@ const disputeData = (event.disputes ?? []).map((d) => ({
                   {s.data.quote && <blockquote class="quote__text">{s.data.quote}</blockquote>}
                   <figcaption class="quote__source">
                     ——《{s.data.title}》{s.data.volume ?? ''}
+                    {s.data.author && ` · ${s.data.author}`}
+                    {s.data.composed && ` · 成书 ${s.data.composed}`}
                   </figcaption>
                 </figure>
               ))}

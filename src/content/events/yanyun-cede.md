@@ -18,10 +18,10 @@ participants:
 significance: 5
 summary: 后唐河东节度使石敬瑭为求自保，以割燕云十六州、称儿皇帝为条件借契丹兵灭后唐。中原自此失去长城一线的北方屏障，影响绵延四百年。
 sources:
-  - liaoshi-taizu
+  - liaoshi-taizong
   - xinwudaishi-shijingtang
 corroboration:
-  primary: liaoshi-taizu
+  primary: liaoshi-taizong
   secondary:
     - xinwudaishi-shijingtang
   agreement: consistent
@@ -54,7 +54,7 @@ corroboration:
 
 > 称臣可矣，以父事之太过；厚以金帛赂之，自足致其兵，不必许以土田，恐异日大为中国之患，悔之无及。
 
-石敬瑭不听。[^liaoshi-taizu]
+石敬瑭不听。[^liaoshi-taizong]
 
 ## 影响
 

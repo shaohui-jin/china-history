@@ -196,6 +196,7 @@ const related = personRelations;
                   <figcaption class="quote__source">
                     ——《{s.data.title}》{s.data.volume ?? ''}
                     {s.data.author && ` · ${s.data.author}`}
+                    {s.data.composed && ` · 成书 ${s.data.composed}`}
                   </figcaption>
                   {s.data.note && <p class="quote__note u-ui">{s.data.note}</p>}
                 </figure>

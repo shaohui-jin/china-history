@@ -121,7 +121,10 @@ function buildItem(n: number, s: SourceEntry): any {
 
   if (s.author) {
     children.push({ type: 'text', value: ' ' });
-    children.push(span('footnote__meta', `${s.author}${s.composed ? ` · ${s.composed}` : ''}`));
+    // composed 是成书年代而非作者生卒年。不加前缀会被读成「刘昫等生于 945 年」，
+    // 这里显式写「成书」，读者不会误认。
+    const meta = s.composed ? `${s.author} · 成书 ${s.composed}` : s.author;
+    children.push(span('footnote__meta', meta));
   }
 
   if (s.quote) {

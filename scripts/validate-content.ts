@@ -500,6 +500,162 @@ for (const file of walkVue(COMPONENTS)) {
   });
 }
 
+/* ---------------- 史料与事件的年代合理性 ---------------- */
+
+/**
+ * 检查「引用了一本明显不可能记载此事的书」。
+ *
+ * 为什么需要这条：人工写内容时最容易犯的错不是「引用了不存在的书」，
+ * 而是「引用了存在的书但时代不对」。实测发现过 6 处：
+ * - cai-lun（105 年）引《后汉书·光武帝纪》（光武在位 25–57 年）
+ * - huangchao（875 年）引《旧唐书·太宗本纪》（太宗在位 626–649 年）
+ * - kaiyuan（713 年）引《旧唐书·太宗本纪》
+ * - cao-pi（220 年）引《三国志·诸葛亮传》（诸葛亮 181–234）
+ * - gaopingling（249 年）引《三国志·诸葛亮传》（亮 234 年已卒）
+ * - dazexiang（前 209 年）引《史记·高祖本纪》（事在陈涉世家）
+ *
+ * 判据必须**按书名限定**：「太祖」在汉是刘邦、在宋是赵匡胤、在金是完颜阿骨打、
+ * 在明是朱元璋。不区分书名的话，所有带「太祖本纪」的史料都会误报。
+ */
+
+/** 书名 + 纪名 → 在位年。key 为「书名|纪名」 */
+const REIGNS: Record<string, [number, number]> = {
+  // ── 汉书（班固）
+  '汉书|高祖': [-202, -195],
+  '汉书|武帝': [-141, -87],
+  // ── 后汉书（范晔）
+  '后汉书|光武': [25, 57],
+  '后汉书|和帝': [88, 106],
+  // ── 旧唐书（刘昫）
+  '旧唐书|高祖': [618, 626],
+  '旧唐书|太宗': [626, 649],
+  '旧唐书|高宗': [649, 683],
+  '旧唐书|玄宗': [712, 756],
+  '旧唐书|肃宗': [756, 762],
+  '旧唐书|德宗': [779, 805],
+  '旧唐书|宪宗': [805, 820],
+  '旧唐书|僖宗': [873, 888],
+  // ── 宋书（沈约）
+  '宋书|武帝': [420, 422],
+  // ── 金史（脱脱）
+  '金史|太祖': [1115, 1123],
+  '金史|太宗': [1123, 1135],
+  '金史|海陵': [1149, 1161],
+  '金史|世宗': [1161, 1189],
+  // ── 宋史（脱脱）
+  '宋史|太祖': [960, 976],
+  '宋史|钦宗': [1126, 1127],
+  // ── 辽史（脱脱）
+  '辽史|太祖': [916, 926],
+  '辽史|太宗': [927, 947],
+  // ── 明史（张廷玉）
+  '明史|太祖': [1368, 1398],
+  '明史|成祖': [1402, 1424],
+  '明史|神宗': [1572, 1620],
+  // ── 元史（宋濂）
+  '元史|太祖': [1206, 1227],
+  '元史|世祖': [1260, 1294],
+  '元史|顺帝': [1333, 1368],
+};
+
+/** 史料 id → { title, volume } */
+const sourceMeta = new Map<string, { title: string; volume: string }>();
+for (const f of listDir('sources')) {
+  const fm = readFrontmatter(join(ROOT, 'sources', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id');
+  const title = pick(raw, 'title');
+  const vol = pick(raw, 'volume');
+  if (id && title && vol) sourceMeta.set(id, { title, volume: vol });
+}
+
+/** 从「书名 + 卷次」里找出对应的纪名与在位年 */
+function reignOf(title: string, volume: string): { name: string; range: [number, number] } | null {
+  for (const [key, range] of Object.entries(REIGNS)) {
+    const [book, name] = key.split('|');
+    if (title.includes(book) && volume.includes(`${name}本纪`)) {
+      return { name, range };
+    }
+  }
+  return null;
+}
+
+/** 从事件 frontmatter 取起始年 */
+function eventYear(raw: string): number | null {
+  const m = raw.match(/time:\s*\n\s*from:\s*\n\s*year:\s*(-?\d+)/);
+  return m ? Number(m[1]) : null;
+}
+
+for (const f of listDir('events')) {
+  const fm = readFrontmatter(join(ROOT, 'events', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+  const year = eventYear(raw);
+  if (year === null) continue;
+
+  const srcBlock = raw.match(/^sources:\s*\n((?:\s+-\s+.+\n?)+)/m);
+  if (!srcBlock) continue;
+
+  for (const line of srcBlock[1].split('\n')) {
+    const m = line.match(/^\s+-\s+(.+)$/);
+    if (!m) continue;
+    const sid = m[1].trim();
+    const meta = sourceMeta.get(sid);
+    if (!meta) continue;
+
+    const reign = reignOf(meta.title, meta.volume);
+    if (!reign) continue;
+
+    const [from, to] = reign.range;
+
+    /**
+     * 开国之君的本纪会记录其称帝前的功业。
+     *
+     * 典型：刘裕 409 年北伐时还是东晋臣子，《宋书·武帝本纪》照记其事
+     * （他 420 年才称帝）。这种情况不算错配——本纪本来就起于「未即位时」。
+     *
+     * 判据：事件年早于开国年但落在该人物的活动期内时放过。
+     * 只对开国君主放宽，且放宽幅度有限（30 年），避免掩盖真正的错配。
+     */
+    const FOUNDERS = new Set([
+      '宋书|武帝',   // 刘裕 420 称帝，北伐在 409
+      '梁书|武帝',   // 萧衍 502 称帝
+      '陈书|高祖',   // 陈霸先 557 称帝
+      '隋书|高祖',   // 杨坚 581 称帝
+      '旧唐书|高祖', // 李渊 618 称帝
+      '宋史|太祖',   // 赵匡胤 960 称帝
+      '明史|太祖',   // 朱元璋 1368 称帝
+      '元史|世祖',   // 忽必烈 1260 即位，1271 建元
+    ]);
+    const isFounder = [...FOUNDERS].some((k) => {
+      const [book, name] = k.split('|');
+      return meta.title.includes(book) && meta.volume.includes(`${name}本纪`);
+    });
+
+    const earlyOk = isFounder && year >= from - 30 && year < from;
+
+    if (year < from - 3 && !earlyOk) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message:
+          `引用了《${meta.title}·${meta.volume}》但事件在 ${year} 年，` +
+          `${reign.name}在位 ${from}–${to} 年，时代不符。请确认是否引错本纪`,
+      });
+    } else if (year > to + 3) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message:
+          `引用了《${meta.title}·${meta.volume}》但事件在 ${year} 年，` +
+          `${reign.name}在位 ${from}–${to} 年，时代不符。请确认是否引错本纪`,
+      });
+    }
+  }
+}
+
 /* ---------------- 输出 ---------------- */
 
 const errors = issues.filter((i) => i.level === 'error');

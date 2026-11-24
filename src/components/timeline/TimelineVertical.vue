@@ -15,9 +15,17 @@ import type { TimelineData, TimelineItem } from '../../lib/content';
 
 interface Props {
   data: TimelineData;
+  /**
+   * 首屏是否已带 summary。
+   *
+   * 首页为了控制体积，传的是**去掉 summary** 的精简数据（summary 占 props 的 25%）。
+   * 这种情况下组件在展开某条事件时，按世纪从 /data/timeline/<c>.json 现取。
+   * timeline 页数据量小，直接传全量、置 true 即可。
+   */
+  hasSummary?: boolean;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), { hasSummary: true });
 
 /**
  * 年代分段：交给 lib/time 的 buildEras。
@@ -80,6 +88,50 @@ const hiddenCount = computed(() => visible.value.length - shown.value.length);
 
 const open = ref<string | null>(null);
 
+/**
+ * 按需补 summary。
+ *
+ * 首页传的是精简数据（不含 summary），展开某条时才去分片里取那一世纪的数据，
+ * 命中后写进 summaryCache，避免重复请求。
+ * timeline 页 hasSummary=true，直接读 it.summary，这里不会被调用。
+ */
+const summaryCache = ref<Record<string, string>>({});
+const loadingSummary = ref<string | null>(null);
+
+function centuryOf(year: number): number {
+  // 与 scripts/build-timeline 的分片口径一致：公元前用负数向下取整
+  return year < 0 ? Math.floor((year + 1) / 100) - 1 : Math.floor(year / 100);
+}
+
+async function ensureSummary(it: TimelineItem) {
+  if (props.hasSummary || it.summary || summaryCache.value[it.id]) return;
+
+  const c = centuryOf(it.year);
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  loadingSummary.value = it.id;
+  try {
+    const res = await fetch(`${base}/data/timeline/${c}.json`);
+    if (!res.ok) return;
+    const json = (await res.json()) as { items: TimelineItem[] };
+    const next = { ...summaryCache.value };
+    for (const x of json.items) next[x.id] = x.summary;
+    summaryCache.value = next;
+  } catch {
+    // 网络失败时静默降级：详情区只显示年份，不显示摘要
+  } finally {
+    loadingSummary.value = null;
+  }
+}
+
+/** 展开/收起某条；展开时按需补 summary */
+function toggleItem(it: TimelineItem) {
+  const willOpen = open.value !== it.id;
+  open.value = willOpen ? it.id : null;
+  if (willOpen) void ensureSummary(it);
+}
+
+const summaryOf = (it: TimelineItem) => it.summary || summaryCache.value[it.id] || '';
+
 const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
 </script>
 
@@ -126,7 +178,7 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
           class="tlv__row"
           :class="{ 'tlv__row--major': it.significance === 5 }"
           :aria-expanded="open === it.id"
-          @click="open = open === it.id ? null : it.id"
+          @click="toggleItem(it)"
         >
           <span class="tlv__year num">{{ shortYear(it.year) }}</span>
           <span class="tlv__dot" :class="{ 'tlv__dot--major': it.significance === 5 }"></span>
@@ -139,7 +191,8 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
         </button>
 
         <div v-if="open === it.id" class="tlv__detail">
-          <p>{{ it.summary }}</p>
+          <p v-if="summaryOf(it)">{{ summaryOf(it) }}</p>
+          <p v-else-if="loadingSummary === it.id" class="tlv__detail-loading u-ui">载入中…</p>
           <p class="tlv__detail-meta u-ui num">
             {{ it.year < 0 ? `公元前 ${-it.year} 年` : `公元 ${it.year} 年` }}
             <template v-if="it.endYear !== it.year">
@@ -329,6 +382,13 @@ const catLabel = (c: string) => props.data.categoryLabels[c] ?? c;
   margin-top: var(--sp-2);
   font-size: var(--fs-2xs);
   color: var(--color-ink-faint);
+}
+
+/* 摘要按需现取时的占位，避免展开后高度从 0 跳变 */
+.tlv__detail-loading {
+  margin: 0;
+  color: var(--color-ink-faint);
+  font-size: var(--fs-xs);
 }
 
 .tlv__more-link {

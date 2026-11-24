@@ -30,6 +30,21 @@ const timelineLite = {
 };
 
 /**
+ * 移动端精简版：只去掉 summary，其余字段全留。
+ *
+ * 为什么不像桌面那样先滤掉 sig<4：TimelineVertical 内部有「展开其余 N 条」的
+ * 折叠逻辑，它需要全部条目才能算出 hiddenCount。若先滤掉，按钮永远不出现。
+ *
+ * 去掉 summary 的理由：它在 props 里占约 25%（实测 7.0 KB / 28.1 KB），
+ * 而只在用户点开某一条时才用得上。组件会在展开时按世纪从
+ * /data/timeline/<c>.json 现取（见 TimelineVertical 的 ensureSummary）。
+ */
+const timelineNoSummary = {
+  ...timeline,
+  items: timeline.items.map(({ summary: _summary, ...rest }) => rest as typeof timeline.items[number]),
+};
+
+/**
  * 真实覆盖跨度，供首屏副标题使用。
  *
  * 为什么不在模板里写死年份：内容还在补，写死就会出现
@@ -147,7 +162,11 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
       </div>
 
       <div class="home-timeline-mobile">
-        <TimelineVertical client:media="(max-width: 1023px)" data={timeline} />
+        <TimelineVertical
+          client:media="(max-width: 1023px)"
+          data={timelineNoSummary}
+          hasSummary={false}
+        />
       </div>
 
       <p class="section__foot">

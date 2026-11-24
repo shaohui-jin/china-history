@@ -500,7 +500,7 @@ songshi-yuefei         宋史·岳飞传
    wikilink 会把文本节点替换成链接节点，之后 gloss 就扫不到了。
 5. 由 [src/lib/remark-gloss.ts](../src/lib/remark-gloss.ts) 实现。
 
-**当前覆盖**：53 个含引用块的事件全部已加，共 342 处。
+**当前覆盖**：53 个含引用块的事件全部已加，共 342 处。**人物侧 0 处**——语法、样式与触屏脚本都已就绪，但内容尚未补（进度见 `PENDING-FEATURES.md` P4）。
 
 ---
 

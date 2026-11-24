@@ -21,13 +21,16 @@ sig=4: 60 条，需 ≥500 字 + 三小节   → 不达标 0 条
 
 **全部达标。** 这是本阶段的目标状态，后续新增内容须维持同一标准。
 
-## 三个覆盖指标
+## 四个覆盖指标
 
 | 指标 | 现状 | 怎么查 |
 |---|---|---|
 | 事件脚注 `[^source]` | 100 / 100 | `rg -c '\[\^' src/content/events/` |
 | 事件跨书互证 `corroboration` | 100 / 100 | `rg -c '^corroboration:' src/content/events/` |
 | 人物第二出处 | 274 / 274 | 见下方脚本 |
+| 行内白话注释 `{文言\|白话}` | 事件 53 / 100，**人物 0 / 274** | `rg -c '\{[^\|{}]+\|[^\|{}]+\}' src/content/{events,people}/` |
+
+gloss 这一项**未完成**：语法、样式、触屏脚本都已就绪，缺的是内容。缺口量化见 `PENDING-FEATURES.md` P4。
 
 人物第二出处（`evaluations` 至少引两个不同书目）：
 
@@ -43,6 +46,8 @@ node -e "const{readdirSync,readFileSync}=require('fs');let one=0;for(const f of 
 | `events/chibi.md` | 6 处行内白话注释 + 争议差异对照（`disputes`） |
 | `events/an-lushan-end.md` | 四小节，跨书互证（通鉴 + 旧唐书） |
 | `people/wu-zetian.md` | 评价三类齐备（evaluation / influence / dispute），两个书目 |
+
+> 人物侧尚无 gloss 样板。补的时候参照 `events/chibi.md` 的写法，只标注真正难懂的 2–4 处，不要逐句翻译。
 
 ## 写作模板
 

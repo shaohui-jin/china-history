@@ -22,6 +22,9 @@ evaluations:
   - claim: 吴明彻幼年以孝闻名。《陈书》记其十四岁时遭大旱，「苗稼焦枯，明彻哀愤，每之田中，号泣，仰天自诉。居数日，有自田还者，云苗已更生」。这类神异记载在正史中常见，其真实性可疑，但反映了南朝对「孝」的推崇——孝行可以成为寒门子弟进入仕途的资本。
     sourceId: nanshi-xiaomohe
     kind: dispute
+  - claim: 《陈书》本传记吴明彻的孝行：「年十四，感坟茔未备，家贫无以取给，乃勤力耕种。时天下亢旱，苗稼焦枯，明彻哀愤，每之田中，号泣，仰天自诉。」这类神异记载在正史中常见，可靠性另说，但反映了南朝以孝取士的风气——寒门子弟要靠孝行获得进入仕途的资本。
+    sourceId: chenshu-wumingche
+    kind: influence
 relations:
   - target: nan-chen-chen-baxian
     type: ruler-subject

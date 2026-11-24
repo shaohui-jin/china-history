@@ -24,6 +24,9 @@ evaluations:
   - claim: 慕容恪临终前向慕容暐荐举慕容垂，说「吴王天资英杰，神武超世，臣死之后，愿陛下举国以授之」。慕容暐不听，反与慕容垂生隙。十余年后前燕为前秦所灭——慕容恪的遗言，成了前燕兴亡的判词。
     sourceId: jinshu-murongchui
     kind: influence
+  - claim: 《晋书》记慕容恪临终荐慕容垂：「吴王天资英杰，神武超世，臣死之后，愿陛下举国以授之。」慕容暐不听，反与慕容垂相猜忌，十余年后前燕为前秦所灭。这份遗言成了前燕兴亡的判词——一个政权能否存续，往往取决于它是否肯用比自己强的人。
+    sourceId: jinshu-murongke
+    kind: influence
 relations:
   - target: shiliuguo-murong-chui
     type: sibling

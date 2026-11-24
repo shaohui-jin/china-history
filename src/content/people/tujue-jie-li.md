@@ -30,6 +30,9 @@ evaluations:
   - claim: 颉利可汗的败亡，一半源于突厥内部「部落多叛」，一半源于「频年大雪，羊马多死」。草原政权的脆弱性在于：一次天灾就可能引发整个联盟的瓦解。
     sourceId: weishu-daowu
     kind: dispute
+  - claim: 《隋书·北狄传》记突厥的习俗与早期世系：「其俗畜牧为事，随逐水草，不恒厥处」，「突厥之先，平凉杂胡也，姓阿史那氏」。这段是中原史书对突厥最早的系统记载。颉利可汗是沙钵略可汗之孙一系，武德年间屡为唐边患，贞观四年为李靖所擒。
+    sourceId: suishu-xiongnu
+    kind: evaluation
 relations:
   - target: tang-taizong
     type: enemy

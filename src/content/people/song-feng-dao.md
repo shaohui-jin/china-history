@@ -36,6 +36,12 @@ evaluations:
   - claim: 赵翼为冯道说话：「冯道历事四朝，人多非之，然其保全善类，不为无益。」这一评价与欧阳修的「无廉耻」形成对峙。同一个人，两种史观，各有其理。
     sourceId: nianerzha-yuandai
     kind: influence
+  - claim: 《旧五代史》对冯道的评价远比《新五代史》宽厚：「道历任四朝，三入中书，在相位二十余年，以持重镇俗为己任」，「性宽厚，尤能容人」，「平生廉俭，自奉甚薄」。同一人物，薛居正说他「持重镇俗」，欧阳修说他「无廉耻」——两史的差异不在史实，而在评价尺度：一个看乱世中的实际作用，一个看君臣名分。
+    sourceId: jiuwudaishi-fengdao
+    kind: influence
+  - claim: 欧阳修在《新五代史·冯道传》里引「礼义廉耻，国之四维；四维不张，国乃灭亡」，然后下判语：「冯道可谓无廉耻者矣。」这一评价成为后世定论，但它的标准是宋人的标准——欧阳修要求臣子对君主死节，而五代的实际政治是以兵变更替政权，「忠」的对象本身就不稳定。用宋代的君臣伦理衡量五代人物，是一种回溯性的审判。
+    sourceId: xinwudaishi-fengdao
+    kind: dispute
 relations:
   - target: wudai-chai-rong
     type: ruler-subject

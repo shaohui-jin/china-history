@@ -27,6 +27,9 @@ evaluations:
   - claim: 土门自立为伊利可汗，是突厥从柔然属部转为独立汗国的起点。这一转变与拓跋氏从部落到帝国的过程结构相似：都以外部的衰败为条件。
     sourceId: weishu-daowu
     kind: influence
+  - claim: 《新唐书·突厥传》记突厥的自我定位：「土门遂自号伊利可汗，犹古之单于也；号其妻为可贺敦，犹古之阏氏也。」两处「犹」字是唐人的翻译视角——他们用匈奴的旧称来解释突厥的新号。同传记其疆域「东自辽海，西至西海，南自沙漠，北至北海」，这是唐人认知中的突厥版图。
+    sourceId: xintangshu-tujue
+    kind: evaluation
 relations:
   - target: tujue-bilge-khan
     type: kinship

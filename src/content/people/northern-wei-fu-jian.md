@@ -27,6 +27,9 @@ evaluations:
   - claim: 富弼与范仲淹同为庆历新政的主持者。范仲淹「置义庄以赡族人」的做法，代表庆历一代士大夫的共同取向：先从宗族与地方的实务做起，再推及国家制度。
     sourceId: songshi-fanzhongyan
     kind: influence
+  - claim: 《晋书·苻坚载记》记苻坚与王猛的君臣相得：「坚大悦，自以为如刘备之遇诸葛孔明也」，「坚之得猛，若文王之得太公，鱼水之欢，不足喻也」。两处比喻都出自苻坚自己之口。一个氐族君主用汉人的典故形容自己与汉人谋士的关系，这本身就说明了前秦政权的性质。
+    sourceId: jinshu-fujian-zai
+    kind: influence
 relations:
   - target: northern-wei-wang-meng
     type: ruler-subject

@@ -34,6 +34,9 @@ evaluations:
   - claim: 《通鉴》记曹丕受禅的全过程：汉献帝「使张音奉玺绶禅位于魏王」，曹丕「三上书辞让」，然后在繁阳设坛即位。三次辞让是这场禅让的政治程式——它把篡位包装成「不得已而受」，为此后两晋南北朝的历次禅代提供了模板。
     sourceId: zizhitongjian-hanwei
     kind: influence
+  - claim: 《文苑英华》收录曹丕《典论·论文》：「夫文章者，经国之大业，不朽之盛事。年寿有时而尽，荣乐止乎其身。」这是中国文学自觉的最早标志之一——在此之前，文章被视为政教的工具；从曹丕开始，文章本身获得了独立的价值。一个皇帝在论文，本身就说明文学的地位变了。
+    sourceId: wenyuan-yinghua
+    kind: influence
 relations:
   - target: sanguo-cao-cao
     type: parent-child

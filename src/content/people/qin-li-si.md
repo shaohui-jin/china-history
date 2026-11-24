@@ -31,6 +31,9 @@ evaluations:
   - claim: 李斯所定的秦律，到汉初已被视为「烦苛」而须蠲削。《刑法志》记「三章之法不足以御奸」，说明制度的宽松与严密各有其适用阶段——秦之亡不在法严，而在法与社会脱节。
     sourceId: hanshu-ji
     kind: dispute
+  - claim: 司马迁在《李斯列传》末的评语极为冷峻：「斯知《六艺》之归，不务明政以补主上之缺，持爵禄之重，阿顺苟合，严威酷刑，听高邪说，废适立庶。」他把李斯的悲剧归结为「知而不能行」——李斯懂治国之道，却为了保住爵禄而阿顺苟合，最终死于自己参与制造的沙丘之谋。
+    sourceId: shiji-liusi-liezhuan
+    kind: influence
 relations:
   - target: qin-shihuang
     type: ruler-subject

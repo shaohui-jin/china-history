@@ -19,8 +19,16 @@ corroboration:
   primary: shiji-qin-benji
   secondary:
     - zhanguoce-qince
-  agreement: consistent
-  note: 两书均记孝公求贤、商鞅入秦、变法成效；《史记》详于法令条文与朝议过程，《战国策》重在变法后「道不拾遗，兵革大强」的成效描述。
+  agreement: partial
+  note: 两书均记孝公求贤、商鞅入秦、变法成效；《史记》详于法令条文与朝议过程，《战国策》重在变法后「道不拾遗，兵革大强」的成效描述。二者对成效一致，对商鞅本人的评价则截然不同——见正文「争议」一节引太史公曰。
+disputes:
+  - claim: 商鞅其人的评价
+    views:
+      - sourceId: shiji-shangjun-liezhuan
+        statement: 商君，其{天资刻薄人也|天性刻薄寡恩}。……{卒受恶名于秦，有以也夫|最终在秦国落得恶名，是有缘由的}
+      - sourceId: zhanguoce-qince
+        statement: 商君治秦，{法令至行，公平无私|法令彻底推行，公平不偏私}，{罚不讳强大，赏不私亲近|惩罚不避权贵，赏赐不偏亲信}
+certainty: disputed
 ---
 
 ## 背景

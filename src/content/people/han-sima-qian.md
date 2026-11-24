@@ -35,6 +35,9 @@ evaluations:
     sourceId: nianerzha-1
     quote: 司马迁参酌古今，发凡起例，创为全史。本纪以序帝王，世家以记侯国，十表以系时事，八书以详制度，列传以志人物。然后一代君臣政事，贤否得失，总汇于一编之中。自此例一定，历代作史者遂不能出其范围。
     kind: evaluation
+  - claim: 《汉书·司马迁传》保存了《报任安书》的完整文本，是研究司马迁最直接的史料。「网罗天下放失旧闻，考之行事，稽其成败兴坏之理，凡百三十篇」——这句自述的方法论，说明《史记》不是史料汇编，而是有明确问题意识的著作。班固虽批评司马迁「是非颇谬于圣人」，仍全文收录此书。
+    sourceId: hanshu-simaqian
+    kind: influence
 relations:
   - target: han-liu-che
     type: ruler-subject

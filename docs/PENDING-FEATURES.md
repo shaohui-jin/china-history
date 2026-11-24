@@ -23,43 +23,17 @@
 
 ---
 
-## 待修复（1 项）
+## 待修复（0 项）
 
-### F4 首页移动端传全量时间线数据
+当前无待修复项。
 
-**问题**
-
-`src/pages/index.astro:27` 对桌面端做了裁剪（`timelineLite`，只留 `sig >= 4`），
-但移动端的 `TimelineVertical` 拿到的是**全量** `timeline`：
-
-```astro
-<TimelineCanvas data={timelineLite} />          <!-- 桌面：裁剪后 -->
-<TimelineVertical data={timeline} />             <!-- 移动：全量 -->
-```
-
-**为什么现在这样写**：`TimelineVertical` 内部有「展开其余 N 条」的折叠逻辑，
-它需要知道被隐藏的条数。若先滤掉 `sig < 4`，`hiddenCount` 会恒为 0，按钮永远不出现。
-
-**实测影响**
-
-```
-dist/index.html  206.9 KB
-  island 0（TimelineCanvas  props）  44.5 KB
-  island 1（TimelineVertical props） 45.3 KB
-```
-
-两个 island 各占约 45 KB，其中移动端那份是全量。gzip 后首页约 50 KB，Lighthouse 移动端 Perf 仍是 100——**不是当下的性能事故**，但每多 100 条事件，这一份还会再涨约 20 KB。
-
-**两个方向**
-
-| 方案 | 做法 | 代价 |
-|---|---|---|
-| **a 传精简数据 + 单独的计数** | 给 `TimelineVertical` 增加一个 `totalCount` prop，data 只传精简后的 | 组件要改，`hiddenCount` 的算法要调整 |
-| **b 保持全量** | 认为移动端用户确实可能点开全部事件 | 首页体积随内容线性增长 |
-
-**建议 a**。移动端折叠后的默认视图与桌面一样只看 `sig >= 4`，用户点「展开其余」时才需要更多——那一刻可以改为动态 fetch（`/data/timeline/<century>.json` 已经有分片）。
-
-**验收**：`dist/index.html` 的两个 island props 都小于 30 KB，且移动端「展开其余 N 条」按钮仍能正确显示条数。
+> **F4 首页移动端传全量时间线数据** —— 已解决（2026-11-24）。
+> 做法不是筛条目，而是**去掉 `summary` 字段**：它在 props 里占约 25%（7.0 KB / 28.1 KB），
+> 但只在用户点开某一条时才用得上。移动端改为传 `timelineNoSummary` + `hasSummary={false}`，
+> 组件在展开时按世纪从 `/data/timeline/<c>.json` 现取（`TimelineVertical` 的 `ensureSummary`）。
+>
+> 结果：移动端 island props 28.1 KB → 20.0 KB，首页 246.2 KB → 223.7 KB。
+> 折叠按钮的 `hiddenCount` 不受影响（条目数未变）。
 
 ---
 
@@ -116,11 +90,10 @@ nan-liang 4 人
 | 构建产物 | 399 页，Pagefind 索引 91089 词 |
 | 事件脚注覆盖 | **100 / 100** |
 | 事件跨书互证 | **100 / 100** |
-| 事件行内注释 | 53 个含引用块的事件，342 处 |
-| 人物带出处评价 | **274 / 274**（每人 ≥ 2 个不同书目） |
+| 事件行内注释 | 53 个含引用块的事件，342 处 || 人物带出处评价 | **274 / 274**（每人 ≥ 2 个不同书目） |
 | 人物字数 | 全部 ≥ 600 字 |
 | sig=5 事件 | 37 条，全部 ≥ 800 字 + 四小节 |
 | sig=4 事件 | 60 条，全部 ≥ 500 字 + 三小节 |
-| 首页体积 | 206.9 KB（两个 island props 各约 45 KB） |
+| 首页体积 | 223.7 KB（桌面 island props 27.6 KB，移动端 20.0 KB；移动端不含 summary） |
 | 三端 | 375 / 768 走纵向列表，≥1024 走画布泳道 |
 | 门禁 | `check` / `validate` / `lint:css` / `test` / `build` 全通过 |

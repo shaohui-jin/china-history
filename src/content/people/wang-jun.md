@@ -17,6 +17,17 @@ seal: |-
   王
   濬
 summary: 西晋名将。益州刺史任上造楼船，率水军顺流而下，破吴铁锁铁锥，直抵建业，受孙皓降。刘禹锡「王濬楼船下益州，金陵王气黯然收」即咏此役。
+evaluations:
+  - claim: 《晋书》记「濬自发蜀，兵不血刃，攻无坚城」，灭吴之役的最后一击由他完成。但他真正的功劳在战前七年：任益州刺史时造楼船、练水军，「舟楫之盛，自古未有」，把长江上游变成了晋军的出发基地。
+    sourceId: jinshu-wangjun
+    quote: 濬自发蜀，兵不血刃，攻无坚城，夏口、武昌，无相支抗。
+    kind: evaluation
+  - claim: 王濬楼船东下，破丹阳、西陵、夏口、武昌，直抵三山，孙皓面缚舆榇出降。此役结束了汉末以来近百年的分裂，也证明了一个战略判断：灭吴必先取蜀，得蜀则长江天险与吴共有。
+    sourceId: jinshu-wangjun
+    kind: influence
+  - claim: 灭吴之后，王濬与王浑争功。王浑以其不受节制上表弹劾，几致获罪，赖武帝宽容方免。此事说明西晋的统一并未带来政治的清明——伐吴的两路主帅互相倾轧，而此后的「八王之乱」正是同一结构性问题的爆发。
+    sourceId: jinshu-wangjun
+    kind: dispute
 relations:
   - target: sima-yan
     type: ruler-subject

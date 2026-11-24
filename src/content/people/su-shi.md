@@ -19,6 +19,16 @@ seal: |-
   苏
   轼
 summary: 北宋文坛全才，诗、词、文、书、画皆卓然成家。嘉祐二年进士，欧阳修谓「老夫当避路」。乌台诗案几死，屡遭贬谪，然其旷达之气不改。与父苏洵、弟苏辙合称「三苏」。
+evaluations:
+  - claim: 苏轼的文学成就与政治失败互为因果。乌台诗案后贬黄州四年，筑室东坡、自号东坡居士，作《赤壁赋》《念奴娇·赤壁怀古》《定风波》。他文学的最高峰正在贬谪之中。
+    sourceId: songshi-sushi
+    kind: influence
+  - claim: 苏轼在旧党中亦不见容。司马光尽废新法时他力言免役法「不可尽废」，为程颐一派所攻。这种中间立场在党争激烈的时代必然两面受敌，但也使他的判断比任何一方更接近实际。
+    sourceId: songshi-sushi
+    kind: dispute
+  - claim: 《宋史》本传的定评是「器识之闳伟，议论之卓荦，文章之雄隽，政事之精明，四者皆能以特立之志为之主」。这一评价把文章与政事并列，是元人修史时对苏轼地位的官方确认。
+    sourceId: songshi-sushi
+    kind: evaluation
 relations:
   - target: ouyang-xiu
     type: teacher-student

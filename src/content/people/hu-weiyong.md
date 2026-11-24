@@ -15,6 +15,17 @@ seal: |-
   胡
   惟庸
 summary: 明朝最后一位丞相。洪武十年继汪广洋为相，专权跋扈。洪武十三年以谋反罪被杀，朱元璋借此废中书省与丞相，从此明清两代再无宰相之职。
+evaluations:
+  - claim: 《明史》入胡惟庸于《奸臣传》，罪状首列「专决省中事，不复奏」「生杀黜陟，或不奏径行」。这是相权与绝对君权之间无法调和的矛盾，在文字上落到「擅权」二字。
+    sourceId: mingshi-hu-wei-yong
+    quote: 惟庸总中书之政，专决省中事，不复奏。生杀黜陟，或不奏径行。
+    kind: evaluation
+  - claim: 他的死直接改变了此后五百年的中枢制度。洪武十三年同日废中书省、罢丞相，六部直隶皇帝，并立「祖训」禁止复相。明清两代再无宰相，内阁与军机处只是秘书机构——这一格局由胡惟庸一案定型。
+    sourceId: mingshi-hu-wei-yong
+    kind: influence
+  - claim: 「谋反」一节的可信度历来存疑。《明太祖实录》在永乐朝经过三修，胡惟庸的罪名由「擅权」逐步升级为「通倭」「通虏」「谋反」，时间跨度十余年，牵连至三万余人。史家多认为朱元璋需要一个足够重的罪名来废相，谋反是后来追加的。
+    sourceId: mingshi-hu-wei-yong
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: ruler-subject

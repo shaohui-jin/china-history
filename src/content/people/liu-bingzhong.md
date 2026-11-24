@@ -18,6 +18,13 @@ seal: |-
   刘
   秉忠
 summary: 元初汉臣之首。原为禅僧，经海云荐于忽必烈，参预机要三十余年。定国号「大元」、营建大都、立朝仪、定官制，多出其手。元朝制度之汉化，实以秉忠为枢纽。
+evaluations:
+  - claim: 刘秉忠是元朝汉化的枢纽人物，作用类似北魏的崔浩。他以僧人身份参预机要三十余年，定国号、营大都、立朝仪、定官制——元朝能从一个草原汗国转变为中原王朝，他是关键的技术执行者。
+    sourceId: yuanshi-shizu
+    kind: evaluation
+  - claim: 大都的规划是他最具体的历史遗产。他以《周礼·考工记》为本，结合地形，规划出「方九里、中轴对称」的棋盘式都城。此布局为此后明清北京城之雏形，延续至今。
+    sourceId: yuanshi-shizu
+    kind: influence
 relations:
   - target: kublai
     type: ruler-subject

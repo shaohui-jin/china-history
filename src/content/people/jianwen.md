@@ -16,6 +16,13 @@ seal: |-
   朱
   允炆
 summary: 明太祖长孙，懿文太子朱标之子。在位四年，锐意削藩，激起燕王朱棣「靖难」之变。南京城破后下落不明，成为中国历史上最著名的失踪皇帝。
+evaluations:
+  - claim: 建文帝的削藩在战略上是对的，在战术上是错的。他面对的是九个拥兵的叔父，削藩势在必行；但他先削周、代、湘、齐、岷五王，打草惊蛇，使最强的燕王有了准备时间。
+    sourceId: mingshi-taizu
+    kind: evaluation
+  - claim: 他的失踪是中国历史上最著名的悬案。正史称「宫中火起，帝不知所终」，此后有出家为僧、流亡海外、隐居云南等多种传说。郑和下西洋的动机之一，就是寻找他的下落（虽无确证）。
+    sourceId: mingshi-taizu
+    kind: dispute
 relations:
   - target: zhu-yuanzhang
     type: kinship

@@ -18,6 +18,14 @@ seal: |-
   道
   成
 summary: 南齐开国皇帝。出身兰陵萧氏，宋末以平叛起家，官至相国、齐王。以宋后废帝刘昱暴虐为由，弑帝立顺帝，三年后受禅建齐。在位四年，崇尚节俭，然未能约束宗室，为南齐宗室内讧埋下伏笔。
+evaluations:
+  - claim: 「使我治天下十年，当使黄金与土同价。」这句话是萧道成一生最著名的政治宣言。他的节俭并非表演，而是一种针对刘宋末年奢靡风气的矫枉手段。但同时也有其限度：他终未能真正触及宗室权力的结构性问题。
+    sourceId: nanqishu-gaodi
+    quote: 上性宽厚，尝谓群臣曰：「使我治天下十年，当使黄金与土同价。」
+    kind: evaluation
+  - claim: 南齐仅二十三年、历七帝，是南朝最短的王朝。齐明帝萧鸾即位后「尽杀高帝、武帝子孙」，萧道成的「深戒之」成了自己家族命运的预言。
+    sourceId: nanqishu-gaodi
+    kind: dispute
 relations:
   - target: liu-yu
     type: ruler-subject

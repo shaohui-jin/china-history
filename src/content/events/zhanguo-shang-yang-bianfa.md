@@ -25,9 +25,9 @@ disputes:
   - claim: 商鞅其人的评价
     views:
       - sourceId: shiji-shangjun-liezhuan
-        statement: 商君，其{天资刻薄人也|天性刻薄寡恩}。……{卒受恶名于秦，有以也夫|最终在秦国落得恶名，是有缘由的}
+        statement: 商君，其天资刻薄人也。……卒受恶名于秦，有以也夫
       - sourceId: zhanguoce-qince
-        statement: 商君治秦，{法令至行，公平无私|法令彻底推行，公平不偏私}，{罚不讳强大，赏不私亲近|惩罚不避权贵，赏赐不偏亲信}
+        statement: 商君治秦，法令至行，公平无私，罚不讳强大，赏不私亲近
 certainty: disputed
 ---
 

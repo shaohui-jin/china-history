@@ -39,7 +39,7 @@ relations:
     type: teacher-student
     strength: primary
     from: 228
-    note: 亮称之为「{凉州上士|凉州的上等人才}」。
+    note: 亮称之为「凉州上士」。
   - target: sanguo-liu-shan
     type: ruler-subject
     strength: primary

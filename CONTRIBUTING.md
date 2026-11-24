@@ -50,6 +50,20 @@ CI（`.github/workflows/deploy.yml`）会在 Build 之前依次跑 `check` 和 `
 
 ---
 
+## 提交与推送
+
+每完成一个**可独立验收**的步骤（一条待办项、一批内容、一处修复），立即提交并推送。
+不要攒成一个大提交 —— 出问题时按步骤回退，比在一坨 diff 里找原因便宜得多。
+
+- 信息用中文，前缀 `feat:` / `fix:` / `docs:` / `content:` / `perf:` / `test:`
+- 正文写「为什么」和「代价」，不写「改了哪些文件」
+- **不加 AI 作者**：不写 `Co-authored-by:` 尾注，不加「Generated with …」之类 footer，
+  `Author` 与 `Committer` 只留仓库主人
+- 推送后 `gh run list --limit 1` 确认 CI 绿；红了先修，再进下一步
+- 临时脚本、调试产物不进提交
+
+---
+
 ## 改代码时的约定
 
 ### 路径

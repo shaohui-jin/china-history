@@ -520,6 +520,9 @@ npm run check
 npm run build
 ```
 
+代码跑完、眼看无误后，按 [CONTRIBUTING.md](../CONTRIBUTING.md) 的「提交与推送」立即提交并推送
+—— **一个步骤一个提交**，不加 AI 作者。
+
 ### 每批内容的自检清单
 
 - [ ] 新增政权的 `period` 填了，`order` 不与现有冲突

@@ -16,12 +16,19 @@ const timeline = await getTimelineData();
  * 放大到 300 年以内时，TimelineCanvas 会按世纪从
  * /data/timeline/<century>.json 拉取缺失的部分。
  *
- * 手机端（TimelineVertical）**必须传全量**：它内部有「展开其余 N 条」的折叠逻辑，
+ * 手机端（TimelineVertical）**必须传全量条目**：它内部有「展开其余 N 条」的折叠逻辑，
  * 若这里先滤掉 sig<4，组件里的 hiddenCount 会恒为 0，按钮永远不出现。
- * 全量数据只多 3 条 sig=3 的事件，序列化开销可以忽略。
+ *
+ * 但 summary 字段可以去掉：它在 props 里占约 25%，只在用户点开某一条时才用得上。
+ * 组件会在展开时按世纪从 /data/timeline/<c>.json 现取（见 ensureSummary）。
+ * 首页用的是同一套做法，见 index.astro 的 timelineNoSummary。
  */
 const initialItems = timeline.items.filter((it) => it.significance >= 4);
 const timelineLite = { ...timeline, items: initialItems };
+const timelineNoSummary = {
+  ...timeline,
+  items: timeline.items.map(({ summary: _s, ...rest }) => rest as (typeof timeline.items)[number]),
+};
 ---
 
 <Base title="时间线 · 史鉴" description="按政权分道的中国历史时间线，支持缩放与框选时间段">
@@ -75,7 +82,11 @@ const timelineLite = { ...timeline, items: initialItems };
 
     <!-- 平板 + 手机 -->
     <div class="only-narrow">
-      <TimelineVertical client:media="(max-width: 1023px)" data={timeline} />
+      <TimelineVertical
+        client:media="(max-width: 1023px)"
+        data={timelineNoSummary}
+        hasSummary={false}
+      />
     </div>
 
     <!--

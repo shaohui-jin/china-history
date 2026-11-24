@@ -4,7 +4,7 @@
  * 样张（排版阶梯、色板、组件清单）搬去 /styleguide。
  */
 import Base from '../layouts/Base.astro';
-import TimelineCanvas from '../components/timeline/TimelineCanvas.vue';
+import TimelineExplorer from '../components/timeline/TimelineExplorer.vue';
 import TimelineVertical from '../components/timeline/TimelineVertical.vue';
 import { getTimelineData, loadIndex } from '../lib/content';
 import { homePage, timelineByBreakpoint } from '../design/pages';
@@ -149,14 +149,19 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
       </div>
 
       <!--
-        桌面（≥1024）：画布泳道；平板与手机走纵向列表（理由见 timeline.astro）
-        client:media 让它只在匹配时下发 JS，手机端不下载画布 chunk
+        桌面（≥1024）：画布泳道 + 政权筛选条；平板与手机走纵向列表。
+        client:media 让它只在匹配时下发 JS，手机端不下载画布 chunk。
+
+        为什么首页也用 TimelineExplorer 而不是裸 TimelineCanvas：
+        首页文案写着「纵向按政权分道」，但此前桌面端无法筛选，只有 /timeline 能点。
+        两页行为不一致本身就是缺陷。TimelineExplorer = Canvas + 筛选条 + ?lane= 同步。
       -->
       <div class="home-timeline">
-        <TimelineCanvas
+        <TimelineExplorer
           client:media="(min-width: 1024px)"
           config={timelineByBreakpoint.lg}
           data={timelineLite}
+          lanes={timeline.lanes}
           lazyLoad={true}
         />
       </div>

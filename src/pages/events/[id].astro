@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import DisputeDiff from '../../components/events/DisputeDiff.astro';
+import GlossScript from '../../components/GlossScript.astro';
 import { loadIndex } from '../../lib/content';
 import { formatRange } from '../../lib/time';
 import { render } from 'astro:content';
@@ -179,35 +180,8 @@ const disputeData = (event.disputes ?? []).map((d) => ({
     </article>
   </main>
 
-  <!--
-    行内白话注释的触屏交互。
-    桌面靠 :hover 与 :focus-visible 在 CSS 里解决，触屏没有 hover，
-    所以这里用事件委托统一处理点的动作：
-    - 点 .gloss → 切换 data-open
-    - 点别处 → 关掉所有已展开的
-    事件委托而不是逐元素绑定：一页可能有几十处注释，
-    逐个 addEventListener 没必要，且 remark 生成的节点无法在模板里挂钩。
-  -->
-  <script>
-    document.addEventListener('click', (ev) => {
-      const target = ev.target as HTMLElement | null;
-      const gloss = target?.closest('.gloss') as HTMLElement | null;
-
-      if (gloss) {
-        const open = gloss.getAttribute('data-open') === 'true';
-        // 先全部收起，保证同时只开一个
-        document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
-          el.setAttribute('data-open', 'false');
-        });
-        gloss.setAttribute('data-open', open ? 'false' : 'true');
-        return;
-      }
-
-      document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
-        el.setAttribute('data-open', 'false');
-      });
-    });
-  </script>
+  <!-- 行内白话注释的触屏交互（与人物页共用同一实现） -->
+  <GlossScript />
 </Base>
 
 <style>

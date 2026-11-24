@@ -6,6 +6,7 @@
  */
 import Base from '../../layouts/Base.astro';
 import RelationGraph from '../../components/graph/RelationGraph.vue';
+import GlossScript from '../../components/GlossScript.astro';
 import { loadIndex, getEgoNetwork, getPersonRelations } from '../../lib/content';
 import { personPage, graphByBreakpoint } from '../../design/pages';
 import { formatDate, shortYear } from '../../lib/time';
@@ -294,6 +295,9 @@ const related = personRelations;
       </aside>
     </div>
   </main>
+
+  <!-- 行内白话注释的触屏交互（与事件页共用同一实现） -->
+  <GlossScript />
 </Base>
 
 <style>

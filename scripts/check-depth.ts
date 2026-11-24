@@ -63,6 +63,9 @@ function countChars(body: string): number {
 const SECTION_RULES: Record<number, string[]> = {
   5: ['背景', '经过', '影响', '争议'],
   4: ['背景', '经过', '影响'],
+  // sig=3 也要有「经过」。此前脚本只定义 5 和 4，文档却写着 sig=3 需「经过」，
+  // 于是 3 条 sig=3 事件长期缺这一节而无人发现。
+  3: ['经过'],
 };
 
 function findSections(body: string): Set<string> {

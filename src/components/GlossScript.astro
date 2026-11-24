@@ -1,0 +1,37 @@
+---
+/**
+ * 行内白话注释的触屏交互。
+ *
+ * 桌面靠 :hover 与 :focus-visible 在 CSS 里解决（见 global.css 的 .gloss 段），
+ * 但触屏没有 hover，必须用点击切换 data-open。
+ *
+ * 为什么抽成独立组件而不是在两个页面各写一遍：
+ * 事件页与人物页都要这个行为，复制粘贴会出现「改了一处、忘了另一处」。
+ * 这个问题已经发生过一次——人物页长期没有这个脚本，导致人物正文里的
+ * 注释在手机上点不开。
+ *
+ * 为什么用事件委托而不是逐元素绑定：
+ * 一页可能有几十处注释，且 remark 生成的节点无法在模板里挂钩。
+ */
+---
+
+<script>
+  document.addEventListener('click', (ev) => {
+    const target = ev.target as HTMLElement | null;
+    const gloss = target?.closest('.gloss') as HTMLElement | null;
+
+    if (gloss) {
+      const open = gloss.getAttribute('data-open') === 'true';
+      // 先全部收起，保证同时只开一个
+      document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
+        el.setAttribute('data-open', 'false');
+      });
+      gloss.setAttribute('data-open', open ? 'false' : 'true');
+      return;
+    }
+
+    document.querySelectorAll('.gloss[data-open="true"]').forEach((el) => {
+      el.setAttribute('data-open', 'false');
+    });
+  });
+</script>

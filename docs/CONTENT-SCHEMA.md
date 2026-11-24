@@ -201,6 +201,31 @@ disputes:
 文言文的不同记载往往不是字面对应（「数十万」vs「二十余万」措辞完全不同），
 自动 diff 只会标出一大片红色。
 
+**`statement` 以 `{` 开头时必须加引号**，否则 YAML 会把它当成 flow mapping：
+
+```yaml
+statement: "{尚可喜、耿精忠相继叛}，{乱及十省}。"   # 正确
+statement: {尚可喜、耿精忠相继叛}，{乱及十省}。      # 语法错误
+```
+
+#### `disputes` 与 `certainty` 必须联动
+
+```yaml
+certainty: disputed     # 有异说
+```
+
+规则（`validate` 会拦）：
+
+| disputes | certainty | 结果 |
+|---|---|---|
+| 非空 | `disputed` | ✓ 正确 |
+| 非空 | `confirmed`（默认值） | ✗ 报错：「史料有异说」徽章不会显示 |
+| 空 | `disputed` | ✗ 报错：徽章会显示但没有内容 |
+
+事件页的徽章只看 `certainty === 'disputed'`，与 `disputes` 是两个独立字段。
+不写 `certainty` 时它默认是 `confirmed`，于是**即使写了 disputes，读者也看不到异说提示**。
+这个坑曾经存在很久：100 条事件的 `certainty` 全是默认值，那个徽章一次都没出现过。
+
 ### 人物评价 `evaluations`
 
 人物的「评价 / 影响 / 争议」**必须**落在这个字段，不允许写无出处的现代评语：

@@ -153,6 +153,16 @@ const noEval = rows.filter((r) => r.kind === 'person' && (r.evalCount ?? 0) === 
 console.log('');
 console.log(`人物评价: 带出处评价为 0 条的人物 ${noEval.length} 条`);
 
+const missSec = failSections.filter((r) => r.kind === 'event');
+if (missSec.length > 0) {
+  console.log('');
+  console.log(`事件缺小节: ${missSec.length} 条`);
+  missSec.slice(0, 12).forEach((r) =>
+    console.log(`   sig=${r.sig}  ${r.id}  缺: ${r.missingSections.join('/')}`),
+  );
+  if (missSec.length > 12) console.log(`   … 另有 ${missSec.length - 12} 条`);
+}
+
 console.log('');
 console.log('---');
 console.log(`字数不达标合计: ${failChars.length} 条`);

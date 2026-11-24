@@ -19,6 +19,13 @@ seal: |-
   容
   垂
 summary: 后燕开国君主，十六国第一名将。前燕宗室，因功高遭忌，投奔前秦苻坚。淝水之战后复国，建后燕，年逾六十仍亲征，破北魏、灭西燕，威震北方。
+evaluations:
+  - claim: 慕容垂一生几乎是一部十六国的缩影：才华横溢的名将，永远被猜忌；忠诚过的君主，终归要背叛。他在前燕被慕容评逼走，在前秦被王猛「金刀计」陷害，六十一岁才复国，七十岁还在亲征。
+    sourceId: jinshu-liuyao
+    kind: evaluation
+  - claim: 参合陂之战是他一生最痛的一页。其子慕容宝率八万燕军攻北魏，被拓跋珪坑杀四五万人。慕容垂次年亲征报复，大破北魏，但归途经参合陂「见积骸如山」，惭愤呕血，病卒于途中。这一战的胜负，决定了此后北方的归属。
+    sourceId: jinshu-liuyao
+    kind: dispute
 relations:
   - target: fu-jian
     type: ruler-subject

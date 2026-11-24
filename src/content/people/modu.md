@@ -17,6 +17,13 @@ seal: |-
   冒顿
   单于
 summary: 匈奴第一位真正意义上的单于。鸣镝弑父自立，东灭东胡，西破月氏，南并楼烦，统一草原。白登之围困汉高祖，开汉匈和亲之局。
+evaluations:
+  - claim: 冒顿的「鸣镝弑父」是草原政治逻辑的极端体现：以绝对服从的军事训练取代血缘继承的合法性。他先射自己的爱马、爱妻，凡不射者斩，最后射向父亲头曼。这一手段残酷，但确实建立了一个前所未有的草原帝国。
+    sourceId: shiji-xiongnu
+    kind: evaluation
+  - claim: 白登之围是汉匈关系的起点。刘邦被围七日，「用陈平秘计」才得脱。此后汉廷对匈奴行和亲、输岁币，直到汉武帝才转为攻势。这一被动局面延续了六十七年。
+    sourceId: shiji-xiongnu
+    kind: influence
 relations:
   - target: liu-bang
     type: enemy

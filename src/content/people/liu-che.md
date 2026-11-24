@@ -17,6 +17,17 @@ seal: |-
   刘
   彻
 summary: 西汉第五帝，在位五十四年。罢黜百家、独尊儒术，设太学，行推恩令，盐铁官营，北击匈奴，通西域，开丝绸之路。其治塑造了此后两千年的中国形态。
+evaluations:
+  - claim: 班固的赞语先扬后抑，既肯定其文治规模，又以「不改文景之恭俭」暗指其奢靡伤民——这是《汉书》特有的史论笔法，褒贬都在褒中。
+    sourceId: hanshu-wudi-zan
+    quote: 如武帝之雄材大略，不改文景之恭俭以济斯民，虽《诗》《书》所称，何有加焉！
+    kind: evaluation
+  - claim: 汉武帝真正的影响不在疆域，而在制度。独尊儒术确立了此后两千年的官方意识形态；推恩令解决了诸侯问题；盐铁官营开创了国家垄断经济；太学与察举制建立了人才选拔的通道。这四项都不是军事成就，但都比军事成就更长久。
+    sourceId: hanshu-wudi
+    kind: influence
+  - claim: 武帝晚年的「巫蛊之祸」与轮台罪己，是古代帝王罕见的自我修正。他下诏曰「当今务在禁苛暴，止擅赋，力本农」，等于否定了自己前半生的施政方向。有研究认为，这份诏书是西汉能延续的关键。
+    sourceId: hanshu-wudi-zan
+    kind: dispute
 relations:
   - target: wei-qing
     type: ruler-subject

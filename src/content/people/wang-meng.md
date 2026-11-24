@@ -17,6 +17,13 @@ seal: |-
   王
   猛
 summary: 前秦丞相，十六国第一名臣。出身寒微，扪虱而谈，为苻坚所重。辅政十八年，整饬吏治、抑制豪强、兴办学校，使前秦成为北方最强盛之国。
+evaluations:
+  - claim: 王猛是十六国时期唯一兼具「治国」与「军事」才能的汉人宰相。他治国用重典，「鞭杀一吏」以立威，使「关陇清晏，百姓丰乐」；用兵则一年之内灭前燕。苻坚称其为「夷吾、子产之俦」。
+    sourceId: jinshu-liuyao
+    kind: evaluation
+  - claim: 王猛的遗言是前秦唯一的救命方案：「晋虽僻陋吴越，乃正朔相承……愿不以晋为图。鲜卑、西羌，我之仇敌，终为人患，宜渐除之。」他死后仅八年，苻坚就在淝水大败，而反叛的正是他警告过的鲜卑慕容垂与羌族姚苌。
+    sourceId: jinshu-liuyao
+    kind: influence
 relations:
   - target: fu-jian
     type: ruler-subject

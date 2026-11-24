@@ -18,6 +18,13 @@ seal: |-
   萧
   衍
 summary: 南梁开国皇帝，在位四十八年，是南朝在位最久的君主。前期「天监之治」文教大兴，后期佞佛怠政，四次舍身同泰寺。纳侯景之降而无力制之，终致侯景之乱，以八十六岁高龄饿死台城。
+evaluations:
+  - claim: 萧衍是南朝最矛盾的君主：文治冠绝南朝，武功亦有可观，晚年却以八十六岁高龄饿死台城。他的悲剧不在于无能，而在于「在位太久」——四十八年的统治使他从明君逐渐变成怠政的佞佛者。
+    sourceId: liangshu-houjing
+    kind: evaluation
+  - claim: 「菩萨皇帝」这个称号既是褒也是贬。他四度舍身同泰寺，每次由群臣以巨资赎回，共耗钱四万万；又大建寺院，「都下佛寺五百余所，穷极宏丽；僧尼十余万，资产丰沃」。郭祖深上书称「天下户口几亡其半」——宗教政策直接侵蚀了国家的税基与兵源。
+    sourceId: liangshu-houjing
+    kind: dispute
 relations:
   - target: xiao-daocheng
     type: kinship

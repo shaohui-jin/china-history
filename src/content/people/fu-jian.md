@@ -17,6 +17,13 @@ seal: |-
   苻
   坚
 summary: 前秦皇帝。用王猛辅政，统一北方，为十六国中最强盛者。然淝水之战大败于东晋，前秦随之瓦解。其「不杀降」的宽仁，成也在此，败也在此。
+evaluations:
+  - claim: 苻坚是十六国君主中最有「统一」胸怀的一位。他重用汉人、推行儒学、宽待降者，几乎具备了一个统一君主的所有品质。但他过于宽厚——对慕容垂、姚苌这样的枭雄，既不杀也不用，最终养虎遗患。
+    sourceId: jinshu-liuyao
+    kind: evaluation
+  - claim: 王猛临终遗言是前秦唯一的救命方案：「晋虽僻陋吴越，乃正朔相承……愿不以晋为图。鲜卑、西羌，我之仇敌，终为人患，宜渐除之。」苻坚两条都没听——既伐晋，又未除鲜卑。淝水之败后，慕容垂、姚苌果然相继反叛。
+    sourceId: jinshu-liuyao
+    kind: dispute
 relations:
   - target: wang-meng
     type: ruler-subject

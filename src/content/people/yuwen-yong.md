@@ -17,6 +17,13 @@ seal: |-
   宇文
   邕
 summary: 北周武帝。隐忍十二年诛权臣宇文护，亲政后灭佛、行均田、练府兵，国力大盛。建德六年灭北齐，统一北方。正欲北伐突厥而病卒，年仅三十六，为隋统一奠定基础。
+evaluations:
+  - claim: 宇文邕是北朝最后一位有统一之志且有统一之力的君主。他隐忍十二年才除掉宇文护，说明其性格极为克制；亲政后立即推行灭佛、均田、府兵三项改革，说明其执行力极强。若非三十六岁病卒，隋的统一很可能由他完成。
+    sourceId: beishi-xiaowen
+    kind: evaluation
+  - claim: 建德灭佛是北周国力大增的关键。北朝寺院占有大量土地与人口，「僧尼三百万人」不事生产。宇文邕下令废寺、僧尼还俗，使国家直接掌握了大批劳动力与土地。这一举措的激进程度超过唐代的「会昌灭佛」，但效果立竿见影。
+    sourceId: beishi-xiaowen
+    kind: influence
 relations:
   - target: yuwen-tai
     type: parent-child

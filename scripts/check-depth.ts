@@ -25,6 +25,8 @@ interface Row {
   id: string;
   sig: number;
   chars: number;
+  /** 人物：正文 + 带出处评价的字数（评价也渲染在页面上，是实际内容量） */
+  totalChars?: number;
   needChars: number;
   missingSections: string[];
   needSections: string[];
@@ -97,17 +99,25 @@ for (const f of readdirSync(join(ROOT, 'events'))) {
 
 for (const f of readdirSync(join(ROOT, 'people'))) {
   if (!f.endsWith('.md')) continue;
-  const raw = readFileSync(join(ROOT, 'people', f), 'utf8');
+  const raw = readFileSync(join(ROOT, 'people', f), 'utf8').replace(/\r\n/g, '\n');
   // 人物不按 sig 分级，统一以 600 字为「有实质内容」的软门槛
   const body = bodyOf(join(ROOT, 'people', f));
   const chars = countChars(body);
+
+  // 带出处的评价也渲染在页面上，属于实际内容，须计入字数。
+  // 只截取 evaluations: 到下一个顶层键之间的文本，避免把 relations 等算进来。
+  const evalBlock = raw.match(/^evaluations:\n([\s\S]*?)(?=^\S|\Z)/m)?.[1] ?? '';
+  const evalChars = countChars(evalBlock);
+
   // 评价条数：只数 `- claim:` 列表项，避免正文里的同名词干扰
-  const evalCount = (raw.match(/^\s*-\s*claim:\s*\S/gm) ?? []).length;
+  const evalCount = (evalBlock.match(/^\s*-\s*claim:/gm) ?? []).length;
+
   rows.push({
     kind: 'person',
     id: f.replace(/\.md$/, ''),
     sig: 0,
     chars,
+    totalChars: chars + evalChars,
     needChars: 600,
     needSections: [],
     missingSections: [],
@@ -117,7 +127,9 @@ for (const f of readdirSync(join(ROOT, 'people'))) {
 
 /* ---------------- 报告 ---------------- */
 
-const failChars = rows.filter((r) => r.needChars > 0 && r.chars < r.needChars);
+const failChars = rows.filter(
+  (r) => r.needChars > 0 && (r.kind === 'person' ? (r.totalChars ?? 0) : r.chars) < r.needChars,
+);
 const failSections = rows.filter((r) => r.missingSections.length > 0);
 
 console.log('');
@@ -142,11 +154,16 @@ for (const sig of [5, 4]) {
 }
 
 const thinPeople = rows
-  .filter((r) => r.kind === 'person' && r.chars < r.needChars)
-  .sort((a, b) => a.chars - b.chars);
+  .filter((r) => r.kind === 'person' && (r.totalChars ?? 0) < r.needChars)
+  .sort((a, b) => (a.totalChars ?? 0) - (b.totalChars ?? 0));
 console.log('');
 console.log(`人物: ${rows.filter((r) => r.kind === 'person').length} 条，<600 字 ${thinPeople.length} 条`);
-thinPeople.slice(0, 10).forEach((r) => console.log(`   ${String(r.chars).padStart(4)}  ${r.id}`));
+console.log('（字数 = 正文 + 带出处评价；评价也渲染在页面上）');
+thinPeople
+  .slice(0, 10)
+  .forEach((r) =>
+    console.log(`   ${String(r.totalChars).padStart(4)}  ${r.id}  正文 ${r.chars}`),
+  );
 if (thinPeople.length > 10) console.log(`   … 另有 ${thinPeople.length - 10} 条`);
 
 const noEval = rows.filter((r) => r.kind === 'person' && (r.evalCount ?? 0) === 0);

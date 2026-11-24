@@ -60,6 +60,7 @@ relations:
   - target: sun-ce
     type: sibling
     strength: primary
+    from: 195
 ---
 
 吴郡富春人，孙坚次子。兄孙策既定江东，为许贡客所杀，权时年十九，张昭、周瑜等谓权可与共成大业，遂委心服事。

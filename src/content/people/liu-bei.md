@@ -45,14 +45,17 @@ relations:
   - target: guan-yu
     type: sibling
     strength: primary
+    from: 184
     note: 恩若兄弟。
   - target: zhang-fei
     type: sibling
     strength: primary
+    from: 184
     note: 恩若兄弟。
   - target: liu-shan
     type: parent-child
     strength: primary
+    from: 207
   - target: cao-cao
     type: enemy
     strength: primary

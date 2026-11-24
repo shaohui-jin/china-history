@@ -60,6 +60,7 @@ relations:
   - target: caopi
     type: parent-child
     strength: primary
+    from: 187
   - target: guo-jia
     type: ruler-subject
     strength: weak

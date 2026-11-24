@@ -36,10 +36,12 @@ relations:
   - target: liu-bei
     type: sibling
     strength: primary
+    from: 184
     note: 先主与二人寝则同床，恩若兄弟。
   - target: zhang-fei
     type: sibling
     strength: primary
+    from: 184
     note: 羽善待卒伍而骄于士大夫，飞爱敬君子而不恤小人。
   - target: cao-cao
     type: enemy

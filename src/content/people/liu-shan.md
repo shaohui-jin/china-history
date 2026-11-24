@@ -33,6 +33,7 @@ relations:
   - target: liu-bei
     type: parent-child
     strength: primary
+    from: 207
   - target: zhuge-liang
     type: ruler-subject
     strength: primary

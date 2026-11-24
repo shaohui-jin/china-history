@@ -35,6 +35,7 @@ relations:
   - target: sun-quan
     type: sibling
     strength: primary
+    from: 195
     note: 临终以印绶付弟。
   - target: zhou-yu
     type: ally

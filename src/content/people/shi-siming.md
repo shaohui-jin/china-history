@@ -39,6 +39,7 @@ relations:
   - target: shi-chaoyi
     type: parent-child
     strength: primary
+    from: 730
 ---
 
 史思明，营州宁夷州突厥杂种胡人也。本名崒干。与安禄山同乡里，先禄山一日生。及长，相善，俱以骁勇闻。

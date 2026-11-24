@@ -35,9 +35,11 @@ relations:
   - target: liu-bei
     type: sibling
     strength: primary
+    from: 184
   - target: guan-yu
     type: sibling
     strength: primary
+    from: 184
 ---
 
 字益德，涿郡人也，少与关羽俱事先主。羽年长数岁，飞兄事之。

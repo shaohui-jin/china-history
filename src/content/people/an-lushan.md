@@ -32,6 +32,7 @@ relations:
   - target: an-qingxu
     type: parent-child
     strength: primary
+    from: 718
   - target: shi-siming
     type: ruler-subject
     strength: primary

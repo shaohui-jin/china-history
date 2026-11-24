@@ -35,6 +35,7 @@ relations:
   - target: cao-cao
     type: parent-child
     strength: primary
+    from: 187
   - target: sima-yi
     type: ruler-subject
     strength: primary

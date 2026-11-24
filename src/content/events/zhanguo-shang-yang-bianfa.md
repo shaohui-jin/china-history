@@ -10,6 +10,9 @@ polityIds:
 categories:
   - political
   - institution
+participants:
+  - personId: zhanguo-shang-yang
+    role: leader
 significance: 5
 summary: 秦孝公用卫人商鞅，先后两次变法：废井田、开阡陌，行县制，重农抑商，按军功授爵。秦由边陲弱国变为战国最强，此制延续至秦统一。
 sources:

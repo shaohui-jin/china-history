@@ -10,6 +10,9 @@ polityIds:
 categories:
   - political
   - military
+participants:
+  - personId: chunqiu-jinwen
+    role: leader
 significance: 5
 summary: 重耳流亡十九年，六十二岁归国即位。城濮之战败楚，践土之会受周天子策命为侯伯，晋国霸业自此延续百余年。春秋五霸中，唯晋之霸最长。
 sources:

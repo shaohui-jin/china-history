@@ -10,6 +10,9 @@ polityIds:
   - chunqiu
 categories:
   - culture
+participants:
+  - personId: chunqiu-kongzi
+    role: leader
 significance: 4
 summary: 孔子在鲁聚徒讲学，以「有教无类」打破贵族对知识的垄断，弟子三千、身通六艺者七十二人。中国私学自此始，战国百家争鸣以此为前提。
 sources:

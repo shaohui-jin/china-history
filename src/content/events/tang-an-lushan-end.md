@@ -20,6 +20,8 @@ participants:
     role: participant
   - personId: tang-li-guangbi
     role: participant
+  - personId: tang-an-lushan
+    role: participant
 significance: 5
 summary: 史朝义自缢，乱事终。前后七年余，唐室由盛转衰，藩镇割据之势已成。
 sources:

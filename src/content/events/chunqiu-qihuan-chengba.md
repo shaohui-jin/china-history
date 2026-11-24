@@ -10,6 +10,11 @@ polityIds:
 categories:
   - political
   - military
+participants:
+  - personId: chunqiu-qihuan
+    role: leader
+  - personId: chunqiu-guan-zhong
+    role: participant
 significance: 4
 summary: 齐桓公任管仲为相，行「作内政而寄军令」之制，通货积财，国力大振。前 679 年鄄之会始霸，后以「尊王攘夷」为号召，九合诸侯，为春秋首霸。
 sources:

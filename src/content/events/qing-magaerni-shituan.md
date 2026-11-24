@@ -9,6 +9,9 @@ polityIds:
   - qing
 categories:
   - political
+participants:
+  - personId: qing-qianlong
+    role: leader
 significance: 4
 summary: 英国首次派使团来华，要求通商、设使馆、开放口岸。乾隆帝以「天朝物产丰盈，无所不有」拒之。双方在礼仪与通商上的错位，成为此后半个世纪中西冲突的预演。
 sources:

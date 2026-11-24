@@ -10,6 +10,9 @@ polityIds:
   - han
 categories:
   - political
+participants:
+  - personId: han-huoguang
+    role: leader
 significance: 4
 summary: 武帝晚年穷兵黩武、民力凋敝，昭帝即位后霍光辅政，轻徭薄赋、与民休息；宣帝继之，吏治清明，匈奴称臣，汉室复兴。史称昭宣中兴。
 sources:

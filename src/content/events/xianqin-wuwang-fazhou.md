@@ -10,6 +10,9 @@ polityIds:
 categories:
   - military
   - political
+participants:
+  - personId: xianqin-zhouwu
+    role: leader
 significance: 5
 summary: 周武王率诸侯会于牧野，一战而克商，殷纣自焚于鹿台。周人自此以「天命」解释政权更迭，殷周之变成为中国政治思想的原点。
 sources:

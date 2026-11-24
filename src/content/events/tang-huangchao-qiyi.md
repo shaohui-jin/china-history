@@ -11,6 +11,11 @@ polityIds:
 categories:
   - military
   - political
+participants:
+  - personId: tang-huang-chao
+    role: leader
+  - personId: tang-xizong
+    role: victim
 significance: 5
 summary: 黄巢起兵响应王仙芝，转战十二省，广明元年攻入长安称帝，国号大齐。中和四年败死狼虎谷。此乱摧毁了唐朝的统治基础，门阀士族亦在此役中消亡。
 sources:

@@ -10,6 +10,11 @@ polityIds:
   - ming
 categories:
   - military
+participants:
+  - personId: ming-wanli
+    role: leader
+  - personId: ming-qi-jiguang
+    role: participant
 significance: 4
 summary: 万历二十年至二十八年，明廷先后平定宁夏哱拜之乱、援朝抗倭、平定播州杨应龙。三役皆胜，耗银逾千万两，国用大绌。此役亦是明朝财政由盈转亏的转折点。
 sources:

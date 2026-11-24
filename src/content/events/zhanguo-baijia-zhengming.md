@@ -10,6 +10,17 @@ polityIds:
   - zhanguo
 categories:
   - culture
+participants:
+  - personId: chunqiu-kongzi
+    role: participant
+  - personId: chunqiu-laozi
+    role: participant
+  - personId: zhanguo-mengzi
+    role: participant
+  - personId: zhanguo-zhuangzi
+    role: participant
+  - personId: zhanguo-hanfei
+    role: participant
 significance: 5
 summary: 战国二百余年间，儒、墨、道、法、名、阴阳、纵横、杂、农、小说诸家并起，互相辩难。中国思想史上最富创造力的时期，此后两千年的思想议题在此基本提出。
 sources:

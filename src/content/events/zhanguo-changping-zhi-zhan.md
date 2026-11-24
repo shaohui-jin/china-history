@@ -10,6 +10,9 @@ polityIds:
   - zhanguo
 categories:
   - military
+participants:
+  - personId: zhanguo-baiqi
+    role: leader
 significance: 5
 summary: 秦赵战于长平，赵括代廉颇，秦将白起围赵军四十六日，赵卒四十余万降，尽坑之。赵国精锐尽丧，山东六国再无力量单独抗秦。此为中国冷兵器时代规模最大的围歼战。
 sources:

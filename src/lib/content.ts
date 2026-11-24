@@ -377,8 +377,8 @@ export interface TimelineLane {
    */
   laneIndex: number;
   /**
-   * 真实行号，从 0 开始。同一 period 内的政权各占一行，
-   * 不同 period 复用行号 —— 画布高度由它决定。
+   * 真实行号，从 0 开始。**按时间重叠**分配：时间上不重叠的政权
+   * 可以共用同一行 —— 画布高度由实际行数决定，与政权数无关。
    */
   rowIndex: number;
   /** 时期分组，用于分行与图例 */

@@ -185,7 +185,7 @@ function draw() {
   const minSig = minSignificance();
 
   props.data.lanes.forEach((lane) => {
-    // 行位置用 rowIndex（同一 period 内独立成行，跨 period 复用），
+    // 行位置用 rowIndex（由 getTimelineData 按**时间重叠**分配），
     // 不能用数组下标 i —— 否则同一行的两个政权会叠在一起
     const top = lane.rowIndex * laneTotal;
     const midY = top + laneHeight / 2;
@@ -278,7 +278,7 @@ function resize() {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const cssW = wrap.clientWidth;
   // 高度由**实际行数**决定（不是政权数）：
-  // 不同 period 复用行号，所以 12 个政权可能只有 6 行，画布不会无限增高。
+  // 时间上不重叠的政权复用同一行，所以 12 个政权可能只有 3 行，画布不会无限增高。
   const rowCount =
     props.data.lanes.reduce((max, l) => Math.max(max, l.rowIndex + 1), 0) || 0;
   const cssH =

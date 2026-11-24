@@ -17,6 +17,17 @@ seal: |-
   姜
   伯约
 summary: 天水冀人，本魏将，归蜀后为诸葛亮所器重，尽传其学。亮卒后九伐中原，虽屡无功，志不稍衰。蜀亡后诈降钟会谋复国，事败被杀。
+evaluations:
+  - claim: 陈寿的评语极为冷峻：「姜维粗有文武，志立功名，而玩众黩旅，明断不周，终致陨毙。」又引《老子》「治大国者犹烹小鲜」，讥其「屡扰」——这是晋人对其穷兵政策的正式判断。
+    sourceId: sanguozhi-jiangwei-ping
+    quote: 姜维粗有文武，志立功名，而玩众黩旅，明断不周，终致陨毙。
+    kind: evaluation
+  - claim: 姜维的实际贡献是继承了诸葛亮的军事遗产。诸葛亮「尽传其学」，包括「八务、七戒、六恐、五惧」与连弩之法；姜维据守剑阁，使钟会十余万大军「不能克，粮运县远，将议还归」——蜀汉在亡国之际仍能挡住魏军主力，靠的正是他的防御部署。
+    sourceId: sanguozhi-jiangwei
+    kind: influence
+  - claim: 「九伐中原」的失败不能全归于个人。蜀汉人口约九十四万，魏国四百四十余万，以一州之力攻中原，本无胜算。姜维的困境与诸葛亮相同：不伐则坐待魏国积蓄实力，伐则虚耗国力。他选择了前者，而选择的代价由蜀中百姓承担。
+    sourceId: sanguozhi-jiangwei-ping
+    kind: dispute
 relations:
   - target: zhuge-liang
     type: teacher-student

@@ -16,6 +16,17 @@ seal: |-
   贾
   南风
 summary: 晋惠帝皇后。貌丑而性妒，权诈多谋。惠帝愚钝，贾后遂专朝政近十年，杀杨骏、诛司马亮、害太子遹，最终引发八王之乱，本人亦被赵王司马伦所杀。
+evaluations:
+  - claim: 《晋书·后妃传》的记载奠定了后世「贾后淫虐」的形象：「性酷虐，尝手杀数人。或以戟掷孕妾，子随刃堕地。」这段文字把八王之乱的起因归到个人品性上。
+    sourceId: jinshu-jiananfeng
+    quote: 后性酷虐，尝手杀数人。或以戟掷孕妾，子随刃堕地。
+    kind: evaluation
+  - claim: 她的政治操作相当老练：联合楚王司马玮杀杨骏，再以「矫诏」罪杀司马玮，一举除去外戚与宗室两股势力；此后用张华、裴頠主持政务，元康年间「朝野安静」。这近十年的稳定，正是她专权的结果。
+    sourceId: jinshu-jiananfeng
+    kind: influence
+  - claim: 把八王之乱归咎于「女祸」是最省力也最不准确的解释。真正的结构性原因在西晋的宗室分封与都督制：诸王各拥强兵、各据重镇，只要有借口就会起兵。贾后杀太子只是提供了导火索。她的罪名被后世放大，恰恰因为「一个女人搞乱天下」比「制度设计失败」更容易被接受。
+    sourceId: jinshu-jiananfeng
+    kind: dispute
 relations:
   - target: sima-zhong
     type: spouse

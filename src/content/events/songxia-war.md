@@ -19,14 +19,14 @@ participants:
 significance: 4
 summary: 西夏称帝后宋夏交兵，三川口、好水川、定川寨三战宋军皆大败。范仲淹转取守势，筑城招抚。庆历四年议和，西夏去帝号称臣，宋岁赐银绢茶。
 sources:
-  - songshi-wanganshi
+  - songshi-xixia
   - xuzizhitongjian-qingli
 corroboration:
-  primary: songshi-wanganshi
+  primary: songshi-xixia
   secondary:
     - xuzizhitongjian-qingli
   agreement: consistent
-  note: 《宋史·王安石传》从「变法前史」角度提及宋夏战争，《长编》保存了三次战役与议和的详细过程。两者对败绩与议和条款记载一致。
+  note: 《宋史·外国传·夏国》从宋方记三川口、好水川、定川寨三役的败绩，《续资治通鉴长编》保存了战前朝议与庆历和议的条款。二者对伤亡与赔款数额记载一致。
 ---
 
 ## 背景
@@ -41,11 +41,11 @@ corroboration:
 
 **三川口之战**
 
-康定元年正月，西夏军围延州。宋将刘平、石元孙率军赴援，于三川口遭伏击，全军覆没，二将被俘。
+康定元年正月，西夏军围延州。宋将刘平、石元孙率军赴援，于三川口遭伏击，全军覆没，二将被俘。[^songshi-xixia]
 
 **好水川之战**
 
-庆历元年二月，宋将任福轻敌冒进。西夏军设伏于好水川，宋军大败，任福战死，士卒死者万余人。
+庆历元年二月，宋将任福轻敌冒进。西夏军设伏于好水川，宋军大败，任福战死，士卒死者万余人。[^songshi-xixia]
 
 消息传至汴京，「关右震动」。
 

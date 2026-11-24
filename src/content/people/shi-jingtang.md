@@ -15,6 +15,13 @@ seal: |-
   石
   敬瑭
 summary: 后唐河东节度使，为求自保，割燕云十六州于契丹、称儿皇帝，借辽兵灭后唐建后晋。此举使中原失去北方屏障四百年，为其身后最大的历史负资产。
+evaluations:
+  - claim: 石敬瑭是「儿皇帝」这一政治羞辱的代名词，但把燕云之失完全归咎于他个人的无耻，简化了当时的选择空间。后唐末帝削藩，他若不结契丹，很可能覆灭。真正的错误在于代价：他为了一己的存亡，付出的是中原四百年的屏障。
+    sourceId: xinwudaishi-shijingtang
+    kind: evaluation
+  - claim: 刘知远的劝谏是当时最清醒的判断：「称臣可矣，以父事之太过；厚以金帛赂之，自足致其兵，不必许以土田，恐异日大为中国之患。」石敬瑭不听。此后从 936 到 1368，凡四百三十二年，中原王朝为收复燕云反复付出代价。
+    sourceId: xinwudaishi-shijingtang
+    kind: influence
 relations:
   - target: yelv-deguang
     type: ally

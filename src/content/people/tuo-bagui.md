@@ -19,6 +19,13 @@ seal: |-
   跋
   珪
 summary: 北魏开国皇帝。十六国末期，以代国宗室遗脉复国，改称魏，定都平城。参合陂之战坑杀后燕八万降卒，一举奠定北魏在北方的主导地位。晚年服食寒食散，性情暴戾，为次子所弑。
+evaluations:
+  - claim: 拓跋珪的历史作用常被其孙孝文帝的汉化改革掩盖。实际上，正是他奠定了北魏的立国之基：定都平城、置百官、创制度、破后燕。没有这一代的军事胜利，就没有后来孝文帝可以改革的那个北魏。
+    sourceId: beishi-xiaowen
+    kind: evaluation
+  - claim: 参合陂坑杀八万降卒，是拓跋珪一生最有争议的决定。这一战使北魏崛起，但也使后燕与北魏结下死仇。慕容垂次年亲征报复，若非中途病卒，北魏可能遭受重大挫折。
+    sourceId: beishi-xiaowen
+    kind: dispute
 relations:
   - target: murong-chui
     type: enemy

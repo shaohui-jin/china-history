@@ -17,6 +17,16 @@ seal: |-
   冯
   道
 summary: 历事后唐、后晋、后汉、后周四朝十君，三入中书，居相位二十余年。自号「长乐老」，欧阳修、司马光皆斥其无耻，然其身历乱世而能保民、刻印九经，功过至今聚讼。
+evaluations:
+  - claim: 冯道是五代士人评价分歧最大的一个人。欧阳修斥其「无廉耻」，司马光称其「奸臣之尤」——这是以「忠君」为绝对标准的评判。但在五代那个「五十三年、八姓十四君」的时代，忠君的对象本身就不稳定。
+    sourceId: jiuwudaishi-taizu
+    kind: evaluation
+  - claim: 冯道的实际功业常被忽略：他主持刻印《九经》，是中国官方大规模印书之始，使儒家经典得以广泛流传；他在契丹南下时「以口舌活人」，救了不少百姓。以「保民」而非「忠君」为标准，他的评价会完全不同。
+    sourceId: jiuwudaishi-taizu
+    kind: influence
+  - claim: 冯道的争议本质是价值标准的冲突：以「君臣大义」论，他是四朝十君的贰臣；以「保境安民」论，他在乱世中做了不少实事。宋代以后「忠君」成为绝对价值，冯道遂成反面典型——这一评价的变化，反映的是宋代政治文化对五代的重塑。
+    sourceId: jiuwudaishi-taizu
+    kind: dispute
 relations:
   - target: chai-rong
     type: ruler-subject

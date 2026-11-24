@@ -17,6 +17,13 @@ seal: |-
   土门
   伊利可汗
 summary: 突厥汗国建立者。原为柔然锻奴，率部破铁勒，求婚柔然被拒，遂自立为伊利可汗，建突厥汗国。此后灭柔然，成为蒙古高原新霸主。
+evaluations:
+  - claim: 土门建国的意义在于：这是继匈奴、鲜卑之后，草原上第三个统一的游牧帝国，且其疆域远超前者——东起辽海，西至里海。突厥的出现改变了整个欧亚内陆的政治格局。
+    sourceId: zizhitongjian-zhenguan
+    kind: evaluation
+  - claim: 突厥与中原的关系，为此后两百年定下模式：强则入寇，弱则称臣，和亲与征伐交替。隋唐两代对突厥的政策（离强合弱、以夷制夷）都是在这个模式下展开的。
+    sourceId: zizhitongjian-zhenguan
+    kind: influence
 relations:
   - target: bilge-khan
     type: kinship

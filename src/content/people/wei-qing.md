@@ -17,6 +17,13 @@ seal: |-
   卫
   青
 summary: 西汉名将。出身骑奴，因姊卫子夫得幸而显。七次出击匈奴，收复河南地，官至大将军，为汉代对匈奴战争的第一功臣。为人谦退，不养士，得善终。
+evaluations:
+  - claim: 卫青的成功有一半是「身份」带来的，一半是「能力」挣来的。他因外戚身份入仕，但七次出击匈奴的战功是实打实的——尤其河南之战（前 127）收复河套，是汉匈战争的转折点。
+    sourceId: shiji-xiongnu
+    kind: evaluation
+  - claim: 卫青的「谦退」是他能善终的关键。他「不养士」，避免结党；屡次让功于部将，避免功高震主。在汉武帝那样猜忌的君主手下，这种姿态救了他的命——同为名将的李广利就因兵败而降匈奴，全家被灭。
+    sourceId: shiji-xiongnu
+    kind: influence
 relations:
   - target: liu-che
     type: ruler-subject

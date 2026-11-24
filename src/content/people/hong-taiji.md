@@ -18,6 +18,13 @@ seal: |-
   皇
   太极
 summary: 后金第二代大汗，清朝的实际建立者。1635 年改族名「满洲」，1636 年改国号「大清」称帝。松锦之战俘洪承畴，为入关奠定基础。猝死而未及亲见入主中原。
+evaluations:
+  - claim: 皇太极是清朝真正的奠基者，超过努尔哈赤。努尔哈赤建立的是后金汗国，皇太极把它改造为「大清」这个中原式王朝：改族名、改国号、设六部与都察院、收降汉军。没有这一步，清不可能入主中原。
+    sourceId: qingshigao-linxuci
+    kind: evaluation
+  - claim: 松锦之战（1640–1642）是明清易代的关键战役。此役洪承畴被俘降清，明军在辽东的最后主力覆灭。两年后皇太极猝死，多尔衮正是带着这支降清的汉军入关的。
+    sourceId: qingshigao-linxuci
+    kind: influence
 relations:
   - target: nurhaci
     type: parent-child

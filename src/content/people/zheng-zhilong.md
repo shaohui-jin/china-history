@@ -17,6 +17,13 @@ seal: |-
   郑
   芝龙
 summary: 明末东南沿海最大的海商兼军事首领。受明招抚，官至都督同知。清军入闽时降清，后被挟北上，终被斩于北京。其子郑成功与其决裂，成为抗清旗帜。
+evaluations:
+  - claim: 郑芝龙是明末海洋力量的代表人物：他掌控东南沿海的贸易网络，拥有自己的舰队与武装，其规模远超同时期的欧洲东印度公司商船队。如果不是明清易代的政治漩涡，他本可能成为东亚海洋秩序的主导者。
+    sourceId: mingshi-qiujin
+    kind: evaluation
+  - claim: 他的降清与其子郑成功的决裂，是明清之际最具象征性的一幕。郑芝龙选择保存家族实力，郑成功选择坚持明室正统。父子二人的分歧，正是那个时代「现实」与「气节」的分野。
+    sourceId: mingshi-qiujin
+    kind: dispute
 relations:
   - target: zheng-chenggong
     type: parent-child

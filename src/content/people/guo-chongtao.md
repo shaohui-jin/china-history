@@ -16,6 +16,13 @@ seal: |-
   郭
   崇韬
 summary: 后唐名将，灭梁首功。李存勖用其策直捣汴梁，一战灭梁。后率军灭前蜀，功高遭忌，为宦官诬陷，被庄宗所杀。其死使后唐军心离散。
+evaluations:
+  - claim: 郭崇韬是后唐开国第一功臣，也是五代「功高震主」的典型。灭梁之策出他之手，灭前蜀之功归他名下，但正是这两项功业使他被宦官构陷。庄宗杀他，等于自断臂膀。
+    sourceId: zizhitongjian-wudai
+    kind: evaluation
+  - claim: 他死后不到一年，李嗣源就在魏州兵变中被拥立，庄宗身死。这一因果链很清晰：杀功臣 → 军心离散 → 兵变 → 国灭。欧阳修《伶官传序》论后唐之亡，重点在「逸豫」，但杀郭崇韬是更直接的原因。
+    sourceId: zizhitongjian-wudai
+    kind: influence
 relations:
   - target: li-cunxu
     type: ruler-subject

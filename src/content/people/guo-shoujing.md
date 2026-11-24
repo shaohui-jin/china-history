@@ -17,6 +17,13 @@ seal: |-
   郭
   守敬
 summary: 元代科学家。主持修订《授时历》，定一年为 365.2425 日，与今公历完全相同而早三百年。又创制简仪、高表等天文仪器十余种，主持开凿通惠河。
+evaluations:
+  - claim: 《授时历》的精度在世界天文史上极为罕见：365.2425 日与现行公历完全相同，而《授时历》颁行于 1281 年，比格里高利历早三百年。这一成就的基础是郭守敬组织的全国性天文测量（「四海测验」）。
+    sourceId: yuanshi-shizu
+    kind: evaluation
+  - claim: 郭守敬的贡献不止于天文。他主持开凿通惠河，解决了大都的漕运问题；创制简仪、高表、仰仪等仪器十余种，其中简仪的结构直到近代望远镜出现前都被认为是先进的。他是中国古代最全面的科学家之一。
+    sourceId: yuanshi-shizu
+    kind: influence
 relations:
   - target: liu-bingzhong
     type: teacher-student

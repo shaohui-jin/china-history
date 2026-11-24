@@ -16,6 +16,13 @@ seal: |-
   奕
   詝
 summary: 清朝第九帝。在位十一年，内忧外患并起：太平天国据半壁江山，英法联军入京焚圆明园。临终托孤八大臣，酿成辛酉政变。
+evaluations:
+  - claim: 咸丰是清朝最不幸的皇帝之一：他在位的十一年，正好是太平天国（1851–1864）与第二次鸦片战争（1856–1860）重叠的时期。这两场危机同时爆发，任何君主都难以应对。
+    sourceId: qingshigao-linxuci
+    kind: evaluation
+  - claim: 他临终的安排（托孤八大臣 + 两宫太后盖章）本身就是矛盾的：既想防止权臣专政，又想防止后宫干政，结果两方都获得了权力，最终酿成辛酉政变。这一制度设计上的失误，直接导致了慈禧四十余年的统治。
+    sourceId: qingshigao-linxuci
+    kind: dispute
 relations:
   - target: zeng-guofan
     type: ruler-subject

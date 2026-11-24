@@ -16,6 +16,13 @@ seal: |-
   司马
   睿
 summary: 东晋开国皇帝。永嘉之乱后南渡建康，在王导、王敦辅佐下重建晋室。然皇权受制于门阀，「王与马，共天下」，晚年因抑制王氏而致王敦之乱，忧愤而死。
+evaluations:
+  - claim: 司马睿是「弱势开国之君」的典型：他能在江东立足，靠的不是自己的实力，而是琅琊王氏的门阀资源与南方士族的支持。所谓「王与马，共天下」，本质是皇权向门阀的一次让渡。
+    sourceId: jinshu-xuandi
+    kind: evaluation
+  - claim: 他晚年试图抑制王氏，结果激起王敦之乱。这一失败确立了东晋的政治结构：皇权无法单独对抗门阀，只能在各家门阀之间维持平衡。东晋百年，始终没有出现强有力的皇权。
+    sourceId: jinshu-xuandi
+    kind: influence
 relations:
   - target: wang-dao
     type: ruler-subject

@@ -15,6 +15,13 @@ seal: |-
   陆
   秀夫
 summary: 南宋末左丞相。崖山之战宋军大败，负幼帝赵昺投海而死，南宋灭亡。与文天祥、张世杰并称「宋末三杰」。
+evaluations:
+  - claim: 陆秀夫的历史形象几乎全部系于崖山那一刻：先驱妻儿入海，然后负幼帝投海。这一行为在传统史观中是「忠烈」的极致，但也有人质疑：带着一个七岁的孩子赴死，究竟是忠还是残酷？
+    sourceId: songshi-wenzhong
+    kind: evaluation
+  - claim: 「宋末三杰」的三种选择构成了一组对照：文天祥就义（殉国）、陆秀夫投海（殉君）、张世杰突围后遇飓风溺死（殉事）。三人都未能挽救南宋，但三人的方式各不相同，恰好覆盖了亡国之际士人的三种可能。
+    sourceId: songshi-wenzhong
+    kind: dispute
 relations:
   - target: wen-tianxiang
     type: colleague

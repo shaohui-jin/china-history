@@ -16,6 +16,13 @@ seal: |-
   王
   敦
 summary: 东晋权臣，琅琊王氏。与从弟王导共佐元帝南渡，掌军事于外。后以诛刘隗为名两度举兵入建康，架空皇权，病死军中。「王与马，共天下」的另一半。
+evaluations:
+  - claim: 「王与马，共天下」这句话，王导是「文」的一半，王敦是「武」的一半。王导在朝中维系门阀与皇室的平衡，王敦在荆州掌握上游兵权。二人合力，才使琅琊王氏在东晋初年达到「王与马共天下」的程度。
+    sourceId: jinshu-xuandi
+    kind: evaluation
+  - claim: 王敦两次举兵入建康，是东晋「荆扬之争」的开端。荆州居长江上游，顺流而下可直逼建康；扬州是朝廷所在，控制下游。这一地理格局决定了东晋南朝百余年的政治主线——上游的方镇反复威胁下游的中央。
+    sourceId: jinshu-xuandi
+    kind: influence
 relations:
   - target: sima-rui
     type: enemy

@@ -18,6 +18,16 @@ seal: |-
   忽必烈
   元世祖
 summary: 成吉思汗之孙，元朝开国皇帝。灭大理、灭南宋，建立中国历史上首个由北方民族统治的大一统王朝。行省制、纸币、海运皆定于此朝，对后世影响深远。
+evaluations:
+  - claim: 忽必烈的双重身份是理解元朝的关键：他既是蒙古大汗，又是中国的皇帝。建国号「大元」取《易经》「乾元」之义，是向汉地宣示正统；但他同时保留怯薛制度与部族组织，是向蒙古贵族保证不背祖制。
+    sourceId: yuanshi-shizu
+    kind: evaluation
+  - claim: 行省制是元朝对中国行政制度最重要的贡献。行中书省本为中央的派出机构，后来演变为地方最高行政单位。明清的「布政使司」、今天的「省」，都源于此。
+    sourceId: yuanshi-shizu
+    kind: influence
+  - claim: 元朝的四等人制（蒙古、色目、汉人、南人）使民族隔阂制度化，是元代社会矛盾的重要根源。但需注意：制度文本与实际执行有差距，元代的社会流动比制度规定复杂。
+    sourceId: yuanshi-shizu
+    kind: dispute
 relations:
   - target: wen-tianxiang
     type: enemy

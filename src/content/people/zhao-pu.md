@@ -16,6 +16,16 @@ seal: |-
   赵
   普
 summary: 宋初首相，陈桥兵变的谋主。「杯酒释兵权」、削藩镇、定制度诸策多出其手。尝言「半部《论语》治天下」，为宋初文治体制的实际设计师。
+evaluations:
+  - claim: 赵普是宋初制度的设计师，其作用超过一般的「谋士」。「杯酒释兵权」解决禁军将领问题，设转运使解决地方财权，以文臣知州解决地方政权——这三项共同构成了「强干弱枝」的体制，使宋代再未出现藩镇之祸。
+    sourceId: songshi-taizu
+    kind: evaluation
+  - claim: 「半部《论语》治天下」这句话的真实性存疑，但它准确概括了赵普的施政风格：以儒家的「秩序」观念重建五代之后的乱世。这一取向被宋代士大夫继承，形成「与士大夫共治天下」的政治传统。
+    sourceId: songshi-taizu
+    kind: influence
+  - claim: 赵普的负面同样明显：他「寡学术」，且屡有贪贿之迹（如收受吴越王钱俶所赠瓜子金）。宋太祖曾当面斥其「汝不读书」。这说明宋初的制度设计者，本身并不是一个道德完人。
+    sourceId: songshi-taizu
+    kind: dispute
 relations:
   - target: zhao-kuangyin
     type: ruler-subject

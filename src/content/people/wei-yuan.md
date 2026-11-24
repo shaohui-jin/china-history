@@ -17,6 +17,13 @@ seal: |-
   魏
   源
 summary: 清代思想家。受林则徐之托编《海国图志》，提出「师夷长技以制夷」，为近代中国向西方学习的第一个系统主张。此书深刻影响了日本明治维新。
+evaluations:
+  - claim: 魏源的历史意义在于：他是第一个系统提出「向西方学习」的中国人，且主张明确——「师夷长技以制夷」，学是为了对抗，不是仰慕。这一立场为后来的洋务运动提供了思想资源。
+    sourceId: yingyi-rukou-ji
+    kind: evaluation
+  - claim: 《海国图志》在中国的反响远小于日本。此书传入日本后被大量翻刻，成为幕末志士了解世界的必读书，据说对明治维新有直接影响。而在中国，它长期被冷落——这一「墙内开花墙外香」的对照，本身就是近代中国思想困境的缩影。
+    sourceId: yingyi-rukou-ji
+    kind: dispute
 relations:
   - target: lin-zexu
     type: teacher-student

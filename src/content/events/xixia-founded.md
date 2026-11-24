@@ -10,7 +10,7 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: li-yuanhao
+  - personId: xixia-li-yuanhao
     role: leader
 significance: 4
 summary: 李元昊称帝，国号大夏，定都兴庆府。创制西夏文，改定官制军制，与宋、辽形成三足鼎立。西夏历十帝一百八十九年，至 1227 年为蒙古所灭。

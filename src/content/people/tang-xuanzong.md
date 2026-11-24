@@ -36,25 +36,25 @@ evaluations:
     sourceId: xintangshu-xuanzong
     kind: influence
 relations:
-  - target: wu-zetian
+  - target: tang-wu-zetian
     type: kinship
     strength: primary
     from: 685
     to: 705
     note: 武则天为其祖母。神龙政变后其父李旦复位，隆基后以政变拥父登基。
-  - target: an-lushan
+  - target: tang-an-lushan
     type: ruler-subject
     strength: primary
     from: 742
     to: 755
     note: 宠信安禄山，任为三镇节度使，终致叛乱。
-  - target: yang-guozhong
+  - target: tang-yang-guozhong
     type: ruler-subject
     strength: primary
     from: 752
     to: 756
     note: 用杨国忠为相，朝政败坏。
-  - target: guo-ziyi
+  - target: tang-guo-ziyi
     type: ruler-subject
     strength: primary
     from: 755

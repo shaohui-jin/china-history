@@ -34,13 +34,13 @@ evaluations:
     sourceId: hanshu-ji
     kind: influence
 relations:
-  - target: li-si
+  - target: qin-li-si
     type: ruler-subject
     strength: primary
     from: -237
     to: -210
     note: 用其议，行郡县、焚诗书。
-  - target: zhao-gao
+  - target: qin-zhao-gao
     type: ruler-subject
     strength: weak
     from: -246

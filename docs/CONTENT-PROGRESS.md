@@ -27,10 +27,10 @@ sig=4: 70 条，需 ≥500 字 + 三小节   → 不达标 0 条
 
 | 指标 | 现状 | 怎么查 |
 |---|---|---|
-| 事件脚注 `[^source]` | 118 / 118 | `rg -c '\[\^' src/content/events/` |
-| 事件跨书互证 `corroboration` | 118 / 118（`primary` 与 `secondary` 不同书） | `rg -c '^corroboration:' src/content/events/` |
+| 事件脚注 `[^source]` | 117 / 117 | `rg -c '\[\^' src/content/events/` |
+| 事件跨书互证 `corroboration` | 117 / 117（`primary` 与 `secondary` 不同书） | `rg -c '^corroboration:' src/content/events/` |
 | 人物第二出处 | **305 / 305**（P9 已清零） | 见下方脚本 |
-| 行内白话注释 `{文言\|白话}` | 事件 53 / 118，**人物 52 / 305** | `rg -c '\{[^\|{}]+\|[^\|{}]+\}' src/content/{events,people}/` |
+| 行内白话注释 `{文言\|白话}` | 事件 53 / 117，**人物 52 / 305** | `rg -c '\{[^\|{}]+\|[^\|{}]+\}' src/content/{events,people}/` |
 
 gloss 这一项**未完成**：语法、样式、触屏脚本都已就绪，缺的是内容。缺口量化见 `PENDING-FEATURES.md` P4。
 

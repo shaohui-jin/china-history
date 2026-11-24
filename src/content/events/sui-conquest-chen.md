@@ -13,17 +13,17 @@ categories:
   - military
   - political
 participants:
-  - personId: yang-jian
+  - personId: sui-yang-jian
     role: leader
-  - personId: yang-guang
+  - personId: sui-yang-guang
     role: participant
-  - personId: han-qinhu
+  - personId: sui-han-qinhu
     role: participant
-  - personId: he-ruobi
+  - personId: sui-he-ruobi
     role: participant
-  - personId: chen-shubao
+  - personId: nan-chen-chen-shubao
     role: participant
-  - personId: zhang-lihua
+  - personId: nan-chen-zhang-lihua
     role: participant
 significance: 5
 summary: 隋文帝下诏伐陈，晋王杨广为主帅，高颎为元帅长史，率五十一万八千人分八路南下。韩擒虎、贺若弼渡江，攻入建康，俘陈后主。自永嘉之乱（311）以来二百七十八年的南北分裂，至此终结。

@@ -41,19 +41,19 @@ evaluations:
     sourceId: nianerzha-yuandai
     kind: influence
 relations:
-  - target: zhao-guangyi
+  - target: song-zhao-guangyi
     type: parent-child
     strength: primary
     from: 968
     to: 997
     note: 太宗第三子，至道三年继位。
-  - target: li-de-ming
+  - target: xixia-li-de-ming
     type: ally
     strength: primary
     from: 1005
     to: 1022
     note: 景德二年与西夏议和，封李德明为西平王。
-  - target: kou-zhun
+  - target: song-kou-zhun
     type: ruler-subject
     strength: primary
     from: 1004

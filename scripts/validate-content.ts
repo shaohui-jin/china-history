@@ -578,6 +578,58 @@ for (const f of listDir('people')) {
 }
 
 /*
+ * id 必须以政权前缀开头：`<polityIds[0]>-<拼音>`。
+ *
+ * 为什么定这条：2026-11 我把前蜀王建的内容写进了南宋王坚的条目——
+ * 王坚、王建、王俭三个人拼音完全相同（wang-jian）。当时库里靠
+ * `wang-jian-nanqi` 这种临时后缀区分，不成规则，也没有检查。
+ *
+ * 加前缀后 `song-wang-jian` 与 `shu-wang-jian` 一眼可分。这是命名约束，
+ * 不是防错机制——写的时候认错人，前缀也拦不住。它保证的是「同音不同人
+ * 不必靠记忆区分」。
+ *
+ * 注意：人物与事件都适用。事件此前只「建议」带前缀，现改为强制。
+ */
+const ID_PREFIX_EXEMPT = new Set<string>([
+  // 无例外。若将来有跨政权聚合体人物，在此登记并写明理由。
+]);
+
+for (const collection of ['people', 'events'] as const) {
+  for (const f of listDir(collection)) {
+    const fm = readFrontmatter(join(ROOT, collection, f));
+    if (!fm) continue;
+    const raw = fm.__raw as string;
+    const id = pick(raw, 'id');
+    if (!id) continue;
+    if (ID_PREFIX_EXEMPT.has(id)) continue;
+
+    const polBlock = raw.match(/^polityIds:\s*\n((?:[ \t]+-.*\n?)+)/m);
+    const firstPolity = polBlock?.[1]
+      .split('\n')
+      .find((l) => /^[ \t]+-/.test(l))
+      ?.replace(/^[ \t]+-\s*/, '')
+      .trim();
+
+    if (!firstPolity) {
+      issues.push({
+        level: 'error',
+        where: `${collection}/${id}`,
+        message: 'polityIds 为空，无法确定 id 前缀（id 必须写作 <政权>-<拼音>）',
+      });
+      continue;
+    }
+
+    if (!id.startsWith(`${firstPolity}-`)) {
+      issues.push({
+        level: 'error',
+        where: `${collection}/${id}`,
+        message: `id 必须以政权前缀开头，建议改为 ${firstPolity}-${id}`,
+      });
+    }
+  }
+}
+
+/*
  * 双向声明的一致性：同一条关系若两端都写了，from / to / strength 必须相同。
  *
  * 为什么必须查：CONTENT-SCHEMA 第 1 节要求「只在一端声明」，但存量里有

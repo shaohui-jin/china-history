@@ -12,7 +12,7 @@ categories:
   - political
   - military
 participants:
-  - personId: yang-jian
+  - personId: sui-yang-jian
     role: leader
 significance: 5
 summary: 杨坚代周建隋，589 年灭陈，结束自永嘉之乱以来近三百年的分裂。创三省六部、科举、均田、大运河，然炀帝滥用民力，二代而亡。

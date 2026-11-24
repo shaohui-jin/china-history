@@ -37,13 +37,13 @@ relations:
     from: 628
     to: 649
     note: 太宗第九子，因长孙无忌之请立为太子。
-  - target: wu-zetian
+  - target: tang-wu-zetian
     type: spouse
     strength: primary
     from: 655
     to: 683
     note: 立武氏为皇后，晚年「天下大权，悉归中宫」。
-  - target: zhangsun-wuji
+  - target: tang-zhangsun-wuji
     type: ruler-subject
     strength: primary
     from: 649

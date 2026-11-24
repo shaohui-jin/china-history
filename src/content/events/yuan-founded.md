@@ -10,19 +10,19 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: kublai
+  - personId: yuan-kublai
     role: leader
-  - personId: liu-bingzhong
+  - personId: yuan-liu-bingzhong
     role: leader
 significance: 5
 summary: 忽必烈取《易经》「大哉乾元」之义，建国号大元，定都大都。中国历史上首次由北方民族建立统一王朝，行省制、纸币、四等人制确立。
 sources:
   - yuanshi-shizu
-  - marco-polo
+  - yuan-marco-polo
 corroboration:
   primary: yuanshi-shizu
   secondary:
-    - marco-polo
+    - yuan-marco-polo
   agreement: partial
   note: 汉文《元史》记建国号与定都的诏令原文，马可·波罗记大都的规模与纸币流通。两者来源完全独立，对「大都为当时世界最大城市之一」的判断一致；但马可·波罗的数字多有夸大，「纸币与金银同价」的说法也与实际购买力有出入。
 ---
@@ -51,7 +51,7 @@ corroboration:
 
 马可·波罗从另一个角度记这座城：
 
-> 大汗所居之城名曰汗八里（Khanbaliq），{意即「大汗之城」|意思是「大汗的城市」}。{城郭广大，人民殷富，商贾辐辏|城郭广大，人民富足，商人聚集}，{为世界诸城之冠|为世界各城之首}。大汗以纸币为通货，{全国通行，与金银同价|全国通行，与金银等值}。[^marco-polo]
+> 大汗所居之城名曰汗八里（Khanbaliq），{意即「大汗之城」|意思是「大汗的城市」}。{城郭广大，人民殷富，商贾辐辏|城郭广大，人民富足，商人聚集}，{为世界诸城之冠|为世界各城之首}。大汗以纸币为通货，{全国通行，与金银同价|全国通行，与金银等值}。[^yuan-marco-polo]
 
 **定都大都**
 

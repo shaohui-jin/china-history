@@ -12,7 +12,7 @@ categories:
   - military
   - political
 participants:
-  - personId: zhu-yuanzhang
+  - personId: ming-zhu-yuanzhang
     role: leader
 significance: 5
 summary: 黄河治河民夫与戍卒起义（红巾军），天下响应。朱元璋起于濠州，十余年间削平群雄，1368 年即皇帝位，国号明，北伐克大都，元顺帝北遁，元朝亡。

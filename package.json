@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/gen-tokens.ts && astro dev",
-    "build": "node scripts/gen-tokens.ts && astro build && npm run index",
+    "build": "node scripts/gen-tokens.ts && astro build && node scripts/gen-legacy-pages.mjs && npm run index",
     "index": "pagefind --site dist",
     "preview": "astro preview",
     "tokens": "node scripts/gen-tokens.ts",

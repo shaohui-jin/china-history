@@ -10,11 +10,11 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: zhao-gao
+  - personId: qin-zhao-gao
     role: leader
-  - personId: li-si
+  - personId: qin-li-si
     role: victim
-  - personId: liu-bang
+  - personId: han-liu-bang
     role: leader
   - personId: qin-shihuang
     role: participant

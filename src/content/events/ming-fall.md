@@ -11,11 +11,11 @@ categories:
   - political
   - military
 participants:
-  - personId: li-zicheng
+  - personId: ming-li-zicheng
     role: leader
-  - personId: chongzhen
+  - personId: ming-chongzhen
     role: victim
-  - personId: wu-sangui
+  - personId: qing-wu-sangui
     role: participant
 significance: 5
 summary: 李自成于西安称帝建大顺，三月破北京，崇祯自缢煤山，明亡。吴三桂引清军入关，李自成败走。清军入主中原，中国历史进入清代。

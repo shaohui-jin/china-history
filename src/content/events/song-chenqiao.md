@@ -11,9 +11,9 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: zhao-kuangyin
+  - personId: song-zhao-kuangyin
     role: leader
-  - personId: zhao-pu
+  - personId: song-zhao-pu
     role: leader
 significance: 5
 summary: 后周殿前都点检赵匡胤率军北上御辽，军次陈桥驿，诸将黄袍加身，拥立为帝。回师汴京受禅，改国号宋，五代十国的终结与三百年文治由此开始。
@@ -42,7 +42,7 @@ corroboration:
 
 初三，军次陈桥驿（今河南封丘东南）。
 
-都押衙李处耘与赵匡胤之弟[[person:zhao-guangyi]]、掌书记[[person:zhao-pu]]定谋。夜半，聚将士于驿门：
+都押衙李处耘与赵匡胤之弟[[person:song-zhao-guangyi]]、掌书记[[person:song-zhao-pu]]定谋。夜半，聚将士于驿门：
 
 > {主上幼弱，我辈出死力破敌，谁则知之|皇上年幼，我们拼死破敌，谁会知道}？{不如先册点检为天子，然后北征未晚|不如先拥立点检（赵匡胤）为天子，然后再北征也不迟}。
 

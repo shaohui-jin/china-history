@@ -10,11 +10,11 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: liu-bang
+  - personId: han-liu-bang
     role: leader
-  - personId: zhang-liang
+  - personId: han-zhang-liang
     role: participant
-  - personId: xiao-he
+  - personId: han-xiao-he
     role: participant
   - personId: han-xin
     role: participant

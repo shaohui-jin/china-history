@@ -12,11 +12,11 @@ categories:
   - political
   - military
 participants:
-  - personId: duorgun
+  - personId: qing-duorgun
     role: leader
-  - personId: wu-sangui
+  - personId: qing-wu-sangui
     role: participant
-  - personId: shunzhi
+  - personId: qing-shunzhi
     role: leader
 significance: 5
 summary: 吴三桂引清军入关，多尔衮率八旗合击李自成，五月入北京。十月顺治帝即位于北京，清朝正式入主中原。此后二十年间平定南明与各地抗清势力。

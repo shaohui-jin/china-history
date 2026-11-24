@@ -31,25 +31,25 @@ evaluations:
     sourceId: zhenguanzhengyao
     kind: dispute
 relations:
-  - target: li-yuan
+  - target: tang-li-yuan
     type: parent-child
     strength: primary
     from: 598
     to: 635
     note: 唐高祖李渊次子，助父起兵，玄武门之变后即位。
-  - target: wei-zheng
+  - target: tang-wei-zheng
     type: ruler-subject
     strength: primary
     from: 626
     to: 643
     note: 「以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。」
-  - target: fang-xuanling
+  - target: tang-fang-xuanling
     type: ruler-subject
     strength: primary
     from: 626
     to: 648
     note: 「筹谋帷幄，定社稷之功」的第一功臣，主持贞观朝政。
-  - target: xuanzang
+  - target: tang-xuanzang
     type: ruler-subject
     strength: weak
     from: 645

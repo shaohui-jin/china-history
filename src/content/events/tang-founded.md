@@ -10,7 +10,7 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: li-yuan
+  - personId: tang-li-yuan
     role: leader
   - personId: tang-taizong
     role: participant

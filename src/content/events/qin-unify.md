@@ -12,7 +12,7 @@ categories:
 participants:
   - personId: qin-shihuang
     role: leader
-  - personId: li-si
+  - personId: qin-li-si
     role: participant
 significance: 5
 summary: 秦王政并灭六国，称始皇帝，废分封、行郡县，统一文字度量衡，中国进入大一统帝国时代。

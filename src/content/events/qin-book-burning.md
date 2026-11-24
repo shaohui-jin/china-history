@@ -13,7 +13,7 @@ categories:
 participants:
   - personId: qin-shihuang
     role: leader
-  - personId: li-si
+  - personId: qin-li-si
     role: participant
 significance: 3
 summary: 从李斯议，非博士官所职，天下敢有藏《诗》《书》百家语者悉烧之。医药卜筮种树之书不去。

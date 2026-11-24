@@ -32,19 +32,19 @@ evaluations:
     sourceId: hanshu-hanxin
     kind: dispute
 relations:
-  - target: liu-bang
+  - target: han-liu-bang
     type: ruler-subject
     strength: primary
     from: -206
     to: -196
     note: 刘邦称其「连百万之军，战必胜，攻必取」。后以谋反罪被杀于长乐宫钟室。
-  - target: xiao-he
+  - target: han-xiao-he
     type: recommend
     strength: primary
     from: -206
     to: -196
     note: 萧何月下追韩信，力荐为大将。后亦参与谋诛韩信。
-  - target: zhang-liang
+  - target: han-zhang-liang
     type: colleague
     strength: weak
     from: -206

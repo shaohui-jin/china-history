@@ -12,9 +12,9 @@ polityIds:
 categories:
   - military
 participants:
-  - personId: wanyan-aguda
+  - personId: jin-wanyan-aguda
     role: leader
-  - personId: yelv-longxu
+  - personId: liao-yelv-longxu
     role: victim
 significance: 4
 summary: 金与宋订「海上之盟」南北夹击辽朝。金军连破辽五京，天祚帝西逃，1125 年被擒，辽亡。耶律大石西走建西辽。

@@ -103,24 +103,51 @@ A 对 B 声明 `ruler-subject`，B 对 A 声明 `enemy` —— 这是**两条不
 
 ## 2. id 命名规则
 
-**全部小写拼音，用连字符分词，与文件名严格一致。**
+**全部小写拼音，用连字符分词，与文件名严格一致，且必须以政权前缀开头。**
 
 | 集合 | 规则 | 正例 | 反例 |
 |---|---|---|---|
-| `people` | `姓名拼音` | `zhuge-liang` `an-lushan` | `ZhugeLiang` `zhuge_liang` |
-| `events` | **建议 `朝代-事件`** | `tang-an-lushan` `song-chenqiao` | `TangAnLushan`（大小写混用） |
+| `people` | `政权-姓名拼音` | `song-wang-jian` `tang-an-lushan` | `wang-jian`（缺前缀） |
+| `events` | `政权-事件` | `tang-an-lushan-end` `song-chanyuan` | `chanyuan`（缺前缀） |
 | `polities` | `朝代名拼音` | `song` `ming` | `bei-song`（南北宋合并为一个政权） |
 | `sources` | `书名拼音-卷/篇` | `sanguozhi-chibi` | `sanguozhi`（同书多卷会撞） |
 
-### 历史遗留与占位约定
+前缀取 `polityIds[0]`，直接复用政权 id，不另造简称。多政权人物取第一个
+（如祖冲之 `liu-song` / `nan-qi`，用 `liu-song-zu-chongzhi`）。
 
-- 事件的朝代前缀是**建议而非强制**。现状 100 个事件里有 79 个是裸名
-  （`chibi` `baideng` `feishui` 等），批量改名会破坏外部链接、Pagefind 索引路径、
-  正文里约 15 处 `[[event:xxx]]` 内链，以及 `sources` 里的 event id 引用。
-  所以**裸名可接受，只要全局唯一**。
-- **`jin` 已占用给女真金朝**。将来若补西晋 / 东晋，必须用 `xi-jin` / `dong-jin`，
-  绝不能占用 `jin`。
+`npm run validate` 会强制这条规则，id 与 `polityIds[0]` 不匹配即报 error。
+
+### 为什么加前缀
+
+2026-11 我把前蜀**王建**的内容写进了南宋**王坚**的条目——王坚、王建、
+王俭三个人拼音完全相同（`wang-jian`）。当时库里靠 `wang-jian-nanqi`
+这种临时后缀区分南齐王俭，不成规则，也没有任何检查。
+
+加前缀后 `song-wang-jian`（王坚）、`shu-wang-jian`（王建）、
+`nan-qi-wang-jian`（王俭）一眼可分。
+
+**但要说清楚：这不是防错机制。** 写的时候认错人，前缀再长也拦不住——
+那次错误的根源是我凭记忆判断，没有核对 `name` 字段。前缀解决的是
+「同音不同人在库里难以区分」，不是「写的人不会搞错」。
+后者只能靠写之前先读一遍该条目的 `name` 与 `summary`。
+
+### 迁移记录（2026-11）
+
+305 人物 + 118 事件全部改为前缀式，涉 1396 处引用。旧 URL 通过
+`scripts/gen-legacy-pages.mjs` 在构建后生成跳转页保住（GitHub Pages
+不支持 `_redirects`）。映射表在 `src/lib/legacy-ids.ts`，由
+`scripts/gen-legacy-map.mjs` 按中文名配对生成。
+
+确认旧链接不再有访问后，删掉这两个脚本、`legacy-ids.ts` 与
+`package.json` 里 build 中的 `gen-legacy-pages.mjs` 调用即可。
+
+### 占位约定
+
+- **`jin` 已占用给女真金朝**。西晋 / 东晋用 `xi-jin` / `dong-jin`。
 - 政权 `sanguo` 是聚合体（汉末三国），不是单一王朝，命名上按聚合体处理。
+- 前缀与语义重复时手工指定（如 `beiwei-split` 用 `northern-wei-split`，
+  而非 `northern-wei-beiwei-split`），在 `scripts/migrate-ids.mjs`
+  的 `OVERRIDES` 里登记。
 
 ---
 
@@ -544,7 +571,8 @@ npm run build
 ### 每批内容的自检清单
 
 - [ ] 新增政权的 `period` 填了，`order` 不与现有冲突
-- [ ] 事件 id 全局唯一（带朝代前缀更好，裸名亦可）
+- [ ] 人物与事件 id 都以政权前缀开头（`<polityIds[0]>-<拼音>`），且全局唯一
+- [ ] 写新人物前先读一遍已有条目的 `name` 与 `summary`，确认没认错人（同音名字尤其要查）
 - [ ] `significance` 按事件性质评级，不是按「想让它首屏可见」评级
 - [ ] 每个新人物至少有 1 条 `relations`（不是孤岛）
 - [ ] 每个朝代至少 2 条**跨朝代**关系边（否则时间线被切成互不相连的孤岛）

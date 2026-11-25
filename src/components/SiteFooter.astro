@@ -1,0 +1,79 @@
+---
+/**
+ * 站点页脚。
+ *
+ * 两件事：站内导航（设计规范 / 全文检索）与站外入口（报告错误 / 源码）。
+ * 放在 Base 里全站生效，读者在任何条目页都能就近找到纠错入口 ——
+ * 纠错的动机往往产生在读到错误的那一瞬间，入口藏得深就流失了。
+ */
+import { url } from '../lib/url';
+import { reportIssueUrl, REPO_URL, type ReportContext } from '../lib/report';
+
+interface Props {
+  context: ReportContext;
+}
+
+const { context } = Astro.props;
+const issueUrl = reportIssueUrl(context);
+---
+
+<footer class="foot">
+  <div class="container foot__inner">
+    <p class="foot__note u-ui">
+      史鉴 · 内容为开放史料整理，<a href={url('search')}>全文检索</a>
+    </p>
+    <nav class="foot__links u-ui" aria-label="站外链接">
+      <a href={issueUrl} target="_blank" rel="noopener">报告错误</a>
+      <a href={REPO_URL} target="_blank" rel="noopener">源码</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+.foot {
+  margin-top: var(--sp-16);
+  padding-block: var(--sp-8);
+  border-top: 1px dotted var(--color-border);
+}
+
+.foot__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3) var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-faint);
+}
+
+.foot__note {
+  color: var(--color-ink-faint);
+}
+
+.foot__note a {
+  color: var(--color-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.foot__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.foot__links a {
+  display: inline-flex;
+  align-items: center;
+  /* 触控目标高度：页脚链接容易被误点，给足高度 */
+  min-height: var(--control-sm);
+  color: var(--color-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.foot__links a:hover,
+.foot__note a:hover {
+  color: var(--color-accent);
+}
+</style>

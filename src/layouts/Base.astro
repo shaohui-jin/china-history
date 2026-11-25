@@ -1,15 +1,27 @@
 ---
 import '../styles/tokens.generated.css';
 import '../styles/global.css';
+import SiteFooter from '../components/SiteFooter.astro';
+import { inferKind, cleanTitle } from '../lib/report';
 
 interface Props {
   title: string;
   description?: string;
   /** 页面级 OG 类型。文章类页面传 'article'，其余默认 'website' */
   ogType?: 'website' | 'article';
+  /**
+   * 关掉站点页脚。设计样张页用 —— 那里在展示页面骨架，
+   * 页脚会与样张内容互相干扰。
+   */
+  hideFooter?: boolean;
 }
 
-const { title, description = '中国历史可视化百科', ogType = 'website' } = Astro.props;
+const {
+  title,
+  description = '中国历史可视化百科',
+  ogType = 'website',
+  hideFooter = false,
+} = Astro.props;
 
 /**
  * 不加载 webfont（见 design/tokens.ts 的 fontFamily 注释）。
@@ -31,6 +43,20 @@ const favicon = `${base}/favicon.svg`;
 const site = import.meta.env.SITE;
 const canonicalUrl =
   site ? new URL(Astro.url.pathname, site).href : undefined;
+
+/**
+ * 纠错入口的上下文。
+ *
+ * 在这里统一推断而不是让 8 个页面各传一遍：路径前缀是稳定约定，
+ * 新增页面时也不会忘记传。canonicalUrl 在未配 SITE_URL 的本地构建下
+ * 为 undefined，退回 Astro.url.href —— issue 里的链接可能指向 localhost，
+ * 但那只影响本地调试，线上一定走 canonical。
+ */
+const reportContext = {
+  kind: inferKind(Astro.url.pathname),
+  title: cleanTitle(title),
+  url: canonicalUrl ?? Astro.url.href,
+};
 ---
 
 <!doctype html>
@@ -59,5 +85,6 @@ const canonicalUrl =
   </head>
   <body>
     <slot />
+    {!hideFooter && <SiteFooter context={reportContext} />}
   </body>
 </html>

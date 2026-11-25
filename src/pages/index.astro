@@ -71,7 +71,6 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
         <a href={url('timeline')}>时间线</a>
         <a href={url('graph')}>关系图谱</a>
         <a href={url('search')}>检索</a>
-        <a href={url('styleguide')}>设计</a>
       </nav>
     </div>
   </header>
@@ -217,14 +216,7 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
   </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="u-ui">
-        史鉴 · 内容为开放史料整理，<a href={url('styleguide')}>设计规范</a> · 
-        <a href={url('search')}>全文检索</a>
-      </p>
-    </div>
-  </footer>
+  <!-- 页脚由 Base 统一渲染（含「报告错误」入口），此处不再重复 -->
 </Base>
 
 <style>

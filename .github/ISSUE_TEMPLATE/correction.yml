@@ -1,0 +1,60 @@
+name: 内容纠错
+description: 报告史实、史料引用或文字错误
+title: '[纠错] '
+labels: ['纠错']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢指正。本站的编辑原则是所有史实必须能溯源，
+        所以「依据」一项请尽量填具体（书名卷次、页码或可靠链接）。
+
+        从站点页脚「报告错误」进入的话，上面的页面信息已自动填好。
+
+  - type: input
+    id: page
+    attributes:
+      label: 页面链接
+      description: 出问题的页面地址
+      placeholder: https://shaohui-jin.github.io/china-history/events/chibi
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 问题类型
+      options:
+        - 史实错误（时间、人物、地点、事件经过）
+        - 史料引用错误（书名、卷次、引文与原文不符）
+        - 文字错误（错别字、标点、断句）
+        - 排版或功能问题
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体说明
+      description: 请指出错误的内容与正确的说法
+      placeholder: 例如：赤壁之战写「曹操军二十余万」，但《三国志·周瑜传》注引《江表传》作「十余万」。
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 依据
+      description: 可查证的出处。没有出处的意见也会读，但无法直接改稿
+      placeholder: 例如：《三国志》卷五十四·吴书·周瑜传，裴松之注引《江表传》，中华书局点校本第 1262 页。
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图（可选）
+      description: 直接把图片粘贴到此框即可，GitHub 会自动上传
+    validations:
+      required: false

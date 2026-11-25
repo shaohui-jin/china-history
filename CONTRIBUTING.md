@@ -62,14 +62,15 @@ CI（`.github/workflows/deploy.yml`）会在 Build 之前依次跑 `check` 和 `
 - 推送后 `gh run list --limit 1` 确认 CI 绿；红了先修，再进下一步
 - 临时脚本、调试产物不进提交
 
-### AI 尾注由 hook 兜底
+### AI 尾注由 husky 兜底
 
 「不加 AI 作者」不是靠自觉：Cursor 会在提交时把命令改写成带
 `--trailer "Co-authored-by: Cursor <cursoragent@cursor.com>"` 的形式，
 光记着不写没有用 —— 尾注是工具加的，不是你写的。
 
-`npm install` 的 `prepare` 会调 `scripts/hooks/install.mjs`，把
-`commit-msg` 钩子装进 `.git/hooks/`。钩子在提交落盘前剥掉这类尾注：
+钩子由 husky 管理，定义在 [.husky/commit-msg](.husky/commit-msg)，
+逻辑在 [scripts/hooks/strip-ai-trailers.mjs](scripts/hooks/strip-ai-trailers.mjs)。
+它在提交落盘前剥掉这类尾注：
 
 ```
 [commit-msg] 已移除 1 条 AI 协作尾注（约定：不加 AI 作者）
@@ -81,8 +82,15 @@ CI（`.github/workflows/deploy.yml`）会在 Build 之前依次跑 `check` 和 `
 [scripts/hooks/strip-ai-trailers.mjs](scripts/hooks/strip-ai-trailers.mjs)，
 边界用例在 `scripts/hooks/strip-ai-trailers.test.mjs`（`npm test` 会跑）。
 
-钩子没装上的话，`npm run hooks:install` 手动补一次。注意 `.git/hooks`
-不进版本控制，clone 后必须跑过 `npm install`（或上面这条）才生效。
+**clone 后必须跑一次 `npm install`**。husky 靠 `prepare` 脚本初始化，
+不跑就不会有钩子。验证是否生效：
+
+```bash
+git config core.hooksPath     # 应输出 .husky/_
+```
+
+两行都不是的话，补跑 `npm install`。这是唯一需要手动做的一步 ——
+husky 的配置本身进版本控制，但 `core.hooksPath` 是本地 git 配置，不进。
 
 ---
 

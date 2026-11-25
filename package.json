@@ -16,8 +16,7 @@
     "check": "astro check",
     "test": "node --test src/lib/*.test.ts scripts/hooks/*.test.mjs",
     "lint:css": "stylelint \"src/styles/**/*.css\" \"src/**/*.vue\"",
-    "prepare": "node scripts/hooks/install.mjs",
-    "hooks:install": "node scripts/hooks/install.mjs"
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.10",
@@ -31,6 +30,7 @@
     "@astrojs/check": "^0.9.12",
     "@types/cytoscape": "^3.21.9",
     "@types/node": "^26.6.6",
+    "husky": "^9.1.7",
     "pagefind": "^1.6.0",
     "playwright": "^1.65.1",
     "postcss-html": "^2.0.1",

@@ -88,6 +88,38 @@ for (const f of listDir('sources')) {
   if (id) ids.sources.add(id);
 }
 
+/*
+ * 文件名必须与 frontmatter 的 id 一致。
+ *
+ * 为什么必须查这条：Astro 的 glob loader 用**文件名**作为 entry id，
+ * 而本脚本按 frontmatter 里的 id 建立索引。两者不一致时会出现
+ * 「validate 通过但构建时报 Invalid content reference」的诡异局面 ——
+ * 曾经 marco-polo.yaml 里写 id: yuan-marco-polo，validate 认它存在，
+ * Astro 却按文件名 marco-polo 索引，于是引用全部悬空。
+ */
+for (const sub of ['sources', 'polities', 'people', 'events']) {
+  for (const f of listDir(sub)) {
+    const isYaml = sub === 'sources' || sub === 'polities';
+    const ext = isYaml ? /\.ya?ml$/ : /\.md$/;
+    if (!ext.test(f)) continue;
+
+    const fm = readFrontmatter(join(ROOT, sub, f));
+    if (!fm) continue;
+    const id = pick(fm.__raw as string, 'id');
+    const base = f.replace(ext, '');
+
+    if (id && id !== base) {
+      issues.push({
+        level: 'error',
+        where: `${sub}/${base}`,
+        message:
+          `文件名 ${base} 与 frontmatter 的 id「${id}」不一致。` +
+          `Astro 按文件名索引，引用 ${id} 会解析不到。改名或改 id，二者取其一。`,
+      });
+    }
+  }
+}
+
 /** 检查 people 里的 relations.target 与 polityIds */
 for (const f of listDir('people')) {
   const fm = readFrontmatter(join(ROOT, 'people', f));

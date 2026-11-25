@@ -5,15 +5,13 @@
  * 实现要点：
  * - 用 CSS 容器查询（container-type: inline-size），而不是媒体查询。
  *   媒体查询看的是视口宽度，无法在同一个页面里同时展示三种形态。
- * - 形态切换发生在组件内部：宽容器 → 横向 Canvas 时间线；
- *   窄容器 → 纵向事件流。两者是不同组件，不是同一组件的样式变体。
+ * - 时间线现在是同一个组件（TimelineLayoutB），在三种宽度下都要能读；
+ *   关系网仍按宽度切换形态（图谱 / 列表）。
  */
 import { computed, ref } from 'vue';
-import TimelineCanvas from '../timeline/TimelineCanvas.vue';
-import TimelineVertical from '../timeline/TimelineVertical.vue';
+import TimelineLayoutB from '../timeline/TimelineLayoutB.vue';
 import RelationList from '../graph/RelationList.vue';
 import EgoGraphDesktop from '../graph/EgoGraphDesktop.vue';
-import { timelineByBreakpoint } from '../../design/pages';
 import type { TimelineData, EgoNetwork } from '../../lib/content';
 
 interface Props {
@@ -40,11 +38,12 @@ const MODES: Mode[] = [
 const mode = ref<Mode['id']>('desktop');
 const current = computed(() => MODES.find((m) => m.id === mode.value) ?? MODES[0]);
 
-/** 手机档走纵向流；平板用紧凑泳道 */
+/**
+ * 关系网仍按宽度换形态：手机上图谱画不开，改用列表。
+ * 时间线不再区分 —— 同一个组件在三种宽度下都要能读，
+ * 这正是「每端各自一致」的要求。
+ */
 const isNarrow = computed(() => mode.value === 'mobile');
-const timelineConfig = computed(() =>
-  mode.value === 'tablet' ? timelineByBreakpoint.md : timelineByBreakpoint.xl,
-);
 </script>
 
 <template>
@@ -75,10 +74,12 @@ const timelineConfig = computed(() =>
           <section class="lab__block">
             <header class="lab__head">
               <h4 class="lab__title">时间线</h4>
-              <span class="badge">{{ isNarrow ? '纵向事件流' : '横向泳道' }}</span>
+              <span class="badge">横向时间轴</span>
             </header>
-            <TimelineVertical v-if="isNarrow" :data="timeline" />
-            <TimelineCanvas v-else :config="timelineConfig" :data="timeline" />
+            <TimelineLayoutB
+              :lanes="timeline.lanes"
+              :items="timeline.items"
+            />
           </section>
 
           <section class="lab__block">

@@ -70,13 +70,35 @@ function primitiveVars(): string {
   lines.push(`  --timeline-lane-gap: ${layout.timeline.laneGap};`);
   lines.push(`  --timeline-label-w: ${layout.timeline.laneLabelWidth};`);
 
-  // 控件尺寸（三档高度 + 固定行高）
-  lines.push(`  --control-sm: ${control.sm};`);
-  lines.push(`  --control-md: ${control.md};`);
-  lines.push(`  --control-lg: ${control.lg};`);
+  // 控件尺寸（指针端三档 + 固定行高；触屏端的覆盖见 controlBreakpointBlock）
+  lines.push(`  --control-sm: ${control.base.sm};`);
+  lines.push(`  --control-md: ${control.base.md};`);
+  lines.push(`  --control-lg: ${control.base.lg};`);
   lines.push(`  --control-lh: ${control.lineHeight};`);
 
   return lines.join('\n');
+}
+
+/**
+ * 触屏端的控件高度覆盖。
+ *
+ * 为什么要覆盖而不是只留一组值：要求是「每一端自己内部一致」。
+ * 指针端需要「主按钮 / 行内小按钮」的层级差，触屏端点不准 28px，
+ * 层级差只会变成视觉上的参差。所以 <1024px 三档合一。
+ *
+ * 为什么数字写死：CSS 媒体查询不支持 var()，`@media (max-width: var(--bp-lg))`
+ * 是无效语法。这里的 1023 与 tokens.ts 的 breakpoint.lg（1024）是
+ * 「减一」关系，改断点时两处都要动。
+ */
+function controlBreakpointBlock(): string {
+  const touchMax = breakpoint.lg - 1;
+  return `@media (max-width: ${touchMax}px) {
+  :root {
+    --control-sm: ${control.touch.sm};
+    --control-md: ${control.touch.md};
+    --control-lg: ${control.touch.lg};
+  }
+}`;
 }
 
 function themeBlock(): string {
@@ -119,6 +141,9 @@ ${primitiveVars()}
 }
 
 ${themeBlock()}
+
+/* 控件高度按端分层：触屏端三档合一，见 tokens.ts 的 control 注释 */
+${controlBreakpointBlock()}
 `;
 
 mkdirSync(dirname(OUT), { recursive: true });

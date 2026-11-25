@@ -4,10 +4,9 @@
  * 样张（排版阶梯、色板、组件清单）搬去 /styleguide。
  */
 import Base from '../layouts/Base.astro';
-import TimelineExplorer from '../components/timeline/TimelineExplorer.vue';
-import TimelineVertical from '../components/timeline/TimelineVertical.vue';
+import TimelineLayoutB from '../components/timeline/TimelineLayoutB.vue';
 import { getTimelineData, loadIndex } from '../lib/content';
-import { homePage, timelineByBreakpoint } from '../design/pages';
+import { homePage } from '../design/pages';
 import { shortYear, shortRange } from '../lib/time';
 import { url } from '../lib/url';
 
@@ -15,33 +14,17 @@ const index = await loadIndex();
 const timeline = await getTimelineData();
 
 /**
- * 首屏只注入重大事件（sig >= 4）。
+ * 全量注入，只去掉 summary。
  *
- * 理由与 timeline.astro 相同：首页画布初始是全域视图，LOD 只画 sig >= 4，
- * 次要事件在这个缩放下根本不显示，全量注入纯属浪费首屏带宽。
- * 放大到 300 年内时 TimelineCanvas 会按世纪从 /data/timeline/<c>.json 拉取。
- *
- * 手机端 TimelineVertical 必须传全量：它内部有「展开其余 N 条」的折叠逻辑，
- * 若这里先滤掉 sig<4，组件里的 hiddenCount 会恒为 0，按钮永远不出现。
+ * 时间轴版只用 year / title / significance，不碰 summary，
+ * 而全量 142 条事件的标题合计约 9KB —— 不值得为此维护分片加载。
+ * 去掉 summary 是因为它在 props 里约占四分之一，而本组件完全不用。
  */
-const timelineLite = {
+const timelineData = {
   ...timeline,
-  items: timeline.items.filter((it) => it.significance >= 4),
-};
-
-/**
- * 移动端精简版：只去掉 summary，其余字段全留。
- *
- * 为什么不像桌面那样先滤掉 sig<4：TimelineVertical 内部有「展开其余 N 条」的
- * 折叠逻辑，它需要全部条目才能算出 hiddenCount。若先滤掉，按钮永远不出现。
- *
- * 去掉 summary 的理由：它在 props 里占约 25%（实测 7.0 KB / 28.1 KB），
- * 而只在用户点开某一条时才用得上。组件会在展开时按世纪从
- * /data/timeline/<c>.json 现取（见 TimelineVertical 的 ensureSummary）。
- */
-const timelineNoSummary = {
-  ...timeline,
-  items: timeline.items.map(({ summary: _summary, ...rest }) => rest as typeof timeline.items[number]),
+  items: timeline.items.map(
+    ({ summary: _summary, ...rest }) => rest as (typeof timeline.items)[number],
+  ),
 };
 
 /**
@@ -143,37 +126,17 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
         <p class="eyebrow">主线</p>
         <h2 class="section__title">一条可漫游的时间轴</h2>
         <p class="section__note">
-          纵向按政权分道，横向按年铺开。同一时刻并存多个政权（如匈奴与汉、突厥与唐）时各占一道，
-          不会挤在一根线上。滚轮缩放，拖动框选。
+          先选政权，再沿时间轴看它的大事。横轴可缩放——同一朝代里事件挤在一起时，
+          放大到那一段就能摊开。
         </p>
       </div>
 
-      <!--
-        桌面（≥1024）：画布泳道 + 政权筛选条；平板与手机走纵向列表。
-        client:media 让它只在匹配时下发 JS，手机端不下载画布 chunk。
-
-        为什么首页也用 TimelineExplorer 而不是裸 TimelineCanvas：
-        首页文案写着「纵向按政权分道」，但此前桌面端无法筛选，只有 /timeline 能点。
-        两页行为不一致本身就是缺陷。TimelineExplorer = Canvas + 筛选条 + ?lane= 同步。
-      -->
-      <div class="home-timeline">
-        <TimelineExplorer
-          client:media="(min-width: 1024px)"
-          config={timelineByBreakpoint.lg}
-          data={timelineLite}
-          lanes={timeline.lanes}
-          lazyLoad={true}
-        />
-      </div>
-
-      <div class="home-timeline-mobile">
-        <TimelineVertical
-          client:media="(max-width: 1023px)"
-          data={timelineNoSummary}
-          hasSummary={false}
-        />
-      </div>
-
+      <!-- 全端统一，与 /timeline 用同一个组件 -->
+      <TimelineLayoutB
+        client:only="vue"
+        lanes={timeline.lanes}
+        items={timelineData.items}
+      />
       <p class="section__foot">
         <a class="link-arrow" href={url('timeline')}>打开完整时间线 →</a>
       </p>
@@ -417,24 +380,6 @@ const polities = [...index.polities.values()].sort((a, b) => a.data.order - b.da
 .link-arrow:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
-}
-
-.home-timeline {
-  display: none;
-}
-
-.home-timeline-mobile {
-  display: block;
-}
-
-/* 断点与组件上的 client:media 保持一致（1024px） */
-@media (min-width: 1024px) {
-  .home-timeline {
-    display: block;
-  }
-  .home-timeline-mobile {
-    display: none;
-  }
 }
 
 .cards {

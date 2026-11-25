@@ -1,31 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
-import TimelineVertical from '../components/timeline/TimelineVertical.vue';
-import TimelineExplorer from '../components/timeline/TimelineExplorer.vue';
+import TimelineLayoutB from '../components/timeline/TimelineLayoutB.vue';
 import { getTimelineData } from '../lib/content';
-import { timelineByBreakpoint } from '../design/pages';
 import { url } from '../lib/url';
 
 const timeline = await getTimelineData();
 
 /**
- * 首屏只注入「重大事件 + 最近 300 年内的事件」。
+ * 全量注入，不再按需加载。
  *
- * 理由：桌面时间线初始是全域视图，此时 LOD 只显示 significance >= 4 的事件，
- * 次要事件在这一缩放下根本画不出来。全量注入等于浪费首屏带宽。
- * 放大到 300 年以内时，TimelineCanvas 会按世纪从
- * /data/timeline/<century>.json 拉取缺失的部分。
+ * 早期画布版需要分片：它要画 sig≥4 的点，还得按世纪补次要事件，
+ * 于是有 /data/timeline/<century>.json 这套机制。
  *
- * 手机端（TimelineVertical）**必须传全量条目**：它内部有「展开其余 N 条」的折叠逻辑，
- * 若这里先滤掉 sig<4，组件里的 hiddenCount 会恒为 0，按钮永远不出现。
- *
- * 但 summary 字段可以去掉：它在 props 里占约 25%，只在用户点开某一条时才用得上。
- * 组件会在展开时按世纪从 /data/timeline/<c>.json 现取（见 ensureSummary）。
- * 首页用的是同一套做法，见 index.astro 的 timelineNoSummary。
+ * 现在只有时间轴版，它只用 year / title / significance，不用 summary。
+ * 实测全量 142 条事件的标题合计约 9KB，直接注入比维护分片简单得多，
+ * 也让「缩放后立刻能看到新点」不用等网络。
  */
-const initialItems = timeline.items.filter((it) => it.significance >= 4);
-const timelineLite = { ...timeline, items: initialItems };
-const timelineNoSummary = {
+const timelineData = {
   ...timeline,
   items: timeline.items.map(({ summary: _s, ...rest }) => rest as (typeof timeline.items)[number]),
 };
@@ -52,47 +43,21 @@ const timelineNoSummary = {
       <p class="eyebrow">主线</p>
       <h1 class="page-title">中国历史时间线</h1>
       <p class="page-lede">
-        纵向按政权分道，横向按年铺开。同一时刻并存的政权（匈奴与汉、突厥与唐）各占一道。
-        低缩放只显示重大事件，放大后逐级放出次要事件。
+        先选政权，再沿时间轴看它的大事。横轴可缩放与拖动——同一朝代里事件挤在一起时，
+        放大到那一段就能摊开。点任意事件进入详情。
       </p>
     </div>
 
     <!--
-      桌面（≥1024）：TimelineExplorer = 画布泳道 + 政权筛选条
-      平板与手机（<1024）：纵向列表（自带年代分段与政权 chips）
-
-      为什么平板不用画布：768–1023px 下横向泳道本来就拥挤，
-      而且画布必须吃掉触摸事件（touch-action 冲突），
-      手指落在画布上页面就滚不动。列表在平板上更实用。
-
-      client:media 而不是 client:only + CSS 隐藏：
-      媒体查询不匹配时 Astro 根本不下发这段 JS，
-      手机上不会白下载画布组件的 chunk。
-      注意这里的媒体查询必须与下方 .only-wide / .only-narrow 的断点一致。
+      全端统一用同一个组件。
+      早期是「桌面画布泳道 + 移动端纵向列表」两套实现，交互与信息密度都不同，
+      维护成本高且观感割裂。现在只有这一种形态。
     -->
-    <div class="only-wide">
-      <TimelineExplorer
-        client:media="(min-width: 1024px)"
-        config={timelineByBreakpoint.lg}
-        data={timelineLite}
-        lanes={timeline.lanes}
-        lazyLoad={true}
-      />
-    </div>
-
-    <!-- 平板 + 手机 -->
-    <div class="only-narrow">
-      <TimelineVertical
-        client:media="(max-width: 1023px)"
-        data={timelineNoSummary}
-        hasSummary={false}
-      />
-    </div>
-
-    <!--
-      政权列表已并入 TimelineExplorer（桌面）与 TimelineVertical（移动端），
-      这里不再单独渲染。桌面端可点击筛选，移动端在年代按钮下方有政权 chips。
-    -->
+    <TimelineLayoutB
+      client:only="vue"
+      lanes={timeline.lanes}
+      items={timelineData.items}
+    />
   </main>
 </Base>
 
@@ -184,25 +149,6 @@ const timelineNoSummary = {
   font-size: var(--fs-sm);
   color: var(--color-ink-muted);
   line-height: var(--lh-body);
-}
-
-.only-narrow {
-  display: block;
-}
-
-.only-wide {
-  display: none;
-}
-
-/* 断点必须与组件上的 client:media 一致（1024px），否则会出现
-   「JS 已加载但容器被隐藏」或「容器可见但组件没挂载」 */
-@media (min-width: 1024px) {
-  .only-narrow {
-    display: none;
-  }
-  .only-wide {
-    display: block;
-  }
 }
 
 .polis {

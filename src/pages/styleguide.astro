@@ -6,6 +6,7 @@
 import Base from '../layouts/Base.astro';
 import ViewportLab from '../components/ds/ViewportLab.vue';
 import EgoGraphDesktop from '../components/graph/EgoGraphDesktop.vue';
+import TimelineLayoutB from '../components/timeline/TimelineLayoutB.vue';
 import { color, themes, DEFAULT_THEME } from '../design/tokens';
 import { getEgoNetwork, getTimelineData } from '../lib/content';
 import { url } from '../lib/url';
@@ -283,6 +284,47 @@ const timelineData = await getTimelineData();
       </div>
 
       <ViewportLab client:only="vue" timeline={timelineData} network={ego} focusId="zhuge-liang" />
+    </section>
+
+    <!--
+      06 时间线布局对比
+
+      这一节是为了「选一版接到 /timeline 正式页」而设。
+      三版共用 timelineData，差别只在交互模型：
+
+      A 左列点选 + 右栏事件流   —— 政权常驻可见，切换不滚动
+      B 顶部标签 + 横向时间轴   —— 看单一政权内的事件疏密
+      C 画布泳道，点左侧标签筛选 —— 现有实现的补全，改动最小
+
+      每版都真实可点，不是静态截图。选定后把其余移出或留作留档。
+    -->
+    <section class="section">
+      <div class="section__head">
+        <p class="eyebrow">06 / 时间线布局</p>
+        <h2 class="section__title">时间轴：选政权，看它的大事</h2>
+        <p class="section__note">
+          顶部选政权，下方横轴摊开该政权的事件。横轴可缩放与拖动——
+          同一朝代里事件常常挤在几年之内，放大到那一段才能看清楚。
+        </p>
+      </div>
+
+      <div class="layout-demo">
+        <div class="layout-demo__head">
+          <span class="layout-demo__tag u-ui">B</span>
+          <div>
+            <h3 class="layout-demo__title">顶部政权条 + 横向时间轴</h3>
+            <p class="layout-demo__note">
+              政权像标签页，事件摊在横轴上。初始聚焦到事件最密的一段，
+              其余部分拖动或缩小即可看到。
+            </p>
+          </div>
+        </div>
+        <TimelineLayoutB
+          client:only="vue"
+          lanes={timelineData.lanes}
+          items={timelineData.items}
+        />
+      </div>
     </section>
 
     <footer class="footer">
@@ -571,5 +613,53 @@ const timelineData = await getTimelineData();
   border-top: 1px dotted var(--color-border);
   font-size: var(--fs-xs);
   color: var(--color-ink-faint);
+}
+
+/* ---------- 06 时间线布局对比 ---------- */
+
+.layout-demo {
+  padding: var(--sp-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--decor-card-radius, var(--radius-md));
+  background: var(--color-surface-raised);
+}
+
+.layout-demo + .layout-demo {
+  margin-top: var(--sp-5);
+}
+
+.layout-demo__head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-4);
+  border-bottom: 1px dotted var(--color-border);
+}
+
+.layout-demo__tag {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-ink-inverse);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.layout-demo__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-ink-strong);
+}
+
+.layout-demo__note {
+  margin-top: var(--sp-1);
+  font-size: var(--fs-xs);
+  color: var(--color-ink-muted);
+  line-height: var(--lh-body);
 }
 </style>

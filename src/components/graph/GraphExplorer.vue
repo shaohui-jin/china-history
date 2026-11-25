@@ -165,8 +165,13 @@ watch(focusId, () => {
         </div>
       </div>
 
-      <a v-if="focusedOption" class="btn btn--ghost btn--sm" :href="personHref(focusedOption.id)">
-        查看 {{ focusedOption.name }} 传记 →
+      <a
+        v-if="focusedOption"
+        class="explorer__field explorer__field--action"
+        :href="personHref(focusedOption.id)"
+      >
+        <span class="u-ui" aria-hidden="true">&nbsp;</span>
+        <span class="btn btn--ghost">查看 {{ focusedOption.name }} 传记 →</span>
       </a>
     </div>
 
@@ -212,6 +217,33 @@ watch(focusId, () => {
   gap: var(--sp-2);
   font-size: var(--fs-xs);
   color: var(--color-ink-muted);
+}
+
+/*
+ * 分段控件在控制条里不能带外层 padding。
+ *
+ * .segmented 全局有 padding: 3px（让内部药丸不贴边框），
+ * 那会让它的总高比同行的 select 多出 6px。这里归零。
+ *
+ * 内层按钮提一档到 --control-md：select 是 --control-md，
+ * 全局的 .segmented__btn 是 --control-sm，不提档就会矮 8px。
+ * 这是「同一行控制条必须等高」的具体落实。
+ */
+.explorer__controls .segmented {
+  padding: 0;
+}
+
+.explorer__controls .segmented__btn {
+  min-height: var(--control-md);
+}
+
+.explorer__field--action {
+  color: var(--color-ink);
+}
+
+/* 按钮由 span 承载视觉样式，外层 a 负责可点区域与等高 */
+.explorer__field--action .btn {
+  text-decoration: none;
 }
 
 .explorer__field select {

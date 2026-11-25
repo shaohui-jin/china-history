@@ -28,13 +28,7 @@ evaluations:
   - claim: 武王克商后二年即崩，真正奠定周朝制度的是周公摄政的七年。武王的历史作用，更多是「完成伐纣」这一件事，而制礼作乐、封建亲戚、营建洛邑，都是周公之功。把周朝的建立归于武王一人，是后世简化的结果。
     sourceId: shiji-zhou-benji
     kind: dispute
-relations:
-  - target: zhanguo-shang-yang
-    type: colleague
-    strength: weak
-    from: -1046
-    to: -1043
-    note: 无直接关系。此处仅示同为周秦制度变革的关键人物，供图谱连通。
+relations: []
 ---
 
 姬姓，名发，周文王之子。

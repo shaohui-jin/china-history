@@ -50,11 +50,6 @@ import { url } from '../lib/url';
       </form>
 
       <div id="search-results" class="search-results"></div>
-
-      <p class="search-hint u-ui">
-        提示：构建产物才会生成检索索引。开发模式下若提示索引缺失，请先执行
-        <code>npm run build</code> 再用 <code>npm run preview</code> 查看。
-      </p>
     </div>
   </main>
 </Base>
@@ -102,7 +97,9 @@ async function ensurePagefind(): Promise<Pagefind | null> {
     return pagefind;
   } catch {
     loadFailed = true;
-    if (status) status.textContent = '索引不可用（需先 build）';
+    // 面向读者的文案。开发时索引不存在的情况，看控制台即可。
+    if (status) status.textContent = '检索暂时不可用，请刷新重试';
+    console.warn('[search] Pagefind 索引未加载。开发模式请先 npm run build 再 npm run preview。');
     return null;
   }
 }
@@ -373,14 +370,5 @@ if (initial && input) {
   padding-block: var(--sp-8);
   font-size: var(--fs-sm);
   color: var(--color-ink-faint);
-}
-
-.search-hint {
-  margin-top: var(--sp-8);
-  padding-top: var(--sp-4);
-  border-top: 1px dotted var(--color-border);
-  font-size: var(--fs-2xs);
-  color: var(--color-ink-faint);
-  line-height: var(--lh-normal);
 }
 </style>

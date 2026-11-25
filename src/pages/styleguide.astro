@@ -38,7 +38,7 @@ const ego = await getEgoNetwork(['zhuge-liang'], 1, 40);
 const timelineData = await getTimelineData();
 ---
 
-<Base title="设计规范 · 史鉴" description="设计令牌、排版阶梯与组件清单">
+<Base title="设计规范 · 史鉴" description="设计令牌、排版阶梯与组件清单" hideFooter>
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="topbar__brand" href={url('')}>
@@ -59,9 +59,6 @@ const timelineData = await getTimelineData();
       <p class="eyebrow">设计系统</p>
       <h1 class="page-title">{theme.label}</h1>
       <p class="page-lede">{theme.note}</p>
-      <p class="page-meta u-ui">
-        令牌唯一真源 <code>src/design/tokens.ts</code> · 生成产物 <code>tokens.generated.css</code>
-      </p>
     </div>
 
     <!-- 1 排版 -->
@@ -327,14 +324,14 @@ const timelineData = await getTimelineData();
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="u-ui">
-          语义键 {Object.keys(theme.semantic).length} 个 ·
-          泳道色 8 组 · 事件分类 6 种
-        </p>
-      </div>
-    </footer>
+    <!--
+      这一行是本页专属的统计信息，不是站点页脚 ——
+      Base 已统一渲染页脚，本页用 hideFooter 关掉。
+    -->
+    <p class="section__foot u-ui">
+      语义键 {Object.keys(theme.semantic).length} 个 ·
+      泳道色 8 组 · 事件分类 6 种
+    </p>
   </main>
 </Base>
 
@@ -421,12 +418,6 @@ const timelineData = await getTimelineData();
   margin-top: var(--sp-3);
   font-size: var(--fs-md);
   line-height: var(--lh-body);
-}
-
-.page-meta {
-  margin-top: var(--sp-3);
-  font-size: var(--fs-xs);
-  color: var(--color-ink-faint);
 }
 
 .section {

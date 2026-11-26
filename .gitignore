@@ -25,6 +25,7 @@ build.log
 probe*.mjs
 probe*.cjs
 dbg*.mjs
+dbg*.cjs
 tmp-*.cjs
 tmp-*.mjs
 scan-chars.mjs

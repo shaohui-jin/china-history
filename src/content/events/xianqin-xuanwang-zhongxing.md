@@ -12,8 +12,8 @@ categories:
   - political
   - military
 participants:
-  - personId: xianqin-zhouwu
-    role: participant
+  - personId: xianqin-zhouxuan
+    role: leader
 significance: 3
 summary: 厉王出奔后，周室由共和行政十四年，宣王即位。他修政、料民、伐猃狁与荆楚，「王化复行」，史称中兴。但中兴只维持了四十余年，其子幽王时西周即亡。
 sources:

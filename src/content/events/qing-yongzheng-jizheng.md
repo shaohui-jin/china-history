@@ -11,6 +11,9 @@ polityIds:
 categories:
   - political
   - institution
+participants:
+  - personId: qing-yongzheng
+    role: leader
 significance: 4
 summary: 雍正即位后厉行整饬，以严旨督责朋党与积习。军事上设军机处取代议政王大臣会议，财政上推行耗羡归公与摊丁入亩，又行密折制度使下情直达。清代皇权专制的体制，至此定型。
 sources:

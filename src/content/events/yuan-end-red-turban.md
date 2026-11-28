@@ -10,7 +10,9 @@ polityIds:
 categories:
   - military
   - political
-participants: []
+participants:
+  - personId: ming-zhu-yuanzhang
+    role: participant
 significance: 4
 summary: 至正十一年，韩山童、刘福通以「明王出世、弥勒下生」为号，红巾军起于颍州。十余年间，徐寿辉据湖广、张士诚据江浙、朱元璋据应天，元廷失去对南方的控制。
 sources:

@@ -19,6 +19,7 @@ summary: 竟宁元年（前 33），匈奴呼韩邪单于入朝，自言愿婿�
 sources:
   - hanshu-xiongnu-zhuan
   - houhanshu-nanxiongnu
+  - hanshu-yuandi-ji
 corroboration:
   primary: hanshu-xiongnu-zhuan
   secondary:
@@ -43,7 +44,7 @@ corroboration:
 
 **赐昭君**——「元帝以后宫良家子王墙字昭君赐单于。」
 
-《元帝纪》则只有一句诏书：「赐单于待诏掖庭王樯为阏氏。」「待诏掖庭」说明昭君是宫女，「良家子」说明她出身清白人家。
+《元帝纪》则只有一句诏书：「赐单于待诏掖庭王樯为阏氏。」「待诏掖庭」说明昭君是宫女，「良家子」说明她出身清白人家。[^hanshu-yuandi-ji]
 
 **昭君在匈奴**——「王昭君号宁胡阏氏，生一男伊屠智牙师，为右日逐王。」
 
@@ -78,3 +79,4 @@ corroboration:
 
 [^hanshu-xiongnu-zhuan]: 《汉书·匈奴传下》记呼韩邪求亲、元帝赐昭君、昭君再嫁。
 [^houhanshu-nanxiongnu]: 《后汉书·南匈奴传》记昭君「请掖庭令求行」及临行「光明汉宫」等情节，晚出三百余年。
+[^hanshu-yuandi-ji]: 《汉书·元帝纪》竟宁元年诏，记赐单于王樯为阏氏。

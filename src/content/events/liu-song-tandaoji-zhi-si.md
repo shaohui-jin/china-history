@@ -9,6 +9,9 @@ polityIds:
   - liu-song
 categories:
   - political
+participants:
+  - personId: liu-song-tan-daoji
+    role: victim
 sources:
   - songshu-tandaoji
   - nanshi-tandaoji

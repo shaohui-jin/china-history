@@ -21,6 +21,7 @@ summary: 平帝崩，王莽立两岁的孺子婴，仿周公摄政之例「居�
 sources:
   - hanshu-quyizhuan
   - zizhitongjian-wangmang-jushe
+  - hanshu-wangmang-quyi
 corroboration:
   primary: hanshu-quyizhuan
   secondary:

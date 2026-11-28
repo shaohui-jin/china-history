@@ -9,6 +9,9 @@ polityIds:
   - chunqiu
 categories:
   - political
+participants:
+  - personId: chunqiu-xiang-xu
+    role: leader
 significance: 4
 summary: 宋国大夫向戌奔走促成，晋、楚、齐、秦等十四国会于宋，约定晋楚之从交相见。此后四十余年中原无大战，是春秋史上第一次以盟约维持的长期休战。
 sources:

@@ -9,6 +9,9 @@ polityIds:
   - xianqin
 categories:
   - military
+participants:
+  - personId: xianqin-zhoumu
+    role: leader
 significance: 4
 summary: 周穆王西征犬戎，得其五王，迁戎于太原。战国时人据此演绎出《穆天子传》，记穆王驾八骏西行见西王母。史实与传说在此分道，也留下了中国最早的远行叙事。
 sources:

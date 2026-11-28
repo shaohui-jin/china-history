@@ -9,6 +9,9 @@ polityIds:
   - xianqin
 categories:
   - military
+participants:
+  - personId: xianqin-zhouzhao
+    role: victim
 significance: 4
 summary: 周昭王两次南征荆楚，第二次渡汉水时溺死，周军覆没。此役使西周丧失对南方的控制，也是「昭王南征而不复」成为后世问责典故的由来。
 sources:

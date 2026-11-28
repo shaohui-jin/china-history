@@ -9,7 +9,11 @@ polityIds:
   - tang
 categories:
   - political
-participants: []
+participants:
+  - personId: tang-wenzong
+    role: leader
+  - personId: tang-chou-shi-liang
+    role: leader
 significance: 4
 summary: 太和九年，唐文宗与李训、郑注谋诛宦官，事泄失败。宦官仇士良率禁军大杀朝臣，「流血涂地」，死者千余人。此后宦官完全控制朝政，皇帝形同傀儡，直至唐亡。
 sources:

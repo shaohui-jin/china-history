@@ -27,7 +27,8 @@ evaluations:
     quote: 汝趣白本使，五台僧为将必不如幽州将，为卒必不如幽州卒，何为虚取容纳之名，染于人口！
     kind: influence
   - claim: 李德裕的结局是唐代党争最惨烈的一幕。宣宗即位后，他先为太子少保分司东都，再贬潮州司马，再贬崖州司户，最终死于贬所。一个在会昌年间权倾朝野的宰相，一年之内贬至天涯——唐代政治的翻覆之快，由此可见。
-    sourceId: jiutangshu-xuanzong
+    sourceId: jiutangshu-lideyu
+    quote: 德裕以功兼守太尉，进封卫国公。宣宗即位，罢相，出为荆南节度使，再贬潮州司马，又贬崖州司户参军。大中三年，卒于贬所。
     kind: dispute
 relations:
   - target: tang-wuzong
@@ -76,3 +77,4 @@ relations:
 [^jiutangshu-wuzong]: 《旧唐书·武宗本纪》记会昌年间李德裕的政绩与封爵。
 [^zizhitongjian-tangmo-huichang]: 《资治通鉴》卷二百四十八记李德裕处置逃亡僧人的手段。
 [^jiutangshu-xuanzong]: 《旧唐书·宣宗本纪》记宣宗即位后贬李德裕。
+[^jiutangshu-lideyu]: 《旧唐书·李德裕传》记其封爵、罢相与三贬至崖州。

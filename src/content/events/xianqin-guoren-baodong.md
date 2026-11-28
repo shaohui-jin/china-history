@@ -10,6 +10,9 @@ polityIds:
   - xianqin
 categories:
   - political
+participants:
+  - personId: xianqin-zhaomu
+    role: participant
 significance: 5
 summary: 周厉王专利弭谤，国人道路以目。前 841 年国人暴动，厉王奔彘，周、召二公共同执政，号「共和」。此年是中国历史确切纪年的起点，《史记》十二诸侯年表自此始。
 sources:

@@ -10,6 +10,9 @@ polityIds:
   - tang
 categories:
   - political
+participants:
+  - personId: tang-chou-shi-liang
+    role: participant
 sources:
   - nianerzha-4
   - jiutangshu-wenzong

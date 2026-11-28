@@ -11,6 +11,9 @@ polityIds:
 categories:
   - political
   - military
+participants:
+  - personId: tang-guo-ziyi
+    role: participant
 significance: 5
 summary: 安史之乱平定后，唐廷以安史旧将镇守河北，魏博、成德、卢龙三镇由此形成。三镇「自除官吏，不供贡赋」，父子相袭，兵骄则逐帅。唐廷百余年不能制，直至唐亡。
 sources:

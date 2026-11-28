@@ -9,6 +9,9 @@ polityIds:
   - zhanguo
 categories:
   - political
+participants:
+  - personId: zhanguo-weiwenhou
+    role: leader
 significance: 5
 summary: 周威烈王命晋大夫魏斯、赵籍、韩虔为诸侯，韩赵魏三家正式列为诸侯，晋国名存实亡。司马光以此条为《资治通鉴》开篇，视为礼崩乐坏的标志。战国时代自此开始。
 sources:

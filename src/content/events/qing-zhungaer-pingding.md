@@ -11,6 +11,9 @@ polityIds:
 categories:
   - military
   - political
+participants:
+  - personId: qing-qianlong
+    role: leader
 significance: 5
 summary: 乾隆二十年，清军分两路西进，攻入伊犁，准噶尔汗国亡。次年阿睦尔撒纳叛，清军再征。二十四年平定大小和卓，设伊犁将军统辖天山南北。此役使清朝疆域达于极盛，也伴随着准噶尔部众的大量死亡。
 sources:

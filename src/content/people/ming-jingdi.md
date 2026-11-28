@@ -26,7 +26,8 @@ evaluations:
     sourceId: mingshi-yingzong-hou
     kind: influence
   - claim: 景帝死后，以亲王礼葬于西山，不附帝陵。明代十六帝，只有他葬在西郊。这一待遇直到成化年间才恢复帝号。一个在危难中即位、保住国家的皇帝，身后的待遇如此，说明宗法秩序对「非正常即位」的惩罚是长期的。
-    sourceId: mingshi-jingdi
+    sourceId: mingshi-jishi-duomen
+    quote: 景泰八年春正月，景帝不豫。……时百官候朝于午门外，闻殿上呼噪，方惊愕。
     kind: dispute
 relations:
   - target: ming-zhu-qizhen

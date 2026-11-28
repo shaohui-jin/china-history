@@ -10,7 +10,9 @@ polityIds:
   - xianqin
 categories:
   - institution
-participants: []
+participants:
+  - personId: zhanguo-shang-yang
+    role: participant
 significance: 4
 summary: 西周至春秋的土地制度。孟子记其形制为「方里而井，井九百亩，其中为公田。八家皆私百亩，同养公田」，即八家共耕一井，先公后私。战国时商鞅「废井田，开阡陌」，此制遂亡。井田制究竟在多大程度上是史实、多大程度上是儒家的理想化构想，学界至今争论。
 sources:

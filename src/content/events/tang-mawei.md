@@ -18,8 +18,6 @@ participants:
     role: victim
   - personId: tang-yang-yuhuan
     role: victim
-  - personId: tang-li-linfu
-    role: participant
   - personId: tang-dufu
     role: participant
 significance: 4

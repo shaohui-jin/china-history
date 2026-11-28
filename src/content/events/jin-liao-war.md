@@ -14,8 +14,6 @@ categories:
 participants:
   - personId: jin-wanyan-aguda
     role: leader
-  - personId: liao-yelv-longxu
-    role: victim
   - personId: jin-wanyan-wuqimai
     role: participant
   - personId: jin-wanyan-zongbi

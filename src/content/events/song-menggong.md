@@ -11,10 +11,8 @@ categories:
   - military
   - political
 participants:
-  - personId: song-duzong
-    role: participant
-  - personId: song-shi-miyuan
-    role: participant
+  - personId: song-li-zong
+    role: leader
 significance: 4
 summary: 宋蒙联军灭金于蔡州，金亡。宋理宗不听劝谏，遣军收复三京（端平入洛），为蒙古所败。宋蒙战争自此开始，四十五年后南宋亡。
 sources:

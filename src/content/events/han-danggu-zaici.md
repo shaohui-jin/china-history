@@ -11,8 +11,6 @@ polityIds:
 categories:
   - political
 participants:
-  - personId: han-chen-fan
-    role: victim
   - personId: han-li-ying
     role: victim
 significance: 4

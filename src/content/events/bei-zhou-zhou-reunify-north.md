@@ -17,12 +17,6 @@ participants:
     role: leader
   - personId: bei-qi-gao-wei
     role: victim
-  - personId: bei-qi-gao-changgong
-    role: participant
-  - personId: bei-qi-hulv-guang
-    role: participant
-  - personId: bei-qi-gao-yang
-    role: participant
   - personId: nan-chen-wu-mingche
     role: participant
 significance: 4

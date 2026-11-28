@@ -13,11 +13,7 @@ participants:
     role: leader
   - personId: song-zhao-kuangyin
     role: participant
-  - personId: wudai-li-cunxu
-    role: participant
   - personId: wudai-shi-chonggui
-    role: participant
-  - personId: wudai-liu-huanghou
     role: participant
 significance: 4
 summary: 后周世宗柴荣即位之初，北汉与契丹联军南下，双方决战于高平。后周右军溃逃，柴荣亲冒矢石督战，赵匡胤率部死战，终获大胜。此役确立了柴荣的权威，也奠定了赵匡胤的崛起之基。

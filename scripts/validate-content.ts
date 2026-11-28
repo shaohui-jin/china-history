@@ -213,6 +213,118 @@ for (const f of listDir('events')) {
   }
 }
 
+/* ---------------- 时间一致性：事件年份 vs 政权 span / 参与者生卒 ---------------- */
+
+/**
+ * 收集政权的 span 与人物的生卒年，供下面两项检查用。
+ *
+ * 为什么需要这两项检查：`validate` 原来只查 id 是否存在，不查时代是否吻合。
+ * 于是「晋文公（前 697—前 628）参与前 770 年的携王并立」这种错误
+ * 一路通过——他当时还没出生。这类错误靠人眼极难发现，因为 id 是对的，
+ * 只是挂错了人。
+ *
+ * 两个区间「有交集」即通过，不要求完全包含。理由：
+ * - `jin-founded` 1114–1115，金 span 从 1115 起（建国前一年起兵）
+ * - `liu-song-beifa-liuyu` 409–417，刘裕当时仍是东晋臣子（宋 span 从 420 起）
+ * 两处都是合理数据，用「包含」会误判，用「交集」则正确放行。
+ */
+const politySpan = new Map<string, { from: number; to: number }>();
+
+for (const f of listDir('polities')) {
+  const fm = readFrontmatter(join(ROOT, 'polities', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const pid = pick(raw, 'id');
+  if (!pid) continue;
+  const spanBlock = raw.match(/^span:\s*\n((?:[ \t]+.*\n?)+)/m);
+  if (!spanBlock) continue;
+  const fromM = spanBlock[1].match(/from:\s*\n\s+year:\s*(-?\d+)/);
+  const toM = spanBlock[1].match(/to:\s*\n\s+year:\s*(-?\d+)/);
+  if (!fromM || !toM) continue;
+  politySpan.set(pid, { from: Number(fromM[1]), to: Number(toM[1]) });
+}
+
+/** 人物生卒年。缺失的一端用 ±Infinity 兜底（未知即不限制）。 */
+const personLife = new Map<string, { birth: number; death: number }>();
+
+for (const f of listDir('people')) {
+  const fm = readFrontmatter(join(ROOT, 'people', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const pid = pick(raw, 'id');
+  if (!pid) continue;
+  const birthM = raw.match(/^birth:\s*\n\s+year:\s*(-?\d+)/m);
+  const deathM = raw.match(/^death:\s*\n\s+year:\s*(-?\d+)/m);
+  if (!birthM && !deathM) continue;
+  personLife.set(pid, {
+    birth: birthM ? Number(birthM[1]) : -Infinity,
+    death: deathM ? Number(deathM[1]) : Infinity,
+  });
+}
+
+/** 两个闭区间是否有交集 */
+function overlaps(aFrom: number, aTo: number, bFrom: number, bTo: number): boolean {
+  return aFrom <= bTo && bFrom <= aTo;
+}
+
+for (const f of listDir('events')) {
+  const fm = readFrontmatter(join(ROOT, 'events', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+
+  // 事件区间：to 缺省时视作单点
+  const fromM = raw.match(/^time:\s*\n\s+from:\s*\n\s+year:\s*(-?\d+)/m);
+  if (!fromM) continue;
+  const evFrom = Number(fromM[1]);
+  const timeBlock = raw.match(/^time:\s*\n((?:[ \t]+.*\n?)+)/m);
+  const toM = timeBlock?.[1].match(/\n\s+to:\s*\n\s+year:\s*(-?\d+)/);
+  const evTo = toM ? Number(toM[1]) : evFrom;
+
+  // 检查 1：事件的 polityIds[0] 对应的政权 span 必须与事件区间有交集
+  const polBlock = raw.match(/^polityIds:\s*\n((?:[ \t]+-.*\n?)+)/m);
+  const firstPolity = polBlock?.[1]
+    .split('\n')
+    .find((l) => /^[ \t]+-/.test(l))
+    ?.replace(/^[ \t]+-\s*/, '')
+    .trim();
+  if (firstPolity) {
+    const span = politySpan.get(firstPolity);
+    if (span && !overlaps(evFrom, evTo, span.from, span.to)) {
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message:
+          `事件年份 ${evFrom}${evTo !== evFrom ? `–${evTo}` : ''} 完全落在政权 ${firstPolity} 的 span（${span.from}–${span.to}）之外。` +
+          `事件应挂到当时存在的政权上`,
+      });
+    }
+  }
+
+  // 检查 2：每位参与者的生卒区间必须与事件区间有交集
+  const partRe = /^\s+-\s+personId:\s*(\S+)/gm;
+  const seen = new Set<string>();
+  let pm: RegExpExecArray | null;
+  while ((pm = partRe.exec(raw))) {
+    const personId = pm[1].trim();
+    if (seen.has(personId)) continue;
+    seen.add(personId);
+    const life = personLife.get(personId);
+    if (!life) continue;
+    if (!overlaps(evFrom, evTo, life.birth, life.death)) {
+      const b = life.birth === -Infinity ? '?' : String(life.birth);
+      const d = life.death === Infinity ? '?' : String(life.death);
+      issues.push({
+        level: 'error',
+        where: `events/${id}`,
+        message:
+          `参与者 ${personId}（${b}–${d}）与事件年份 ${evFrom}${evTo !== evFrom ? `–${evTo}` : ''} 无交集。` +
+          `此人当时尚未出生或已去世，疑似挂错`,
+      });
+    }
+  }
+}
+
 /* ---------------- 可信度：跨书互证与争议块 ---------------- */
 
 /**
@@ -639,6 +751,12 @@ const ID_PREFIX_EXEMPT = new Set<string>([
    * 且会破坏旧 URL。前缀在这里只是稳定标识，不再表示归属。
    */
   'qing-sun-yatsen',
+  /*
+   * 刘裕北伐（409–417）发生在东晋，刘裕 420 年才代晋建宋。
+   * 事件挂 `dong-jin` 才符合史实，但 id 前缀 `liu-song-` 不改：
+   * 该 id 已进入 URL 与 legacy 跳转表，改前缀要连带迁移。
+   */
+  'liu-song-beifa-liuyu',
 ]);
 
 for (const collection of ['people', 'events'] as const) {

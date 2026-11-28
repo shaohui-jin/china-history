@@ -7,7 +7,7 @@ time:
     to:
       year: 417
 polityIds:
-  - liu-song
+  - dong-jin
 categories:
   - military
 participants:

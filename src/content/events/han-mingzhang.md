@@ -5,14 +5,12 @@ time:
   from:
     year: 57
   to:
-    year: -1
+    year: 88
 polityIds:
   - han
 categories:
   - political
 participants:
-  - personId: han-ban-gu
-    role: participant
   - personId: han-ban-chao
     role: participant
 significance: 4

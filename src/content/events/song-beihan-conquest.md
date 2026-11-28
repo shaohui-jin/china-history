@@ -14,10 +14,6 @@ categories:
 participants:
   - personId: song-zhao-guangyi
     role: leader
-  - personId: wudai-qian-liu
-    role: participant
-  - personId: wudai-li-bian
-    role: participant
 significance: 4
 summary: 宋太宗亲征太原，北汉主刘继元出降。五代十国最后一个割据政权覆灭，中原复归一统。太宗随即转兵攻辽，高粱河大败。
 sources:

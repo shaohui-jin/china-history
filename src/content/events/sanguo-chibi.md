@@ -24,8 +24,6 @@ participants:
     role: participant
   - personId: sanguo-zhang-fei
     role: participant
-  - personId: sanguo-sun-ce
-    role: participant
 significance: 5
 summary: 孙刘联军以火攻破曹操水军，曹操退保南郡。南北分立的格局自此奠定。
 sources:

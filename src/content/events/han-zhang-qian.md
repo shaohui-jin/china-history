@@ -17,10 +17,6 @@ participants:
     role: leader
   - personId: han-liu-che
     role: leader
-  - personId: han-ban-chao
-    role: participant
-  - personId: han-ban-gu
-    role: participant
 significance: 5
 summary: 张骞两次出使西域，历十三年，被匈奴扣留十余年而持汉节不失。其行被司马迁称为「凿空」，首次系统打通中原与中亚的通道，丝绸之路自此开通。
 sources:

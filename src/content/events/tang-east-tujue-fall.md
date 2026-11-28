@@ -18,10 +18,6 @@ participants:
     role: leader
   - personId: tujue-jie-li
     role: victim
-  - personId: tujue-ashina-xieli
-    role: participant
-  - personId: tujue-tunyugu
-    role: participant
 significance: 4
 summary: 唐太宗遣李靖、李勣分道北伐，李靖夜袭阴山，俘颉利可汗，东突厥亡。四夷君长共尊太宗为「天可汗」。此为唐初对北方游牧政权的决定性胜利。
 sources:

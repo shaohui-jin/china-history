@@ -12,8 +12,6 @@ categories:
 participants:
   - personId: yuan-guo-shoujing
     role: leader
-  - personId: yuan-genghis-khan
-    role: participant
 significance: 4
 summary: 郭守敬、王恂等主持改历，创制简仪、高表等仪器，设二十七处观测点，成《授时历》。定回归年 365.2425 日，与今公历相同而早三百年，行用三百六十四年。
 sources:

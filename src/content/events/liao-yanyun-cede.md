@@ -15,10 +15,6 @@ participants:
     role: leader
   - personId: liao-yelv-deguang
     role: leader
-  - personId: liao-han-dejiang
-    role: participant
-  - personId: liao-xiao-chuo
-    role: participant
 significance: 5
 summary: 后唐河东节度使石敬瑭为求自保，以割燕云十六州、称儿皇帝为条件借契丹兵灭后唐。中原自此失去长城一线的北方屏障，影响绵延四百年。
 sources:

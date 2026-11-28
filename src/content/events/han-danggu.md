@@ -11,9 +11,11 @@ polityIds:
 categories:
   - political
 participants:
+  - personId: han-li-ying
+    role: victim
+  - personId: han-chen-fan
+    role: victim
   - personId: han-chen-shi
-    role: participant
-  - personId: han-ban-gu
     role: participant
 significance: 5
 summary: 桓帝、灵帝两朝，宦官以「党人」罪名两次大规模迫害士大夫，李膺、范滂等名士被杀，党人门生故吏皆禁锢终身。士林清议被摧毁，东汉的统治基础随之瓦解。

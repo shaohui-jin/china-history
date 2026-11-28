@@ -15,12 +15,6 @@ participants:
     role: victim
   - personId: song-han-tuozhou
     role: leader
-  - personId: song-cheng-hao
-    role: participant
-  - personId: song-cheng-yi
-    role: participant
-  - personId: song-lu-jiuyuan
-    role: participant
 significance: 4
 summary: 韩侂胄当政，指朱熹等道学之士为「伪学」，立《伪学逆党籍》五十九人，禁其讲学、禁其著作。朱熹落职，数年后卒。此禁虽短，然深刻影响南宋士风。
 sources:

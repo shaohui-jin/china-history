@@ -16,8 +16,6 @@ participants:
     role: leader
   - personId: ming-hu-weiyong
     role: participant
-  - personId: ming-zheng-zhilong
-    role: participant
 significance: 5
 summary: 朱元璋于应天即皇帝位，国号大明，建元洪武。同年北伐克大都，元顺帝北遁。此后废丞相、设锦衣卫、兴大狱，建立中国史上最集权的皇权体制。
 sources:

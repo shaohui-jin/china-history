@@ -16,8 +16,6 @@ participants:
     role: leader
   - personId: ming-zhu-di
     role: leader
-  - personId: ming-hu-weiyong
-    role: participant
 significance: 5
 summary: 永乐至宣德年间，郑和七率舟师下西洋，规模最大时二万七千余人、宝船数十艘，最远抵东非。为中国及世界航海史上空前之壮举，然其目的在宣威而非殖民。
 sources:

@@ -16,8 +16,6 @@ participants:
     role: leader
   - personId: song-zhao-kuangyin
     role: participant
-  - personId: wudai-zhang-chengye
-    role: participant
 significance: 4
 summary: 后周世宗柴荣在位五年半，推行全面改革：整顿禁军、均定田赋、毁佛铸钱、修订刑律、疏浚汴河。又南征南唐、北伐契丹，收复三关。其改革被北宋全盘继承，是五代走向治世的关键转折。
 sources:

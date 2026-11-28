@@ -13,8 +13,6 @@ categories:
 participants:
   - personId: sui-yang-guang
     role: leader
-  - personId: sui-yang-su
-    role: participant
   - personId: sui-yuwen-kai
     role: participant
 significance: 4

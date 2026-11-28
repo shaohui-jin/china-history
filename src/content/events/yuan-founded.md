@@ -14,10 +14,6 @@ participants:
     role: leader
   - personId: yuan-liu-bingzhong
     role: leader
-  - personId: yuan-genghis-khan
-    role: participant
-  - personId: yuan-batu
-    role: participant
   - personId: yuan-marco-polo
     role: participant
 significance: 5

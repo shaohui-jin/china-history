@@ -17,10 +17,6 @@ participants:
     role: leader
   - personId: northern-wei-fu-jian
     role: victim
-  - personId: dong-jin-wang-dao
-    role: participant
-  - personId: dong-jin-huan-wen
-    role: participant
   - personId: shiliuguo-yao-chang
     role: participant
 significance: 5

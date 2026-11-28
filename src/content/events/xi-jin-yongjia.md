@@ -12,12 +12,8 @@ categories:
   - military
   - political
 participants:
-  - personId: xi-jin-sima-zhong
-    role: victim
-  - personId: xi-jin-liu-yuan
-    role: leader
   - personId: xi-jin-liu-cong
-    role: participant
+    role: leader
   - personId: xi-jin-liu-kun
     role: participant
   - personId: dong-jin-zu-ti

@@ -13,8 +13,6 @@ categories:
 participants:
   - personId: han-wang-mang
     role: participant
-  - personId: han-dong-zhongshu
-    role: participant
 significance: 4
 summary: 元帝以后，西汉进入衰变期。外戚王氏与宦官石显交替专权，土地兼并加剧，流民百万。哀帝「再受命」闹剧，平帝年幼被鸩，王莽遂以外戚之身摄政，终至代汉。
 sources:

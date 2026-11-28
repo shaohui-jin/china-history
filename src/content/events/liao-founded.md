@@ -12,8 +12,6 @@ categories:
 participants:
   - personId: liao-yelv-abaoji
     role: leader
-  - personId: liao-han-dejiang
-    role: participant
 significance: 4
 summary: 耶律阿保机统一契丹八部，称帝建国号契丹，创契丹文字，建南北面官制雏形。北方草原自此出现一个能与中原长期对峙的稳定政权。
 sources:

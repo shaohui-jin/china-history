@@ -15,7 +15,7 @@ participants:
   - personId: nan-liang-hou-jing
     role: leader
   - personId: nan-liang-xiao-yan
-    role: participant
+    role: victim
   - personId: nan-liang-xiao-gang
     role: participant
   - personId: nan-liang-xiao-yi
@@ -23,10 +23,6 @@ participants:
   - personId: nan-chen-chen-baxian
     role: participant
   - personId: nan-chen-chen-qian
-    role: participant
-  - personId: nan-liang-chen-qingzhi
-    role: participant
-  - personId: nan-liang-wei-rui
     role: participant
 significance: 5
 summary: 羯族军阀侯景以河南十三州降梁后举兵反叛，围台城一百三十余日，饿死梁武帝萧衍，纵兵屠掠三吴。江南自东晋以来的经济文化积累毁于一旦，南朝士族「百不存一」，是南朝由盛转衰的分水岭。

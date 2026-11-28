@@ -12,8 +12,6 @@ categories:
 participants:
   - personId: qin-zhao-gao
     role: participant
-  - personId: qin-li-si
-    role: victim
   - personId: han-xiang-yu
     role: participant
   - personId: han-fan-zeng

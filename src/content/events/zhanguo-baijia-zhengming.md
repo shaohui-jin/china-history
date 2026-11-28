@@ -11,10 +11,6 @@ polityIds:
 categories:
   - culture
 participants:
-  - personId: chunqiu-kongzi
-    role: participant
-  - personId: chunqiu-laozi
-    role: participant
   - personId: zhanguo-mengzi
     role: participant
   - personId: zhanguo-zhuangzi

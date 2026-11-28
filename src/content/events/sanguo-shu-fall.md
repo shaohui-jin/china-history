@@ -21,8 +21,6 @@ participants:
     role: leader
   - personId: sanguo-huang-hao
     role: participant
-  - personId: sanguo-liu-qi
-    role: participant
   - personId: sanguo-lu-kang
     role: participant
 significance: 4

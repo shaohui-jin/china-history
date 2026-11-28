@@ -13,8 +13,6 @@ categories:
 participants:
   - personId: bei-zhou-yuwen-yong
     role: leader
-  - personId: bei-zhou-su-chuo
-    role: participant
 significance: 4
 summary: 周武帝宇文邕下诏废佛道二教，经像悉毁，沙门道士并令还民。还俗僧尼近三百万，大增国家户口与税源。此为「三武一宗」法难之二，也是北周国力强盛的重要原因。
 sources:

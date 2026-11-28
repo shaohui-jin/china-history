@@ -12,15 +12,9 @@ categories:
 participants:
   - personId: tang-shi-chaoyi
     role: victim
-  - personId: tang-an-qingxu
-    role: victim
-  - personId: tang-shi-siming
-    role: victim
   - personId: tang-guo-ziyi
     role: participant
   - personId: tang-li-guangbi
-    role: participant
-  - personId: tang-an-lushan
     role: participant
   - personId: tang-yan-zhenqing
     role: participant

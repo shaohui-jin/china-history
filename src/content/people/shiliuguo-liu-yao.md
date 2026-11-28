@@ -5,7 +5,7 @@ aliases:
   - 前赵昭武帝
   - 刘永明
 birth:
-  year: 320
+  year: 280
   approx: true
 death:
   year: 329

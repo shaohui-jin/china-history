@@ -13,8 +13,6 @@ categories:
 participants:
   - personId: jin-wanyan-yong
     role: leader
-  - personId: song-li-gang
-    role: participant
 significance: 4
 summary: 宋孝宗北伐失败，宋金议和：宋不再称臣，改称侄；岁贡改称岁币，减十万。此后四十年无大战，为南宋最安定的一段时期。
 sources:

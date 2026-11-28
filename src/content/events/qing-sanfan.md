@@ -16,8 +16,6 @@ participants:
     role: leader
   - personId: qing-wu-sangui
     role: leader
-  - personId: qing-hong-chengchou
-    role: participant
 significance: 4
 summary: 康熙十二年决意撤藩，吴三桂起兵反清，尚可喜、耿精忠响应，乱及十省，历八年。康熙二十年昆明城破，三藩平。此役确立清朝对南方的直接统治。
 sources:

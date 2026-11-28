@@ -12,8 +12,6 @@ categories:
   - political
   - military
 participants:
-  - personId: xi-jin-sima-yan
-    role: victim
   - personId: xi-jin-sima-zhong
     role: leader
   - personId: xi-jin-jia-nanfeng

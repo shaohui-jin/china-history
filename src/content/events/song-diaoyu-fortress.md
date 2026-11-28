@@ -15,8 +15,6 @@ participants:
     role: leader
   - personId: yuan-mangu
     role: victim
-  - personId: song-shi-miyuan
-    role: participant
 significance: 4
 summary: 蒙哥率军围攻钓鱼城，守将王坚坚守数月，蒙哥死于城下。蒙古各路的西征南征全面中止，忽必烈北归争位。欧洲人称此地为「上帝折鞭处」。
 sources:

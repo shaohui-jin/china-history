@@ -11,7 +11,7 @@ birth:
 death:
   year: 1925
 polityIds:
-  - qing
+  - zhonghua-minguo
 roles:
   - 革命家
   - 政治家

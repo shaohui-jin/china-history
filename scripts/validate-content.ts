@@ -629,7 +629,16 @@ for (const f of listDir('people')) {
  * 注意：人物与事件都适用。事件此前只「建议」带前缀，现改为强制。
  */
 const ID_PREFIX_EXEMPT = new Set<string>([
-  // 无例外。若将来有跨政权聚合体人物，在此登记并写明理由。
+  /*
+   * 孙中山跨清与民国两代。
+   *
+   * 他 1866 年生于清，1925 年卒于民国，主要活动在清末，
+   * 但 1912 年就任中华民国临时大总统，人物页理应归入民国。
+   * id 前缀保留 `qing-` 不改：这个 id 已被 `qing-xinhai` 与
+   * `zhonghua-minguo-jianli` 两个事件引用，改 id 要连带迁移，
+   * 且会破坏旧 URL。前缀在这里只是稳定标识，不再表示归属。
+   */
+  'qing-sun-yatsen',
 ]);
 
 for (const collection of ['people', 'events'] as const) {

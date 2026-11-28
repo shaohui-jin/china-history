@@ -19,6 +19,7 @@ summary: 长平之战后，秦军乘胜围赵都邯郸，前后三年不下。�
 sources:
   - shiji-baiqi-guodu
   - zhanguoce-zhaoce-handan
+  - shiji-pingyuan-jun
 corroboration:
   primary: shiji-baiqi-guodu
   secondary:
@@ -49,7 +50,7 @@ corroboration:
 
 > 今十步之内，王不得恃楚国之众也，王之命悬于遂手。
 
-楚王遂定从。
+楚王遂定从。[^shiji-pingyuan-jun]
 
 **窃符救赵**——魏王派晋鄙率军救赵，但畏秦，止于邺。信陵君（魏无忌）用侯嬴之计，请如姬盗魏王兵符，击杀晋鄙，夺军救赵。
 
@@ -83,3 +84,4 @@ corroboration:
 
 [^shiji-baiqi-guodu]: 《史记·白起王翦列传》记白起谏阻攻邯郸及其后果。
 [^zhanguoce-zhaoce-handan]: 《战国策·赵策三》记邯郸之围中辛垣衍劝尊秦为帝、鲁仲连力斥。
+[^shiji-pingyuan-jun]: 《史记·平原君虞卿列传》记毛遂自荐与说楚定从。

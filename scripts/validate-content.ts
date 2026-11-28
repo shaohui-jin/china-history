@@ -739,6 +739,30 @@ for (const f of listDir('polities')) {
   }
 }
 
+/*
+ * 史料 type 必须在枚举内（classic / modern）。
+ *
+ * Zod 只在 build 时校验，而 build 前的 validate 若漏掉这一项，
+ * 一个拼错的 type 会一路通过到构建阶段才炸。这里提前挡。
+ * 不写 type 视为 classic（schema 有默认值），不报错。
+ */
+const SOURCE_TYPES = new Set(['classic', 'modern']);
+
+for (const f of listDir('sources')) {
+  const fm = readFrontmatter(join(ROOT, 'sources', f));
+  if (!fm) continue;
+  const raw = fm.__raw as string;
+  const id = pick(raw, 'id') ?? f;
+  const type = pick(raw, 'type');
+  if (type !== null && !SOURCE_TYPES.has(type)) {
+    issues.push({
+      level: 'error',
+      where: `sources/${id}`,
+      message: `type 含非法值「${type}」，可用：${[...SOURCE_TYPES].join(' / ')}`,
+    });
+  }
+}
+
 /* ---------------- 组件内硬编码绝对路径 ---------------- */
 
 /**

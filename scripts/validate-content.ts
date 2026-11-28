@@ -544,7 +544,13 @@ const RELATION_TYPES = new Set([
   'kill',
   'colleague',
 ]);
-const POLITY_PERIODS = new Set(['pre-imperial', 'imperial-early', 'imperial-mid', 'imperial-late']);
+const POLITY_PERIODS = new Set([
+  'pre-imperial',
+  'imperial-early',
+  'imperial-mid',
+  'imperial-late',
+  'republican',
+]);
 
 for (const f of listDir('events')) {
   const fm = readFrontmatter(join(ROOT, 'events', f));

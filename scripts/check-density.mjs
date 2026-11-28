@@ -1,25 +1,28 @@
 /**
- * 事件密度检查：按世纪统计事件数，找出「不足 4 条」的世纪。
+ * 事件密度报告：按世纪列出事件条数。
  *
- * 为什么单独一个脚本：
- * U3 的验收标准是「每个世纪 ≥ 4 条」，但这条没法并进 validate ——
- * validate 管的是引用完整性（一错就该拦），密度是覆盖率指标，
- * 缺几条不该让 CI 红。
+ * 为什么是「报告」而不是「检查」：
+ * 这里原本有一条验收标准「每个世纪 ≥ 4 条」，并带 `--strict` 退出码。
+ * 2026-11 取消：历史事件在史料里本来就不是均匀分布的 —— 先秦两千年
+ * 留下的可考节点远少于明清，而近代一段（1912–1949）只有几十年。
+ * 硬凑配额只会逼人为了凑数写没有史料支撑的条目，与本项目
+ * 「没有出处不写进正文」的第一原则直接冲突。
+ *
+ * 所以本脚本现在只回答一个问题：**哪些世纪的材料还很薄**。
+ * 薄不等于欠账，它只是提示「这几段如果要继续补，该往哪找史料」。
  *
  * 世纪编号约定：前 N 世纪为负数，公元 N 世纪为正数，没有 0 世纪。
  *   前 221 年 → 前 3 世纪 → -3
  *   公元 1 年 → 1 世纪 → 1
  * 这套约定与 src/lib/time.ts 的 centuryOf 一致。
  *
- * 运行：node scripts/check-density.mjs [--strict]
+ * 运行：node scripts/check-density.mjs
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'content', 'events');
-const STRICT = process.argv.includes('--strict');
-const MIN_PER_CENTURY = 4;
 
 /** 前 N 世纪 → -N；公元 N 世纪 → N */
 function centuryOf(year) {
@@ -63,43 +66,35 @@ for (let c = keys[0]; c <= keys[keys.length - 1]; c++) {
   if (c !== 0) all.push(c); // 不存在 0 世纪
 }
 
-const thin = [];
-const empty = [];
-for (const c of all) {
-  const n = byCentury.get(c)?.length ?? 0;
-  if (n === 0) empty.push(c);
-  else if (n < MIN_PER_CENTURY) thin.push({ c, n, ids: byCentury.get(c).map((r) => r.id) });
-}
+const counts = all.map((c) => ({ c, n: byCentury.get(c)?.length ?? 0 }));
+const empty = counts.filter((x) => x.n === 0);
+const thin = counts
+  .filter((x) => x.n > 0 && x.n <= 2)
+  .sort((a, b) => a.n - b.n)
+  .slice(0, 8);
 
 console.log('');
-console.log('=== 事件密度检查 ===');
+console.log('=== 事件密度报告（覆盖率，非验收）===');
 console.log('');
 console.log(
   `${rows.length} 条事件，跨 ${all.length} 个世纪，平均 ${(rows.length / all.length).toFixed(1)} 条/世纪`,
 );
-console.log(`要求：每个世纪 ≥ ${MIN_PER_CENTURY} 条`);
+console.log(`最密：${Math.max(...counts.map((x) => x.n))} 条/世纪；最疏：${Math.min(...counts.map((x) => x.n))} 条/世纪`);
 
 if (empty.length) {
   console.log('');
-  console.log(`完全空白：${empty.length} 个 → ${empty.map(label).join('、')}`);
+  console.log(`尚无事件：${empty.length} 个世纪 → ${empty.map((x) => label(x.c)).join('、')}`);
 }
 
 if (thin.length) {
   console.log('');
-  console.log(`不足 ${MIN_PER_CENTURY} 条：${thin.length} 个`);
+  console.log('事件最少的世纪（≤2 条）：');
   for (const t of thin) {
-    console.log(`  ${label(t.c).padStart(9)}  ${String(t.n).padStart(2)} 条  ${t.ids.join(', ')}`);
+    const ids = byCentury.get(t.c).map((r) => r.id);
+    console.log(`  ${label(t.c).padStart(9)}  ${t.n} 条  ${ids.join(', ')}`);
   }
 }
 
-const ok = all.length - empty.length - thin.length;
 console.log('');
-console.log(`达标：${ok} / ${all.length} 个世纪`);
-
-const fail = empty.length + thin.length;
-if (STRICT && fail > 0) {
-  console.log('');
-  console.error(`strict 模式：${fail} 个世纪不达标，退出码 1`);
-  process.exit(1);
-}
+console.log('（本表不设达标线。稀疏段的成因与可补方向见 docs/PENDING-FEATURES.md 的 U3）');
 console.log('');

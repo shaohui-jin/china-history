@@ -18,6 +18,7 @@ export const POLITY_PERIODS = [
   'imperial-early',
   'imperial-mid',
   'imperial-late',
+  'republican',
 ] as const;
 
 const polities = defineCollection({
@@ -206,8 +207,17 @@ const sources = defineCollection({
     volume: z.string().optional(),
     /** 作者 */
     author: z.string().optional(),
-    /** 成书年代 */
+    /** 成书 / 发表年代 */
     composed: z.string().optional(),
+    /**
+     * 文献性质。默认 `classic`（古籍），存量 459 条无需改动。
+     *
+     * 为什么需要这一栏：收录范围延伸到 1949 年后，民国段的一手材料
+     * 是回忆录、政论、报刊、档案，与纪传体史书不是同一类东西 ——
+     * 前者是「当事人此刻的主张」，后者是「后世史官的综合叙述」。
+     * 混为一谈会让读者以为两者证据力等同。
+     */
+    type: z.enum(['classic', 'modern']).default('classic'),
     /** 原文引文 */
     quote: z.string().optional(),
     /** 备注：版本、异文等 */

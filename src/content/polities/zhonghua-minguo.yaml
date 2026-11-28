@@ -1,0 +1,16 @@
+id: zhonghua-minguo
+name: 中华民国
+aliases:
+  - 民国
+  - 北洋政府
+  - 南京国民政府
+span:
+  from:
+    year: 1912
+  to:
+    year: 1949
+order: 110
+period: republican
+note: 1912 年成立于南京，此后历北洋政府（1912–1928）与南京国民政府（1927–1949）两个阶段。前期军阀割据、政变频仍，后期经北伐、抗战与内战，1949 年国民党政权退出大陆。
+coexistedWith:
+  - qing

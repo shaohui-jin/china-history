@@ -40,14 +40,14 @@ export const color = {
 
 /** 字号阶梯：以 1.25 倍率构建，根字号 16px。命名用 t-shirt size 便于沟通。 */
 export const fontSize = {
-  '2xs': '0.6875rem', // 11px 仅用于徽标
-  xs: '0.75rem', // 12px 脚注、图注
-  sm: '0.8125rem', // 13px 辅助信息
-  base: '0.9375rem', // 15px 正文（中文 15-16px 更舒适）
-  md: '1.0625rem', // 17px 长文正文
-  lg: '1.25rem', // 20px 小标题
-  xl: '1.5rem', // 24px 区块标题
-  '2xl': '1.875rem', // 30px 页面标题
+  '2xs': '0.75rem', // 12px 仅用于徽标
+  xs: '0.8125rem', // 13px 脚注、图注
+  sm: '0.9375rem', // 15px 辅助信息、时间线条目描述
+  base: '1.0625rem', // 17px 正文基准（中文楷体在 15px 以下偏吃力）
+  md: '1.1875rem', // 19px 长文正文
+  lg: '1.375rem', // 22px 小标题
+  xl: '1.625rem', // 26px 区块标题
+  '2xl': '2rem', // 32px 页面标题
   '3xl': '2.375rem', // 38px 特稿标题
   '4xl': '3rem', // 48px hero
   '5xl': '3.75rem', // 60px 封面数字
@@ -210,8 +210,16 @@ export const breakpoint = {
 export type BreakpointKey = 'sm' | 'md' | 'lg' | 'xl';
 
 export const layout = {
-  /** 内容最大宽度：阅读类页面刻意收窄，长文超过 75 字/行会难读 */
-  container: { prose: '42rem', wide: '64rem', full: '90rem' },
+  /**
+   * 内容最大宽度。
+   *
+   * 2026-11 字号上调后同步调整：
+   * - prose 收窄（42 → 38rem）：正文 19px 时 42rem 会排到 44 字/行，
+   *   偏长；38rem 约 38 字/行，接近中文长文的最佳区间。
+   * - wide 放宽（64 → 72rem）：字号变大后正文占位增加，容器若不跟着放宽，
+   *   1920 屏上两侧留白会更大，内容反而显得更窄。
+   */
+  container: { prose: '38rem', wide: '72rem', full: '96rem' },
   /** 页边距，按断点递增 */
   gutter: { sm: '1rem', md: '1.5rem', lg: '2rem', xl: '3rem' },
   /** 侧栏宽度 */

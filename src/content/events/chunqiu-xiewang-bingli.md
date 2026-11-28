@@ -13,7 +13,7 @@ categories:
 participants:
   - personId: chunqiu-xiewang
     role: leader
-  - personId: chunqiu-jinwen
+  - personId: chunqiu-jinwenhou
     role: participant
 significance: 4
 summary: 幽王死后，虢公翰立王子余臣于携，与在洛邑的平王并立为二王。这一局面持续约二十年，最终由晋文侯杀携王，周室才重归一统。此事《史记》不载，赖《左传》与《竹书纪年》保存。

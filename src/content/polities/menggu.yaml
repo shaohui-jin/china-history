@@ -1,0 +1,17 @@
+id: menggu
+name: 大蒙古国
+aliases:
+  - 蒙古帝国
+  - 元朝前身
+span:
+  from:
+    year: 1206
+  to:
+    year: 1271
+order: 78
+period: imperial-mid
+note: 1206 年成吉思汗于斡难河源建国，至 1271 年忽必烈定国号为「元」。此六十五年间，蒙古先后灭西夏、金、大理，并三次西征。1271 年后与元朝为同一政权的不同阶段，此处分列以标明制度与疆域的变化。
+coexistedWith:
+  - jin
+  - song
+  - xixia

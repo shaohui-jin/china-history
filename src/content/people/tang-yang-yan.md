@@ -26,8 +26,9 @@ evaluations:
     sourceId: jiutangshu-yangyan
     quote: 凡百役之费，一钱之敛，先度其数而赋于人，量出以制入。
     kind: influence
-  - claim: 杨炎的结局与他的改革无关，与党争有关。他得罪了卢杞，被贬崖州，途中赐死。一个改变了中国赋税结构的人，死于一次私人恩怨。改革者未必能享受改革的成果，这是唐代政治常见的一幕。
-    sourceId: jiutangshu-yangyan
+  - claim: 两税法的长期后果，可能超出了杨炎的预料。以钱计税的设计，在货币短缺的唐代后期变成了加税：「自建中定两税，而物轻钱重，民以为患。至是四十年，当时为绢二匹半者为八匹，大率加三倍。」一个在制度史上是进步（人头税→财产税）的改革，在执行中是加税。两者同时成立。
+    sourceId: xintangshu-shihuozhi
+    quote: 自建中定两税，而物轻钱重，民以为患。至是四十年，当时为绢二匹半者为八匹，大率加三倍。
     kind: dispute
 relations: []
 ---

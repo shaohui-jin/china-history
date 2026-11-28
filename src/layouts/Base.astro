@@ -14,6 +14,14 @@ interface Props {
    * 页脚会与样张内容互相干扰。
    */
   hideFooter?: boolean;
+  /**
+   * 不让搜索引擎收录。设计样张页用。
+   *
+   * 为什么需要：`/styleguide` 是内部设计参考页，已从所有导航入口移除，
+   * 但 `sitemap()` 默认会把它列进 sitemap —— 等于主动向搜索引擎公开
+   * 一个内部页面。光靠 sitemap 的 filter 不够，页面本身也要声明。
+   */
+  noindex?: boolean;
 }
 
 const {
@@ -21,6 +29,7 @@ const {
   description = '中国历史可视化百科',
   ogType = 'website',
   hideFooter = false,
+  noindex = false,
 } = Astro.props;
 
 /**
@@ -67,6 +76,7 @@ const reportContext = {
     <meta name="color-scheme" content="light" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
 

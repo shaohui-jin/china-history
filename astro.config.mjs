@@ -26,8 +26,14 @@ export default defineConfig({
   /**
    * sitemap 需要 site 已配置。未设 SITE_URL 的本地构建跳过它，
    * 否则 @astrojs/sitemap 会因为拿不到绝对地址而报错。
+   *
+   * filter 排除 `/styleguide/`：它是内部设计参考页，已从所有导航
+   * 入口移除，若留在 sitemap 里等于主动向搜索引擎公开。
+   * 页面本身也传了 `noindex`，两层都做。
    */
-  integrations: site ? [vue(), sitemap()] : [vue()],
+  integrations: site
+    ? [vue(), sitemap({ filter: (page) => !page.includes('/styleguide') })]
+    : [vue()],
   markdown: {
     /**
      * 正文内链：[[person:zhuge-liang]] / [[event:chibi|自定义文字]]。

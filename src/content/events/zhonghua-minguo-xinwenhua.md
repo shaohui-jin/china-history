@@ -5,7 +5,7 @@ time:
   from:
     year: 1915
   to:
-    year: 1919
+    year: 1918
 polityIds:
   - zhonghua-minguo
 categories:
